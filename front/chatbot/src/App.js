@@ -285,31 +285,62 @@ function AdminPanel() {
             <div className="messages-container">
               <h3>Сообщения ({messages.length})</h3>
               <ul>
-                {messages.map(message => (
-                  <li key={message.id} className={message.is_user ? 'user' : 'bot'}>
-                    <div className={`avatar ${message.is_user ? 'user' : 'bot'}`}>
-                      {message.is_user ? 'U' : 'B'}
-                    </div>
-                    <div className={`message-content ${message.is_user ? 'user' : 'bot'}`}>
-                      <div className={`message-bubble ${message.is_user ? 'user' : 'bot'}`}>
-                        {message.content}
-                        {/* Отображаем изображение в админ-панели */}
-                        {message.image_url && (
-                          <div className="message-image">
-                            <img 
-                              src={message.image_url} 
-                              alt="Прикреплённое фото"
-                              onClick={() => window.open(message.image_url, '_blank')}
-                            />
+                {messages.map(message => {
+                  const isUser = message.is_user;
+                  return (
+                    <li key={message.id} className={isUser ? 'user' : 'bot'}>
+                      {isUser ? (
+                        <>
+                          <div className={`message-content ${isUser ? 'user' : 'bot'}`}>
+                            <div className={`message-bubble ${isUser ? 'user' : 'bot'}`}>
+                              {message.content}
+                              {/* Отображаем изображение в админ-панели */}
+                              {message.image_url && (
+                                <div className="message-image">
+                                  <img 
+                                    src={message.image_url} 
+                                    alt="Прикреплённое фото"
+                                    onClick={() => window.open(message.image_url, '_blank')}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                            <div className={`message-time ${isUser ? 'user' : 'bot'}`}>
+                              {formatTime(message.created_at)}
+                            </div>
                           </div>
-                        )}
-                      </div>
-                      <div className={`message-time ${message.is_user ? 'user' : 'bot'}`}>
-                        {formatTime(message.created_at)}
-                      </div>
-                    </div>
-                  </li>
-                ))}
+                          <div className={`avatar ${isUser ? 'user' : 'bot'}`}>
+                            U
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className={`avatar ${isUser ? 'user' : 'bot'}`}>
+                            B
+                          </div>
+                          <div className={`message-content ${isUser ? 'user' : 'bot'}`}>
+                            <div className={`message-bubble ${isUser ? 'user' : 'bot'}`}>
+                              {message.content}
+                              {/* Отображаем изображение в админ-панели */}
+                              {message.image_url && (
+                                <div className="message-image">
+                                  <img 
+                                    src={message.image_url} 
+                                    alt="Прикреплённое фото"
+                                    onClick={() => window.open(message.image_url, '_blank')}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                            <div className={`message-time ${isUser ? 'user' : 'bot'}`}>
+                              {formatTime(message.created_at)}
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

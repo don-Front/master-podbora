@@ -475,43 +475,49 @@
   margin-bottom: 15px;
   display: flex;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .chat-messages li.user {
   justify-content: flex-end;
+  flex-direction: row;
 }
 
 .chat-messages li.bot {
   justify-content: flex-start;
+  flex-direction: row;
 }
 
 .avatar {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   border-radius: 50%;
-  margin: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
   color: white;
+  flex-shrink: 0;
 }
 
 .avatar.user {
   background: #2196f3;
-  order: 2;
 }
 
 .avatar.bot {
   background: #666;
-  order: 1;
 }
 
 .message-content {
   display: flex;
   flex-direction: column;
-  max-width: 70%;
+  max-width: calc(70% - 42px);
+  min-width: 0;
+  flex: 0 1 auto;
+  overflow: hidden;
 }
 
 .message-content.user {
@@ -523,17 +529,37 @@
 }
 
 .message-bubble {
-  max-width: 70%;
+  max-width: 100%;
   padding: 10px 15px;
   border-radius: 18px;
   position: relative;
   word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Текст в сообщении */
+.message-bubble > *:first-child:not(.message-image) {
+  margin-bottom: 0;
+}
+
+/* Если есть изображение после текста */
+.message-bubble .message-image {
+  margin-top: 8px;
+}
+
+/* Если изображение единственный элемент */
+.message-bubble > .message-image:only-child {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .message-bubble.user {
   background: #2196f3;
   color: white;
-  margin-left: auto;
 }
 
 .message-bubble.bot {
@@ -545,7 +571,15 @@
   font-size: 0.8em;
   color: #999;
   margin-top: 5px;
+  padding: 0 5px;
+}
+
+.message-time.user {
   text-align: right;
+}
+
+.message-time.bot {
+  text-align: left;
 }
 
 .message-time.user {
@@ -901,19 +935,52 @@
 
 /* Изображение в админ-панели */
 .message-image {
-  margin-top: 10px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+  box-sizing: border-box;
 }
 
 .message-image img {
-  max-width: 250px;
-  max-height: 200px;
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
   border-radius: 8px;
   cursor: pointer;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  object-fit: contain;
+  box-sizing: border-box;
 }
 
 .message-image img:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Для user сообщений - изображение справа */
+.message-content.user .message-image {
+  text-align: right;
+  align-self: flex-end;
+}
+
+.message-content.user .message-image img {
+  margin-left: auto;
+  max-width: min(100%, 300px);
+}
+
+/* Для bot сообщений - изображение слева */
+.message-content.bot .message-image {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.message-content.bot .message-image img {
+  margin-right: auto;
+  max-width: min(100%, 300px);
 }
