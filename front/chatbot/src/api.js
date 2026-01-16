@@ -1,0 +1,49 @@
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://localhost:8000/api',
+});
+
+// Chats
+export const getChats = (params = {}) => api.get('/chats/', { params });
+
+export const getActiveChats = () => api.get('/chats/', { params: { archived: 'false', exclude_empty: 'true' } });
+
+export const getArchivedChats = () => api.get('/chats/', { params: { archived: 'true' } });
+
+export const createChat = (data) => api.post('/chats/', data);
+
+export const updateChat = (id, data) => api.put(`/chats/${id}/`, data);
+
+export const deleteChat = (id) => api.delete(`/chats/${id}/`);
+
+// Chat actions
+export const finalizeChat = (id) => api.post(`/chats/${id}/finalize/`);
+
+export const generateChatTitle = (id) => api.post(`/chats/${id}/generate_title/`);
+
+export const archiveChat = (id) => api.post(`/chats/${id}/archive/`);
+
+export const unarchiveChat = (id) => api.post(`/chats/${id}/unarchive/`);
+
+export const archiveOldChats = () => api.post('/chats/archive_old/');
+
+export const cleanupEmptyChats = () => api.post('/chats/cleanup_empty/');
+
+// Messages
+export const getMessages = (chatId) => api.get(`/chats/${chatId}/messages/`);
+
+export const createMessage = (chatId, data) => api.post(`/chats/${chatId}/messages/`, data);
+
+// Geo location
+export const getGeoLocation = async (ip) => {
+  try {
+    const response = await axios.get(`https://ipapi.co/${ip}/json/`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching geo location:', error);
+    return null;
+  }
+};
+
+export default api;

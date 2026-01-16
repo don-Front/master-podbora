@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+.env
+*.egg-info/
+
+# Django
+*.log
+db.sqlite3
+*.sqlite3
+media/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+
+# Data files (stored in C:\temp\chatbot)
+back/chatbot/faiss_index.bin
+back/chatbot/chunks.json

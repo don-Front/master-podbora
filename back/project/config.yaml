@@ -1,0 +1,21 @@
+embeddings:
+  model_name: paraphrase-multilingual-MiniLM-L12-v2
+
+faiss:
+  index_path: data/faiss_index.bin
+  chunks_path: data/chunks.json
+  top_k: 1
+  confidence_threshold: 0.75   # минимальная уверенность
+  min_delta: 0.002  # минимальная разница между лучшим и вторым результатом
+
+llm:
+  base_url: http://192.168.5.76:1235/v1
+  model: yandexgpt-5-lite-8b-instruct
+
+  temperature: 0.2
+  max_tokens: 512
+
+messages:
+  fallback: >
+    Не удалось найти информации по вашему запросу.
+    Для подробной информации свяжитесь с нашей организацией.

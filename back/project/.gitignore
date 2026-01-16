@@ -1,0 +1,51 @@
+@"
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Virtual Environment
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files
+*.bin
+*.index
+*.pkl
+*.pickle
+*.faiss
+
+# Logs
+*.log
+logs/
+
+# Configs with secrets
+config_secret.yaml
+*.env
+
+# Temporary files
+temp/
+tmp/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project specific
+"@ | Out-File -FilePath ".gitignore" -Encoding UTF8
