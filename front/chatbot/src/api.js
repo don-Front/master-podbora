@@ -35,6 +35,14 @@ export const getMessages = (chatId) => api.get(`/chats/${chatId}/messages/`);
 
 export const createMessage = (chatId, data) => api.post(`/chats/${chatId}/messages/`, data);
 
+// Hints system
+export const getHints = (state = 'start') => api.get('/hints/', { params: { state } });
+
+export const transitionHints = (data) => api.post('/hints/', data);
+
+// Email validation
+export const validateEmail = (email) => api.post('/validate-email/', { email });
+
 // Geo location
 export const getGeoLocation = async (ip) => {
   try {

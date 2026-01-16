@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { 
   getActiveChats, getArchivedChats, getMessages, createChat, createMessage, 
   updateChat, deleteChat, getGeoLocation, finalizeChat, unarchiveChat,
-  archiveOldChats, cleanupEmptyChats
+  archiveOldChats, cleanupEmptyChats, getHints, transitionHints
 } from './api';
 import './App.css';
 
@@ -312,17 +312,20 @@ function AdminPanel() {
 function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      from: 'bot',
-      text: 'Здравствуйте! Я консультант по оборудованию. Чем могу помочь?',
-      time: new Date()
-    }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [chatId, setChatId] = useState(null);
   const hasMessages = useRef(false);
+  
+  // Система подсказок
+  const [hintState, setHintState] = useState({
+    currentState: 'start',
+    hints: [],
+    showBack: false,
+    isFinal: false,
+    expectsInput: false,
+  });
+  const [hintLocked, setHintLocked] = useState(false); // Заблокирован ли режим подсказок (после первого выбора)
 
   const initializeChat = useCallback(async () => {
     try {
@@ -334,7 +337,32 @@ function ChatWidget() {
       setChatId(chat.id);
       hasMessages.current = false;
       
+      // Загружаем начальное состояние подсказок
+      const hintsResponse = await getHints('start');
+      const hintsData = hintsResponse.data;
+      
+      setHintState({
+        currentState: hintsData.current_state,
+        hints: hintsData.hints || [],
+        showBack: hintsData.show_back,
+        isFinal: hintsData.is_final,
+        expectsInput: hintsData.expects_input,
+      });
+      
       // Начинаем с приветственного сообщения
+      setMessages([
+        {
+          id: 1,
+          from: 'bot',
+          text: hintsData.bot_message || 'Здравствуйте! Чем я могу Вам помочь?',
+          time: new Date()
+        }
+      ]);
+      
+      setHintLocked(false); // Сбрасываем блокировку при новом чате
+    } catch (error) {
+      console.error('Error initializing chat:', error);
+      // Fallback на обычный режим
       setMessages([
         {
           id: 1,
@@ -343,8 +371,6 @@ function ChatWidget() {
           time: new Date()
         }
       ]);
-    } catch (error) {
-      console.error('Error initializing chat:', error);
     }
   }, []);
 
@@ -388,7 +414,118 @@ function ChatWidget() {
     setIsOpen((prev) => !prev);
   };
 
-  const addMessage = async (text, from = 'user') => {
+  // Обработка выбора подсказки
+  const handleHintSelect = async (hint) => {
+    if (!chatId) return;
+    
+    // Добавляем сообщение пользователя (выбранная подсказка)
+    const userMessage = {
+      id: Date.now(),
+      from: 'user',
+      text: hint.text,
+      time: new Date(),
+      isHint: true, // Маркер что это подсказка
+    };
+    setMessages((prev) => [...prev, userMessage]);
+    
+    hasMessages.current = true;
+    setIsTyping(true);
+    
+    try {
+      const response = await createMessage(chatId, {
+        content: hint.text,
+        hint_state: hintState.currentState,
+        is_hint_selection: true,
+        hint_locked: hintLocked,
+      });
+      
+      // Обновляем состояние подсказок
+      if (response.data.hint_state) {
+        const newState = response.data.hint_state;
+        setHintState({
+          currentState: newState.current_state,
+          hints: newState.hints || [],
+          showBack: newState.show_back,
+          isFinal: newState.is_final,
+          expectsInput: newState.expects_input,
+        });
+        
+        // Если перешли в финальное состояние - сбрасываем блокировку (новый цикл)
+        // Иначе - блокируем режим
+        if (newState.is_final) {
+          setHintLocked(false);
+        } else {
+          setHintLocked(true);
+        }
+      } else {
+        // Блокируем режим после выбора подсказки
+        setHintLocked(true);
+      }
+      
+      // Добавляем ответ бота
+      const botMessages = response.data.messages?.filter(msg => !msg.is_user) || [];
+      if (botMessages.length > 0) {
+        const botMsg = {
+          id: botMessages[0].id,
+          from: 'bot',
+          text: botMessages[0].content,
+          time: new Date(botMessages[0].created_at)
+        };
+        setMessages((prev) => [...prev, botMsg]);
+      }
+    } catch (error) {
+      console.error('Error selecting hint:', error);
+      const errorMsg = {
+        id: Date.now() + 1,
+        from: 'bot',
+        text: 'Извините, произошла ошибка. Попробуйте позже.',
+        time: new Date()
+      };
+      setMessages((prev) => [...prev, errorMsg]);
+    } finally {
+      setIsTyping(false);
+    }
+  };
+
+  // Кнопка "Вернуться"
+  const handleBack = async () => {
+    try {
+      const response = await transitionHints({
+        current_state: hintState.currentState,
+        action: 'back',
+      });
+      
+      const newState = response.data.current_state;
+      
+      setHintState({
+        currentState: newState,
+        hints: response.data.hints || [],
+        showBack: response.data.show_back,
+        isFinal: response.data.is_final,
+        expectsInput: response.data.expects_input,
+      });
+      
+      // Если вернулись в начало - снимаем блокировку
+      if (newState === 'start') {
+        setHintLocked(false);
+      }
+      
+      // Добавляем сообщение бота о возврате
+      if (response.data.bot_message) {
+        const botMsg = {
+          id: Date.now(),
+          from: 'bot',
+          text: response.data.bot_message,
+          time: new Date()
+        };
+        setMessages((prev) => [...prev, botMsg]);
+      }
+    } catch (error) {
+      console.error('Error going back:', error);
+    }
+  };
+
+  const addMessage = async (text, from = 'user', isHintInput = false) => {
     if (!text.trim()) return;
 
     const newMessage = {
@@ -407,16 +544,38 @@ function ChatWidget() {
       try {
         const response = await createMessage(chatId, {
           content: text.trim(),
+          hint_state: hintState.currentState,
+          is_hint_selection: false, // Это свободный ввод
+          hint_locked: hintLocked,  // Передаём состояние блокировки
         });
         
+        // Обновляем состояние подсказок если есть
+        if (response.data.hint_state) {
+          const newState = response.data.hint_state;
+          setHintState({
+            currentState: newState.current_state,
+            hints: newState.hints || [],
+            showBack: newState.show_back,
+            isFinal: newState.is_final,
+            expectsInput: newState.expects_input,
+          });
+          
+          // На начальном или финальном этапе (новый цикл) блокировка снята
+          if (newState.current_state === 'start' || newState.is_final) {
+            setHintLocked(false);
+          } else if (newState.hint_locked !== undefined) {
+            setHintLocked(newState.hint_locked);
+          }
+        }
+        
         // Add bot response
-        const botMessage = response.data.find(msg => !msg.is_user);
-        if (botMessage) {
+        const botMessages = response.data.messages?.filter(msg => !msg.is_user) || [];
+        if (botMessages.length > 0) {
           const botMsg = {
-            id: botMessage.id,
+            id: botMessages[0].id,
             from: 'bot',
-            text: botMessage.content,
-            time: new Date(botMessage.created_at)
+            text: botMessages[0].content,
+            time: new Date(botMessages[0].created_at)
           };
           setMessages((prev) => [...prev, botMsg]);
         }
@@ -446,10 +605,6 @@ function ChatWidget() {
       e.preventDefault();
       handleSend();
     }
-  };
-
-  const handleEmojiClick = (emoji) => {
-    setInputValue((prev) => prev + emoji);
   };
 
   const formatTime = (date) => {
@@ -522,23 +677,46 @@ function ChatWidget() {
         </div>
 
         <div className="chat-widget__footer">
-          <div className="chat-widget__emoji-row">
-            {['😊', '👍', '💬', '❓'].map((emoji) => (
-              <button
-                key={emoji}
-                type="button"
-                className="chat-widget__emoji-btn"
-                onClick={() => handleEmojiClick(emoji)}
+          {/* Система подсказок - всегда видна */}
+          {hintState.hints && hintState.hints.length > 0 && (
+            <div className="chat-widget__hints">
+              {hintState.showBack && (
+                <button 
+                  className="chat-widget__hint chat-widget__hint--back"
+                  onClick={handleBack}
+                >
+                  ← Вернуться
+                </button>
+              )}
+              {hintState.hints.map((hint, index) => (
+                <button
+                  key={index}
+                  className="chat-widget__hint"
+                  onClick={() => handleHintSelect(hint)}
+                >
+                  {hint.text}
+                </button>
+              ))}
+            </div>
+          )}
+          
+          {/* Кнопка вернуться когда нет подсказок но showBack активен */}
+          {hintState.showBack && (!hintState.hints || hintState.hints.length === 0) && !hintState.isFinal && (
+            <div className="chat-widget__hints">
+              <button 
+                className="chat-widget__hint chat-widget__hint--back"
+                onClick={handleBack}
               >
-                {emoji}
+                ← Вернуться
               </button>
-            ))}
-          </div>
+            </div>
+          )}
+
           <div className="chat-widget__input-row">
             <textarea
               className="chat-widget__input"
               rows={1}
-              placeholder="Напишите сообщение..."
+              placeholder={hintState.expectsInput ? "Введите информацию..." : "Напишите сообщение..."}
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}

@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ChatViewSet, MessageViewSet
+from .views import ChatViewSet, MessageViewSet, HintsView, EmailValidationView, TestEmailView
 
 router = DefaultRouter()
 router.register(r'chats', ChatViewSet)
@@ -12,4 +12,7 @@ urlpatterns = [
         'get': 'list',
         'post': 'create'
     }), name='chat-messages'),
+    path('hints/', HintsView.as_view(), name='hints'),
+    path('validate-email/', EmailValidationView.as_view(), name='validate-email'),
+    path('test-email/', TestEmailView.as_view(), name='test-email'),
 ]
