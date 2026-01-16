@@ -821,3 +821,99 @@
   border-radius: 4px;
   margin-left: 8px;
 }
+
+/* ==================== ИЗОБРАЖЕНИЯ В ЧАТЕ ==================== */
+
+/* Изображение в сообщении чата */
+.chat-widget__image {
+  margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chat-widget__image img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.chat-widget__image img:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Превью изображения перед отправкой */
+.chat-widget__image-preview {
+  position: relative;
+  margin: 8px 12px;
+  display: inline-block;
+}
+
+.chat-widget__image-preview img {
+  max-width: 100px;
+  max-height: 80px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.chat-widget__image-remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ff4757;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(255, 71, 87, 0.4);
+}
+
+.chat-widget__image-remove:hover {
+  background: #ff6b6b;
+  transform: scale(1.1);
+}
+
+/* Кнопка прикрепления файла */
+.chat-widget__attach-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.chat-widget__attach-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Изображение в админ-панели */
+.message-image {
+  margin-top: 10px;
+}
+
+.message-image img {
+  max-width: 250px;
+  max-height: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.message-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

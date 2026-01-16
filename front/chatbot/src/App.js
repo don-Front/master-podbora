@@ -293,6 +293,16 @@ function AdminPanel() {
                     <div className={`message-content ${message.is_user ? 'user' : 'bot'}`}>
                       <div className={`message-bubble ${message.is_user ? 'user' : 'bot'}`}>
                         {message.content}
+                        {/* Отображаем изображение в админ-панели */}
+                        {message.image_url && (
+                          <div className="message-image">
+                            <img 
+                              src={message.image_url} 
+                              alt="Прикреплённое фото"
+                              onClick={() => window.open(message.image_url, '_blank')}
+                            />
+                          </div>
+                        )}
                       </div>
                       <div className={`message-time ${message.is_user ? 'user' : 'bot'}`}>
                         {formatTime(message.created_at)}
@@ -316,6 +326,11 @@ function ChatWidget() {
   const [isTyping, setIsTyping] = useState(false);
   const [chatId, setChatId] = useState(null);
   const hasMessages = useRef(false);
+  const fileInputRef = useRef(null);
+  
+  // Состояние для изображения
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
   
   // Система подсказок
   const [hintState, setHintState] = useState({
@@ -525,14 +540,15 @@ function ChatWidget() {
     }
   };
 
-  const addMessage = async (text, from = 'user', isHintInput = false) => {
-    if (!text.trim()) return;
+  const addMessage = async (text, from = 'user', image = null) => {
+    if (!text.trim() && !image) return;
 
     const newMessage = {
       id: Date.now(),
       from,
       text: text.trim(),
-      time: new Date()
+      time: new Date(),
+      imagePreview: image ? URL.createObjectURL(image) : null,
     };
 
     setMessages((prev) => [...prev, newMessage]);
@@ -547,7 +563,19 @@ function ChatWidget() {
           hint_state: hintState.currentState,
           is_hint_selection: false, // Это свободный ввод
           hint_locked: hintLocked,  // Передаём состояние блокировки
-        });
+        }, image);
+        
+        // Обновляем сообщение пользователя с URL изображения из сервера
+        if (response.data.messages) {
+          const userMsg = response.data.messages.find(msg => msg.is_user);
+          if (userMsg && userMsg.image_url) {
+            setMessages(prev => prev.map(msg => 
+              msg.id === newMessage.id 
+                ? { ...msg, imageUrl: userMsg.image_url }
+                : msg
+            ));
+          }
+        }
         
         // Обновляем состояние подсказок если есть
         if (response.data.hint_state) {
@@ -594,9 +622,43 @@ function ChatWidget() {
     }
   };
 
+  // Обработка выбора файла
+  const handleFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Проверяем тип файла
+      if (!file.type.startsWith('image/')) {
+        alert('Пожалуйста, выберите изображение');
+        return;
+      }
+      // Проверяем размер (макс 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Размер файла не должен превышать 5MB');
+        return;
+      }
+      setSelectedImage(file);
+      setImagePreview(URL.createObjectURL(file));
+    }
+  };
+
+  // Удаление выбранного изображения
+  const handleRemoveImage = () => {
+    setSelectedImage(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
   const handleSend = () => {
-    if (!inputValue.trim()) return;
-    addMessage(inputValue, 'user');
+    if (!inputValue.trim() && !selectedImage) return;
+    addMessage(inputValue, 'user', selectedImage);
+    // Очищаем после отправки
+    setSelectedImage(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
     setInputValue('');
   };
 
@@ -652,7 +714,17 @@ function ChatWidget() {
               className={`chat-widget__message chat-widget__message--${message.from}`}
             >
               <div className="chat-widget__bubble">
-                <span>{message.text}</span>
+                {message.text && <span>{message.text}</span>}
+                {/* Отображаем изображение */}
+                {(message.imageUrl || message.imagePreview) && (
+                  <div className="chat-widget__image">
+                    <img 
+                      src={message.imageUrl || message.imagePreview} 
+                      alt="Прикреплённое фото"
+                      onClick={() => window.open(message.imageUrl || message.imagePreview, '_blank')}
+                    />
+                  </div>
+                )}
               </div>
               <div className="chat-widget__meta">
                 <span className="chat-widget__time">{formatTime(message.time)}</span>
@@ -712,7 +784,40 @@ function ChatWidget() {
             </div>
           )}
 
+          {/* Превью выбранного изображения */}
+          {imagePreview && (
+            <div className="chat-widget__image-preview">
+              <img src={imagePreview} alt="Превью" />
+              <button 
+                className="chat-widget__image-remove"
+                onClick={handleRemoveImage}
+                title="Удалить изображение"
+              >
+                ×
+              </button>
+            </div>
+          )}
+
           <div className="chat-widget__input-row">
+            {/* Скрытый input для файла */}
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileSelect}
+              accept="image/*"
+              style={{ display: 'none' }}
+            />
+            
+            {/* Кнопка прикрепления фото */}
+            <button
+              className="chat-widget__attach-btn"
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              title="Прикрепить фото"
+            >
+              📎
+            </button>
+            
             <textarea
               className="chat-widget__input"
               rows={1}
@@ -725,7 +830,7 @@ function ChatWidget() {
               className="chat-widget__send-btn"
               type="button"
               onClick={handleSend}
-              disabled={!inputValue.trim()}
+              disabled={!inputValue.trim() && !selectedImage}
             >
               ➤
             </button>

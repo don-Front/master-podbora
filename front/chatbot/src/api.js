@@ -33,7 +33,25 @@ export const cleanupEmptyChats = () => api.post('/chats/cleanup_empty/');
 // Messages
 export const getMessages = (chatId) => api.get(`/chats/${chatId}/messages/`);
 
-export const createMessage = (chatId, data) => api.post(`/chats/${chatId}/messages/`, data);
+export const createMessage = (chatId, data, image = null) => {
+  // Если есть изображение, используем FormData
+  if (image) {
+    const formData = new FormData();
+    formData.append('content', data.content || '');
+    formData.append('hint_state', data.hint_state || 'start');
+    formData.append('is_hint_selection', data.is_hint_selection || false);
+    formData.append('hint_locked', data.hint_locked || false);
+    formData.append('image', image);
+    
+    return api.post(`/chats/${chatId}/messages/`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+  
+  return api.post(`/chats/${chatId}/messages/`, data);
+};
 
 // Hints system
 export const getHints = (state = 'start') => api.get('/hints/', { params: { state } });

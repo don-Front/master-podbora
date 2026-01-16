@@ -3,9 +3,23 @@ from .models import Chat, Message
 
 
 class MessageSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+    
     class Meta:
         model = Message
-        fields = '__all__'
+        fields = ['id', 'chat', 'content', 'image', 'image_url', 'is_user', 'created_at']
+        extra_kwargs = {
+            'image': {'write_only': True, 'required': False},
+            'content': {'required': False},
+        }
+    
+    def get_image_url(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        return None
 
 
 class ChatSerializer(serializers.ModelSerializer):

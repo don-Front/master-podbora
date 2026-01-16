@@ -131,6 +131,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Media files (Uploaded images)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",

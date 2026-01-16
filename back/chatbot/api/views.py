@@ -1,9 +1,11 @@
+# Image upload support added
 import os
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action, api_view
 from rest_framework.views import APIView
 from django.db.models import Count
+from django.conf import settings
 from .models import Chat, Message
 from .serializers import ChatSerializer, MessageSerializer
 
@@ -201,6 +203,12 @@ class MessageViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         chat_id = self.kwargs['chat_id']
         return Message.objects.filter(chat_id=chat_id)
+    
+    def get_serializer_context(self):
+        """Добавляем request в контекст для построения URL изображений"""
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context
 
     def list(self, request, chat_id=None):
         queryset = self.get_queryset()
@@ -214,17 +222,27 @@ class MessageViewSet(viewsets.ModelViewSet):
         data['chat'] = chat_id
         data['is_user'] = True
         
+        # Обработка загруженного изображения
+        image_file = request.FILES.get('image')
+        
         # Получаем текущее состояние и режим
         current_state = data.get('hint_state', 'start')
-        is_hint_selection = data.get('is_hint_selection', False)
-        hint_locked = data.get('hint_locked', False)  # Заблокирован ли режим подсказок
+        is_hint_selection = str(data.get('is_hint_selection', 'false')).lower() == 'true'
+        hint_locked = str(data.get('hint_locked', 'false')).lower() == 'true'
         
-        serializer = self.get_serializer(data=data)
+        # Создаём данные для сериализатора
+        message_data = {
+            'chat': chat_id,
+            'content': data.get('content', ''),
+            'is_user': True,
+        }
+        
+        serializer = self.get_serializer(data=message_data)
         serializer.is_valid(raise_exception=True)
-        user_message = serializer.save()
+        user_message = serializer.save(image=image_file) if image_file else serializer.save()
 
         # Определяем ответ бота
-        question = data['content']
+        question = message_data.get('content', '')
         bot_response = ""
         next_state = current_state
         
@@ -283,9 +301,20 @@ class MessageViewSet(viewsets.ModelViewSet):
         if next_state_data.get('is_final', False) and hint_locked:
             try:
                 chat = Chat.objects.get(pk=chat_id)
-                all_messages = list(chat.messages.all().order_by('created_at').values(
-                    'content', 'is_user', 'created_at'
-                ))
+                chat_messages = chat.messages.all().order_by('created_at')
+                
+                # Собираем сообщения с путями к изображениям
+                all_messages = []
+                for msg in chat_messages:
+                    msg_data = {
+                        'content': msg.content,
+                        'is_user': msg.is_user,
+                        'created_at': msg.created_at,
+                    }
+                    # Добавляем путь к изображению если есть
+                    if msg.image:
+                        msg_data['image'] = os.path.join(settings.MEDIA_ROOT, str(msg.image))
+                    all_messages.append(msg_data)
                 
                 # Определяем категорию по состоянию
                 category_map = {

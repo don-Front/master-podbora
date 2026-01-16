@@ -4,11 +4,15 @@
 """
 
 import re
+import os
 import smtplib
 import socket
 import dns.resolver
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email.mime.image import MIMEImage
+from email import encoders
 from datetime import datetime
 from typing import Optional, Tuple, List
 
@@ -144,7 +148,8 @@ class EmailSender:
         client_email: str = "Не указан",
         client_phone: str = "Не указан",
         ip_address: str = "Неизвестен",
-        chat_date: datetime = None
+        chat_date: datetime = None,
+        image_paths: List[str] = None
     ) -> Tuple[bool, str]:
         """
         Отправляет уведомление о новом обращении в чат-бот.
@@ -156,17 +161,23 @@ class EmailSender:
             client_phone: Телефон клиента
             ip_address: IP адрес клиента
             chat_date: Дата создания чата
+            image_paths: Список путей к изображениям для прикрепления
         
         Returns:
             (success, error_message)
         """
         try:
+            image_paths = image_paths or []
+            image_cid_map = {}  # Маппинг путей к CID для inline изображений
+            
             # Формируем HTML контент сообщений
             messages_html = ""
+            img_counter = 0
+            
             for msg in messages:
                 sender = "Клиент" if msg.get("is_user", True) else "Бот"
                 css_class = "user" if msg.get("is_user", True) else "bot"
-                content = msg.get("content", "")
+                content = msg.get("content", "") or ""
                 time_str = ""
                 if msg.get("created_at"):
                     try:
@@ -175,10 +186,21 @@ class EmailSender:
                     except:
                         pass
                 
+                # Проверяем есть ли изображение в сообщении
+                image_html = ""
+                if msg.get("image"):
+                    img_path = msg.get("image")
+                    if img_path and os.path.exists(img_path):
+                        cid = f"image{img_counter}"
+                        image_cid_map[img_path] = cid
+                        image_html = f'<div style="margin-top: 10px;"><img src="cid:{cid}" style="max-width: 300px; border-radius: 8px;"></div>'
+                        img_counter += 1
+                
                 messages_html += f"""
                 <div class="message {css_class}">
                     <div class="label">{sender} {time_str}</div>
                     <div>{content}</div>
+                    {image_html}
                 </div>
                 """
             
@@ -196,8 +218,8 @@ class EmailSender:
                 messages=messages_html
             )
             
-            # Создаем сообщение
-            msg = MIMEMultipart('alternative')
+            # Создаем сообщение с поддержкой вложений
+            msg = MIMEMultipart('related')
             msg['Subject'] = subject
             msg['From'] = f"{EMAIL_CREDENTIALS['sender_name']} <{EMAIL_CREDENTIALS['sender_email']}>"
             msg['To'] = NOTIFICATION_RECIPIENTS["main_recipient"]
@@ -207,9 +229,56 @@ class EmailSender:
             if cc_recipients:
                 msg['Cc'] = ", ".join(cc_recipients)
             
+            # Создаём альтернативную часть для HTML
+            msg_alternative = MIMEMultipart('alternative')
+            msg.attach(msg_alternative)
+            
             # Прикрепляем HTML
             html_part = MIMEText(html_body, 'html', 'utf-8')
-            msg.attach(html_part)
+            msg_alternative.attach(html_part)
+            
+            # Прикрепляем inline изображения
+            for img_path, cid in image_cid_map.items():
+                try:
+                    with open(img_path, 'rb') as img_file:
+                        img_data = img_file.read()
+                        
+                    # Определяем тип изображения
+                    ext = os.path.splitext(img_path)[1].lower()
+                    subtype = {
+                        '.jpg': 'jpeg',
+                        '.jpeg': 'jpeg',
+                        '.png': 'png',
+                        '.gif': 'gif',
+                        '.webp': 'webp',
+                    }.get(ext, 'jpeg')
+                    
+                    img_attachment = MIMEImage(img_data, _subtype=subtype)
+                    img_attachment.add_header('Content-ID', f'<{cid}>')
+                    img_attachment.add_header('Content-Disposition', 'inline', filename=os.path.basename(img_path))
+                    msg.attach(img_attachment)
+                    
+                except Exception as e:
+                    print(f"[WARNING] Failed to attach image {img_path}: {e}")
+            
+            # Прикрепляем дополнительные изображения как вложения
+            for img_path in image_paths:
+                if img_path not in image_cid_map and os.path.exists(img_path):
+                    try:
+                        with open(img_path, 'rb') as img_file:
+                            img_data = img_file.read()
+                        
+                        attachment = MIMEBase('application', 'octet-stream')
+                        attachment.set_payload(img_data)
+                        encoders.encode_base64(attachment)
+                        attachment.add_header(
+                            'Content-Disposition',
+                            'attachment',
+                            filename=os.path.basename(img_path)
+                        )
+                        msg.attach(attachment)
+                    except Exception as e:
+                        print(f"[WARNING] Failed to attach file {img_path}: {e}")
             
             # Отправляем
             with cls._create_smtp_connection() as server:
