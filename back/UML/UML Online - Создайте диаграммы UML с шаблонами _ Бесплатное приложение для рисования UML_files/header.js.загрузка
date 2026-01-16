@@ -1,0 +1,274 @@
+Vue.component("header-panel", {
+  template: `
+    <div id="header" class="header_container">
+      <div class="header">
+        <div class="logo">
+          <a href="javascript:void(0);" class="logo-a">
+            <img :src="baseImageUrl" alt="Aspose Visio Editor">
+          </a>
+          <div class="doc">
+            <div>
+              <input id="docName" type="text" v-model="docName" @click="changeFileName" @blur="handleBlur" @keydown.enter="handleEnter">
+            </div>
+            <div id="menu">
+              <div class="menu">
+                <div class="timeout">saved</div>
+                <ul class="menu-list" id="menu_list">
+                  <li class='dropdownmenu' v-for="item in mainmenus" :key='item.id' :class='{exhibiting: menuFlag && menu == item.id}' @click.stop>
+                    <a @click='mainMenuClick(item.id)' @mouseover='mainMenuHover(item.id)'>{{item.name}}</a>
+                    <ul class='menu-content' v-if='menuFlag && menu == item.id && item.submenu'>
+                    <li v-for='it in item.submenu' :key='it.id' :class="submenuClass(it)" 
+                        @mouseover='subMenuHover(it.id)' 
+                        @mouseleave='submenu = null' 
+                        @click='command(submenuClass(it),it.id)'>
+                        <a v-if='it.name'>{{it.name}}</a>
+                        <span class='btn-tip' v-if='it.tip'>{{it.tip}}</span>
+                        <span class='btn-icon icon iconfont' v-if='iconClass(it)' v-html='it.icon'></span>
+                        <span class='triangle' v-if='it.sub'></span>
+                        <ul class='submenu' v-if='menuFlag && submenu == it.id && it.submenu'>
+                          <li v-for='i in it.submenu' :key='i.id' @click='command(submenuClass(i),i.id)'>
+                              <a v-if='i.name'>{{i.name}}</a>
+                          </li>
+                        </ul>
+                    </li>
+                    </ul>
+                  </li>
+                  <li data-history="false" class="disabled">
+                    <a class="icon iconfont" @click.stop.prevent='openHistoryVersion($event)'>&#xe710;</a>
+                    <div id="historyVersion" v-show='historyView'>
+                      <div class="clearfix closeHistoryView">
+                        History browsing
+                        <span @click.stop='historyView = false'>×</span>
+                      </div>
+                      <ul id="historyWrapper" @click.stop.prevent></ul>
+                      <div class="moreHistoryView" @click.stop='openHistoryDialog'>view more ...</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <a title="Close" class="btn-close" href="javascript:void(0);">
+            <i class="iconfont" @click="closeWindow">&#xe653;</i>
+          </a>
+        </div>
+      </div>
+    </div>`,
+  data() {
+    return {
+      baseImageUrl: baseUrl + "/images/aspose-logo.svg",
+      docName: appName.slice(0, 1).toUpperCase() + appName.slice(1) + " Diagram",
+      menuFlag: false,
+      menu: null,
+      submenu: null,
+      historyView: false,
+      mainmenus: [
+        {
+          id: "File",
+          name: "File",
+          submenu: [
+            {
+              id: "NewFile",
+              name: "New",
+              tip: "Shift+N",
+              icon: "&#xe608;",
+            },
+            { id: "Rename", name: "Rename", tip: "Ctrl+F2" },
+            { id: "Save", name: "Save", tip: "Ctrl+S" },
+            { id: "SaveLocal", name: "Save Device", tip: "Ctrl+Shift+S", icon: "√" },
+            { cls: "divider" },
+            { id: "ImportDiagram", name: "Import Diagram" },
+            {
+              id: "ExportAs",
+              name: "Export As",
+              sub: true,
+              submenu: [
+                { id: "Vsdx", name: "VSDX" },
+                { id: "Pdf", name: "PDF" },
+                { id: "Png", name: "PNG" },
+                { id: "Html", name: "HTML" },
+                { id: "Svg", name: "SVG" },
+                { id: "Jpg", name: "JPG" },
+                { id: "Bmp", name: "BMP" },
+                { id: "Xps", name: "XPS" },
+                { id: "Xml", name: "XML" },
+              ],
+            },
+            { id: "Print", name: "Print", tip: "Ctrl+P" },
+            { id: "PageSetting", name: "PageSetting" },
+          ],
+        },
+        {
+          id: "Edit",
+          name: "Edit",
+          submenu: [
+            { id: "Undo", name: "Undo", tip: "Ctrl+Z" },
+            { id: "Redo", name: "Redo", tip: "Ctrl+Y" },
+            { cls: "divider" },
+            { id: "Cut", name: "Cut", tip: "Ctrl+X" },
+            { id: "Copy", name: "Copy", tip: "Ctrl+C" },
+            { id: "Paste", name: "Paste", tip: "Ctrl+V" },
+            { id: "Delete", name: "Delete", tip: "Delete" },
+            { cls: "divider" },
+            { id: "Duplicate", name: "Duplicate", tip: "Ctrl+D" },
+          ],
+        },
+        {
+          id: "View",
+          name: "View",
+          submenu: [
+            { id: "ZoomIn", name: "Zoom In" },
+            { id: "ZoomOut", name: "Zoom Out" },
+            { cls: "divider" },
+            { id: "Layers", name: "Layers", tip: "Ctrl+Shift+L", icon: "√" },
+            { id: "Outline", name: "Outline", tip: "Ctrl+Shift+O", icon: "√" },
+            { id: "Grid", name: "Grid", icon: "√" },
+          ],
+        },
+        {
+          id: "Insert",
+          name: "Insert",
+          submenu: [
+            { id: "InsertPage", name: "New Page" },
+            { id: "Template", name: "Template" },
+            { cls: "divider" },
+            { id: "LocalImage", name: "Image" },
+            { id: "PngImage", name: "PNG" },
+            { id: "JpgImage", name: "JPG" },
+            { id: "GifImage", name: "GIF" },
+            { id: "SvgImage", name: "SVG" },
+            { id: "UrlImage", name: "Image From Url" },
+            { cls: "divider" },
+            { id: "Csv", name: "CSV" },
+            { id: "Sql", name: "SQL" },
+          ],
+        },
+        {
+          id: "Select",
+          name: "Select",
+          submenu: [
+            {
+              id: "SelectVertices",
+              name: "Select Shapes",
+              tip: "Ctrl+Shift+I",
+            },
+            {
+              id: "SelectEdges",
+              name: "Select Lines",
+              tip: "Ctrl+Shift+E",
+            },
+            { id: "SelectAll", name: "Select All", tip: "Ctrl+A" },
+            { id: "SelectNone", name: "Select None", tip: "Ctrl+Shift+A" },
+          ],
+        },
+        {
+          id: "Arrange",
+          name: "Arrange",
+          submenu: [
+            { id: "ToFront", name: "To Front", tip: "Ctrl+Shift+F" },
+            { id: "ToBack", name: "To Back", tip: "Ctrl+Shift+B" },
+            { cls: "divider" },
+            { id: "Group", name: "Group", tip: "Ctrl+G" },
+            { id: "UnGroup", name: "UnGroup", tip: "Ctrl+Shift+U" },
+          ],
+        },
+      ],
+    };
+  },
+  mounted() {
+    bus.$on("changeDocName", (data) => {
+      this.docName = data;
+    });
+    document.addEventListener("click", this.handleClick);
+  },
+  methods: {
+    changeFileName(e) {
+      e.target.select();
+    },
+    handleEnter(e) {
+      e.target.blur();
+    },
+    handleBlur(e) {
+      const value = e.target.value;
+      this.docName = value;
+      graph.page.getCurrentFile().setTitle(value);
+    },
+    iconClass(item) {
+      if (item.icon != void 0) {
+        switch (item.id) {
+          case "SaveLocal":
+            return localStorage.getItem("saveMode") == "file";
+          case "Layers":
+            return graph.layersWindow != void 0 && graph.layersWindow.window.isVisible();
+          case "Outline":
+            return graph.outline != void 0 && graph.outline.form.isVisible();
+          case "Grid":
+            return graph.isGridEnabled();
+          default:
+            return true;
+        }
+      } else {
+        return false;
+      }
+    },
+    mainMenuClick(e) {
+      this.historyView = false;
+      this.menuFlag = !this.menuFlag;
+      this.menu = e;
+    },
+    mainMenuHover(e) {
+      this.menu = e;
+    },
+    handleClick(e) {
+      this.menuFlag = false;
+      this.menu = null;
+      this.submenu = null;
+      this.historyView = false;
+    },
+    subMenuHover(e) {
+      this.submenu = e;
+    },
+    submenuClass(item) {
+      const edits = ["Cut", "Copy", "ToFront", "ToBack", "Delete", "Duplicate", "Group", "UnGroup"];
+      var editsEnabled = graph.isSelectionEmpty() && edits.includes(item.id);
+      var pasteEnabled = mxClipboard.isEmpty() && item.id == "Paste";
+      var undoEnabled = (graph.isEditing() || undoManager.canUndo()) && item.id == "Undo";
+      var redoEnabled = (graph.isEditing() || undoManager.canRedo()) && item.id == "Redo";
+      var zoomInEnabled = graph.view.scale >= 6 && item.id == "ZoomIn";
+      var zoomOutEnabled = graph.view.scale == 0.05 && item.id == "ZoomOut";
+      return {
+        [item.cls]: item.cls != null,
+        exhibiting1: this.submenu == item.id,
+        disabled: editsEnabled || pasteEnabled || undoEnabled || redoEnabled || zoomInEnabled || zoomOutEnabled,
+      };
+    },
+    command(e, id) {
+      if (!e.disabled && MenuCommand[id]) {
+        MenuCommand[id].execute();
+        this.handleClick();
+      }
+    },
+    openHistoryVersion(el) {
+      this.menuFlag = false;
+      this.menu = null;
+      this.submenu = null;
+      if (el.target.parentElement.dataset.history == "true") {
+        this.historyView = !this.historyView;
+      }
+    },
+    openHistoryDialog() {
+      graph.dialog.ShowDialog(graph.dialog.HistoryView());
+    },
+    closeWindow() {
+      var r = confirm("Are you sure to close the window?");
+      if (r == true) {
+        if (window.parent && window.parent.closeIframe) {
+          parent.location.reload();
+          window.parent.closeIframe();
+        }
+      }
+    },
+  },
+});

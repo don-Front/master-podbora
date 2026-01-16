@@ -1,0 +1,220 @@
+const baseUrl = '/diagram/static/graphApp/common';
+const appName = window.parent.o.AppName.toLowerCase();
+const appUrl = '/diagram/static/graphApp/' + appName + 'App';
+(function () {
+  const cssUrls = [
+    '/dist/app.min.css?v=20230926',
+    '/iconfont/iconfont.css',
+    // '/lib/modal.css',
+    '/lib/dropdown2.css',
+    '/lib/colorpickermodal.css'];
+  const jsUrls = [
+    '/lib/mxClient.min.js',
+    '/lib/jquery-3.6.0.min.js',
+    '/lib/$.ld.js',
+    '/lib/pako.min.js',
+    '/lib/sanitizer.min.js',
+    // '/lib/dropdown.js',
+    // '/lib/modal.js',
+    '/lib/vue.min.js',
+    // '/lib/colorpickermodal.js',
+    '/lib/cpm.js',
+    '/components/header.js',
+    '/components/maincontent.js',
+    '/components/diagramPanel.js',
+    '/components/stylePanel.js',
+    '/components/shapePanel.js',
+    '/components/textPanel.js',
+    '/components/format.js',
+    '/components/toolbar.js',
+    '/dist/app.min.js?v=20250626'
+  ]
+  const titleApp = ['floorplans', 'electrical', 'network', 'bpmn', 'uml']
+  var head = document.getElementsByTagName('head')[0];
+  if (titleApp.includes(appName)) {
+    var style = document.createElement("style");
+    style.style.type = "text/css";
+    head.appendChild(style);
+    let ruler =
+      '.title1 { background-color: #f0f0f0; } .search-box { display: flex; align-items: center; width: 100%; height: 32px; border: 2px solid #3690c8; border-radius: 10px; padding: 0 10px; margin: 10px 0; } #searchInput::placeholder { color: #ccc; } .search-box input { flex: auto; border: none; outline: none; font-size: 16px; color: #333; background: transparent; min-width: 20px; } .search-box svg { width: 20px; height: 20px; fill: #ccc; display: flex; } .clear-btn { width: 20px; height: 20px; margin-left: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; } .clear-btn svg { width: 100%; height: 100%; fill: #ccc; } .search-btn { display: flex; align-items: center; justify-content: center; color: #333; cursor: pointer; border: none; background: transparent; margin-left: 10px; padding: 0; position: relative; font-size: 14px; } .search-btn::before { content: ""; display: block; position: absolute; top: 50%; left: -5px; transform: translateY(-50%); width: 1px; height: 14px; background-color: #ccc; }';
+    style.appendChild(document.createTextNode(ruler));
+  }
+  // Function to load CSS
+  function loadCSS(url) {
+    return new Promise((resolve, reject) => {
+      const linkTag = document.createElement("link");
+      linkTag.type = "text/css";
+      linkTag.rel = "stylesheet";
+      linkTag.href = url;
+      linkTag.onload = () => resolve(linkTag);
+      linkTag.onerror = () => reject(new Error(`Failed to load CSS ${url}`));
+      head.appendChild(linkTag);
+    });
+  }
+  // Function to load JS
+  function loadScript(url, retries = 3) {
+    return new Promise((resolve, reject) => {
+      const attemptLoad = (attempt) => {
+        const script = document.createElement("script");
+        script.src = url;
+        script.async = true;
+        script.onload = () => resolve(script);
+        script.onerror = () => {
+          if (attempt < retries) {
+            console.warn(`Failed to load script ${url}, retrying... (${attempt + 1}/${retries})`);
+            setTimeout(() => attemptLoad(attempt + 1), 1000); // Retry after 1 second
+          } else {
+            reject(new Error(`Failed to load script ${url} after ${retries} attempts`));
+          }
+        };
+        // Remove previous script tag if it exists
+        const existingScript = document.querySelector(`script[src="${url}"]`);
+        if (existingScript) {
+          existingScript.remove();
+        }
+        head.appendChild(script);
+      };
+      attemptLoad(0);
+    });
+  }
+  // Load all CSS files
+  const cssPromises = cssUrls.map((url) => loadCSS(baseUrl + url));
+  // Load jQuery first, then the loading animation script, then the remaining JS files
+  loadScript(baseUrl + "/lib/jquery-3.6.0.min.js")
+    .then(() => {
+      return loadScript(baseUrl + "/lib/$.ld.js");
+    })
+    .then(() => {
+      // Start the loading animation here using jQuery
+      $.bootstrapLoading.spin();
+      return Promise.all(cssPromises);
+    })
+    .then(() => {
+      const remainingJsUrls = jsUrls.filter((url) => url !== "/lib/jquery-3.6.0.min.js" && url !== "/lib/$.ld.js");
+      return remainingJsUrls.reduce((promise, url) => {
+        return promise.then(() => loadScript(baseUrl + url));
+      }, Promise.resolve());
+    })
+    .then(() => {
+      if (titleApp.includes(appName)) {
+        const style = document.createElement("style");
+        style.type = "text/css";
+        head.appendChild(style);
+        let ruler =
+          '.title1 { background-color: #f0f0f0; } .search-box { display: flex; align-items: center; width: 100%; height: 32px; border: 2px solid #3690c8; border-radius: 10px; padding: 0 10px; margin: 10px 0; } #searchInput::placeholder { color: #ccc; } .search-box input { flex: auto; border: none; outline: none; font-size: 16px; color: #333; background: transparent; min-width: 20px; } .search-box svg { width: 20px; height: 20px; fill: #ccc; display: flex; } .clear-btn { width: 20px; height: 20px; margin-left: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; } .clear-btn svg { width: 100%; height: 100%; fill: #ccc; } .search-btn { display: flex; align-items: center; justify-content: center; color: #333; cursor: pointer; border: none; background: transparent; margin-left: 10px; padding: 0; position: relative; font-size: 14px; } .search-btn::before { content: ""; display: block; position: absolute; top: 50%; left: -5px; transform: translateY(-50%); width: 1px; height: 14px; background-color: #ccc; }';
+        style.appendChild(document.createTextNode(ruler));
+      }
+      // var deUrl = "/diagram/flowchartApp/resources/resources";
+      // var deFmt = ".xml",
+      //   url = null;
+      // var lans = window.localStorage.getItem("dia.user.lan");
+      // if (!lans) {
+      //   if (window.parent.o) {
+      //     var local = window.parent.o.AppURL.split("/");
+      //     lans = local.length > 3 ? local[2] : "en";
+      //   } else {
+      //     lans = "en";
+      //   }
+      // }
+      // url = lans == "en" ? deUrl + deFmt : deUrl + "_" + lans + deFmt;
+      // dia_js = getJson(url, deUrl + deFmt);
+      // Initialize Vue
+      Vue.use($cpm);
+      window.bus = new Vue();
+      window.vm = new Vue({
+        el: "#graphApp",
+        created() {
+          window.urlParams = (function (url) {
+            var result = new Object();
+            var idx = url.lastIndexOf("?");
+            if (idx > 0) {
+              var params = url.substring(idx + 1).split("&");
+              for (var i = 0; i < params.length; i++) {
+                idx = params[i].indexOf("=");
+                if (idx > 0) {
+                  result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+                }
+              }
+            }
+            return result;
+          })(window.location.href);
+          var bundle = mxResources.getDefaultBundle(baseUrl + "/resources/dia_am", "") || mxResources.getSpecialBundle(baseUrl + "/resources/dia_am", "");
+          mxUtils.getAll([bundle], function (xhr) {
+            mxResources.parse(xhr[0].getText());
+          });
+        },
+        mounted() {
+          var parent = document.getElementById("historyVersion");
+          var db = DBHandler.open(appName + ".versions", "version_data", 1);
+          db.then(function (db) {
+            DBHandler.getAll(db, "version_data").then(function (val) {
+              if (val.length > 0) {
+                parent.parentElement.classList.remove("disabled");
+                parent.parentElement.dataset.history = true;
+                var wrapper = document.getElementById("historyWrapper");
+                wrapper.innerHTML = "";
+                let num = 0;
+                for (let i = val.length; i > 0; i--) {
+                  num++;
+                  if (num < 6) {
+                    var li = MenuCommand.createLiElement(val[i - 1]);
+                    wrapper.appendChild(li);
+                  }
+                }
+                val.length > 5 && $(".moreHistoryView").addClass("show");
+                if (GetQueryString("templateid") == null) {
+                  graph.page.importXml(val[val.length - 1].xml, 0, 0, true);
+                  bus.$emit("changeDocName", val[val.length - 1].name);
+                  graph.page.getCurrentFile().setTitle(val[val.length - 1].name);
+                }
+              }
+            });
+            return db;
+          }).then(function (db) {
+            db.close();
+          });
+          // dia_js["formatpannel"]
+          SystemInit();
+          window.addEventListener("click", function (e) {
+            MenuCommand.Undo.isEnabled();
+            MenuCommand.Redo.isEnabled();
+            MenuCommand.Paste.isEnabled();
+          });
+          window.addEventListener("keydown", function (e) {
+            e.key == "Tab" && e.preventDefault();
+          });
+          graph.getModel().addListener(
+            mxEvent.CHANGE,
+            mxUtils.bind(this, function () {
+              if (graph.getSelectionCells() != null) {
+                this.$updateToolbarStatus();
+              }
+              this.$updatePanels();
+            })
+          );
+          graph.getSelectionModel().addListener(
+            mxEvent.CHANGE,
+            mxUtils.bind(this, function () {
+              this.$updatePanels();
+              // Actions.prototype.updateActionStates();
+              if (graph.getSelectionCells() != null) {
+                this.$updateToolbarStatus();
+              }
+            })
+          );
+          graph.addListener("gridEnabledChanged", this.$updatePanels);
+          graph.addListener("gridSizeChanged", this.$updatePanels);
+          window.onload = mxUtils.bind(this, function () {
+            document.querySelector(".sidebar").style.flexBasis = window.innerWidth < 800 ? "160px" : "300px";
+            this.$updatePanels();
+          });
+        },
+      });
+    })
+    .finally(() => {
+      $.bootstrapLoading.stop();
+    })
+    .catch((error) => {
+      console.error("Error loading resources:", error);
+    });
+})();

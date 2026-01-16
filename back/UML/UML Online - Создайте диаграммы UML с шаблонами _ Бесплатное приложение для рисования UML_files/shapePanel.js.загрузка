@@ -1,0 +1,530 @@
+Vue.component("shape-panel", {
+  template: `
+    <div class="shapeModal">
+      <div class="rb-section">
+        <div class="rb-section-title">Change Style</div>
+        <div class="style-wrapper">
+          <div class="style-wrapper-show" @click.stop='showStyleOptions = !showStyleOptions'>
+            <div class="stripBtn" :style="selectStyle"></div>
+            <div class="bt-triangle"></div>
+          </div>
+          <div class="style-wrapper-options" v-show="showStyleOptions">
+            <ul class="styleStrip">
+              <li class="style-strip" v-for="(item,index) in styleOptions" :key='index' @click.stop='changeStyle(item)'>
+                <div class="stripBtn" :style="{'background-color':item.bg,'background-image':item.bgimg,'border': '1px solid ' + item.bd}"></div>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rb-section">
+        <div class="rb-section-title shapeOrLine">{{shapeOrLine}}</div>
+        <div class="shape-wrapper">
+          <div class="shape-wrapper-show" @click.stop="showChangeOptions = !showChangeOptions">
+            <div class="shapeBtn">
+              <span class="shapeIcon">
+                <svg class="shapeSvg">
+                  <g>
+                    <g transform="translate(0.5,0.5)" style="visibility: visible" stroke-width="2" v-html='svg'></g>
+                  </g>
+                </svg>
+              </span>
+              <span class="shapeTitle">{{shapeTitle}}</span>
+            </div>
+            <div class="bt-triangle"></div>
+            <ul class='shapeStrip' v-if="shapeOrLineCheck" v-show='showChangeOptions'>
+              <li class="shape-strip" v-for="(value,key) in shapeModal" :key='key' @click.stop="changeShape(key)">
+                <span class="modalIcon">
+                  <svg class="modalSvg">
+                    <g>
+                      <g transform="translate(0.5,0.5)" style="visibility: visible;" stroke-width="2" v-html='value'></g>
+                      </g>
+                  </svg>
+                </span>
+                <span :title="key">{{key}}</span>
+              </li>
+            </ul>
+            <ul class='shapeStrip' v-else v-show='showChangeOptions'>
+              <li class="shape-strip" v-for="(value,key) in lineModal" :key="key" @click.stop="changeShape(key)">
+                <span class="modalIcon">
+                  <svg class="modalSvg">
+                    <g>
+                      <g transform="translate(0.5,0.5)" style="visibility: visible;" stroke-width="2" v-html="value"></g>
+                      </g>
+                  </svg>
+                </span>
+                <span :title="key">{{key}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rb-section">
+        <div class="rb-section-title">Fill</div>
+        <div class="fill-wrapper mt5">
+          <div class="fill-box">
+            <input type="checkbox" :checked="fillCheck" @change="fillColorChange"/>
+            <div class="fill-box-show" :class="{disabled: !fillCheck}" @click="FillColorPicker">
+              <div class="bt-triangle-m"></div>
+              <div class="fillBtn" :style="{'backgroundColor' : fillColor}" ref="fillBtn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rb-section-title">Gradient</div>
+        <div class="fill-wrapper mt5">
+          <div class="gradient-box">
+            <input type="checkbox" :class="{disabled: !fillCheck}" :checked="grdCheck" @change="grdColorChange"/>
+            <div class="gradient-box-show" :class="{disabled: !grdCheck}" @click="GrdColorPicker">
+              <div class="bt-triangle-m"></div>
+              <div class="fillBtn-g" :style="{'background-color':grdColor}" ref="grdBtn"></div>
+            </div>
+            <div class="directions-show" :class="{disabled: !grdCheck}" @click.stop="showDirections = grdCheck && !showDirections">
+              <div class="bt-triangle-m"></div>
+              <div class="direction-select">{{grdDirection}}</div>
+              <ul class="directions-options" v-show="showDirections">
+                <li class='direction-option' v-for="(value,key) in grdDirections" :key='key' @click="changeDirection(value)">{{value}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rb-section">
+        <div class="rb-section-title">Line</div>
+        <div class="line-wrapper mt5">
+          <input type="checkbox" :checked="strokeCheck" @change="strokeChangeEvent"/>
+          <div class="line-style-box ib" :class="{'disabled' : !strokeCheck}">
+            <div class="line-style-box-show" @click.stop="showStrokeStyles = strokeCheck && !showStrokeStyles">
+              <div class="lineStyle Line" v-html="strokeHtml"></div>
+              <div class="bt-triangle-m"></div>
+            </div>
+            <ul class="line-style-options" v-show="showStrokeStyles">
+              <li class="line-style-option Line" v-for="(value,key) in strokeStyles" 
+                :key="key" @click="changeStrokeStyle(value)">
+                <div :class="key"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="line-width-box" :class="{'disabled' : !strokeCheck}">
+            <div class="line-width-changebox" @mouseenter='lwb = true' @mouseleave='lwb = false'>
+              <div class="line-width-input">
+                <input type="text" :value="strokeWidth" @click="strokeWidthEvent($event)"/>
+              </div>
+              <div class="line-width-selectbox" v-show='lwb'>
+                <div class="triangle-s-t" @click="changeStrokeWidth(++strokeWidth)"></div>
+                <div class="triangle-s-b" @click="changeStrokeWidth(strokeWidth > 1 ? --strokeWidth : 1)"></div>
+              </div>
+              <span class="spacing-unit">pt</span>
+            </div>
+          </div>
+          <div class="line-color-box" :class="{'disabled' : !strokeCheck}">
+            <div class="line-color-show" @click="StrokeColorPicker">
+              <div class="bt-triangle-m"></div>
+              <div class="lineColor" :style="{'background-color' : strokeColor}" ref="strokeBtn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rb-section">
+        <label class="shadow rb-section-title" for="shadow">Shadow</label>
+        <input type="checkbox" class="pr" id="shadow" :checked='shadow' @change="changeShadow"/>
+      </div>
+      <div class="rb-section">
+        <label class="rounded rb-section-title" for="rounded">Rounded</label>
+        <input type="checkbox" class="pr" id="rounded" :checked='rounded' @change="changeRounded"/>
+      </div>
+    </div>
+  `,
+  data() {
+    return {
+      lwb: false, //status of line-width-changebox
+      shadow: false,
+      rounded: false,
+      strokeCheck: true,
+      strokeWidth: 2,
+      showStrokeStyles: false,
+      grdCheck: false, //status of gradientColor input
+      grdDirection: null,
+      showDirections: false,
+      fillCheck: true, //status of fillColor input
+      showChangeOptions: false,
+      shapeOrLineCheck: true,
+      showStyleOptions: false,
+      shapeTitle: "Manual Input",
+      shapeOrLine: "Change Shape",
+      fillColor: "rgb(255,255,255)",
+      grdColor: "transparent",
+      strokeColor: "rgb(42,42,42)",
+      borderStyle: "solid",
+      svg: "",
+      bgimg: "",
+      strokeHtml: "",
+      styleOptions: [
+        {
+          bg: "transparent",
+          bd: "rgb(42,42,42)",
+          bgimg:
+            "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkEzRDlBMUUwODYxMTExRTFCMzA4RDdDMjJBMEMxRDM3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkEzRDlBMUUxODYxMTExRTFCMzA4RDdDMjJBMEMxRDM3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTNEOUExREU4NjExMTFFMUIzMDhEN0MyMkEwQzFEMzciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTNEOUExREY4NjExMTFFMUIzMDhEN0MyMkEwQzFEMzciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5xh3fmAAAABlBMVEX////MzMw46qqDAAAAGElEQVR42mJggAJGKGAYIIGBth8KAAIMAEUQAIElnLuQAAAAAElFTkSuQmCC')",
+        },
+        { bg: "rgb(255, 255, 255)", bd: "rgb(42, 42, 42)", bgimg: "" },
+        { bg: "rgb(245, 245, 245)", bd: "rgb(102, 102, 102)", bgimg: "" },
+        { bg: "rgb(218, 232, 252)", bd: "rgb(108, 142, 191)", bgimg: "" },
+        { bg: "rgb(213, 232, 212)", bd: "rgb(130, 179, 102)", bgimg: "" },
+        { bg: "rgb(255, 230, 204)", bd: "rgb(215, 155, 0)", bgimg: "" },
+        { bg: "rgb(255, 242, 204)", bd: "rgb(214, 182, 86)", bgimg: "" },
+        { bg: "rgb(248, 206, 204)", bd: "rgb(184, 84, 80)", bgimg: "" },
+        { bg: "rgb(225, 213, 231)", bd: "rgb(150, 115, 166)", bgimg: "" },
+        { bg: "rgb(96, 169, 23)", bd: "rgb(45, 118, 0)", bgimg: "" },
+        { bg: "rgb(0, 138, 0)", bd: "rgb(0, 87, 0)", bgimg: "" },
+        { bg: "rgb(27, 161, 226)", bd: "rgb(0, 110, 175)", bgimg: "" },
+        { bg: "rgb(0, 80, 239)", bd: "rgb(0, 29, 188)", bgimg: "" },
+        { bg: "rgb(106, 0, 255)", bd: "rgb(55, 0, 204)", bgimg: "" },
+        { bg: "rgb(170, 0, 255)", bd: "rgb(119, 0, 204)", bgimg: "" },
+        { bg: "rgb(216, 0, 115)", bd: "rgb(165, 0, 64)", bgimg: "" },
+        { bg: "rgb(162, 0, 37)", bd: "rgb(111, 0, 0)", bgimg: "" },
+        { bg: "rgb(229, 20, 0)", bd: "rgb(178, 0, 0)", bgimg: "" },
+        { bg: "rgb(250, 104, 0)", bd: "rgb(199, 53, 0)", bgimg: "" },
+        { bg: "rgb(240, 163, 10)", bd: "rgb(189, 112, 0)", bgimg: "" },
+        { bg: "rgb(227, 200, 0)", bd: "rgb(176, 149, 0)", bgimg: "" },
+        { bg: "rgb(109, 135, 100)", bd: "rgb(58, 84, 49)", bgimg: "" },
+        { bg: "rgb(100, 118, 135)", bd: "rgb(49, 67, 84)", bgimg: "" },
+        { bg: "rgb(118, 96, 138)", bd: "rgb(67, 45, 87)", bgimg: "" },
+        { bg: "rgb(160, 82, 45)", bd: "rgb(109, 31, 0)", bgimg: "" },
+        { bg: "rgb(250, 215, 172)", bd: "rgb(180, 101, 4)", bgimg: "" },
+        { bg: "rgb(250, 217, 213)", bd: "rgb(174, 65, 50)", bgimg: "" },
+        { bg: "rgb(176, 227, 230)", bd: "rgb(14, 128, 136)", bgimg: "" },
+        { bg: "rgb(177, 221, 240)", bd: "rgb(16, 115, 158)", bgimg: "" },
+        { bg: "rgb(208, 206, 226)", bd: "rgb(86, 81, 126)", bgimg: "" },
+        { bg: "rgb(186, 200, 211)", bd: "rgb(35, 68, 93)", bgimg: "" },
+        { bg: "", bd: "rgb(102, 102, 102)", bgimg: "linear-gradient(rgb(245, 245, 245) 0px,rgb(179, 179, 179) 100%)" },
+        { bg: "", bd: "rgb(108, 142, 191)", bgimg: "linear-gradient(rgb(218, 232, 252) 0px,rgb(126, 166, 224) 100%)" },
+        { bg: "", bd: "rgb(130, 179, 102)", bgimg: "linear-gradient(rgb(213, 232, 212) 0px,rgb(151, 208, 119) 100%)" },
+        { bg: "", bd: "rgb(215, 155, 0)", bgimg: "linear-gradient(rgb(255, 205, 40) 0px,rgb(255, 165, 0) 100%)" },
+        { bg: "", bd: "rgb(214, 182, 86)", bgimg: "linear-gradient(rgb(255, 242, 204) 0px,rgb(255, 217, 102) 100%)" },
+        { bg: "", bd: "rgb(184, 84, 80)", bgimg: "linear-gradient(rgb(248, 206, 204) 0px,rgb(234, 107, 102) 100%)" },
+        { bg: "", bd: "rgb(153, 97, 133)", bgimg: "linear-gradient(rgb(230, 208, 222) 0px,rgb(213, 115, 157) 100%)" },
+        { bg: "rgb(238, 238, 238)", bd: "rgb(54, 57, 61)", bgimg: "" },
+        { bg: "rgb(249, 247, 237)", bd: "rgb(54, 57, 61)", bgimg: "" },
+        { bg: "rgb(255, 204, 153)", bd: "rgb(54, 57, 61)", bgimg: "" },
+        { bg: "rgb(204, 229, 255)", bd: "rgb(54, 57, 61)", bgimg: "" },
+        { bg: "rgb(255, 255, 136)", bd: "rgb(54, 57, 61)", bgimg: "" },
+        { bg: "rgb(205, 235, 139)", bd: "rgb(54, 57, 61)", bgimg: "" },
+        { bg: "rgb(255, 204, 204)", bd: "rgb(54, 57, 61)", bgimg: "" },
+      ],
+      lineModal: {
+        Line: '<path d="M 6.08 23.94 L 22.87 7.15" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 6.08 23.94 L 22.87 7.15" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 24.48 5.54 L 23.4 8.77 L 22.87 7.15 L 21.25 6.62 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Curve:
+          '<path d="M 6.08 23.94 Q 25.08 23.94 15.58 14.44 Q 6.08 4.94 21.95 4.94" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 6.08 23.94 Q 25.08 23.94 15.58 14.44 Q 6.08 4.94 21.95 4.94" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 24.23 4.94 L 21.19 6.46 L 21.95 4.94 L 21.19 3.42 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        "Bidirectional Arrow":
+          '<path d="M 13.84 18.86 L 16.1 21.12 L 8.62 21.83 L 9.33 14.35 L 11.59 16.61 L 17.48 10.72 L 15.22 8.46 L 22.7 7.75 L 21.99 15.23 L 19.73 12.97 Z" fill="none" stroke="white" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 13.84 18.86 L 16.1 21.12 L 8.62 21.83 L 9.33 14.35 L 11.59 16.61 L 17.48 10.72 L 15.22 8.46 L 22.7 7.75 L 21.99 15.23 L 19.73 12.97 Z" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"></path>',
+        Arrow:
+          '<path d="M 9.74 22.96 L 7.49 20.71 L 17.48 10.72 L 15.22 8.46 L 22.7 7.75 L 21.99 15.23 L 19.73 12.97 Z" fill="none" stroke="white" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 9.74 22.96 L 7.49 20.71 L 17.48 10.72 L 15.22 8.46 L 22.7 7.75 L 21.99 15.23 L 19.73 12.97 Z" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"></path>',
+        Link: '<path d="M 7.9 21.53 L 22.4 7.03 M 23.42 8.05 L 8.92 22.55 M 23.42 8.05" fill="none" stroke="white" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 7.9 21.53 L 22.4 7.03 M 23.42 8.05 L 8.92 22.55 M 23.42 8.05" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"></path>',
+        "Dashed Line":
+          '<path d="M 3.43 26.95 L 27.93 2.45" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 3.43 26.95 L 27.93 2.45" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="2.94 2.94" pointer-events="stroke"></path>',
+        "Bidirectional Connector":
+          '<path d="M 8.44 21.9 L 22.64 7.7" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 8.44 21.9 L 22.64 7.7" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 6.88 23.46 L 7.92 20.33 L 8.44 21.9 L 10.01 22.42 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 24.2 6.14 L 23.16 9.27 L 22.64 7.7 L 21.07 7.18 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        "Directional Connector":
+          '<path d="M 6.08 23.94 L 22.87 7.15" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 6.08 23.94 L 22.87 7.15" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 24.48 5.54 L 23.4 8.77 L 22.87 7.15 L 21.25 6.62 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        LineA:
+          '<path d="M 3.43 26.95 L 27.93 2.45" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 3.43 26.95 L 27.93 2.45" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path>',
+      },
+      styleModal: {
+        Rectangle: "rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;",
+        "Rounded Rectangle": "rounded=1;whiteSpace=wrap;html=1;",
+        Note: "shape=standard.note;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;",
+        Brace: "shape=standard.brace;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;",
+        Bracket: "shape=standard.bracket;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;",
+        Note1: "shape=standard.note1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;",
+        Note2: "shape=standard.note2;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;",
+        Process: "shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.15;",
+        Ellipse: "ellipse;whiteSpace=wrap;html=1;",
+        Square: "whiteSpace=wrap;html=1;aspect=fixed;",
+        Circle: "ellipse;whiteSpace=wrap;html=1;aspect=fixed;",
+        Diamond: "rhombus;whiteSpace=wrap;html=1;",
+        Hexagon: "shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;",
+        Triangle: "triangle;whiteSpace=wrap;html=1;",
+        Cylinder: "shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;",
+        Cloud: "ellipse;shape=cloud;whiteSpace=wrap;html=1;",
+        Line: "endArrow=classic;html=1;",
+        Curve: "curved=1;endArrow=classic;html=1;",
+        "Bidirectional Arrow": "shape=flexArrow;endArrow=classic;startArrow=classic;html=1;",
+        Arrow: "shape=flexArrow;endArrow=classic;html=1;",
+        Link: "shape=link;endArrow=none;html=1;",
+        "Dashed Line": "endArrow=none;dashed=1;html=1;",
+        "Bidirectional Connector": "endArrow=classic;startArrow=classic;html=1;",
+        "Directional Connector": "endArrow=classic;html=1;",
+        LineA: "endArrow=none;html=1;",
+      },
+      grdDirections: {
+        North: "north",
+        West: "west",
+        East: "east",
+        South: "south",
+      },
+      strokeStyles: {
+        Solid: { key: null, value: null },
+        Dashed: { key: "1", value: null },
+        Dashed2: { key: "1", value: "1 2" },
+        Dashed3: { key: "1", value: "1 4" },
+      },
+      shapeModal: null,
+    };
+  },
+  created() {
+    this.shapeModal = this.getShapeModal();
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClick);
+  },
+  computed: {
+    selectStyle() {
+      return {
+        "background-color": this.fillColor,
+        border: "1px " + this.borderStyle + " " + this.strokeColor,
+        "background-image": this.bgimg,
+      };
+    },
+  },
+  methods: {
+    strokeChangeEvent() {
+      MenuCommand.updateCellsStyle("strokeColor", this.strokeCheck ? "transparent" : "#000000");
+    },
+    strokeWidthEvent(e) {
+      e.target.select();
+      e.target.addEventListener("mousewheel", this.handleEvent);
+      e.target.addEventListener("keydown", this.handleEvent);
+      e.target.addEventListener("blur", this.handleEvent);
+    },
+    handleEvent(e) {
+      switch (e.type) {
+        case "mousewheel":
+          e.stopPropagation();
+          e.preventDefault();
+          this.changeStrokeWidth(e.deltaY > 0 ? (this.strokeWidth > 1 ? --this.strokeWidth : 1) : ++this.strokeWidth);
+          break;
+        case "keydown":
+          e.key == "Delete" && e.stopPropagation();
+          if (e.key == "ArrowDown") {
+            e.preventDefault();
+            this.changeStrokeWidth(this.strokeWidth > 1 ? --this.strokeWidth : 1);
+          }
+          if (e.key == "ArrowUp") {
+            e.preventDefault();
+            this.changeStrokeWidth(++this.strokeWidth);
+          }
+          e.key == "Enter" && e.target.blur();
+          break;
+        case "blur":
+          e.target.removeEventListener("mousewheel", this.handleEvent);
+          e.target.removeEventListener("keydown", this.handleEvent);
+          e.target.removeEventListener("blur", this.handleEvent);
+          this.changeStrokeWidth(typeof Number(this.strokeWidth) === "number" && !isNaN(Number(this.strokeWidth)) ? (this.strokeWidth > 0 ? this.strokeWidth : 1) : 2);
+          break;
+      }
+    },
+    changeStrokeWidth(val) {
+      this.strokeCheck && MenuCommand.updateCellsStyle("strokeWidth", val);
+    },
+    handleClick(e) {
+      this.showStyleOptions = false;
+      this.showChangeOptions = false;
+      this.showDirections = false;
+      this.showStrokeStyles = false;
+    },
+    fillColorChange() {
+      if (this.fillCheck) {
+        MenuCommand["FillColor"].execute("transparent");
+        MenuCommand["GradientColor"].execute("none");
+      } else {
+        MenuCommand["FillColor"].execute("#fff");
+      }
+    },
+    changeStrokeStyle(v) {
+      MenuCommand.updateCellsStyle("dashed", v.key);
+      MenuCommand.updateCellsStyle("dashPattern", v.value);
+      this.showStrokeStyles = false;
+    },
+    changeShadow() {
+      MenuCommand.updateCellsStyle("shadow", this.shadow ? "none" : 1);
+    },
+    changeRounded() {
+      MenuCommand.updateCellsStyle("rounded", this.rounded ? "none" : 1);
+    },
+    grdColorChange() {
+      MenuCommand["GradientColor"].execute(this.grdCheck ? "none" : "#b3b3b3");
+    },
+    FillColorPicker() {
+      this.fillCheck &&
+        this.handleColor(
+          this.$refs.fillBtn,
+          mxUtils.bind(this, function (val) {
+            MenuCommand["FillColor"].execute(val);
+          })
+        );
+    },
+    GrdColorPicker() {
+      this.grdCheck &&
+        this.handleColor(
+          this.$refs.grdBtn,
+          mxUtils.bind(this, function (val) {
+            MenuCommand["GradientColor"].execute(val);
+          })
+        );
+    },
+    StrokeColorPicker() {
+      this.strokeCheck &&
+        this.handleColor(
+          this.$refs.strokeBtn,
+          mxUtils.bind(this, function (val) {
+            MenuCommand["StrokeColor"].execute(val);
+          })
+        );
+    },
+    changeDirection(val) {
+      MenuCommand.updateCellsStyle("gradientDirection", val);
+    },
+    changeShape(key) {
+      graph.getSelectionCell().name = key;
+      graph.model.setStyle(graph.getSelectionCell(), this.styleModal[key]);
+      this.showChangeOptions = false;
+    },
+    changeStyle(item) {
+      if (item.bgimg.startsWith("url")) {
+        MenuCommand.updateCellsStyle("fillColor", "transparent");
+        MenuCommand.updateCellsStyle("gradientColor", "none");
+      } else if (item.bgimg.startsWith("linear-gradient")) {
+        var a = item.bgimg.slice(item.bgimg.indexOf("(") + 1);
+        var first = a.slice(0, a.indexOf(")") + 1);
+        var b = a.replace(first, "");
+        var second = b.slice(b.indexOf("rgb"), b.indexOf(")") + 1);
+        MenuCommand.updateCellsStyle("fillColor", this.rgb2hex(first));
+        MenuCommand.updateCellsStyle("gradientColor", this.rgb2hex(second));
+      } else {
+        MenuCommand.updateCellsStyle("fillColor", this.rgb2hex(item.bg));
+        MenuCommand.updateCellsStyle("gradientColor", "none");
+      }
+      MenuCommand.updateCellsStyle("strokeColor", item.bd);
+      this.showStyleOptions = false;
+    },
+    getShapeModal() {
+      const o1 = {
+        Rectangle: '<rect x="2.64" y="8.36" width="26.4" height="13.2" fill="#ffffff" stroke="#000000" pointer-events="all"></rect>',
+        "Rounded Rectangle": '<rect x="2.64" y="8.36" width="26.4" height="13.2" rx="1.98" ry="1.98" fill="#ffffff" stroke="#000000" pointer-events="all"></rect>',
+      };
+      const o0 = {
+        Process:
+          '<rect x="2.64" y="8.36" width="26.4" height="13.2" fill="#ffffff" stroke="#000000" pointer-events="all"></rect><path d="M 6.6 8.36 L 6.6 21.56 M 25.08 8.36 L 25.08 21.56" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 6.6 8.36 L 6.6 21.56 M 25.08 8.36 L 25.08 21.56" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Ellipse: '<ellipse cx="15.84" cy="14.96" rx="13.2" ry="8.8" fill="#ffffff" stroke="#000000" pointer-events="all"></ellipse>',
+        Square: '<rect x="3.41" y="2.48" width="24.8" height="24.8" fill="#ffffff" stroke="#000000" pointer-events="all"></rect>',
+        Circle: '<ellipse cx="15.81" cy="14.88" rx="12.4" ry="12.4" fill="#ffffff" stroke="#000000" pointer-events="all"></ellipse>',
+        Diamond: '<path d="M 15.81 2.48 L 28.21 14.88 L 15.81 27.28 L 3.41 14.88 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Hexagon: '<path d="M 9.24 6.16 L 22.44 6.16 L 29.04 14.96 L 22.44 23.76 L 9.24 23.76 L 2.64 14.96 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Triangle: '<path d="M 6.51 2.48 L 25.11 14.88 L 6.51 27.28 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Cylinder:
+          '<path d="M 6.51 7.44 C 6.51 0.83 25.11 0.83 25.11 7.44 L 25.11 22.32 C 25.11 28.93 6.51 28.93 6.51 22.32 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 6.51 7.44 C 6.51 12.4 25.11 12.4 25.11 7.44" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Cloud:
+          '<path d="M 9.24 10.56 C 3.96 10.56 2.64 14.96 6.86 15.84 C 2.64 17.78 7.39 22 10.82 20.24 C 13.2 23.76 21.12 23.76 23.76 20.24 C 29.04 20.24 29.04 16.72 25.74 14.96 C 29.04 11.44 23.76 7.92 19.14 9.68 C 15.84 7.04 10.56 7.04 9.24 10.56 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+      };
+      const note = {
+        Note: '<path d="M 6 2.5 L 22 2.5 L 26 6.5 L 26 27.5 L 6 27.5 L 6 2.5 Z" fill="#ffffaa" stroke="none" pointer-events="all"></path><path d="M 22 2.5 L 22 6.5 L 26 6.5 Z" fill="#cdcdcd" stroke="none" pointer-events="all"></path><rect x="6" y="2.5" width="0" height="0" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="6" y="2.5" width="0" height="0" fill="none" stroke="#000000" pointer-events="all"></rect>',
+        Brace:
+          '<path d="M 5.33 5.85 Q 4.16 5.85 4.16 7.02 L 4.16 13.78 Q 4.16 14.95 2.99 14.95 Q 4.16 14.95 4.16 16.12 L 4.16 22.88 Q 4.16 24.05 5.33 24.05" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 5.33 5.85 Q 4.16 5.85 4.16 7.02 L 4.16 13.78 Q 4.16 14.95 2.99 14.95 Q 4.16 14.95 4.16 16.12 L 4.16 22.88 Q 4.16 24.05 5.33 24.05" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 26.65 24.05 Q 27.82 24.05 27.82 22.88 L 27.82 16.12 Q 27.82 14.95 28.99 14.95 Q 27.82 14.95 27.82 13.78 L 27.82 7.02 Q 27.82 5.85 26.65 5.85" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 26.65 24.05 Q 27.82 24.05 27.82 22.88 L 27.82 16.12 Q 27.82 14.95 28.99 14.95 Q 27.82 14.95 27.82 13.78 L 27.82 7.02 Q 27.82 5.85 26.65 5.85" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Bracket:
+          '<path d="M 5.33 5.85 L 2.99 7.67 L 2.99 22.23 L 5.33 24.05 M 26.65 24.05 L 28.99 22.23 L 28.99 7.67 L 26.65 5.85" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 5.33 5.85 L 2.99 7.67 L 2.99 22.23 L 5.33 24.05 M 26.65 24.05 L 28.99 22.23 L 28.99 7.67 L 26.65 5.85" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><rect x="2.99" y="5.85" width="0" height="0" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="2.99" y="5.85" width="0" height="0" fill="none" stroke="#000000" pointer-events="all"></rect>',
+        Note1:
+          '<path d="M 13.86 27.54 C 14.94 27.54 15.48 27 15.48 25.93 L 15.48 16.6 C 15.48 15.52 16.25 14.98 17.82 14.98 C 16.25 14.98 15.48 14.45 15.48 13.37 L 15.48 4.04 C 15.48 2.97 14.94 2.43 13.86 2.43" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 13.86 27.54 C 14.94 27.54 15.48 27 15.48 25.93 L 15.48 16.6 C 15.48 15.52 16.25 14.98 17.82 14.98 C 16.25 14.98 15.48 14.45 15.48 13.37 L 15.48 4.04 C 15.48 2.97 14.94 2.43 13.86 2.43" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+        Note2:
+          '<path d="M 18 2.34 C 16.92 2.34 16.38 2.88 16.38 3.96 L 16.38 13.32 C 16.38 14.4 15.61 14.94 14.04 14.94 C 15.61 14.94 16.38 15.48 16.38 16.56 L 16.38 25.92 C 16.38 27 16.92 27.54 18 27.54" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 18 2.34 C 16.92 2.34 16.38 2.88 16.38 3.96 L 16.38 13.32 C 16.38 14.4 15.61 14.94 14.04 14.94 C 15.61 14.94 16.38 15.48 16.38 16.56 L 16.38 25.92 C 16.38 27 16.92 27.54 18 27.54" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path>',
+      };
+      return appName == "flowchart" ? Object.assign(o1, o0) : Object.assign(o1, note, o0);
+    },
+    updateStatus() {
+      var style;
+      if (!graph.isSelectionEmpty()) {
+        style = graph.getCellStyle(graph.getSelectionCell());
+      }
+      this.fillColor = mxUtils.getValue(style, mxConstants.STYLE_FILLCOLOR, null);
+      this.grdColor = mxUtils.getValue(style, mxConstants.STYLE_GRADIENTCOLOR, "none");
+      this.strokeColor = mxUtils.getValue(style, mxConstants.STYLE_STROKECOLOR, "transparent");
+      this.grdDirection = mxUtils.getValue(style, mxConstants.STYLE_GRADIENT_DIRECTION, null);
+      this.strokeWidth = mxUtils.getValue(style, mxConstants.STYLE_STROKEWIDTH, 1);
+      var rounded = mxUtils.getValue(style, mxConstants.STYLE_ROUNDED, 0);
+      var shadow = mxUtils.getValue(style, mxConstants.STYLE_SHADOW, 0);
+      this.rounded = rounded == "1" ? true : false;
+      this.shadow = shadow == "1" ? true : false;
+      this.strokeCheck = this.strokeColor == "transparent" ? false : true;
+      var dashed = mxUtils.getValue(style, mxConstants.STYLE_DASHED, 0);
+      if (dashed) {
+        switch (mxUtils.getValue(style, mxConstants.STYLE_DASH_PATTERN, 0)) {
+          case "1 2":
+            this.strokeHtml = "<div class='Dashed2'></div>";
+            break;
+          case "1 4":
+            this.strokeHtml = "<div class='Dashed3'></div>";
+            break;
+          default:
+            this.strokeHtml = "<div class='Dashed'></div>";
+            break;
+        }
+      } else {
+        this.strokeHtml = "<div class='Solid'></div>";
+      }
+      var dir = "bottom";
+      switch (this.grdDirection) {
+        case "west":
+          dir = "left";
+          break;
+        case "east":
+          dir = "right";
+          break;
+        case "north":
+          dir = "top";
+          break;
+        default:
+          dir = "bottom";
+          break;
+      }
+      if (this.fillColor == null || this.fillColor == "transparent") {
+        this.bgimg = this.styleOptions[0].bgimg;
+        this.fillCheck = false;
+      } else {
+        this.bgimg = "";
+        this.fillCheck = true;
+      }
+      if (this.grdColor == null || this.grdColor == "transparent" || this.grdColor == "none") {
+        this.grdCheck = false;
+        this.grdColor = "";
+      } else {
+        this.grdCheck = true;
+        this.bgimg = "linear-gradient( to " + dir + "," + this.fillColor + " 0px, " + this.grdColor + " 100%)";
+      }
+      if (this.grdCheck) {
+        this.grdDirection = this.grdDirection != null ? this.grdDirection.substring(0, 1).toUpperCase() + this.grdDirection.substring(1) : "South";
+        this.bgimg = "linear-gradient( to " + dir + "," + this.fillColor + " 0px, " + this.grdColor + " 100%)";
+      } else {
+        this.grdDirection = null;
+      }
+      if (!graph.isSelectionEmpty()) {
+        var t = graph.getSelectionCell().name;
+        this.shapeTitle = t ? t : style.shape;
+        if (graph.getSelectionCell().isVertex()) {
+          this.shapeOrLine = "Change Shape";
+          this.shapeOrLineCheck = true;
+          this.svg = this.shapeModal[t] == undefined ? "" : this.shapeModal[t];
+        } else {
+          this.shapeOrLine = "Change Line";
+          this.shapeOrLineCheck = false;
+          this.svg = this.lineModal[t] == undefined ? "" : this.lineModal[t];
+        }
+      }
+    },
+    rgb2hex(color) {
+      var rgb = color.split(",");
+      var r = parseInt(rgb[0].split("(")[1]);
+      var g = parseInt(rgb[1]);
+      var b = parseInt(rgb[2].split(")")[0]);
+      var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+      return hex;
+    },
+  },
+});

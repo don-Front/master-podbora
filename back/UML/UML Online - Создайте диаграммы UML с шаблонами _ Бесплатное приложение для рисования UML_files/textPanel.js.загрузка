@@ -1,0 +1,364 @@
+Vue.component("text-panel", {
+  template: `
+    <div class="textModal">
+      <div class="rb-section fontWrapper">
+          <div class="font-wrapper">
+          <div class="font-family-wrapper">
+              <div class="font-family-show" @click.stop="showMenu = showMenu == 'FontFamilyMenu' ? null : 'FontFamilyMenu'">
+                  <div class="font-family-select" :style="{'font-family':fontFamily}">{{fontFamily}}</div>
+                  <div class="bb-m"></div>
+              </div>
+              <ul class='font-family-ul' v-if='showMenu == "FontFamilyMenu"'>
+                  <li v-for='it in FontFamilyMenu' :key="it.id" @click='changeFontFamily(it.id)'>
+                      <a :style='"font-family: "+it.id'  v-html="it.id"></a>
+                  </li>
+              </ul>
+          </div>
+          <div class="font-size-box">
+              <div class="font-size-changebox">
+                  <div class="font-size-input">
+                      <input type="text" :value="fontSize" @click="focusEvent($event)"/>
+                  </div>
+                  <div class="bb-m" @click.stop="showMenu = showMenu == 'FontSizeMenu' ? null : 'FontSizeMenu'"></div>
+                  <ul class="font-size-ul" v-if='showMenu == "FontSizeMenu"'>
+                      <li v-for="item in FontSizeOptions" :key="item.id" @click="changeKeyValue('fontSize',item.id)">{{item.id}}</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="fontColorShow" :style="{'background':fontColor}" @click="colorPicker($event.target,'FontColor')"></div>
+          </div>
+          <div class="moreColorSelection" v-show="fontColor != 'transparent'">
+            <div class="fill-wrapper mt5 backColor-box jcs-aic">
+                <input type="checkbox" class="labelBackColor" :checked='lbackCheck' @change="changeEvent(1)"/>
+                <div class="moreColorTitle abb" title="Background Color">Background Color</div>
+                <div class="backColorShow" v-show='lbackCheck' :style="{'background':labelBackgroundColor}" @click="colorPicker($event.target,'LabelBackgroundColor')"></div>
+            </div>
+            <div class="fill-wrapper mt5 bderColor-box jcs-aic">
+                <input type="checkbox" class="labelBderColor" :checked='lbordCheck' @change="changeEvent()"/>
+                <div class="moreColorTitle abb" title="Border Color">Border Color</div>
+                <div class="bderColorShow" v-show='lbordCheck' :style="{'background':labelBorderColor}" @click="colorPicker($event.target,'LabelBorderColor')"></div>
+            </div>
+          </div>
+      </div>
+      <div class="rb-section">
+          <div class="fontType-command" v-for="item in TextFormats" :class="{'select': item.selected}" :key="item.id" :title="item.id" @click="changeFontStyle(item)">
+              <span class="icon iconfont" v-html="item.icon"></span> 
+          </div>
+      </div>
+      <div class="rb-section">
+          <div class="textAlign-wrapper ib">
+              <div class="alignItems" v-for="item in AlignFormats" :class="{'select': align == item.dir}" 
+                :key="item.id" :title="item.id" @click="changeAlign(item.id)">
+                  <span class="icon iconfont" v-html="item.icon"></span>
+              </div>
+          </div>
+          <div class="textAlign-wrapper ib">
+              <div class="alignItems" v-for="item in VAlignFormats" :class="{'select': valign == item.dir}" 
+                :key="item.id" :title="item.id" @click="changeAlign(item.id)">
+                  <span class="icon iconfont" v-html="item.icon"></span>
+              </div>
+          </div>
+      </div>
+      <div class="rb-section">
+          <div class="btn-wrapper">
+            <label class="shadow rb-section-title abb" for="wordWrap">Word Wrap</label>
+            <input type="checkbox" class="pl0" id="wordWrap" @change="wordWrap($event.target)" :checked="ww"/>
+          </div>
+          <div class="btn-wrapper">
+            <label class="shadow rb-section-title abb" for="formatText">Formatted Text</label>
+            <input type="checkbox" class="pl0" id="formatText" @change="formatText($event.target)" :checked="ft"/>
+          </div>
+      </div>
+      <div class="rb-section">
+          <div class="rb-section-title" style="display: inline-block">Opacity</div>
+          <div class="opacity-box">
+            <div class="opacity-changebox" @mouseenter='ob = true' @mouseleave='ob = false'>
+                <div class="opacity-input">
+                  <input type="text" :value='opacity' @click="opacityEvent($event)"/>
+                </div>
+                <div class="opacity-selectbox" v-show="ob">
+                  <div class="triangle-s-t" @click="changeKeyValue('textOpacity', opacity + 10 < 100 ? opacity + 10 : 100)"></div>
+                  <div class="triangle-s-b" @click="changeKeyValue('textOpacity', opacity - 10 > 0 ? opacity - 10 : 0)"></div>
+                </div>
+                <span class="opacity-unit">%</span>
+            </div>
+          </div>
+      </div>
+      <div class="rb-section spacing-section">
+          <div class="rb-section-title ib" style="margin-right: 18px">Spacing</div>
+          <div class="spacing-box" v-for="item in SpacingFormats" :key="item.key">
+              <span>{{item.id}}</span>
+              <div class="spacing-changebox" @mouseenter='sb = item.id' @mouseleave='sb = null'>
+                  <div class="spacing-input">
+                      <input type="text" :value='item.val' :data-key="item.key" @click="spacingEvent($event)"/>
+                  </div>
+                  <div class="spacing-selectbox" v-show="sb == item.id">
+                      <div class="triangle-s-t" @click="changeKeyValue(item.key, ++item.val)"></div>
+                      <div class="triangle-s-b" @click="changeKeyValue(item.key, --item.val)"></div>
+                  </div>
+                  <span class="spacing-unit">pt</span>
+              </div>
+          </div>
+      </div>
+    </div>
+    `,
+  data() {
+    return {
+      sb: null, // spacing box
+      ob: false, //opacity box
+      fontSize: 12,
+      fontFamily: "Roboto",
+      fontColor: "#7f7f7f",
+      align: "center",
+      valign: "middle",
+      fontStyle: 0,
+      lbackCheck: false, //labelBackgroundColor status
+      lbordCheck: false, //labelBorderColor status
+      ww: true, //wordWrap
+      ft: true, //formatText
+      labelBackgroundColor: "",
+      labelBorderColor: "",
+      opacity: 100,
+      showMenu: null,
+      SpacingFormats: [
+        { id: "Global", val: 0, key: "spacing" },
+        { id: "Top", val: 0, key: "spacingTop" },
+        { id: "Bottom", val: 0, key: "spacingBottom" },
+        { id: "Left", val: 0, key: "spacingLeft" },
+        { id: "Right", val: 0, key: "spacingRight" },
+      ],
+      TextFormats: [
+        { id: "TextBold", icon: "&#xe6b0;", selected: false, num: 1 },
+        { id: "TextItalic", icon: "&#xe6c9;", selected: false, num: 2 },
+        { id: "TextUnderline", icon: "&#xe6df;", selected: false, num: 4 },
+        { id: "TextStrikethrough", icon: "&#xe717;", selected: false, num: 8 },
+      ],
+      AlignFormats: [
+        { id: "AlignLeft", icon: "&#xe6ae;", dir: "left" },
+        { id: "AlignCenter", icon: "&#xe6be;", dir: "center" },
+        { id: "AlignRight", icon: "&#xe6af;", dir: "right" },
+      ],
+      VAlignFormats: [
+        { id: "AlignTop", icon: "&#xe8e2;", dir: "top" },
+        { id: "AlignMiddle", icon: "&#xe8e3;", dir: "middle" },
+        { id: "AlignBottom", icon: "&#xe8e1;", dir: "bottom" },
+      ],
+      FontSizeOptions: [{ id: 72 }, { id: 48 }, { id: 36 }, { id: 28 }, { id: 26 }, { id: 24 }, { id: 22 }, { id: 20 }, { id: 18 }, { id: 16 }, { id: 14 }, { id: 12 }],
+      FontFamilyMenu: [
+        { id: "Roboto" },
+        { id: "Arial" },
+        { id: "Helvetical" },
+        { id: "Verdana" },
+        { id: "Times New Roman" },
+        { id: "Garamond" },
+        { id: "Comic Sans MS" },
+        { id: "Courier New" },
+        { id: "Georgia" },
+        { id: "Lucida Console" },
+        { id: "Tahoma" },
+      ],
+    };
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClick);
+  },
+  methods: {
+    spacingEvent(e) {
+      e.target.focus();
+      e.target.select();
+      e.target.addEventListener("mousewheel", this.spacingHandleEvent);
+      e.target.addEventListener("keydown", this.spacingHandleEvent);
+      e.target.addEventListener("blur", this.spacingHandleEvent);
+    },
+    opacityEvent(e) {
+      e.target.focus();
+      e.target.select();
+      e.target.addEventListener("mousewheel", this.opacityHandleEvent);
+      e.target.addEventListener("keydown", this.opacityHandleEvent);
+      e.target.addEventListener("blur", this.opacityHandleEvent);
+    },
+    formatText(el) {
+      graph.isEditing() && graph.stopEditing();
+      if (el.checked) {
+        var style = graph.getSelectionCell().style;
+        var a = style + "html=1;";
+        graph.model.setStyle(graph.getSelectionCell(), a);
+      } else {
+        var style = graph.getSelectionCell().style;
+        var a = style.replace("html=1;", "");
+        graph.model.setStyle(graph.getSelectionCell(), a);
+      }
+    },
+    wordWrap(el) {
+      graph.isEditing() && graph.stopEditing();
+      MenuCommand.updateCellsStyle("whiteSpace", el.checked ? "wrap" : "none");
+    },
+    changeEvent(flag) {
+      if (flag) {
+        this.lbackCheck = !this.lbackCheck;
+        MenuCommand["LabelBackgroundColor"].execute(this.lbackCheck ? "#fff" : "none");
+        this.LabelBackgroundColor = this.lbackCheck ? "#fff" : "transparent";
+      } else {
+        this.lbordCheck = !this.lbordCheck;
+        MenuCommand["LabelBorderColor"].execute(this.lbordCheck ? "#000" : "none");
+        this.LabelBackgroundColor = this.lbordCheck ? "#000" : "transparent";
+      }
+    },
+    changeAlign(key) {
+      MenuCommand[key].execute();
+    },
+    changeFontStyle(item) {
+      MenuCommand[item.id].execute();
+    },
+    colorPicker(e, type) {
+      this.handleColor(
+        e,
+        mxUtils.bind(this, function (val) {
+          MenuCommand[type].execute(val);
+        })
+      );
+    },
+    handleClick(e) {
+      this.showMenu = null;
+    },
+    focusEvent(e) {
+      e.target.select();
+      e.target.addEventListener("keydown", this.fontSizeHandleEvent);
+      e.target.addEventListener("mousewheel", this.fontSizeHandleEvent);
+      e.target.addEventListener("blur", this.fontSizeHandleEvent);
+    },
+    fontSizeHandleEvent(e) {
+      switch (e.type) {
+        case "mousewheel":
+          e.stopPropagation();
+          e.preventDefault();
+          this.changeKeyValue("fontSize", e.deltaY > 0 ? (--this.fontSize > 11 ? --this.fontSize : 11) : ++this.fontSize);
+          break;
+        case "keydown":
+          e.keyCode == "Delete" && e.stopPropagation();
+          if (e.key == "ArrowDown") {
+            e.preventDefault();
+            this.changeKeyValue("fontSize", this.fontSize > 11 ? --this.fontSize : 11);
+          }
+          if (e.key == "ArrowUp") {
+            e.preventDefault();
+            this.changeKeyValue("fontSize", this.fontSize < 72 ? ++this.fontSize : 72);
+          }
+          e.key == "Enter" && e.target.blur();
+          break;
+        case "blur":
+          e.target.removeEventListener("mousewheel", this.fontSizeHandleEvent);
+          e.target.removeEventListener("keydown", this.fontSizeHandleEvent);
+          e.target.removeEventListener("blur", this.fontSizeHandleEvent);
+          this.fontSize = e.target.value;
+          typeof Number(this.fontSize) === "number" && !isNaN(Number(this.fontSize))
+            ? this.fontSize >= 11 && this.fontSize <= 72
+              ? this.changeKeyValue("fontSize", this.fontSize)
+              : this.changeKeyValue("fontSize", 72)
+            : this.changeKeyValue("fontSize", 12);
+          break;
+      }
+    },
+    spacingHandleEvent(e) {
+      var val = Number(e.target.value);
+      switch (e.type) {
+        case "mousewheel":
+          e.stopPropagation();
+          e.preventDefault();
+          this.changeKeyValue(e.target.dataset.key, e.deltaY > 0 ? --val : ++val);
+          break;
+        case "blur":
+          e.target.removeEventListener("mousewheel", this.spacingHandleEvent);
+          e.target.removeEventListener("keydown", this.spacingHandleEvent);
+          e.target.removeEventListener("blur", this.spacingHandleEvent);
+          var val = e.target.value;
+          typeof Number(val) === "number" && !isNaN(Number(val)) ? this.changeKeyValue(e.target.dataset.key, val) : this.changeKeyValue(e.target.dataset.key, 0);
+          break;
+        case "keydown":
+          e.keyCode == "Delete" && e.stopPropagation();
+          if (e.key == "ArrowDown") {
+            e.preventDefault();
+            this.changeKeyValue(e.target.dataset.key, --val);
+          }
+          if (e.key == "ArrowUp") {
+            e.preventDefault();
+            this.changeKeyValue(e.target.dataset.key, ++val);
+          }
+          e.key == "Enter" && e.target.blur();
+          break;
+      }
+    },
+    opacityHandleEvent(e) {
+      switch (e.type) {
+        case "mousewheel":
+          e.stopPropagation();
+          e.preventDefault();
+          this.changeKeyValue("textOpacity", e.deltaY > 0 ? (this.opacity > 0 ? --this.opacity : 0) : this.opacity < 100 ? ++this.opacity : 100);
+          break;
+        case "blur":
+          e.target.removeEventListener("mousewheel", this.opacityHandleEvent);
+          e.target.removeEventListener("keydown", this.opacityHandleEvent);
+          e.target.removeEventListener("blur", this.opacityHandleEvent);
+          this.opacity = e.target.value;
+          typeof Number(this.opacity) === "number" && !isNaN(Number(this.opacity))
+            ? this.changeKeyValue("textOpacity", this.opacity >= 0 && this.opacity <= 100 ? this.opacity : 100)
+            : this.changeKeyValue("textOpacity", 100);
+          break;
+        case "keydown":
+          e.key == "Delete" && e.stopPropagation();
+          if (e.key == "ArrowDown") {
+            e.preventDefault();
+            this.changeKeyValue("textOpacity", this.opacity - 10 > 0 ? this.opacity - 10 : 0);
+          }
+          if (e.key == "ArrowUp") {
+            e.preventDefault();
+            this.changeKeyValue("textOpacity", this.opacity + 10 < 100 ? this.opacity + 10 : 100);
+          }
+          e.key == "Enter" && e.target.blur();
+          break;
+      }
+    },
+    updateStatus() {
+      var style;
+      if (!graph.isSelectionEmpty()) {
+        style = graph.getCellStyle(graph.getSelectionCell());
+      }
+      this.fontFamily = mxUtils.getValue(style, mxConstants.STYLE_FONTFAMILY, "Roboto");
+      this.fontSize = mxUtils.getValue(style, mxConstants.STYLE_FONTSIZE, 12);
+      this.fontColor = mxUtils.getValue(style, mxConstants.STYLE_FONTCOLOR, "#7f7f7f");
+      this.labelBackgroundColor = mxUtils.getValue(style, mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, "");
+      this.labelBorderColor = mxUtils.getValue(style, mxConstants.STYLE_LABEL_BORDERCOLOR, "");
+      this.lbackCheck = this.labelBackgroundColor ? true : false;
+      this.lbordCheck = this.labelBorderColor ? true : false;
+      this.fontStyle = mxUtils.getValue(style, mxConstants.STYLE_FONTSTYLE, 0);
+      this.ww = mxUtils.getValue(style, mxConstants.STYLE_WHITE_SPACE, null) == "wrap" ? true : false;
+      this.ft = mxUtils.getValue(style, "html", 0) == 1 ? true : false;
+      this.opacity = mxUtils.getValue(style, "textOpacity", 100);
+      for (let i = 0; i < this.AlignFormats.length; i++) {
+        const el = this.AlignFormats[i];
+        this.align = mxUtils.getValue(style, mxConstants.STYLE_ALIGN, mxConstants.ALIGN_CENTER);
+        el.selected = this.align == el.dir;
+      }
+      for (let i = 0; i < this.VAlignFormats.length; i++) {
+        const el = this.VAlignFormats[i];
+        this.valign = mxUtils.getValue(style, mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_MIDDLE);
+        el.selected = this.valign == el.dir;
+      }
+      for (let i = 0; i < this.TextFormats.length; i++) {
+        const el = this.TextFormats[i];
+        el.selected = (this.fontStyle & el.num) == el.num;
+      }
+      for (let i = 0; i < this.SpacingFormats.length; i++) {
+        const el = this.SpacingFormats[i];
+        el.val = mxUtils.getValue(style, el.key, 0);
+      }
+      return style;
+    },
+    changeFontFamily(font) {
+      MenuCommand.get("FontFamily").execute(font);
+    },
+    changeKeyValue(key, size) {
+      MenuCommand.updateCellsStyle(key, size);
+    },
+  },
+});

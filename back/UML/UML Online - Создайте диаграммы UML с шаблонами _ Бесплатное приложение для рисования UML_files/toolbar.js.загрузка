@@ -1,0 +1,533 @@
+Vue.component("toolbar-panel", {
+  template: `
+    <div id="toolbar" class="toolbar_container">
+        <div class="toolbar" ref='moveBar'>
+            <div v-for='item in tools' :key='item.id' :class="item.type == 1 ? 'property-bar-item' : 'tool-sep'">
+                <a v-if='item.id == "FontSize"' class="fontSizeBox" :class="{'disabled': item.enabled}">
+                    <div class="fontSizeBox-btn decreaseBtn" @click="decreaseFontsize(item.enabled)">-</div>
+                    <div class="fontSizeShowarea" >
+                        <input type="text" class="fontSizeInput" :value="fs" @click="focusEvent($event,item.enabled)"/>
+                        <span>px</span>
+                    </div>
+                    <div class="fontSizeBox-btn creaseBtn" @click="creaseFontsize(item.enabled)">+</div>
+                </a>
+                <a v-else-if='item.id == "Layers"' v-html='item.html' class="property-item" :class="{'disabled': item.enabled}"
+                    @mouseover="overEvent($event,item.title)" 
+                    @mouseleave="leaveEvent"
+                    @click.stop="command($event,item)"></a>
+                <a v-else-if='item.id != void 0' class="property-item" :class="{'disabled': item.enabled,'text-style-selected': item.selected}"
+                    @mouseover="overEvent($event,item.title)" 
+                    @mouseleave="leaveEvent"
+                    @click.stop="command($event,item)">
+                    <span v-if="item.ff" :id='ff.id' :class='ff.cls' :style="{'font-family':ff.val}" v-html='ff.val'></span>
+                    <i class="iconfont" v-if='item.type == 1 && item.icon != void 0' v-html='item.icon'></i>
+                    <div v-if='item.color' class="bottom-color" :id="item.colorId" :style="dynamicColor(item.clr)"></div>
+                    <i class="iconfont" v-if='item.downicon'>&#xe626;</i>
+                </a> 
+            </div>
+        </div>
+        <div class="rightTool" title="Format Panel" >
+            <a class="property-item" @click.stop.prevent="toggleFormat($event.target)" style="color:#0028ff">
+                <i class="icon iconfont">&#xe6ff;</i>
+            </a>
+        </div>
+        <div class="toolbar-view" v-if='toolbarChange'>
+            <div class="toolbar-cont-l" @click="toolbarShift($event)" @mouseover='toolbarShift($event)'><span class="icon iconfont">&#xe715;</span></div>
+            <div class="toolbar-cont-r" @click="toolbarShift($event,1)" @mouseover='toolbarShift($event,1)'><span class="icon iconfont">&#xe716;</span></div>
+        </div>
+        <input id="fileSelector_image" @change='insertLocalImage' type="file" style="display: none" accept=".jpg,.png,.gif,.jpeg,.tif,.tiff,.bmp,.web"/>
+        <div id="mytitle" v-show="showTitle" :style="posCalc">{{title}}</div>
+        <ul class='toolMenu' v-if='showMenu == "FontFamilyMenu"' :style="menuShift">
+            <li v-for='it in FontFamilyMenu' :key="it.id" @click='changeFontFamily(it.id)'>
+                <a :style='"font-family: "+it.id'  v-html="it.id"></a>
+            </li>
+        </ul>
+        <ul class='toolMenu' v-if='LineMenu[showMenu]' :style="menuShift">
+            <li v-for='it in LineMenu[showMenu]' @click='lineCommand(it.id)'>
+                <a v-html='it.html'></a>
+            </li>
+        </ul>
+    </div>
+    `,
+  data() {
+    return {
+      // xml: dia_js,
+      format: true,
+      showTitle: false,
+      title: null,
+      left: 0,
+      top: 0,
+      shiftL: 0,
+      shiftT: 0,
+      toolbarChange: false,
+      showMenu: null,
+      fs: 12,
+      fontStyle: 0,
+      fontColor: "#7f7f7f",
+      fillColor: "#7f7f7f",
+      strokeColor: "#7f7f7f",
+      align: "center",
+      valign: "middle",
+      brush: false,
+      brushTitle: "Copy Style(Ctrl+Shift+C)",
+      tools: [
+        { type: 1, id: "Undo", title: "Undo(Ctrl+Z)", icon: "&#xe6f5;", enabled: true },
+        { type: 1, id: "Redo", title: "Redo(Ctrl+Y)", icon: "&#xe6f6;", enabled: true },
+        { type: 0 },
+        { type: 1, id: "Brush", title: "Copy Style(Ctrl+Shift+C)", icon: "&#xe604;", enabled: true },
+        { type: 0 },
+        { type: 1, id: "FontFamilyMenu", title: "Font Family", downicon: true, enabled: true, ff: true },
+        { type: 1, id: "FontSize", title: "Font Size", enabled: true },
+        { type: 1, id: "TextBold", title: "Text Bold (Ctrl+B)", icon: "&#xe6b0;", enabled: true, selected: false, num: 1 },
+        { type: 1, id: "TextItalic", title: "Text Italic (Ctrl+I)", icon: "&#xe6c9;", enabled: true, selected: false, num: 2 },
+        { type: 1, id: "TextUnderline", title: "Text Underline (Ctrl+U)", icon: "&#xe6df;", enabled: true, selected: false, num: 4 },
+        { type: 1, id: "FontColor", title: "Text Color", icon: "&#xe6ad;", color: 1, downicon: true, colorId: "text_color_picker_val", clr: "fontColor", enabled: true },
+        { type: 0 },
+        { type: 1, id: "AlignLeft", title: "Text Left", icon: "&#xe6ae;", enabled: true, selected: false, dir: "left" },
+        { type: 1, id: "AlignCenter", title: "Text Center", icon: "&#xe6be;", enabled: true, selected: false, dir: "center" },
+        { type: 1, id: "AlignRight", title: "Text Right", icon: "&#xe6af;", enabled: true, selected: false, dir: "right" },
+        { type: 1, id: "AlignTop", title: "Text Top", icon: "&#xe8e2;", enabled: true, selected: false, dir: "top" },
+        { type: 1, id: "AlignMiddle", title: "Text Middle", icon: "&#xe8e3;", enabled: true, selected: false, dir: "middle" },
+        { type: 1, id: "AlignBottom", title: "Text Bottom", icon: "&#xe8e1;", enabled: true, selected: false, dir: "bottom" },
+        { type: 1, id: "FillColor", title: "Fill Color", icon: "&#xea7c;", color: 1, downicon: true, colorId: "fill_color_picker_val", clr: "fillColor", enabled: true },
+        { type: 1, id: "StrokeColor", title: "Line Color", icon: "&#xe609;", color: 1, downicon: true, colorId: "pen_color_picker_val", clr: "strokeColor", enabled: true },
+        { type: 1, id: "LineWidthMenu", title: "Linewidth", icon: "&#xe685;", downicon: true, enabled: true },
+        { type: 1, id: "LineStyleMenu", title: "LineStyle", icon: "&#xe72d;", downicon: true, enabled: true },
+        { type: 0 },
+        { type: 1, id: "WayPointsMenu", title: "WayPoints", icon: "&#xe69b;", downicon: true, enabled: true },
+        { type: 1, id: "Table", title: "Table", icon: "&#xe706;", downicon: true, enabled: false },
+        {
+          type: 1,
+          id: "Layers",
+          title: "Layers",
+          html: `<img style="height: 18px; vertical-align: middle" src="` + baseUrl + `/images/layers.png"/>`,
+          enabled: true,
+        },
+        { type: 0 },
+        { type: 1, id: "ToFront", title: "To Front", icon: "&#xe6ec;", enabled: true },
+        { type: 1, id: "ToBack", title: "To Back", icon: "&#xe6ea;", enabled: true },
+        { type: 1, id: "Delete", title: "Delete(Delete)", icon: "&#xe603;", enabled: true },
+      ],
+      ff: { id: "font_family_val", cls: "font-family-val", val: "Roboto" },
+      FontFamilyMenu: [
+        { id: "Roboto" },
+        { id: "Arial" },
+        { id: "Helvetical" },
+        { id: "Verdana" },
+        { id: "Times New Roman" },
+        { id: "Garamond" },
+        { id: "Comic Sans MS" },
+        { id: "Courier New" },
+        { id: "Georgia" },
+        { id: "Lucida Console" },
+        { id: "Tahoma" },
+      ],
+      LineMenu: {
+        LineWidthMenu: [
+          { id: "ThickA", html: '<div class="Line"><div class="Thick1"></div></div>' },
+          { id: "ThickB", html: '<div class="Line"><div class="Thick2"></div></div>' },
+          { id: "ThickC", html: '<div class="Line"><div class="Thick3"></div></div>' },
+          { id: "ThickD", html: '<div class="Line"><div class="Thick4"></div></div>' },
+          { id: "ThickE", html: '<div class="Line"><div class="Thick5"></div></div>' },
+        ],
+        LineStyleMenu: [
+          { id: "Solid", html: '<div class="Line"><div class="Solid"></div></div>' },
+          { id: "DashedA", html: '<div class="Line"><div class="Dashed"></div></div>' },
+          { id: "DashedB", html: '<div class="Line"><div class="Dashed2"></div></div>' },
+          { id: "DashedC", html: '<div class="Line"><div class="Dashed3"></div></div>' },
+        ],
+        WayPointsMenu: [
+          { id: "WpStraight", html: '<div class="WayPoint"><div class="imageEntity Straight"></div></div>' },
+          { id: "WpOrthogonal", html: '<div class="WayPoint"><div class="imageEntity Orthogonal"></div></div>' },
+          { id: "WpSimple", html: '<div class="WayPoint"><div class="imageEntity Simple"></div></div>' },
+          { id: "WpSimpleB", html: '<div class="WayPoint"><div class="imageEntity Simple1"></div></div>' },
+          { id: "WpCurved", html: '<div class="WayPoint"><div class="imageEntity Curved"></div></div>' },
+          { id: "WpEntityRelation", html: '<div class="WayPoint"><div class="imageEntity EntityRelation"></div></div>' },
+        ],
+      },
+    };
+  },
+  mounted() {
+    if (window.innerWidth <= 1265) {
+      this.toolbarChange = true;
+      this.$refs.moveBar.style.transform = "translateX(20px)";
+    }
+    var $this = this;
+    window.onresize = function () {
+      var status = window.innerWidth > 1265;
+      $this.$refs.moveBar.style.transform = status ? "" : "translateX(20px)";
+      $this.toolbarChange = status ? false : true;
+      document.querySelector(".sidebar").style.flexBasis = window.innerWidth < 800 ? "160px" : "300px";
+      graph.page.selfAdaption();
+    };
+    document.addEventListener("click", this.handleClick);
+    Vue.prototype.$updateToolbarStatus = this.updateStatus;
+  },
+  computed: {
+    posCalc() {
+      return {
+        left: this.left,
+        top: this.top,
+      };
+    },
+    menuShift() {
+      return {
+        left: this.shiftL,
+        top: this.shiftT,
+      };
+    },
+  },
+  methods: {
+    handleClick(e) {
+      this.showMenu = null;
+      if (this.brush) {
+        MenuCommand.PasteStyle.execute();
+      }
+    },
+    handleEvent(e) {
+      switch (e.type) {
+        case "mousewheel":
+          e.stopPropagation();
+          e.preventDefault();
+          this.changeFontSize(e.deltaY > 0 ? (--this.fs > 11 ? --this.fs : 11) : ++this.fs);
+          break;
+        case "keydown":
+          e.key == "Delete" && e.stopPropagation();
+          if (e.key == "ArrowDown") {
+            e.preventDefault();
+            this.changeFontSize(this.fs > 11 ? --this.fs : 11);
+          }
+          if (e.key == "ArrowUp") {
+            e.preventDefault();
+            this.changeFontSize(this.fs < 72 ? ++this.fs : 72);
+          }
+          e.key == "Enter" && e.target.blur();
+          break;
+        case "blur":
+          e.target.removeEventListener("mousewheel", this.handleEvent);
+          e.target.removeEventListener("keydown", this.handleEvent);
+          e.target.removeEventListener("blur", this.handleEvent);
+          this.fs = e.target.value;
+          typeof Number(this.fs) === "number" && !isNaN(Number(this.fs)) ? (this.fs >= 11 && this.fs <= 72 ? this.changeFontSize(this.fs) : this.changeFontSize(72)) : this.changeFontSize(12);
+          break;
+      }
+    },
+    changeFontSize(size) {
+      MenuCommand.updateCellsStyle("fontSize", size);
+    },
+    decreaseFontsize(status) {
+      if (!status) {
+        this.fs = this.fs > 11 ? --this.fs : 11;
+        this.changeFontSize(this.fs);
+      }
+    },
+    creaseFontsize(status) {
+      if (!status) {
+        this.fs = this.fs < 72 ? ++this.fs : 72;
+        this.changeFontSize(this.fs);
+      }
+    },
+    focusEvent(e, status) {
+      if (!status) {
+        e.target.select();
+        e.target.addEventListener("keydown", this.handleEvent);
+        e.target.addEventListener("mousewheel", this.handleEvent);
+        e.target.addEventListener("blur", this.handleEvent);
+      }
+    },
+    updateStatus() {
+      var style;
+      if (!graph.isSelectionEmpty()) {
+        style = graph.getCellStyle(graph.getSelectionCell());
+      }
+      this.fs = mxUtils.getValue(style, mxConstants.STYLE_FONTSIZE, 12);
+      this.ff.val = mxUtils.getValue(style, mxConstants.STYLE_FONTFAMILY, "Roboto");
+      this.fontColor = mxUtils.getValue(style, mxConstants.STYLE_FONTCOLOR, "#7f7f7f");
+      this.fillColor = mxUtils.getValue(style, mxConstants.STYLE_FILLCOLOR, "#7f7f7f");
+      this.strokeColor = mxUtils.getValue(style, mxConstants.STYLE_STROKECOLOR, "#7f7f7f");
+      for (let i = 0; i < this.tools.length; i++) {
+        const el = this.tools[i];
+        if (el.type) {
+          el.enabled = el.id == "Table" ? !graph.isSelectionEmpty() : graph.isSelectionEmpty();
+          switch (el.id) {
+            case "Brush":
+              el.title = this.brushTitle;
+              break;
+            case "Undo":
+              el.enabled = undoManager.indexOfNextAdd == 0 ? true : false;
+              break;
+            case "Redo":
+              el.enabled = undoManager.indexOfNextAdd == undoManager.history.length ? true : false;
+              break;
+            case "AlignLeft":
+            case "AlignCenter":
+            case "AlignRight":
+              var align = mxUtils.getValue(style, mxConstants.STYLE_ALIGN, mxConstants.ALIGN_CENTER);
+              el.selected = align == el.dir;
+              break;
+            case "AlignTop":
+            case "AlignMiddle":
+            case "AlignBottom":
+              var valign = mxUtils.getValue(style, mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_MIDDLE);
+              el.selected = valign == el.dir;
+              break;
+            case "TextBold":
+            case "TextItalic":
+            case "TextUnderline":
+              var fontStyle = mxUtils.getValue(style, mxConstants.STYLE_FONTSTYLE, 0);
+              el.selected = (fontStyle & el.num) == el.num;
+              break;
+            default:
+              break;
+          }
+        }
+      }
+    },
+    dynamicColor(id) {
+      var clr;
+      switch (id) {
+        case "fontColor":
+          clr = this.fontColor;
+          break;
+        case "fillColor":
+          clr = this.fillColor;
+          break;
+        default:
+          clr = this.strokeColor;
+          break;
+      }
+      return {
+        background: clr,
+      };
+    },
+    command(e, item) {
+      if (!item.enabled) {
+        if (item.id == "Brush") {
+          this.toggleBrush(e.target);
+        } else if (item.id == "Table") {
+          var pos = e.target.getBoundingClientRect();
+          this.createTablePicker(pos);
+        } else if (MenuCommand[item.id]) {
+          this.showMenu = null;
+          if (item.color == 1) {
+            this.handleColor(
+              e.target.className == "bottom-color" ? e.target : e.target.querySelector(".bottom-color"),
+              mxUtils.bind(this, function (val) {
+                MenuCommand[item.id].execute(val);
+              })
+            );
+          } else {
+            MenuCommand[item.id].execute();
+          }
+        } else {
+          this.showMenu = item.id;
+          this.shiftL = e.target.getBoundingClientRect().x + "px";
+          this.shiftT = e.target.getBoundingClientRect().y + 25 + "px";
+        }
+      }
+    },
+    lineCommand(item) {
+      this.showMenu = null;
+      MenuCommand[item].execute();
+    },
+    changeFontFamily(font) {
+      MenuCommand.get("FontFamily").execute(font);
+    },
+    overEvent(e, title) {
+      this.title = title;
+      this.showTitle = true;
+      this.left = e.pageX + 8 + "px";
+      this.top = e.pageY - 50 + "px";
+    },
+    leaveEvent() {
+      this.showTitle = false;
+    },
+    toolbarShift(e, flag) {
+      const box = this.$refs.moveBar.getBoundingClientRect();
+      const x = box.x;
+      const width = box.width;
+      const viewbox = this.$refs.moveBar.parentNode.offsetWidth - 96;
+      const step = (width - viewbox) / 2;
+      let status = flag ? x - step + width - viewbox < 30 : x + step >= 20;
+      if (e.type == "mouseover") {
+        e.target.style.cursor = status ? "no-drop" : "pointer";
+      } else if (e.type == "click") {
+        let ox = flag
+          ? x - step + width - viewbox < 30
+            ? viewbox - width + 40
+            : x - step //leftShift
+          : x + step >= 20
+            ? 20
+            : x + step; //rightShift
+        this.$refs.moveBar.style.transform = "translateX(" + ox + "px)";
+        e.target.style.cursor = status ? "no-drop" : "pointer";
+      }
+    },
+    createTablePicker(pos) {
+      if (graph.getSelectionCell() == undefined) {
+        var div = document.querySelector(".tableMenu");
+        if (div) {
+          var picker = div.querySelector(".tpTable");
+          $(picker).find("td").css("backgroundColor", "transparent");
+          if (picker.rows[0].cells.length > 5) {
+            for (let i = 0; i < picker.rows.length; i++) {
+              var row = picker.rows[i];
+              for (let j = row.cells.length - 1; j >= 5; j--) {
+                row.removeChild(row.cells[j]);
+              }
+            }
+          }
+          if (picker.rows.length > 5) {
+            for (let i = picker.rows.length - 1; i >= 5; i--) {
+              picker.deleteRow(5);
+            }
+          }
+          $(div).show();
+        } else {
+          var div = this.tablePicker();
+          document.body.appendChild(div);
+        }
+        $(".tpTipsShow").html("0 x 0");
+        $(div).css({
+          top: pos.height + pos.top + 4 + "px",
+          left: pos.left + "px",
+        });
+        var obj = div.getBoundingClientRect();
+        if (obj.width + obj.left > window.innerWidth) {
+          div.style.left = window.innerWidth - obj.width + "px";
+        }
+      }
+    },
+    toggleBrush(el) {
+      if (this.brush) {
+        this.brushTitle = "Copy Style(Ctrl+Shift+C)";
+        el.style.textShadow = "";
+        el.style.color = "";
+      } else {
+        this.brushTitle = "Paste Style(Ctrl+Shift+V)";
+        el.style.textShadow = "0px 0px 1px #0028ff";
+        el.style.color = "#0028ff";
+        MenuCommand.get("CopyStyle").execute();
+      }
+      this.brush = !this.brush;
+    },
+    toggleFormat(el) {
+      this.format = !this.format;
+      document.getElementById("rightToolbar").style.width = this.format ? "" : 0;
+      el.style.color = this.format ? "#0028ff" : "grey";
+    },
+    insertLocalImage() {
+      var file = document.getElementById("fileSelector_image").files[0];
+      if (file) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = function () {
+          var img = new Image();
+          img.src = reader.result;
+          img.onload = function () {
+            // console.log(img.width);
+            InsertLocalImage(img, img.width, img.height);
+          };
+        };
+      }
+    },
+    tablePicker() {
+      var div = createEl("div", "tableMenu");
+      var wrap = createEl("div");
+      var title = createEl("input", null, null, "tpTitleOption", { type: "checkbox" });
+      wrap.appendChild(title);
+      //   dia_js["title"]
+      wrap.appendChild(createEl("label", "tpOptions", "Title", null, { for: "tpTitleOption" }));
+      div.appendChild(wrap);
+      var container = createEl("input", null, null, "tpContainerOption", { type: "checkbox" });
+      wrap = createEl("div");
+      wrap.appendChild(container);
+      //   dia_js["container"]
+      wrap.appendChild(createEl("label", "tpOptions", "Container", null, { for: "tpContainerOption" }));
+      div.appendChild(wrap);
+      div.appendChild(createEl("div", "tpTipsShow", null, null, { style: "text-align:center;" }));
+      var picker = createEl("table", "tpTable", null, null, { cellpadding: "8" });
+      for (let i = 0; i < 5; i++) {
+        var wrap = createEl("tr");
+        for (let j = 0; j < 5; j++) {
+          var td = createEl("td");
+          wrap.appendChild(td);
+        }
+        picker.appendChild(wrap);
+      }
+      div.appendChild(picker);
+      var td = null;
+      var row = null;
+      picker.addEventListener("mouseover", mouseOverTip);
+      picker.addEventListener("mousedown", insertFn);
+
+      function insertFn(e) {
+        var selected = mouseOverTip(e);
+        if (td != null && row != null && selected) {
+          var rows = row.sectionRowIndex + 1,
+            cols = td.cellIndex + 1;
+          var table =
+            container.checked || mxEvent.isControlDown(e) || mxEvent.isMetaDown(e)
+              ? graph.createCrossFunctionalSwimlane(rows, cols, null, null, title.checked || mxEvent.isShiftDown(e) ? "Cross-Functional Flowchart" : null)
+              : graph.createTable(rows, cols, null, null, title.checked || mxEvent.isShiftDown(e) ? "Table" : null);
+          var pt = mxEvent.isAltDown(e) ? graph.getFreeInsertPoint() : graph.getCenterInsertPoint(graph.getBoundingBoxFromGeometry([table], true));
+          var select = graph.importCells([table], pt.x, pt.y);
+          graph.fireEvent(new mxEventObject("cellsInserted", "cells", graph.model.getDescendants(select[0])));
+
+          if (select != null && select.length > 0) {
+            graph.scrollCellToVisible(select[0]);
+            graph.setSelectionCells(select);
+          }
+        }
+        title.checked = false;
+        container.checked = false;
+        $(div).hide();
+      }
+
+      function mouseOverTip(e) {
+        var e = e || window.event;
+        var selected = false;
+        if (e.target.localName == "td") td = e.target;
+        if (td != null) {
+          row = td.parentElement;
+          extendPicker(picker, Math.min(20, row.sectionRowIndex + 2), Math.min(20, td.cellIndex + 2));
+          $(".tpTipsShow").html(row.sectionRowIndex + 1 + " x " + (td.cellIndex + 1));
+          var obj = div.getBoundingClientRect();
+          if (obj.width + obj.left > window.innerWidth) div.style.left = window.innerWidth - obj.width + "px";
+          if (obj.left < 0) div.style.left = "0px";
+          for (var i = 0; i < picker.rows.length; i++) {
+            var r = picker.rows[i];
+            for (var j = 0; j < r.cells.length; j++) {
+              var cell = r.cells[j];
+              if (i == row.sectionRowIndex && j == td.cellIndex) {
+                selected = cell.style.backgroundColor == "blue";
+              }
+              if (i <= row.sectionRowIndex && j <= td.cellIndex) {
+                cell.style.backgroundColor = "blue";
+              } else {
+                cell.style.backgroundColor = "transparent";
+              }
+            }
+          }
+        }
+        return selected;
+      }
+
+      function extendPicker(picker, rows, cols) {
+        for (var i = picker.rows.length; i < rows; i++) {
+          var row = picker.insertRow(i);
+          for (var j = 0; j < picker.rows[0].cells.length; j++) {
+            row.insertCell(-1);
+          }
+        }
+        for (var i = 0; i < picker.rows.length; i++) {
+          var row = picker.rows[i];
+          for (var j = row.cells.length; j < cols; j++) {
+            row.insertCell(-1);
+          }
+        }
+      }
+      return div;
+    },
+  },
+});

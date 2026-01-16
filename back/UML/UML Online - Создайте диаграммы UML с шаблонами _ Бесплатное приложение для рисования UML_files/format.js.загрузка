@@ -1,0 +1,67 @@
+Vue.component("format-panel", {
+  template: `
+    <div class="rightToolbar" id="rightToolbar">
+      <div class="rightbar-tag-group">
+        <div class="rb-tag-items" v-for='(value,key) in tags.mainModal' :key="key" 
+          :title="key" v-show="showModal == 'mainModal'" :class="{'select' : select == key}" 
+          @click="select = key">{{key}}</div>
+        <div class="rb-tag-items" v-for='(value,key) in tags.cellModal' :key="key" 
+          :title="key" v-show="showModal == 'cellModal'" :class="{'select' : select == key}" 
+          @click="select = key">{{key}}</div>
+      </div>
+      <div class="tagPanels">
+        <diagram-panel ref='diagram' v-show="select == 'Diagram'"></diagram-panel>
+        <shape-panel ref='shape' v-show="select == 'Shape'"></shape-panel>
+        <style-panel ref='style' v-show="select == 'Style'"></style-panel>
+        <text-panel ref='text' v-show="select == 'Text'"></text-panel>
+      </div>
+    </div>
+  `,
+  data() {
+    return {
+      select: "Diagram",
+      showModal: "mainModal",
+      tags: {
+        mainModal: {
+          Diagram: true,
+          Style: false,
+        },
+        cellModal: {
+          Shape: false,
+          Text: false,
+        },
+      },
+    };
+  },
+  mounted() {
+    Vue.prototype.$updatePanels = this.updatePanels;
+  },
+  methods: {
+    updatePanels() {
+      if (graph.isSelectionEmpty()) {
+        this.showModal = "mainModal";
+        if (!Object.keys(this.tags.mainModal).includes(this.select)) {
+          this.select = "Diagram";
+        }
+        if ((this.tags.mainModal.Diagram ^ this.tags.mainModal.Style) == false) {
+          this.tags.mainModal.Style = false;
+          this.tags.mainModal.Diagram = true;
+          this.select = "Diagram";
+        }
+        this.$refs.diagram.updateStatus();
+      } else {
+        this.showModal = "cellModal";
+        if (!Object.keys(this.tags.cellModal).includes(this.select)) {
+          this.select = "Shape";
+        }
+        if ((this.tags.cellModal.Shape ^ this.tags.cellModal.Text) == false) {
+          this.tags.cellModal.Text = false;
+          this.tags.cellModal.Shape = true;
+          this.select = "Shape";
+        }
+        this.$refs.shape.updateStatus();
+        this.$refs.text.updateStatus();
+      }
+    },
+  },
+});

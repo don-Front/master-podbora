@@ -1,0 +1,243 @@
+Vue.component("style-panel", {
+  template: `
+    <div class="styleModal">
+      <div class="styleModalbtns">
+        <label for="styleRounded">
+          <input type="checkbox" id="styleRounded" @change="ChangeRounded($event)"/>Rounded
+        </label>
+        <button id="resetStyle" style="margin-left: 30px" @click="ResetStyle">Reset</button>
+      </div>
+      <div class="styleModalOptions">
+        <div class="styleTempOption" v-for="(item,index) in styleOptions" :key='index'
+          :style="{'background-color':item.bgClr}" 
+          @mouseenter="PreviewStyle(item)" 
+          @mouseleave="Refresh"
+          @click="ChangeStyle(item)">
+          <svg class="svgStyle" xmlns="http://www.w3.org/2000/svg">
+            <g xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="8" width="70" height="40" 
+                :fill="item.cs.fillColor" 
+                :stroke="item.cs.strokeColor" 
+                stroke-width="2" pointer-events="all"></rect>
+              <g font-family="Helvetica" text-anchor="middle" font-size="12px" 
+                :fill="item.cs.fontColor">
+                <text x="49" y="33">Shape</text>
+              </g>
+              <path d="M 32 48 L 32 70 L 66 70 L 66 55.49" fill="none" 
+                :stroke="item.es.strokeColor" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"></path>
+              <path d="M 66 50.24 L 69.5 57.24 L 66 55.49 L 62.5 57.24 Z" 
+                :fill="item.es.strokeColor" :stroke="item.es.strokeColor" 
+                stroke-width="2" stroke-miterlimit="10" pointer-events="all"></path>
+              <g :fill="item.cs.fontColor" font-family="Helvetica" text-anchor="middle" font-size="11px">
+                <text x="49" y="82.5">Connector</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  `,
+  data() {
+    return {
+      defaultStyles: ["fillColor", "strokeColor", "fontColor", "gradientColor"],
+      styleOptions: [
+        // cellfillColor,cellborderColor,strokenColor,fontColor
+        {
+          cs: { fillColor: "rgb(255,255,255)", fontColor: "rgb(  0,  0,  0)", strokeColor: "rgb(  0,  0,  0)" },
+          es: { strokeColor: "rgb(0, 0, 0)" },
+          bgClr: "rgb(255, 255, 255)",
+        },
+        {
+          cs: { fillColor: "rgb( 33,192,165)", fontColor: "rgb( 92, 92, 92)", strokeColor: "rgb(  1,105, 90)" },
+          es: { strokeColor: "rgb(1,105,90)" },
+          bgClr: "rgb(255, 255, 255)",
+        },
+        {
+          cs: { fillColor: "rgb(246,148,193)", fontColor: "rgb(  9, 92,134)", strokeColor: "rgb(175, 69,237)" },
+          es: { strokeColor: "rgb(96,230,150)" },
+          bgClr: "rgb(255, 255, 255)",
+        },
+        {
+          cs: { fillColor: "rgb(178,201,171)", fontColor: "rgb( 70, 73, 93)", strokeColor: "rgb(120,138,163)" },
+          es: { strokeColor: "rgb(120,138,163)" },
+          bgClr: "rgb(255, 255, 255)",
+        },
+        {
+          cs: { fillColor: "rgb(255,228, 94)", fontColor: "rgb( 90,169,230)", strokeColor: "rgb(255, 99,146)" },
+          es: { strokeColor: "rgb(255,99,146)" },
+          bgClr: "rgb(255, 255, 255)",
+        },
+        {
+          cs: { fillColor: "rgb(168,218,220)", fontColor: "rgb( 29, 53, 87)", strokeColor: "rgb( 69,123,157)" },
+          es: { strokeColor: "rgb(69,123,157)" },
+          bgClr: "rgb(241,250,238)",
+        },
+        {
+          cs: { fillColor: "rgb(242,204,143)", fontColor: "rgb( 57, 60, 86)", strokeColor: "rgb(224,122, 95)" },
+          es: { strokeColor: "rgb(224,122,95)" },
+          bgClr: "rgb(244,241,222)",
+        },
+        {
+          cs: { fillColor: "rgb(250,229,199)", fontColor: "rgb( 20, 54, 66)", strokeColor: "rgb( 15,139,141)" },
+          es: { strokeColor: "rgb(168,32,26)" },
+          bgClr: "rgb(218,210,216)",
+        },
+        {
+          cs: { fillColor: "rgb(188,108, 37)", fontColor: "rgb(255,255,255)", strokeColor: "rgb(221,161, 94)" },
+          es: { strokeColor: "rgb(221,161,94)" },
+          bgClr: "rgb(40,54,24)",
+        },
+        {
+          cs: { fillColor: "rgb(244, 91,105)", fontColor: "rgb(255,255,255)", strokeColor: "rgb(  2,128,144)" },
+          es: { strokeColor: "rgb(2,128,144)" },
+          bgClr: "rgb(17,75,95)",
+        },
+      ],
+    };
+  },
+  methods: {
+    Refresh() {
+      graph.refresh();
+    },
+    PreviewStyle(obj) {
+      var that = this;
+      var prev = graph.getCellStyle;
+      var prevBg = graph.background;
+      var prevGrid = graph.view.gridColor;
+      graph.background = obj != null ? obj.bgClr : null;
+      graph.view.gridColor = obj != null && obj.gridColor != null ? obj.gridColor : graph.view.defaultGridColor;
+      graph.getCellStyle = function (cell) {
+        var result = mxUtils.clone(prev.apply(this, arguments));
+        var defaultStyle = graph.stylesheet.getDefaultVertexStyle();
+        var appliedStyle = obj.cs;
+        if (graph.model.isEdge(cell)) {
+          defaultStyle = graph.stylesheet.getDefaultEdgeStyle();
+          appliedStyle = obj.es;
+        }
+        that.removeStyles(result, that.defaultStyles, defaultStyle);
+        that.applyStyle(undefined, result, cell, obj);
+        that.applyStyle(appliedStyle, result, cell, obj);
+        if (result != null) {
+          result = this.postProcessCellStyle(result);
+        }
+        return result;
+      };
+
+      graph.refresh();
+      graph.getCellStyle = prev;
+      graph.background = prevBg;
+      graph.view.gridColor = prevGrid;
+    },
+    ChangeStyle(obj) {
+      this.applyStyle(obj.cs, graph.currentVertexStyle);
+      this.applyStyle(obj.cs, graph.currentEdgeStyle);
+      this.applyStyle(obj.cs, graph.currentVertexStyle);
+      this.applyStyle(obj.es, graph.currentEdgeStyle);
+      if (document.getElementById("styleRounded").checked) {
+        graph.currentVertexStyle["rounded"] = "1";
+        graph.currentEdgeStyle["rounded"] = "1";
+      } else {
+        graph.currentVertexStyle["rounded"] = "0";
+        graph.currentEdgeStyle["rounded"] = "1";
+      }
+      graph.model.beginUpdate();
+      try {
+        this.updateCells(this.defaultStyles, obj);
+        var change = new changePageSetup(graph, obj != null ? obj.bgClr : null);
+        change.ignoreImage = true;
+        graph.model.execute(change);
+        graph.model.execute(new changeGridColor(graph, obj != null && obj.gridColor != null ? obj.gridColor : graph.view.defaultGridColor));
+      } finally {
+        graph.model.endUpdate();
+      }
+      // if (obj.backgroundColor) {
+      //   document.getElementById("diaBackColor").checked = true;
+      //   if (document.querySelector(".diaBackColorShow").classList.contains("disabled")) {
+      //     document.querySelector(".diaBackColorShow").classList.remove("disabled");
+      //   }
+      //   document.querySelector(".diaBackColorShow").style.backgroundColor = graph.background;
+      // }
+    },
+    ChangeRounded(e) {
+      if (e.target.checked) {
+        graph.currentEdgeStyle["rounded"] = "1";
+        graph.currentVertexStyle["rounded"] = "1";
+      } else {
+        delete graph.currentEdgeStyle["rounded"];
+        delete graph.currentVertexStyle["rounded"];
+      }
+      graph.updateCellStyles("rounded", e.target.checked ? "1" : "0", graph.getVerticesAndEdges());
+    },
+    ResetStyle() {
+      var all = graph.getVerticesAndEdges(true, true);
+      if (all.length > 0) {
+        graph.model.beginUpdate();
+        try {
+          graph.updateCellStyles("rounded", null, all);
+        } finally {
+          graph.model.endUpdate();
+        }
+      }
+      document.querySelector("#styleRounded").checked = false;
+      graph.currentEdgeStyle = mxUtils.clone(graph.defaultEdgeStyle);
+      graph.currentVertexStyle = mxUtils.clone(graph.defaultVertexStyle);
+    },
+    updateCells(styles, graphStyle) {
+      var cells = graph.getVerticesAndEdges();
+      graph.model.beginUpdate();
+      try {
+        for (var i = 0; i < cells.length; i++) {
+          var style = graph.getCellStyle(cells[i]);
+          // Handles special label background color
+          if (style["labelBackgroundColor"] != null) {
+            graph.updateCellStyles("labelBackgroundColor", graphStyle != null ? graphStyle.background : null, [cells[i]]);
+          }
+          var edge = graph.model.isEdge(cells[i]);
+          var newStyle = graph.model.getStyle(cells[i]);
+          var current = edge ? graph.currentEdgeStyle : graph.currentVertexStyle;
+
+          for (var j = 0; j < styles.length; j++) {
+            if ((style[styles[j]] != null && style[styles[j]] != mxConstants.NONE) || (styles[j] != mxConstants.STYLE_FILLCOLOR && styles[j] != mxConstants.STYLE_STROKECOLOR)) {
+              newStyle = mxUtils.setStyle(newStyle, styles[j], current[styles[j]]);
+            }
+          }
+          graph.model.setStyle(cells[i], newStyle);
+        }
+      } finally {
+        graph.model.endUpdate();
+      }
+    },
+    removeStyles(style, styles, defaultStyle) {
+      if (style != null) {
+        for (var j = 0; j < styles.length; j++) {
+          if ((style[styles[j]] != null && style[styles[j]] != mxConstants.NONE) || (styles[j] != mxConstants.STYLE_FILLCOLOR && styles[j] != mxConstants.STYLE_STROKECOLOR)) {
+            style[styles[j]] = defaultStyle[styles[j]];
+          }
+        }
+      }
+    },
+    applyStyle(style, result, cell, graphStyle, theGraph) {
+      if (style != null) {
+        if (cell != null) {
+          // Handles special label background color
+          if (result["labelBackgroundColor"] != null) {
+            var bg = graphStyle != null ? graphStyle.background : null;
+            theGraph = theGraph != null ? theGraph : graph;
+            if (bg == null) {
+              bg = theGraph.background;
+            }
+            if (bg == null) {
+              bg = theGraph.defaultPageBackgroundColor;
+            }
+            result["labelBackgroundColor"] = bg;
+          }
+        }
+        for (var key in style) {
+          if (cell == null || (result[key] != null && result[key] != mxConstants.NONE) || (key != mxConstants.STYLE_FILLCOLOR && key != mxConstants.STYLE_STROKECOLOR)) {
+            result[key] = style[key];
+          }
+        }
+      }
+    },
+  },
+});

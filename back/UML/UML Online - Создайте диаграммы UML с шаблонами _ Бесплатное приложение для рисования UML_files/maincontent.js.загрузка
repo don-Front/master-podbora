@@ -1,0 +1,71 @@
+Vue.component("main-content", {
+  template:
+    `
+    <div class="content">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-head-wrapper" v-html="defaultApps.includes(appName) ? defaultHtml : searchHtml"></div>
+        </div>
+        <div class="sidebar-l">
+          <div id="serachResult" style="display: none;" v-if="!defaultApps.includes(appName)">
+            <div id="serachResultTitle" class="title1 title-serach" style="background-color:#cee1f2">
+              <span>Serach result:</span>
+            </div>
+            <div id="serachResultSidebar" class="geSidebar" style="touch-action: none;background-color:#F5F7EB"></div>
+          </div>
+          <div class="sidebar_wrapper">
+            <div id="sidebar_container"></div>
+            <div class="sidebar-r" id="sidebar-scale"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-right">
+        <div class="cont">
+          <div class="main" tabindex="0" id="graph_container"></div>
+          <format-panel></format-panel>
+        </div>
+        <div class="footer">
+          <div class="geTabContainer"></div>
+          <div class="zoom">
+            <span @click="command('ZoomOut')"><i class="icon iconfont">&#xe70a;</i></span>
+            <div class="zoombox">
+              <span class="zoomShow" @click.stop.prevent='zoomShow = !zoomShow'>100%</span>
+              <ul class="zoomUl" v-show="zoomShow">
+                <li v-for='item in zoomLi' :key='item.id' v-html='item.id' @click='command(item.id)'>200%</li>
+              </ul>
+            </div>
+            <span @click="command('ZoomIn')"><i class="icon iconfont">&#xe70c;</i></span>
+          </div>
+        </div>
+      </div>
+    </div>`,
+  data() {
+    return {
+      zoomShow: false,
+      appName: appName,
+      defaultApps: ['flowchart', 'timeline', 'orgchart', 'fishbone'],
+      searchHtml: `<div class="search-box"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"> <circle cx="10" cy="10" r="7" stroke="black" stroke-width="1" fill="none" /> <line x1="15" y1="15" x2="20" y2="20" stroke="black" stroke-width="1" /> </svg> <input type="text" placeholder="Search Shape" id="searchInput"> <div class="clear-btn" id="clearBtn"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.95 14.95c-.39.39-1.02.39-1.41 0L12 13.41l-3.54 3.54c-.39.39-1.02.39-1.41 0-.39-.39-.39-1.02 0-1.41L10.59 12 7.05 8.46c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L12 10.59l3.54-3.54c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41L13.41 12l3.54 3.54c.39.39.39 1.02 0 1.41z" /> </svg> </div> <div class="search-btn" id="searchBtn">Search</div> </div>`,
+      defaultHtml: '<span class="sidebar-title">Shape</span>',
+      // xml: dia_js,
+      zoomLi: [{ id: '200%' }, { id: '150%' }, { id: '120%' }, { id: '100%' }, { id: '90%' }, { id: '80%' }, { id: '70%' }, { id: '50%' }, { id: '20%' }, { id: '10%' }, { id: '5%' }]
+    };
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClick);
+  },
+  methods: {
+    handleClick() {
+      this.zoomShow = false;
+    },
+    command(val) {
+      if (MenuCommand[val]) {
+        MenuCommand[val].execute();
+        this.handleClick();
+      } else {
+        $(".zoomShow").text(val);
+        MenuCommand.get("Zoom").execute(parseFloat(val));
+        this.handleClick();
+      }
+    }
+  }
+});

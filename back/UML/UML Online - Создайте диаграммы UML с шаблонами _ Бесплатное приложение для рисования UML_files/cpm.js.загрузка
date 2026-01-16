@@ -1,0 +1,1030 @@
+var $cpm = {
+  data: {},
+  targetEl: null,
+  selectColor: "",
+  records: [],
+  colorRgb: [255, 255, 255],
+  posDisc: [0, 0],
+  opacity: 0,
+  cmd: false,
+  smd: false,
+  svgNs: "http://www.w3.org/2000/svg",
+};
+$cpm.install = function (Vue, options) {
+  this.init();
+  Vue.mixin({
+    methods: {
+      handleColor: function (e, o) {
+        $cpm.showCpm(
+          e,
+          function (el, val) {
+            o(val);
+          },
+          true
+        );
+      },
+    },
+  });
+};
+$cpm.showCpm = function (el, callback, hex) {
+  this.targetEl = el;
+  this.data.cpmCallback = callback;
+  this.data.hex = hex ? true : false;
+  this.showColorPickerModal(this.calculatePosition(el));
+  var [r, g, b] = this.checkColorType(el);
+  this.previewColor(r, g, b);
+};
+/**
+ * Invoke callback
+ * @param {String} rgb Color like #ffffff, rgb(255,255,255)
+ */
+$cpm.invokeCallBack = function (rgb) {
+  var callback_ = this.data.cpmCallback;
+  var hex = this.data.hex;
+  if (hex) {
+    if (rgb == "transparent") {
+      hex = rgb;
+    } else {
+      var cr = rgb.split(",");
+      var r = parseInt(cr[0].split("(")[1]);
+      var g = parseInt(cr[1]);
+      var b = parseInt(cr[2].split(")")[0]);
+      hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+    }
+  } else {
+    hex = rgb;
+  }
+  callback_(this.targetEl, hex);
+};
+$cpm.init = function () {
+  var select = this.createEl("div", "color-group-selected");
+  select.appendChild(
+    this.createEl(
+      "div",
+      "title",
+      {
+        style: "background-color:transparent",
+      },
+      "No fill color"
+    )
+  );
+  select.onclick = function () {
+    $cpm.invokeCallBack("transparent");
+    $cpm.hideColorPickerModal();
+  };
+  var theme = this.createEl("div", "color-group-theme");
+  for (let i = 0; i < this.rgbArray.length; i++) {
+    var ig = this.createEl("div", "item-group clearfix");
+    for (let j = 0; j < this.rgbArray[i].length; j++) {
+      ig.appendChild(
+        this.createEl("span", "color-item", {
+          style: "background-color:" + this.rgbArray[i][j],
+          "data-show": "on",
+        })
+      );
+    }
+    theme.appendChild(ig);
+  }
+  theme.querySelector(".color-item").classList.add("white");
+  theme.addEventListener("mouseover", this.clickEvent);
+  var standard = this.createEl("div", "color-group-standard");
+  standard.appendChild(this.createEl("div", "text", null, "Standard color"));
+  var ig = this.createEl("div", "item-group clearfix");
+  var standardColor = [
+    "rgb(192, 0, 0)",
+    "rgb(255, 0, 0)",
+    "rgb(255, 192, 0)",
+    "rgb(255, 255, 0)",
+    "rgb(146, 208, 80)",
+    "rgb(0, 176, 80)",
+    "rgb(0, 176, 240)",
+    "rgb(0, 112, 192)",
+    "rgb(0, 32, 96)",
+    "rgb(112, 48, 160)",
+  ];
+  for (let i = 0; i < standardColor.length; i++) {
+    ig.appendChild(
+      this.createEl("span", "color-item", {
+        style: "background-color:" + standardColor[i],
+        "data-show": "on",
+      })
+    );
+  }
+  standard.appendChild(ig);
+  standard.addEventListener("mouseover", this.clickEvent);
+  var recorded = this.createEl("div", "color-group-recorded");
+  recorded.appendChild(this.createEl("div", "text", null, "Recorded color"));
+  recorded.appendChild(this.createEl("div", "item-group clearfix"));
+  this.recordEl = recorded;
+  for (let i = 0; i < 10; i++) {
+    recorded.querySelector(".item-group").appendChild(
+      this.createEl("span", "color-item white", {
+        style: "background-color:transparent",
+        "data-show": "off",
+      })
+    );
+  }
+  recorded.addEventListener("mouseover", this.clickEvent);
+  var disc = this.createEl("div", "color-pickup-disc", {
+    "data-show": "off",
+  });
+  disc.appendChild(this.initDisc());
+  this.cpDisc = disc;
+  this.hideDisc = function () {
+    disc.style.display = "none";
+    disc.dataset.show = "off";
+  };
+  var more = this.createEl("div", "color-group-more", null, "More color options");
+  more.addEventListener("click", function () {
+    $cpm.cpDisc.style.display = "block";
+    $cpm.cpDisc.dataset.show = "on";
+    $cpm.restoreDisc();
+  });
+  var cont = this.createEl("div", "color-pickup-content");
+  cont.appendChild(this.initShowArea());
+  cont.appendChild(recorded);
+  cont.appendChild(select);
+  cont.appendChild(theme);
+  cont.appendChild(standard);
+  cont.appendChild(more);
+  var wrap = this.createEl("div", "component-color-panel-wrap");
+  wrap.appendChild(cont);
+  disc.addEventListener("mouseleave", this.handleEvent);
+  disc.addEventListener("mouseup", this.handleEvent);
+  wrap.appendChild(disc);
+  var main = this.createEl("div", "component-color-pickup");
+  main.appendChild(wrap);
+  this.hideColorPickerModal = function () {
+    main.style.display = "none";
+  };
+  this.showColorPickerModal = function (pos) {
+    main.style.display = "";
+    main.style.left = pos.left + "px";
+    main.style.top = pos.top + "px";
+    main.style.zIndex = 10087;
+  };
+  this.mainDom = main;
+  main.style.display = "none";
+  main.addEventListener("mousedown", function (e) {
+    e.stopPropagation();
+  });
+  wrap.addEventListener("mousedown", function () {
+    disc.style.display = "none";
+  });
+  document.addEventListener("mousedown", function (e) {
+    disc.style.display = "none";
+    main.style.display = "none";
+  });
+  document.body.appendChild(main);
+};
+/**
+ * The click event of color-item
+ */
+$cpm.clickEvent = function (e) {
+  if (e.target.localName === "span" && e.target.dataset.show == "on") {
+    var [r, g, b] = $cpm.checkColorType(e.target);
+    $cpm.previewColor(r, g, b);
+    e.target.onclick = null;
+    e.target.onclick = function () {
+      $cpm.selectColor = $cpm.combineRgb(r, g, b);
+      $cpm.colorStorage($cpm.selectColor);
+      $cpm.invokeCallBack($cpm.selectColor);
+      $cpm.hideColorPickerModal();
+    };
+  }
+};
+/**
+ * Hex display area events.
+ */
+$cpm.hexEvent = function () {
+  let doing = true,
+    oldtext = "";
+  this.select();
+  this.addEventListener("compositionstart", startC);
+  this.addEventListener("compositionend", endC);
+  this.oninput = function () {
+    if (doing) {
+      this.value = DetectUserHexInput(this.value);
+      this.setAttribute("value", this.value);
+    }
+  };
+  this.onblur = function () {
+    HexSelectEvent.call(this);
+    this.oninput = null;
+    this.onkeydown = null;
+    this.onblur = null;
+    this.removeEventListener("compositionstart", startC);
+    this.removeEventListener("compositionend", endC);
+    $cpm.invokeCallBack($cpm.selectColor);
+  };
+  this.onkeydown = function (e) {
+    if (e.keyCode === 13 || e.keyCode === 108) {
+      HexSelectEvent.call(this);
+      $cpm.invokeCallBack($cpm.selectColor);
+    }
+  };
+
+  function startC() {
+    oldtext = this.value;
+    doing = false;
+  }
+
+  function endC() {
+    var str = DetectUserHexInput(this.value);
+    this.value = str ? str : oldtext;
+    doing = true;
+  }
+
+  function HexSelectEvent() {
+    let str = this.value;
+    if (str.length > 0) {
+      if (str.length === 3) {
+        var [a1, a2, a3] = str.split();
+        str = a1 + a1 + a2 + a2 + a3 + a3;
+      } else if (str.length === 6) {
+      } else {
+        while (str.length < 6) {
+          str += 0;
+        }
+      }
+      this.setAttribute("value", str);
+      let [r, g, b] = $cpm.hex2rgb(str);
+      $cpm.selectColor = $cpm.combineRgb(r, g, b);
+      $cpm.colorStorage($cpm.selectColor);
+      $cpm.previewColor(r, g, b);
+    }
+  }
+
+  function DetectUserHexInput(str) {
+    var text = str.replace(/[\W]/g, "");
+    var newtext = text.replace(/[g-zG-Z]/g, "").toUpperCase();
+    if (newtext.length >= 6) newtext = newtext.slice(0, 6);
+    return newtext;
+  }
+};
+/**
+ * Calculate Color Picker Position
+ * @param {Object} el element
+ * @returns An Object --- {left:Number,Top:Number}
+ */
+$cpm.calculatePosition = function (el) {
+  var p = el.getBoundingClientRect();
+  var hi = p.height;
+  var x = p.left;
+  var y = p.top;
+  var compatMode = document.compatMode == "CSS1Compat";
+  var w = compatMode ? document.documentElement.clientWidth : document.body.clientWidth;
+  var h = compatMode ? document.documentElement.clientHeight : document.body.clientHeight;
+  var pos = {
+    left: x,
+    top: y + hi + 2,
+  };
+  if (pos.left + 190 > w) pos.left = w - 190;
+  if (pos.left < 0) pos.left = 0;
+  if (pos.top + 280 > h) pos.top = h - 280;
+  if (pos.top < 0) pos.top = 0;
+  return pos;
+};
+/**
+ * Store the selected color
+ * @param {String} val color
+ */
+$cpm.colorStorage = function (val) {
+  if (this.records.indexOf(val) != -1) this.records.splice(this.records.indexOf(val), 1);
+  this.records.push(val);
+  if (this.records.length > 10) this.records.shift();
+  this.recordEl.querySelector(".item-group").innerHTML = "";
+  if (this.records.length == 0) {
+    for (let i = 0; i < 10; i++) {
+      this.recordEl.querySelector(".item-group").appendChild(
+        this.createEl("span", "color-item white", {
+          style: "background-color:transparent",
+          "data-show": "off",
+        })
+      );
+    }
+  }
+  if (this.records.length <= 10) {
+    for (let i = 0; i < this.records.length; i++) {
+      this.recordEl.querySelector(".item-group").insertBefore(
+        this.createEl("span", "color-item", {
+          style: "background-color:" + this.records[i],
+          "data-show": "on",
+        }),
+        this.recordEl.querySelector(".item-group").firstChild
+      );
+    }
+    for (let j = 0; j < 10 - this.records.length; j++) {
+      this.recordEl.querySelector(".item-group").appendChild(
+        this.createEl("span", "color-item white", {
+          style: "background-color:transparent",
+          "data-show": "off",
+        })
+      );
+    }
+  }
+};
+/**
+ * Preview Color
+ * @param {Number} r red
+ * @param {Number} g green
+ * @param {Number} b blue
+ */
+$cpm.previewColor = function (r, g, b) {
+  this.crPrev.style.backgroundColor = $cpm.combineRgb(r, g, b);
+  this.hexInput.value = this.rgb2hex(r, g, b);
+  this.hexInput.setAttribute("value", this.hexInput.value);
+  this.cri.value = r;
+  this.cri.setAttribute("value", r);
+  this.cgi.value = g;
+  this.cgi.setAttribute("value", g);
+  this.cbi.value = b;
+  this.cbi.setAttribute("value", b);
+  this.colorRgb = [r, g, b];
+};
+/**
+ * Including color display, hex display and rgb display
+ * @returns element
+ */
+$cpm.initShowArea = function () {
+  var input = this.createEl("div", "color-group-input clearfix");
+  var crPrev = this.createEl("div", "color-preview");
+  this.crPrev = crPrev;
+  var crHex = this.createEl("div", "color-hex", {
+    "data-color": "#",
+  });
+  var hexInput = this.createEl("input", null, {
+    value: "FFFFFF",
+    "max-length": 6,
+  });
+  this.hexInput = hexInput;
+  hexInput.addEventListener("click", this.hexEvent);
+  crHex.appendChild(hexInput);
+  var crRgb = this.createEl("div", "color-rgb");
+  var crR = this.createEl("div", "color-R", {
+    "data-color": "R:",
+  });
+  var cri = this.createEl("input", null, {
+    value: 255,
+  });
+  this.cri = cri;
+  crR.appendChild(cri);
+  crRgb.appendChild(crR);
+  crR.addEventListener("mouseenter", this.hoverEvent);
+  var crG = this.createEl("div", "color-G", {
+    "data-color": "G:",
+  });
+  var cgi = this.createEl("input", null, {
+    value: 255,
+  });
+  this.cgi = cgi;
+  crG.appendChild(cgi);
+  crRgb.appendChild(crG);
+  crG.addEventListener("mouseenter", this.hoverEvent);
+  var crB = this.createEl("div", "color-B", {
+    "data-color": "B:",
+  });
+  var cbi = this.createEl("input", null, {
+    value: 255,
+  });
+  this.cbi = cbi;
+  crB.appendChild(cbi);
+  crRgb.appendChild(crB);
+  crB.addEventListener("mouseenter", this.hoverEvent);
+  input.appendChild(crPrev);
+  input.appendChild(crHex);
+  input.appendChild(crRgb);
+  return input;
+};
+/**
+ * Rgb display area events.
+ */
+$cpm.hoverEvent = function () {
+  var cpArrow = null,
+    wheelClock;
+  var input = this.querySelector("input");
+  if (cpArrow) {
+    this.appendChild(cpArrow);
+  } else {
+    cpArrow = $cpm.createArrow(this);
+    this.appendChild(cpArrow);
+    $cpm.up.onclick = function () {
+      valueRaise();
+      $cpm.judgeButtonStatus(input);
+      clearTimeout(wheelClock);
+      wheelClock = setTimeout(stopWheel, 1000);
+    };
+    $cpm.down.onclick = function () {
+      valueReduce();
+      $cpm.judgeButtonStatus(input);
+      clearTimeout(wheelClock);
+      wheelClock = setTimeout(stopWheel, 1000);
+    };
+  }
+  this.onmousewheel = function (e) {
+    e.preventDefault();
+    var wheel = e.wheelDelta || -e.detail;
+    var delta = Math.max(-1, Math.min(1, wheel));
+    delta < 0 ? valueReduce() : valueRaise();
+    $cpm.cpDisc.dataset.show === "on" && $cpm.restoreDisc();
+    $cpm.judgeButtonStatus(input);
+    clearTimeout(wheelClock);
+    wheelClock = setTimeout(stopWheel, 1000);
+  };
+  input.onclick = function () {
+    this.select();
+    this.oninput = function () {
+      var text = this.value.replace(/[\D]/g, "");
+      if (text) {
+        let num = parseInt(text);
+        if (num > 255) text = text.length === 3 ? parseInt(text.slice(0, 2)) : parseInt(text.slice(0, 3));
+      } else {
+        text = 0;
+      }
+      this.value = text;
+      this.setAttribute("value", this.value);
+    };
+    this.onblur = function () {
+      valueChanged();
+      stopWheel();
+      this.oninput = null;
+      this.onclick = null;
+    };
+  };
+  this.onmouseleave = function () {
+    input.blur();
+    input.onblur = null;
+    this.removeChild(cpArrow);
+    this.onmousewheel = null;
+    this.onmouseleave = null;
+  };
+  $cpm.judgeButtonStatus(input);
+
+  function stopWheel() {
+    var [r, g, b] = $cpm.colorRgb;
+    $cpm.selectColor = $cpm.combineRgb(r, g, b);
+    $cpm.colorStorage($cpm.selectColor);
+    $cpm.invokeCallBack($cpm.selectColor);
+  }
+
+  function valueRaise() {
+    let val = parseInt(input.value);
+    input.value = val === 255 ? val : ++val;
+    input.setAttribute("value", input.value);
+    valueChanged();
+  }
+
+  function valueReduce() {
+    let val = parseInt(input.value);
+    input.value = val === 0 ? val : --val;
+    input.setAttribute("value", input.value);
+    valueChanged();
+  }
+
+  function valueChanged() {
+    $cpm.previewColor(parseInt($cpm.cri.value), parseInt($cpm.cgi.value), parseInt($cpm.cbi.value));
+  }
+};
+/**
+ * More color options
+ * @returns svg
+ */
+$cpm.initDisc = function () {
+  var svg = this.createElns(this.svgNs, "svg", {
+    id: "colorPickerModal",
+    width: 180,
+    height: 210,
+  });
+  svg.appendChild(this.defs());
+  svg.appendChild(this.disc());
+  svg.appendChild(this.slider());
+  svg.addEventListener("mousedown", this.handleEvent);
+  svg.addEventListener("mousemove", this.handleEvent);
+  this.svgDom = svg;
+  return svg;
+};
+/**
+ * HandleEvent for Color Disc
+ */
+$cpm.handleEvent = function (e) {
+  e.stopPropagation();
+  switch (e.type) {
+    case "mousedown":
+      checkHit(e) && ($cpm.cmd = true);
+      checkSlid(e) && ($cpm.smd = true);
+    case "mousemove":
+      checkHit(e) && preview.call(this, e);
+      checkSlid(e) && smarkerMove(e);
+      break;
+    case "mouseleave":
+      $cpm.cmd = false;
+      $cpm.smd = false;
+      break;
+    case "mouseup":
+      $cpm.cmd = false;
+      $cpm.smd = false;
+      $cpm.colorStorage($cpm.selectColor);
+      $cpm.invokeCallBack($cpm.selectColor);
+      break;
+  }
+
+  function checkHit(e) {
+    var x = e.offsetX - 90;
+    var y = e.offsetY - 90;
+    return Math.sqrt(x * x + y * y) < 90;
+  }
+
+  function checkSlid(e) {
+    var x = e.offsetX;
+    var y = e.offsetY;
+    if (x >= 5 && x <= 175 && y >= 190 && y <= 200) {
+      return true;
+    }
+    return false;
+  }
+
+  function smarkerMove(e) {
+    if ($cpm.smd) {
+      var x = e.offsetX;
+      if (x < 10) x = 10;
+      if (x > 170) x = 170;
+      $cpm.smarker.setAttribute("transform", "translate(" + x + " 194)");
+      var per = (x - 10) / 160;
+      $cpm.lightness.setAttribute("opacity", per);
+      $cpm.opacity = per;
+      var [dx, dy] = $cpm.posDisc;
+      var p = Math.sqrt(dx * dx + dy * dy);
+      if (p >= 84) p = 84;
+      var h = p == 0 ? 360 : (Math.acos(dx / p) * 180) / Math.PI;
+      if (dy < 0) h = 360 - h;
+      h === 0 && (h = 360);
+      $cpm.resetDefs(h, p);
+      var [r, g, b] = $cpm.hsv2rgb(h, p / 84, 1 - per);
+      $cpm.previewColor(r, g, b);
+      $cpm.colorRgb = [r, g, b];
+      $cpm.selectColor = $cpm.combineRgb(r, g, b);
+    }
+  }
+
+  function preview(e) {
+    if ($cpm.cmd) {
+      var dx = e.offsetX - 90;
+      var dy = e.offsetY - 90;
+      var p = Math.sqrt(dx * dx + dy * dy);
+      var h = p === 0 ? 360 : (Math.acos(dx / p) * 180) / Math.PI;
+      if (dy < 0) h = 360 - h;
+      h === 0 && (h = 360);
+      if (p >= 84) p = 84;
+      $cpm.resetDefs(h, p);
+      var [r, g, b] = $cpm.hsv2rgb(h, p / 84, 1 - $cpm.opacity);
+      var a = (h * Math.PI) / 180;
+      if (p < 84) {
+        $cpm.cmarker.setAttribute("transform", "translate(" + e.offsetX + " " + e.offsetY + ")");
+      } else {
+        $cpm.cmarker.setAttribute("transform", "translate(" + (84 * Math.cos(a) + 90) + " " + (84 * Math.sin(a) + 90) + ")");
+      }
+      $cpm.posDisc = [dx, dy];
+      $cpm.previewColor(r, g, b);
+      $cpm.colorRgb = [r, g, b];
+      $cpm.selectColor = $cpm.combineRgb(r, g, b);
+    }
+  }
+};
+/**
+ * Position the current color when opening the circular color picker
+ */
+$cpm.restoreDisc = function () {
+  var [r, g, b] = this.colorRgb;
+  var hex = this.rgb2hex(r, g, b);
+  this.svgDom.removeChild(this.defsDom);
+  this.defsDom = this.defs("#" + hex);
+  this.svgDom.insertBefore(this.defsDom, this.discDom);
+  var [h, s, v] = this.rgb2hsv(r, g, b);
+  var p = s * 84;
+  $cpm.resetDefs(h, p);
+  h = (h * Math.PI) / 180;
+  var x = p * Math.cos(h) + 90;
+  var y = p * Math.sin(h) + 90;
+  this.cmarker.setAttribute("transform", "translate(" + x + " " + y + ")");
+  this.posDisc = [p * Math.cos(h), p * Math.sin(h)];
+  this.opacity = 1 - v;
+  this.lightness.setAttribute("opacity", 1 - v);
+  var sx = 160 * (1 - v) + 10;
+  this.smarker.setAttribute("transform", "translate(" + sx + " 194)");
+};
+/**
+ * reset defs
+ * @param {Number} h Hue
+ * @param {Number} p Pole diameter
+ */
+$cpm.resetDefs = function (h, p) {
+  var [c1, c2, c3] = this.hsv2rgb(h, p / 84, 1 - $cpm.opacity);
+  var hex = this.rgb2hex(c1, c2, c3);
+  this.svgDom.removeChild(this.defsDom);
+  this.defsDom = this.defs("#" + hex);
+  this.svgDom.insertBefore(this.defsDom, this.discDom);
+};
+/**
+ * Create a box with up and down arrows
+ * @returns Element
+ */
+$cpm.createArrow = function () {
+  var div = this.createEl("div", "upDownSmallArrowForColorPicker");
+  var up = this.createEl("button", "udsafcp-uparrow");
+  var span = this.createEl("span", "colorPickerTriangle");
+  up.appendChild(span);
+  this.up = up;
+  div.appendChild(up);
+  var down = up.cloneNode(true);
+  down.className = "udsafcp-doarrow";
+  this.down = down;
+  div.appendChild(down);
+  return div;
+};
+/**
+ * Judge the value of rgb to determine whether it can be increased or decreased
+ * @param {Object} el input element
+ */
+$cpm.judgeButtonStatus = function (el) {
+  let val = parseInt(el.value);
+  if (val === 255) {
+    this.up.setAttribute("disabled", "disabled");
+  } else if (val === 0) {
+    this.down.setAttribute("disabled", "disabled");
+  } else {
+    this.up.removeAttribute("disabled");
+    this.down.removeAttribute("disabled");
+  }
+};
+/**
+ *
+ * @param {string} color current color
+ * @returns defs
+ */
+$cpm.defs = function (color) {
+  var defs = this.createElns(this.svgNs, "defs");
+  var ra = this.createElns(this.svgNs, "radialGradient", {
+    id: "colorPickerGradient_radial",
+  });
+  ra.appendChild(
+    this.createElns(this.svgNs, "stop", {
+      offset: "0%",
+      "stop-color": "#fff",
+      "stop-opacity": "1",
+    })
+  );
+  ra.appendChild(
+    this.createElns(this.svgNs, "stop", {
+      offset: "100%",
+      "stop-color": "#fff",
+      "stop-opacity": "0",
+    })
+  );
+  defs.appendChild(ra);
+  var la = this.createElns(this.svgNs, "linearGradient", {
+    id: "colorPickerGradient_linear",
+  });
+  la.appendChild(
+    this.createElns(this.svgNs, "stop", {
+      offset: "0%",
+      "stop-color": color ? color : "#fff",
+      "stop-opacity": "1",
+    })
+  );
+  la.appendChild(
+    this.createElns(this.svgNs, "stop", {
+      offset: "100%",
+      "stop-color": "#000",
+      "stop-opacity": "1",
+    })
+  );
+  defs.appendChild(la);
+  this.defsDom = defs;
+  return defs;
+};
+/**
+ *
+ * @returns Outer circle
+ */
+$cpm.disc = function () {
+  let className = "colorPickerModal_disc";
+  let disc = this.createElns(this.svgNs, "g", {
+    class: className,
+  });
+  var circle = this.createElns(this.svgNs, "circle", {
+    class: className + "_border",
+    fill: "transparent",
+    stroke: "transparent",
+    "stroke-width": "0",
+    cx: 90,
+    cy: 90,
+    r: 90,
+  });
+  disc.appendChild(circle);
+  disc.appendChild(this.colorCircular());
+  circle = this.createElns(this.svgNs, "circle", {
+    class: className + "_saturation",
+    cx: 90,
+    cy: 90,
+    r: 90,
+    fill: "url(#colorPickerGradient_radial)",
+  });
+  disc.appendChild(circle);
+  circle = this.createElns(this.svgNs, "circle", {
+    class: className + "_lightness",
+    opacity: 0,
+    cx: 90,
+    cy: 90,
+    r: 90,
+  });
+  this.lightness = circle;
+  disc.appendChild(circle);
+  var g = this.createElns(this.svgNs, "g", {
+    class: className + "_marker",
+    transform: "translate(90 90)",
+  });
+  circle = this.createElns(this.svgNs, "circle", {
+    class: className + "_marker_outer",
+    fill: "none",
+    "stroke-width": 1,
+    stroke: "#000",
+    r: 6,
+  });
+  g.appendChild(circle);
+  circle = this.createElns(this.svgNs, "circle", {
+    class: className + "_marker_outer",
+    fill: "none",
+    "stroke-width": 2,
+    stroke: "#fff",
+    r: 5,
+  });
+  this.cmarker = g;
+  g.appendChild(circle);
+  disc.appendChild(g);
+  this.discDom = disc;
+  return disc;
+};
+/**
+ *
+ * @returns colorCircular
+ */
+$cpm.colorCircular = function () {
+  let radiusXY = [
+    {
+      x: 135,
+      y: 90,
+    },
+  ];
+  let div = this.createElns(this.svgNs, "g", {
+    "stroke-width": 90,
+    fill: "none",
+  });
+  for (let i = 0; i < 362; i++) {
+    let X = Math.cos((i * Math.PI) / 180) * 44.5 + 90;
+    let Y = Math.sin((i * Math.PI) / 180) * 44.5 + 90;
+    radiusXY.push({
+      x: X,
+      y: Y,
+    });
+  }
+  for (let i = 1; i < 361; i++) {
+    let oPath = this.createElns(this.svgNs, "path", {
+      stroke: "hsl(" + i + ",100%,50%)",
+      d: ` M ${radiusXY[i + 2].x} ${radiusXY[i + 2].y} A 44.5 44.5 0 0 0 ${radiusXY[i].x} ${radiusXY[i].y}`,
+    });
+    div.appendChild(oPath);
+  }
+  return div;
+};
+/**
+ *
+ * @returns slider
+ */
+$cpm.slider = function () {
+  let className = "colorPickerModal_slider";
+  var slider = this.createElns(this.svgNs, "g", {
+    class: className,
+  });
+  var rect = this.createElns(this.svgNs, "rect", {
+    class: className + "_value",
+    rx: 5,
+    ry: 5,
+    x: 5,
+    y: 190,
+    width: 170,
+    height: 10,
+    "stroke-width": 0,
+    stroke: "transparent",
+    fill: "url(#colorPickerGradient_linear)",
+  });
+  slider.appendChild(rect);
+  var g = this.createElns(this.svgNs, "g", {
+    class: className + "_marker",
+    transform: "translate(10 194)",
+  });
+  var circle = this.createElns(this.svgNs, "circle", {
+    class: className + "_marker_outer",
+    fill: "#ffffff",
+    "stroke-width": 1,
+    stroke: "#969696",
+    cx: 0,
+    cy: 0,
+    r: 7,
+  });
+  g.appendChild(circle);
+  this.smarker = g;
+  slider.appendChild(g);
+  return slider;
+};
+/**
+ * check color type
+ * @param {Object} el element
+ * @returns rgb format color
+ */
+$cpm.checkColorType = function (el) {
+  return this.convert2rgb(window.getComputedStyle(el, false).backgroundColor);
+};
+/**
+ * Convert to rgb format color
+ * @param {String} str
+ * @returns Rgb format color
+ */
+$cpm.convert2rgb = function (str) {
+  var test = /^rgb\(.*/;
+  if (test.test(str)) {
+    // str.match(/(\d{1,3}), ?(\d{1,3}), ?(\d{1,3})/);
+    var arr = str.substring(str.indexOf("(") + 1, str.indexOf(")")).split(",");
+    return arr.map((i) => +i);
+  } else if (str.indexOf("#") == 0) {
+    return this.hex2rgb(str.slice(1));
+  } else {
+    return [255, 255, 255];
+  }
+};
+/**
+ *
+ * @param {Number} r red
+ * @param {Number} g green
+ * @param {Number} b blue
+ * @returns Array [h,s,v]
+ */
+$cpm.rgb2hsv = function (r, g, b) {
+  var e,
+    r = r / 255,
+    g = g / 255,
+    b = b / 255,
+    i = Math.max(r, g, b),
+    s = Math.min(r, g, b),
+    a = i - s,
+    l = i,
+    h = 0 === i ? 0 : a / i;
+  switch (i) {
+    case s:
+      e = 0;
+      break;
+    case r:
+      e = (g - b) / a + (g < b ? 6 : 0);
+      break;
+    case g:
+      e = (b - r) / a + 2;
+      break;
+    case b:
+      e = (r - g) / a + 4;
+  }
+  return [60 * e, h, l];
+};
+$cpm.hsv2rgb = function (h, s, v) {
+  var e = h / 60,
+    n = s,
+    o = v,
+    r = Math.floor(e),
+    i = e - r,
+    s = o * (1 - n),
+    a = o * (1 - i * n),
+    l = o * (1 - (1 - i) * n),
+    h = r % 6;
+  var ob = {
+    r: 255 * [o, a, s, s, l, o][h],
+    g: 255 * [l, o, o, a, s, s][h],
+    b: 255 * [s, s, l, o, o, a][h],
+  };
+  return [Math.round(ob.r), Math.round(ob.g), Math.round(ob.b)];
+};
+/**
+ *
+ * @param {String} str hex
+ * @returns [r,g,b]
+ */
+$cpm.hex2rgb = function (str) {
+  return [parseInt(str.slice(0, 2), 16), parseInt(str.slice(2, 4), 16), parseInt(str.slice(4, 6), 16)];
+};
+/**
+ *
+ * @param {Number} r red
+ * @param {Number} g green
+ * @param {Number} b blue
+ * @returns hex:String
+ */
+$cpm.rgb2hex = function (r, g, b) {
+  return ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+};
+/**
+ * Combining binary colors
+ * @param {Number} r red
+ * @param {Number} g green
+ * @param {Number} b blue
+ * @returns The string of binary color
+ */
+$cpm.combineRgb = function (r, g, b) {
+  return "rgb(" + r + "," + g + "," + b + ")";
+};
+/** color-items */
+$cpm.rgbArray = [
+  ["rgb(255,255,255)", "rgb(0,0,0)", "rgb(230,230,230)", "rgb(68,84,106)", "rgb(91,155,213)", "rgb(237,125,49)", "rgb(165,165,165)", "rgb(255,192,0)", "rgb(68,114,196)", "rgb(112,173,71)"],
+  [
+    "rgb(242,242,242)",
+    "rgb(128,128,128)",
+    "rgb(206,206,206)",
+    "rgb(214,220,229)",
+    "rgb(222,235,247)",
+    "rgb(251, 229, 214)",
+    "rgb(237, 237, 237)",
+    "rgb(255, 242, 204)",
+    "rgb(218, 227, 243)",
+    "rgb(226, 240, 217)",
+  ],
+  [
+    "rgb(217, 217, 217)",
+    "rgb(89, 89, 89)",
+    "rgb(175, 171, 171)",
+    "rgb(173, 185, 202)",
+    "rgb(189, 215, 238)",
+    "rgb(248, 203, 173)",
+    "rgb(219, 219, 219)",
+    "rgb(255, 230, 153)",
+    "rgb(180, 199, 231)",
+    "rgb(197, 224, 180)",
+  ],
+  [
+    "rgb(191, 191, 191)",
+    "rgb(64, 64, 64)",
+    "rgb(118, 113, 113)",
+    "rgb(132, 151, 176)",
+    "rgb(157, 195, 230)",
+    "rgb(244, 177, 131)",
+    "rgb(201, 201, 201)",
+    "rgb(255, 217, 102)",
+    "rgb(143, 170, 220)",
+    "rgb(169, 209, 142)",
+  ],
+  [
+    "rgb(166, 166, 166)",
+    "rgb(38, 38, 38)",
+    "rgb(59, 56, 56)",
+    "rgb(51, 63, 80)",
+    "rgb(46, 117, 182)",
+    "rgb(197, 90, 17)",
+    "rgb(124, 124, 124)",
+    "rgb(191, 144, 0)",
+    "rgb(47, 85, 151)",
+    "rgb(84, 130, 53)",
+  ],
+  ["rgb(127, 127, 127)", "rgb(13, 13, 13)", "rgb(24, 23, 23)", "rgb(34, 42, 53)", "rgb(31, 78, 121)", "rgb(132, 60, 11)", "rgb(83, 83, 83)", "rgb(127, 96, 0)", "rgb(32, 56, 100)", "rgb(56, 87, 35)"],
+];
+/**
+ *
+ * @param {String} el Tag name
+ * @param {String} name className
+ * @param {Object} props Set Attribute
+ * @param {String} inner innerHTML
+ * @returns el
+ */
+$cpm.createEl = function (el, name, props, inner) {
+  var btn = document.createElement(el);
+  if (name) btn.className = name;
+  if (inner) btn.innerHTML = inner;
+  if (props) {
+    for (var key in props) {
+      btn.setAttribute(key, props[key]);
+    }
+  }
+  return btn;
+};
+/**
+ *
+ * @param {String} np namespace
+ * @param {String} el Tag name
+ * @param {Object} props Set attribute
+ * @param {String} inner InnerHTML
+ * @returns el
+ */
+$cpm.createElns = function (np, el, props, inner) {
+  var val = document.createElementNS(np, el);
+  if (props) {
+    for (var key in props) {
+      val.setAttribute(key, props[key]);
+    }
+  }
+  if (inner) val.innerHTML = inner;
+  return val;
+};

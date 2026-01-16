@@ -1,0 +1,318 @@
+Vue.component("diagram-panel", {
+  template: `
+      <div class="diagramModal">
+        <div class="rb-section" v-for="(val,key) in mainDoms" :key="key">
+          <div class="rb-section-title">{{key}}</div>
+          <div class="diagramView mt5 jcs-aic" v-if="val != null" v-for="(value,key) in val" :key="key">
+            <label class="abb" :title="key" :value='value.status' :class="{labelLarger:value.larger}">
+              <input type="checkbox" :checked="value.status" @change="changeEvent(key)"/><span>{{key}}</span>
+            </label>
+            <div v-if="value.input" class="gridChangeBox" v-show="value.status" 
+              @mouseenter="showTriangleBox = true" @mouseleave="showTriangleBox = false">
+              <div class="grid-input">
+                <input type="text" :value="value.num" @click="gridEvent($event)"/>
+              </div>
+              <div class="grid-selectbox" v-show="showTriangleBox">
+                <div class="triangle-s-t" @click="gridSizeChange(1)"></div>
+                <div class="triangle-s-b" @click="gridSizeChange()"></div>
+              </div>
+              <span class="spacing-unit">pt</span>
+            </div>
+            <div v-if="value.color" class="diaColorShow" :style="{background: value.color}" v-show="value.status" @click="colorPicker($event,key)"></div>
+          </div>
+          <div class="mt5" v-if="val == null">
+            <div class="psShow" @click.stop="showOptions = !showOptions">
+              <div class="psShowarea">{{pageSize}}</div>
+              <ul class="psShowOptions" v-show="showOptions">
+                <li v-for="item in pageSizeOptions" :key="item.id" @click.stop="changePageSize(item)">{{item.html}}</li>
+              </ul>
+            </div>
+            <div class="psOptions" v-show='custom'>
+              <input type="radio" name="psFormat" value="portrait" id="psPortrait" :checked='portrait' @change="changeRotate"/>
+              <label for="psPortrait">Portrait</label>
+              <input type="radio" name="psFormat" value="landscape" id="psLandscape" :checked='landscape' @change="changeRotate"/>
+              <label for="psLandscape">Landscape</label>
+            </div>
+            <div class="psCustom" v-show='!custom'>
+              <div class="psCustomWidth">
+                <input type="text" maxlength="7" size="7" id="widthInput" v-model="pageSizeWidth" @click="changePageSizeEvent($event)"/>
+                <span>in</span>
+              </div>
+              <span>x</span>
+              <div class="psCustomHeight">
+                <input type="text" maxlength="7" size="7" id="heightInput" v-model="pageSizeHeight" @click="changePageSizeEvent($event)"/>
+                <span>in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  `,
+  data() {
+    return {
+      portrait: false,
+      landscape: false,
+      pageSizeWidth: null,
+      pageSizeHeight: null,
+      pageSize: null,
+      showTriangleBox: false,
+      custom: false,
+      showOptions: false,
+      mainDoms: {
+        View: {
+          Grid: {
+            status: true,
+            input: true,
+            num: 15,
+            color: "#fff",
+          },
+          "Page View": {
+            status: true,
+          },
+          Background: {
+            status: false,
+            color: "#fff",
+          },
+          Shadow: {
+            status: false,
+          },
+        },
+        Options: {
+          "Connection Arrows": {
+            status: true,
+            larger: true,
+          },
+          "Connection Points": {
+            status: true,
+            larger: true,
+          },
+          Guides: {
+            status: true,
+            larger: true,
+          },
+        },
+        "Paper Size": null,
+      },
+      pageSizeOptions: [
+        { id: "a0", html: "A0 (841 mm x 1189 mm)", w: 3300, h: 4681 },
+        { id: "a1", html: "A1 (594 mm x 841 mm)", w: 2339, h: 3300 },
+        { id: "a2", html: "A2 (420 mm x 594 mm)", w: 1654, h: 2336 },
+        { id: "a3", html: "A3 (297 mm x 420 mm)", w: 1169, h: 1654 },
+        { id: "a4", html: "A4 (210 mm x 297 mm)", w: 827, h: 1169 },
+        { id: "a5", html: "A5 (148 mm x 210 mm)", w: 583, h: 827 },
+        { id: "b4", html: "B4 (250 mm x 353 mm)", w: 980, h: 1390 },
+        { id: "b5", html: "B5 (176 mm x 250 mm)", w: 690, h: 980 },
+        { id: "custom", html: "Custom" },
+      ],
+    };
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClick);
+  },
+  methods: {
+    handleClick() {
+      this.showOptions = false;
+    },
+    changeRotate() {
+      var newPageFormat = null;
+      if (this.portrait && graph.pageFormat.width < graph.pageFormat.height) {
+        newPageFormat = new mxRectangle(0, 0, Math.floor(graph.pageFormat.height), Math.floor(graph.pageFormat.width));
+      }
+      if (this.landscape && graph.pageFormat.width > graph.pageFormat.height) {
+        newPageFormat = new mxRectangle(0, 0, Math.floor(graph.pageFormat.height), Math.floor(graph.pageFormat.width));
+      }
+      if (graph.pageFormat == null || graph.pageFormat.width != newPageFormat.width || graph.pageFormat.height != newPageFormat.height) {
+        var change = new changePageSetup(graph, null, newPageFormat);
+        change.ignoreColor = true;
+        change.ignoreImage = true;
+        graph.model.execute(change);
+      }
+    },
+    changePageSizeEvent(e) {
+      e.target.focus();
+      e.target.select();
+      e.target.addEventListener("keydown", this.handleEvent);
+      e.target.addEventListener("blur",this.handleEvent);
+    },
+    handleEvent(e) {
+      switch (e.type) {
+        case "keydown":
+          if (e.key == "Enter") {
+            e.target.blur();
+          }
+          break;
+        case "blur":
+          e.target.removeEventListener("keydown", this.handleEvent);
+          e.target.removeEventListener("blur", this.handleEvent);
+          var newPageFormat = new mxRectangle(0, 0, Math.floor(Number(this.pageSizeWidth) * 100), Math.floor(Number(this.pageSizeHeight) * 100));
+          if (graph.pageFormat == null || graph.pageFormat.width != newPageFormat.width || graph.pageFormat.height != newPageFormat.height) {
+            var change = new changePageSetup(graph, null, newPageFormat);
+            change.ignoreColor = true;
+            change.ignoreImage = true;
+            graph.model.execute(change);
+          }
+          break;
+      }
+    },
+    changePageSize(item) {
+      this.showOptions = false;
+      if (item.id == "custom") {
+        this.custom = false;
+        this.pageSizeWidth = graph.view.getBackgroundPageBounds().width / 100;
+        this.pageSizeHeight = graph.view.getBackgroundPageBounds().height / 100;
+      } else {
+        this.custom = true;
+        var pageFormat = this.getPageFormat(item.id);
+        if (graph.pageFormat == null || graph.pageFormat.width != pageFormat.width || graph.pageFormat.height != pageFormat.height) {
+          var change = new changePageSetup(graph, null, pageFormat);
+          change.ignoreColor = true;
+          change.ignoreImage = true;
+          graph.model.execute(change);
+        }
+        this.updateStatus();
+      }
+      this.pageSize = item.html;
+    },
+    getPageFormat(key) {
+      var formats = graph.dialog.getFormats();
+      for (let i = 0; i < formats.length - 1; i++) {
+        if (formats[i].key == key) {
+          return formats[i].format;
+        }
+      }
+    },
+    colorPicker(e, key) {
+      this.handleColor(
+        e.target,
+        mxUtils.bind(this, function (val) {
+          if (key == "Grid") {
+            if (val == "transparent") {
+              graph.setGridEnabled(false);
+              graph.view.validateBackground();
+              graph.fireEvent(new mxEventObject("gridEnabledChanged"));
+            } else {
+              graph.setGridEnabled(true);
+              MenuCommand.SetGridColor.execute(val);
+            }
+          } else {
+            graph.model.execute(new changePageSetup(graph, val));
+          }
+        })
+      );
+    },
+    gridSizeChange(flag) {
+      var val = this.mainDoms.View.Grid.num;
+      graph.setGridSize(flag ? (val > 1 ? --val : 1) : ++val);
+    },
+    gridEvent(e) {
+      e.target.select();
+      e.target.addEventListener("mousewheel", this.gridChangeEvent);
+      e.target.addEventListener("keydown", this.gridChangeEvent);
+      e.target.addEventListener("blur", this.gridChangeEvent);
+    },
+    updateStatus() {
+      this.mainDoms.View.Grid.status = graph.isGridEnabled();
+      this.mainDoms.View.Grid.num = graph.getGridSize();
+      this.mainDoms.View.Grid.color = graph.view.gridColor;
+      this.mainDoms.View.Background.status = graph.background == null || graph.background == "none" ? false : true;
+      this.mainDoms.View.Background.color = graph.background;
+      this.mainDoms.View.Shadow.status = graph.currentEdgeStyle["shadow"] == "1" && graph.currentVertexStyle["shadow"] == "1";;
+      this.mainDoms.View["Page View"].status = graph.pageVisible;
+      this.mainDoms.Options.Guides.status = graph.graphHandler.guidesEnabled;
+      this.mainDoms.Options["Connection Arrows"].status = graph.connectionArrowsEnabled;
+      this.mainDoms.Options["Connection Points"].status = graph.connectionHandler.isEnabled();
+      var obj = this.checkPageSize();
+      if (obj == "custom") {
+        this.custom = false;
+        this.pageSize = "Custom";
+        this.pageSizeWidth = (graph.view.getBackgroundPageBounds().width / 100 / graph.view.scale).toFixed(2);
+        this.pageSizeHeight = (graph.view.getBackgroundPageBounds().height / 100 / graph.view.scale).toFixed(2);
+      } else {
+        this.custom = true;
+        this.pageSize = obj.html;
+        this.portrait = obj.portrait ? true : false;
+        this.landscape = obj.portrait ? false : true;
+      }
+    },
+    changeEvent(key) {
+      switch (key) {
+        case "Grid":
+          MenuCommand.Grid.execute();
+          break;
+        case "Page View":
+          graph.setPageVisible(!graph.pageVisible);
+          break;
+        case "Background":
+          graph.model.execute(new changePageSetup(graph, this.mainDoms.View.Background.status ? null : "#fff"));
+          break;
+        case "Shadow":
+          if (!this.mainDoms.View.Shadow.status) {
+            graph.currentEdgeStyle["shadow"] = "1";
+            graph.currentVertexStyle["shadow"] = "1";
+          } else {
+            delete graph.currentEdgeStyle["shadow"];
+            delete graph.currentVertexStyle["shadow"];
+          }
+          graph.updateCellStyles("shadow", !this.mainDoms.View.Shadow.status ? "1" : "0", graph.getVerticesAndEdges());
+          break;
+        case "Connection Arrows":
+          graph.connectionArrowsEnabled = !graph.connectionArrowsEnabled;
+          break;
+        case "Connection Points":
+          graph.setConnectable(!graph.connectionHandler.isEnabled());
+          break;
+        default:
+          graph.graphHandler.guidesEnabled = !graph.graphHandler.guidesEnabled;
+          break;
+      }
+      this.updateStatus();
+    },
+    gridChangeEvent(e) {
+      var val = Number(e.target.value);
+      switch (e.type) {
+        case "mousewheel":
+          e.stopPropagation();
+          e.preventDefault();
+          graph.setGridSize(e.deltaY > 0 ? (val > 1 ? --val : 1) : ++val);
+          break;
+        case "keydown":
+          e.key == "Delete" && e.stopPropagation();
+          if (e.key == "ArrowDown") {
+            e.preventDefault();
+            graph.setGridSize(val > 1 ? --val : 1);
+          }
+          if (e.key == "ArrowUp") {
+            e.preventDefault();
+            graph.setGridSize(++val);
+          }
+          e.key == "Enter" && e.target.blur();
+          break;
+        case "blur":
+          e.target.removeEventListener("mousewheel", this.gridChangeEvent);
+          e.target.removeEventListener("keydown", this.gridChangeEvent);
+          e.target.removeEventListener("blur", this.gridChangeEvent);
+          graph.setGridSize(typeof Number(e.target.value) === "number" && !isNaN(Number(e.target.value)) ? (val > 0 ? val : 1) : 2);
+          break;
+      }
+    },
+    checkPageSize() {
+      var formats = this.pageSizeOptions;
+      var current = graph.view.getBackgroundPageBounds();
+      for (let i = 0; i < formats.length; i++) {
+        var w = formats[i].w,
+          h = formats[i].h;
+        if (w == current.width / graph.view.scale && h == current.height / graph.view.scale)
+          return {
+            html: formats[i].html,
+            portrait: true,
+          };
+        if (w == current.height / graph.view.scale && h == current.width / graph.view.scale)
+          return {
+            html: formats[i].html,
+            portrait: false,
+          };
+      }
+      return "custom";
+    },
+  },
+});
