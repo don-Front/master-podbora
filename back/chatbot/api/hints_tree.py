@@ -37,9 +37,7 @@ HINTS_TREE = {
             "Пришлите, пожалуйста, файл в формате PDF с описанием характеристик необходимого оборудования "
             "(наименование, модель, параметры, количество, контакты для связи — по желанию)."
         ),
-        "hints": [
-            {"text": "Пропустить", "next_state": "order_final"},
-        ],
+        "hints": [],
         "expects_input": False,
         "next_state": "order_final",
         "is_final": False,
@@ -75,41 +73,6 @@ HINTS_TREE = {
         "is_final": True,
         "show_back": False,
     },
-    # Запрос цены по прибору со слайдера (после подбора из 1С): телефон → почта → код с почты → order_final
-    "equipment_price_phone": {
-        "id": "equipment_price_phone",
-        "bot_message": (
-            "Укажите номер телефона для связи (российский формат, например +7 903 123-45-67 или 89031234567)."
-        ),
-        "hints": [],
-        "expects_input": True,
-        "next_state": "equipment_price_email",
-        "is_final": False,
-        "show_back": True,
-    },
-    "equipment_price_email": {
-        "id": "equipment_price_email",
-        "bot_message": (
-            "Укажите адрес электронной почты для верификации — на него мы сможем отправить коммерческое предложение."
-        ),
-        "hints": [],
-        "expects_input": True,
-        "next_state": "equipment_price_verify_code",
-        "is_final": False,
-        "show_back": True,
-    },
-    "equipment_price_verify_code": {
-        "id": "equipment_price_verify_code",
-        "bot_message": (
-            "На указанную почту отправлен код подтверждения. Введите шестизначный код из письма."
-        ),
-        "hints": [],
-        "expects_input": True,
-        "next_state": "order_final",
-        "is_final": False,
-        "show_back": True,
-    },
-    
     # ===== ПРОДАЖА ОБОРУДОВАНИЯ =====
     "sales": {
         "id": "sales",
@@ -519,9 +482,6 @@ def get_parent_state(state_id: str) -> str:
         # Оформление заказа
         "order_pdf_request": "start",
         "order_specs_clarify": "order_pdf_request",
-        "equipment_price_phone": "order_final",
-        "equipment_price_email": "equipment_price_phone",
-        "equipment_price_verify_code": "equipment_price_email",
     }
     return parent_map.get(state_id, "start")
 

@@ -11,8 +11,6 @@ class Chat(models.Model):
     # Черновик JSON спецификации и текущее поле при уточнении (сценарий заказа по PDF)
     order_specs_draft = models.JSONField(null=True, blank=True)
     order_specs_pending_field = models.CharField(max_length=64, blank=True, null=True)
-    # Временные данные запроса цены по прибору со слайдера (оборудование, телефон, почта)
-    price_quote_draft = models.JSONField(null=True, blank=True)
 
     def __str__(self):
         return self.title

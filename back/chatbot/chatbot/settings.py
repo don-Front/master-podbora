@@ -16,19 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Сервис отправки кода и проверки почты (см. api/verification_client.py)
-VERIFICATION_SERVICE_ORIGIN = os.environ.get(
-    'VERIFICATION_SERVICE_ORIGIN',
-    'http://127.0.0.1:8001',
-).strip().rstrip('/')
-
-# Сервис ориентировочной цены (см. api/estimate_price_client.py)
-ESTIMATE_PRICE_SERVICE_ORIGIN = os.environ.get(
-    'ESTIMATE_PRICE_SERVICE_ORIGIN',
-    'http://127.0.0.1:8010',
-).strip().rstrip('/')
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 

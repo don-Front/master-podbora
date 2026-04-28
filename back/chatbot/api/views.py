@@ -18,58 +18,8 @@ from .hints_tree import HINTS_TREE, get_state, get_next_state, get_parent_state
 
 # Import email service
 from .email_service import EmailValidator, EmailSender, extract_contact_info
-from .verification_client import send_verification_code, verify_code as verify_email_code
-from .estimate_price_client import build_estimate_body_from_draft, request_estimate_price
 
 logger = logging.getLogger(__name__)
-
-
-TEMP_ORDER_SPECS_SKIP = {
-    "medium": "gas",
-    "gas_type": "природный газ",
-    "flow_min": 70,
-    "flow_max": 2500,
-    "flow_unit": "м³/ч",
-    "pressure_min": 0.3,
-    "pressure_max": 25,
-    "pressure_unit": "МПа",
-    "temperature_min": -40,
-    "temperature_max": 60,
-    "temperature_unit": "°C",
-    "accuracy": "1%",
-    "diameter": 100,
-}
-TEMP_SKIP_PHONE = "89289891111"
-TEMP_SKIP_EMAIL = "ustavitskyandrei@yandex.ru"
-
-
-def _is_temp_skip_specs(specs) -> bool:
-    """True только для временного JSON, который подставляет кнопка «Пропустить»."""
-    if not isinstance(specs, dict):
-        return False
-    return all(specs.get(k) == v for k, v in TEMP_ORDER_SPECS_SKIP.items())
-
-
-def _format_price_extra(draft, label: str) -> str:
-    est_body = build_estimate_body_from_draft(draft)
-    if est_body:
-        ok_est, est = request_estimate_price(est_body)
-        if ok_est and isinstance(est, dict):
-            disp = (est.get('price_display') or '').strip()
-            ename = (est.get('equipment_name') or label).strip()
-            if disp:
-                return (
-                    f'\n\nВы выбрали оборудование «{ename}». '
-                    f'Ориентировочная цена: {disp}.'
-                )
-        return (
-            f'\n\nАвтоматический расчёт цены недоступен: {est}. '
-            f'Точную стоимость уточнит менеджер.'
-        )
-    return (
-        '\n\nОриентировочный расчёт не выполнен: не хватает кода прибора '
-        'или параметров из итоговой спецификации. Цену сообщит менеджер.'
-    )
 
 
 def _parse_equipment_for_price(data):
@@ -400,7 +350,6 @@ class MessageViewSet(viewsets.ModelViewSet):
         order_specs_json = None
         allow_empty_bot = False  # True: финал заказа, текст отдаёт фронт по ответу /api/1c/data
         suppress_chat_email = False  # не дублировать письмо при завершении сценария «цена со слайдера»
-        verification_passed = False  # фронт выводит в консоль при успешной проверке кода
 
         state_data = get_state(current_state)
         
@@ -409,22 +358,7 @@ class MessageViewSet(viewsets.ModelViewSet):
         
         if is_hint_selection:
             q_sel = (question or '').strip()
-            if q_sel == 'Пропустить' and current_state == 'order_pdf_request':
-                draft = dict(TEMP_ORDER_SPECS_SKIP)
-                try:
-                    ch = Chat.objects.get(pk=chat_id)
-                    ch.order_specs_draft = None
-                    ch.order_specs_pending_field = None
-                    ch.save(update_fields=["order_specs_draft", "order_specs_pending_field"])
-                except Chat.DoesNotExist:
-                    pass
-                _safe_print_order_specs_final(draft)
-                order_specs_json = draft
-                next_state = "order_final"
-                bot_response = ""
-                allow_empty_bot = True
-                hint_locked = True
-            elif q_sel == 'Получить цену' and current_state == 'order_final':
+            if q_sel == 'Получить цену' and current_state == 'order_final':
                 eq_obj = _parse_equipment_for_price(data)
                 label = ''
                 if eq_obj:
@@ -438,24 +372,7 @@ class MessageViewSet(viewsets.ModelViewSet):
                     hint_locked = True
                 else:
                     try:
-                        ch = Chat.objects.get(pk=chat_id)
-                        specs_snap = _parse_order_specs_for_price(data) or {}
-                        price_draft = {
-                            'equipment': {
-                                'id': eq_obj.get('id') or eq_obj.get('equipment_id') or '',
-                                'model': eq_obj.get('model') or '',
-                                'name': eq_obj.get('name') or '',
-                                'image': eq_obj.get('image') or '',
-                            },
-                            'specs': specs_snap,
-                            'phone': None,
-                            'email': None,
-                        }
-                        if _is_temp_skip_specs(specs_snap):
-                            price_draft['phone'] = TEMP_SKIP_PHONE
-                            price_draft['email'] = TEMP_SKIP_EMAIL
-                        ch.price_quote_draft = None
-                        ch.save(update_fields=['price_quote_draft'])
+                        Chat.objects.get(pk=chat_id)
                         bot_response = ""
                         allow_empty_bot = True
                         next_state = 'order_final'
@@ -650,149 +567,6 @@ class MessageViewSet(viewsets.ModelViewSet):
                                     next_state = "order_final"
                                     order_specs_json = draft
                                     hint_locked = True
-            elif current_state == 'equipment_price_phone':
-                text = (question or '').strip()
-                phone_st = get_state('equipment_price_phone')
-                ask_phone = phone_st.get('bot_message') or ''
-                chat = Chat.objects.filter(pk=chat_id).first()
-                if not chat or not chat.price_quote_draft:
-                    bot_response = (
-                        'Сессия запроса цены устарела. Выберите прибор на слайдере и снова нажмите «Получить цену».'
-                    )
-                    next_state = 'order_final'
-                    hint_locked = True
-                elif not text:
-                    bot_response = ask_phone
-                    next_state = current_state
-                    hint_locked = True
-                else:
-                    ok, err, pretty = EmailValidator.validate_phone_ru(text)
-                    if not ok:
-                        bot_response = f'{err}\n\n{ask_phone}'
-                        next_state = current_state
-                        hint_locked = True
-                    else:
-                        draft = dict(chat.price_quote_draft)
-                        draft['phone'] = pretty
-                        chat.price_quote_draft = draft
-                        chat.save(update_fields=['price_quote_draft'])
-                        next_state = 'equipment_price_email'
-                        next_state_data = get_state(next_state)
-                        bot_response = next_state_data.get('bot_message') or ''
-                        hint_locked = True
-            elif current_state == 'equipment_price_email':
-                text = (question or '').strip()
-                email_st = get_state('equipment_price_email')
-                ask_email = email_st.get('bot_message') or ''
-                chat = Chat.objects.filter(pk=chat_id).first()
-                if not chat or not chat.price_quote_draft:
-                    bot_response = (
-                        'Сессия запроса цены устарела. Начните с кнопки «Получить цену» у слайдера приборов.'
-                    )
-                    next_state = 'order_final'
-                    hint_locked = True
-                elif not text:
-                    bot_response = ask_email
-                    next_state = current_state
-                    hint_locked = True
-                else:
-                    ok, err = EmailValidator.validate_email(text)
-                    if not ok:
-                        bot_response = f'{err}\n\n{ask_email}'
-                        next_state = current_state
-                        hint_locked = True
-                    else:
-                        draft = dict(chat.price_quote_draft)
-                        em = text.strip().lower()
-                        draft['email'] = em
-                        sent_ok, sent_err = send_verification_code(em)
-                        if not sent_ok:
-                            bot_response = (
-                                f'Не удалось отправить код на почту: {sent_err}\n\n{ask_email}'
-                            )
-                            next_state = current_state
-                            hint_locked = True
-                            chat.price_quote_draft = draft
-                            chat.save(update_fields=['price_quote_draft'])
-                        else:
-                            chat.price_quote_draft = draft
-                            chat.save(update_fields=['price_quote_draft'])
-                            next_state = 'equipment_price_verify_code'
-                            next_state_data = get_state(next_state)
-                            bot_response = next_state_data.get('bot_message') or ''
-                            hint_locked = True
-            elif current_state == 'equipment_price_verify_code':
-                text = (question or '').strip()
-                verify_st = get_state('equipment_price_verify_code')
-                ask_code = verify_st.get('bot_message') or ''
-                chat = Chat.objects.filter(pk=chat_id).first()
-                if not chat or not chat.price_quote_draft:
-                    bot_response = (
-                        'Сессия запроса цены устарела. Начните с кнопки «Получить цену» у слайдера приборов.'
-                    )
-                    next_state = 'order_final'
-                    hint_locked = True
-                elif not text:
-                    bot_response = ask_code
-                    next_state = current_state
-                    hint_locked = True
-                else:
-                    em = (chat.price_quote_draft.get('email') or '').strip().lower()
-                    if not em:
-                        bot_response = (
-                            'Не удалось восстановить адрес почты. Укажите email ещё раз.'
-                        )
-                        next_state = 'equipment_price_email'
-                        hint_locked = True
-                    elif len(text) != 6 or not text.isdigit():
-                        bot_response = (
-                            f'Код должен состоять из 6 цифр. Повторите ввод.\n\n{ask_code}'
-                        )
-                        next_state = current_state
-                        hint_locked = True
-                    else:
-                        vok, verr = verify_email_code(em, text)
-                        if not vok:
-                            bot_response = f'{verr}\n\n{ask_code}'
-                            next_state = current_state
-                            hint_locked = True
-                        else:
-                            draft = dict(chat.price_quote_draft)
-                            chat.price_quote_draft = None
-                            chat.save(update_fields=['price_quote_draft'])
-                            eq = draft.get('equipment') or {}
-                            label = (eq.get('model') or eq.get('name') or '').strip() or 'прибор'
-                            em_disp = draft.get('email') or em
-                            price_extra = ''
-                            est_body = build_estimate_body_from_draft(draft)
-                            if est_body:
-                                ok_est, est = request_estimate_price(est_body)
-                                if ok_est and isinstance(est, dict):
-                                    disp = (est.get('price_display') or '').strip()
-                                    ename = (est.get('equipment_name') or label).strip()
-                                    if disp:
-                                        price_extra = (
-                                            f'\n\nВы выбрали оборудование «{ename}». '
-                                            f'Ориентировочная цена: {disp}.'
-                                        )
-                                else:
-                                    price_extra = (
-                                        f'\n\nАвтоматический расчёт цены недоступен: {est}. '
-                                        f'Точную стоимость уточнит менеджер.'
-                                    )
-                            else:
-                                price_extra = (
-                                    '\n\nОриентировочный расчёт не выполнен: не хватает кода прибора '
-                                    'или параметров из итоговой спецификации. Цену сообщит менеджер.'
-                                )
-                            bot_response = (
-                                f'Спасибо! Почта подтверждена. Запрос цены на «{label}» передан менеджеру; '
-                                f'ожидайте связи по телефону {draft.get("phone", "")} или на {em_disp}.'
-                            ) + price_extra
-                            next_state = 'order_final'
-                            suppress_chat_email = True
-                            verification_passed = True
-                            hint_locked = True
             elif state_data.get('expects_input', False):
                 # Состояние ожидает ввод - переходим дальше
                 next_state = state_data.get('next_state', current_state)
@@ -905,7 +679,6 @@ class MessageViewSet(viewsets.ModelViewSet):
             },
             'email_sent': email_sent,
             'order_specs_json': safe_order_specs,
-            'verification_passed': verification_passed,
         }, status=status.HTTP_201_CREATED)
 
 

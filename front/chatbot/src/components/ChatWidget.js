@@ -18,12 +18,6 @@ function isOrderFinalWithSpecs(data) {
   return data?.hint_state?.current_state === 'order_final' && data?.order_specs_json != null;
 }
 
-function logIfVerificationPassed(data) {
-  if (data?.verification_passed) {
-    console.log('Верификация пройдена!');
-  }
-}
-
 function numberFromSpecValue(value) {
   if (value == null || value === '') return null;
   if (typeof value === 'number') return Number.isFinite(value) ? value : null;
@@ -34,9 +28,6 @@ function numberFromSpecValue(value) {
 function jsonNumber(value) {
   return Number.isInteger(value) ? value : value;
 }
-
-const TKP_MOCK_PHONE = '89289891111';
-const TKP_MOCK_EMAIL = 'ustavitskyandrei@yandex.ru';
 
 function buildEstimatePriceBody(equipment, specs) {
   const id = (equipment?.id ?? equipment?.equipment_id ?? '').toString().trim();
@@ -318,8 +309,8 @@ function buildTkpPdfBody(quote, accessories) {
     equipment_name: quote.equipmentName,
     equipment_id: quote.equipmentId,
     price: quote.priceRub ?? parsePriceRub(quote.priceDisplay),
-    phone: TKP_MOCK_PHONE,
-    email: TKP_MOCK_EMAIL,
+    phone: '',
+    email: '',
     accessories: (accessories || []).map((item) => ({
       name: item.name,
       desc: item.desc,
@@ -782,7 +773,6 @@ export function ChatWidget() {
           }
         }
       }
-      logIfVerificationPassed(response.data);
     } catch (error) {
       console.error('Error selecting hint:', error);
       const errorMsg = {
@@ -935,7 +925,6 @@ export function ChatWidget() {
           },
         ]);
       }
-      logIfVerificationPassed(response.data);
     } catch (error) {
       console.error('Error get price hint:', error);
       setMessages((prev) => [
@@ -1263,7 +1252,6 @@ export function ChatWidget() {
             }
           }
         }
-        logIfVerificationPassed(response.data);
       } catch (error) {
         console.error('Error saving message:', error);
         const errorMsg = {
