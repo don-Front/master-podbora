@@ -1,17 +1,34 @@
 from openai import OpenAI
-from typing import List, Dict
+from typing import List, Dict, Any, Optional
 import re
+import time
+
+
+def _normalize_lm_base_url(base_url: str) -> str:
+    """
+    LM Studio (OpenAI-совместимый): базовый URL должен заканчиваться на /v1
+    (частая ошибка в config: только http://host:1234 — без /v1 запросы не попадают в API).
+    """
+    u = (base_url or "").strip().rstrip("/")
+    if not u:
+        return u
+    if u.endswith("/v1"):
+        return u
+    return f"{u}/v1"
 
 
 class LLMClient:
-    def __init__(self, base_url: str, model: str, temperature: float, max_tokens: int):
+    def __init__(self, base_url: str, model: str, temperature: float, max_tokens: int, timeout: int = 60):
+        base_url = _normalize_lm_base_url(base_url)
         self.client = OpenAI(
             base_url=base_url,
-            api_key="lm-studio"
+            api_key="lm-studio",
+            timeout=timeout
         )
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
+        self.timeout = timeout
 
     @staticmethod
     def build_context(chunks: List[Dict]) -> str:
@@ -38,9 +55,11 @@ class LLMClient:
         main_product = self._extract_main_product(products_in_context)
         
         base_prompt = f"""
-Ты — технический консультант компании.
-Твой ответ должен быть основан ТОЛЬКО на предоставленном контексте.
-Если информации нет в контексте — честно скажи об этом.
+Ты — технический консультант. Ответь клиенту по-русски, только фактами из приведённого ниже контекста.
+Если в контексте нет ответа — так и напиши коротко.
+
+Не описывай ход рассуждений, не используй заголовок «Thinking Process», не пиши пошаговый разбор на английском,
+не перечисляй роли (Role), задачи (Task), не ссылайся на «chunk» / «context» — клиент этого не должен видеть.
 
 ОСНОВНОЙ ПРОДУКТ: {main_product if main_product else "Не определен"}
 
@@ -51,27 +70,17 @@ class LLMClient:
 
 """
         
-        # Специализированные инструкции
         if question_type.get("is_attribute", False):
             prompt = base_prompt + """
-ЗАДАЧА: Найти точные значения параметров.
-1. ВНИМАТЕЛЬНО просмотри весь контекст
-2. Найди все упоминания параметра из вопроса
-3. Если параметр найден — укажи точное значение с единицами
-4. Если есть разные значения для разных моделей — перечисли все
-5. Если параметр не найден — так и скажи
+Сформулируй ответ для клиента: только найденные в контексте значения параметров (с единицами измерения).
+Если для разных модификаций значения различаются — перечисли по модификациям. Если параметра в тексте нет — напиши об этом.
 
-ОТВЕТ (будь точен и краток):
+Начинай сразу с ответа (списком или абзацами), без вступления про то, как ты анализируешь документ.
 """
         else:
             prompt = base_prompt + """
-ЗАДАЧА: Ответить на вопрос клиента.
-1. Используй информацию из контекста
-2. Будь информативен, но лаконичен
-3. Структурируй ответ если это уместно
-4. Если информации недостаточно — признай это
-
-ОТВЕТ:
+Сформулируй ответ для клиента: по существу вопроса, по-русски, структурируй при необходимости списком.
+Начинай сразу с ответа, без вступления и без описания своих шагов.
 """
         
         return self._call_llm(prompt)
@@ -90,32 +99,160 @@ class LLMClient:
         product_counter = Counter(products)
         return product_counter.most_common(1)[0][0] if product_counter else ""
 
+    @staticmethod
+    def _strip_chain_of_thought(text: str) -> str:
+        """Убирает видимый chain-of-thought (Thinking Process, теги thinking и т.п.)."""
+        if not text:
+            return ""
+        t = re.sub(
+            r"<think>.*?</think>\s*",
+            "",
+            text,
+            flags=re.DOTALL | re.IGNORECASE,
+        )
+        t = re.sub(r"<thinking>.*?</thinking>\s*", "", t, flags=re.DOTALL | re.IGNORECASE)
+        if not re.search(r"(?i)Thinking\s+Process:", t):
+            return t.strip()
+
+        # Типичный случай: после рассуждений идёт блок с параметрами на кириллице (маркированный список)
+        param_start = re.compile(
+            r"(?m)^\s*[\*•\-]\s*(?:\*\*)?"
+            r"(?:Диаметр|Диапазон|Динамический|Пределы|Модификац|Габарит|Масса|Питание|Температур|"
+            r"Давлен|Точност|Погрешност|Класс|Исполнен|Материал|Среда|Подключен|Выходн|Напряжен)[^\n]{0,120}",
+            re.IGNORECASE,
+        )
+        m = param_start.search(t)
+        if m:
+            return t[m.start() :].strip()
+
+        lines = t.splitlines()
+        out: List[str] = []
+        bad = re.compile(
+            r"(?i)(thinking process|analyze the|scan context|extract parameters|"
+            r"\*\*analyze|\*\*scan|\*\*extract|\*\*goal|\*\*role|\*\*task|chunk \d|the context)",
+        )
+        cyr = re.compile(r"[А-Яа-яЁё].{12,}")
+        started = False
+        for ln in lines:
+            if bad.search(ln):
+                continue
+            if not started and cyr.search(ln) and not re.match(r"^\s*\d+\.\s*\*\*", ln.strip()):
+                started = True
+            if started:
+                out.append(ln)
+        if out:
+            return "\n".join(out).strip()
+        return t.strip()
+
+    @staticmethod
+    def _extract_assistant_text(message: Any) -> str:
+        """
+        Текст ответа ассистента: OpenAI-совместимые серверы (LM Studio, vLLM, Qwen)
+        иногда кладут текст не только в message.content.
+        """
+        if message is None:
+            return ""
+
+        def _s(v: Optional[str]) -> str:
+            if v is None:
+                return ""
+            return str(v).strip()
+
+        text = _s(getattr(message, "content", None))
+        if text:
+            return text
+
+        for attr in ("reasoning_content", "reasoning", "text"):
+            t = _s(getattr(message, attr, None))
+            if t:
+                return t
+
+        model_dump = getattr(message, "model_dump", None)
+        if callable(model_dump):
+            try:
+                data = model_dump(mode="python")
+            except TypeError:
+                data = model_dump()
+            if isinstance(data, dict):
+                for key in ("content", "reasoning_content", "reasoning", "text", "response"):
+                    t = _s(data.get(key) if isinstance(data.get(key), (str, type(None))) else None)
+                    if t:
+                        return t
+
+        return ""
+
     def _call_llm(self, prompt: str) -> str:
         """Вызывает LLM API"""
-        try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                temperature=self.temperature,
-                max_tokens=self.max_tokens,
-                messages=[
-                    {
-                        "role": "system", 
-                        "content": "Ты технический эксперт, помогающий клиентам с оборудованием."
-                    },
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            if response and response.choices:
-                answer = response.choices[0].message.content.strip()
-                answer = self._post_process_answer(answer)
-                return answer
-            else:
-                return "Извините, не удалось получить ответ от сервера."
+        max_retries = 2
+        retry_delay = 2
+        
+        # Логируем параметры запроса
+        print(f"[DEBUG] LLM Request:")
+        print(f"[DEBUG]   base_url: {self.client.base_url}")
+        print(f"[DEBUG]   model: {self.model}")
+        print(f"[DEBUG]   temperature: {self.temperature}")
+        print(f"[DEBUG]   max_tokens: {self.max_tokens}")
+        print(f"[DEBUG]   timeout: {self.timeout}")
+        
+        for attempt in range(max_retries + 1):
+            try:
+                start_time = time.time()
+                print(f"[DEBUG] Sending request to LLM API (attempt {attempt + 1}/{max_retries + 1})...")
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": (
+                                "Ты технический консультант по приборам. Пиши только готовый ответ клиенту на русском: "
+                                "факты, списки, цифры из документации. Запрещено: Thinking Process, пошаговый разбор, "
+                                "анализ на английском, заголовки Role/Task/Goal, упоминания chunk и context."
+                            ),
+                        },
+                        {"role": "user", "content": prompt},
+                    ],
+                    timeout=self.timeout
+                )
                 
-        except Exception as e:
-            print(f"Ошибка при генерации ответа: {e}")
-            return "Извините, произошла ошибка при обработке запроса."
+                elapsed_time = time.time() - start_time
+                print(f"[DEBUG] LLM ответ получен за {elapsed_time:.2f} сек")
+                
+                if response and response.choices:
+                    choice = response.choices[0]
+                    msg = choice.message
+                    finish = getattr(choice, "finish_reason", None)
+                    answer = self._extract_assistant_text(msg)
+                    answer = LLMClient._strip_chain_of_thought(answer)
+                    answer = self._post_process_answer(answer)
+                    if not answer:
+                        print(
+                            f"[WARNING] LLM пустой ответ (finish_reason={finish!r}). "
+                            "Проверьте max_tokens в config.yaml и вывод модели в LM Studio."
+                        )
+                        return (
+                            "Модель вернула пустой ответ. Увеличьте max_tokens в config.yaml "
+                            "или повторите вопрос."
+                        )
+                    return answer
+                else:
+                    return "Извините, не удалось получить ответ от сервера."
+                    
+            except Exception as e:
+                error_msg = str(e).lower()
+                is_timeout = "timeout" in error_msg or "timed out" in error_msg
+                
+                if is_timeout and attempt < max_retries:
+                    print(f"[WARNING] Таймаут запроса (попытка {attempt + 1}/{max_retries + 1}). Повтор через {retry_delay} сек...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # Увеличиваем задержку для следующей попытки
+                    continue
+                else:
+                    print(f"Ошибка при генерации ответа: {e}")
+                    if is_timeout:
+                        return "Извините, запрос занял слишком много времени. Попробуйте переформулировать вопрос или обратиться в поддержку."
+                    return "Извините, произошла ошибка при обработке запроса."
 
     def _post_process_answer(self, answer: str) -> str:
         """Пост-обработка ответа для улучшения качества"""

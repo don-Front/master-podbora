@@ -1,16 +1,30 @@
 from openai import OpenAI
 from typing import List, Dict, Optional
 import re
+import time
+
+
+def _normalize_lm_base_url(base_url: str) -> str:
+    u = (base_url or "").strip().rstrip("/")
+    if not u:
+        return u
+    if u.endswith("/v1"):
+        return u
+    return f"{u}/v1"
+
 
 class LLMClient:
-    def __init__(self, base_url: str, model: str, temperature: float, max_tokens: int):
+    def __init__(self, base_url: str, model: str, temperature: float, max_tokens: int, timeout: int = 60):
+        base_url = _normalize_lm_base_url(base_url)
         self.client = OpenAI(
             base_url=base_url,
-            api_key="lm-studio"
+            api_key="lm-studio",
+            timeout=timeout
         )
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
+        self.timeout = timeout
 
     @staticmethod
     def build_context(chunks: List[Dict]) -> str:
@@ -235,32 +249,52 @@ class LLMClient:
 
     def _call_llm(self, prompt: str) -> str:
         """Вызывает LLM API"""
-        try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                temperature=self.temperature,
-                max_tokens=self.max_tokens,
-                messages=[
-                    {
-                        "role": "system", 
-                        "content": "Ты технический эксперт, помогающий клиентам с оборудованием."
-                    },
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            if response and response.choices:
-                answer = response.choices[0].message.content.strip()
+        max_retries = 2
+        retry_delay = 2
+        
+        for attempt in range(max_retries + 1):
+            try:
+                start_time = time.time()
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    messages=[
+                        {
+                            "role": "system", 
+                            "content": "Ты технический эксперт, помогающий клиентам с оборудованием."
+                        },
+                        {"role": "user", "content": prompt}
+                    ],
+                    timeout=self.timeout
+                )
                 
-                # Пост-обработка ответа
-                answer = self._post_process_answer(answer)
-                return answer
-            else:
-                return "Извините, не удалось получить ответ от сервера."
+                elapsed_time = time.time() - start_time
+                print(f"[DEBUG] LLM ответ получен за {elapsed_time:.2f} сек")
                 
-        except Exception as e:
-            print(f"Ошибка при генерации ответа: {e}")
-            return "Извините, произошла ошибка при обработке запроса."
+                if response and response.choices:
+                    answer = response.choices[0].message.content.strip()
+                    
+                    # Пост-обработка ответа
+                    answer = self._post_process_answer(answer)
+                    return answer
+                else:
+                    return "Извините, не удалось получить ответ от сервера."
+                    
+            except Exception as e:
+                error_msg = str(e).lower()
+                is_timeout = "timeout" in error_msg or "timed out" in error_msg
+                
+                if is_timeout and attempt < max_retries:
+                    print(f"[WARNING] Таймаут запроса (попытка {attempt + 1}/{max_retries + 1}). Повтор через {retry_delay} сек...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # Увеличиваем задержку для следующей попытки
+                    continue
+                else:
+                    print(f"Ошибка при генерации ответа: {e}")
+                    if is_timeout:
+                        return "Извините, запрос занял слишком много времени. Попробуйте переформулировать вопрос или обратиться в поддержку."
+                    return "Извините, произошла ошибка при обработке запроса."
 
     def _post_process_answer(self, answer: str) -> str:
         """Пост-обработка ответа для улучшения качества"""

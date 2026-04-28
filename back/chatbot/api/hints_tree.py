@@ -16,6 +16,7 @@ HINTS_TREE = {
         "id": "start",
         "bot_message": "Здравствуйте! Чем я могу Вам помочь?",
         "hints": [
+            {"text": "Оформить заказ", "next_state": "order_pdf_request"},
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
@@ -27,6 +28,86 @@ HINTS_TREE = {
         "expects_input": False,
         "is_final": False,
         "show_back": False,
+    },
+
+    # ===== ОФОРМЛЕНИЕ ЗАКАЗА: после выбора — просьба прислать PDF; дальше только загрузка файла =====
+    "order_pdf_request": {
+        "id": "order_pdf_request",
+        "bot_message": (
+            "Пришлите, пожалуйста, файл в формате PDF с описанием характеристик необходимого оборудования "
+            "(наименование, модель, параметры, количество, контакты для связи — по желанию)."
+        ),
+        "hints": [
+            {"text": "Пропустить", "next_state": "order_final"},
+        ],
+        "expects_input": False,
+        "next_state": "order_final",
+        "is_final": False,
+        "show_back": True,
+    },
+    # Уточнение полей, если в JSON после LLM остались null/0
+    "order_specs_clarify": {
+        "id": "order_specs_clarify",
+        "bot_message": "Нужно уточнить несколько параметров по спецификации. Ответьте на вопросы по одному.",
+        "hints": [],
+        "expects_input": True,
+        "is_final": False,
+        "show_back": True,
+        "next_state": "order_final",
+    },
+    "order_final": {
+        "id": "order_final",
+        "bot_message": (
+            "Спасибо! Заявка на оформление заказа принята. В ближайшее время с Вами свяжется менеджер. "
+            "Срочные вопросы: +7 (863) 203-77-80 (доб. 1080 или 1108)."
+        ),
+        "hints": [
+            {"text": "Оформить заказ", "next_state": "order_pdf_request"},
+            {"text": "Продажа оборудования", "next_state": "sales"},
+            {"text": "Поверка", "next_state": "verification"},
+            {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
+            {"text": "Техническая поддержка", "next_state": "tech_support"},
+            {"text": "Претензии", "next_state": "claims"},
+            {"text": "Отклик на вакансию", "next_state": "vacancy"},
+            {"text": "Другое", "next_state": "other"},
+        ],
+        "expects_input": False,
+        "is_final": True,
+        "show_back": False,
+    },
+    # Запрос цены по прибору со слайдера (после подбора из 1С): телефон → почта → код с почты → order_final
+    "equipment_price_phone": {
+        "id": "equipment_price_phone",
+        "bot_message": (
+            "Укажите номер телефона для связи (российский формат, например +7 903 123-45-67 или 89031234567)."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "equipment_price_email",
+        "is_final": False,
+        "show_back": True,
+    },
+    "equipment_price_email": {
+        "id": "equipment_price_email",
+        "bot_message": (
+            "Укажите адрес электронной почты для верификации — на него мы сможем отправить коммерческое предложение."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "equipment_price_verify_code",
+        "is_final": False,
+        "show_back": True,
+    },
+    "equipment_price_verify_code": {
+        "id": "equipment_price_verify_code",
+        "bot_message": (
+            "На указанную почту отправлен код подтверждения. Введите шестизначный код из письма."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "order_final",
+        "is_final": False,
+        "show_back": True,
     },
     
     # ===== ПРОДАЖА ОБОРУДОВАНИЯ =====
@@ -434,6 +515,13 @@ def get_parent_state(state_id: str) -> str:
         
         # Свободный чат
         "free_chat": "start",
+
+        # Оформление заказа
+        "order_pdf_request": "start",
+        "order_specs_clarify": "order_pdf_request",
+        "equipment_price_phone": "order_final",
+        "equipment_price_email": "equipment_price_phone",
+        "equipment_price_verify_code": "equipment_price_email",
     }
     return parent_map.get(state_id, "start")
 

@@ -8,6 +8,11 @@ class Chat(models.Model):
     ip_address = models.GenericIPAddressField(default='0.0.0.0')
     created_at = models.DateTimeField(auto_now_add=True)
     is_archived = models.BooleanField(default=False)
+    # Черновик JSON спецификации и текущее поле при уточнении (сценарий заказа по PDF)
+    order_specs_draft = models.JSONField(null=True, blank=True)
+    order_specs_pending_field = models.CharField(max_length=64, blank=True, null=True)
+    # Временные данные запроса цены по прибору со слайдера (оборудование, телефон, почта)
+    price_quote_draft = models.JSONField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -46,6 +51,7 @@ class Message(models.Model):
     chat = models.ForeignKey(Chat, related_name='messages', on_delete=models.CASCADE)
     content = models.TextField(blank=True, default='')
     image = models.ImageField(upload_to='chat_images/', blank=True, null=True)
+    attachment = models.FileField(upload_to='chat_attachments/', blank=True, null=True)
     is_user = models.BooleanField(default=True)  # True if sent by user, False if by bot
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -55,3 +61,7 @@ class Message(models.Model):
     @property
     def has_image(self):
         return bool(self.image)
+
+    @property
+    def has_attachment(self):
+        return bool(self.attachment)

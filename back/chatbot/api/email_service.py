@@ -7,7 +7,6 @@ import re
 import os
 import smtplib
 import socket
-import dns.resolver
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
@@ -32,6 +31,8 @@ class EmailValidator:
     EMAIL_REGEX = re.compile(
         r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     )
+    # Российский номер: 7 + код (3–9) + 9 цифр
+    RU_PHONE_DIGITS = re.compile(r'^7[3-9]\d{9}$')
     
     @classmethod
     def validate_format(cls, email: str) -> Tuple[bool, str]:
@@ -57,7 +58,13 @@ class EmailValidator:
         """
         if not EMAIL_VALIDATION.get("check_mx", True):
             return True, ""
-        
+
+        try:
+            import dns.resolver
+        except ImportError:
+            print("[WARNING] Установите dnspython: pip install dnspython — MX-проверка email отключена.")
+            return True, ""
+
         try:
             domain = email.split('@')[1]
             
@@ -103,6 +110,29 @@ class EmailValidator:
             return False, error
         
         return True, ""
+
+    @classmethod
+    def validate_phone_ru(cls, raw: str) -> Tuple[bool, str, str]:
+        """
+        Проверка российского номера. Возвращает (успех, сообщение_об_ошибке, нормализованный_вид).
+        """
+        if raw is None or not str(raw).strip():
+            return False, "Укажите номер телефона.", ""
+        digits = re.sub(r'\D', '', str(raw))
+        if digits.startswith('8') and len(digits) == 11:
+            digits = '7' + digits[1:]
+        if len(digits) == 10:
+            digits = '7' + digits
+        if len(digits) != 11 or not digits.startswith('7'):
+            return (
+                False,
+                "Неверный формат. Укажите российский номер: например +7 903 123-45-67 или 89031234567.",
+                "",
+            )
+        if not cls.RU_PHONE_DIGITS.match(digits):
+            return False, "Номер не похож на корректный российский телефон. Проверьте код и количество цифр.", ""
+        pretty = f"+7 ({digits[1:4]}) {digits[4:7]}-{digits[7:9]}-{digits[9:11]}"
+        return True, "", pretty
 
 
 class EmailSender:
@@ -195,12 +225,20 @@ class EmailSender:
                         image_cid_map[img_path] = cid
                         image_html = f'<div style="margin-top: 10px;"><img src="cid:{cid}" style="max-width: 300px; border-radius: 8px;"></div>'
                         img_counter += 1
+
+                att_html = ""
+                if msg.get("attachment"):
+                    ap = msg.get("attachment")
+                    if ap and os.path.exists(ap):
+                        fname = os.path.basename(ap)
+                        att_html = f'<div style="margin-top: 8px;">📎 Вложение: {fname} (файл также прикреплён к письму)</div>'
                 
                 messages_html += f"""
                 <div class="message {css_class}">
                     <div class="label">{sender} {time_str}</div>
                     <div>{content}</div>
                     {image_html}
+                    {att_html}
                 </div>
                 """
             
@@ -279,6 +317,29 @@ class EmailSender:
                         msg.attach(attachment)
                     except Exception as e:
                         print(f"[WARNING] Failed to attach file {img_path}: {e}")
+
+            # PDF и прочие вложения из сообщений (не дублируем уже inline-картинки)
+            attached_paths = set(image_cid_map.keys())
+            for entry in messages:
+                ap = entry.get("attachment")
+                if not ap or not os.path.exists(ap) or ap in attached_paths:
+                    continue
+                attached_paths.add(ap)
+                try:
+                    with open(ap, 'rb') as f:
+                        data = f.read()
+                    sub = 'pdf' if ap.lower().endswith('.pdf') else 'octet-stream'
+                    part = MIMEBase('application', sub)
+                    part.set_payload(data)
+                    encoders.encode_base64(part)
+                    part.add_header(
+                        'Content-Disposition',
+                        'attachment',
+                        filename=os.path.basename(ap),
+                    )
+                    msg.attach(part)
+                except Exception as e:
+                    print(f"[WARNING] Failed to attach PDF {ap}: {e}")
             
             # Отправляем
             with cls._create_smtp_connection() as server:

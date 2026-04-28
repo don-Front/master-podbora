@@ -8,12 +8,18 @@ faiss:
   confidence_threshold: 0.75   # минимальная уверенность
   min_delta: 0.002  # минимальная разница между лучшим и вторым результатом
 
+# LM Studio: адрес как на вкладке Local Server («Reachable at») + путь API /v1
+# — Сменили IP/порт? Обязательно перезапустите Daphne: get_chatbot() кэширует клиент при первом запросе.
+# — В LM Studio модель должна быть загружена в сервер (кнопка загрузки у Local Server), не только выбрана в списке.
+# Проверка с ПК, где крутится бэкенд: curl http://192.168.5.53:1234/v1/models
+# llm.model — id из ответа /v1/models или как в UI; при 400 «Model does not exist» имя не совпадает.
 llm:
-  base_url: http://192.168.5.76:1235/v1
+  base_url: http://192.168.5.53:1234/v1/
   model: yandexgpt-5-lite-8b-instruct
 
   temperature: 0.2
   max_tokens: 512
+  timeout: 90  # Таймаут запроса к LLM API в секундах
 
 messages:
   fallback: >

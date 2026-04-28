@@ -11,9 +11,22 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Сервис отправки кода и проверки почты (см. api/verification_client.py)
+VERIFICATION_SERVICE_ORIGIN = os.environ.get(
+    'VERIFICATION_SERVICE_ORIGIN',
+    'http://127.0.0.1:8001',
+).strip().rstrip('/')
+
+# Сервис ориентировочной цены (см. api/estimate_price_client.py)
+ESTIMATE_PRICE_SERVICE_ORIGIN = os.environ.get(
+    'ESTIMATE_PRICE_SERVICE_ORIGIN',
+    'http://127.0.0.1:8010',
+).strip().rstrip('/')
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,16 +39,6 @@ SECRET_KEY = 'django-insecure-*u1il21cgp6v2zzx0_&y2v*n7k^&8&2pfq(-q$3(gusz)isa2i
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.5.219']
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:3001",
-    "http://192.168.5.219:3000",
-    "http://192.168.5.219:3001",
-]
-
 
 # Application definition
 
@@ -141,6 +144,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
+    "http://192.168.5.219:3000",
+    "http://192.168.5.219:3001",
 ]
 
 # Default primary key field type

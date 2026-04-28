@@ -4,12 +4,17 @@ from .models import Chat, Message
 
 class MessageSerializer(serializers.ModelSerializer):
     image_url = serializers.SerializerMethodField()
+    attachment_url = serializers.SerializerMethodField()
     
     class Meta:
         model = Message
-        fields = ['id', 'chat', 'content', 'image', 'image_url', 'is_user', 'created_at']
+        fields = [
+            'id', 'chat', 'content', 'image', 'image_url',
+            'attachment', 'attachment_url', 'is_user', 'created_at',
+        ]
         extra_kwargs = {
             'image': {'write_only': True, 'required': False},
+            'attachment': {'write_only': True, 'required': False},
             'content': {'required': False},
         }
     
@@ -19,6 +24,14 @@ class MessageSerializer(serializers.ModelSerializer):
             if request:
                 return request.build_absolute_uri(obj.image.url)
             return obj.image.url
+        return None
+
+    def get_attachment_url(self, obj):
+        if obj.attachment:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.attachment.url)
+            return obj.attachment.url
         return None
 
 
