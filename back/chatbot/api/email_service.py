@@ -134,6 +134,38 @@ class EmailValidator:
         pretty = f"+7 ({digits[1:4]}) {digits[4:7]}-{digits[7:9]}-{digits[9:11]}"
         return True, "", pretty
 
+    @classmethod
+    def validate_email_format_or_phone_ru(cls, raw: str) -> Tuple[bool, str, str, str]:
+        """
+        Поле «почта или телефон»: допускается либо формат email (без MX-проверки),
+        либо российский номер. Возвращает (ok, error, kind, normalized),
+        kind — 'email' | 'phone' | ''.
+        """
+        text = (raw or "").strip()
+        if not text:
+            return False, "Укажите адрес электронной почты или номер телефона.", "", ""
+        digits = re.sub(r"\D", "", text)
+        if len(digits) >= 10:
+            pok, perr, pretty = cls.validate_phone_ru(text)
+            if pok:
+                return True, "", "phone", pretty
+            if "@" not in text:
+                return False, perr, "", ""
+        ok_fmt, err_fmt = cls.validate_format(text)
+        if ok_fmt:
+            return True, "", "email", text.strip().lower()
+        if "@" in text:
+            return False, err_fmt, "", ""
+        pok2, perr2, pretty2 = cls.validate_phone_ru(text)
+        if pok2:
+            return True, "", "phone", pretty2
+        return (
+            False,
+            "Укажите корректный email или российский номер (например +7 903 123-45-67).",
+            "",
+            "",
+        )
+
 
 class EmailSender:
     """Класс для отправки email уведомлений"""

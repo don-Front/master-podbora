@@ -13,3 +13,4 @@ Pillow==10.4.0
 PyMuPDF>=1.24.0
 easyocr>=1.7.0
 opencv-python-headless>=4.8.0
+requests>=2.31.0

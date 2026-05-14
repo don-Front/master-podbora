@@ -68,6 +68,13 @@ export const createMessage = (chatId, data, image = null, pdf = null) => {
           : JSON.stringify(data.order_specs_for_price);
       formData.append('order_specs_for_price', raw);
     }
+    if (data.liquid_installation_lead != null) {
+      const raw =
+        typeof data.liquid_installation_lead === 'string'
+          ? data.liquid_installation_lead
+          : JSON.stringify(data.liquid_installation_lead);
+      formData.append('liquid_installation_lead', raw);
+    }
     if (image) {
       formData.append('image', image);
     }

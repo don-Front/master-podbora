@@ -8,6 +8,7 @@
 - next_state: следующее состояние при выборе подсказки или вводе текста
 - expects_input: ожидает ли состояние текстовый ввод от пользователя
 - is_final: является ли состояние финальным
+- hints_only: только кнопки-подсказки, поле ввода на фронте отключается
 """
 
 HINTS_TREE = {
@@ -19,6 +20,10 @@ HINTS_TREE = {
             {"text": "Оформить заказ", "next_state": "order_pdf_request"},
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -63,6 +68,10 @@ HINTS_TREE = {
             {"text": "Оформить заказ", "next_state": "order_pdf_request"},
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -72,6 +81,40 @@ HINTS_TREE = {
         "expects_input": False,
         "is_final": True,
         "show_back": False,
+    },
+    # Запрос цены по прибору со слайдера: телефон -> почта -> код с почты -> order_final
+    "equipment_price_phone": {
+        "id": "equipment_price_phone",
+        "bot_message": (
+            "Укажите номер телефона для связи (российский формат, например +7 903 123-45-67 или 89031234567)."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "equipment_price_email",
+        "is_final": False,
+        "show_back": True,
+    },
+    "equipment_price_email": {
+        "id": "equipment_price_email",
+        "bot_message": (
+            "Укажите адрес электронной почты для верификации — на него мы отправим проверочный код."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "equipment_price_verify_code",
+        "is_final": False,
+        "show_back": True,
+    },
+    "equipment_price_verify_code": {
+        "id": "equipment_price_verify_code",
+        "bot_message": (
+            "На указанную почту отправлен код подтверждения. Введите шестизначный код из письма."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "order_final",
+        "is_final": False,
+        "show_back": True,
     },
     # ===== ПРОДАЖА ОБОРУДОВАНИЯ =====
     "sales": {
@@ -118,6 +161,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -174,6 +221,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -183,6 +234,85 @@ HINTS_TREE = {
         "expects_input": False,
         "is_final": True,
         "show_back": False,
+    },
+
+    # ===== ПОВЕРОЧНЫЕ УСТАНОВКИ (веб-сценарий) =====
+    "verification_installations": {
+        "id": "verification_installations",
+        "bot_message": "Выберите среду поверочной установки",
+        "hints": [
+            {"text": "Газ 🔥", "next_state": "verification_installations_gas"},
+            {"text": "Жидкость 💧", "next_state": "verification_installations_liquid"},
+        ],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+        "hints_only": True,
+    },
+    "verification_installations_gas": {
+        "id": "verification_installations_gas",
+        "bot_message": "вебсценарий газа",
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_liquid": {
+        "id": "verification_installations_liquid",
+        "bot_message": (
+            "Укажите, пожалуйста, ваше полное ФИО (фамилия, имя и отчество) одной строкой, как в паспорте."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "verification_installations_liquid_contact",
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_liquid_contact": {
+        "id": "verification_installations_liquid_contact",
+        "bot_message": (
+            "Укажите адрес электронной почты или номер телефона для связи "
+            "(телефон — в российском формате, например +7 903 123-45-67 или 89031234567)."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "verification_installations_liquid_tz",
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_liquid_tz": {
+        "id": "verification_installations_liquid_tz",
+        "bot_message": (
+            "Загрузите техническое задание одним файлом. Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR "
+            "(размер до 10 МБ). Документ можно подписать электронной подписью или вручную — по желанию. "
+            "Если прикладывать ТЗ не планируете, нажмите «Далее»."
+        ),
+        "hints": [{"text": "Далее", "next_state": "verification_installations_liquid_tz_comments"}],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_liquid_tz_comments": {
+        "id": "verification_installations_liquid_tz_comments",
+        "bot_message": (
+            "Напишите, пожалуйста, любые комментарии к техническому заданию (уточнения, пожелания, вопросы). "
+            "Если комментариев нет — отправьте «-» или «нет»."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "verification_installations_liquid_after_tz",
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_liquid_after_tz": {
+        "id": "verification_installations_liquid_after_tz",
+        "bot_message": (
+            "Дальнейшие шаги веб-сценария для среды «жидкость» будут доступны на сайте."
+        ),
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
     },
     
     # ===== ПУСКО-НАЛАДОЧНЫЕ РАБОТЫ =====
@@ -210,6 +340,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -266,6 +400,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -322,6 +460,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -358,6 +500,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -394,6 +540,10 @@ HINTS_TREE = {
         "hints": [
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
             {"text": "Техническая поддержка", "next_state": "tech_support"},
             {"text": "Претензии", "next_state": "claims"},
@@ -451,6 +601,13 @@ def get_parent_state(state_id: str) -> str:
         "verification_own": "verification",
         "verification_third": "verification",
         "verification_contact": "verification",
+        "verification_installations": "start",
+        "verification_installations_gas": "verification_installations",
+        "verification_installations_liquid": "verification_installations",
+        "verification_installations_liquid_contact": "verification_installations_liquid",
+        "verification_installations_liquid_tz": "verification_installations_liquid_contact",
+        "verification_installations_liquid_tz_comments": "verification_installations_liquid_tz",
+        "verification_installations_liquid_after_tz": "verification_installations_liquid_tz_comments",
         
         # Пуско-наладка
         "commissioning": "start",
@@ -482,6 +639,9 @@ def get_parent_state(state_id: str) -> str:
         # Оформление заказа
         "order_pdf_request": "start",
         "order_specs_clarify": "order_pdf_request",
+        "equipment_price_phone": "order_final",
+        "equipment_price_email": "equipment_price_phone",
+        "equipment_price_verify_code": "equipment_price_email",
     }
     return parent_map.get(state_id, "start")
 

@@ -77,6 +77,8 @@ def _parse_json_from_llm(raw: str) -> Dict[str, Any]:
     obj = json.loads(s)
     if not isinstance(obj, dict):
         raise ValueError("ожидался JSON-объект")
+    if not obj:
+        raise ValueError("LLM вернула пустой JSON-объект")
     return obj
 
 
@@ -105,6 +107,55 @@ def _normalize_specs(data: Dict[str, Any]) -> Dict[str, Any]:
     return out
 
 
+def _is_missing_accuracy(value: Any) -> bool:
+    if value is None:
+        return True
+    s = str(value).strip().lower().rstrip(".,;:")
+    return s in {"", "0", "null", "none", "не указано", "не указан", "неизвестно", "нет", "-", "—", "n/a", "na"}
+
+
+def _normalize_accuracy_letter(value: str) -> str:
+    s = str(value).strip().upper()
+    return {"A": "А", "B": "В", "C": "С", "D": "Д"}.get(s, s)
+
+
+def normalize_accuracy_value(value: Any) -> Any:
+    if value is None:
+        return None
+    s = _normalize_accuracy_letter(str(value).strip())
+    if s in {"А", "Б"}:
+        return "0,5%"
+    if s in {"В", "Г"}:
+        return "1%"
+    return value
+
+
+def _extract_accuracy_from_ocr(ocr_text: str) -> Optional[str]:
+    text = ocr_text or ""
+    patterns = [
+        r"вариант\s+исполнения\s+по\s+точности\s+прибора[\s\S]{0,120}?([АAБBВVГGСC])",
+        r"точности\s+прибора[\s\S]{0,120}?([АAБBВVГGСC])",
+        r"класс\s+точности[\s:._-]*([АAБBВVГGСC]|\d+(?:[.,]\d+)?\s*%?)",
+        r"точность[\s:._-]*([АAБBВVГGСC]|\d+(?:[.,]\d+)?\s*%?)",
+    ]
+    for pattern in patterns:
+        m = re.search(pattern, text, re.IGNORECASE)
+        if m:
+            return _normalize_accuracy_letter(m.group(1))
+    return None
+
+
+def _postprocess_specs(specs: Dict[str, Any], ocr_text: str) -> Dict[str, Any]:
+    out = _normalize_specs(specs)
+    if _is_missing_accuracy(out.get("accuracy")):
+        accuracy = _extract_accuracy_from_ocr(ocr_text)
+        if accuracy:
+            out["accuracy"] = normalize_accuracy_value(accuracy)
+    else:
+        out["accuracy"] = normalize_accuracy_value(out.get("accuracy"))
+    return out
+
+
 def _format_llm_error_for_user(exc: BaseException) -> str:
     """Короткое объяснение для пользователя; полный trace остаётся в логах."""
     raw = str(exc)
@@ -125,7 +176,7 @@ def _format_llm_error_for_user(exc: BaseException) -> str:
     return raw[:800]
 
 
-def analyze_specs_with_llm(ocr_text: str, llm) -> Dict[str, Any]:
+def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
     """
     Отправляет распознанный текст в LM Studio; ожидает один JSON-объект с полями SPEC_KEYS.
     llm — экземпляр api.chatbot_core.llm_client.LLMClient.
@@ -142,7 +193,7 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Dict[str, Any]:
     "temperature_min": -40,
     "temperature_max": 60,
     "temperature_unit": "°C",
-    "accuracy": "1-2%",
+    "accuracy": "А",
     "diameter": 100
 }"""
 
@@ -153,6 +204,11 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Dict[str, Any]:
 Задача: по этому тексту извлечь параметры расходомера/учёта газа (или аналогичного оборудования), насколько это возможно.
 
 Верни ТОЛЬКО один валидный JSON без комментариев и без текста до/после. Ключи строго как в примере структуры (типы: medium — строка, часто \"gas\"/\"liquid\"/\"unknown\"; gas_type — строка или null; flow_min/max, pressure_*, temperature_*, diameter — числа или null; *_unit и accuracy — строки).
+
+Поле accuracy заполняй только одним из вариантов:
+- буква точности: \"А\", \"Б\", \"В\" или \"Г\" (например, если в тексте есть \"Вариант исполнения по точности прибора ... А\", то accuracy = \"А\");
+- процентная точность: например \"1%\", \"1-2%\", \"0.5%\".
+Если точность не найдена ни как буква, ни как проценты — верни null.
 
 Пример структуры (значения замени на извлечённые из текста; неизвестное — null):
 {schema_hint}
@@ -198,17 +254,17 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Dict[str, Any]:
     raw = LLMClient._extract_assistant_text(msg)
 
     data = _parse_json_from_llm(raw)
-    return _normalize_specs(data)
+    return _normalize_specs(data), raw
 
 
 def run_pdf_order_pipeline(
     attachment_abs_path: str, llm
-) -> Tuple[Dict[str, Any], str, str]:
+) -> Tuple[Dict[str, Any], str, str, str]:
     """
     Полный цикл: OCR → LLM → JSON.
 
     Returns:
-        (specs_dict, ocr_text, error_message) — error_message пустая строка при успехе.
+        (specs_dict, ocr_text, error_message, llm_raw_response) — error_message пустая строка при успехе.
     """
     err = ""
     ocr_text = ""
@@ -224,8 +280,9 @@ def run_pdf_order_pipeline(
         ocr_text = ""
 
     try:
-        specs = analyze_specs_with_llm(ocr_text, llm)
-        return specs, ocr_text, ""
+        specs, llm_raw = analyze_specs_with_llm(ocr_text, llm)
+        specs = _postprocess_specs(specs, ocr_text)
+        return specs, ocr_text, "", llm_raw
     except Exception as e:
         logger.exception("LLM specs extraction failed")
         llm_msg = _format_llm_error_for_user(e)
@@ -234,4 +291,4 @@ def run_pdf_order_pipeline(
         else:
             err = f"{err}; {llm_msg}"
         fallback = _normalize_specs({k: None for k in SPEC_KEYS})
-        return fallback, ocr_text, err
+        return fallback, ocr_text, err, ""

@@ -1,6 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ChatViewSet, MessageViewSet, HintsView, EmailValidationView, TestEmailView
+from .views import (
+    ChatViewSet,
+    MessageViewSet,
+    HintsView,
+    EmailValidationView,
+    TestEmailView,
+    download_purs_questionnaire,
+)
 
 router = DefaultRouter()
 router.register(r'chats', ChatViewSet)
@@ -15,4 +22,5 @@ urlpatterns = [
     path('hints/', HintsView.as_view(), name='hints'),
     path('validate-email/', EmailValidationView.as_view(), name='validate-email'),
     path('test-email/', TestEmailView.as_view(), name='test-email'),
+    path('templates/purs-questionnaire/', download_purs_questionnaire, name='purs-questionnaire'),
 ]

@@ -9,6 +9,7 @@ export const FALLBACK_HINTS_START = {
     { text: 'Оформить заказ', next_state: 'order_pdf_request' },
     { text: 'Продажа оборудования', next_state: 'sales' },
     { text: 'Поверка', next_state: 'verification' },
+    { text: 'Поверочные установки', next_state: 'verification_installations' },
     { text: 'Пуско-наладочные работы', next_state: 'commissioning' },
     { text: 'Техническая поддержка', next_state: 'tech_support' },
     { text: 'Претензии', next_state: 'claims' },
@@ -18,4 +19,5 @@ export const FALLBACK_HINTS_START = {
   show_back: false,
   is_final: false,
   expects_input: false,
+  hints_only: false,
 };

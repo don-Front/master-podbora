@@ -10,12 +10,135 @@ import {
   postTkpPdf,
   transitionHints,
 } from '../api';
-import { API_BASE_URL, resolveEquipmentImageUrl, TKP_PDF_URL } from '../config';
+import {
+  API_BASE_URL,
+  LIQUID_TZ_QUESTIONNAIRE_URL,
+  resolveEquipmentImageUrl,
+  TKP_PDF_URL,
+} from '../config';
 import { FALLBACK_HINTS_START } from '../data/fallbackHintsStart';
 import { formatTime } from '../utils/formatTime';
 
 function isOrderFinalWithSpecs(data) {
   return data?.hint_state?.current_state === 'order_final' && data?.order_specs_json != null;
+}
+
+const LIQUID_TZ_MAX_BYTES = 10 * 1024 * 1024;
+const LIQUID_TZ_EXTS = ['.pdf', '.doc', '.docx', '.txt', '.zip', '.rar'];
+
+function isAllowedLiquidTzFile(file) {
+  if (!file?.name) return false;
+  const n = file.name.toLowerCase();
+  return LIQUID_TZ_EXTS.some((ext) => n.endsWith(ext));
+}
+
+/** accept для input[type=file] на шаге ТЗ */
+const LIQUID_TZ_ACCEPT =
+  '.pdf,.doc,.docx,.txt,.zip,.rar,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,application/zip,application/x-zip-compressed,application/x-rar-compressed,application/vnd.rar';
+
+function isLiquidTzBotMessage(msg) {
+  if (!msg || msg.from !== 'bot') return false;
+  if (msg.kind === 'liquid_tz_prompt') return true;
+  const t = msg.text || '';
+  return t.includes('техническое задание') && t.includes('10 МБ') && t.includes('Далее');
+}
+
+/** Карточка-подсказка для шага загрузки ТЗ (стиль как в макете). */
+function LiquidTzPromptCard({ templateUrl }) {
+  const previewBox = (
+    <div className="chat-widget__pdf-preview-box chat-widget__tz-preview-box">
+      <div className="chat-widget__pdf-placeholder">
+        <span className="chat-widget__pdf-label">DOC</span>
+      </div>
+      <span className="chat-widget__pdf-download" aria-hidden="true">
+        ↓
+      </span>
+    </div>
+  );
+
+  return (
+    <div className="chat-widget__tz-card" role="region" aria-label="Загрузка технического задания">
+      <div className="chat-widget__tz-clipboard-row">
+        <span className="chat-widget__tz-clipboard" aria-hidden="true">
+          📋
+        </span>
+      </div>
+
+      <div className="chat-widget__tz-card-headline">Прикрепите своё ТЗ или заполните опросный лист</div>
+
+      <div className="chat-widget__tz-card-sub">
+        <p className="chat-widget__tz-card-sub-p">
+          Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR — до 10 МБ.
+        </p>
+        <p className="chat-widget__tz-card-sub-p">
+          Документ можно подписать электронной подписью или вручную — по желанию. Без вложения нажмите
+          «Далее».
+        </p>
+      </div>
+
+      <a
+        className="chat-widget__tz-download-anchor"
+        href={templateUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+        title="Скачать опросный лист (Опросный_лист_PURS.doc)"
+      >
+        {previewBox}
+      </a>
+
+      <div className="chat-widget__tz-file-caption">
+        <div className="chat-widget__tz-nested-title">Опросный лист (шаблон)</div>
+        <div className="chat-widget__tz-nested-desc">
+          Скачайте шаблон, заполните его и прикрепите файл ниже кнопкой «📎». Если используете своё ТЗ —
+          просто прикрепите его или нажмите «Далее».
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Карточка контактов после успешной заявки на установку «жидкость». */
+function LiquidVerificationConsultCard() {
+  return (
+    <div className="chat-widget__liquid-consult" role="region" aria-label="Контакты для консультации">
+      <div className="chat-widget__liquid-consult-icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7 9h10v1.5H7V9zm0 3h6v1.5H7V12z"
+            fill="rgba(30,58,95,0.35)"
+          />
+          <path
+            d="M5 5.5h14a1.5 1.5 0 011.5 1.5v10A1.5 1.5 0 0119 18.5H5A1.5 1.5 0 013.5 17V7A1.5 1.5 0 015 5.5z"
+            stroke="rgba(30,58,95,0.45)"
+            strokeWidth="1.35"
+          />
+          <path
+            d="M8 21.5h8"
+            stroke="rgba(30,58,95,0.35)"
+            strokeWidth="1.35"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+      <div className="chat-widget__liquid-consult-title">Есть вопросы? Хотите получить консультацию?</div>
+      <p className="chat-widget__liquid-consult-sub">Позвоните или напишите нам!</p>
+      <div className="chat-widget__liquid-consult-pills">
+        <a className="chat-widget__liquid-consult-pill" href="tel:+78632037780">
+          <span className="chat-widget__liquid-consult-pill-icon chat-widget__liquid-consult-pill-icon--phone" aria-hidden="true">
+            📞
+          </span>
+          <span>+7 (863) 203-77-80</span>
+        </a>
+        <a className="chat-widget__liquid-consult-pill" href="mailto:info@turbo-don.ru">
+          <span className="chat-widget__liquid-consult-pill-icon chat-widget__liquid-consult-pill-icon--mail" aria-hidden="true">
+            ✉️
+          </span>
+          <span>info@turbo-don.ru</span>
+        </a>
+      </div>
+    </div>
+  );
 }
 
 function numberFromSpecValue(value) {
@@ -58,6 +181,21 @@ function buildTkpAccessoriesBody(estimateBody) {
   };
 }
 
+function buildTkpSpecsBody(specs) {
+  const dn = numberFromSpecValue(specs?.dn ?? specs?.diameter);
+  const temperatureMax = numberFromSpecValue(specs?.temperature_max);
+  const pressureMax = numberFromSpecValue(specs?.pressure_max_mpa ?? specs?.pressure_max);
+  const accuracy = numberFromSpecValue(specs?.accuracy);
+  const body = {};
+
+  if (dn != null) body.dn = Math.trunc(dn);
+  if (temperatureMax != null) body.temperature_max = jsonNumber(temperatureMax);
+  if (pressureMax != null) body.pressure_max_mpa = jsonNumber(pressureMax);
+  if (accuracy != null) body.accuracy = jsonNumber(accuracy);
+
+  return body;
+}
+
 function parsePriceRub(value) {
   if (typeof value === 'number' && Number.isFinite(value)) return Math.trunc(value);
   if (value == null) return null;
@@ -87,7 +225,7 @@ function tkpServiceOrigin() {
   try {
     return new URL(TKP_PDF_URL).origin;
   } catch {
-    return 'http://127.0.0.1:8010';
+    return 'http://192.168.2.41:8010';
   }
 }
 
@@ -303,14 +441,15 @@ async function downloadTkpPdf(pdf) {
   }
 }
 
-function buildTkpPdfBody(quote, accessories) {
+function buildTkpPdfBody(quote, accessories, contact, specs) {
   if (!quote?.equipmentId || !quote?.equipmentName) return null;
   return {
     equipment_name: quote.equipmentName,
     equipment_id: quote.equipmentId,
     price: quote.priceRub ?? parsePriceRub(quote.priceDisplay),
-    phone: '',
-    email: '',
+    phone: contact?.phone || '',
+    email: contact?.email || '',
+    ...buildTkpSpecsBody(specs),
     accessories: (accessories || []).map((item) => ({
       name: item.name,
       desc: item.desc,
@@ -362,7 +501,7 @@ function AccessoriesSelector({ items, selectedIds, onToggle }) {
 
   return (
     <div className="chat-widget__accessories">
-      <div className="chat-widget__accessories-title">Выберите аксессуары для точного расчёта:</div>
+      <div className="chat-widget__accessories-title">Выберите дополнительные комплектующие</div>
       <div className="chat-widget__accessories-list">
         {items.map((item) => {
           const isSelected = selectedSet.has(item.id);
@@ -508,10 +647,24 @@ export function ChatWidget() {
     showBack: false,
     isFinal: false,
     expectsInput: false,
+    hintsOnly: false,
   });
   const [hintLocked, setHintLocked] = useState(false);
 
   const isOrderPdfStep = hintState.currentState === 'order_pdf_request';
+  const isLiquidTzStep = hintState.currentState === 'verification_installations_liquid_tz';
+  const isLiquidTzCommentsStep =
+    hintState.currentState === 'verification_installations_liquid_tz_comments';
+  const fileInputAccept = isOrderPdfStep
+    ? '.pdf,application/pdf'
+    : isLiquidTzStep
+      ? LIQUID_TZ_ACCEPT
+      : 'image/*';
+  const attachButtonTitle = isOrderPdfStep
+    ? 'Прикрепить PDF'
+    : isLiquidTzStep
+      ? 'Прикрепить ТЗ (PDF, DOC, DOCX, TXT, ZIP, RAR до 10 МБ)'
+      : 'Прикрепить фото';
 
   /** Пока показан слайдер оборудования — ждём выбор, подсказки (как в order_final) не показываем. */
   const [awaitingEquipmentSelection, setAwaitingEquipmentSelection] = useState(false);
@@ -521,8 +674,30 @@ export function ChatWidget() {
   const lastOrderSpecsRef = useRef(null);
   const [showExactCostHint, setShowExactCostHint] = useState(false);
   const [showTkpPdfHint, setShowTkpPdfHint] = useState(false);
+  const [isSelectingAccessories, setIsSelectingAccessories] = useState(false);
   const exactCostBodyRef = useRef(null);
   const estimateQuoteRef = useRef(null);
+  const pendingEstimateBodyRef = useRef(null);
+  const verifiedContactRef = useRef({ phone: '', email: '' });
+  /** Сценарий «Поверочные установки» → «Жидкость»: ФИО и контакт (почта или телефон) для последующих шагов. */
+  const liquidInstallationLeadRef = useRef({
+    fullName: '',
+    email: '',
+    phone: '',
+    tzAttachmentUrl: '',
+    tzFileName: '',
+    tzComments: '',
+  });
+  /**
+   * Временное хранение файла ТЗ на шаге «жидкость»: выбранный File до отправки в чат;
+   * после успешного POST — URL и имя вложения с сервера (для последующих запросов).
+   */
+  const liquidTzFileRef = useRef({
+    file: null,
+    fileName: '',
+    uploadedUrl: '',
+    uploadedName: '',
+  });
   const selectedAccessoriesRef = useRef([]);
   const [selectedAccessoryIds, setSelectedAccessoryIds] = useState([]);
 
@@ -582,6 +757,7 @@ export function ChatWidget() {
         showBack: hintsData.show_back,
         isFinal: hintsData.is_final,
         expectsInput: hintsData.expects_input,
+        hintsOnly: hintsData.hints_only ?? false,
       });
 
       setMessages([
@@ -599,9 +775,12 @@ export function ChatWidget() {
       lastOrderSpecsRef.current = null;
       exactCostBodyRef.current = null;
       estimateQuoteRef.current = null;
+      pendingEstimateBodyRef.current = null;
+      verifiedContactRef.current = { phone: '', email: '' };
       selectedAccessoriesRef.current = [];
       setShowExactCostHint(false);
       setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
       setSelectedAccessoryIds([]);
     } catch (error) {
       console.error('Error initializing chat (hints API):', error);
@@ -612,6 +791,7 @@ export function ChatWidget() {
         showBack: h.show_back,
         isFinal: h.is_final,
         expectsInput: h.expects_input,
+        hintsOnly: h.hints_only ?? false,
       });
       setMessages([
         {
@@ -627,12 +807,21 @@ export function ChatWidget() {
       lastOrderSpecsRef.current = null;
       exactCostBodyRef.current = null;
       estimateQuoteRef.current = null;
+      pendingEstimateBodyRef.current = null;
+      verifiedContactRef.current = { phone: '', email: '' };
       selectedAccessoriesRef.current = [];
       setShowExactCostHint(false);
       setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
       setSelectedAccessoryIds([]);
     }
   }, []);
+
+  useEffect(() => {
+    if (hintState.hintsOnly) {
+      setInputValue('');
+    }
+  }, [hintState.hintsOnly, hintState.currentState]);
 
   useEffect(() => {
     initializeChat();
@@ -685,22 +874,53 @@ export function ChatWidget() {
 
     try {
       const id = await ensureChatId();
-      const response = await createMessage(id, {
+      const hintPayload = {
         content: hint.text,
         hint_state: hintState.currentState,
         is_hint_selection: true,
         hint_locked: hintLocked,
-      });
+      };
+      if (hintState.currentState === 'verification_installations_liquid_tz') {
+        const r = liquidInstallationLeadRef.current;
+        if (r.fullName) {
+          hintPayload.liquid_installation_lead = {
+            full_name: r.fullName,
+            email: r.email || '',
+            phone: r.phone || '',
+            tz_attachment_url: r.tzAttachmentUrl || '',
+            tz_file_name: r.tzFileName || '',
+            tz_comments: r.tzComments || '',
+          };
+        }
+      }
+      const response = await createMessage(id, hintPayload);
       setAwaitingEquipmentSelection(false);
 
       if (response.data.hint_state) {
         const newState = response.data.hint_state;
+        if (newState.current_state === 'verification_installations_liquid') {
+          liquidInstallationLeadRef.current = {
+            fullName: '',
+            email: '',
+            phone: '',
+            tzAttachmentUrl: '',
+            tzFileName: '',
+            tzComments: '',
+          };
+          liquidTzFileRef.current = {
+            file: null,
+            fileName: '',
+            uploadedUrl: '',
+            uploadedName: '',
+          };
+        }
         setHintState({
           currentState: newState.current_state,
           hints: newState.hints || [],
           showBack: newState.show_back,
           isFinal: newState.is_final,
           expectsInput: newState.expects_input,
+          hintsOnly: newState.hints_only ?? false,
         });
 
         if (newState.is_final) {
@@ -710,6 +930,22 @@ export function ChatWidget() {
         }
       } else {
         setHintLocked(true);
+      }
+
+      if (response.data.liquid_installation_lead) {
+        const lead = response.data.liquid_installation_lead;
+        const prev = liquidInstallationLeadRef.current;
+        liquidInstallationLeadRef.current = {
+          fullName: lead.full_name || prev.fullName || '',
+          email: lead.email || prev.email || '',
+          phone: lead.phone || prev.phone || '',
+          tzAttachmentUrl: lead.tz_attachment_url || prev.tzAttachmentUrl || '',
+          tzFileName: lead.tz_file_name || prev.tzFileName || '',
+          tzComments:
+            lead.tz_comments !== undefined && lead.tz_comments !== null
+              ? String(lead.tz_comments)
+              : prev.tzComments || '',
+        };
       }
 
       if (isOrderFinalWithSpecs(response.data)) {
@@ -763,12 +999,18 @@ export function ChatWidget() {
         if (botMessages.length > 0) {
           const t = (botMessages[0].content || '').trim();
           if (t) {
+            const hs = response.data.hint_state;
             const botMsg = {
               id: botMessages[0].id,
               from: 'bot',
               text: botMessages[0].content || 'Пустой ответ сервера.',
               time: new Date(botMessages[0].created_at),
             };
+            if (response.data.submit_verification_liquid?.status === 'success') {
+              botMsg.kind = 'liquid_verification_contact';
+            } else if (hs?.current_state === 'verification_installations_liquid_tz') {
+              botMsg.kind = 'liquid_tz_prompt';
+            }
             setMessages((prev) => [...prev, botMsg]);
           }
         }
@@ -786,6 +1028,83 @@ export function ChatWidget() {
       setIsTyping(false);
     }
   };
+
+  const runEstimatePrice = useCallback(async (estimateBody, fallbackLabel = 'оборудование') => {
+    if (!estimateBody) {
+      exactCostBodyRef.current = null;
+      estimateQuoteRef.current = null;
+      selectedAccessoriesRef.current = [];
+      setShowExactCostHint(false);
+      setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `estimate-missing-${Date.now()}`,
+          from: 'bot',
+          text: 'Ориентировочный расчёт не выполнен: не хватает кода прибора или параметров из итоговой спецификации.',
+          time: new Date(),
+        },
+      ]);
+      return;
+    }
+
+    try {
+      const estimateResponse = await postEstimatePrice(estimateBody);
+      const estimateData = estimateResponse.data || {};
+      const equipmentName = (estimateData.equipment_name || estimateBody.equipment.name || fallbackLabel).trim();
+      const equipmentId = (estimateData.equipment_id || estimateBody.equipment.id || '').toString().trim();
+      const priceRub = parsePriceRub(estimateData.price_rub ?? estimateData.price ?? estimateData.price_display);
+      const priceDisplay = (estimateData.price_display || '').trim();
+      const text = priceDisplay
+        ? `Примерная цена на выбранное оборудование «${equipmentName}»: ${priceDisplay}.`
+        : 'Расчёт цены выполнен, но сервис не вернул отображаемую стоимость.';
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `estimate-${Date.now()}`,
+          from: 'bot',
+          text,
+          time: new Date(),
+        },
+      ]);
+      exactCostBodyRef.current = buildTkpAccessoriesBody(estimateBody);
+      estimateQuoteRef.current = {
+        equipmentName,
+        equipmentId,
+        priceRub,
+        priceDisplay,
+      };
+      pendingEstimateBodyRef.current = null;
+      selectedAccessoriesRef.current = [];
+      setShowExactCostHint(Boolean(exactCostBodyRef.current));
+      setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
+      setSelectedAccessoryIds([]);
+    } catch (estimateError) {
+      console.error('[estimate-price] ошибка:', estimateError);
+      exactCostBodyRef.current = null;
+      estimateQuoteRef.current = null;
+      selectedAccessoriesRef.current = [];
+      setShowExactCostHint(false);
+      setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
+      const msg =
+        estimateError?.response?.data?.message ||
+        estimateError?.response?.data?.error ||
+        estimateError?.message ||
+        'Ошибка сети';
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `estimate-error-${Date.now()}`,
+          from: 'bot',
+          text: `Автоматический расчёт цены недоступен: ${msg}. Точную стоимость уточнит менеджер.`,
+          time: new Date(),
+        },
+      ]);
+    }
+  }, []);
 
   const handleGetPriceHint = async () => {
     const eq = sliderEquipmentRef.current;
@@ -808,7 +1127,7 @@ export function ChatWidget() {
       const id = await ensureChatId();
       const specsForPrice = lastOrderSpecsRef.current || {};
       const estimateBody = buildEstimatePriceBody(eq, specsForPrice);
-      const estimatePromise = estimateBody ? postEstimatePrice(estimateBody) : null;
+      pendingEstimateBodyRef.current = estimateBody;
       const response = await createMessage(id, {
         content: 'Получить цену',
         hint_state: hintState.currentState,
@@ -832,6 +1151,7 @@ export function ChatWidget() {
           showBack: newState.show_back,
           isFinal: newState.is_final,
           expectsInput: newState.expects_input,
+          hintsOnly: newState.hints_only ?? false,
         });
         if (newState.is_final) {
           setHintLocked(false);
@@ -855,65 +1175,13 @@ export function ChatWidget() {
           setMessages((prev) => [...prev, botMsg]);
         }
       }
-      if (estimatePromise) {
-        try {
-          const estimateResponse = await estimatePromise;
-          const estimateData = estimateResponse.data || {};
-          const equipmentName = (estimateData.equipment_name || estimateBody.equipment.name || label).trim();
-          const equipmentId = (estimateData.equipment_id || estimateBody.equipment.id || '').toString().trim();
-          const priceRub = parsePriceRub(estimateData.price_rub ?? estimateData.price ?? estimateData.price_display);
-          const priceDisplay = (estimateData.price_display || '').trim();
-          const text = priceDisplay
-            ? `Примерная цена на выбранное оборудование «${equipmentName}»: ${priceDisplay}.`
-            : 'Расчёт цены выполнен, но сервис не вернул отображаемую стоимость.';
-          setMessages((prev) => [
-            ...prev,
-            {
-              id: `estimate-${Date.now()}`,
-              from: 'bot',
-              text,
-              time: new Date(),
-            },
-          ]);
-          exactCostBodyRef.current = buildTkpAccessoriesBody(estimateBody);
-          estimateQuoteRef.current = {
-            equipmentName,
-            equipmentId,
-            priceRub,
-            priceDisplay,
-          };
-          selectedAccessoriesRef.current = [];
-          setShowExactCostHint(Boolean(exactCostBodyRef.current));
-          setShowTkpPdfHint(false);
-          setSelectedAccessoryIds([]);
-        } catch (estimateError) {
-          console.error('[estimate-price] ошибка:', estimateError);
-          exactCostBodyRef.current = null;
-          estimateQuoteRef.current = null;
-          selectedAccessoriesRef.current = [];
-          setShowExactCostHint(false);
-          setShowTkpPdfHint(false);
-          const msg =
-            estimateError?.response?.data?.message ||
-            estimateError?.response?.data?.error ||
-            estimateError?.message ||
-            'Ошибка сети';
-          setMessages((prev) => [
-            ...prev,
-            {
-              id: `estimate-error-${Date.now()}`,
-              from: 'bot',
-              text: `Автоматический расчёт цены недоступен: ${msg}. Точную стоимость уточнит менеджер.`,
-              time: new Date(),
-            },
-          ]);
-        }
-      } else {
+      if (!estimateBody) {
         exactCostBodyRef.current = null;
         estimateQuoteRef.current = null;
         selectedAccessoriesRef.current = [];
         setShowExactCostHint(false);
         setShowTkpPdfHint(false);
+        setIsSelectingAccessories(false);
         setMessages((prev) => [
           ...prev,
           {
@@ -957,7 +1225,7 @@ export function ChatWidget() {
         const next = exists ? prev.filter((id) => id !== item.id) : [...prev, item.id];
         const selected = logSelectedAccessories(next, items);
         selectedAccessoriesRef.current = selected;
-        setShowTkpPdfHint(selected.length > 0);
+        setShowTkpPdfHint(true);
         return next;
       });
     },
@@ -992,7 +1260,8 @@ export function ChatWidget() {
       const response = await postTkpAccessories(body);
       const accessories = Array.isArray(response.data?.accessories) ? response.data.accessories : [];
       setShowExactCostHint(false);
-      setShowTkpPdfHint(false);
+      setShowTkpPdfHint(accessories.length > 0);
+      setIsSelectingAccessories(accessories.length > 0);
       selectedAccessoriesRef.current = [];
       setSelectedAccessoryIds([]);
       setMessages((prev) => [
@@ -1029,7 +1298,12 @@ export function ChatWidget() {
 
   const handleTkpPdfHint = async () => {
     const selectedAccessories = selectedAccessoriesRef.current || [];
-    const body = buildTkpPdfBody(estimateQuoteRef.current, selectedAccessories);
+    const body = buildTkpPdfBody(
+      estimateQuoteRef.current,
+      selectedAccessories,
+      verifiedContactRef.current,
+      lastOrderSpecsRef.current
+    );
     const userMessage = {
       id: Date.now(),
       from: 'user',
@@ -1039,13 +1313,13 @@ export function ChatWidget() {
     };
     setMessages((prev) => [...prev, userMessage]);
 
-    if (!body || selectedAccessories.length === 0) {
+    if (!body) {
       setMessages((prev) => [
         ...prev,
         {
           id: `tkp-pdf-missing-${Date.now()}`,
           from: 'bot',
-          text: 'Не удалось сформировать ТКП: выберите аксессуары и дождитесь расчёта примерной цены.',
+          text: 'Не удалось сформировать ТКП: дождитесь расчёта примерной цены.',
           time: new Date(),
         },
       ]);
@@ -1058,6 +1332,7 @@ export function ChatWidget() {
       const response = await postTkpPdf(body);
       const pdf = buildTkpPdfCard(response.data || {}, response.headers || {});
       setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
       setMessages((prev) => [
         ...prev,
         {
@@ -1105,19 +1380,24 @@ export function ChatWidget() {
         showBack: response.data.show_back,
         isFinal: response.data.is_final,
         expectsInput: response.data.expects_input,
+        hintsOnly: response.data.hints_only ?? false,
       });
 
       if (newState === 'start') {
         setHintLocked(false);
       }
 
-      if (response.data.bot_message) {
+      // Не дублируем приветствие главного меню: оно уже есть при открытии чата.
+      if (response.data.bot_message && newState !== 'start') {
         const botMsg = {
           id: Date.now(),
           from: 'bot',
           text: response.data.bot_message,
           time: new Date(),
         };
+        if (newState === 'verification_installations_liquid_tz') {
+          botMsg.kind = 'liquid_tz_prompt';
+        }
         setMessages((prev) => [...prev, botMsg]);
       }
     } catch (error) {
@@ -1127,6 +1407,8 @@ export function ChatWidget() {
 
   const addMessage = async (text, from = 'user', image = null, pdf = null) => {
     if (!text.trim() && !image && !pdf) return;
+
+    const hintStepWhenSending = hintState.currentState;
 
     const newMessage = {
       id: Date.now(),
@@ -1144,17 +1426,36 @@ export function ChatWidget() {
       setIsTyping(true);
       try {
         const id = await ensureChatId();
-        const response = await createMessage(
-          id,
-          {
-            content: text.trim(),
-            hint_state: hintState.currentState,
-            is_hint_selection: false,
-            hint_locked: hintLocked,
-          },
-          image,
-          pdf
-        );
+        const msgPayload = {
+          content: text.trim(),
+          hint_state: hintState.currentState,
+          is_hint_selection: false,
+          hint_locked: hintLocked,
+        };
+        if (hintStepWhenSending === 'verification_installations_liquid_tz_comments' && text.trim()) {
+          liquidInstallationLeadRef.current = {
+            ...liquidInstallationLeadRef.current,
+            tzComments: text.trim(),
+          };
+        }
+        if (
+          hintState.currentState === 'verification_installations_liquid_contact' ||
+          hintState.currentState === 'verification_installations_liquid_tz' ||
+          hintState.currentState === 'verification_installations_liquid_tz_comments'
+        ) {
+          const r = liquidInstallationLeadRef.current;
+          if (r.fullName) {
+            msgPayload.liquid_installation_lead = {
+              full_name: r.fullName,
+              email: r.email || '',
+              phone: r.phone || '',
+              tz_attachment_url: r.tzAttachmentUrl || '',
+              tz_file_name: r.tzFileName || '',
+              tz_comments: r.tzComments || '',
+            };
+          }
+        }
+        const response = await createMessage(id, msgPayload, image, pdf);
         setAwaitingEquipmentSelection(false);
 
         if (response.data.messages) {
@@ -1171,6 +1472,18 @@ export function ChatWidget() {
                   : msg
               )
             );
+            if (
+              hintStepWhenSending === 'verification_installations_liquid_tz' &&
+              pdf &&
+              userMsg.attachment_url
+            ) {
+              liquidTzFileRef.current = {
+                file: null,
+                fileName: '',
+                uploadedUrl: userMsg.attachment_url,
+                uploadedName: pdf.name || liquidTzFileRef.current.fileName || '',
+              };
+            }
           }
         }
 
@@ -1182,6 +1495,7 @@ export function ChatWidget() {
             showBack: newState.show_back,
             isFinal: newState.is_final,
             expectsInput: newState.expects_input,
+            hintsOnly: newState.hints_only ?? false,
           });
 
           if (newState.current_state === 'start' || newState.is_final) {
@@ -1189,6 +1503,29 @@ export function ChatWidget() {
           } else if (newState.hint_locked !== undefined) {
             setHintLocked(newState.hint_locked);
           }
+        }
+
+        if (response.data.liquid_installation_lead) {
+          const lead = response.data.liquid_installation_lead;
+          const prev = liquidInstallationLeadRef.current;
+          liquidInstallationLeadRef.current = {
+            fullName: lead.full_name || prev.fullName || '',
+            email: lead.email || prev.email || '',
+            phone: lead.phone || prev.phone || '',
+            tzAttachmentUrl: lead.tz_attachment_url || prev.tzAttachmentUrl || '',
+            tzFileName: lead.tz_file_name || prev.tzFileName || '',
+            tzComments:
+              lead.tz_comments !== undefined && lead.tz_comments !== null
+                ? String(lead.tz_comments)
+                : prev.tzComments || '',
+          };
+        }
+
+        if (response.data.order_specs_llm_response) {
+          console.log('[ORDER_SPECS_LLM_RESPONSE]', response.data.order_specs_llm_response);
+        }
+        if (response.data.order_specs_ocr_text) {
+          console.log('[ORDER_SPECS_OCR_TEXT]', response.data.order_specs_ocr_text);
         }
 
         if (isOrderFinalWithSpecs(response.data)) {
@@ -1242,14 +1579,30 @@ export function ChatWidget() {
           if (botMessages.length > 0) {
             const t = (botMessages[0].content || '').trim();
             if (t) {
+              const hs = response.data.hint_state;
               const botMsg = {
                 id: botMessages[0].id,
                 from: 'bot',
                 text: botMessages[0].content || 'Пустой ответ сервера.',
                 time: new Date(botMessages[0].created_at),
               };
+              if (response.data.submit_verification_liquid?.status === 'success') {
+                botMsg.kind = 'liquid_verification_contact';
+              } else if (hs?.current_state === 'verification_installations_liquid_tz') {
+                botMsg.kind = 'liquid_tz_prompt';
+              }
               setMessages((prev) => [...prev, botMsg]);
             }
+          }
+          if (response.data.verification_passed) {
+            const contact = response.data.verified_contact || {};
+            verifiedContactRef.current = {
+              phone: contact.phone || '',
+              email: contact.email || '',
+            };
+            const pendingEstimate = pendingEstimateBodyRef.current;
+            const fallbackLabel = pendingEstimate?.equipment?.name || 'оборудование';
+            await runEstimatePrice(pendingEstimate, fallbackLabel);
           }
         }
       } catch (error) {
@@ -1284,6 +1637,24 @@ export function ChatWidget() {
       setSelectedPdf(file);
       setSelectedImage(null);
       setImagePreview(null);
+    } else if (isLiquidTzStep) {
+      if (!isAllowedLiquidTzFile(file)) {
+        alert('Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR (до 10 МБ)');
+        return;
+      }
+      if (file.size > LIQUID_TZ_MAX_BYTES) {
+        alert('Размер файла не должен превышать 10 МБ');
+        return;
+      }
+      setSelectedPdf(file);
+      setSelectedImage(null);
+      setImagePreview(null);
+      liquidTzFileRef.current = {
+        file,
+        fileName: file.name || '',
+        uploadedUrl: '',
+        uploadedName: '',
+      };
     } else {
       if (!file.type.startsWith('image/')) {
         alert('Пожалуйста, выберите изображение');
@@ -1303,12 +1674,20 @@ export function ChatWidget() {
     setSelectedImage(null);
     setImagePreview(null);
     setSelectedPdf(null);
+    if (hintState.currentState === 'verification_installations_liquid_tz') {
+      liquidTzFileRef.current = {
+        ...liquidTzFileRef.current,
+        file: null,
+        fileName: '',
+      };
+    }
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
   };
 
   const handleSend = () => {
+    if (hintState.hintsOnly) return;
     if (!inputValue.trim() && !selectedImage && !selectedPdf) return;
     addMessage(inputValue, 'user', selectedImage, selectedPdf);
     setSelectedImage(null);
@@ -1321,6 +1700,10 @@ export function ChatWidget() {
   };
 
   const handleKeyDown = (e) => {
+    if (hintState.hintsOnly && e.key === 'Enter') {
+      e.preventDefault();
+      return;
+    }
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -1363,7 +1746,13 @@ export function ChatWidget() {
               key={message.id}
               className={`chat-widget__message chat-widget__message--${message.from}`}
             >
-              <div className="chat-widget__bubble">
+              <div
+                className={`chat-widget__bubble${
+                  isLiquidTzBotMessage(message) ? ' chat-widget__bubble--tz-shell' : ''
+                }${
+                  message.kind === 'liquid_verification_contact' ? ' chat-widget__bubble--consult-shell' : ''
+                }`}
+              >
                 {message.kind === 'equipment' && message.equipment?.length ? (
                   <EquipmentShowcase
                     items={message.equipment}
@@ -1383,6 +1772,15 @@ export function ChatWidget() {
                     {message.text && <span>{message.text}</span>}
                     <TkpPdfCard pdf={message.pdf} />
                   </>
+                ) : message.kind === 'liquid_verification_contact' ? (
+                  <>
+                    {message.text && (
+                      <span className="chat-widget__liquid-consult-intro">{message.text}</span>
+                    )}
+                    <LiquidVerificationConsultCard />
+                  </>
+                ) : isLiquidTzBotMessage(message) ? (
+                  <LiquidTzPromptCard templateUrl={LIQUID_TZ_QUESTIONNAIRE_URL} />
                 ) : (
                   <>
                 {message.text && <span>{message.text}</span>}
@@ -1457,7 +1855,7 @@ export function ChatWidget() {
               </button>
             </div>
           )}
-          {hintState.hints && hintState.hints.length > 0 && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && (
+          {hintState.hints && hintState.hints.length > 0 && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
             <div className="chat-widget__hints">
               {hintState.showBack && (
                 <button type="button" className="chat-widget__hint chat-widget__hint--back" onClick={handleBack}>
@@ -1477,7 +1875,7 @@ export function ChatWidget() {
             </div>
           )}
 
-          {hintState.showBack && (!hintState.hints || hintState.hints.length === 0) && !hintState.isFinal && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && (
+          {hintState.showBack && (!hintState.hints || hintState.hints.length === 0) && !hintState.isFinal && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
             <div className="chat-widget__hints">
               <button type="button" className="chat-widget__hint chat-widget__hint--back" onClick={handleBack}>
                 ← Вернуться
@@ -1512,7 +1910,7 @@ export function ChatWidget() {
               type="file"
               ref={fileInputRef}
               onChange={handleFileSelect}
-              accept={isOrderPdfStep ? '.pdf,application/pdf' : 'image/*'}
+              accept={fileInputAccept}
               style={{ display: 'none' }}
             />
 
@@ -1520,7 +1918,8 @@ export function ChatWidget() {
               type="button"
               className="chat-widget__attach-btn"
               onClick={() => fileInputRef.current?.click()}
-              title={isOrderPdfStep ? 'Прикрепить PDF' : 'Прикрепить фото'}
+              title={attachButtonTitle}
+              disabled={hintState.hintsOnly}
             >
               📎
             </button>
@@ -1531,15 +1930,23 @@ export function ChatWidget() {
               placeholder={
                 awaitingEquipmentSelection
                   ? 'Нажмите на карточку прибора или введите сообщение...'
-                  : isOrderPdfStep
-                    ? 'Прикрепите PDF со спецификацией (при желании дополните текстом)...'
-                    : hintState.expectsInput
-                      ? 'Введите информацию...'
-                      : 'Напишите сообщение...'
+                  : hintState.hintsOnly
+                    ? 'Выберите среду'
+                    : isOrderPdfStep
+                      ? 'Прикрепите PDF со спецификацией (по желанию дополните текстом)...'
+                    : isLiquidTzStep
+                      ? 'Прикрепите файл ТЗ'
+                      : isLiquidTzCommentsStep
+                        ? 'Комментарии к ТЗ (или «-» / «нет»)'
+                        : hintState.expectsInput
+                        ? 'Введите информацию...'
+                        : 'Напишите сообщение...'
               }
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
+              disabled={hintState.hintsOnly}
+              readOnly={hintState.hintsOnly}
             />
             <button
               type="button"

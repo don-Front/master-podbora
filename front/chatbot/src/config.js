@@ -46,27 +46,37 @@ function resolveApiBaseUrl() {
 
 export const API_BASE_URL = resolveApiBaseUrl();
 
+function defaultLiquidTzQuestionnaireUrl() {
+  const base = API_BASE_URL.replace(/\/+$/, '');
+  return `${base}/templates/purs-questionnaire/`;
+}
+
+/** Ссылка на скачивание шаблона опросного листа ПУРС (шаг ТЗ «жидкость»). По умолчанию — endpoint Django. */
+export const LIQUID_TZ_QUESTIONNAIRE_URL = (
+  process.env.REACT_APP_LIQUID_TZ_QUESTIONNAIRE_URL || ''
+).trim() || defaultLiquidTzQuestionnaireUrl();
+
 /**
  * POST итоговых параметров в 1С после готового JSON (см. ChatWidget).
  * Переопределение: REACT_APP_1C_DATA_URL.
  */
 export const ONE_C_DATA_URL = (
-  process.env.REACT_APP_1C_DATA_URL || 'http://127.0.0.1:8001/api/1c/data'
+  process.env.REACT_APP_1C_DATA_URL || 'http://192.168.2.41:8010/api/1c/data'
 ).trim();
 
 /** POST расчёта ориентировочной цены по выбранному прибору и итоговой спецификации. */
 export const ESTIMATE_PRICE_URL = (
-  process.env.REACT_APP_ESTIMATE_PRICE_URL || 'http://127.0.0.1:8010/api/estimate-price'
+  process.env.REACT_APP_ESTIMATE_PRICE_URL || 'http://192.168.2.41:8010/api/estimate-price'
 ).trim();
 
 /** POST подбора аксессуаров для точного ТКП по выбранному прибору и итоговой спецификации. */
 export const TKP_ACCESSORIES_URL = (
-  process.env.REACT_APP_TKP_ACCESSORIES_URL || 'http://127.0.0.1:8010/api/tkp-accessories'
+  process.env.REACT_APP_TKP_ACCESSORIES_URL || 'http://192.168.2.41:8010/api/tkp-accessories'
 ).trim();
 
 /** POST генерации PDF ТКП. */
 export const TKP_PDF_URL = (
-  process.env.REACT_APP_TKP_PDF_URL || 'http://127.0.0.1:8010/api/tkp-pdf'
+  process.env.REACT_APP_TKP_PDF_URL || 'http://192.168.2.41:8010/api/tkp-pdf'
 ).trim();
 
 /** Origin сервиса 1C (картинки `equipment/...` обычно с того же хоста). */
@@ -74,7 +84,7 @@ export function getOneCApiOrigin() {
   try {
     return new URL(ONE_C_DATA_URL).origin;
   } catch {
-    return 'http://127.0.0.1:8001';
+    return 'http://192.168.2.41:8010';
   }
 }
 
@@ -104,5 +114,5 @@ export function resolveEquipmentImageUrl(path) {
 
 /** Значение поля `Authorization` в теле JSON (как в контракте 1С). */
 export const ONE_C_AUTHORIZATION = (
-  process.env.REACT_APP_1C_AUTHORIZATION || 'Bearer my-secure-api-token-2024'
+  process.env.REACT_APP_1C_AUTHORIZATION || 'Bearer change-me'
 ).trim();

@@ -160,6 +160,14 @@
   border: 1px solid rgba(148, 163, 184, 0.5);
 }
 
+.chat-widget__message--bot .chat-widget__bubble--tz-shell {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 100%;
+}
+
 .chat-widget__bubble--typing {
   display: inline-flex;
   align-items: center;
@@ -1228,4 +1236,199 @@
   padding: 0 10px 10px;
   font-size: 12px;
   color: #475569;
+}
+
+/* Карточка шага «ТЗ» (жидкость) */
+.chat-widget__tz-card {
+  max-width: 320px;
+  background: #fffdf7;
+  border: 2px solid #e8c547;
+  border-radius: 14px;
+  padding: 12px 14px 14px;
+  box-sizing: border-box;
+}
+
+.chat-widget__tz-clipboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.chat-widget__tz-clipboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 30px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.08));
+}
+
+.chat-widget__tz-card-headline {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0f172a;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.chat-widget__tz-card-sub {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.chat-widget__tz-card-sub-p {
+  margin: 0 0 8px;
+}
+
+.chat-widget__tz-card-sub-p:last-child {
+  margin-bottom: 14px;
+}
+
+.chat-widget__tz-download-anchor {
+  display: block;
+  margin: 12px auto 0;
+  max-width: 220px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.chat-widget__tz-download-anchor .chat-widget__pdf-download {
+  pointer-events: none;
+  border: none;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.chat-widget__tz-download-anchor .chat-widget__pdf-preview-box {
+  cursor: pointer;
+}
+
+.chat-widget__tz-download-anchor .chat-widget__pdf-label {
+  cursor: pointer;
+}
+
+/* Компактнее блока ТКП, тот же hover «Скачать», что у pdf-preview-box */
+.chat-widget__tz-preview-box {
+  min-height: 150px;
+}
+
+.chat-widget__tz-file-caption {
+  margin-top: 10px;
+  padding-top: 2px;
+}
+
+.chat-widget__tz-nested-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #1e3a5f;
+  line-height: 1.3;
+}
+
+.chat-widget__tz-nested-desc {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #5c6470;
+  line-height: 1.45;
+}
+
+.chat-widget__message--bot .chat-widget__bubble--consult-shell {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-widget__liquid-consult-intro {
+  display: block;
+  padding: 8px 11px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  white-space: pre-line;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.chat-widget__liquid-consult {
+  max-width: 300px;
+  border-radius: 16px;
+  padding: 14px 14px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(165deg, #e8f4ff 0%, #f8fbff 42%, #ffffff 100%);
+  border: 1px solid rgba(147, 197, 253, 0.55);
+  box-shadow: 0 8px 22px rgba(30, 64, 175, 0.08);
+}
+
+.chat-widget__liquid-consult-icon {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 4px;
+  opacity: 0.92;
+}
+
+.chat-widget__liquid-consult-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.chat-widget__liquid-consult-sub {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.chat-widget__liquid-consult-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-widget__liquid-consult-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  text-decoration: none;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.chat-widget__liquid-consult-pill:hover {
+  background: #f8fafc;
+  border-color: rgba(148, 163, 184, 0.65);
+}
+
+.chat-widget__liquid-consult-pill-icon {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.chat-widget__liquid-consult-pill-icon--phone {
+  filter: hue-rotate(-15deg) saturate(1.4);
+}
+
+.chat-widget__liquid-consult-pill-icon--mail {
+  opacity: 0.88;
 }

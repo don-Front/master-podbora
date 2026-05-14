@@ -8,7 +8,7 @@ import re
 from decimal import Decimal
 from typing import Any, Dict, List
 
-from .pdf_order_analysis import SPEC_KEYS, _normalize_specs
+from .pdf_order_analysis import SPEC_KEYS, _normalize_specs, normalize_accuracy_value
 
 # Поля, которые считаем числовыми (в т.ч. 0 считается «не заполнено» до уточнения)
 NUMERIC_KEYS = frozenset(
@@ -74,7 +74,7 @@ def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
 
 FIELD_PROMPTS: Dict[str, str] = {
     "medium": "Укажите среду измерения (например: gas — газ, liquid — жидкость). Одно слово или коротко.",
-    "gas_type": "Укажите тип газа (например: природный газ, пропан и т.п.).",
+    "gas_type": "Укажите тип измеряемой среды (например: природный газ, жидкость и т.п.).",
     "flow_min": "Укажите минимальный расход (число), например: 10",
     "flow_max": "Укажите максимальный расход (число), например: 500",
     "flow_unit": "Укажите единицу расхода (например: м³/ч).",
@@ -112,6 +112,8 @@ def parse_field_value(key: str, text: str) -> Any:
         if abs(v - int(v)) < 1e-9:
             return int(v)
         return v
+    if key == "accuracy":
+        return normalize_accuracy_value(raw)
 
     # строковые поля
     return raw

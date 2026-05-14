@@ -16,6 +16,15 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Сервис отправки кода и проверки почты (см. api/verification_client.py)
+VERIFICATION_SERVICE_ORIGIN = os.environ.get(
+    'VERIFICATION_SERVICE_ORIGIN',
+    'http://192.168.2.41:8010',
+).strip().rstrip('/')
+
+# Полный URL POST заявки «жидкость» (если пусто — {VERIFICATION_SERVICE_ORIGIN}/api/submit-verification-liquid-request)
+SUBMIT_VERIFICATION_LIQUID_URL = os.environ.get('SUBMIT_VERIFICATION_LIQUID_URL', '').strip()
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -25,7 +34,7 @@ SECRET_KEY = 'django-insecure-*u1il21cgp6v2zzx0_&y2v*n7k^&8&2pfq(-q$3(gusz)isa2i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.5.219']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.5.219', '192.168.2.17', '192.168.2.41']
 
 # Application definition
 
@@ -133,7 +142,19 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://192.168.5.219:3000",
     "http://192.168.5.219:3001",
+    "http://192.168.2.17:3000",
+    "http://192.168.2.17:3001",
+    "http://192.168.2.41:3000",
+    "http://192.168.2.41:3001",
 ]
+
+# Доступ с любого ПК в локальной подсети (React dev по http://192.168.x.x:3000 → API на этом хосте)
+if DEBUG:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^http://192\.168\.\d{1,3}\.\d{1,3}(:[0-9]+)?$",
+        r"^http://10\.\d{1,3}\.\d{1,3}\.\d{1,3}(:[0-9]+)?$",
+    ]
+    CSRF_TRUSTED_ORIGINS = [*CORS_ALLOWED_ORIGINS]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
