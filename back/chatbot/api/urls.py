@@ -7,6 +7,7 @@ from .views import (
     EmailValidationView,
     TestEmailView,
     download_purs_questionnaire,
+    equipment_media,
 )
 
 router = DefaultRouter()
@@ -14,6 +15,7 @@ router.register(r'chats', ChatViewSet)
 
 # For messages, we need a custom URL
 urlpatterns = [
+    path('equipment-media/<path:relpath>', equipment_media, name='equipment-media'),
     path('', include(router.urls)),
     path('chats/<int:chat_id>/messages/', MessageViewSet.as_view({
         'get': 'list',

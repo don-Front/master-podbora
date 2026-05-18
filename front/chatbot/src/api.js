@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   API_BASE_URL,
   ESTIMATE_PRICE_URL,
+  getGrandGasMetersPriceUrl,
   ONE_C_AUTHORIZATION,
   ONE_C_DATA_URL,
   TKP_ACCESSORIES_URL,
@@ -75,6 +76,27 @@ export const createMessage = (chatId, data, image = null, pdf = null) => {
           : JSON.stringify(data.liquid_installation_lead);
       formData.append('liquid_installation_lead', raw);
     }
+    if (data.gas_spu_application_lead != null) {
+      const raw =
+        typeof data.gas_spu_application_lead === 'string'
+          ? data.gas_spu_application_lead
+          : JSON.stringify(data.gas_spu_application_lead);
+      formData.append('gas_spu_application_lead', raw);
+    }
+    if (data.household_gas_lead != null) {
+      const raw =
+        typeof data.household_gas_lead === 'string'
+          ? data.household_gas_lead
+          : JSON.stringify(data.household_gas_lead);
+      formData.append('household_gas_lead', raw);
+    }
+    if (data.gas_spu_selection != null) {
+      const raw =
+        typeof data.gas_spu_selection === 'string'
+          ? data.gas_spu_selection
+          : JSON.stringify(data.gas_spu_selection);
+      formData.append('gas_spu_selection', raw);
+    }
     if (image) {
       formData.append('image', image);
     }
@@ -144,6 +166,11 @@ export function postTkpPdf(body) {
     responseType: 'arraybuffer',
     transformResponse: [(data) => data],
   });
+}
+
+/** GET прайс СГ Гранд с сервиса на :8010 (см. `getGrandGasMetersPriceUrl`). */
+export function getGrandGasMetersPrices() {
+  return axios.get(getGrandGasMetersPriceUrl(), { timeout: 60000 });
 }
 
 export default api;

@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import {
   createChat,
   createMessage,
@@ -12,12 +12,80 @@ import {
 } from '../api';
 import {
   API_BASE_URL,
+  getEquipmentImageCandidateUrlsFromItem,
+  getSubmitHouseholdGasRequestUrl,
+  getSubmitSpuApplicationUrl,
   LIQUID_TZ_QUESTIONNAIRE_URL,
-  resolveEquipmentImageUrl,
   TKP_PDF_URL,
 } from '../config';
 import { FALLBACK_HINTS_START } from '../data/fallbackHintsStart';
 import { formatTime } from '../utils/formatTime';
+import {
+  GasSpuResultCard,
+  GasSpuReviewBlock,
+  enhanceBotMessageWithGasSpuCard,
+  enhanceBotMessageWithGasSpuReview,
+} from './gasSpuResultCard';
+import { getBundledEquipmentImageUrls } from '../assets/equipmentImages';
+import { GrandGasMetersPriceBlock } from './GrandGasMetersPriceBlock';
+
+/** Консоль браузера: фактический POST на :8010 выполняет Django; здесь URL/тело совпадают с серверным запросом. */
+/** Текст подсказки и кнопки на карточке СПУ — синхронно с backend (gas_spu_wizard.GAS_SPU_LEAVE_REQUEST). */
+const GAS_SPU_LEAVE_REQUEST = 'Оставить заявку →';
+
+/** Консоль: POST заявки СПУ на 1С выполняется в Django — URL и тело соответствуют серверу. */
+function logSubmitSpuApplicationResponse(apiResponse) {
+  if (!apiResponse?.data?.submit_spu_application) return;
+  const lead = apiResponse.data.gas_spu_application_lead;
+  const sel = apiResponse.data.gas_spu_selection;
+  const request = apiResponse.data.submit_spu_application?._request;
+  const email = (lead?.email || '').trim();
+  const phone = (lead?.phone || '').trim();
+  const requestBody = request?.body || {
+    fullname: lead?.full_name || '',
+    contact: email || phone,
+    comment: lead?.tz_comments || '',
+    source: 'my-bot',
+    selection: sel?._last_payload || sel || {},
+  };
+  const method = request?.method || 'POST';
+  const url = request?.url || getSubmitSpuApplicationUrl();
+  const response = apiResponse.data.submit_spu_application;
+  // eslint-disable-next-line no-console
+  console.log('[submit-spu-application → 8010] method:', method);
+  // eslint-disable-next-line no-console
+  console.log('[submit-spu-application → 8010] url:', url);
+  // eslint-disable-next-line no-console
+  console.log('[submit-spu-application → 8010] body:', JSON.stringify(requestBody, null, 2));
+  // eslint-disable-next-line no-console
+  console.log('[submit-spu-application → 8010] response:', JSON.stringify(response, null, 2));
+}
+
+function logSubmitHouseholdGasResponse(apiResponse) {
+  if (!apiResponse?.data?.submit_household_gas) return;
+  const lead = apiResponse.data.household_gas_lead;
+  const email = (lead?.email || '').trim();
+  const phone = (lead?.phone || '').trim();
+  const requestBody = lead
+    ? {
+        fullname: lead.full_name || '',
+        contact: email || phone,
+        comment: lead.comment || '',
+        organization: lead.organization || '',
+        phone,
+        email,
+        source: 'external-bot',
+        selected_items: Array.isArray(lead.selected_items) ? lead.selected_items : [],
+      }
+    : null;
+  // eslint-disable-next-line no-console
+  console.log('[submit-household-gas → 8010]', {
+    method: 'POST',
+    url: getSubmitHouseholdGasRequestUrl(),
+    body: requestBody,
+    response: apiResponse.data.submit_household_gas,
+  });
+}
 
 function isOrderFinalWithSpecs(data) {
   return data?.hint_state?.current_state === 'order_final' && data?.order_specs_json != null;
@@ -25,6 +93,11 @@ function isOrderFinalWithSpecs(data) {
 
 const LIQUID_TZ_MAX_BYTES = 10 * 1024 * 1024;
 const LIQUID_TZ_EXTS = ['.pdf', '.doc', '.docx', '.txt', '.zip', '.rar'];
+
+/** Временная отладка: кнопка пропуска верификации на шаге телефона (сервер принимает только при DEBUG). */
+const SHOW_EQUIPMENT_PRICE_DEBUG =
+  process.env.NODE_ENV === 'development' ||
+  String(process.env.REACT_APP_SHOW_EQUIPMENT_PRICE_DEBUG || '').toLowerCase() === 'true';
 
 function isAllowedLiquidTzFile(file) {
   if (!file?.name) return false;
@@ -225,7 +298,7 @@ function tkpServiceOrigin() {
   try {
     return new URL(TKP_PDF_URL).origin;
   } catch {
-    return 'http://192.168.2.41:8010';
+    return 'http://192.168.5.49:8010';
   }
 }
 
@@ -530,23 +603,33 @@ function AccessoriesSelector({ items, selectedIds, onToggle }) {
 function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
   const [idx, setIdx] = useState(0);
   const [imageFailed, setImageFailed] = useState(false);
+  const [urlIndex, setUrlIndex] = useState(0);
+
+  const n = Array.isArray(items) ? items.length : 0;
+  const item = n > 0 ? items[idx] || {} : {};
+  const label = (item.model || item.name || '').trim() || '—';
+  const single = n === 1;
+
+  const imageCandidates = useMemo(
+    () => [
+      ...getBundledEquipmentImageUrls(item),
+      ...getEquipmentImageCandidateUrlsFromItem(item),
+    ],
+    [item.id, item.image, item.image_url, item.image_path]
+  );
+  const src = imageCandidates[urlIndex] || '';
 
   useEffect(() => {
     setImageFailed(false);
+    setUrlIndex(0);
   }, [idx, items]);
 
   useEffect(() => {
     if (typeof onCurrentItemChange !== 'function') return;
-    const item = Array.isArray(items) && items.length ? items[idx] || {} : {};
-    onCurrentItemChange(item);
-  }, [idx, items, onCurrentItemChange]);
+    onCurrentItemChange(n > 0 ? items[idx] || {} : {});
+  }, [idx, items, n, onCurrentItemChange]);
 
   if (!Array.isArray(items) || items.length === 0) return null;
-  const n = items.length;
-  const item = items[idx] || {};
-  const single = n === 1;
-  const src = resolveEquipmentImageUrl(item.image);
-  const label = (item.model || item.name || '').trim() || '—';
 
   const handleSelectCurrent = () => {
     if (typeof onPick !== 'function' || !item || Object.keys(item).length === 0) return;
@@ -595,6 +678,7 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
       >
         {src && !imageFailed ? (
           <img
+            key={`${src}-${urlIndex}`}
             className="chat-widget__equipment-img"
             src={src}
             alt={label}
@@ -603,14 +687,18 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
                 // eslint-disable-next-line no-console
                 console.warn('[equipment image] load failed, tried:', src, 'raw:', item?.image);
               }
-              setImageFailed(true);
+              if (urlIndex + 1 < imageCandidates.length) {
+                setUrlIndex((i) => i + 1);
+              } else {
+                setImageFailed(true);
+              }
             }}
           />
         ) : null}
         {(!src || imageFailed) && (
           <div className="chat-widget__equipment-placeholder">
             {imageFailed
-              ? 'Превью не загрузилось (проверьте путь к файлу на сервисе 8001).'
+              ? 'Превью не загрузилось (проверьте поле image в ответе и файл в templates/static/equipment на сервере Django).'
               : 'Нет изображения'}
             {imageFailed && src && (
               <div className="chat-widget__equipment-url-hint" title={src}>
@@ -633,9 +721,13 @@ export function ChatWidget() {
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [typingStage, setTypingStage] = useState('');
+  const [typingDetailsOpen, setTypingDetailsOpen] = useState(false);
   const [chatId, setChatId] = useState(null);
   const hasMessages = useRef(false);
   const fileInputRef = useRef(null);
+  /** Защита от двойного нажатия «Получить цену» / debug на шаге телефона (дубли одного и того же ответа бота). */
+  const equipmentPriceActionLockRef = useRef(false);
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -650,19 +742,30 @@ export function ChatWidget() {
     hintsOnly: false,
   });
   const [hintLocked, setHintLocked] = useState(false);
+  const [isEquipmentPriceActionBusy, setIsEquipmentPriceActionBusy] = useState(false);
 
   const isOrderPdfStep = hintState.currentState === 'order_pdf_request';
   const isLiquidTzStep = hintState.currentState === 'verification_installations_liquid_tz';
   const isLiquidTzCommentsStep =
     hintState.currentState === 'verification_installations_liquid_tz_comments';
+  const isGasSpuApplicationTzStep =
+    hintState.currentState === 'verification_installations_gas_application_tz';
+  const isGasSpuApplicationTzCommentsStep =
+    hintState.currentState === 'verification_installations_gas_application_tz_comments';
+  const isGasSpuApplicationStep =
+    hintState.currentState === 'verification_installations_gas_application' ||
+    hintState.currentState === 'verification_installations_gas_application_contact' ||
+    isGasSpuApplicationTzStep ||
+    isGasSpuApplicationTzCommentsStep;
+  const isLiquidTzLikeStep = isLiquidTzStep || isGasSpuApplicationTzStep;
   const fileInputAccept = isOrderPdfStep
     ? '.pdf,application/pdf'
-    : isLiquidTzStep
+    : isLiquidTzLikeStep
       ? LIQUID_TZ_ACCEPT
       : 'image/*';
   const attachButtonTitle = isOrderPdfStep
     ? 'Прикрепить PDF'
-    : isLiquidTzStep
+    : isLiquidTzLikeStep
       ? 'Прикрепить ТЗ (PDF, DOC, DOCX, TXT, ZIP, RAR до 10 МБ)'
       : 'Прикрепить фото';
 
@@ -688,6 +791,24 @@ export function ChatWidget() {
     tzFileName: '',
     tzComments: '',
   });
+  /** Сценарий «СПУ газ — оставить заявку» (анкета как у «жидкости»). */
+  const gasSpuApplicationLeadRef = useRef({
+    fullName: '',
+    email: '',
+    phone: '',
+    tzAttachmentUrl: '',
+    tzFileName: '',
+    tzComments: '',
+  });
+  /** Сценарий «Бытовые счётчики газа»: выбранные позиции и контактные данные заявки. */
+  const householdGasLeadRef = useRef({
+    fullName: '',
+    email: '',
+    phone: '',
+    organization: '',
+    comment: '',
+    selectedItems: [],
+  });
   /**
    * Временное хранение файла ТЗ на шаге «жидкость»: выбранный File до отправки в чат;
    * после успешного POST — URL и имя вложения с сервера (для последующих запросов).
@@ -698,8 +819,34 @@ export function ChatWidget() {
     uploadedUrl: '',
     uploadedName: '',
   });
+  /** Пошаговый подбор СПУ (газ): сервер возвращает обновлённый JSON в gas_spu_selection. */
+  const gasSpuRef = useRef({});
   const selectedAccessoriesRef = useRef([]);
   const [selectedAccessoryIds, setSelectedAccessoryIds] = useState([]);
+
+  const beginTyping = useCallback((stage) => {
+    const s = (stage && String(stage).trim()) || 'Обрабатываю запрос…';
+    console.log('[Чатбот]', s);
+    setTypingStage(s);
+    setTypingDetailsOpen(false);
+    setIsTyping(true);
+  }, []);
+
+  const updateTypingStage = useCallback((stage) => {
+    const s = (stage && String(stage).trim()) || 'Обрабатываю запрос…';
+    console.log('[Чатбот]', s);
+    setTypingStage(s);
+  }, []);
+
+  const endTyping = useCallback(() => {
+    setIsTyping(false);
+    setTypingStage('');
+    setTypingDetailsOpen(false);
+  }, []);
+
+  const toggleTypingDetails = useCallback(() => {
+    setTypingDetailsOpen((open) => !open);
+  }, []);
 
   const pickEquipmentToInput = useCallback((raw) => {
     if (typeof console.clear === 'function') {
@@ -740,6 +887,82 @@ export function ChatWidget() {
     }
     return chatCreatePromiseRef.current;
   }, []);
+
+  /** Главное меню (как при открытии чата): GET /api/hints/?state=start */
+  const applyMainMenuHints = useCallback(async () => {
+    try {
+      const hintsResponse = await getHints('start');
+      const hintsData = hintsResponse.data;
+      setHintState({
+        currentState: hintsData.current_state,
+        hints: hintsData.hints || [],
+        showBack: hintsData.show_back,
+        isFinal: hintsData.is_final,
+        expectsInput: hintsData.expects_input,
+        hintsOnly: hintsData.hints_only ?? false,
+      });
+    } catch (error) {
+      console.error('getHints(start) после заявки:', error);
+      const h = FALLBACK_HINTS_START;
+      setHintState({
+        currentState: h.current_state,
+        hints: h.hints || [],
+        showBack: h.show_back,
+        isFinal: h.is_final,
+        expectsInput: h.expects_input,
+        hintsOnly: h.hints_only ?? false,
+      });
+    }
+    setHintLocked(false);
+  }, []);
+
+  const resetRefsAfterSubmittedApplication = useCallback(() => {
+    householdGasLeadRef.current = {
+      fullName: '',
+      email: '',
+      phone: '',
+      organization: '',
+      comment: '',
+      selectedItems: [],
+    };
+    liquidInstallationLeadRef.current = {
+      fullName: '',
+      email: '',
+      phone: '',
+      tzAttachmentUrl: '',
+      tzFileName: '',
+      tzComments: '',
+    };
+    gasSpuApplicationLeadRef.current = {
+      fullName: '',
+      email: '',
+      phone: '',
+      tzAttachmentUrl: '',
+      tzFileName: '',
+      tzComments: '',
+    };
+    liquidTzFileRef.current = {
+      file: null,
+      fileName: '',
+      uploadedUrl: '',
+      uploadedName: '',
+    };
+    gasSpuRef.current = {};
+    setAwaitingEquipmentSelection(false);
+    sliderEquipmentRef.current = null;
+  }, []);
+
+  /** Заявка с карточкой контактов (как на скрине): завершить сценарий на сервере и показать подсказки главной. */
+  const finishScenarioWithContactCard = useCallback(
+    async (activeChatId) => {
+      resetRefsAfterSubmittedApplication();
+      if (activeChatId != null) {
+        finalizeChat(activeChatId).catch((err) => console.error('finalizeChat:', err));
+      }
+      await applyMainMenuHints();
+    },
+    [applyMainMenuHints, resetRefsAfterSubmittedApplication],
+  );
 
   const initializeChat = useCallback(async () => {
     hasMessages.current = false;
@@ -870,7 +1093,7 @@ export function ChatWidget() {
     setMessages((prev) => [...prev, userMessage]);
 
     hasMessages.current = true;
-    setIsTyping(true);
+    beginTyping('Отправляю выбранную подсказку на сервер…');
 
     try {
       const id = await ensureChatId();
@@ -893,11 +1116,47 @@ export function ChatWidget() {
           };
         }
       }
+      if (hintState.currentState === 'verification_installations_gas_application_tz') {
+        const r = gasSpuApplicationLeadRef.current;
+        if (r.fullName) {
+          hintPayload.gas_spu_application_lead = {
+            full_name: r.fullName,
+            email: r.email || '',
+            phone: r.phone || '',
+            tz_attachment_url: r.tzAttachmentUrl || '',
+            tz_file_name: r.tzFileName || '',
+            tz_comments: r.tzComments || '',
+          };
+        }
+      }
+      if (isGasSpuApplicationStep) {
+        hintPayload.gas_spu_selection = { ...gasSpuRef.current };
+      }
+      if (hintState.currentState === 'verification_installations_gas') {
+        hintPayload.gas_spu_selection = { ...gasSpuRef.current };
+      }
       const response = await createMessage(id, hintPayload);
+      updateTypingStage('Ответ сервера получен, обновляю чат…');
       setAwaitingEquipmentSelection(false);
 
       if (response.data.hint_state) {
         const newState = response.data.hint_state;
+        if (newState.current_state === 'verification_installations_gas_application') {
+          gasSpuApplicationLeadRef.current = {
+            fullName: '',
+            email: '',
+            phone: '',
+            tzAttachmentUrl: '',
+            tzFileName: '',
+            tzComments: '',
+          };
+          liquidTzFileRef.current = {
+            file: null,
+            fileName: '',
+            uploadedUrl: '',
+            uploadedName: '',
+          };
+        }
         if (newState.current_state === 'verification_installations_liquid') {
           liquidInstallationLeadRef.current = {
             fullName: '',
@@ -913,6 +1172,19 @@ export function ChatWidget() {
             uploadedUrl: '',
             uploadedName: '',
           };
+        }
+        if (newState.current_state === 'equipment_household_gas_dev') {
+          householdGasLeadRef.current = {
+            fullName: '',
+            email: '',
+            phone: '',
+            organization: '',
+            comment: '',
+            selectedItems: [],
+          };
+        }
+        if (newState.current_state === 'verification_installations') {
+          gasSpuRef.current = {};
         }
         setHintState({
           currentState: newState.current_state,
@@ -947,10 +1219,67 @@ export function ChatWidget() {
               : prev.tzComments || '',
         };
       }
+      if (response.data.gas_spu_application_lead) {
+        const lead = response.data.gas_spu_application_lead;
+        const prev = gasSpuApplicationLeadRef.current;
+        gasSpuApplicationLeadRef.current = {
+          fullName: lead.full_name || prev.fullName || '',
+          email: lead.email || prev.email || '',
+          phone: lead.phone || prev.phone || '',
+          tzAttachmentUrl: lead.tz_attachment_url || prev.tzAttachmentUrl || '',
+          tzFileName: lead.tz_file_name || prev.tzFileName || '',
+          tzComments:
+            lead.tz_comments !== undefined && lead.tz_comments !== null
+              ? String(lead.tz_comments)
+              : prev.tzComments || '',
+        };
+      }
+      if (response.data.household_gas_lead) {
+        const lead = response.data.household_gas_lead;
+        const prev = householdGasLeadRef.current;
+        householdGasLeadRef.current = {
+          fullName: lead.full_name || prev.fullName || '',
+          email: lead.email || prev.email || '',
+          phone: lead.phone || prev.phone || '',
+          organization:
+            lead.organization !== undefined && lead.organization !== null
+              ? String(lead.organization)
+              : prev.organization || '',
+          comment:
+            lead.comment !== undefined && lead.comment !== null
+              ? String(lead.comment)
+              : prev.comment || '',
+          selectedItems: Array.isArray(lead.selected_items)
+            ? lead.selected_items
+            : prev.selectedItems || [],
+        };
+      }
+      logSubmitHouseholdGasResponse(response);
+      logSubmitSpuApplicationResponse(response);
+      if (response.data.gas_spu_selection != null) {
+        gasSpuRef.current = { ...response.data.gas_spu_selection };
+      }
+      if (response.data.gas_spu_preview) {
+        const p = response.data.gas_spu_preview;
+        try {
+          if (typeof console.clear === 'function') {
+            console.clear();
+          }
+        } catch (e) {
+          /* ignore */
+        }
+        console.log('[СПУ газ] метод запроса:', p.method);
+        console.log('[СПУ газ] URL:', p.url);
+        console.log('[СПУ газ] тело запроса (JSON):\n', JSON.stringify(p.body ?? {}, null, 2));
+        console.log(
+          '[СПУ газ] Реальный POST на URL карточки выполняется на сервере Django после кнопки «Подобрать оборудование»; в Network браузера остаётся только запрос к /api/chats/.../messages/.'
+        );
+      }
 
       if (isOrderFinalWithSpecs(response.data)) {
         const specs = response.data.order_specs_json;
         try {
+          updateTypingStage('Запрос подбора оборудования в 1С по спецификации…');
           const res = await postEquipmentSpecsTo1c(specs);
           const d = res.data;
           if (d?.status === 'success' && Array.isArray(d?.equipment) && d.equipment.length > 0) {
@@ -1006,14 +1335,32 @@ export function ChatWidget() {
               text: botMessages[0].content || 'Пустой ответ сервера.',
               time: new Date(botMessages[0].created_at),
             };
-            if (response.data.submit_verification_liquid?.status === 'success') {
+            if (
+              response.data.submit_verification_liquid?.status === 'success' ||
+              response.data.submit_household_gas?.status === 'success' ||
+              response.data.submit_spu_application?.status === 'success'
+            ) {
               botMsg.kind = 'liquid_verification_contact';
-            } else if (hs?.current_state === 'verification_installations_liquid_tz') {
+            } else if (
+              hs?.current_state === 'verification_installations_liquid_tz' ||
+              hs?.current_state === 'verification_installations_gas_application_tz'
+            ) {
               botMsg.kind = 'liquid_tz_prompt';
             }
-            setMessages((prev) => [...prev, botMsg]);
+            setMessages((prev) => [
+              ...prev,
+              enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+            ]);
           }
         }
+      }
+
+      const applicationSubmitted =
+        response.data.submit_verification_liquid?.status === 'success' ||
+        response.data.submit_household_gas?.status === 'success' ||
+        response.data.submit_spu_application?.status === 'success';
+      if (applicationSubmitted) {
+        void finishScenarioWithContactCard(id);
       }
     } catch (error) {
       console.error('Error selecting hint:', error);
@@ -1025,7 +1372,7 @@ export function ChatWidget() {
       };
       setMessages((prev) => [...prev, errorMsg]);
     } finally {
-      setIsTyping(false);
+      endTyping();
     }
   };
 
@@ -1050,7 +1397,9 @@ export function ChatWidget() {
     }
 
     try {
+      console.log('[Чатбот] Запрос ориентировочной цены (estimate-price)…');
       const estimateResponse = await postEstimatePrice(estimateBody);
+      console.log('[Чатбот] Ответ estimate-price получен.');
       const estimateData = estimateResponse.data || {};
       const equipmentName = (estimateData.equipment_name || estimateBody.equipment.name || fallbackLabel).trim();
       const equipmentId = (estimateData.equipment_id || estimateBody.equipment.id || '').toString().trim();
@@ -1107,6 +1456,7 @@ export function ChatWidget() {
   }, []);
 
   const handleGetPriceHint = async () => {
+    if (equipmentPriceActionLockRef.current) return;
     const eq = sliderEquipmentRef.current;
     const label = (eq?.model || eq?.name || '').toString().trim();
     if (!label) {
@@ -1122,7 +1472,9 @@ export function ChatWidget() {
     };
     setMessages((prev) => [...prev, userMessage]);
     hasMessages.current = true;
-    setIsTyping(true);
+    beginTyping('Отправляю запрос «Получить цену» на сервер…');
+    equipmentPriceActionLockRef.current = true;
+    setIsEquipmentPriceActionBusy(true);
     try {
       const id = await ensureChatId();
       const specsForPrice = lastOrderSpecsRef.current || {};
@@ -1141,6 +1493,7 @@ export function ChatWidget() {
         },
         order_specs_for_price: specsForPrice,
       });
+      updateTypingStage('Ответ сервера получен, обновляю чат…');
       setAwaitingEquipmentSelection(false);
 
       if (response.data.hint_state) {
@@ -1205,7 +1558,77 @@ export function ChatWidget() {
         },
       ]);
     } finally {
-      setIsTyping(false);
+      equipmentPriceActionLockRef.current = false;
+      setIsEquipmentPriceActionBusy(false);
+      endTyping();
+    }
+  };
+
+  const handleDebugSkipEquipmentPriceVerify = async () => {
+    if (equipmentPriceActionLockRef.current) return;
+    beginTyping('Debug: пропуск верификации телефона и почты…');
+    equipmentPriceActionLockRef.current = true;
+    setIsEquipmentPriceActionBusy(true);
+    try {
+      const pendingEstimate = pendingEstimateBodyRef.current;
+      if (!pendingEstimate) {
+        throw new Error('Нет сохранённого запроса цены. Сначала нажмите «Получить цену» у карточки прибора.');
+      }
+
+      const debugContact = {
+        phone: '+7 (928) 777-77-77',
+        email: 'tfdjccyi@trashlify.com',
+      };
+      const label = pendingEstimate?.equipment?.name || pendingEstimate?.equipment?.model || 'оборудование';
+
+      hasMessages.current = true;
+      verifiedContactRef.current = debugContact;
+      setAwaitingEquipmentSelection(false);
+      setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
+      setSelectedAccessoryIds([]);
+      setHintLocked(false);
+      setHintState((prev) => ({
+        ...prev,
+        currentState: 'order_final',
+        hints: [],
+        showBack: false,
+        isFinal: true,
+        expectsInput: false,
+        hintsOnly: false,
+      }));
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `debug-price-verified-${Date.now()}`,
+          from: 'bot',
+          text:
+            `Спасибо! Почта подтверждена. Запрос цены на «${label}» передан менеджеру; ` +
+            `ожидайте связи по телефону ${debugContact.phone} или на ${debugContact.email}.`,
+          time: new Date(),
+        },
+      ]);
+
+      updateTypingStage('Запрос ориентировочной цены (estimate-price)…');
+      await runEstimatePrice(pendingEstimate, label);
+    } catch (error) {
+      console.error('[debug] пропуск верификации цены:', error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          from: 'bot',
+          text:
+            error?.message ||
+            'Не удалось выполнить отладочный пропуск. Нажмите «Получить цену» у карточки прибора и повторите debug.',
+          time: new Date(),
+        },
+      ]);
+    } finally {
+      equipmentPriceActionLockRef.current = false;
+      setIsEquipmentPriceActionBusy(false);
+      endTyping();
     }
   };
 
@@ -1255,7 +1678,7 @@ export function ChatWidget() {
       return;
     }
 
-    setIsTyping(true);
+    beginTyping('Запрос списка аксессуаров для точного расчёта…');
     try {
       const response = await postTkpAccessories(body);
       const accessories = Array.isArray(response.data?.accessories) ? response.data.accessories : [];
@@ -1292,7 +1715,7 @@ export function ChatWidget() {
         },
       ]);
     } finally {
-      setIsTyping(false);
+      endTyping();
     }
   };
 
@@ -1327,7 +1750,7 @@ export function ChatWidget() {
       return;
     }
 
-    setIsTyping(true);
+    beginTyping('Формирование PDF ТКП на сервере…');
     try {
       const response = await postTkpPdf(body);
       const pdf = buildTkpPdfCard(response.data || {}, response.headers || {});
@@ -1361,7 +1784,7 @@ export function ChatWidget() {
         },
       ]);
     } finally {
-      setIsTyping(false);
+      endTyping();
     }
   };
 
@@ -1386,6 +1809,9 @@ export function ChatWidget() {
       if (newState === 'start') {
         setHintLocked(false);
       }
+      if (newState === 'verification_installations') {
+        gasSpuRef.current = {};
+      }
 
       // Не дублируем приветствие главного меню: оно уже есть при открытии чата.
       if (response.data.bot_message && newState !== 'start') {
@@ -1395,7 +1821,7 @@ export function ChatWidget() {
           text: response.data.bot_message,
           time: new Date(),
         };
-        if (newState === 'verification_installations_liquid_tz') {
+        if (newState === 'verification_installations_liquid_tz' || newState === 'verification_installations_gas_application_tz') {
           botMsg.kind = 'liquid_tz_prompt';
         }
         setMessages((prev) => [...prev, botMsg]);
@@ -1423,7 +1849,14 @@ export function ChatWidget() {
 
     if (from === 'user') {
       hasMessages.current = true;
-      setIsTyping(true);
+      const uploadLabel = pdf
+        ? hintStepWhenSending === 'order_pdf_request'
+          ? 'Отправляю PDF заказа на сервер (на сервере: OCR и LM Studio, это может занять время)…'
+          : 'Отправляю PDF на сервер…'
+        : image
+          ? 'Отправляю изображение на сервер…'
+          : 'Отправляю сообщение на сервер…';
+      beginTyping(uploadLabel);
       try {
         const id = await ensureChatId();
         const msgPayload = {
@@ -1435,6 +1868,15 @@ export function ChatWidget() {
         if (hintStepWhenSending === 'verification_installations_liquid_tz_comments' && text.trim()) {
           liquidInstallationLeadRef.current = {
             ...liquidInstallationLeadRef.current,
+            tzComments: text.trim(),
+          };
+        }
+        if (
+          hintStepWhenSending === 'verification_installations_gas_application_tz_comments' &&
+          text.trim()
+        ) {
+          gasSpuApplicationLeadRef.current = {
+            ...gasSpuApplicationLeadRef.current,
             tzComments: text.trim(),
           };
         }
@@ -1455,7 +1897,48 @@ export function ChatWidget() {
             };
           }
         }
+        if (
+          hintState.currentState === 'verification_installations_gas_application' ||
+          hintState.currentState === 'verification_installations_gas_application_contact' ||
+          hintState.currentState === 'verification_installations_gas_application_tz' ||
+          hintState.currentState === 'verification_installations_gas_application_tz_comments'
+        ) {
+          msgPayload.gas_spu_selection = { ...gasSpuRef.current };
+          const rg = gasSpuApplicationLeadRef.current;
+          if (rg.fullName) {
+            msgPayload.gas_spu_application_lead = {
+              full_name: rg.fullName,
+              email: rg.email || '',
+              phone: rg.phone || '',
+              tz_attachment_url: rg.tzAttachmentUrl || '',
+              tz_file_name: rg.tzFileName || '',
+              tz_comments: rg.tzComments || '',
+            };
+          }
+        }
+        if (
+          hintState.currentState === 'household_gas_fullname' ||
+          hintState.currentState === 'household_gas_contact' ||
+          hintState.currentState === 'household_gas_organization' ||
+          hintState.currentState === 'household_gas_comment'
+        ) {
+          const r = householdGasLeadRef.current;
+          if (Array.isArray(r.selectedItems) && r.selectedItems.length > 0) {
+            msgPayload.household_gas_lead = {
+              full_name: r.fullName || '',
+              email: r.email || '',
+              phone: r.phone || '',
+              organization: r.organization || '',
+              comment: r.comment || '',
+              selected_items: r.selectedItems,
+            };
+          }
+        }
+        if (hintState.currentState === 'verification_installations_gas') {
+          msgPayload.gas_spu_selection = { ...gasSpuRef.current };
+        }
         const response = await createMessage(id, msgPayload, image, pdf);
+        updateTypingStage('Ответ сервера получен, обновляю чат…');
         setAwaitingEquipmentSelection(false);
 
         if (response.data.messages) {
@@ -1473,7 +1956,8 @@ export function ChatWidget() {
               )
             );
             if (
-              hintStepWhenSending === 'verification_installations_liquid_tz' &&
+              (hintStepWhenSending === 'verification_installations_liquid_tz' ||
+                hintStepWhenSending === 'verification_installations_gas_application_tz') &&
               pdf &&
               userMsg.attachment_url
             ) {
@@ -1520,6 +2004,62 @@ export function ChatWidget() {
                 : prev.tzComments || '',
           };
         }
+        if (response.data.household_gas_lead) {
+          const lead = response.data.household_gas_lead;
+          const prev = householdGasLeadRef.current;
+          householdGasLeadRef.current = {
+            fullName: lead.full_name || prev.fullName || '',
+            email: lead.email || prev.email || '',
+            phone: lead.phone || prev.phone || '',
+            organization:
+              lead.organization !== undefined && lead.organization !== null
+                ? String(lead.organization)
+                : prev.organization || '',
+            comment:
+              lead.comment !== undefined && lead.comment !== null
+                ? String(lead.comment)
+                : prev.comment || '',
+            selectedItems: Array.isArray(lead.selected_items)
+              ? lead.selected_items
+              : prev.selectedItems || [],
+          };
+        }
+        if (response.data.gas_spu_application_lead) {
+          const lead = response.data.gas_spu_application_lead;
+          const prev = gasSpuApplicationLeadRef.current;
+          gasSpuApplicationLeadRef.current = {
+            fullName: lead.full_name || prev.fullName || '',
+            email: lead.email || prev.email || '',
+            phone: lead.phone || prev.phone || '',
+            tzAttachmentUrl: lead.tz_attachment_url || prev.tzAttachmentUrl || '',
+            tzFileName: lead.tz_file_name || prev.tzFileName || '',
+            tzComments:
+              lead.tz_comments !== undefined && lead.tz_comments !== null
+                ? String(lead.tz_comments)
+                : prev.tzComments || '',
+          };
+        }
+        logSubmitHouseholdGasResponse(response);
+        logSubmitSpuApplicationResponse(response);
+        if (response.data.gas_spu_selection != null) {
+          gasSpuRef.current = { ...response.data.gas_spu_selection };
+        }
+        if (response.data.gas_spu_preview) {
+          const p = response.data.gas_spu_preview;
+          try {
+            if (typeof console.clear === 'function') {
+              console.clear();
+            }
+          } catch (e) {
+            /* ignore */
+          }
+          console.log('[СПУ газ] метод запроса:', p.method);
+          console.log('[СПУ газ] URL:', p.url);
+          console.log('[СПУ газ] тело запроса (JSON):\n', JSON.stringify(p.body ?? {}, null, 2));
+          console.log(
+            '[СПУ газ] Реальный POST на URL карточки выполняется на сервере Django после кнопки «Подобрать оборудование»; в Network браузера остаётся только запрос к /api/chats/.../messages/.'
+          );
+        }
 
         if (response.data.order_specs_llm_response) {
           console.log('[ORDER_SPECS_LLM_RESPONSE]', response.data.order_specs_llm_response);
@@ -1531,6 +2071,7 @@ export function ChatWidget() {
         if (isOrderFinalWithSpecs(response.data)) {
           const specs = response.data.order_specs_json;
           try {
+            updateTypingStage('Запрос подбора оборудования в 1С по спецификации…');
             const res = await postEquipmentSpecsTo1c(specs);
             const d = res.data;
             if (d?.status === 'success' && Array.isArray(d?.equipment) && d.equipment.length > 0) {
@@ -1586,12 +2127,22 @@ export function ChatWidget() {
                 text: botMessages[0].content || 'Пустой ответ сервера.',
                 time: new Date(botMessages[0].created_at),
               };
-              if (response.data.submit_verification_liquid?.status === 'success') {
+              if (
+                response.data.submit_verification_liquid?.status === 'success' ||
+                response.data.submit_household_gas?.status === 'success' ||
+                response.data.submit_spu_application?.status === 'success'
+              ) {
                 botMsg.kind = 'liquid_verification_contact';
-              } else if (hs?.current_state === 'verification_installations_liquid_tz') {
+              } else if (
+                hs?.current_state === 'verification_installations_liquid_tz' ||
+                hs?.current_state === 'verification_installations_gas_application_tz'
+              ) {
                 botMsg.kind = 'liquid_tz_prompt';
               }
-              setMessages((prev) => [...prev, botMsg]);
+              setMessages((prev) => [
+                ...prev,
+                enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+              ]);
             }
           }
           if (response.data.verification_passed) {
@@ -1602,8 +2153,17 @@ export function ChatWidget() {
             };
             const pendingEstimate = pendingEstimateBodyRef.current;
             const fallbackLabel = pendingEstimate?.equipment?.name || 'оборудование';
+            updateTypingStage('Запрос ориентировочной цены (estimate-price)…');
             await runEstimatePrice(pendingEstimate, fallbackLabel);
           }
+        }
+
+        const applicationSubmitted =
+          response.data.submit_verification_liquid?.status === 'success' ||
+          response.data.submit_household_gas?.status === 'success' ||
+          response.data.submit_spu_application?.status === 'success';
+        if (applicationSubmitted) {
+          void finishScenarioWithContactCard(id);
         }
       } catch (error) {
         console.error('Error saving message:', error);
@@ -1615,7 +2175,7 @@ export function ChatWidget() {
         };
         setMessages((prev) => [...prev, errorMsg]);
       } finally {
-        setIsTyping(false);
+        endTyping();
       }
     }
   };
@@ -1637,7 +2197,7 @@ export function ChatWidget() {
       setSelectedPdf(file);
       setSelectedImage(null);
       setImagePreview(null);
-    } else if (isLiquidTzStep) {
+    } else if (isLiquidTzLikeStep) {
       if (!isAllowedLiquidTzFile(file)) {
         alert('Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR (до 10 МБ)');
         return;
@@ -1674,7 +2234,10 @@ export function ChatWidget() {
     setSelectedImage(null);
     setImagePreview(null);
     setSelectedPdf(null);
-    if (hintState.currentState === 'verification_installations_liquid_tz') {
+    if (
+      hintState.currentState === 'verification_installations_liquid_tz' ||
+      hintState.currentState === 'verification_installations_gas_application_tz'
+    ) {
       liquidTzFileRef.current = {
         ...liquidTzFileRef.current,
         file: null,
@@ -1715,7 +2278,107 @@ export function ChatWidget() {
     if (container) {
       container.scrollTop = container.scrollHeight;
     }
-  }, [messages, isOpen, isTyping]);
+  }, [messages, isOpen, isTyping, hintState.currentState]);
+
+  const handleGrandGasLeaveRequest = useCallback(async (payload = {}) => {
+    const selectedItems = Array.isArray(payload.selected_items) ? payload.selected_items : [];
+    const selectedText = selectedItems.length
+      ? `\n\nВыбранные позиции:\n${selectedItems
+          .map((item) => `- ${item.name} × ${item.quantity}`)
+          .join('\n')}`
+      : '';
+    const localMessage = {
+      id: `grand-req-${Date.now()}`,
+      from: 'user',
+      text: `Оставить заявку на бытовой счётчик газа Гранд${selectedText}`,
+      selected_items: selectedItems,
+      time: new Date(),
+    };
+    setMessages((prev) => [...prev, localMessage]);
+    hasMessages.current = true;
+
+    const lead = {
+      full_name: '',
+      email: '',
+      phone: '',
+      organization: '',
+      comment: '',
+      selected_items: selectedItems,
+    };
+    householdGasLeadRef.current = {
+      fullName: '',
+      email: '',
+      phone: '',
+      organization: '',
+      comment: '',
+      selectedItems,
+    };
+
+    beginTyping('Передаю выбранные счётчики и запускаю оформление заявки…');
+    try {
+      const id = await ensureChatId();
+      const response = await createMessage(id, {
+        content: 'Оставить заявку',
+        hint_state: 'equipment_household_gas_dev',
+        is_hint_selection: true,
+        hint_locked: hintLocked,
+        household_gas_lead: lead,
+      });
+      updateTypingStage('Ответ сервера получен, обновляю чат…');
+
+      if (response.data.hint_state) {
+        const newState = response.data.hint_state;
+        setHintState({
+          currentState: newState.current_state,
+          hints: newState.hints || [],
+          showBack: newState.show_back,
+          isFinal: newState.is_final,
+          expectsInput: newState.expects_input,
+          hintsOnly: newState.hints_only ?? false,
+        });
+        setHintLocked(newState.hint_locked !== undefined ? newState.hint_locked : true);
+      }
+
+      if (response.data.household_gas_lead) {
+        const nextLead = response.data.household_gas_lead;
+        householdGasLeadRef.current = {
+          fullName: nextLead.full_name || '',
+          email: nextLead.email || '',
+          phone: nextLead.phone || '',
+          organization: nextLead.organization || '',
+          comment: nextLead.comment || '',
+          selectedItems: Array.isArray(nextLead.selected_items) ? nextLead.selected_items : selectedItems,
+        };
+      }
+
+      const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
+      if (botMessages.length > 0) {
+        const botMsg = botMessages[0];
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: botMsg.id,
+            from: 'bot',
+            text: botMsg.content || 'Пустой ответ сервера.',
+            time: new Date(botMsg.created_at),
+          },
+        ]);
+      }
+    } catch (error) {
+      console.error('Error starting household gas request:', error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `grand-req-error-${Date.now()}`,
+          from: 'bot',
+          text: 'Не удалось начать оформление заявки. Попробуйте ещё раз.',
+          time: new Date(),
+        },
+      ]);
+    } finally {
+      endTyping();
+    }
+  }, [beginTyping, ensureChatId, hintLocked, updateTypingStage]);
 
   return (
     <div className="chat-widget">
@@ -1751,6 +2414,8 @@ export function ChatWidget() {
                   isLiquidTzBotMessage(message) ? ' chat-widget__bubble--tz-shell' : ''
                 }${
                   message.kind === 'liquid_verification_contact' ? ' chat-widget__bubble--consult-shell' : ''
+                }${message.kind === 'gas_spu_card' ? ' chat-widget__bubble--gas-spu' : ''}${
+                  message.kind === 'gas_spu_review' ? ' chat-widget__bubble--gas-spu-review' : ''
                 }`}
               >
                 {message.kind === 'equipment' && message.equipment?.length ? (
@@ -1760,6 +2425,29 @@ export function ChatWidget() {
                     onCurrentItemChange={(item) => {
                       sliderEquipmentRef.current = item;
                     }}
+                  />
+                ) : message.kind === 'gas_spu_review' && message.gasSpuReviewRows?.length ? (
+                  <>
+                    <GasSpuReviewBlock
+                      title={message.gasSpuReviewTitle}
+                      rows={message.gasSpuReviewRows}
+                      headingId={`gas-spu-review-h-${message.id}`}
+                    />
+                    {message.text ? (
+                      <div className="chat-widget__gas-spu-review-footer">{message.text}</div>
+                    ) : null}
+                  </>
+                ) : message.kind === 'gas_spu_card' && message.gasSpuCard ? (
+                  <GasSpuResultCard
+                    card={message.gasSpuCard}
+                    specRows={message.gasSpuSpecRows}
+                    leaveBusy={isTyping}
+                    onLeaveRequest={
+                      hintState.currentState === 'verification_installations_gas' &&
+                      gasSpuRef.current?.step === 'gas_done'
+                        ? () => handleHintSelect({ text: GAS_SPU_LEAVE_REQUEST })
+                        : undefined
+                    }
                   />
                 ) : message.kind === 'accessories' && message.accessories?.length ? (
                   <AccessoriesSelector
@@ -1816,17 +2504,50 @@ export function ChatWidget() {
             </div>
           ))}
 
+          {hintState.currentState === 'equipment_household_gas_dev' && (
+            <div className="chat-widget__message chat-widget__message--bot chat-widget__message--grand-price">
+              <div className="chat-widget__bubble chat-widget__bubble--grand-price">
+                <GrandGasMetersPriceBlock onLeaveRequest={handleGrandGasLeaveRequest} />
+              </div>
+            </div>
+          )}
+
           {isTyping && (
             <div className="chat-widget__message chat-widget__message--bot">
-              <div className="chat-widget__bubble chat-widget__bubble--typing">
-                <span className="typing-dots">
-                  <span />
-                  <span />
-                  <span />
-                </span>
+              <div
+                className={`chat-widget__bubble chat-widget__bubble--typing${
+                  typingDetailsOpen ? ' chat-widget__bubble--typing-expanded' : ''
+                }`}
+              >
+                <button
+                  type="button"
+                  className="chat-widget__typing-toggle"
+                  onClick={toggleTypingDetails}
+                  aria-expanded={typingDetailsOpen}
+                  aria-label={
+                    typingDetailsOpen ? 'Скрыть статус, показать индикатор' : 'Показать краткий статус бота'
+                  }
+                  title={
+                    typingDetailsOpen
+                      ? 'Нажмите, чтобы снова показать три точки'
+                      : 'Нажмите, чтобы увидеть, что сейчас делает бот'
+                  }
+                >
+                  {typingDetailsOpen ? (
+                    <span className="chat-widget__typing-status-text">
+                      {typingStage || 'Обработка…'}
+                    </span>
+                  ) : (
+                    <span className="typing-dots" aria-hidden="true">
+                      <span />
+                      <span />
+                      <span />
+                    </span>
+                  )}
+                </button>
               </div>
               <div className="chat-widget__meta">
-                <span className="chat-widget__time">печатает...</span>
+                <span className="chat-widget__time">{typingDetailsOpen ? 'статус' : 'печатает…'}</span>
               </div>
             </div>
           )}
@@ -1834,9 +2555,27 @@ export function ChatWidget() {
         </div>
 
         <div className="chat-widget__footer">
+          {hintState.currentState === 'equipment_price_phone' && SHOW_EQUIPMENT_PRICE_DEBUG && (
+            <div className="chat-widget__hints chat-widget__hints--debug">
+              <button
+                type="button"
+                className="chat-widget__hint chat-widget__hint--debug"
+                onClick={handleDebugSkipEquipmentPriceVerify}
+                disabled={isEquipmentPriceActionBusy}
+                title="Временно: имитирует подтверждённую почту и переход к расчёту цены. Работает только если Django settings.DEBUG = True."
+              >
+                debug
+              </button>
+            </div>
+          )}
           {awaitingEquipmentSelection && (
             <div className="chat-widget__hints">
-              <button type="button" className="chat-widget__hint" onClick={handleGetPriceHint}>
+              <button
+                type="button"
+                className="chat-widget__hint"
+                onClick={handleGetPriceHint}
+                disabled={isEquipmentPriceActionBusy}
+              >
                 Получить цену
               </button>
             </div>
@@ -1934,9 +2673,9 @@ export function ChatWidget() {
                     ? 'Выберите среду'
                     : isOrderPdfStep
                       ? 'Прикрепите PDF со спецификацией (по желанию дополните текстом)...'
-                    : isLiquidTzStep
+                    : isLiquidTzLikeStep
                       ? 'Прикрепите файл ТЗ'
-                      : isLiquidTzCommentsStep
+                      : isLiquidTzCommentsStep || isGasSpuApplicationTzCommentsStep
                         ? 'Комментарии к ТЗ (или «-» / «нет»)'
                         : hintState.expectsInput
                         ? 'Введите информацию...'

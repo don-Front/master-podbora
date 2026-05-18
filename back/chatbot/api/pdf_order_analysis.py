@@ -252,6 +252,10 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
 
     msg = response.choices[0].message
     raw = LLMClient._extract_assistant_text(msg)
+    logger.info(
+        "LM Studio: ответ получен (%s символов сырого текста), парсинг JSON",
+        len(raw or ""),
+    )
 
     data = _parse_json_from_llm(raw)
     return _normalize_specs(data), raw
@@ -268,6 +272,7 @@ def run_pdf_order_pipeline(
     """
     err = ""
     ocr_text = ""
+    logger.info("[Чатбот PDF] Старт: OCR страниц PDF (EasyOCR)")
     try:
         ocr_text = ocr_pdf_to_text(attachment_abs_path)
         if ocr_text.strip():
@@ -279,6 +284,10 @@ def run_pdf_order_pipeline(
         err = f"OCR: {e}"
         ocr_text = ""
 
+    logger.info(
+        "[Чатбот PDF] OCR этап завершён (%s символов); отправка в LM Studio для извлечения полей",
+        len(ocr_text or ""),
+    )
     try:
         specs, llm_raw = analyze_specs_with_llm(ocr_text, llm)
         specs = _postprocess_specs(specs, ocr_text)

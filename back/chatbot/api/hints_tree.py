@@ -17,22 +17,127 @@ HINTS_TREE = {
         "id": "start",
         "bot_message": "Здравствуйте! Чем я могу Вам помочь?",
         "hints": [
-            {"text": "Оформить заказ", "next_state": "order_pdf_request"},
+            {"text": "Подбор оборудования", "next_state": "equipment_pick"},
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
-            {
-                "text": "Поверочные установки",
-                "next_state": "verification_installations",
-            },
             {"text": "Пуско-наладочные работы", "next_state": "commissioning"},
-            {"text": "Техническая поддержка", "next_state": "tech_support"},
-            {"text": "Претензии", "next_state": "claims"},
+            {"text": "Обратная связь", "next_state": "feedback_pick"},
             {"text": "Отклик на вакансию", "next_state": "vacancy"},
             {"text": "Другое", "next_state": "other"},
         ],
         "expects_input": False,
         "is_final": False,
         "show_back": False,
+    },
+
+    # Подменю: расходомеры (заказ по PDF) и поверочные установки (веб-сценарий)
+    "equipment_pick": {
+        "id": "equipment_pick",
+        "bot_message": (
+            "Подбор оборудования: выберите направление — расходомеры (заявка по PDF) "
+            "или поверочные установки (сценарий выбора среды и параметров)."
+        ),
+        "hints": [
+            {"text": "Расходомеры", "next_state": "order_pdf_request"},
+            {
+                "text": "Поверочные установки",
+                "next_state": "verification_installations",
+            },
+            {"text": "Бытовые счетчики газа", "next_state": "equipment_household_gas_dev"},
+            {"text": "Плотномеры", "next_state": "equipment_densitometers_dev"},
+            {"text": "Датчики давления", "next_state": "equipment_pressure_sensors_dev"},
+        ],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+
+    "equipment_household_gas_dev": {
+        "id": "equipment_household_gas_dev",
+        "bot_message": "Выберите бытовые счётчики газа в прайс-листе и нажмите «Оставить заявку».",
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+    "household_gas_fullname": {
+        "id": "household_gas_fullname",
+        "bot_message": "Укажите, пожалуйста, ваше полное ФИО (фамилия, имя и отчество).",
+        "hints": [],
+        "expects_input": True,
+        "next_state": "household_gas_contact",
+        "is_final": False,
+        "show_back": True,
+    },
+    "household_gas_contact": {
+        "id": "household_gas_contact",
+        "bot_message": (
+            "Укажите адрес электронной почты или номер телефона для связи "
+            "(телефон — в российском формате, например +7 903 123-45-67 или 89031234567)."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "household_gas_organization",
+        "is_final": False,
+        "show_back": True,
+    },
+    "household_gas_organization": {
+        "id": "household_gas_organization",
+        "bot_message": "Укажите организацию. Если заявки от физического лица — отправьте «-» или «нет».",
+        "hints": [],
+        "expects_input": True,
+        "next_state": "household_gas_comment",
+        "is_final": False,
+        "show_back": True,
+    },
+    "household_gas_comment": {
+        "id": "household_gas_comment",
+        "bot_message": "Напишите комментарий к заявке (например: «Нужна поставка 10 шт.»). Если комментариев нет — отправьте «-» или «нет».",
+        "hints": [],
+        "expects_input": True,
+        "next_state": "household_gas_after_submit",
+        "is_final": False,
+        "show_back": True,
+    },
+    "household_gas_after_submit": {
+        "id": "household_gas_after_submit",
+        "bot_message": "Заявка по бытовым счётчикам газа принята. В ближайшее время с вами свяжется менеджер.",
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+    "equipment_densitometers_dev": {
+        "id": "equipment_densitometers_dev",
+        "bot_message": "Раздел «Плотномеры» в разработке.",
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+    "equipment_pressure_sensors_dev": {
+        "id": "equipment_pressure_sensors_dev",
+        "bot_message": "Раздел «Датчики давления» в разработке.",
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+
+    # Подменю: техподдержка и претензии
+    "feedback_pick": {
+        "id": "feedback_pick",
+        "bot_message": (
+            "Обратная связь: выберите раздел — техническая поддержка по оборудованию "
+            "или претензия по качеству продукции / сервиса."
+        ),
+        "hints": [
+            {"text": "Техническая поддержка", "next_state": "tech_support"},
+            {"text": "Претензии", "next_state": "claims"},
+        ],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
     },
 
     # ===== ОФОРМЛЕНИЕ ЗАКАЗА: после выбора — просьба прислать PDF; дальше только загрузка файла =====
@@ -65,7 +170,7 @@ HINTS_TREE = {
             "Срочные вопросы: +7 (863) 203-77-80 (доб. 1080 или 1108)."
         ),
         "hints": [
-            {"text": "Оформить заказ", "next_state": "order_pdf_request"},
+            {"text": "Расходомеры", "next_state": "order_pdf_request"},
             {"text": "Продажа оборудования", "next_state": "sales"},
             {"text": "Поверка", "next_state": "verification"},
             {
@@ -251,7 +356,65 @@ HINTS_TREE = {
     },
     "verification_installations_gas": {
         "id": "verification_installations_gas",
-        "bot_message": "вебсценарий газа",
+        "bot_message": "",
+        "hints": [],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+        "hints_only": True,
+    },
+    "verification_installations_gas_application": {
+        "id": "verification_installations_gas_application",
+        "bot_message": (
+            "Укажите, пожалуйста, ваше полное ФИО (фамилия, имя и отчество) одной строкой, как в паспорте."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "verification_installations_gas_application_contact",
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_gas_application_contact": {
+        "id": "verification_installations_gas_application_contact",
+        "bot_message": (
+            "Укажите адрес электронной почты или номер телефона для связи "
+            "(телефон — в российском формате, например +7 903 123-45-67 или 89031234567)."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "verification_installations_gas_application_tz",
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_gas_application_tz": {
+        "id": "verification_installations_gas_application_tz",
+        "bot_message": (
+            "Загрузите техническое задание одним файлом. Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR "
+            "(размер до 10 МБ). Документ можно подписать электронной подписью или вручную — по желанию. "
+            "Если прикладывать ТЗ не планируете, нажмите «Далее»."
+        ),
+        "hints": [{"text": "Далее", "next_state": "verification_installations_gas_application_tz_comments"}],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_gas_application_tz_comments": {
+        "id": "verification_installations_gas_application_tz_comments",
+        "bot_message": (
+            "Напишите, пожалуйста, любые комментарии к техническому заданию (уточнения, пожелания, вопросы). "
+            "Если комментариев нет — отправьте «-» или «нет»."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "next_state": "verification_installations_gas_application_after_tz",
+        "is_final": False,
+        "show_back": True,
+    },
+    "verification_installations_gas_application_after_tz": {
+        "id": "verification_installations_gas_application_after_tz",
+        "bot_message": (
+            "Спасибо! Заявка по подобранной поверочной установке (газ) принята. Скоро с Вами свяжется менеджер."
+        ),
         "hints": [],
         "expects_input": False,
         "is_final": False,
@@ -590,6 +753,18 @@ def get_parent_state(state_id: str) -> str:
     """Получить родительское состояние для кнопки 'Вернуться'"""
     # Маппинг состояний на их родителей
     parent_map = {
+        # Подбор оборудования (подменю стартового экрана)
+        "equipment_pick": "start",
+        "equipment_household_gas_dev": "equipment_pick",
+        "household_gas_fullname": "equipment_household_gas_dev",
+        "household_gas_contact": "household_gas_fullname",
+        "household_gas_organization": "household_gas_contact",
+        "household_gas_comment": "household_gas_organization",
+        "household_gas_after_submit": "household_gas_comment",
+        "equipment_densitometers_dev": "equipment_pick",
+        "equipment_pressure_sensors_dev": "equipment_pick",
+        "feedback_pick": "start",
+
         # Продажа
         "sales": "start",
         "sales_industrial": "sales",
@@ -601,8 +776,13 @@ def get_parent_state(state_id: str) -> str:
         "verification_own": "verification",
         "verification_third": "verification",
         "verification_contact": "verification",
-        "verification_installations": "start",
+        "verification_installations": "equipment_pick",
         "verification_installations_gas": "verification_installations",
+        "verification_installations_gas_application": "verification_installations_gas",
+        "verification_installations_gas_application_contact": "verification_installations_gas_application",
+        "verification_installations_gas_application_tz": "verification_installations_gas_application_contact",
+        "verification_installations_gas_application_tz_comments": "verification_installations_gas_application_tz",
+        "verification_installations_gas_application_after_tz": "verification_installations_gas_application_tz_comments",
         "verification_installations_liquid": "verification_installations",
         "verification_installations_liquid_contact": "verification_installations_liquid",
         "verification_installations_liquid_tz": "verification_installations_liquid_contact",
@@ -614,13 +794,13 @@ def get_parent_state(state_id: str) -> str:
         "commissioning_contact": "commissioning",
         
         # Тех. поддержка
-        "tech_support": "start",
+        "tech_support": "feedback_pick",
         "tech_support_industrial": "tech_support",
         "tech_support_household": "tech_support",
         "tech_support_contact": "tech_support",
         
         # Претензии
-        "claims": "start",
+        "claims": "feedback_pick",
         "claims_industrial": "claims",
         "claims_household": "claims",
         "claims_contact": "claims",
@@ -637,7 +817,7 @@ def get_parent_state(state_id: str) -> str:
         "free_chat": "start",
 
         # Оформление заказа
-        "order_pdf_request": "start",
+        "order_pdf_request": "equipment_pick",
         "order_specs_clarify": "order_pdf_request",
         "equipment_price_phone": "order_final",
         "equipment_price_email": "equipment_price_phone",

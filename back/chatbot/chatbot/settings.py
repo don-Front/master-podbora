@@ -16,14 +16,41 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SERVICE_8010_ORIGIN = 'http://192.168.5.49:8010'
+OLD_SERVICE_8010_HOST = '192.168.2.41:8010'
+SERVICE_8010_HOST = '192.168.5.49:8010'
+
+
+def normalize_service_8010_url(value: str, default: str = '') -> str:
+    url = (value or default or '').strip()
+    if not url:
+        return ''
+    return url.replace(OLD_SERVICE_8010_HOST, SERVICE_8010_HOST).rstrip('/')
+
+
 # Сервис отправки кода и проверки почты (см. api/verification_client.py)
-VERIFICATION_SERVICE_ORIGIN = os.environ.get(
-    'VERIFICATION_SERVICE_ORIGIN',
-    'http://192.168.2.41:8010',
-).strip().rstrip('/')
+VERIFICATION_SERVICE_ORIGIN = normalize_service_8010_url(
+    os.environ.get('VERIFICATION_SERVICE_ORIGIN'),
+    SERVICE_8010_ORIGIN,
+)
 
 # Полный URL POST заявки «жидкость» (если пусто — {VERIFICATION_SERVICE_ORIGIN}/api/submit-verification-liquid-request)
-SUBMIT_VERIFICATION_LIQUID_URL = os.environ.get('SUBMIT_VERIFICATION_LIQUID_URL', '').strip()
+SUBMIT_VERIFICATION_LIQUID_URL = normalize_service_8010_url(os.environ.get('SUBMIT_VERIFICATION_LIQUID_URL'))
+
+# Полный URL POST заявки «бытовые счётчики газа» (по умолчанию сервис 1С на 192.168.5.49:8010)
+SUBMIT_HOUSEHOLD_GAS_URL = normalize_service_8010_url(
+    os.environ.get('SUBMIT_HOUSEHOLD_GAS_URL'),
+    f'{SERVICE_8010_ORIGIN}/api/submit-household-gas-request',
+)
+
+# Полный URL POST заявки «СПУ газ» после подбора (по умолчанию 192.168.5.49:8010/api/submit-spu-application)
+SUBMIT_SPU_APPLICATION_URL = normalize_service_8010_url(
+    os.environ.get('SUBMIT_SPU_APPLICATION_URL'),
+    f'{SERVICE_8010_ORIGIN}/api/submit-spu-application',
+)
+
+# Полный URL POST карточки СПУ (если пусто — {VERIFICATION_SERVICE_ORIGIN}/api/spu/card)
+SPU_CARD_API_URL = normalize_service_8010_url(os.environ.get('SPU_CARD_API_URL'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -34,7 +61,7 @@ SECRET_KEY = 'django-insecure-*u1il21cgp6v2zzx0_&y2v*n7k^&8&2pfq(-q$3(gusz)isa2i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.5.219', '192.168.2.17', '192.168.2.41']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.5.219', '192.168.5.49', '192.168.2.17', '192.168.2.41']
 
 # Application definition
 
@@ -129,6 +156,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Картинки приборов для слайдера: лежат в репозитории `back/templates/static/` (рядом с каталогом `chatbot`).
+# В dev runserver отдаёт их по URL `/static/equipment/...`.
+_TEMPLATES_STATIC = BASE_DIR.parent / 'templates' / 'static'
+STATICFILES_DIRS = [_TEMPLATES_STATIC] if _TEMPLATES_STATIC.is_dir() else []
 
 # Media files (Uploaded images)
 MEDIA_URL = '/media/'
