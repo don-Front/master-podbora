@@ -31,6 +31,7 @@ import {
 } from './orderSpecsConfirmTable';
 import { getBundledEquipmentImageUrls } from '../assets/equipmentImages';
 import { GrandGasMetersPriceBlock } from './GrandGasMetersPriceBlock';
+import { normalizeSpecs } from '../utils/searchEquipment';
 
 /** Консоль браузера: фактический POST на :8010 выполняет Django; здесь URL/тело совпадают с серверным запросом. */
 /** Текст подсказки и кнопки на карточке СПУ — синхронно с backend (gas_spu_wizard.GAS_SPU_LEAVE_REQUEST). */
@@ -248,11 +249,14 @@ function jsonNumber(value) {
 }
 
 function buildEstimatePriceBody(equipment, specs) {
+  const s = normalizeSpecs(specs || {});
   const id = (equipment?.id ?? equipment?.equipment_id ?? '').toString().trim();
   const name = (equipment?.name || equipment?.model || '').toString().trim();
-  const diameter = numberFromSpecValue(specs?.diameter);
-  const pressureMax = numberFromSpecValue(specs?.pressure_max_mpa ?? specs?.pressure_max);
-  const accuracy = numberFromSpecValue(specs?.accuracy);
+  const diameter = numberFromSpecValue(s.diameter);
+  const pressureMax = numberFromSpecValue(
+    s.pressureMax ?? s.pressure_max ?? s.pressure_max_mpa,
+  );
+  const accuracy = numberFromSpecValue(s.accuracy);
 
   if (!id || !name || !diameter || !pressureMax || accuracy == null) {
     return null;
@@ -277,10 +281,15 @@ function buildTkpAccessoriesBody(estimateBody) {
 }
 
 function buildTkpSpecsBody(specs) {
-  const dn = numberFromSpecValue(specs?.dn ?? specs?.diameter);
-  const temperatureMax = numberFromSpecValue(specs?.temperature_max);
-  const pressureMax = numberFromSpecValue(specs?.pressure_max_mpa ?? specs?.pressure_max);
-  const accuracy = numberFromSpecValue(specs?.accuracy);
+  const s = normalizeSpecs(specs || {});
+  const dn = numberFromSpecValue(s.dn ?? s.diameter);
+  const temperatureMax = numberFromSpecValue(
+    s.tempMediumMax ?? s.temperature_max ?? s.temperatureMax,
+  );
+  const pressureMax = numberFromSpecValue(
+    s.pressureMax ?? s.pressure_max ?? s.pressure_max_mpa,
+  );
+  const accuracy = numberFromSpecValue(s.accuracy);
   const body = {};
 
   if (dn != null) body.dn = Math.trunc(dn);
@@ -289,6 +298,48 @@ function buildTkpSpecsBody(specs) {
   if (accuracy != null) body.accuracy = jsonNumber(accuracy);
 
   return body;
+}
+
+/** Тайминги PDF → OCR → LLM в консоль браузера (сервер + оценка загрузки файла). */
+function logOrderSpecsPipelineTiming(serverTiming, clientStartedAt) {
+  if (!serverTiming || typeof serverTiming !== 'object') return;
+  const ocrMs = Number(serverTiming.ocr_ms) || 0;
+  const llmMs = Number(serverTiming.llm_ms) || 0;
+  const pipelineMs = Number(serverTiming.pipeline_ms) || 0;
+  const ocrChars = serverTiming.ocr_chars ?? 0;
+  const clientTotalMs =
+    clientStartedAt != null ? Math.round(performance.now() - clientStartedAt) : null;
+  const uploadMs =
+    clientTotalMs != null && pipelineMs > 0
+      ? Math.max(0, Math.round(clientTotalMs - pipelineMs))
+      : null;
+
+  // eslint-disable-next-line no-console
+  console.log('[PDF → OCR → LLM] тайминги обработки заказа:');
+  // eslint-disable-next-line no-console
+  console.log(
+    `  OCR: ${ocrMs} ms (${(ocrMs / 1000).toFixed(1)} с) — от начала обработки PDF на сервере до отправки текста в LLM`,
+  );
+  // eslint-disable-next-line no-console
+  console.log(
+    `  LLM: ${llmMs} ms (${(llmMs / 1000).toFixed(1)} с) — от запроса в LM Studio до получения ответа`,
+  );
+  // eslint-disable-next-line no-console
+  console.log(
+    `  Сервер (OCR + LLM + разбор JSON): ${pipelineMs} ms (${(pipelineMs / 1000).toFixed(1)} с), символов OCR: ${ocrChars}`,
+  );
+  if (clientTotalMs != null) {
+    // eslint-disable-next-line no-console
+    console.log(
+      `  Клиент (отправка PDF → ответ API): ${clientTotalMs} ms (${(clientTotalMs / 1000).toFixed(1)} с)`,
+    );
+    if (uploadMs != null && uploadMs > 0) {
+      // eslint-disable-next-line no-console
+      console.log(
+        `  Загрузка файла и сеть (оценка): ${uploadMs} ms (${(uploadMs / 1000).toFixed(1)} с)`,
+      );
+    }
+  }
 }
 
 function parsePriceRub(value) {
@@ -538,10 +589,12 @@ async function downloadTkpPdf(pdf) {
 
 function buildTkpPdfBody(quote, accessories, contact, specs) {
   if (!quote?.equipmentId || !quote?.equipmentName) return null;
+  const price = quote.priceRub ?? parsePriceRub(quote.priceDisplay);
+  if (price == null || !Number.isFinite(price)) return null;
   return {
     equipment_name: quote.equipmentName,
     equipment_id: quote.equipmentId,
-    price: quote.priceRub ?? parsePriceRub(quote.priceDisplay),
+    price,
     phone: contact?.phone || '',
     email: contact?.email || '',
     ...buildTkpSpecsBody(specs),
@@ -1462,7 +1515,62 @@ export function ChatWidget() {
     }
   };
 
+  /** Примерная цена прибора (estimate-price); нужна для ТКП PDF. */
+  const ensureEstimateQuote = useCallback(async () => {
+    let quote = estimateQuoteRef.current;
+    if (quote?.priceRub != null && Number.isFinite(quote.priceRub)) {
+      return quote;
+    }
+    const fromDisplay = parsePriceRub(quote?.priceDisplay);
+    if (fromDisplay != null && quote?.equipmentId) {
+      quote = { ...quote, priceRub: fromDisplay };
+      estimateQuoteRef.current = quote;
+      return quote;
+    }
+
+    const eq = sliderEquipmentRef.current;
+    const specs = lastOrderSpecsRef.current || {};
+    const estimateBody =
+      pendingEstimateBodyRef.current || buildEstimatePriceBody(eq, specs);
+    if (!estimateBody) return null;
+
+    const estimateResponse = await postEstimatePrice(estimateBody);
+    const estimateData = estimateResponse.data || {};
+    const equipmentName = (
+      estimateData.equipment_name ||
+      estimateBody.equipment.name ||
+      ''
+    ).trim();
+    const equipmentId = (
+      estimateData.equipment_id ||
+      estimateBody.equipment.id ||
+      ''
+    )
+      .toString()
+      .trim();
+    const priceRub = parsePriceRub(
+      estimateData.price_rub ?? estimateData.price ?? estimateData.price_display,
+    );
+    const priceDisplay = (estimateData.price_display || '').trim();
+    if (priceRub == null) return null;
+
+    quote = {
+      equipmentName: equipmentName || estimateBody.equipment.name,
+      equipmentId: equipmentId || estimateBody.equipment.id,
+      priceRub,
+      priceDisplay,
+    };
+    estimateQuoteRef.current = quote;
+    return quote;
+  }, []);
+
   const runEstimatePrice = useCallback(async (estimateBody, fallbackLabel = 'оборудование') => {
+    if (!estimateBody) {
+      estimateBody = buildEstimatePriceBody(
+        sliderEquipmentRef.current,
+        lastOrderSpecsRef.current,
+      );
+    }
     if (!estimateBody) {
       exactCostBodyRef.current = null;
       estimateQuoteRef.current = null;
@@ -1566,6 +1674,19 @@ export function ChatWidget() {
       const specsForPrice = lastOrderSpecsRef.current || {};
       const estimateBody = buildEstimatePriceBody(eq, specsForPrice);
       pendingEstimateBodyRef.current = estimateBody;
+      if (!estimateBody) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: `estimate-missing-pre-${Date.now()}`,
+            from: 'bot',
+            text:
+              'Не удалось начать запрос цены: у выбранного прибора нет id или в спецификации не хватает DN, максимального давления или точности.',
+            time: new Date(),
+          },
+        ]);
+        return;
+      }
       const response = await createMessage(id, {
         content: 'Получить цену',
         hint_state: hintState.currentState,
@@ -1652,27 +1773,44 @@ export function ChatWidget() {
 
   const handleDebugSkipEquipmentPriceVerify = async () => {
     if (equipmentPriceActionLockRef.current) return;
-    beginTyping('Debug: пропуск верификации телефона и почты…');
+    beginTyping('Debug: пропуск верификации, загрузка доп. параметров…');
     equipmentPriceActionLockRef.current = true;
     setIsEquipmentPriceActionBusy(true);
     try {
-      const pendingEstimate = pendingEstimateBodyRef.current;
-      if (!pendingEstimate) {
-        throw new Error('Нет сохранённого запроса цены. Сначала нажмите «Получить цену» у карточки прибора.');
+      const eq = sliderEquipmentRef.current;
+      const specs = lastOrderSpecsRef.current || {};
+      let estimateBody =
+        pendingEstimateBodyRef.current || buildEstimatePriceBody(eq, specs);
+      if (!estimateBody) {
+        throw new Error(
+          'Не хватает id прибора на слайдере или параметров спецификации (DN, pressureMax, точность). Сначала завершите подбор расходомера.',
+        );
       }
+      pendingEstimateBodyRef.current = estimateBody;
 
       const debugContact = {
         phone: '+7 (928) 777-77-77',
         email: 'tfdjccyi@trashlify.com',
       };
-      const label = pendingEstimate?.equipment?.name || pendingEstimate?.equipment?.model || 'оборудование';
+      const label = estimateBody.equipment?.name || 'оборудование';
+
+      if (hintState.currentState === 'equipment_price_phone') {
+        const chatId = await ensureChatId();
+        await createMessage(chatId, {
+          content: 'debug',
+          hint_state: 'equipment_price_phone',
+          is_hint_selection: false,
+          hint_locked: true,
+          debug_skip_equipment_price_verify: true,
+        });
+      }
 
       hasMessages.current = true;
       verifiedContactRef.current = debugContact;
       setAwaitingEquipmentSelection(false);
-      setShowTkpPdfHint(false);
-      setIsSelectingAccessories(false);
+      setShowExactCostHint(false);
       setSelectedAccessoryIds([]);
+      selectedAccessoriesRef.current = [];
       setHintLocked(false);
       setHintState((prev) => ({
         ...prev,
@@ -1684,20 +1822,51 @@ export function ChatWidget() {
         hintsOnly: false,
       }));
 
+      const tkpBody = buildTkpAccessoriesBody(estimateBody);
+      if (!tkpBody) {
+        throw new Error('Не удалось собрать запрос аксессуаров для выбранного прибора.');
+      }
+      exactCostBodyRef.current = tkpBody;
+      estimateQuoteRef.current = {
+        equipmentName: label,
+        equipmentId: estimateBody.equipment.id,
+        priceRub: null,
+        priceDisplay: '',
+      };
+
+      updateTypingStage('Запрос ориентировочной цены для ТКП…');
+      const quoteWithPrice = await ensureEstimateQuote();
+      const priceNote =
+        quoteWithPrice?.priceRub != null
+          ? ` Ориентировочная цена прибора: ${quoteWithPrice.priceDisplay || `${quoteWithPrice.priceRub} ₽`}.`
+          : '';
+
       setMessages((prev) => [
         ...prev,
         {
-          id: `debug-price-verified-${Date.now()}`,
+          id: `debug-skip-verify-${Date.now()}`,
           from: 'bot',
-          text:
-            `Спасибо! Почта подтверждена. Запрос цены на «${label}» передан менеджеру; ` +
-            `ожидайте связи по телефону ${debugContact.phone} или на ${debugContact.email}.`,
+          text: `Верификация пропущена (debug). Выберите дополнительные параметры ниже.${priceNote}`,
           time: new Date(),
         },
       ]);
 
-      updateTypingStage('Запрос ориентировочной цены (estimate-price)…');
-      await runEstimatePrice(pendingEstimate, label);
+      updateTypingStage('Запрос списка аксессуаров…');
+      const response = await postTkpAccessories(tkpBody);
+      const accessories = Array.isArray(response.data?.accessories) ? response.data.accessories : [];
+      setShowTkpPdfHint(accessories.length > 0);
+      setIsSelectingAccessories(accessories.length > 0);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `accessories-debug-${Date.now()}`,
+          from: 'bot',
+          kind: 'accessories',
+          accessories,
+          time: new Date(),
+        },
+      ]);
+      logSelectedAccessories([], accessories);
     } catch (error) {
       console.error('[debug] пропуск верификации цены:', error);
       setMessages((prev) => [
@@ -1807,12 +1976,6 @@ export function ChatWidget() {
 
   const handleTkpPdfHint = async () => {
     const selectedAccessories = selectedAccessoriesRef.current || [];
-    const body = buildTkpPdfBody(
-      estimateQuoteRef.current,
-      selectedAccessories,
-      verifiedContactRef.current,
-      lastOrderSpecsRef.current
-    );
     const userMessage = {
       id: Date.now(),
       from: 'user',
@@ -1822,22 +1985,32 @@ export function ChatWidget() {
     };
     setMessages((prev) => [...prev, userMessage]);
 
-    if (!body) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: `tkp-pdf-missing-${Date.now()}`,
-          from: 'bot',
-          text: 'Не удалось сформировать ТКП: дождитесь расчёта примерной цены.',
-          time: new Date(),
-        },
-      ]);
-      setShowTkpPdfHint(false);
-      return;
-    }
-
-    beginTyping('Формирование PDF ТКП на сервере…');
+    beginTyping('Получение цены прибора и формирование PDF ТКП…');
     try {
+      const quote = await ensureEstimateQuote();
+      const body = buildTkpPdfBody(
+        quote,
+        selectedAccessories,
+        verifiedContactRef.current,
+        lastOrderSpecsRef.current,
+      );
+
+      if (!body) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: `tkp-pdf-missing-${Date.now()}`,
+            from: 'bot',
+            text:
+              'Не удалось сформировать ТКП: сервис не вернул цену прибора (estimate-price). Проверьте id прибора и параметры спецификации.',
+            time: new Date(),
+          },
+        ]);
+        setShowTkpPdfHint(false);
+        return;
+      }
+
+      updateTypingStage('Формирование PDF ТКП на сервере…');
       const response = await postTkpPdf(body);
       const pdf = buildTkpPdfCard(response.data || {}, response.headers || {});
       setShowTkpPdfHint(false);
@@ -1855,11 +2028,15 @@ export function ChatWidget() {
       ]);
     } catch (error) {
       console.error('[tkp-pdf] ошибка:', error);
-      const msg =
+      const detail = error?.response?.data?.detail;
+      let msg =
         error?.response?.data?.message ||
         error?.response?.data?.error ||
         error?.message ||
         'Ошибка сети';
+      if (Array.isArray(detail) && detail.length > 0) {
+        msg = detail.map((d) => d.msg || JSON.stringify(d)).join('; ');
+      }
       setMessages((prev) => [
         ...prev,
         {
@@ -1943,6 +2120,8 @@ export function ChatWidget() {
           ? 'Отправляю изображение на сервер…'
           : 'Отправляю сообщение на сервер…';
       beginTyping(uploadLabel);
+      const pdfPipelineClientStart =
+        pdf && hintStepWhenSending === 'order_pdf_request' ? performance.now() : null;
       try {
         const id = await ensureChatId();
         const msgPayload = {
@@ -2147,6 +2326,12 @@ export function ChatWidget() {
           );
         }
 
+        if (response.data.order_specs_pipeline_timing) {
+          logOrderSpecsPipelineTiming(
+            response.data.order_specs_pipeline_timing,
+            pdfPipelineClientStart,
+          );
+        }
         if (response.data.order_specs_llm_response) {
           console.log('[ORDER_SPECS_LLM_RESPONSE]', response.data.order_specs_llm_response);
         }

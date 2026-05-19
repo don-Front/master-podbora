@@ -10,12 +10,54 @@ import io
 import json
 import logging
 import re
+import sys
+import time
 from typing import Any, Dict, Optional, Tuple
 
 import numpy as np
 from PIL import Image
 
 logger = logging.getLogger(__name__)
+
+
+def _ms_elapsed(start: float) -> float:
+    return round((time.perf_counter() - start) * 1000, 1)
+
+
+def _safe_console_print(msg: str) -> None:
+    """print() без падения на cp1251 в консоли Windows (Daphne)."""
+    text = str(msg)
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            print(text, file=stream, flush=True)
+        except UnicodeEncodeError:
+            enc = getattr(stream, "encoding", None) or "utf-8"
+            safe = text.encode(enc, errors="replace").decode(enc, errors="replace")
+            print(safe, file=stream, flush=True)
+
+
+def _log_pdf_pipeline_timing(timing: Dict[str, Any], *, prefix: str = "[PDF timing]") -> None:
+    """Печать в лог Daphne и stderr (видно в консоли при отладке)."""
+    ocr_s = timing.get("ocr_ms", 0) / 1000
+    llm_s = timing.get("llm_ms", 0) / 1000
+    total_s = timing.get("pipeline_ms", 0) / 1000
+    # Только ASCII в консоль (Windows cp1251 не кодирует U+2192 и др.)
+    msg = (
+        f"{prefix} OCR: {timing.get('ocr_ms')} ms ({ocr_s:.1f} s) - "
+        f"ot obrabotki PDF do otpravki v LLM; "
+        f"LLM: {timing.get('llm_ms')} ms ({llm_s:.1f} s) - zapros -> otvet; "
+        f"server total: {timing.get('pipeline_ms')} ms ({total_s:.1f} s), "
+        f"ocr_chars: {timing.get('ocr_chars', 0)}"
+    )
+    msg_log = (
+        f"{prefix} OCR: {timing.get('ocr_ms')} ms ({ocr_s:.1f} с) - "
+        f"до отправки в LLM; LLM: {timing.get('llm_ms')} ms ({llm_s:.1f} с) - "
+        f"запрос/ответ; всего: {timing.get('pipeline_ms')} ms, "
+        f"символов OCR: {timing.get('ocr_chars', 0)}"
+    )
+    logger.info(msg_log)
+    _safe_console_print(msg)
+
 
 # Ленивая инициализация EasyOCR (тяжёлая загрузка моделей при первом вызове)
 _easyocr_reader = None
@@ -199,10 +241,13 @@ def _format_llm_error_for_user(exc: BaseException) -> str:
     return raw[:800]
 
 
-def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
+def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str, float]:
     """
     Отправляет распознанный текст в LM Studio; ожидает один JSON-объект с полями SPEC_KEYS.
     llm — экземпляр api.chatbot_core.llm_client.LLMClient.
+
+    Returns:
+        (specs, raw_llm_text, llm_elapsed_ms)
     """
     schema_hint = """{
     "medium": "gas",
@@ -261,6 +306,7 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
         getattr(llm, "model", "?"),
     )
 
+    t_llm = time.perf_counter()
     response = llm.client.chat.completions.create(
         model=llm.model,
         temperature=0.1,
@@ -277,6 +323,7 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
             {"role": "user", "content": prompt},
         ],
     )
+    llm_ms = _ms_elapsed(t_llm)
 
     if not response or not response.choices:
         raise RuntimeError("пустой ответ от LLM")
@@ -284,45 +331,68 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
     msg = response.choices[0].message
     raw = LLMClient._extract_assistant_text(msg)
     logger.info(
-        "LM Studio: ответ получен (%s символов сырого текста), парсинг JSON",
+        "LM Studio: ответ получен за %s ms (%s символов сырого текста), парсинг JSON",
+        llm_ms,
         len(raw or ""),
     )
 
     data = _parse_json_from_llm(raw)
-    return _normalize_specs(data), raw
+    return _normalize_specs(data), raw, llm_ms
 
 
 def run_pdf_order_pipeline(
     attachment_abs_path: str, llm
-) -> Tuple[Dict[str, Any], str, str, str]:
+) -> Tuple[Dict[str, Any], str, str, str, Dict[str, Any]]:
     """
     Полный цикл: OCR → LLM → JSON.
 
     Returns:
-        (specs_dict, ocr_text, error_message, llm_raw_response) — error_message пустая строка при успехе.
+        (specs_dict, ocr_text, error_message, llm_raw_response, timing) —
+        error_message пустая строка при успехе;
+        timing: {ocr_ms, llm_ms, pipeline_ms, ocr_chars}.
     """
+    t_pipeline = time.perf_counter()
     err = ""
     ocr_text = ""
+    llm_ms = 0.0
+    timing: Dict[str, Any] = {
+        "ocr_ms": 0.0,
+        "llm_ms": 0.0,
+        "pipeline_ms": 0.0,
+        "ocr_chars": 0,
+    }
+
     logger.info("[Чатбот PDF] Старт: OCR страниц PDF (EasyOCR)")
+    t_ocr = time.perf_counter()
     try:
         ocr_text = ocr_pdf_to_text(attachment_abs_path)
+        timing["ocr_ms"] = _ms_elapsed(t_ocr)
+        timing["ocr_chars"] = len(ocr_text or "")
         if ocr_text.strip():
-            logger.info("OCR PDF: получено %s символов текста", len(ocr_text))
+            logger.info(
+                "OCR PDF: получено %s символов за %s ms",
+                timing["ocr_chars"],
+                timing["ocr_ms"],
+            )
         else:
             logger.warning("OCR PDF: текст пустой (страницы без распознавания или пустой файл)")
     except Exception as e:
+        timing["ocr_ms"] = _ms_elapsed(t_ocr)
         logger.exception("OCR PDF failed")
         err = f"OCR: {e}"
         ocr_text = ""
 
     logger.info(
-        "[Чатбот PDF] OCR этап завершён (%s символов); отправка в LM Studio для извлечения полей",
-        len(ocr_text or ""),
+        "[Чатбот PDF] OCR этап завершён за %s ms (%s символов); отправка в LM Studio",
+        timing["ocr_ms"],
+        timing["ocr_chars"],
     )
+    llm_raw = ""
+    specs: Dict[str, Any] = _normalize_specs({k: None for k in SPEC_KEYS})
     try:
-        specs, llm_raw = analyze_specs_with_llm(ocr_text, llm)
+        specs, llm_raw, llm_ms = analyze_specs_with_llm(ocr_text, llm)
+        timing["llm_ms"] = llm_ms
         specs = _postprocess_specs(specs, ocr_text)
-        return specs, ocr_text, "", llm_raw
     except Exception as e:
         logger.exception("LLM specs extraction failed")
         llm_msg = _format_llm_error_for_user(e)
@@ -330,5 +400,15 @@ def run_pdf_order_pipeline(
             err = llm_msg
         else:
             err = f"{err}; {llm_msg}"
-        fallback = _normalize_specs({k: None for k in SPEC_KEYS})
-        return fallback, ocr_text, err, ""
+        specs = _normalize_specs({k: None for k in SPEC_KEYS})
+    finally:
+        timing["pipeline_ms"] = _ms_elapsed(t_pipeline)
+        try:
+            _log_pdf_pipeline_timing(
+                timing,
+                prefix="[PDF timing]" if not err else "[PDF timing] (LLM error)",
+            )
+        except Exception:
+            logger.exception("PDF timing log failed")
+
+    return specs, ocr_text, err, llm_raw, timing

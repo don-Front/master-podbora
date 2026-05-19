@@ -322,13 +322,18 @@ def _safe_print_order_specs_final(draft) -> None:
         line = json.dumps(safe, ensure_ascii=False)
         msg = f"[ORDER_SPECS_FINAL] {line}"
         # Daphne/Windows часто буферизуют stdout — дублируем в stderr и лог
-        print(msg, flush=True)
-        print(msg, file=sys.stderr, flush=True)
+        from .pdf_order_analysis import _safe_console_print
+
+        _safe_console_print(msg)
         logger.warning(msg)
     except Exception as e:
         err = f"[ERROR] ORDER_SPECS_FINAL (print): {e}"
-        print(err, flush=True)
-        print(err, file=sys.stderr, flush=True)
+        try:
+            from .pdf_order_analysis import _safe_console_print
+
+            _safe_console_print(err)
+        except Exception:
+            pass
         logger.exception("ORDER_SPECS_FINAL failed")
 
 
@@ -606,6 +611,7 @@ class MessageViewSet(viewsets.ModelViewSet):
         order_specs_preview = None
         order_specs_llm_response = None
         order_specs_ocr_text = None
+        order_specs_pipeline_timing = None
         order_specs_edit_field = _parse_order_specs_edit_field(data)
         allow_empty_bot = False  # True: финал заказа, текст отдаёт фронт по GET /api/search-equipment
         suppress_chat_email = False  # не дублировать письмо при завершении сценария «цена со слайдера»
@@ -853,7 +859,7 @@ class MessageViewSet(viewsets.ModelViewSet):
                     thanks_template = get_state("order_final").get("bot_message") or ""
                     try:
                         logger.info(
-                            "[Чатбот PDF] Принят PDF заказа (chat_id=%s); запуск пайлайна OCR → LM Studio",
+                            "[Чатбот PDF] Принят PDF заказа (chat_id=%s); запуск пайлайна OCR -> LM Studio",
                             chat_id,
                         )
                         from .pdf_order_analysis import run_pdf_order_pipeline
@@ -864,7 +870,10 @@ class MessageViewSet(viewsets.ModelViewSet):
                         )
 
                         llm = get_order_specs_llm()
-                        specs, _ocr_text, pipeline_err, llm_raw = run_pdf_order_pipeline(abs_pdf, llm)
+                        specs, _ocr_text, pipeline_err, llm_raw, pdf_timing = run_pdf_order_pipeline(
+                            abs_pdf, llm
+                        )
+                        order_specs_pipeline_timing = pdf_timing
                         logger.info(
                             "[Чатбот PDF] Пайлайн завершён (chat_id=%s); предупреждение/ошибка: %s",
                             chat_id,
@@ -1992,6 +2001,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             'gas_spu_card': gas_spu_card,
             'gas_spu_preview': gas_spu_preview,
             'order_specs_preview': order_specs_preview,
+            'order_specs_pipeline_timing': order_specs_pipeline_timing,
         }, status=status.HTTP_201_CREATED)
 
 

@@ -94,6 +94,12 @@ export const createMessage = (chatId, data, image = null, pdf = null) => {
     if (data.order_specs_edit_field != null && data.order_specs_edit_field !== '') {
       formData.append('order_specs_edit_field', String(data.order_specs_edit_field));
     }
+    if (data.debug_skip_equipment_price_verify != null) {
+      formData.append(
+        'debug_skip_equipment_price_verify',
+        data.debug_skip_equipment_price_verify ? 'true' : 'false',
+      );
+    }
     if (image) {
       formData.append('image', image);
     }
