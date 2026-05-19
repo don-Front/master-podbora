@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Распознавание PDF через EasyOCR (рендер страниц через PyMuPDF) и извлечение
-структурированных характеристик через LM Studio (OpenAI-совместимый API).
+Распознавание PDF через EasyOCR (рендер страниц через PyMuPDF), извлечение текста
+из DOCX (python-docx) и структурированных характеристик через LM Studio.
 """
 
 from __future__ import annotations
@@ -9,6 +9,7 @@ from __future__ import annotations
 import io
 import json
 import logging
+import os
 import re
 import sys
 import time
@@ -104,6 +105,44 @@ def ocr_pdf_to_text(file_path: str) -> str:
     if len(combined) > MAX_OCR_CHARS:
         combined = combined[:MAX_OCR_CHARS]
     return combined
+
+
+def is_docx_attachment(file_path: str) -> bool:
+    return (file_path or "").lower().endswith(".docx")
+
+
+def docx_to_text(file_path: str) -> str:
+    """Извлекает текст из DOCX (абзацы и таблицы)."""
+    from docx import Document
+
+    doc = Document(file_path)
+    parts: list[str] = []
+    for para in doc.paragraphs:
+        t = (para.text or "").strip()
+        if t:
+            parts.append(t)
+    for table in doc.tables:
+        for row in table.rows:
+            cells = [(c.text or "").strip() for c in row.cells]
+            line = " | ".join(c for c in cells if c)
+            if line:
+                parts.append(line)
+    combined = "\n".join(parts).strip()
+    if len(combined) > MAX_OCR_CHARS:
+        combined = combined[:MAX_OCR_CHARS]
+    return combined
+
+
+def attachment_to_text(file_path: str) -> Tuple[str, str]:
+    """
+    Текст из вложения заказа: DOCX — прямое извлечение, иначе OCR PDF.
+
+    Returns:
+        (text, source) — source: ``docx`` | ``pdf_ocr``.
+    """
+    if is_docx_attachment(file_path):
+        return docx_to_text(file_path), "docx"
+    return ocr_pdf_to_text(file_path), "pdf_ocr"
 
 
 def _parse_json_from_llm(raw: str) -> Dict[str, Any]:
@@ -355,37 +394,52 @@ def run_pdf_order_pipeline(
     err = ""
     ocr_text = ""
     llm_ms = 0.0
+    text_source = "pdf_ocr"
+    if is_docx_attachment(attachment_abs_path):
+        text_source = "docx"
     timing: Dict[str, Any] = {
         "ocr_ms": 0.0,
         "llm_ms": 0.0,
         "pipeline_ms": 0.0,
         "ocr_chars": 0,
+        "text_source": text_source,
     }
 
-    logger.info("[Чатбот PDF] Старт: OCR страниц PDF (EasyOCR)")
+    ext = os.path.splitext(attachment_abs_path)[1].lower()
+    logger.info(
+        "[Чатбот заказ] Старт извлечения текста (%s): %s",
+        text_source,
+        ext or "без расширения",
+    )
     t_ocr = time.perf_counter()
     try:
-        ocr_text = ocr_pdf_to_text(attachment_abs_path)
+        ocr_text, text_source = attachment_to_text(attachment_abs_path)
+        timing["text_source"] = text_source
         timing["ocr_ms"] = _ms_elapsed(t_ocr)
         timing["ocr_chars"] = len(ocr_text or "")
         if ocr_text.strip():
             logger.info(
-                "OCR PDF: получено %s символов за %s ms",
+                "Извлечение текста (%s): %s символов за %s ms",
+                text_source,
                 timing["ocr_chars"],
                 timing["ocr_ms"],
             )
         else:
-            logger.warning("OCR PDF: текст пустой (страницы без распознавания или пустой файл)")
+            logger.warning(
+                "Извлечение текста (%s): пустой результат",
+                text_source,
+            )
     except Exception as e:
         timing["ocr_ms"] = _ms_elapsed(t_ocr)
-        logger.exception("OCR PDF failed")
-        err = f"OCR: {e}"
+        logger.exception("Извлечение текста из вложения failed (%s)", text_source)
+        err = f"{'DOCX' if text_source == 'docx' else 'OCR'}: {e}"
         ocr_text = ""
 
     logger.info(
-        "[Чатбот PDF] OCR этап завершён за %s ms (%s символов); отправка в LM Studio",
+        "[Чатбот заказ] Текст готов за %s ms (%s символов, %s); отправка в LM Studio",
         timing["ocr_ms"],
         timing["ocr_chars"],
+        text_source,
     )
     llm_raw = ""
     specs: Dict[str, Any] = _normalize_specs({k: None for k in SPEC_KEYS})

@@ -337,7 +337,29 @@ def _safe_print_order_specs_final(draft) -> None:
         logger.exception("ORDER_SPECS_FINAL failed")
 
 
+ORDER_SPECS_ATTACHMENT_EXTENSIONS = ('.pdf', '.docx')
+ORDER_SPECS_ATTACHMENT_MIME_TYPES = frozenset(
+    {
+        'application/pdf',
+        'application/x-pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    }
+)
+
+
+def _is_order_specs_attachment_upload(file_obj):
+    """PDF или DOCX для сценария «Расходомеры» (order_pdf_request)."""
+    if not file_obj:
+        return False
+    name = (getattr(file_obj, 'name', '') or '').lower()
+    if any(name.endswith(ext) for ext in ORDER_SPECS_ATTACHMENT_EXTENSIONS):
+        return True
+    ctype = (getattr(file_obj, 'content_type', '') or '').lower().split(';')[0].strip()
+    return ctype in ORDER_SPECS_ATTACHMENT_MIME_TYPES
+
+
 def _is_pdf_upload(file_obj):
+    """Обратная совместимость: только PDF."""
     if not file_obj:
         return False
     name = (getattr(file_obj, 'name', '') or '').lower()
@@ -851,15 +873,15 @@ class MessageViewSet(viewsets.ModelViewSet):
         elif hint_locked:
             # Режим заблокирован - обрабатываем только ожидаемый ввод
             if current_state == 'order_pdf_request':
-                has_pdf = _is_pdf_upload(attachment_file)
+                has_specs_doc = _is_order_specs_attachment_upload(attachment_file)
                 has_image = bool(image_file)
                 text = (question or '').strip()
-                if has_pdf:
+                if has_specs_doc:
                     abs_pdf = os.path.join(settings.MEDIA_ROOT, str(user_message.attachment))
                     thanks_template = get_state("order_final").get("bot_message") or ""
                     try:
                         logger.info(
-                            "[Чатбот PDF] Принят PDF заказа (chat_id=%s); запуск пайлайна OCR -> LM Studio",
+                            "[Чатбот заказ] Принят файл спецификации (chat_id=%s); OCR/DOCX -> LM Studio",
                             chat_id,
                         )
                         from .pdf_order_analysis import run_pdf_order_pipeline
@@ -895,7 +917,7 @@ class MessageViewSet(viewsets.ModelViewSet):
                             intro = ""
                             if pipeline_err:
                                 intro = (
-                                    f"Часть данных из PDF распознана не полностью ({pipeline_err}).\n\n"
+                                    f"Часть данных из файла распознана не полностью ({pipeline_err}).\n\n"
                                 )
                             bot_response = intro + format_prompt_for_field(missing[0])
                             hint_locked = True
@@ -912,24 +934,25 @@ class MessageViewSet(viewsets.ModelViewSet):
                         order_specs_json = None
                         next_state = state_data.get("next_state", "order_final")
                         bot_response = (
-                            f"Не удалось обработать PDF автоматически: {e}\n\n{thanks_template}"
+                            f"Не удалось обработать файл автоматически: {e}\n\n{thanks_template}"
                         )
                         hint_locked = True
                 elif has_image:
                     bot_response = (
-                        "Нужен документ в формате PDF с характеристиками оборудования. "
-                        "Пожалуйста, прикрепите PDF-файл, а не изображение."
+                        "Нужен документ PDF или DOCX с характеристиками оборудования. "
+                        "Пожалуйста, прикрепите файл, а не изображение."
                     )
                     next_state = current_state
                 elif text:
                     bot_response = (
-                        "Для оформления заказа пришлите, пожалуйста, файл PDF с описанием характеристик "
-                        "оборудования (кнопка скрепки 📎)."
+                        "Для оформления заказа пришлите, пожалуйста, файл PDF или DOCX с описанием "
+                        "характеристик оборудования (кнопка скрепки 📎)."
                     )
                     next_state = current_state
                 else:
                     bot_response = (
-                        "Пожалуйста, прикрепите и отправьте файл в формате PDF с описанием характеристик оборудования."
+                        "Пожалуйста, прикрепите и отправьте файл PDF или DOCX с описанием "
+                        "характеристик оборудования."
                     )
                     next_state = current_state
             elif current_state == 'verification_installations_gas':

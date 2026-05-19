@@ -117,6 +117,23 @@ function applyHintStateFromResponse(data, setHintState, setHintLocked) {
 const LIQUID_TZ_MAX_BYTES = 10 * 1024 * 1024;
 const LIQUID_TZ_EXTS = ['.pdf', '.doc', '.docx', '.txt', '.zip', '.rar'];
 
+const ORDER_SPECS_MAX_BYTES = 15 * 1024 * 1024;
+const ORDER_SPECS_EXTS = ['.pdf', '.docx'];
+const ORDER_SPECS_ACCEPT =
+  '.pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+
+function isAllowedOrderSpecsFile(file) {
+  if (!file) return false;
+  const n = (file.name || '').toLowerCase();
+  if (ORDER_SPECS_EXTS.some((ext) => n.endsWith(ext))) return true;
+  const t = (file.type || '').toLowerCase();
+  return (
+    t === 'application/pdf' ||
+    t === 'application/x-pdf' ||
+    t === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+  );
+}
+
 /** Временная отладка: кнопка пропуска верификации на шаге телефона (сервер принимает только при DEBUG). */
 const SHOW_EQUIPMENT_PRICE_DEBUG =
   process.env.NODE_ENV === 'development' ||
@@ -834,12 +851,12 @@ export function ChatWidget() {
     isGasSpuApplicationTzCommentsStep;
   const isLiquidTzLikeStep = isLiquidTzStep || isGasSpuApplicationTzStep;
   const fileInputAccept = isOrderPdfStep
-    ? '.pdf,application/pdf'
+    ? ORDER_SPECS_ACCEPT
     : isLiquidTzLikeStep
       ? LIQUID_TZ_ACCEPT
       : 'image/*';
   const attachButtonTitle = isOrderPdfStep
-    ? 'Прикрепить PDF'
+    ? 'Прикрепить PDF или DOCX'
     : isLiquidTzLikeStep
       ? 'Прикрепить ТЗ (PDF, DOC, DOCX, TXT, ZIP, RAR до 10 МБ)'
       : 'Прикрепить фото';
@@ -2114,7 +2131,7 @@ export function ChatWidget() {
       hasMessages.current = true;
       const uploadLabel = pdf
         ? hintStepWhenSending === 'order_pdf_request'
-          ? 'Отправляю PDF заказа на сервер (на сервере: OCR и LM Studio, это может занять время)…'
+          ? 'Отправляю файл заказа на сервер (OCR или разбор DOCX и LM Studio, это может занять время)…'
           : 'Отправляю PDF на сервер…'
         : image
           ? 'Отправляю изображение на сервер…'
@@ -2462,13 +2479,12 @@ export function ChatWidget() {
     if (!file) return;
 
     if (isOrderPdfStep) {
-      const ok = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
-      if (!ok) {
-        alert('Пожалуйста, выберите файл в формате PDF');
+      if (!isAllowedOrderSpecsFile(file)) {
+        alert('Пожалуйста, выберите файл в формате PDF или DOCX');
         return;
       }
-      if (file.size > 15 * 1024 * 1024) {
-        alert('Размер PDF не должен превышать 15 МБ');
+      if (file.size > ORDER_SPECS_MAX_BYTES) {
+        alert('Размер файла не должен превышать 15 МБ');
         return;
       }
       setSelectedPdf(file);
@@ -2780,7 +2796,7 @@ export function ChatWidget() {
                         if (!message.attachmentUrl) ev.preventDefault();
                       }}
                     >
-                      📎 {message.pdfName || 'PDF-файл'}
+                      📎 {message.pdfName || 'Вложение'}
                     </a>
                   </div>
                 )}
