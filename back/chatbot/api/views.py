@@ -279,6 +279,40 @@ def get_order_specs_llm():
         _order_specs_llm = LLMClient(**llm_config)
     return _order_specs_llm
 
+def _parse_order_specs_edit_field(data) -> str | None:
+    """Поле SPEC_KEYS для редактирования из шага подтверждения."""
+    from .pdf_order_analysis import SPEC_KEYS
+
+    raw = data.get("order_specs_edit_field")
+    if raw is None or raw == "":
+        return None
+    key = str(raw).strip()
+    return key if key in SPEC_KEYS else None
+
+
+def _transition_to_order_specs_confirm(chat, draft, *, print_final: bool = True) -> dict:
+    """Сохранить черновик, показать сводку; запрос в 1С — только после подтверждения."""
+    from .order_specs_helpers import (
+        build_order_specs_preview,
+        format_specs_summary_for_user,
+        merge_draft,
+        specs_for_api_response,
+    )
+
+    d = merge_draft(draft)
+    if print_final:
+        _safe_print_order_specs_final(d)
+    chat.order_specs_draft = d
+    chat.order_specs_pending_field = None
+    chat.save(update_fields=["order_specs_draft", "order_specs_pending_field"])
+    return {
+        "next_state": "order_specs_confirm",
+        "bot_response": format_specs_summary_for_user(d),
+        "order_specs_json": specs_for_api_response(d),
+        "order_specs_preview": build_order_specs_preview(d),
+    }
+
+
 def _safe_print_order_specs_final(draft) -> None:
     """Вывод итогового JSON в консоль; не должен ронять запрос при нестандартных типах."""
     try:
@@ -569,9 +603,11 @@ class MessageViewSet(viewsets.ModelViewSet):
         bot_response = ""
         next_state = current_state
         order_specs_json = None
+        order_specs_preview = None
         order_specs_llm_response = None
         order_specs_ocr_text = None
-        allow_empty_bot = False  # True: финал заказа, текст отдаёт фронт по ответу /api/1c/data
+        order_specs_edit_field = _parse_order_specs_edit_field(data)
+        allow_empty_bot = False  # True: финал заказа, текст отдаёт фронт по GET /api/search-equipment
         suppress_chat_email = False  # не дублировать письмо при завершении сценария «цена со слайдера»
         verification_passed = False  # фронт выводит в консоль при успешной проверке кода
         verified_contact = None
@@ -694,6 +730,75 @@ class MessageViewSet(viewsets.ModelViewSet):
                     next_state_data = get_state(next_state)
                     bot_response = next_state_data.get('bot_message') or ''
                     hint_locked = True
+            elif current_state == 'order_specs_confirm':
+                from .order_specs_helpers import (
+                    ORDER_SPECS_CONFIRM_HINT,
+                    build_order_specs_preview,
+                    format_prompt_for_field,
+                    list_missing_fields,
+                    merge_draft,
+                    specs_for_api_response,
+                )
+
+                if order_specs_edit_field:
+                    try:
+                        ch = Chat.objects.get(pk=chat_id)
+                        draft = merge_draft(ch.order_specs_draft or {})
+                        ch.order_specs_pending_field = order_specs_edit_field
+                        ch.save(update_fields=["order_specs_pending_field"])
+                        next_state = "order_specs_clarify"
+                        bot_response = format_prompt_for_field(order_specs_edit_field)
+                        order_specs_json = specs_for_api_response(draft)
+                        hint_locked = True
+                    except Chat.DoesNotExist:
+                        bot_response = "Сессия чата устарела. Начните диалог заново."
+                        next_state = "start"
+                        hint_locked = False
+                elif is_hint_selection and (question or '').strip() == ORDER_SPECS_CONFIRM_HINT:
+                    sel = ORDER_SPECS_CONFIRM_HINT
+                    try:
+                        ch = Chat.objects.get(pk=chat_id)
+                        draft = merge_draft(ch.order_specs_draft or {})
+                        missing = list_missing_fields(draft)
+                        if missing:
+                            ch.order_specs_pending_field = missing[0]
+                            ch.order_specs_draft = draft
+                            ch.save(
+                                update_fields=["order_specs_draft", "order_specs_pending_field"]
+                            )
+                            next_state = "order_specs_clarify"
+                            bot_response = format_prompt_for_field(missing[0])
+                            order_specs_json = specs_for_api_response(draft)
+                            hint_locked = True
+                        else:
+                            _safe_print_order_specs_final(draft)
+                            ch.order_specs_draft = None
+                            ch.order_specs_pending_field = None
+                            ch.save(
+                                update_fields=["order_specs_draft", "order_specs_pending_field"]
+                            )
+                            next_state = "order_final"
+                            order_specs_json = specs_for_api_response(draft)
+                            bot_response = ""
+                            allow_empty_bot = True
+                            hint_locked = True
+                    except Chat.DoesNotExist:
+                        bot_response = "Сессия чата устарела. Начните диалог заново."
+                        next_state = "start"
+                        hint_locked = False
+                else:
+                    next_state = current_state
+                    bot_response = (
+                        f"Нажмите «{ORDER_SPECS_CONFIRM_HINT}», чтобы отправить параметры на подбор."
+                    )
+                    try:
+                        ch = Chat.objects.get(pk=chat_id)
+                        order_specs_preview = build_order_specs_preview(
+                            merge_draft(ch.order_specs_draft or {})
+                        )
+                    except Chat.DoesNotExist:
+                        pass
+                    hint_locked = True
             else:
                 # Пользователь выбрал подсказку - переходим в новое состояние
                 next_state = get_next_state(current_state, question)
@@ -786,13 +891,11 @@ class MessageViewSet(viewsets.ModelViewSet):
                             bot_response = intro + format_prompt_for_field(missing[0])
                             hint_locked = True
                         else:
-                            chat.order_specs_draft = None
-                            chat.order_specs_pending_field = None
-                            chat.save(update_fields=["order_specs_draft", "order_specs_pending_field"])
-                            _safe_print_order_specs_final(draft)
-                            next_state = "order_final"
-                            bot_response = ""
-                            allow_empty_bot = True
+                            trans = _transition_to_order_specs_confirm(chat, draft)
+                            next_state = trans["next_state"]
+                            bot_response = trans["bot_response"]
+                            order_specs_json = trans["order_specs_json"]
+                            order_specs_preview = trans.get("order_specs_preview")
                             hint_locked = True
                     except Exception as e:
                         logger.exception("[Чатбот PDF] Ошибка пайлайна: %s", e)
@@ -871,16 +974,11 @@ class MessageViewSet(viewsets.ModelViewSet):
                     else:
                         key = pending or (missing_pre[0] if missing_pre else None)
                         if not key:
-                            _safe_print_order_specs_final(draft)
-                            chat.order_specs_draft = None
-                            chat.order_specs_pending_field = None
-                            chat.save(
-                                update_fields=["order_specs_draft", "order_specs_pending_field"]
-                            )
-                            bot_response = ""
-                            allow_empty_bot = True
-                            next_state = "order_final"
-                            order_specs_json = draft
+                            trans = _transition_to_order_specs_confirm(chat, draft)
+                            next_state = trans["next_state"]
+                            bot_response = trans["bot_response"]
+                            order_specs_json = trans["order_specs_json"]
+                            order_specs_preview = trans.get("order_specs_preview")
                             hint_locked = True
                         else:
                             try:
@@ -909,20 +1007,46 @@ class MessageViewSet(viewsets.ModelViewSet):
                                     order_specs_json = draft
                                     hint_locked = True
                                 else:
-                                    chat.order_specs_draft = None
-                                    chat.order_specs_pending_field = None
-                                    chat.save(
-                                        update_fields=[
-                                            "order_specs_draft",
-                                            "order_specs_pending_field",
-                                        ]
-                                    )
-                                    _safe_print_order_specs_final(draft)
-                                    bot_response = ""
-                                    allow_empty_bot = True
-                                    next_state = "order_final"
-                                    order_specs_json = draft
+                                    trans = _transition_to_order_specs_confirm(chat, draft)
+                                    next_state = trans["next_state"]
+                                    bot_response = trans["bot_response"]
+                                    order_specs_json = trans["order_specs_json"]
+                                    order_specs_preview = trans.get("order_specs_preview")
                                     hint_locked = True
+            elif current_state == 'order_specs_confirm':
+                from .order_specs_helpers import (
+                    ORDER_SPECS_CONFIRM_HINT,
+                    build_order_specs_preview,
+                    format_prompt_for_field,
+                    merge_draft,
+                    specs_for_api_response,
+                )
+
+                if order_specs_edit_field:
+                    chat = Chat.objects.filter(pk=chat_id).first()
+                    if not chat:
+                        bot_response = "Сессия чата устарела. Начните диалог заново."
+                        next_state = "start"
+                        hint_locked = False
+                    else:
+                        draft = merge_draft(chat.order_specs_draft or {})
+                        chat.order_specs_pending_field = order_specs_edit_field
+                        chat.save(update_fields=["order_specs_pending_field"])
+                        next_state = "order_specs_clarify"
+                        bot_response = format_prompt_for_field(order_specs_edit_field)
+                        order_specs_json = specs_for_api_response(draft)
+                        hint_locked = True
+                else:
+                    next_state = current_state
+                    bot_response = (
+                        f"Для продолжения нажмите «{ORDER_SPECS_CONFIRM_HINT}» под таблицей параметров."
+                    )
+                    chat = Chat.objects.filter(pk=chat_id).first()
+                    if chat and chat.order_specs_draft:
+                        order_specs_preview = build_order_specs_preview(
+                            merge_draft(chat.order_specs_draft)
+                        )
+                    hint_locked = True
             elif current_state == 'equipment_price_phone':
                 text = (question or '').strip()
                 phone_st = get_state('equipment_price_phone')
@@ -1867,6 +1991,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             'gas_spu_selection': gas_spu_selection,
             'gas_spu_card': gas_spu_card,
             'gas_spu_preview': gas_spu_preview,
+            'order_specs_preview': order_specs_preview,
         }, status=status.HTTP_201_CREATED)
 
 

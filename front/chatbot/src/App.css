@@ -1496,6 +1496,130 @@
   white-space: pre-line;
 }
 
+/* Таблица подтверждения параметров спецификации (расходомеры) */
+.chat-widget__message--order-specs-confirm {
+  align-self: stretch;
+  max-width: 100%;
+  width: 100%;
+}
+
+.chat-widget__bubble--order-specs-confirm {
+  max-width: 100%;
+  width: 100%;
+  padding: 10px 6px 12px;
+  box-sizing: border-box;
+}
+
+.order-specs-confirm {
+  width: 100%;
+}
+
+.order-specs-confirm__title {
+  margin: 0 0 10px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f2942;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.order-specs-confirm__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(15, 41, 66, 0.08);
+}
+
+.order-specs-confirm__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: fixed;
+}
+
+.order-specs-confirm__table thead th {
+  background: #1e3a5f;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 9px 8px;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+
+.order-specs-confirm__th-edit {
+  width: 36px;
+  padding: 9px 4px !important;
+}
+
+.order-specs-confirm__table tbody td {
+  padding: 8px 8px;
+  vertical-align: middle;
+  color: #1e293b;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.order-specs-confirm__row--alt td {
+  background: #f1f5f9;
+}
+
+.order-specs-confirm__param {
+  font-weight: 600;
+  color: #334155;
+  width: 42%;
+}
+
+.order-specs-confirm__value {
+  color: #0f172a;
+}
+
+.order-specs-confirm__edit-cell {
+  width: 36px;
+  text-align: center;
+  padding: 4px !important;
+}
+
+.order-specs-confirm__edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.order-specs-confirm__edit-btn:hover:not(:disabled) {
+  background: rgba(30, 58, 95, 0.1);
+  color: #1e3a5f;
+}
+
+.order-specs-confirm__edit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.order-specs-confirm__edit-icon {
+  display: block;
+}
+
+.order-specs-confirm__footer {
+  margin: 10px 4px 0;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.4;
+  text-align: center;
+}
+
 /* Карточка шага «ТЗ» (жидкость) */
 .chat-widget__tz-card {
   max-width: 320px;

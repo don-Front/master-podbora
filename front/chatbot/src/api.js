@@ -3,17 +3,11 @@ import {
   API_BASE_URL,
   ESTIMATE_PRICE_URL,
   getGrandGasMetersPriceUrl,
-  ONE_C_AUTHORIZATION,
-  ONE_C_DATA_URL,
+  getSearchEquipmentUrl,
   TKP_ACCESSORIES_URL,
   TKP_PDF_URL,
 } from './config';
-
-function equipmentParamsTimestamp() {
-  const d = new Date();
-  const p = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
-}
+import { buildSearchEquipmentUrl } from './utils/searchEquipment';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -97,6 +91,9 @@ export const createMessage = (chatId, data, image = null, pdf = null) => {
           : JSON.stringify(data.gas_spu_selection);
       formData.append('gas_spu_selection', raw);
     }
+    if (data.order_specs_edit_field != null && data.order_specs_edit_field !== '') {
+      formData.append('order_specs_edit_field', String(data.order_specs_edit_field));
+    }
     if (image) {
       formData.append('image', image);
     }
@@ -134,18 +131,16 @@ export const getGeoLocation = async (ip) => {
 };
 
 /**
- * Отправка итоговой спецификации на мост 1С (тело как в ТЗ: type, timestamp, Authorization, data).
+ * Подбор оборудования: GET /api/search-equipment?… (параметры в URL, без тела).
  */
+export function fetchSearchEquipment(specsObject) {
+  const url = buildSearchEquipmentUrl(getSearchEquipmentUrl(), specsObject);
+  return axios.get(url, { timeout: 120000 }).then((res) => ({ ...res, requestUrl: url }));
+}
+
+/** @deprecated используйте fetchSearchEquipment */
 export function postEquipmentSpecsTo1c(specsObject) {
-  const body = {
-    type: 'equipment_params',
-    timestamp: equipmentParamsTimestamp(),
-    Authorization: ONE_C_AUTHORIZATION,
-    data: specsObject,
-  };
-  return axios.post(ONE_C_DATA_URL, body, {
-    headers: { 'Content-Type': 'application/json' },
-  });
+  return fetchSearchEquipment(specsObject);
 }
 
 export function postEstimatePrice(body) {

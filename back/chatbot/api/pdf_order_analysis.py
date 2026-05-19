@@ -85,25 +85,48 @@ def _parse_json_from_llm(raw: str) -> Dict[str, Any]:
 SPEC_KEYS = [
     "medium",
     "gas_type",
-    "flow_min",
-    "flow_max",
+    "flowMin",
+    "flowMax",
     "flow_unit",
-    "pressure_min",
-    "pressure_max",
+    "pressureMin",
+    "pressureMax",
     "pressure_unit",
-    "temperature_min",
-    "temperature_max",
+    "tempMediumMin",
+    "tempMediumMax",
+    "tempAmbientMin",
+    "tempAmbientMax",
     "temperature_unit",
     "accuracy",
     "diameter",
 ]
 
+# Старые ключи (LLM/черновики) → актуальные
+_SPEC_LEGACY_ALIASES = {
+    "flow_min": "flowMin",
+    "flow_max": "flowMax",
+    "pressure_min": "pressureMin",
+    "pressure_max": "pressureMax",
+    "temperature_min": "tempMediumMin",
+    "temperature_max": "tempMediumMax",
+    "ambient_temp_min": "tempAmbientMin",
+    "ambient_temp_max": "tempAmbientMax",
+}
+
 
 def _normalize_specs(data: Dict[str, Any]) -> Dict[str, Any]:
+    src: Dict[str, Any] = dict(data or {})
+    merged: Dict[str, Any] = {}
+    for old, new in _SPEC_LEGACY_ALIASES.items():
+        if src.get(old) is not None and src.get(new) is None:
+            merged[new] = src.get(old)
+    for k, v in src.items():
+        if k in SPEC_KEYS:
+            merged[k] = v
+        elif k in _SPEC_LEGACY_ALIASES and merged.get(_SPEC_LEGACY_ALIASES[k]) is None:
+            merged[_SPEC_LEGACY_ALIASES[k]] = v
     out: Dict[str, Any] = {}
     for k in SPEC_KEYS:
-        v = data.get(k)
-        out[k] = v
+        out[k] = merged.get(k)
     return out
 
 
@@ -184,16 +207,18 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
     schema_hint = """{
     "medium": "gas",
     "gas_type": "Природный газ",
-    "flow_min": 10,
-    "flow_max": 500,
+    "flowMin": 10,
+    "flowMax": 500,
     "flow_unit": "м³/ч",
-    "pressure_min": 0.1,
-    "pressure_max": 1.6,
+    "pressureMin": 0.1,
+    "pressureMax": 1.6,
     "pressure_unit": "МПа",
-    "temperature_min": -40,
-    "temperature_max": 60,
+    "tempMediumMin": -10,
+    "tempMediumMax": 22,
+    "tempAmbientMin": -38,
+    "tempAmbientMax": 50,
     "temperature_unit": "°C",
-    "accuracy": "А",
+    "accuracy": "0.5%",
     "diameter": 100
 }"""
 
@@ -203,7 +228,13 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str]:
 
 Задача: по этому тексту извлечь параметры расходомера/учёта газа (или аналогичного оборудования), насколько это возможно.
 
-Верни ТОЛЬКО один валидный JSON без комментариев и без текста до/после. Ключи строго как в примере структуры (типы: medium — строка, часто \"gas\"/\"liquid\"/\"unknown\"; gas_type — строка или null; flow_min/max, pressure_*, temperature_*, diameter — числа или null; *_unit и accuracy — строки).
+Верни ТОЛЬКО один валидный JSON без комментариев и без текста до/после. Ключи строго как в примере структуры (типы: medium — строка \"gas\"/\"liquid\"/\"unknown\"; gas_type — строка; flowMin, flowMax, pressureMin, pressureMax, tempMediumMin, tempMediumMax, tempAmbientMin, tempAmbientMax, diameter — числа или null; flow_unit, pressure_unit, temperature_unit — строки; accuracy — строка).
+
+Температуры разделяй так:
+- tempMediumMin / tempMediumMax — минимальная и максимальная температура рабочей (измеряемой) среды;
+- tempAmbientMin / tempAmbientMax — минимальная и максимальная температура окружающей среды;
+- temperature_unit — одна единица для всех четырёх температур (например \"°C\").
+Не используй ключи temperature_min/temperature_max.
 
 Поле accuracy заполняй только одним из вариантов:
 - буква точности: \"А\", \"Б\", \"В\" или \"Г\" (например, если в тексте есть \"Вариант исполнения по точности прибора ... А\", то accuracy = \"А\");

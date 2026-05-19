@@ -161,7 +161,20 @@ HINTS_TREE = {
         "expects_input": True,
         "is_final": False,
         "show_back": True,
-        "next_state": "order_final",
+        "next_state": "order_specs_confirm",
+    },
+    "order_specs_confirm": {
+        "id": "order_specs_confirm",
+        "bot_message": "",
+        "hints": [
+            {
+                "text": "Подтвердить и подобрать оборудование",
+                "next_state": "order_final",
+            },
+        ],
+        "expects_input": False,
+        "is_final": False,
+        "show_back": True,
     },
     "order_final": {
         "id": "order_final",
@@ -819,6 +832,7 @@ def get_parent_state(state_id: str) -> str:
         # Оформление заказа
         "order_pdf_request": "equipment_pick",
         "order_specs_clarify": "order_pdf_request",
+        "order_specs_confirm": "order_pdf_request",
         "equipment_price_phone": "order_final",
         "equipment_price_email": "equipment_price_phone",
         "equipment_price_verify_code": "equipment_price_email",

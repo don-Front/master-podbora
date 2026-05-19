@@ -8,17 +8,19 @@ import re
 from decimal import Decimal
 from typing import Any, Dict, List
 
-from .pdf_order_analysis import SPEC_KEYS, _normalize_specs, normalize_accuracy_value
+from .pdf_order_analysis import SPEC_KEYS, _normalize_specs, _SPEC_LEGACY_ALIASES, normalize_accuracy_value
 
 # Поля, которые считаем числовыми (в т.ч. 0 считается «не заполнено» до уточнения)
 NUMERIC_KEYS = frozenset(
     {
-        "flow_min",
-        "flow_max",
-        "pressure_min",
-        "pressure_max",
-        "temperature_min",
-        "temperature_max",
+        "flowMin",
+        "flowMax",
+        "pressureMin",
+        "pressureMax",
+        "tempMediumMin",
+        "tempMediumMax",
+        "tempAmbientMin",
+        "tempAmbientMax",
         "diameter",
     }
 )
@@ -75,16 +77,18 @@ def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
 FIELD_PROMPTS: Dict[str, str] = {
     "medium": "Укажите среду измерения (например: gas — газ, liquid — жидкость). Одно слово или коротко.",
     "gas_type": "Укажите тип измеряемой среды (например: природный газ, жидкость и т.п.).",
-    "flow_min": "Укажите минимальный расход (число), например: 10",
-    "flow_max": "Укажите максимальный расход (число), например: 500",
-    "flow_unit": "Укажите единицу расхода (например: м³/ч).",
-    "pressure_min": "Укажите минимальное давление (число), например: 0.1",
-    "pressure_max": "Укажите максимальное давление (число), например: 1.6",
+    "flowMin": "Укажите минимальный расход (число), например: 10",
+    "flowMax": "Укажите максимальный расход (число), например: 500",
+    "flow_unit": "Укажите единицу расхода (например: ст.м³/ч).",
+    "pressureMin": "Укажите минимальное давление (число), например: 0.1",
+    "pressureMax": "Укажите максимальное давление (число), например: 1.6",
     "pressure_unit": "Укажите единицу давления (например: МПа).",
-    "temperature_min": "Укажите минимальную температуру (число °C), например: -40",
-    "temperature_max": "Укажите максимальную температуру (число °C), например: 60",
-    "temperature_unit": "Укажите единицу температуры (например: °C).",
-    "accuracy": "Укажите точность / класс точности (например: 1-2%).",
+    "tempMediumMin": "Укажите мин. температуру рабочей среды (число), например: -10",
+    "tempMediumMax": "Укажите макс. температуру рабочей среды (число), например: 22",
+    "tempAmbientMin": "Укажите мин. температуру окружающей среды (число), например: -38",
+    "tempAmbientMax": "Укажите макс. температуру окружающей среды (число), например: 50",
+    "temperature_unit": "Укажите единицу температуры для всех температур (например: °C).",
+    "accuracy": "Укажите точность / класс точности (например: 0,5% или А).",
     "diameter": "Укажите диаметр (число, например: 100).",
 }
 
@@ -103,6 +107,7 @@ def _parse_number(text: str) -> float:
 
 def parse_field_value(key: str, text: str) -> Any:
     """Парсит одно поле из текста пользователя."""
+    key = _SPEC_LEGACY_ALIASES.get(key, key)
     raw = (text or "").strip()
     if not raw:
         raise ValueError("пустой ввод")
@@ -114,6 +119,16 @@ def parse_field_value(key: str, text: str) -> Any:
         return v
     if key == "accuracy":
         return normalize_accuracy_value(raw)
+
+    if key == "medium":
+        low = raw.strip().lower()
+        if low in ("gas", "газ", "gaz"):
+            return "gas"
+        if low in ("liquid", "жидкость", "жидк", "fluid"):
+            return "liquid"
+        if low in ("unknown", "неизвестно", "не указано"):
+            return "unknown"
+        return raw
 
     # строковые поля
     return raw
@@ -159,3 +174,77 @@ def specs_for_api_response(draft: Any) -> Dict[str, Any]:
         return {k: None for k in SPEC_KEYS}
     base = _normalize_specs(draft)
     return {k: _to_json_safe_scalar(base.get(k)) for k in SPEC_KEYS}
+
+
+# Подпись кнопки подтверждения — должна совпадать с hints_tree и views
+ORDER_SPECS_CONFIRM_HINT = "Подтвердить и подобрать оборудование"
+
+
+FIELD_LABELS: Dict[str, str] = {
+    "medium": "Среда измерения",
+    "gas_type": "Тип измеряемой среды",
+    "flowMin": "Минимальный расход",
+    "flowMax": "Максимальный расход",
+    "flow_unit": "Единица расхода",
+    "pressureMin": "Минимальное давление",
+    "pressureMax": "Максимальное давление",
+    "pressure_unit": "Единица давления",
+    "tempMediumMin": "Мин. температура раб. среды",
+    "tempMediumMax": "Макс. температура раб. среды",
+    "tempAmbientMin": "Мин. температура окр. среды",
+    "tempAmbientMax": "Макс. температура окр. среды",
+    "temperature_unit": "Единица температуры",
+    "accuracy": "Точность / класс",
+    "diameter": "Диаметр",
+}
+
+_MEDIUM_DISPLAY = {
+    "gas": "газ",
+    "liquid": "жидкость",
+    "unknown": "не указано",
+}
+
+
+def _format_spec_display_value(key: str, value: Any) -> str:
+    if is_value_missing(key, value):
+        return "—"
+    if key == "medium":
+        s = str(value).strip().lower()
+        return _MEDIUM_DISPLAY.get(s, str(value))
+    if key in NUMERIC_KEYS and isinstance(value, (int, float)):
+        if key == "diameter":
+            return f"{value} мм"
+        return str(value)
+    return str(value).strip()
+
+
+ORDER_SPECS_REVIEW_TITLE = "Проверьте итоговые параметры спецификации:"
+
+
+def build_order_specs_review_rows(draft: Dict[str, Any]) -> List[Dict[str, str]]:
+    """Строки таблицы для UI подтверждения (ключ, подпись, значение)."""
+    d = merge_draft(draft)
+    rows: List[Dict[str, str]] = []
+    for key in SPEC_KEYS:
+        rows.append(
+            {
+                "key": key,
+                "label": FIELD_LABELS.get(key, key),
+                "value": _format_spec_display_value(key, d.get(key)),
+            }
+        )
+    return rows
+
+
+def build_order_specs_preview(draft: Dict[str, Any]) -> Dict[str, Any]:
+    """Структура для фронта: заголовок, строки таблицы, подпись под кнопкой."""
+    return {
+        "review_title": ORDER_SPECS_REVIEW_TITLE,
+        "review_rows": build_order_specs_review_rows(draft),
+        "footer": f"Если всё верно — нажмите «{ORDER_SPECS_CONFIRM_HINT}».",
+    }
+
+
+def format_specs_summary_for_user(draft: Dict[str, Any]) -> str:
+    """Краткий текст в БД; таблицу рисует фронт по order_specs_preview."""
+    return build_order_specs_preview(draft)["footer"]

@@ -184,12 +184,24 @@ export const LIQUID_TZ_QUESTIONNAIRE_URL = (
 ).trim() || defaultLiquidTzQuestionnaireUrl();
 
 /**
- * POST итоговых параметров в 1С после готового JSON (см. ChatWidget).
+ * POST итоговых параметров в 1С (legacy, estimate-price и др.).
  * Переопределение: REACT_APP_1C_DATA_URL.
  */
 export const ONE_C_DATA_URL = (
   process.env.REACT_APP_1C_DATA_URL || 'http://192.168.5.49:8010/api/1c/data'
 ).trim();
+
+/**
+ * GET подбор расходомеров по query-параметрам (без тела).
+ * Переопределение: REACT_APP_SEARCH_EQUIPMENT_URL.
+ */
+export const SEARCH_EQUIPMENT_URL = (
+  process.env.REACT_APP_SEARCH_EQUIPMENT_URL || 'http://192.168.5.49:8010/api/search-equipment'
+).trim();
+
+export function getSearchEquipmentUrl() {
+  return SEARCH_EQUIPMENT_URL;
+}
 
 /** POST расчёта ориентировочной цены по выбранному прибору и итоговой спецификации. */
 export const ESTIMATE_PRICE_URL = (
