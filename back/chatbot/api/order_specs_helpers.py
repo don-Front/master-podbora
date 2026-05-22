@@ -70,7 +70,7 @@ def is_value_missing(key: str, value: Any) -> bool:
 
 
 def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
-    d = _normalize_specs(draft)
+    d = merge_draft(draft)
     return [k for k in SPEC_KEYS if is_value_missing(k, d.get(k))]
 
 
@@ -205,7 +205,7 @@ _MEDIUM_DISPLAY = {
 }
 
 
-def _format_spec_display_value(key: str, value: Any) -> str:
+def _format_spec_display_value(key: str, value: Any, draft: Dict[str, Any] | None = None) -> str:
     if is_value_missing(key, value):
         return "—"
     if key == "medium":
@@ -214,6 +214,15 @@ def _format_spec_display_value(key: str, value: Any) -> str:
     if key in NUMERIC_KEYS and isinstance(value, (int, float)):
         if key == "diameter":
             return f"{value} мм"
+        if draft:
+            if key in ("flowMin", "flowMax"):
+                unit = draft.get("flow_unit")
+                if not is_value_missing("flow_unit", unit):
+                    return f"{value} {unit}"
+            if key in ("pressureMin", "pressureMax"):
+                unit = draft.get("pressure_unit")
+                if not is_value_missing("pressure_unit", unit):
+                    return f"{value} {unit}"
         return str(value)
     return str(value).strip()
 
@@ -230,7 +239,7 @@ def build_order_specs_review_rows(draft: Dict[str, Any]) -> List[Dict[str, str]]
             {
                 "key": key,
                 "label": FIELD_LABELS.get(key, key),
-                "value": _format_spec_display_value(key, d.get(key)),
+                "value": _format_spec_display_value(key, d.get(key), d),
             }
         )
     return rows

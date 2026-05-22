@@ -204,6 +204,11 @@
   border: 1px solid rgba(148, 163, 184, 0.5);
 }
 
+.chat-widget__message-text {
+  display: block;
+  white-space: pre-line;
+}
+
 .chat-widget__message--bot .chat-widget__bubble--tz-shell {
   background: transparent;
   border: none;
@@ -1654,6 +1659,122 @@
   color: #475569;
   line-height: 1.4;
   text-align: center;
+}
+
+/* Блок уточнения параметров (текстовый подбор) */
+.chat-widget__message--order-specs-clarify {
+  max-width: 100%;
+}
+
+.chat-widget__bubble--order-specs-clarify {
+  max-width: min(360px, 100%);
+  padding: 10px 12px 12px;
+}
+
+.order-specs-clarify {
+  width: 100%;
+}
+
+.order-specs-clarify__warning {
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fef9c3;
+  border: 1px solid #fde68a;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #713f12;
+}
+
+.order-specs-clarify__intro {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #0f172a;
+}
+
+.order-specs-clarify__found-list {
+  margin: 0 0 12px;
+  padding: 0 0 0 18px;
+  list-style: disc;
+}
+
+.order-specs-clarify__found-item {
+  margin: 0 0 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.order-specs-clarify__found-label {
+  font-weight: 500;
+}
+
+.order-specs-clarify__found-empty {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.order-specs-clarify__missing-box {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #faf6f0;
+  border: 1px solid #ebe3d6;
+}
+
+.order-specs-clarify__missing-title {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #44403c;
+}
+
+.order-specs-clarify__missing-hint {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #78716c;
+}
+
+.order-specs-clarify__missing-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order-specs-clarify__missing-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.order-specs-clarify__missing-item:last-child {
+  margin-bottom: 0;
+}
+
+.order-specs-clarify__missing-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #44403c;
+}
+
+.order-specs-clarify__missing-example {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #78716c;
+  font-style: italic;
+}
+
+.order-specs-clarify__footer {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #475569;
 }
 
 /* Карточка шага «ТЗ» (жидкость) */

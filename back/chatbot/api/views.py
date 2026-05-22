@@ -313,6 +313,87 @@ def _transition_to_order_specs_confirm(chat, draft, *, print_final: bool = True)
     }
 
 
+def _handle_order_specs_text_message(chat_id, text: str, *, base_draft=None) -> dict | None:
+    """Свободный текст пользователя -> черновик спецификации -> уточнение или таблица проверки."""
+    from .order_specs_helpers import list_missing_fields, merge_draft, specs_for_api_response
+    from .order_specs_text import (
+        TEXT_ORDER_SPECS_STATE,
+        build_order_specs_clarify_preview,
+        extract_order_specs_from_text,
+        format_text_specs_clarification,
+        present_fields,
+    )
+
+    chat = Chat.objects.filter(pk=chat_id).first()
+    if not chat:
+        return {
+            "next_state": "start",
+            "bot_response": "Сессия чата устарела. Начните диалог заново.",
+            "order_specs_json": None,
+            "order_specs_preview": None,
+            "order_specs_llm_response": None,
+            "hint_locked": False,
+        }
+
+    base = merge_draft(base_draft or {})
+    warning = ""
+    try:
+        llm = get_order_specs_llm()
+        draft, llm_raw, extract_err, _timing = extract_order_specs_from_text(text, llm, base)
+        if extract_err:
+            warning = (
+                "Часть параметров удалось определить правилами, но LLM-извлечение вернуло предупреждение: "
+                f"{extract_err}"
+            )
+    except Exception as exc:
+        logger.exception("[Чатбот текстовый подбор] Ошибка извлечения параметров: %s", exc)
+        from .order_specs_text import extract_order_specs_from_text
+
+        draft, llm_raw, extract_err, _timing = extract_order_specs_from_text(text, None, base)
+        warning = (
+            "Автоматическое извлечение через LLM временно недоступно; "
+            "часть параметров определена по текстовым правилам."
+        )
+
+    draft = merge_draft(draft)
+    missing = list_missing_fields(draft)
+    chat.order_specs_draft = draft
+    chat.order_specs_pending_field = None
+
+    if missing:
+        chat.save(update_fields=["order_specs_draft", "order_specs_pending_field"])
+        return {
+            "next_state": TEXT_ORDER_SPECS_STATE,
+            "bot_response": format_text_specs_clarification(draft, missing, warning=warning),
+            "order_specs_json": specs_for_api_response(draft),
+            "order_specs_preview": None,
+            "order_specs_clarify_preview": build_order_specs_clarify_preview(
+                draft, missing, warning=warning
+            ),
+            "order_specs_llm_response": llm_raw,
+            "hint_locked": True,
+        }
+
+    if not present_fields(draft):
+        chat.save(update_fields=["order_specs_draft", "order_specs_pending_field"])
+        return {
+            "next_state": TEXT_ORDER_SPECS_STATE,
+            "bot_response": (
+                "Не удалось надёжно определить параметры расходомера из сообщения. "
+                "Напишите, пожалуйста, среду, расход, давление, температуру, точность и DN одним сообщением."
+            ),
+            "order_specs_json": specs_for_api_response(draft),
+            "order_specs_preview": None,
+            "order_specs_llm_response": llm_raw,
+            "hint_locked": True,
+        }
+
+    trans = _transition_to_order_specs_confirm(chat, draft)
+    trans["order_specs_llm_response"] = llm_raw
+    trans["hint_locked"] = True
+    return trans
+
+
 def _safe_print_order_specs_final(draft) -> None:
     """Вывод итогового JSON в консоль; не должен ронять запрос при нестандартных типах."""
     try:
@@ -631,6 +712,7 @@ class MessageViewSet(viewsets.ModelViewSet):
         next_state = current_state
         order_specs_json = None
         order_specs_preview = None
+        order_specs_clarify_preview = None
         order_specs_llm_response = None
         order_specs_ocr_text = None
         order_specs_pipeline_timing = None
@@ -865,10 +947,26 @@ class MessageViewSet(viewsets.ModelViewSet):
             
         elif is_start_like:
             # На начальном этапе или финальном (новый цикл) - ВСЕГДА доступен AI-бот
-            bot = get_chatbot()
-            bot_response = bot.generate_response(question)
-            # Подсказки остаются, блокировка сбрасывается
-            hint_locked = False
+            text = (question or "").strip()
+            from .order_specs_text import looks_like_order_specs_request
+
+            specs_text_result = None
+            if looks_like_order_specs_request(text):
+                specs_text_result = _handle_order_specs_text_message(chat_id, text, base_draft={})
+
+            if specs_text_result:
+                next_state = specs_text_result["next_state"]
+                bot_response = specs_text_result["bot_response"]
+                order_specs_json = specs_text_result.get("order_specs_json")
+                order_specs_preview = specs_text_result.get("order_specs_preview")
+                order_specs_clarify_preview = specs_text_result.get("order_specs_clarify_preview")
+                order_specs_llm_response = specs_text_result.get("order_specs_llm_response")
+                hint_locked = specs_text_result["hint_locked"]
+            else:
+                bot = get_chatbot()
+                bot_response = bot.generate_response(question)
+                # Подсказки остаются, блокировка сбрасывается
+                hint_locked = False
             
         elif hint_locked:
             # Режим заблокирован - обрабатываем только ожидаемый ввод
@@ -968,6 +1066,40 @@ class MessageViewSet(viewsets.ModelViewSet):
                 _gas_expects = gr.expects_input
                 gas_spu_card = gr.card
                 gas_spu_preview = gr.preview
+            elif current_state == 'order_specs_text_clarify':
+                text = (question or "").strip()
+                chat = Chat.objects.filter(pk=chat_id).first()
+                if not chat:
+                    bot_response = "Сессия чата устарела. Начните диалог заново."
+                    next_state = "start"
+                    hint_locked = False
+                elif not text:
+                    from .order_specs_helpers import list_missing_fields, merge_draft
+                    from .order_specs_text import (
+                        build_order_specs_clarify_preview,
+                        format_text_specs_clarification,
+                    )
+
+                    draft = merge_draft(chat.order_specs_draft or {})
+                    missing = list_missing_fields(draft)
+                    bot_response = format_text_specs_clarification(draft, missing)
+                    order_specs_clarify_preview = build_order_specs_clarify_preview(draft, missing)
+                    next_state = "order_specs_text_clarify"
+                    order_specs_json = draft
+                    hint_locked = True
+                else:
+                    specs_text_result = _handle_order_specs_text_message(
+                        chat_id,
+                        text,
+                        base_draft=chat.order_specs_draft or {},
+                    )
+                    next_state = specs_text_result["next_state"]
+                    bot_response = specs_text_result["bot_response"]
+                    order_specs_json = specs_text_result.get("order_specs_json")
+                    order_specs_preview = specs_text_result.get("order_specs_preview")
+                    order_specs_clarify_preview = specs_text_result.get("order_specs_clarify_preview")
+                    order_specs_llm_response = specs_text_result.get("order_specs_llm_response")
+                    hint_locked = specs_text_result["hint_locked"]
             elif current_state == 'order_specs_clarify':
                 from .order_specs_helpers import (
                     format_prompt_for_field,
@@ -2024,6 +2156,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             'gas_spu_card': gas_spu_card,
             'gas_spu_preview': gas_spu_preview,
             'order_specs_preview': order_specs_preview,
+            'order_specs_clarify_preview': order_specs_clarify_preview,
             'order_specs_pipeline_timing': order_specs_pipeline_timing,
         }, status=status.HTTP_201_CREATED)
 

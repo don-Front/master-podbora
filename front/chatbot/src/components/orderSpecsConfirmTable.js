@@ -5,6 +5,7 @@ import {
   enhanceBotMessageWithGasSpuCard,
   enhanceBotMessageWithGasSpuReview,
 } from './gasSpuResultCard';
+import { enhanceBotMessageWithOrderSpecsClarify } from './OrderSpecsTextClarify';
 
 function PencilIcon() {
   return (
@@ -107,10 +108,13 @@ export function shouldShowOrderSpecsBotMessage(response, botMessages) {
   return Array.isArray(preview?.review_rows) && preview.review_rows.length > 0;
 }
 
-/** Цепочка обогащения ответа бота (СПУ + таблица спецификации). */
+/** Цепочка обогащения ответа бота (СПУ + таблица спецификации + уточнение параметров). */
 export function enrichBotMessage(botMsg, response) {
-  return enhanceBotMessageWithOrderSpecsConfirm(
-    enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+  return enhanceBotMessageWithOrderSpecsClarify(
+    enhanceBotMessageWithOrderSpecsConfirm(
+      enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+      response,
+    ),
     response,
   );
 }

@@ -168,6 +168,18 @@ HINTS_TREE = {
         "show_back": True,
         "next_state": "order_specs_confirm",
     },
+    "order_specs_text_clarify": {
+        "id": "order_specs_text_clarify",
+        "bot_message": (
+            "Напишите недостающие параметры расходомера одним сообщением. "
+            "Я дополню черновик и покажу таблицу для проверки."
+        ),
+        "hints": [],
+        "expects_input": True,
+        "is_final": False,
+        "show_back": True,
+        "next_state": "order_specs_confirm",
+    },
     "order_specs_confirm": {
         "id": "order_specs_confirm",
         "bot_message": "",
@@ -837,6 +849,7 @@ def get_parent_state(state_id: str) -> str:
         # Оформление заказа (расходомеры) — детальная логика в order_specs_navigation.resolve_flowmeter_back
         "order_pdf_request": "equipment_pick",
         "order_specs_clarify": "order_pdf_request",
+        "order_specs_text_clarify": "start",
         "order_specs_confirm": "order_pdf_request",
         "order_final": "order_specs_confirm",
         "equipment_price_phone": "order_final",

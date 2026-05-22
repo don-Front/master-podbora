@@ -29,6 +29,7 @@ import {
   enrichBotMessage,
   shouldShowOrderSpecsBotMessage,
 } from './orderSpecsConfirmTable';
+import { OrderSpecsTextClarify } from './OrderSpecsTextClarify';
 import { getBundledEquipmentImageUrls } from '../assets/equipmentImages';
 import { GrandGasMetersPriceBlock } from './GrandGasMetersPriceBlock';
 import { normalizeSpecs } from '../utils/searchEquipment';
@@ -1412,15 +1413,13 @@ export function ChatWidget() {
         };
         setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
       } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: botMessages[0].id,
-            from: 'bot',
-            text: botMessages[0].content,
-            time: new Date(botMessages[0].created_at),
-          },
-        ]);
+        const fallbackMsg = {
+          id: botMessages[0].id,
+          from: 'bot',
+          text: botMessages[0].content,
+          time: new Date(botMessages[0].created_at),
+        };
+        setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
       }
     } catch (error) {
       console.error('order_specs edit:', error);
@@ -1707,15 +1706,13 @@ export function ChatWidget() {
           }
           setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
         } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
-          setMessages((prev) => [
-            ...prev,
-            {
-              id: botMessages[0].id,
-              from: 'bot',
-              text: botMessages[0].content,
-              time: new Date(botMessages[0].created_at),
-            },
-          ]);
+          const fallbackMsg = {
+            id: botMessages[0].id,
+            from: 'bot',
+            text: botMessages[0].content,
+            time: new Date(botMessages[0].created_at),
+          };
+          setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
         }
       }
 
@@ -1980,7 +1977,7 @@ export function ChatWidget() {
             text: botMessages[0].content || 'Пустой ответ сервера.',
             time: new Date(botMessages[0].created_at),
           };
-          setMessages((prev) => [...prev, botMsg]);
+          setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
         }
       }
       if (!estimateBody) {
@@ -2437,7 +2434,7 @@ export function ChatWidget() {
         if (newState === 'verification_installations_liquid_tz' || newState === 'verification_installations_gas_application_tz') {
           botMsg.kind = 'liquid_tz_prompt';
         }
-        setMessages((prev) => [...prev, botMsg]);
+        setMessages((prev) => [...prev, enrichBotMessage(botMsg, { data: response.data })]);
       }
     } catch (error) {
       console.error('Error going back:', error);
@@ -2764,15 +2761,13 @@ export function ChatWidget() {
             }
             setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
           } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
-            setMessages((prev) => [
-              ...prev,
-              {
-                id: botMessages[0].id,
-                from: 'bot',
-                text: botMessages[0].content,
-                time: new Date(botMessages[0].created_at),
-              },
-            ]);
+            const fallbackMsg = {
+              id: botMessages[0].id,
+              from: 'bot',
+              text: botMessages[0].content,
+              time: new Date(botMessages[0].created_at),
+            };
+            setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
           }
           if (response.data.verification_passed) {
             const contact = response.data.verified_contact || {};
@@ -3049,6 +3044,10 @@ export function ChatWidget() {
               key={message.id}
               className={`chat-widget__message chat-widget__message--${message.from}${
                 message.kind === 'order_specs_confirm' ? ' chat-widget__message--order-specs-confirm' : ''
+              }${
+                message.kind === 'order_specs_text_clarify'
+                  ? ' chat-widget__message--order-specs-clarify'
+                  : ''
               }`}
               {...(message.kind === 'order_specs_confirm' ? { 'data-order-specs-confirm': 'true' } : {})}
             >
@@ -3059,7 +3058,9 @@ export function ChatWidget() {
                   message.kind === 'liquid_verification_contact' ? ' chat-widget__bubble--consult-shell' : ''
                 }${message.kind === 'gas_spu_card' ? ' chat-widget__bubble--gas-spu' : ''}${
                   message.kind === 'gas_spu_review' ? ' chat-widget__bubble--gas-spu-review' : ''
-                }${message.kind === 'order_specs_confirm' ? ' chat-widget__bubble--order-specs-confirm' : ''}`}
+                }${message.kind === 'order_specs_confirm' ? ' chat-widget__bubble--order-specs-confirm' : ''}${
+                  message.kind === 'order_specs_text_clarify' ? ' chat-widget__bubble--order-specs-clarify' : ''
+                }`}
               >
                 {message.kind === 'equipment' && message.equipment?.length ? (
                   <EquipmentShowcase
@@ -3077,6 +3078,8 @@ export function ChatWidget() {
                       hintState.currentState === 'order_specs_confirm' ? handleOrderSpecsEdit : undefined
                     }
                   />
+                ) : message.kind === 'order_specs_text_clarify' && message.orderSpecsClarifyPreview ? (
+                  <OrderSpecsTextClarify preview={message.orderSpecsClarifyPreview} />
                 ) : message.kind === 'gas_spu_review' && message.gasSpuReviewRows?.length ? (
                   <>
                     <GasSpuReviewBlock
@@ -3108,7 +3111,7 @@ export function ChatWidget() {
                   />
                 ) : message.kind === 'tkpPdf' ? (
                   <>
-                    {message.text && <span>{message.text}</span>}
+                    {message.text && <span className="chat-widget__message-text">{message.text}</span>}
                     <TkpPdfCard pdf={message.pdf} />
                   </>
                 ) : message.kind === 'liquid_verification_contact' ? (
@@ -3122,7 +3125,7 @@ export function ChatWidget() {
                   <LiquidTzPromptCard templateUrl={LIQUID_TZ_QUESTIONNAIRE_URL} />
                 ) : (
                   <>
-                {message.text && <span>{message.text}</span>}
+                {message.text && <span className="chat-widget__message-text">{message.text}</span>}
                 {(message.imageUrl || message.imagePreview) && (
                   <div className="chat-widget__image">
                     <img
