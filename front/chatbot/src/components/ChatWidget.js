@@ -293,6 +293,22 @@ function equipmentIdFromItem(equipment) {
   return found || '';
 }
 
+/** Приборы, для которых estimate-price пока недоступен. */
+const EQUIPMENT_IDS_WITHOUT_PRICE = new Set(['gfg2']);
+
+function isEquipmentPriceUnavailable(equipment) {
+  const id = equipmentIdFromItem(equipment).toLowerCase();
+  return EQUIPMENT_IDS_WITHOUT_PRICE.has(id);
+}
+
+function buildPriceUnavailableMessage(equipment) {
+  const name = (equipment?.model || equipment?.name || 'выбранное оборудование').trim();
+  return (
+    `К сожалению, ориентировочный прайс на оборудование «${name}» пока недоступен. ` +
+    'Для расчёта стоимости обратитесь к менеджеру.'
+  );
+}
+
 /** Восстановить черновик из таблицы подтверждения в чате. */
 function orderSpecsRowsToDraft(rows) {
   if (!Array.isArray(rows)) return null;
@@ -927,6 +943,9 @@ const CHAT_HEIGHT_STORAGE_KEY = 'turbo-don-chat-window-height';
 const DEFAULT_CHAT_HEIGHT = 520;
 const MIN_CHAT_HEIGHT = 360;
 
+const CHAT_GREETING_TEASER_TEXT =
+  'Здравствуйте! Помогу подобрать оборудование или ответить на ваши вопросы.';
+
 function getMaxChatHeight() {
   return Math.max(MIN_CHAT_HEIGHT, window.innerHeight - 120);
 }
@@ -949,6 +968,7 @@ function clampChatHeight(height) {
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showGreetingTeaser, setShowGreetingTeaser] = useState(false);
   const [chatWindowHeight, setChatWindowHeight] = useState(readStoredChatHeight);
   const [isResizingChat, setIsResizingChat] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -1304,6 +1324,15 @@ export function ChatWidget() {
   useEffect(() => {
     initializeChat();
   }, [initializeChat]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowGreetingTeaser(true), 2000);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) setShowGreetingTeaser(false);
+  }, [isOpen]);
 
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -1755,6 +1784,7 @@ export function ChatWidget() {
     const estimateBody =
       pendingEstimateBodyRef.current || buildEstimatePriceBody(eq, specs);
     if (!estimateBody) return null;
+    if (isEquipmentPriceUnavailable(estimateBody.equipment)) return null;
 
     const estimateResponse = await postEstimatePrice(estimateBody);
     const estimateData = estimateResponse.data || {};
@@ -1806,6 +1836,25 @@ export function ChatWidget() {
           id: `estimate-missing-${Date.now()}`,
           from: 'bot',
           text: 'Ориентировочный расчёт не выполнен: не хватает кода прибора или параметров из итоговой спецификации.',
+          time: new Date(),
+        },
+      ]);
+      return;
+    }
+
+    if (isEquipmentPriceUnavailable(estimateBody.equipment)) {
+      exactCostBodyRef.current = null;
+      estimateQuoteRef.current = null;
+      selectedAccessoriesRef.current = [];
+      setShowExactCostHint(false);
+      setShowTkpPdfHint(false);
+      setIsSelectingAccessories(false);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `estimate-unavailable-${Date.now()}`,
+          from: 'bot',
+          text: buildPriceUnavailableMessage(estimateBody.equipment),
           time: new Date(),
         },
       ]);
@@ -1910,6 +1959,20 @@ export function ChatWidget() {
     };
     setMessages((prev) => [...prev, userMessage]);
     hasMessages.current = true;
+
+    if (isEquipmentPriceUnavailable(eq)) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `estimate-unavailable-${Date.now()}`,
+          from: 'bot',
+          text: buildPriceUnavailableMessage(eq),
+          time: new Date(),
+        },
+      ]);
+      return;
+    }
+
     beginTyping('Отправляю запрос «Получить цену» на сервер…');
     equipmentPriceActionLockRef.current = true;
     setIsEquipmentPriceActionBusy(true);
@@ -2030,6 +2093,18 @@ export function ChatWidget() {
         throw new Error(
           'Не хватает id прибора на слайдере или параметров спецификации (DN, pressureMax, точность). Сначала завершите подбор расходомера.',
         );
+      }
+      if (isEquipmentPriceUnavailable(estimateBody.equipment)) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: `estimate-unavailable-${Date.now()}`,
+            from: 'bot',
+            text: buildPriceUnavailableMessage(estimateBody.equipment),
+            time: new Date(),
+          },
+        ]);
+        return;
       }
       pendingEstimateBodyRef.current = estimateBody;
 
@@ -3005,12 +3080,33 @@ export function ChatWidget() {
 
   return (
     <div className="chat-widget">
-      <button
-        type="button"
-        className={`chat-widget__toggle ${isOpen ? 'chat-widget__toggle--open' : ''}`}
-        onClick={toggleOpen}
-        aria-label="Открыть чат"
-      />
+      <div className="chat-widget__launcher">
+        {!isOpen && showGreetingTeaser ? (
+          <div className="chat-widget__greeting-teaser" role="status">
+            <button
+              type="button"
+              className="chat-widget__greeting-teaser-close"
+              aria-label="Скрыть приветствие"
+              onClick={() => setShowGreetingTeaser(false)}
+            >
+              ×
+            </button>
+            <button
+              type="button"
+              className="chat-widget__greeting-teaser-text"
+              onClick={toggleOpen}
+            >
+              {CHAT_GREETING_TEASER_TEXT}
+            </button>
+          </div>
+        ) : null}
+        <button
+          type="button"
+          className={`chat-widget__toggle ${isOpen ? 'chat-widget__toggle--open' : 'chat-widget__toggle--pulse'}`}
+          onClick={toggleOpen}
+          aria-label="Открыть чат"
+        />
+      </div>
 
       <div
         className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
