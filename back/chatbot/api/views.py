@@ -800,7 +800,7 @@ class MessageViewSet(viewsets.ModelViewSet):
                             hint_locked = True
                         else:
                             _safe_print_order_specs_final(draft)
-                            ch.order_specs_draft = None
+                            ch.order_specs_draft = draft
                             ch.order_specs_pending_field = None
                             ch.save(
                                 update_fields=["order_specs_draft", "order_specs_pending_field"]
@@ -2048,13 +2048,40 @@ class HintsView(APIView):
     
     def post(self, request):
         """Обработать переход состояния"""
+        from .order_specs_navigation import FLOWMETER_HINT_STATES, resolve_flowmeter_back
+
         current_state = request.data.get('current_state', 'start')
         action = request.data.get('action', '')  # 'select_hint', 'back', 'free_input'
         hint_text = request.data.get('hint_text', '')
-        
+        bot_override = None
+        back_extras: dict = {}
+
         if action == 'back':
-            # Возврат к предыдущему состоянию
-            next_state = get_parent_state(current_state)
+            chat = None
+            chat_id = request.data.get('chat_id')
+            if chat_id:
+                try:
+                    chat = Chat.objects.filter(pk=int(chat_id)).first()
+                except (TypeError, ValueError):
+                    chat = None
+
+            specs_snapshot = request.data.get("order_specs_snapshot")
+            if isinstance(specs_snapshot, str):
+                try:
+                    import json as _json
+
+                    specs_snapshot = _json.loads(specs_snapshot)
+                except (TypeError, ValueError):
+                    specs_snapshot = None
+            if not isinstance(specs_snapshot, dict):
+                specs_snapshot = None
+
+            if current_state in FLOWMETER_HINT_STATES:
+                next_state, bot_override, back_extras = resolve_flowmeter_back(
+                    current_state, chat, specs_snapshot=specs_snapshot
+                )
+            else:
+                next_state = get_parent_state(current_state)
         elif action == 'select_hint':
             # Выбор подсказки
             next_state = get_next_state(current_state, hint_text)
@@ -2069,16 +2096,23 @@ class HintsView(APIView):
             next_state = current_state
         
         next_state_data = get_state(next_state)
-        
-        return Response({
+        bot_message = bot_override or next_state_data.get('bot_message') or ''
+
+        payload = {
             'current_state': next_state,
-            'bot_message': next_state_data.get('bot_message') or '',
+            'bot_message': bot_message,
             'hints': next_state_data.get('hints', []),
             'show_back': next_state_data.get('show_back', False),
             'is_final': next_state_data.get('is_final', False),
             'expects_input': next_state_data.get('expects_input', False),
             'hints_only': next_state_data.get('hints_only', False),
-        })
+        }
+        if action == 'back':
+            if back_extras.get('order_specs_json') is not None:
+                payload['order_specs_json'] = back_extras['order_specs_json']
+            if back_extras.get('order_specs_preview') is not None:
+                payload['order_specs_preview'] = back_extras['order_specs_preview']
+        return Response(payload)
 
 
 class EmailValidationView(APIView):

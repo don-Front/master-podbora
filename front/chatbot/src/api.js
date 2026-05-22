@@ -141,7 +141,16 @@ export const getGeoLocation = async (ip) => {
  */
 export function fetchSearchEquipment(specsObject) {
   const url = buildSearchEquipmentUrl(getSearchEquipmentUrl(), specsObject);
-  return axios.get(url, { timeout: 120000 }).then((res) => ({ ...res, requestUrl: url }));
+  // eslint-disable-next-line no-console
+  console.log('[search-equipment] GET URL:', url);
+  return axios
+    .get(url, { timeout: 120000 })
+    .then((res) => ({ ...res, requestUrl: url }))
+    .catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error('[search-equipment] GET failed:', url, err?.response?.status ?? err?.message);
+      return Promise.reject(err);
+    });
 }
 
 /** @deprecated используйте fetchSearchEquipment */

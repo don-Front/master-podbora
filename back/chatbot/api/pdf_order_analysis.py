@@ -64,8 +64,17 @@ def _log_pdf_pipeline_timing(timing: Dict[str, Any], *, prefix: str = "[PDF timi
 _easyocr_reader = None
 
 MAX_PDF_PAGES = 15
-OCR_ZOOM = 2.0
+OCR_ZOOM = 1.25
 MAX_OCR_CHARS = 120_000
+MIN_PAGE_NATIVE_TEXT_CHARS = 40
+MAX_LLM_INPUT_CHARS = 12_000
+
+# Строки с ключевыми словами для урезания текста перед LLM (полный текст — в postprocess)
+_LLM_KEYWORD_RE = re.compile(
+    r"(?i)(расход|давлен|температ|точност|диаметр|м[³3]/ч|мпа|кпа|бар|"
+    r"вариант\s+исполнения|класс\s+точности|техническ|исходн|"
+    r"природн|\bгаз\b|dn\s*\d|ду\s*\d|flow|pressure|temp|среды|окружающ)",
+)
 
 
 def _get_easyocr_reader():
@@ -77,34 +86,134 @@ def _get_easyocr_reader():
     return _easyocr_reader
 
 
-def ocr_pdf_to_text(file_path: str) -> str:
-    """Рендерит страницы PDF в изображения и распознаёт текст EasyOCR."""
+def warmup_easyocr_reader() -> None:
+    """Прогрев моделей EasyOCR в фоне при старте Django (см. api.apps.ApiConfig.ready)."""
+    try:
+        reader = _get_easyocr_reader()
+        dummy = np.zeros((32, 32, 3), dtype=np.uint8)
+        reader.readtext(dummy)
+        logger.info("EasyOCR: прогрев завершён")
+    except Exception:
+        logger.exception("EasyOCR: прогрев не удался")
+
+
+def _pixmap_to_rgb_array(pix) -> np.ndarray:
+    """RGB-массив из pixmap PyMuPDF без PNG roundtrip."""
+    n = pix.n
+    h, w = pix.h, pix.w
+    buf = np.frombuffer(pix.samples, dtype=np.uint8)
+    if n == 3:
+        return buf.reshape(h, w, 3)
+    if n == 4:
+        return buf.reshape(h, w, 4)[:, :, :3]
+    img = Image.open(io.BytesIO(pix.tobytes("png"))).convert("RGB")
+    return np.array(img)
+
+
+def _ocr_page_text(page, reader) -> str:
     import fitz  # PyMuPDF
 
-    reader = _get_easyocr_reader()
-    texts: list[str] = []
+    mat = fitz.Matrix(OCR_ZOOM, OCR_ZOOM)
+    pix = page.get_pixmap(matrix=mat, alpha=False)
+    arr = _pixmap_to_rgb_array(pix)
+    result = reader.readtext(arr)
+    return "\n".join(item[1] for item in result if item[1] and str(item[1]).strip())
+
+
+def pdf_to_text(file_path: str) -> Tuple[str, str]:
+    """
+    PDF: сначала текстовый слой PyMuPDF; для «пустых» страниц — EasyOCR.
+
+    Returns:
+        (text, source) — ``pdf_text`` | ``pdf_ocr`` | ``pdf_mixed``.
+    """
+    import fitz  # PyMuPDF
+
+    parts_by_index: Dict[int, str] = {}
+    ocr_indices: list[int] = []
 
     doc = fitz.open(file_path)
     try:
         n = min(len(doc), MAX_PDF_PAGES)
         for i in range(n):
             page = doc[i]
-            mat = fitz.Matrix(OCR_ZOOM, OCR_ZOOM)
-            pix = page.get_pixmap(matrix=mat, alpha=False)
-            img_bytes = pix.tobytes("png")
-            img = Image.open(io.BytesIO(img_bytes)).convert("RGB")
-            arr = np.array(img)
-            result = reader.readtext(arr)
-            line = "\n".join(item[1] for item in result if item[1] and str(item[1]).strip())
-            if line.strip():
-                texts.append(line)
+            native = (page.get_text("text") or "").strip()
+            if len(native) >= MIN_PAGE_NATIVE_TEXT_CHARS:
+                parts_by_index[i] = native
+            else:
+                ocr_indices.append(i)
+                if native:
+                    parts_by_index[i] = native
     finally:
         doc.close()
 
-    combined = "\n\n".join(texts).strip()
+    if ocr_indices:
+        reader = _get_easyocr_reader()
+        doc = fitz.open(file_path)
+        try:
+            for i in ocr_indices:
+                ocr_line = _ocr_page_text(doc[i], reader)
+                if ocr_line.strip():
+                    parts_by_index[i] = ocr_line
+        finally:
+            doc.close()
+
+    parts = [
+        parts_by_index[i]
+        for i in sorted(parts_by_index)
+        if (parts_by_index.get(i) or "").strip()
+    ]
+    combined = "\n\n".join(parts).strip()
     if len(combined) > MAX_OCR_CHARS:
         combined = combined[:MAX_OCR_CHARS]
-    return combined
+
+    if not ocr_indices:
+        source = "pdf_text"
+    elif len(ocr_indices) >= n:
+        source = "pdf_ocr"
+    else:
+        source = "pdf_mixed"
+    return combined, source
+
+
+def ocr_pdf_to_text(file_path: str) -> str:
+    """Обратная совместимость: только текст (без source)."""
+    text, _ = pdf_to_text(file_path)
+    return text
+
+
+def trim_text_for_llm(full_text: str, max_chars: int = MAX_LLM_INPUT_CHARS) -> str:
+    """Фрагменты с ключевыми словами + начало/конец, если мало совпадений."""
+    text = (full_text or "").strip()
+    if len(text) <= max_chars:
+        return text
+
+    picked: list[str] = []
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if not _LLM_KEYWORD_RE.search(line):
+            continue
+        if i > 0 and lines[i - 1].strip():
+            picked.append(lines[i - 1].strip())
+        picked.append(line.strip())
+        if i + 1 < len(lines) and lines[i + 1].strip():
+            picked.append(lines[i + 1].strip())
+
+    seen: set[str] = set()
+    unique: list[str] = []
+    for line in picked:
+        if line not in seen:
+            seen.add(line)
+            unique.append(line)
+    result = "\n".join(unique).strip()
+
+    if len(result) < 500:
+        half = max_chars // 2
+        result = text[:half] + "\n...\n" + text[-half:]
+
+    if len(result) > max_chars:
+        result = result[:max_chars]
+    return result
 
 
 def is_docx_attachment(file_path: str) -> bool:
@@ -142,7 +251,7 @@ def attachment_to_text(file_path: str) -> Tuple[str, str]:
     """
     if is_docx_attachment(file_path):
         return docx_to_text(file_path), "docx"
-    return ocr_pdf_to_text(file_path), "pdf_ocr"
+    return pdf_to_text(file_path)
 
 
 def _parse_json_from_llm(raw: str) -> Dict[str, Any]:
@@ -150,17 +259,187 @@ def _parse_json_from_llm(raw: str) -> Dict[str, Any]:
     s = (raw or "").strip()
     if not s:
         raise ValueError("пустой ответ LLM")
+
+    refusal_markers = (
+        "уточните",
+        "уточнить",
+        "ваш вопрос",
+        "не могу",
+        "не понял",
+        "please clarify",
+    )
+    if len(s) < 120 and any(m in s.lower() for m in refusal_markers):
+        raise ValueError("LLM не выполнила извлечение (ответ-отказ)")
+
     if "```" in s:
         m = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", s, re.IGNORECASE)
         if m:
             s = m.group(1).strip()
+
     s = s.strip()
-    obj = json.loads(s)
+    try:
+        obj = json.loads(s)
+    except json.JSONDecodeError:
+        m = re.search(r"\{[\s\S]*\}", s)
+        if not m:
+            raise
+        obj = json.loads(m.group(0))
+
     if not isinstance(obj, dict):
         raise ValueError("ожидался JSON-объект")
     if not obj:
         raise ValueError("LLM вернула пустой JSON-объект")
     return obj
+
+
+def _parse_first_number(text: str) -> Optional[float]:
+    m = re.search(r"-?\d+(?:[.,]\d+)?", (text or "").replace(",", "."))
+    if not m:
+        return None
+    try:
+        return float(m.group(0).replace(",", "."))
+    except ValueError:
+        return None
+
+
+def extract_specs_heuristic(document_text: str) -> Dict[str, Any]:
+    """
+    Извлечение полей из типового опросного листа (без LLM).
+    Заполняет только то, что удалось надёжно найти в тексте.
+    """
+    text = document_text or ""
+    low = text.lower()
+    out: Dict[str, Any] = {k: None for k in SPEC_KEYS}
+
+    if re.search(r"природн\w*\s+газ", low) or "■" in text and "природный газ" in low:
+        out["medium"] = "gas"
+        out["gas_type"] = "природный газ"
+    elif re.search(r"\bгаз\b", low) and "жидкост" not in low:
+        out["medium"] = "gas"
+
+    m = re.search(
+        r"номинальн\w*\s+диаметр\s+арматур\w*[^\d]{0,40}(\d{2,4})",
+        text,
+        re.IGNORECASE,
+    )
+    if m:
+        out["diameter"] = int(m.group(1))
+
+    m = re.search(
+        r"номинальн\w*\s+давлен\w*[^\d]{0,30}(\d+(?:[.,]\d+)?)",
+        text,
+        re.IGNORECASE,
+    )
+    if m:
+        p = _parse_first_number(m.group(1))
+        if p is not None:
+            out["pressureMax"] = p
+            out["pressure_unit"] = "МПа"
+
+    m = re.search(
+        r"избыточн\w*\s+давлен\w*.*?минимальн\w*[^\d-]{0,20}(-?\d+(?:[.,]\d+)?)"
+        r".*?максимальн\w*[^\d-]{0,20}(-?\d+(?:[.,]\d+)?)",
+        text,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if m:
+        out["pressureMin"] = _parse_first_number(m.group(1))
+        out["pressureMax"] = _parse_first_number(m.group(2))
+        out["pressure_unit"] = "МПа"
+
+    block_m = re.search(
+        r"Qmax[\s\S]{0,500}?(\d{3,7})[\s\n\r]+(\d{3,7})",
+        text,
+        re.IGNORECASE,
+    )
+    if not block_m:
+        block_m = re.search(
+            r"диапазон\s+расход\w*[\s\S]{0,600}?(\d{3,7})[\s\n\r]+(\d{3,7})",
+            text,
+            re.IGNORECASE,
+        )
+    if block_m:
+        a = _parse_first_number(re.sub(r"\s", "", str(block_m.group(1))))
+        b = _parse_first_number(re.sub(r"\s", "", str(block_m.group(2))))
+        if a is not None and b is not None:
+            out["flowMin"] = int(min(a, b))
+            out["flowMax"] = int(max(a, b))
+            out["flow_unit"] = "ст.м³/ч"
+
+    m = re.search(
+        r"температур\w*\s+измеряем\w*\s+сред\w*[\s\S]{0,250}?min[^\d-]{0,30}(-?\d+)"
+        r"[\s\S]{0,250}?max[^\d-]{0,30}(\+?\d+)",
+        text,
+        re.IGNORECASE,
+    )
+    if m:
+        out["tempMediumMin"] = int(m.group(1))
+        out["tempMediumMax"] = int(re.sub(r"\+", "", m.group(2)))
+
+    m = re.search(
+        r"температур\w*\s+рабоч\w*\s+сред\w*[\s\S]{0,120}?минимальн\w*[^\d-]{0,15}(-?\d+)"
+        r"[\s\S]{0,120}?максимальн\w*[^\d-]{0,15}(\+?\d+)",
+        text,
+        re.IGNORECASE,
+    )
+    if m:
+        out["tempMediumMin"] = int(m.group(1))
+        out["tempMediumMax"] = int(re.sub(r"\+", "", m.group(2)))
+
+    m = re.search(
+        r"характеристик\w*\s+окружающ\w*\s+сред\w*[\s\S]{0,400}?минимальн\w*[^\d-]{0,30}(-?\d+)"
+        r"[\s\S]{0,200}?максимальн\w*[^\d-]{0,30}(\+?\d+)",
+        text,
+        re.IGNORECASE,
+    )
+    if m:
+        out["tempAmbientMin"] = int(m.group(1))
+        out["tempAmbientMax"] = int(re.sub(r"\+", "", m.group(2)))
+    else:
+        m = re.search(
+            r"минус\s+35\s*/\s*минус\s+40[\s\S]{0,120}?плюс\s+(\d+)",
+            text,
+            re.IGNORECASE,
+        )
+        if m:
+            out["tempAmbientMin"] = -40
+            out["tempAmbientMax"] = int(m.group(1))
+
+    if out.get("tempMediumMin") is not None or out.get("tempAmbientMin") is not None:
+        out["temperature_unit"] = "°C"
+
+    acc = _extract_accuracy_from_ocr(text)
+    if acc:
+        out["accuracy"] = normalize_accuracy_value(acc)
+    else:
+        m = re.search(r"(\d+(?:[.,]\d+)?)\s*%", text)
+        if m and "погрешност" in low:
+            out["accuracy"] = m.group(1).replace(",", ".") + "%"
+
+    return _normalize_specs(out)
+
+
+def _merge_specs(primary: Dict[str, Any], fallback: Dict[str, Any]) -> Dict[str, Any]:
+    """primary перекрывает fallback; пустые значения берутся из fallback."""
+    p = _normalize_specs(primary)
+    f = _normalize_specs(fallback)
+
+    def _empty(key: str, val: Any) -> bool:
+        if val is None:
+            return True
+        if isinstance(val, str) and not val.strip():
+            return True
+        if key in ("flowMin", "flowMax", "pressureMin", "pressureMax", "tempMediumMin",
+                   "tempMediumMax", "tempAmbientMin", "tempAmbientMax", "diameter"):
+            if isinstance(val, (int, float)) and val == 0:
+                return True
+        return False
+
+    merged = dict(p)
+    for k in SPEC_KEYS:
+        if _empty(k, merged.get(k)) and not _empty(k, f.get(k)):
+            merged[k] = f[k]
+    return _normalize_specs(merged)
 
 
 SPEC_KEYS = [
@@ -249,8 +528,22 @@ def _extract_accuracy_from_ocr(ocr_text: str) -> Optional[str]:
     return None
 
 
+def _normalize_medium_value(value: Any) -> Any:
+    if value is None:
+        return None
+    s = str(value).strip().lower()
+    if s in ("gas", "liquid", "unknown"):
+        return s
+    if "жидк" in s or s == "liquid":
+        return "liquid"
+    if "газ" in s or "природн" in s or s == "газ":
+        return "gas"
+    return value
+
+
 def _postprocess_specs(specs: Dict[str, Any], ocr_text: str) -> Dict[str, Any]:
     out = _normalize_specs(specs)
+    out["medium"] = _normalize_medium_value(out.get("medium"))
     if _is_missing_accuracy(out.get("accuracy")):
         accuracy = _extract_accuracy_from_ocr(ocr_text)
         if accuracy:
@@ -280,103 +573,113 @@ def _format_llm_error_for_user(exc: BaseException) -> str:
     return raw[:800]
 
 
+def _build_specs_extraction_prompt(document_text: str) -> Tuple[str, str]:
+    """System + user промпт для извлечения JSON (yandexgpt в LM Studio требует явной задачи)."""
+    llm_input = trim_text_for_llm(document_text)
+    user_block = (
+        llm_input if llm_input.strip() else "(текст из документа пустой или не распознан)"
+    )
+    schema_hint = (
+        '{"medium":"gas","gas_type":"природный газ","flowMin":3100,"flowMax":244000,'
+        '"flow_unit":"ст.м³/ч","pressureMin":3.95,"pressureMax":7.35,"pressure_unit":"МПа",'
+        '"tempMediumMin":-10,"tempMediumMax":30,"tempAmbientMin":-40,"tempAmbientMax":38,'
+        '"temperature_unit":"°C","accuracy":"1%","diameter":300}'
+    )
+    system_content = (
+        "Ты извлекаешь технические параметры расходомера из опросного листа или ТУ. "
+        "Ответ — только один JSON-объект, без markdown и пояснений. "
+        f"Ключи: {', '.join(SPEC_KEYS)}. "
+        'medium: "gas", "liquid" или "unknown". '
+        "tempMediumMin/Max — температура измеряемой среды; tempAmbientMin/Max — окружающей среды. "
+        'temperature_unit — одна строка для всех четырёх температур. '
+        'accuracy: "А"/"Б"/"В"/"Г" или проценты ("0.5%"), иначе null. '
+        "Числа — number или null."
+    )
+    user_content = (
+        "Извлеки параметры из текста опросного листа ниже. "
+        "Верни ТОЛЬКО JSON по структуре примера (значения замени на найденные в тексте).\n"
+        f"Пример структуры:\n{schema_hint}\n\n"
+        f"Текст документа:\n---\n{user_block}\n---"
+    )
+    return system_content, user_content
+
+
 def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str, float]:
     """
     Отправляет распознанный текст в LM Studio; ожидает один JSON-объект с полями SPEC_KEYS.
-    llm — экземпляр api.chatbot_core.llm_client.LLMClient.
+    При сбое LLM — эвристики по тексту документа.
 
     Returns:
         (specs, raw_llm_text, llm_elapsed_ms)
     """
-    schema_hint = """{
-    "medium": "gas",
-    "gas_type": "Природный газ",
-    "flowMin": 10,
-    "flowMax": 500,
-    "flow_unit": "м³/ч",
-    "pressureMin": 0.1,
-    "pressureMax": 1.6,
-    "pressure_unit": "МПа",
-    "tempMediumMin": -10,
-    "tempMediumMax": 22,
-    "tempAmbientMin": -38,
-    "tempAmbientMax": 50,
-    "temperature_unit": "°C",
-    "accuracy": "0.5%",
-    "diameter": 100
-}"""
+    from .chatbot_core.llm_client import LLMClient
+    from .order_specs_helpers import list_missing_fields
 
-    user_block = ocr_text if ocr_text.strip() else "(текст из PDF пустой или не распознан)"
+    heuristic = extract_specs_heuristic(ocr_text)
+    full_len = len(ocr_text or "")
+    system_content, user_content = _build_specs_extraction_prompt(ocr_text)
 
-    prompt = f"""Ты аналитик технических спецификаций. Ниже — текст, распознанный из PDF (OCR), возможны опечатки и обрывы.
-
-Задача: по этому тексту извлечь параметры расходомера/учёта газа (или аналогичного оборудования), насколько это возможно.
-
-Верни ТОЛЬКО один валидный JSON без комментариев и без текста до/после. Ключи строго как в примере структуры (типы: medium — строка \"gas\"/\"liquid\"/\"unknown\"; gas_type — строка; flowMin, flowMax, pressureMin, pressureMax, tempMediumMin, tempMediumMax, tempAmbientMin, tempAmbientMax, diameter — числа или null; flow_unit, pressure_unit, temperature_unit — строки; accuracy — строка).
-
-Температуры разделяй так:
-- tempMediumMin / tempMediumMax — минимальная и максимальная температура рабочей (измеряемой) среды;
-- tempAmbientMin / tempAmbientMax — минимальная и максимальная температура окружающей среды;
-- temperature_unit — одна единица для всех четырёх температур (например \"°C\").
-Не используй ключи temperature_min/temperature_max.
-
-Поле accuracy заполняй только одним из вариантов:
-- буква точности: \"А\", \"Б\", \"В\" или \"Г\" (например, если в тексте есть \"Вариант исполнения по точности прибора ... А\", то accuracy = \"А\");
-- процентная точность: например \"1%\", \"1-2%\", \"0.5%\".
-Если точность не найдена ни как буква, ни как проценты — верни null.
-
-Пример структуры (значения замени на извлечённые из текста; неизвестное — null):
-{schema_hint}
-
-Текст документа (OCR):
----
-{user_block}
----
-"""
-
-    max_tokens = min(4096, getattr(llm, "max_tokens", 2048))
+    max_tokens = min(1024, getattr(llm, "max_tokens", 1024))
     timeout = getattr(llm, "timeout", 120)
 
-    from .chatbot_core.llm_client import LLMClient
-
     logger.info(
-        "LM Studio: запрос chat/completions (извлечение полей из PDF), base_url=%s model=%s",
+        "LM Studio: извлечение полей (вход %s симв. из %s), base_url=%s model=%s",
+        len(user_content),
+        full_len,
         getattr(getattr(llm, "client", None), "base_url", "?"),
         getattr(llm, "model", "?"),
     )
 
-    t_llm = time.perf_counter()
-    response = llm.client.chat.completions.create(
-        model=llm.model,
-        temperature=0.1,
-        max_tokens=max_tokens,
-        timeout=timeout,
-        messages=[
-            {
-                "role": "system",
-                "content": (
-                    "Ты возвращаешь только JSON-объект с заданными ключами. "
-                    "Без Markdown, без пояснений, без Thinking Process."
-                ),
-            },
-            {"role": "user", "content": prompt},
+    create_kwargs: Dict[str, Any] = {
+        "model": llm.model,
+        "temperature": 0.1,
+        "max_tokens": max_tokens,
+        "timeout": timeout,
+        "messages": [
+            {"role": "system", "content": system_content},
+            {"role": "user", "content": user_content},
         ],
-    )
-    llm_ms = _ms_elapsed(t_llm)
+    }
 
-    if not response or not response.choices:
-        raise RuntimeError("пустой ответ от LLM")
+    raw = ""
+    llm_ms = 0.0
+    data: Dict[str, Any] = {}
 
-    msg = response.choices[0].message
-    raw = LLMClient._extract_assistant_text(msg)
-    logger.info(
-        "LM Studio: ответ получен за %s ms (%s символов сырого текста), парсинг JSON",
-        llm_ms,
-        len(raw or ""),
-    )
+    t_llm = time.perf_counter()
+    try:
+        response = llm.client.chat.completions.create(**create_kwargs)
+        llm_ms = _ms_elapsed(t_llm)
+        if not response or not response.choices:
+            raise RuntimeError("пустой ответ от LLM")
+        msg = response.choices[0].message
+        raw = LLMClient._extract_assistant_text(msg)
+        if not raw.strip() and getattr(msg, "reasoning_content", None):
+            raw = str(msg.reasoning_content or "").strip()
+        logger.info(
+            "LM Studio: ответ за %s ms (%s символов), парсинг JSON",
+            llm_ms,
+            len(raw or ""),
+        )
+        data = _parse_json_from_llm(raw)
+    except Exception as llm_err:
+        llm_ms = _ms_elapsed(t_llm)
+        logger.warning("LM Studio извлечение не удалось: %s", llm_err)
 
-    data = _parse_json_from_llm(raw)
-    return _normalize_specs(data), raw, llm_ms
+    specs = _merge_specs(data, heuristic)
+    specs = _postprocess_specs(specs, ocr_text)
+
+    missing = list_missing_fields(specs)
+    if len(missing) > 6 and full_len > 500:
+        logger.info(
+            "После LLM+эвристик осталось %s пустых полей: %s",
+            len(missing),
+            missing[:8],
+        )
+
+    if not raw and not any(specs.get(k) is not None for k in SPEC_KEYS):
+        raise RuntimeError("не удалось извлечь параметры из документа")
+
+    return specs, raw, llm_ms
 
 
 def run_pdf_order_pipeline(
@@ -402,6 +705,7 @@ def run_pdf_order_pipeline(
         "llm_ms": 0.0,
         "pipeline_ms": 0.0,
         "ocr_chars": 0,
+        "llm_input_chars": 0,
         "text_source": text_source,
     }
 
@@ -446,7 +750,7 @@ def run_pdf_order_pipeline(
     try:
         specs, llm_raw, llm_ms = analyze_specs_with_llm(ocr_text, llm)
         timing["llm_ms"] = llm_ms
-        specs = _postprocess_specs(specs, ocr_text)
+        timing["llm_input_chars"] = len(trim_text_for_llm(ocr_text))
     except Exception as e:
         logger.exception("LLM specs extraction failed")
         llm_msg = _format_llm_error_for_user(e)

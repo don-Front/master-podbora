@@ -15,7 +15,12 @@ HINTS_TREE = {
     # Начальное состояние
     "start": {
         "id": "start",
-        "bot_message": "Здравствуйте! Чем я могу Вам помочь?",
+        "bot_message": (
+            "Здравствуйте! Я виртуальный помощник сервиса «Турбо-дон чат». "
+            "Готов помочь с подбором оборудования по Вашим параметрам и ответить на вопросы "
+            "по ассортименту и характеристикам изделий. Выберите раздел ниже или опишите "
+            "задачу в сообщении."
+        ),
         "hints": [
             {"text": "Подбор оборудования", "next_state": "equipment_pick"},
             {"text": "Продажа оборудования", "next_state": "sales"},
@@ -198,7 +203,7 @@ HINTS_TREE = {
         ],
         "expects_input": False,
         "is_final": True,
-        "show_back": False,
+        "show_back": True,
     },
     # Запрос цены по прибору со слайдера: телефон -> почта -> код с почты -> order_final
     "equipment_price_phone": {
@@ -829,13 +834,20 @@ def get_parent_state(state_id: str) -> str:
         # Свободный чат
         "free_chat": "start",
 
-        # Оформление заказа
+        # Оформление заказа (расходомеры) — детальная логика в order_specs_navigation.resolve_flowmeter_back
         "order_pdf_request": "equipment_pick",
         "order_specs_clarify": "order_pdf_request",
         "order_specs_confirm": "order_pdf_request",
+        "order_final": "order_specs_confirm",
         "equipment_price_phone": "order_final",
         "equipment_price_email": "equipment_price_phone",
         "equipment_price_verify_code": "equipment_price_email",
     }
-    return parent_map.get(state_id, "start")
+    if state_id in parent_map:
+        return parent_map[state_id]
+    from .order_specs_navigation import FLOWMETER_HINT_STATES
+
+    if state_id in FLOWMETER_HINT_STATES:
+        return "equipment_pick"
+    return "start"
 

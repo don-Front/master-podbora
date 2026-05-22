@@ -39,7 +39,7 @@
   position: absolute;
   right: 0;
   bottom: 80px;
-  /* окно точно над круглой иконкой; высота не зависит от количества сообщений */
+  /* окно точно над круглой иконкой; высота задаётся из JS (перетаскивание верхнего края) */
   width: 342px;
   height: min(520px, calc(100vh - 120px));
   border-radius: 20px;
@@ -61,6 +61,42 @@
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
+}
+
+.chat-widget__window--resizing {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  user-select: none;
+}
+
+.chat-widget__resize-handle {
+  flex-shrink: 0;
+  height: 10px;
+  cursor: ns-resize;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(226, 232, 240, 0.95), rgba(238, 242, 255, 0.6));
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.chat-widget__resize-handle::before {
+  content: '';
+  width: 40px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.45);
+  box-shadow:
+    0 -5px 0 rgba(100, 116, 139, 0.3),
+    0 5px 0 rgba(100, 116, 139, 0.3);
+}
+
+.chat-widget__resize-handle:hover::before,
+.chat-widget__resize-handle:active::before {
+  background: rgba(59, 130, 246, 0.55);
+  box-shadow:
+    0 -5px 0 rgba(59, 130, 246, 0.4),
+    0 5px 0 rgba(59, 130, 246, 0.4);
 }
 
 .chat-widget__header {

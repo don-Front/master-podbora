@@ -122,6 +122,17 @@ const ORDER_SPECS_EXTS = ['.pdf', '.docx'];
 const ORDER_SPECS_ACCEPT =
   '.pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
+/** Шаги сценария «Расходомеры» (кнопка «Назад» — на предыдущий шаг, не на главную). */
+const FLOWMETER_HINT_STATES = new Set([
+  'order_pdf_request',
+  'order_specs_clarify',
+  'order_specs_confirm',
+  'order_final',
+  'equipment_price_phone',
+  'equipment_price_email',
+  'equipment_price_verify_code',
+]);
+
 function isAllowedOrderSpecsFile(file) {
   if (!file) return false;
   const n = (file.name || '').toLowerCase();
@@ -254,28 +265,131 @@ function LiquidVerificationConsultCard() {
   );
 }
 
-function numberFromSpecValue(value) {
+/** Число из строки спецификации («300», «7,35 МПа», «1-2,5%»). preferMax — для диапазонов взять максимум. */
+function numberFromSpecValue(value, { preferMax = false } = {}) {
   if (value == null || value === '') return null;
   if (typeof value === 'number') return Number.isFinite(value) ? value : null;
-  const match = String(value).match(/(\d+(?:[.,]\d+)?)/);
-  return match ? Number(match[1].replace(',', '.')) : null;
+  const s = String(value).trim().replace(/,/g, '.');
+  const matches = s.match(/-?\d+(?:\.\d+)?/g);
+  if (!matches?.length) return null;
+  const nums = matches.map((m) => Number(m)).filter((n) => Number.isFinite(n));
+  if (!nums.length) return null;
+  return preferMax ? Math.max(...nums) : nums[0];
 }
 
 function jsonNumber(value) {
   return Number.isInteger(value) ? value : value;
 }
 
+function equipmentIdFromItem(equipment) {
+  const candidates = [
+    equipment?.id,
+    equipment?.equipment_id,
+    equipment?.equipmentId,
+    equipment?.code,
+  ];
+  const found = candidates.map((x) => (x ?? '').toString().trim()).find(Boolean);
+  return found || '';
+}
+
+/** Восстановить черновик из таблицы подтверждения в чате. */
+function orderSpecsRowsToDraft(rows) {
+  if (!Array.isArray(rows)) return null;
+  const draft = {};
+  for (const row of rows) {
+    if (!row?.key) continue;
+    const v = (row.value ?? '').toString().trim();
+    if (!v || v === '—') continue;
+    draft[row.key] = v;
+  }
+  return Object.keys(draft).length ? normalizeSpecs(draft) : null;
+}
+
+function hasUsableOrderSpecs(specs) {
+  const s = normalizeSpecs(specs || {});
+  return (
+    numberFromSpecValue(s.diameter ?? s.dn) != null &&
+    numberFromSpecValue(s.pressureMax ?? s.pressure_max ?? s.pressure_max_mpa, { preferMax: true }) !=
+      null &&
+    numberFromSpecValue(s.accuracy) != null
+  );
+}
+
+/** Снимок спецификации: ref → сообщение со слайдером → таблица подтверждения. */
+function resolveOrderSpecsForPrice(messages, refSnapshot) {
+  if (hasUsableOrderSpecs(refSnapshot)) {
+    return normalizeSpecs(refSnapshot);
+  }
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const m = messages[i];
+    if (m.kind === 'equipment' && m.orderSpecs && hasUsableOrderSpecs(m.orderSpecs)) {
+      return normalizeSpecs(m.orderSpecs);
+    }
+  }
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const m = messages[i];
+    if (m.kind === 'order_specs_confirm' && m.orderSpecsRows?.length) {
+      const fromTable = orderSpecsRowsToDraft(m.orderSpecsRows);
+      if (hasUsableOrderSpecs(fromTable)) return fromTable;
+    }
+  }
+  return normalizeSpecs(refSnapshot || {});
+}
+
+function resolveEquipmentForPrice(equipmentRef, messages) {
+  if (equipmentRef && equipmentIdFromItem(equipmentRef)) {
+    return equipmentRef;
+  }
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const m = messages[i];
+    if (m.kind === 'equipment' && Array.isArray(m.equipment) && m.equipment.length) {
+      const saved = m.currentEquipment;
+      if (saved && equipmentIdFromItem(saved)) return saved;
+      const first = m.equipment[0];
+      if (first && equipmentIdFromItem(first)) return first;
+    }
+  }
+  return equipmentRef || null;
+}
+
 function buildEstimatePriceBody(equipment, specs) {
   const s = normalizeSpecs(specs || {});
-  const id = (equipment?.id ?? equipment?.equipment_id ?? '').toString().trim();
-  const name = (equipment?.name || equipment?.model || '').toString().trim();
-  const diameter = numberFromSpecValue(s.diameter);
-  const pressureMax = numberFromSpecValue(
-    s.pressureMax ?? s.pressure_max ?? s.pressure_max_mpa,
-  );
-  const accuracy = numberFromSpecValue(s.accuracy);
+  const eq = equipment && typeof equipment === 'object' ? equipment : {};
+  const eqSpecs = eq.specs && typeof eq.specs === 'object' ? eq.specs : {};
 
-  if (!id || !name || !diameter || !pressureMax || accuracy == null) {
+  const id = equipmentIdFromItem(eq);
+  const name = (eq.name || eq.model || '').toString().trim();
+
+  let diameter = numberFromSpecValue(s.diameter ?? s.dn);
+  let pressureMax = numberFromSpecValue(
+    s.pressureMax ?? s.pressure_max ?? s.pressure_max_mpa,
+    { preferMax: true },
+  );
+  if (pressureMax == null) {
+    pressureMax = numberFromSpecValue(s.pressureMin ?? s.pressure_min, { preferMax: true });
+  }
+  if (pressureMax == null && eqSpecs.pressureRange) {
+    pressureMax = numberFromSpecValue(eqSpecs.pressureRange, { preferMax: true });
+  }
+
+  let accuracy = numberFromSpecValue(s.accuracy);
+  if (accuracy == null && eqSpecs.accuracy) {
+    accuracy = numberFromSpecValue(eqSpecs.accuracy);
+  }
+
+  if (!id || !name || diameter == null || pressureMax == null || accuracy == null) {
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.warn('[estimate-price] не хватает данных для запроса:', {
+        id,
+        name,
+        diameter,
+        pressureMax,
+        accuracy,
+        specs: s,
+        equipment: { id: eq.id, model: eq.model, name: eq.name },
+      });
+    }
     return null;
   }
 
@@ -808,8 +922,34 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
   );
 }
 
+const CHAT_HEIGHT_STORAGE_KEY = 'turbo-don-chat-window-height';
+const DEFAULT_CHAT_HEIGHT = 520;
+const MIN_CHAT_HEIGHT = 360;
+
+function getMaxChatHeight() {
+  return Math.max(MIN_CHAT_HEIGHT, window.innerHeight - 120);
+}
+
+function readStoredChatHeight() {
+  try {
+    const stored = Number(localStorage.getItem(CHAT_HEIGHT_STORAGE_KEY));
+    if (Number.isFinite(stored) && stored >= MIN_CHAT_HEIGHT) {
+      return Math.min(stored, getMaxChatHeight());
+    }
+  } catch {
+    /* ignore */
+  }
+  return Math.min(DEFAULT_CHAT_HEIGHT, getMaxChatHeight());
+}
+
+function clampChatHeight(height) {
+  return Math.min(getMaxChatHeight(), Math.max(MIN_CHAT_HEIGHT, height));
+}
+
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [chatWindowHeight, setChatWindowHeight] = useState(readStoredChatHeight);
+  const [isResizingChat, setIsResizingChat] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -837,6 +977,7 @@ export function ChatWidget() {
   const [isEquipmentPriceActionBusy, setIsEquipmentPriceActionBusy] = useState(false);
 
   const isOrderPdfStep = hintState.currentState === 'order_pdf_request';
+  const isFlowmeterScenario = FLOWMETER_HINT_STATES.has(hintState.currentState);
   const isLiquidTzStep = hintState.currentState === 'verification_installations_liquid_tz';
   const isLiquidTzCommentsStep =
     hintState.currentState === 'verification_installations_liquid_tz_comments';
@@ -870,6 +1011,11 @@ export function ChatWidget() {
   const [showExactCostHint, setShowExactCostHint] = useState(false);
   const [showTkpPdfHint, setShowTkpPdfHint] = useState(false);
   const [isSelectingAccessories, setIsSelectingAccessories] = useState(false);
+  /** На слайдере/аксессуарах не показываем меню order_final («Расходомеры», «Продажа»…). */
+  const footerScenarioHints =
+    awaitingEquipmentSelection || isSelectingAccessories || showExactCostHint || showTkpPdfHint
+      ? []
+      : hintState.hints || [];
   const exactCostBodyRef = useRef(null);
   const estimateQuoteRef = useRef(null);
   const pendingEstimateBodyRef = useRef(null);
@@ -1008,6 +1154,20 @@ export function ChatWidget() {
     setHintLocked(false);
   }, []);
 
+  /** После выдачи ТКП: сброс сценария подбора и главное меню подсказок. */
+  const resetAfterTkpScenario = useCallback(() => {
+    setShowTkpPdfHint(false);
+    setIsSelectingAccessories(false);
+    setShowExactCostHint(false);
+    setAwaitingEquipmentSelection(false);
+    setSelectedAccessoryIds([]);
+    selectedAccessoriesRef.current = [];
+    sliderEquipmentRef.current = null;
+    estimateQuoteRef.current = null;
+    exactCostBodyRef.current = null;
+    pendingEstimateBodyRef.current = null;
+  }, []);
+
   const resetRefsAfterSubmittedApplication = useCallback(() => {
     householdGasLeadRef.current = {
       fullName: '',
@@ -1079,7 +1239,9 @@ export function ChatWidget() {
         {
           id: 1,
           from: 'bot',
-          text: hintsData.bot_message || 'Здравствуйте! Чем я могу Вам помочь?',
+          text:
+            hintsData.bot_message ||
+            'Здравствуйте! Я виртуальный помощник сервиса «Турбо-дон чат». Готов помочь с подбором оборудования по Вашим параметрам и ответить на вопросы по ассортименту и характеристикам изделий. Выберите раздел ниже или опишите задачу в сообщении.',
           time: new Date(),
         },
       ]);
@@ -1173,6 +1335,50 @@ export function ChatWidget() {
   const toggleOpen = () => {
     setIsOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const onViewportResize = () => {
+      setChatWindowHeight((h) => clampChatHeight(h));
+    };
+    window.addEventListener('resize', onViewportResize);
+    return () => window.removeEventListener('resize', onViewportResize);
+  }, []);
+
+  const handleChatResizePointerDown = useCallback(
+    (e) => {
+      e.preventDefault();
+      const startY = e.clientY;
+      const startHeight = chatWindowHeight;
+      setIsResizingChat(true);
+      document.body.style.userSelect = 'none';
+      document.body.style.cursor = 'ns-resize';
+
+      const onMove = (ev) => {
+        setChatWindowHeight(clampChatHeight(startHeight + (startY - ev.clientY)));
+      };
+      const onUp = () => {
+        setIsResizingChat(false);
+        document.body.style.userSelect = '';
+        document.body.style.cursor = '';
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+        document.removeEventListener('pointercancel', onUp);
+        setChatWindowHeight((h) => {
+          try {
+            localStorage.setItem(CHAT_HEIGHT_STORAGE_KEY, String(h));
+          } catch {
+            /* ignore */
+          }
+          return h;
+        });
+      };
+
+      document.addEventListener('pointermove', onMove);
+      document.addEventListener('pointerup', onUp);
+      document.addEventListener('pointercancel', onUp);
+    },
+    [chatWindowHeight],
+  );
 
   const handleOrderSpecsEdit = async (row) => {
     if (!row?.key || isTyping) return;
@@ -1431,11 +1637,11 @@ export function ChatWidget() {
         try {
           updateTypingStage('Подбор оборудования (GET search-equipment)…');
           const res = await fetchSearchEquipment(specs);
-          // eslint-disable-next-line no-console
-          console.log('[search-equipment] GET', res.requestUrl);
           const d = res.data;
           if (d?.status === 'success' && Array.isArray(d?.equipment) && d.equipment.length > 0) {
             lastOrderSpecsRef.current = specs;
+            const firstItem = d.equipment[0];
+            if (firstItem) sliderEquipmentRef.current = firstItem;
             setMessages((prev) => [
               ...prev,
               {
@@ -1443,6 +1649,8 @@ export function ChatWidget() {
                 from: 'bot',
                 kind: 'equipment',
                 equipment: d.equipment,
+                orderSpecs: specs,
+                currentEquipment: firstItem || null,
                 time: new Date(),
               },
             ]);
@@ -1545,8 +1753,8 @@ export function ChatWidget() {
       return quote;
     }
 
-    const eq = sliderEquipmentRef.current;
-    const specs = lastOrderSpecsRef.current || {};
+    const eq = resolveEquipmentForPrice(sliderEquipmentRef.current, messages);
+    const specs = resolveOrderSpecsForPrice(messages, lastOrderSpecsRef.current);
     const estimateBody =
       pendingEstimateBodyRef.current || buildEstimatePriceBody(eq, specs);
     if (!estimateBody) return null;
@@ -1579,13 +1787,13 @@ export function ChatWidget() {
     };
     estimateQuoteRef.current = quote;
     return quote;
-  }, []);
+  }, [messages]);
 
   const runEstimatePrice = useCallback(async (estimateBody, fallbackLabel = 'оборудование') => {
     if (!estimateBody) {
       estimateBody = buildEstimatePriceBody(
-        sliderEquipmentRef.current,
-        lastOrderSpecsRef.current,
+        resolveEquipmentForPrice(sliderEquipmentRef.current, messages),
+        resolveOrderSpecsForPrice(messages, lastOrderSpecsRef.current),
       );
     }
     if (!estimateBody) {
@@ -1664,11 +1872,33 @@ export function ChatWidget() {
         },
       ]);
     }
+  }, [messages]);
+
+  const syncSliderEquipment = useCallback((item) => {
+    sliderEquipmentRef.current = item;
+    if (!item || !equipmentIdFromItem(item)) return;
+    setMessages((prev) => {
+      let msgIdx = -1;
+      for (let i = prev.length - 1; i >= 0; i -= 1) {
+        if (prev[i].kind === 'equipment') {
+          msgIdx = i;
+          break;
+        }
+      }
+      if (msgIdx < 0) return prev;
+      const m = prev[msgIdx];
+      const curId = equipmentIdFromItem(m.currentEquipment);
+      const nextId = equipmentIdFromItem(item);
+      if (curId && nextId && curId === nextId) return prev;
+      const next = [...prev];
+      next[msgIdx] = { ...m, currentEquipment: item };
+      return next;
+    });
   }, []);
 
   const handleGetPriceHint = async () => {
     if (equipmentPriceActionLockRef.current) return;
-    const eq = sliderEquipmentRef.current;
+    const eq = resolveEquipmentForPrice(sliderEquipmentRef.current, messages);
     const label = (eq?.model || eq?.name || '').toString().trim();
     if (!label) {
       window.alert('Пролистайте слайдер и выберите прибор, затем нажмите «Получить цену».');
@@ -1688,7 +1918,8 @@ export function ChatWidget() {
     setIsEquipmentPriceActionBusy(true);
     try {
       const id = await ensureChatId();
-      const specsForPrice = lastOrderSpecsRef.current || {};
+      const specsForPrice = resolveOrderSpecsForPrice(messages, lastOrderSpecsRef.current);
+      lastOrderSpecsRef.current = specsForPrice;
       const estimateBody = buildEstimatePriceBody(eq, specsForPrice);
       pendingEstimateBodyRef.current = estimateBody;
       if (!estimateBody) {
@@ -1794,8 +2025,8 @@ export function ChatWidget() {
     equipmentPriceActionLockRef.current = true;
     setIsEquipmentPriceActionBusy(true);
     try {
-      const eq = sliderEquipmentRef.current;
-      const specs = lastOrderSpecsRef.current || {};
+      const eq = resolveEquipmentForPrice(sliderEquipmentRef.current, messages);
+      const specs = resolveOrderSpecsForPrice(messages, lastOrderSpecsRef.current);
       let estimateBody =
         pendingEstimateBodyRef.current || buildEstimatePriceBody(eq, specs);
       if (!estimateBody) {
@@ -2003,6 +2234,7 @@ export function ChatWidget() {
     setMessages((prev) => [...prev, userMessage]);
 
     beginTyping('Получение цены прибора и формирование PDF ТКП…');
+    let tkpDelivered = false;
     try {
       const quote = await ensureEstimateQuote();
       const body = buildTkpPdfBody(
@@ -2030,8 +2262,6 @@ export function ChatWidget() {
       updateTypingStage('Формирование PDF ТКП на сервере…');
       const response = await postTkpPdf(body);
       const pdf = buildTkpPdfCard(response.data || {}, response.headers || {});
-      setShowTkpPdfHint(false);
-      setIsSelectingAccessories(false);
       setMessages((prev) => [
         ...prev,
         {
@@ -2043,6 +2273,7 @@ export function ChatWidget() {
           time: new Date(),
         },
       ]);
+      tkpDelivered = true;
     } catch (error) {
       console.error('[tkp-pdf] ошибка:', error);
       const detail = error?.response?.data?.detail;
@@ -2064,37 +2295,139 @@ export function ChatWidget() {
         },
       ]);
     } finally {
+      if (tkpDelivered) {
+        resetAfterTkpScenario();
+        await applyMainMenuHints();
+      }
       endTyping();
     }
   };
 
+  const scrollToOrderSpecsConfirm = useCallback(() => {
+    requestAnimationFrame(() => {
+      const el = document.querySelector('[data-order-specs-confirm="true"]');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }, []);
+
+  const restoreOrderSpecsConfirmInChat = useCallback(
+    (preview) => {
+      const rows = preview?.review_rows;
+      if (!Array.isArray(rows) || rows.length === 0) return;
+      const draftFromTable = orderSpecsRowsToDraft(rows);
+      if (draftFromTable) {
+        lastOrderSpecsRef.current = draftFromTable;
+      }
+      setMessages((prev) => {
+        const idx = prev.findIndex((m) => m.kind === 'order_specs_confirm');
+        const msg = {
+          id: idx >= 0 ? prev[idx].id : `order-specs-confirm-${Date.now()}`,
+          from: 'bot',
+          kind: 'order_specs_confirm',
+          orderSpecsTitle: preview.review_title || 'Проверьте итоговые параметры спецификации:',
+          orderSpecsRows: rows,
+          text: preview.footer || '',
+          time: new Date(),
+        };
+        if (idx >= 0) {
+          const next = [...prev];
+          next[idx] = msg;
+          return next;
+        }
+        return [...prev, msg];
+      });
+      scrollToOrderSpecsConfirm();
+    },
+    [scrollToOrderSpecsConfirm],
+  );
+
   const handleBack = async () => {
     try {
+      let chatIdForBack = null;
+      try {
+        chatIdForBack = await ensureChatId();
+      } catch {
+        chatIdForBack = null;
+      }
+
       const response = await transitionHints({
         current_state: hintState.currentState,
         action: 'back',
+        chat_id: chatIdForBack,
+        order_specs_snapshot: lastOrderSpecsRef.current || undefined,
       });
 
       const newState = response.data.current_state;
+      let hintsPayload = response.data;
+
+      if (newState === 'order_specs_confirm') {
+        try {
+          const hintsResponse = await getHints('order_specs_confirm');
+          hintsPayload = hintsResponse.data;
+        } catch (e) {
+          console.warn('getHints(order_specs_confirm) after back:', e);
+        }
+      }
 
       setHintState({
         currentState: newState,
-        hints: response.data.hints || [],
-        showBack: response.data.show_back,
-        isFinal: response.data.is_final,
-        expectsInput: response.data.expects_input,
-        hintsOnly: response.data.hints_only ?? false,
+        hints: hintsPayload.hints || [],
+        showBack: hintsPayload.show_back ?? response.data.show_back,
+        isFinal: newState === 'order_specs_confirm' ? false : hintsPayload.is_final,
+        expectsInput: hintsPayload.expects_input ?? response.data.expects_input,
+        hintsOnly: hintsPayload.hints_only ?? false,
       });
 
-      if (newState === 'start') {
+      if (newState === 'order_specs_confirm') {
+        setHintLocked(true);
+      } else if (newState === 'start' || hintsPayload.is_final) {
         setHintLocked(false);
+      } else {
+        setHintLocked(true);
       }
+
+      if (FLOWMETER_HINT_STATES.has(newState)) {
+        if (newState === 'order_final') {
+          setAwaitingEquipmentSelection(!!lastOrderSpecsRef.current);
+          setShowExactCostHint(false);
+          setShowTkpPdfHint(false);
+          setIsSelectingAccessories(false);
+          selectedAccessoriesRef.current = [];
+          setSelectedAccessoryIds([]);
+        } else {
+          setAwaitingEquipmentSelection(false);
+          setShowExactCostHint(false);
+          setShowTkpPdfHint(false);
+          setIsSelectingAccessories(false);
+          selectedAccessoriesRef.current = [];
+          setSelectedAccessoryIds([]);
+        }
+      }
+
       if (newState === 'verification_installations') {
         gasSpuRef.current = {};
       }
 
-      // Не дублируем приветствие главного меню: оно уже есть при открытии чата.
-      if (response.data.bot_message && newState !== 'start') {
+      if (response.data.order_specs_json) {
+        lastOrderSpecsRef.current = response.data.order_specs_json;
+      }
+
+      if (newState === 'order_specs_confirm') {
+        const preview = response.data.order_specs_preview;
+        if (preview?.review_rows?.length) {
+          restoreOrderSpecsConfirmInChat(preview);
+        } else if (response.data.bot_message) {
+          const botMsg = {
+            id: Date.now(),
+            from: 'bot',
+            text: response.data.bot_message,
+            time: new Date(),
+          };
+          setMessages((prev) => [...prev, enrichBotMessage(botMsg, { data: response.data })]);
+        }
+      } else if (response.data.bot_message && newState !== 'start') {
         const botMsg = {
           id: Date.now(),
           from: 'bot',
@@ -2361,11 +2694,11 @@ export function ChatWidget() {
           try {
             updateTypingStage('Подбор оборудования (GET search-equipment)…');
             const res = await fetchSearchEquipment(specs);
-            // eslint-disable-next-line no-console
-            console.log('[search-equipment] GET', res.requestUrl);
             const d = res.data;
             if (d?.status === 'success' && Array.isArray(d?.equipment) && d.equipment.length > 0) {
               lastOrderSpecsRef.current = specs;
+              const firstItem = d.equipment[0];
+              if (firstItem) sliderEquipmentRef.current = firstItem;
               setMessages((prev) => [
                 ...prev,
                 {
@@ -2373,6 +2706,8 @@ export function ChatWidget() {
                   from: 'bot',
                   kind: 'equipment',
                   equipment: d.equipment,
+                  orderSpecs: specs,
+                  currentEquipment: firstItem || null,
                   time: new Date(),
                 },
               ]);
@@ -2682,7 +3017,19 @@ export function ChatWidget() {
         aria-label="Открыть чат"
       />
 
-      <div className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}`}>
+      <div
+        className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
+          isResizingChat ? ' chat-widget__window--resizing' : ''
+        }`}
+        style={{ height: chatWindowHeight }}
+      >
+        <div
+          className="chat-widget__resize-handle"
+          role="separator"
+          aria-orientation="horizontal"
+          aria-label="Потяните вверх или вниз, чтобы изменить высоту чата"
+          onPointerDown={handleChatResizePointerDown}
+        />
         <header className="chat-widget__header">
           <div className="chat-widget__header-info">
             <div className="chat-widget__avatar" />
@@ -2703,6 +3050,7 @@ export function ChatWidget() {
               className={`chat-widget__message chat-widget__message--${message.from}${
                 message.kind === 'order_specs_confirm' ? ' chat-widget__message--order-specs-confirm' : ''
               }`}
+              {...(message.kind === 'order_specs_confirm' ? { 'data-order-specs-confirm': 'true' } : {})}
             >
               <div
                 className={`chat-widget__bubble${
@@ -2717,9 +3065,7 @@ export function ChatWidget() {
                   <EquipmentShowcase
                     items={message.equipment}
                     onPick={pickEquipmentToInput}
-                    onCurrentItemChange={(item) => {
-                      sliderEquipmentRef.current = item;
-                    }}
+                    onCurrentItemChange={syncSliderEquipment}
                   />
                 ) : message.kind === 'order_specs_confirm' && message.orderSpecsRows?.length ? (
                   <OrderSpecsConfirmTable
@@ -2899,14 +3245,21 @@ export function ChatWidget() {
               </button>
             </div>
           )}
-          {hintState.hints && hintState.hints.length > 0 && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
+          {isFlowmeterScenario && (
             <div className="chat-widget__hints">
-              {hintState.showBack && (
+              <button type="button" className="chat-widget__hint chat-widget__hint--back" onClick={handleBack}>
+                ← Вернуться
+              </button>
+            </div>
+          )}
+          {footerScenarioHints.length > 0 && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
+            <div className="chat-widget__hints">
+              {hintState.showBack && !isFlowmeterScenario && (
                 <button type="button" className="chat-widget__hint chat-widget__hint--back" onClick={handleBack}>
                   ← Вернуться
                 </button>
               )}
-              {hintState.hints.map((hint, index) => (
+              {footerScenarioHints.map((hint, index) => (
                 <button
                   type="button"
                   key={index}
@@ -2919,7 +3272,7 @@ export function ChatWidget() {
             </div>
           )}
 
-          {hintState.showBack && (!hintState.hints || hintState.hints.length === 0) && !hintState.isFinal && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
+          {hintState.showBack && !isFlowmeterScenario && (!hintState.hints || hintState.hints.length === 0) && !hintState.isFinal && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
             <div className="chat-widget__hints">
               <button type="button" className="chat-widget__hint chat-widget__hint--back" onClick={handleBack}>
                 ← Вернуться
