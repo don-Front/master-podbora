@@ -36,7 +36,7 @@ def adjust_search_parameters(question_type: dict, top_k: int, threshold: float) 
         }
     else:
         return {
-            "top_k": top_k,
+            "top_k": max(top_k, 5),
             "threshold": threshold,
             "chunk_types_filter": None,
             "search_strategy": "normal"

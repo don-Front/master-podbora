@@ -27,12 +27,12 @@ class VectorStore:
         elif query_embedding.ndim != 2:
             raise ValueError(f"query_embedding должен быть 1D или 2D, получено {query_embedding.shape}")
 
-        distances, indices = self.index.search(query_embedding, top_k)
+        similarities, indices = self.index.search(query_embedding, top_k)
 
         results = []
         query_lower = product_filter.lower() if product_filter else None
 
-        for dist, idx in zip(distances[0], indices[0]):
+        for similarity, idx in zip(similarities[0], indices[0]):
             if idx == -1:
                 continue
             chunk = self.chunks[idx]
@@ -41,14 +41,14 @@ class VectorStore:
             if query_lower and query_lower not in chunk["product_title"].lower():
                 continue
 
-            confidence = 1 - float(dist) / 2
+            score = float(similarity)
             results.append({
                 "chunk_id": chunk.get("chunk_id"),
                 "chunk_type": chunk.get("chunk_type"),
                 "product_title": chunk.get("product_title"),
                 "content": chunk.get("content"),
                 "metadata": chunk.get("metadata", {}),
-                "score": confidence
+                "score": score
             })
 
         return results

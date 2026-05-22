@@ -4,7 +4,7 @@ embeddings:
 faiss:
   index_path: data/faiss_index.bin
   chunks_path: data/chunks.json
-  top_k: 1
+  top_k: 8
   confidence_threshold: 0.75   # минимальная уверенность
   min_delta: 0.002  # минимальная разница между лучшим и вторым результатом
 
