@@ -1,11 +1,18 @@
 import faiss
 import json
 import numpy as np
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Set
+
+from .chunk_access import is_chunk_searchable
 
 
 class VectorStore:
-    def __init__(self, index_path: str, chunks_path: str):
+    def __init__(
+        self,
+        index_path: str,
+        chunks_path: str,
+        active_doc_keys: Optional[Set[str]] = None,
+    ):
         self.index = faiss.read_index(index_path)
 
         with open(chunks_path, "r", encoding="utf-8") as f:
@@ -14,6 +21,8 @@ class VectorStore:
 
         if not isinstance(self.chunks, list):
             raise ValueError("chunks.json должен содержать массив 'chunks'")
+
+        self.active_doc_keys = active_doc_keys
 
     def search(
         self,
@@ -36,6 +45,9 @@ class VectorStore:
             if idx == -1:
                 continue
             chunk = self.chunks[idx]
+
+            if not is_chunk_searchable(chunk, self.active_doc_keys):
+                continue
 
             # фильтр по названию продукта
             if query_lower and query_lower not in chunk["product_title"].lower():

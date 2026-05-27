@@ -108,11 +108,38 @@ export function shouldShowOrderSpecsBotMessage(response, botMessages) {
   return Array.isArray(preview?.review_rows) && preview.review_rows.length > 0;
 }
 
-/** Цепочка обогащения ответа бота (СПУ + таблица спецификации + уточнение параметров). */
+function enhanceBotMessageWithFaqCard(botMsg, response) {
+  const faqCard = response?.data?.faq_card;
+  if (!faqCard || typeof faqCard !== 'object') return botMsg;
+  const actions = Array.isArray(faqCard.actions) ? faqCard.actions : [];
+  const attachmentUrl = botMsg?.attachmentUrl || response?.data?.messages?.find((msg) => !msg.is_user)?.attachment_url;
+  const attachmentName = botMsg?.pdfName || response?.data?.messages?.find((msg) => !msg.is_user)?.attachment_name;
+  return {
+    ...botMsg,
+    kind: 'faq_card',
+    text: '',
+    faqCard: {
+      ...faqCard,
+      actions: actions.map((action) => {
+        if (action?.type !== 'file') return action;
+        return {
+          ...action,
+          href: action.href || attachmentUrl || '',
+          value: action.value || attachmentName || 'Файл',
+        };
+      }),
+    },
+  };
+}
+
+/** Цепочка обогащения ответа бота (FAQ + СПУ + таблица спецификации + уточнение параметров). */
 export function enrichBotMessage(botMsg, response) {
-  return enhanceBotMessageWithOrderSpecsClarify(
-    enhanceBotMessageWithOrderSpecsConfirm(
-      enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+  return enhanceBotMessageWithFaqCard(
+    enhanceBotMessageWithOrderSpecsClarify(
+      enhanceBotMessageWithOrderSpecsConfirm(
+        enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+        response,
+      ),
       response,
     ),
     response,

@@ -32,21 +32,27 @@ logger = logging.getLogger(__name__)
 TEXT_ORDER_SPECS_STATE = "order_specs_text_clarify"
 
 
-_TEXT_INTENT_RE = re.compile(
-    r"(?i)(подобр|нуж(?:ен|на|но)|ищу|требуется|расходомер|оборудован|прибор|"
-    r"\bDN\s*\d|\bДУ\s*\d|диаметр|расход|давлен|мпа|бар|точност|природн\w*\s+газ|"
-    r"\bгаз\b|жидкост)",
+# Явный интент подбора: «подбор», «подбери», «подобрать» и производные формы.
+_SELECTION_INTENT_RE = re.compile(
+    r"(?i)(?:"
+    r"подбор(?:а|у|е|ом|ы)?"
+    r"|подбер\w*"
+    r"|подобр\w*"
+    r")"
 )
 
 
 def looks_like_order_specs_request(text: str) -> bool:
-    """Достаточно осторожный детектор: не перехватываем обычные вопросы без параметров/интента."""
+    """Сценарий подбора по тексту — только при явном интенте подбора, не на любой запрос про расходомер."""
     t = (text or "").strip()
     if len(t) < 10:
         return False
+    if not _SELECTION_INTENT_RE.search(t):
+        return False
     low = t.lower()
-    has_intent = any(x in low for x in ("подобр", "нуж", "ищу", "требуется"))
-    has_equipment = any(x in low for x in ("оборудован", "прибор", "расходомер"))
+    has_equipment = any(
+        x in low for x in ("оборудован", "прибор", "расходомер", "счётчик", "счетчик")
+    )
     markers = (
         "dn",
         "ду",
@@ -54,21 +60,16 @@ def looks_like_order_specs_request(text: str) -> bool:
         "расход",
         "давлен",
         "мпа",
+        "бар",
         "точност",
         "температур",
         "газ",
         "жидк",
+        "среда",
+        "вязкост",
     )
     param_count = sum(1 for x in markers if x in low)
-    has_number = bool(re.search(r"\d", t))
-    return bool(
-        _TEXT_INTENT_RE.search(t)
-        and (
-            (has_intent and (has_equipment or param_count > 0))
-            or (has_equipment and has_number and param_count >= 1)
-            or (has_number and param_count >= 3)
-        )
-    )
+    return has_equipment or param_count >= 1
 
 
 def _parse_num(raw: str) -> float | None:

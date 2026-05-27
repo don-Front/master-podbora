@@ -3,12 +3,16 @@
 
 from __future__ import annotations
 
+import json
+import logging
 import math
 import re
 from decimal import Decimal
 from typing import Any, Dict, List
 
 from .pdf_order_analysis import SPEC_KEYS, _normalize_specs, _SPEC_LEGACY_ALIASES, normalize_accuracy_value
+
+logger = logging.getLogger(__name__)
 
 # Поля, которые считаем числовыми (в т.ч. 0 считается «не заполнено» до уточнения)
 NUMERIC_KEYS = frozenset(
@@ -257,3 +261,24 @@ def build_order_specs_preview(draft: Dict[str, Any]) -> Dict[str, Any]:
 def format_specs_summary_for_user(draft: Dict[str, Any]) -> str:
     """Краткий текст в БД; таблицу рисует фронт по order_specs_preview."""
     return build_order_specs_preview(draft)["footer"]
+
+
+def safe_print_order_specs_final(draft) -> None:
+    """Вывод итогового JSON в консоль; не должен ронять запрос при нестандартных типах."""
+    try:
+        safe = specs_for_api_response(draft)
+        line = json.dumps(safe, ensure_ascii=False)
+        msg = f"[ORDER_SPECS_FINAL] {line}"
+        from .pdf_order_analysis import _safe_console_print
+
+        _safe_console_print(msg)
+        logger.warning(msg)
+    except Exception as e:
+        err = f"[ERROR] ORDER_SPECS_FINAL (print): {e}"
+        try:
+            from .pdf_order_analysis import _safe_console_print
+
+            _safe_console_print(err)
+        except Exception:
+            pass
+        logger.exception("ORDER_SPECS_FINAL failed")

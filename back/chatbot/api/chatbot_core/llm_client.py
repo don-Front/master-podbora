@@ -1,7 +1,29 @@
 from openai import OpenAI
 from typing import List, Dict, Any, Optional
+import logging
 import re
 import time
+
+logger = logging.getLogger(__name__)
+
+
+_CHUNK_TYPE_LABELS = {
+    "basic_info": "общая информация",
+    "applications": "область применения",
+    "specifications": "технические характеристики",
+    "features": "особенности и преимущества",
+    "section": "раздел",
+}
+
+_CITATION_INSTRUCTION = """
+ОБЯЗАТЕЛЬНОЕ ЦИТИРОВАНИЕ (FR-11):
+- Каждое утверждение, опирающееся на контекст, завершай ссылкой на источник.
+- Формат: [Документ: Название, стр. X] — если в блоке контекста указана страница.
+- Если страницы нет, но есть пункт/раздел: [Документ: Название, раздел «…»].
+- Если в блоке указано «источник: не указан» — после факта пиши (источник не указан).
+- Не выдумывай номера страниц и названия документов — только из полей «Документ» / «Страница» / «Пункт» блока.
+- Не пиши слова chunk, context, фрагмент — только готовый ответ клиенту.
+"""
 
 
 def _normalize_lm_base_url(base_url: str) -> str:
@@ -29,23 +51,69 @@ class LLMClient:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.timeout = timeout
+        self.last_elapsed_ms = 0.0
+
+    @staticmethod
+    def _resolve_chunk_source(chunk: Dict) -> Dict[str, str]:
+        """Метаданные источника для контекста и цитирования (задача 1.4)."""
+        meta = chunk.get("metadata") or {}
+        if not isinstance(meta, dict):
+            meta = {}
+
+        document_name = (meta.get("document_name") or chunk.get("product_title") or "").strip()
+        page_raw = meta.get("page_number", meta.get("page"))
+        page = str(page_raw).strip() if page_raw is not None and str(page_raw).strip() else ""
+        paragraph = (meta.get("paragraph") or meta.get("section_title") or "").strip()
+
+        if not paragraph:
+            chunk_type = chunk.get("chunk_type") or meta.get("type") or ""
+            paragraph = _CHUNK_TYPE_LABELS.get(str(chunk_type), str(chunk_type)).strip()
+
+        if not document_name:
+            citation = "(источник не указан)"
+            source_status = "не указан"
+        elif page:
+            citation = f"[Документ: {document_name}, стр. {page}]"
+            source_status = "указан"
+        elif paragraph:
+            citation = f"[Документ: {document_name}, раздел «{paragraph}»]"
+            source_status = "указан"
+        elif meta.get("document_name"):
+            citation = f"[Документ: {document_name}]"
+            source_status = "указан"
+        else:
+            citation = f"[Документ: {document_name}]"
+            source_status = "частично (без страницы/пункта)"
+
+        return {
+            "document_name": document_name or "не указан",
+            "page": page or "не указана",
+            "paragraph": paragraph or "не указан",
+            "citation": citation,
+            "source_status": source_status,
+        }
 
     @staticmethod
     def build_context(chunks: List[Dict]) -> str:
-        """Строит контекст из чанков с приоритизацией"""
+        """Строит контекст из чанков с метаданными источника для цитирования."""
         blocks = []
         for c in chunks:
-            score_info = f" (релевантность: {c.get('score', 0):.2f})" if 'score' in c else ""
-            
+            score_info = f" (релевантность: {c.get('score', 0):.2f})" if "score" in c else ""
+            src = LLMClient._resolve_chunk_source(c)
+
             block = f"""
-[Чанк {c.get('chunk_id', 'N/A')}{score_info}]
+[Фрагмент {c.get('chunk_id', 'N/A')}{score_info}]
+Документ: {src['document_name']}
+Страница: {src['page']}
+Пункт/раздел: {src['paragraph']}
+Ссылка для ответа: {src['citation']}
 Продукт: {c.get("product_title", "Не указано")}
 Тип информации: {c.get("chunk_type", "Не указан")}
 
 {c.get("content", "Пустой контент")}
 """.strip()
             blocks.append(block)
-        return "\n\n" + "="*50 + "\n\n".join(blocks) + "\n" + "="*50
+        return "\n\n" + "=" * 50 + "\n\n".join(blocks) + "\n" + "=" * 50
 
     def generate(self, chunks: List[Dict], question: str, question_type: dict) -> str:
         context = self.build_context(chunks)
@@ -59,8 +127,8 @@ class LLMClient:
 Если в контексте нет ответа — так и напиши коротко.
 
 Не описывай ход рассуждений, не используй заголовок «Thinking Process», не пиши пошаговый разбор на английском,
-не перечисляй роли (Role), задачи (Task), не ссылайся на «chunk» / «context» — клиент этого не должен видеть.
-
+не перечисляй роли (Role), задачи (Task), не ссылайся на «chunk» / «context» / «фрагмент» — клиент этого не должен видеть.
+{_CITATION_INSTRUCTION}
 ОСНОВНОЙ ПРОДУКТ: {main_product if main_product else "Не определен"}
 
 КОНТЕКСТ:
@@ -74,12 +142,14 @@ class LLMClient:
             prompt = base_prompt + """
 Сформулируй ответ для клиента: только найденные в контексте значения параметров (с единицами измерения).
 Если для разных модификаций значения различаются — перечисли по модификациям. Если параметра в тексте нет — напиши об этом.
+После каждого параметра или группы значений ставь ссылку на источник в формате из блока «Ссылка для ответа».
 
 Начинай сразу с ответа (списком или абзацами), без вступления про то, как ты анализируешь документ.
 """
         else:
             prompt = base_prompt + """
 Сформулируй ответ для клиента: по существу вопроса, по-русски, структурируй при необходимости списком.
+После каждого факта из контекста ставь ссылку на источник в формате из блока «Ссылка для ответа».
 Начинай сразу с ответа, без вступления и без описания своих шагов.
 """
         
@@ -183,6 +253,7 @@ class LLMClient:
 
     def _call_llm(self, prompt: str) -> str:
         """Вызывает LLM API"""
+        self.last_elapsed_ms = 0.0
         max_retries = 2
         retry_delay = 2
         
@@ -207,8 +278,12 @@ class LLMClient:
                             "role": "system",
                             "content": (
                                 "Ты технический консультант по приборам. Пиши только готовый ответ клиенту на русском: "
-                                "факты, списки, цифры из документации. Запрещено: Thinking Process, пошаговый разбор, "
-                                "анализ на английском, заголовки Role/Task/Goal, упоминания chunk и context."
+                                "факты, списки, цифры из документации. "
+                                "После каждого факта из документации ставь ссылку "
+                                "[Документ: Название, стр. X] или [Документ: Название, раздел «…»]; "
+                                "если источник неизвестен — (источник не указан). "
+                                "Запрещено: Thinking Process, пошаговый разбор, "
+                                "анализ на английском, заголовки Role/Task/Goal, упоминания chunk, context и фрагмент."
                             ),
                         },
                         {"role": "user", "content": prompt},
@@ -217,7 +292,14 @@ class LLMClient:
                 )
                 
                 elapsed_time = time.time() - start_time
-                print(f"[DEBUG] LLM ответ получен за {elapsed_time:.2f} сек")
+                self.last_elapsed_ms = round(elapsed_time * 1000, 1)
+                logger.info(
+                    "[LLM] LM Studio: ответ за %.2f с (модель: %s, попытка %d/%d)",
+                    elapsed_time,
+                    self.model,
+                    attempt + 1,
+                    max_retries + 1,
+                )
                 
                 if response and response.choices:
                     choice = response.choices[0]

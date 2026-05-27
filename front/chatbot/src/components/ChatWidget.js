@@ -791,6 +791,104 @@ function TkpPdfCard({ pdf }) {
   );
 }
 
+function fileNameFromUrl(url) {
+  try {
+    const pathname = new URL(url).pathname;
+    const last = pathname.split('/').filter(Boolean).pop();
+    return last ? decodeURIComponent(last) : '';
+  } catch {
+    const last = String(url || '').split('/').filter(Boolean).pop();
+    return last ? decodeURIComponent(last) : '';
+  }
+}
+
+function AttachmentPdfCard({ url, filename, title = 'Файл для скачивания' }) {
+  if (!url) return null;
+  const displayName = filename || fileNameFromUrl(url) || 'Вложение.pdf';
+  return (
+    <div className="chat-widget__pdf-card chat-widget__pdf-card--attachment">
+      <a
+        className="chat-widget__pdf-preview-box"
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+        title={`Скачать ${displayName}`}
+      >
+        <div className="chat-widget__pdf-placeholder">
+          <span className="chat-widget__pdf-label">PDF</span>
+        </div>
+        <span className="chat-widget__pdf-download" aria-hidden="true">
+          ↓
+        </span>
+      </a>
+      <div className="chat-widget__pdf-name">{title}</div>
+      <div className="chat-widget__tz-nested-desc">{displayName}</div>
+    </div>
+  );
+}
+
+function faqActionTypeLabel(type) {
+  if (type === 'phone') return 'TEL';
+  if (type === 'email') return 'MAIL';
+  if (type === 'file') return 'PDF';
+  return 'LINK';
+}
+
+function FaqCard({ card }) {
+  if (!card) return null;
+  const actions = Array.isArray(card.actions) ? card.actions.filter(Boolean) : [];
+  return (
+    <div className="chat-widget__faq-card" role="region" aria-label={card.title || 'Справочная информация'}>
+      <div className="chat-widget__faq-card-head">
+        <div className="chat-widget__faq-card-kicker">Справочная информация</div>
+        <div className="chat-widget__faq-card-title">{card.title || 'Ответ'}</div>
+      </div>
+      {card.description ? <div className="chat-widget__faq-card-desc">{card.description}</div> : null}
+      {actions.length > 0 ? (
+        <div className="chat-widget__faq-card-actions">
+          {actions.map((action, index) => {
+            const href = action.href || '';
+            const isDisabled = !href && action.type !== 'text';
+            const content = (
+              <>
+                <span className={`chat-widget__faq-action-badge chat-widget__faq-action-badge--${action.type || 'url'}`}>
+                  {faqActionTypeLabel(action.type)}
+                </span>
+                <span className="chat-widget__faq-action-text">
+                  <span className="chat-widget__faq-action-label">{action.label || action.value || 'Открыть'}</span>
+                  {action.value && action.value !== action.label ? (
+                    <span className="chat-widget__faq-action-value">{action.value}</span>
+                  ) : null}
+                </span>
+              </>
+            );
+            if (isDisabled) {
+              return (
+                <div className="chat-widget__faq-action chat-widget__faq-action--disabled" key={`${action.type || 'text'}-${index}`}>
+                  {content}
+                </div>
+              );
+            }
+            return (
+              <a
+                className="chat-widget__faq-action"
+                key={`${action.type || 'url'}-${index}`}
+                href={href}
+                target={action.type === 'phone' || action.type === 'email' ? undefined : '_blank'}
+                rel={action.type === 'phone' || action.type === 'email' ? undefined : 'noopener noreferrer'}
+                download={action.type === 'file' ? true : undefined}
+              >
+                {content}
+              </a>
+            );
+          })}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 function AccessoriesSelector({ items, selectedIds, onToggle }) {
   if (!Array.isArray(items) || items.length === 0) return null;
   const selectedSet = new Set(selectedIds || []);
@@ -1434,19 +1532,25 @@ export function ChatWidget() {
       applyHintStateFromResponse(response.data, setHintState, setHintLocked);
       const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
       if (shouldShowOrderSpecsBotMessage(response, botMessages)) {
+        const firstBotMessage = botMessages[0] || {};
         const botMsg = {
-          id: botMessages[0]?.id || Date.now() + 1,
+          id: firstBotMessage?.id || Date.now() + 1,
           from: 'bot',
-          text: botMessages[0]?.content || '',
-          time: new Date(botMessages[0]?.created_at || Date.now()),
+          text: firstBotMessage?.content || '',
+          time: new Date(firstBotMessage?.created_at || Date.now()),
+          ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+          ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
         };
         setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
       } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+        const firstBotMessage = botMessages[0] || {};
         const fallbackMsg = {
-          id: botMessages[0].id,
+          id: firstBotMessage.id,
           from: 'bot',
-          text: botMessages[0].content,
-          time: new Date(botMessages[0].created_at),
+          text: firstBotMessage.content,
+          time: new Date(firstBotMessage.created_at),
+          ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+          ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
         };
         setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
       }
@@ -1579,8 +1683,10 @@ export function ChatWidget() {
           hintsOnly: newState.hints_only ?? false,
         });
 
-        if (newState.is_final) {
+        if (newState.current_state === 'start' || newState.is_final) {
           setHintLocked(false);
+        } else if (newState.hint_locked !== undefined) {
+          setHintLocked(newState.hint_locked);
         } else {
           setHintLocked(true);
         }
@@ -1715,11 +1821,14 @@ export function ChatWidget() {
         const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
         if (botMessages.length > 0 && shouldShowOrderSpecsBotMessage(response, botMessages)) {
           const hs = response.data.hint_state;
+          const firstBotMessage = botMessages[0] || {};
           const botMsg = {
-            id: botMessages[0].id,
+            id: firstBotMessage.id,
             from: 'bot',
-            text: botMessages[0].content || '',
-            time: new Date(botMessages[0].created_at),
+            text: firstBotMessage.content || '',
+            time: new Date(firstBotMessage.created_at),
+            ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+            ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
           };
           if (
             response.data.submit_verification_liquid?.status === 'success' ||
@@ -1735,11 +1844,14 @@ export function ChatWidget() {
           }
           setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
         } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+          const firstBotMessage = botMessages[0] || {};
           const fallbackMsg = {
-            id: botMessages[0].id,
+            id: firstBotMessage.id,
             from: 'bot',
-            text: botMessages[0].content,
-            time: new Date(botMessages[0].created_at),
+            text: firstBotMessage.content,
+            time: new Date(firstBotMessage.created_at),
+            ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+            ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
           };
           setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
         }
@@ -2034,11 +2146,14 @@ export function ChatWidget() {
       if (botMessages.length > 0) {
         const t = (botMessages[0].content || '').trim();
         if (t) {
+          const firstBotMessage = botMessages[0] || {};
           const botMsg = {
-            id: botMessages[0].id,
+            id: firstBotMessage.id,
             from: 'bot',
-            text: botMessages[0].content || 'Пустой ответ сервера.',
-            time: new Date(botMessages[0].created_at),
+            text: firstBotMessage.content || 'Пустой ответ сервера.',
+            time: new Date(firstBotMessage.created_at),
+            ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+            ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
           };
           setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
         }
@@ -2754,6 +2869,13 @@ export function ChatWidget() {
             pdfPipelineClientStart,
           );
         }
+        if (response.data.rag_llm_ms) {
+          const ms = Number(response.data.rag_llm_ms) || 0;
+          // eslint-disable-next-line no-console
+          console.log(
+            `[RAG → LM Studio] ответ получен за ${ms} ms (${(ms / 1000).toFixed(2)} с)`,
+          );
+        }
         if (response.data.order_specs_llm_response) {
           console.log('[ORDER_SPECS_LLM_RESPONSE]', response.data.order_specs_llm_response);
         }
@@ -2816,11 +2938,14 @@ export function ChatWidget() {
           const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
           if (botMessages.length > 0 && shouldShowOrderSpecsBotMessage(response, botMessages)) {
             const hs = response.data.hint_state;
+            const firstBotMessage = botMessages[0] || {};
             const botMsg = {
-              id: botMessages[0].id,
+              id: firstBotMessage.id,
               from: 'bot',
-              text: botMessages[0].content || '',
-              time: new Date(botMessages[0].created_at),
+              text: firstBotMessage.content || '',
+              time: new Date(firstBotMessage.created_at),
+              ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+              ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
             };
             if (
               response.data.submit_verification_liquid?.status === 'success' ||
@@ -2836,11 +2961,14 @@ export function ChatWidget() {
             }
             setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
           } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+            const firstBotMessage = botMessages[0] || {};
             const fallbackMsg = {
-              id: botMessages[0].id,
+              id: firstBotMessage.id,
               from: 'bot',
-              text: botMessages[0].content,
-              time: new Date(botMessages[0].created_at),
+              text: firstBotMessage.content,
+              time: new Date(firstBotMessage.created_at),
+              ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+              ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
             };
             setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
           }
@@ -3210,6 +3338,8 @@ export function ChatWidget() {
                     {message.text && <span className="chat-widget__message-text">{message.text}</span>}
                     <TkpPdfCard pdf={message.pdf} />
                   </>
+                ) : message.kind === 'faq_card' ? (
+                  <FaqCard card={message.faqCard} />
                 ) : message.kind === 'liquid_verification_contact' ? (
                   <>
                     {message.text && (
@@ -3231,20 +3361,24 @@ export function ChatWidget() {
                     />
                   </div>
                 )}
-                {(message.attachmentUrl || message.pdfName) && (
+                {message.attachmentUrl ? (
+                  <AttachmentPdfCard
+                    url={message.attachmentUrl}
+                    filename={message.pdfName}
+                    title={message.pdfName?.includes('Памятка') ? 'Скачать памятку' : 'Скачать вложение'}
+                  />
+                ) : message.pdfName ? (
                   <div className="chat-widget__attachment">
                     <a
-                      href={message.attachmentUrl || '#'}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="#"
                       onClick={(ev) => {
-                        if (!message.attachmentUrl) ev.preventDefault();
+                        ev.preventDefault();
                       }}
                     >
                       📎 {message.pdfName || 'Вложение'}
                     </a>
                   </div>
-                )}
+                ) : null}
                   </>
                 )}
               </div>

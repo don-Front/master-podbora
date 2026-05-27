@@ -15,3 +15,4 @@ easyocr>=1.7.0
 opencv-python-headless>=4.8.0
 python-docx>=1.1.0
 requests>=2.31.0
+rank-bm25==0.2.2

@@ -5,12 +5,13 @@ from .models import Chat, Message
 class MessageSerializer(serializers.ModelSerializer):
     image_url = serializers.SerializerMethodField()
     attachment_url = serializers.SerializerMethodField()
+    attachment_name = serializers.SerializerMethodField()
     
     class Meta:
         model = Message
         fields = [
             'id', 'chat', 'content', 'image', 'image_url',
-            'attachment', 'attachment_url', 'is_user', 'created_at',
+            'attachment', 'attachment_url', 'attachment_name', 'is_user', 'created_at',
         ]
         extra_kwargs = {
             'image': {'write_only': True, 'required': False},
@@ -33,6 +34,12 @@ class MessageSerializer(serializers.ModelSerializer):
                 return request.build_absolute_uri(obj.attachment.url)
             return obj.attachment.url
         return None
+
+    def get_attachment_name(self, obj):
+        if not obj.attachment:
+            return None
+        name = (obj.attachment.name or "").replace("\\", "/").split("/")[-1]
+        return name or None
 
 
 class ChatSerializer(serializers.ModelSerializer):

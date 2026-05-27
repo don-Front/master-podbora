@@ -65,3 +65,33 @@ class Message(models.Model):
     @property
     def has_attachment(self):
         return bool(self.attachment)
+
+
+class KnowledgeDocument(models.Model):
+    """Версионированный документ базы знаний RAG."""
+
+    DOC_TYPE_GOST = "gost"
+    DOC_TYPE_PASSPORT = "passport"
+    DOC_TYPE_CATALOG = "catalog"
+    DOC_TYPE_CHOICES = [
+        (DOC_TYPE_GOST, "ГОСТ / норматив"),
+        (DOC_TYPE_PASSPORT, "Паспорт / ТУ"),
+        (DOC_TYPE_CATALOG, "Каталог"),
+    ]
+
+    document_key = models.CharField(max_length=255, unique=True, db_index=True)
+    display_name = models.CharField(max_length=512)
+    doc_type = models.CharField(max_length=32, choices=DOC_TYPE_CHOICES, default=DOC_TYPE_CATALOG)
+    file_hash = models.CharField(max_length=64, blank=True, default="")
+    version = models.PositiveIntegerField(default=1)
+    source_path = models.CharField(max_length=1024, blank=True, default="")
+    is_active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-updated_at", "document_key"]
+
+    def __str__(self) -> str:
+        status = "active" if self.is_active else "inactive"
+        return f"{self.document_key} v{self.version} ({status})"
