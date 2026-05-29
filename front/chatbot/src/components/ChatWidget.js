@@ -38,6 +38,10 @@ import { normalizeSpecs } from '../utils/searchEquipment';
 /** Текст подсказки и кнопки на карточке СПУ — синхронно с backend (gas_spu_wizard.GAS_SPU_LEAVE_REQUEST). */
 const GAS_SPU_LEAVE_REQUEST = 'Оставить заявку →';
 
+/** Авто-рост поля ввода: одна строка по умолчанию, до ~5 строк, дальше прокрутка. */
+const INPUT_MIN_HEIGHT_PX = 34;
+const INPUT_MAX_HEIGHT_PX = 120;
+
 /** Консоль: POST заявки СПУ на 1С выполняется в Django — URL и тело соответствуют серверу. */
 function logSubmitSpuApplicationResponse(apiResponse) {
   if (!apiResponse?.data?.submit_spu_application) return;
@@ -127,12 +131,40 @@ const ORDER_SPECS_ACCEPT =
 const FLOWMETER_HINT_STATES = new Set([
   'order_pdf_request',
   'order_specs_clarify',
+  'order_specs_text_clarify',
   'order_specs_confirm',
   'order_final',
   'equipment_price_phone',
   'equipment_price_email',
   'equipment_price_verify_code',
 ]);
+
+const FLOWMETER_RESUME_MESSAGE_KINDS = new Set([
+  'order_specs_text_clarify',
+  'order_specs_confirm',
+  'equipment',
+]);
+
+function findLatestFlowmeterBotMessage(messages) {
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const msg = messages[i];
+    if (!msg || msg.from !== 'bot') continue;
+    if (FLOWMETER_RESUME_MESSAGE_KINDS.has(msg.kind) || (msg.text || '').trim()) {
+      return msg;
+    }
+  }
+  return null;
+}
+
+function cloneFlowmeterResumeMessage(message) {
+  if (!message) return null;
+  const { id, time, ...rest } = message;
+  return {
+    ...rest,
+    id: `flowmeter-resume-${Date.now()}`,
+    time: new Date(),
+  };
+}
 
 function isAllowedOrderSpecsFile(file) {
   if (!file) return false;
@@ -1077,12 +1109,15 @@ export function ChatWidget() {
   const [chatId, setChatId] = useState(null);
   const hasMessages = useRef(false);
   const fileInputRef = useRef(null);
+  const inputRef = useRef(null);
+  const orderFileDragDepthRef = useRef(0);
   /** Защита от двойного нажатия «Получить цену» / debug на шаге телефона (дубли одного и того же ответа бота). */
   const equipmentPriceActionLockRef = useRef(false);
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [selectedPdf, setSelectedPdf] = useState(null);
+  const [isOrderFileDragActive, setIsOrderFileDragActive] = useState(false);
 
   const [hintState, setHintState] = useState({
     currentState: 'start',
@@ -1129,6 +1164,7 @@ export function ChatWidget() {
   const lastOrderSpecsRef = useRef(null);
   const [showExactCostHint, setShowExactCostHint] = useState(false);
   const [showTkpPdfHint, setShowTkpPdfHint] = useState(false);
+  const [flowmeterResume, setFlowmeterResume] = useState(null);
   const [isSelectingAccessories, setIsSelectingAccessories] = useState(false);
   /** На слайдере/аксессуарах не показываем меню order_final («Расходомеры», «Продажа»…). */
   const footerScenarioHints =
@@ -1369,6 +1405,7 @@ export function ChatWidget() {
       setAwaitingEquipmentSelection(false);
       sliderEquipmentRef.current = null;
       lastOrderSpecsRef.current = null;
+      setFlowmeterResume(null);
       exactCostBodyRef.current = null;
       estimateQuoteRef.current = null;
       pendingEstimateBodyRef.current = null;
@@ -1401,6 +1438,7 @@ export function ChatWidget() {
       setAwaitingEquipmentSelection(false);
       sliderEquipmentRef.current = null;
       lastOrderSpecsRef.current = null;
+      setFlowmeterResume(null);
       exactCostBodyRef.current = null;
       estimateQuoteRef.current = null;
       pendingEstimateBodyRef.current = null;
@@ -1418,6 +1456,34 @@ export function ChatWidget() {
       setInputValue('');
     }
   }, [hintState.hintsOnly, hintState.currentState]);
+
+  const adjustInputHeight = useCallback(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    const nextHeight = Math.min(
+      Math.max(el.scrollHeight, INPUT_MIN_HEIGHT_PX),
+      INPUT_MAX_HEIGHT_PX,
+    );
+    el.style.height = `${nextHeight}px`;
+    el.style.overflowY = el.scrollHeight > INPUT_MAX_HEIGHT_PX ? 'auto' : 'hidden';
+  }, []);
+
+  useEffect(() => {
+    adjustInputHeight();
+  }, [inputValue, adjustInputHeight, hintState.hintsOnly, hintState.currentState]);
+
+  useEffect(() => {
+    if (!isOrderPdfStep) {
+      orderFileDragDepthRef.current = 0;
+      setIsOrderFileDragActive(false);
+    }
+  }, [isOrderPdfStep]);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+    requestAnimationFrame(adjustInputHeight);
+  };
 
   useEffect(() => {
     initializeChat();
@@ -1579,6 +1645,7 @@ export function ChatWidget() {
       isHint: true,
     };
     setMessages((prev) => [...prev, userMessage]);
+    setFlowmeterResume(null);
 
     hasMessages.current = true;
     beginTyping('Отправляю выбранную подсказку на сервер…');
@@ -2530,8 +2597,52 @@ export function ChatWidget() {
     [scrollToOrderSpecsConfirm],
   );
 
+  const handleResumeFlowmeterScenario = () => {
+    if (!flowmeterResume) return;
+
+    const resumedMessage = cloneFlowmeterResumeMessage(flowmeterResume.message);
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: `flowmeter-resume-user-${Date.now()}`,
+        from: 'user',
+        text: 'Вернуться →',
+        time: new Date(),
+        isHint: true,
+      },
+      ...(resumedMessage ? [resumedMessage] : []),
+    ]);
+    setHintState(flowmeterResume.hintState);
+    setHintLocked(flowmeterResume.hintLocked);
+    lastOrderSpecsRef.current = flowmeterResume.orderSpecs || lastOrderSpecsRef.current;
+    setAwaitingEquipmentSelection(flowmeterResume.awaitingEquipmentSelection);
+    setShowExactCostHint(flowmeterResume.showExactCostHint);
+    setShowTkpPdfHint(flowmeterResume.showTkpPdfHint);
+    setIsSelectingAccessories(flowmeterResume.isSelectingAccessories);
+    setFlowmeterResume(null);
+  };
+
   const handleBack = async () => {
     try {
+      const flowmeterResumeCandidate = isFlowmeterScenario
+        ? {
+            hintState: {
+              currentState: hintState.currentState,
+              hints: hintState.hints || [],
+              showBack: hintState.showBack,
+              isFinal: hintState.isFinal,
+              expectsInput: hintState.expectsInput,
+              hintsOnly: hintState.hintsOnly,
+            },
+            hintLocked,
+            message: findLatestFlowmeterBotMessage(messages),
+            orderSpecs: lastOrderSpecsRef.current,
+            awaitingEquipmentSelection,
+            showExactCostHint,
+            showTkpPdfHint,
+            isSelectingAccessories,
+          }
+        : null;
       let chatIdForBack = null;
       try {
         chatIdForBack = await ensureChatId();
@@ -2601,6 +2712,15 @@ export function ChatWidget() {
         lastOrderSpecsRef.current = response.data.order_specs_json;
       }
 
+      if (newState === 'start' && flowmeterResumeCandidate?.message) {
+        setFlowmeterResume({
+          ...flowmeterResumeCandidate,
+          orderSpecs: response.data.order_specs_json || flowmeterResumeCandidate.orderSpecs,
+        });
+      } else if (newState !== 'start' || isFlowmeterScenario) {
+        setFlowmeterResume(null);
+      }
+
       if (newState === 'order_specs_confirm') {
         const preview = response.data.order_specs_preview;
         if (preview?.review_rows?.length) {
@@ -2648,6 +2768,7 @@ export function ChatWidget() {
     setMessages((prev) => [...prev, newMessage]);
 
     if (from === 'user') {
+      setFlowmeterResume(null);
       hasMessages.current = true;
       const uploadLabel = pdf
         ? hintStepWhenSending === 'order_pdf_request'
@@ -3007,22 +3128,28 @@ export function ChatWidget() {
     }
   };
 
+  const selectOrderSpecsFile = (file) => {
+    if (!file) return false;
+    if (!isAllowedOrderSpecsFile(file)) {
+      alert('Пожалуйста, выберите файл в формате PDF или DOCX');
+      return false;
+    }
+    if (file.size > ORDER_SPECS_MAX_BYTES) {
+      alert('Размер файла не должен превышать 15 МБ');
+      return false;
+    }
+    setSelectedPdf(file);
+    setSelectedImage(null);
+    setImagePreview(null);
+    return true;
+  };
+
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
     if (isOrderPdfStep) {
-      if (!isAllowedOrderSpecsFile(file)) {
-        alert('Пожалуйста, выберите файл в формате PDF или DOCX');
-        return;
-      }
-      if (file.size > ORDER_SPECS_MAX_BYTES) {
-        alert('Размер файла не должен превышать 15 МБ');
-        return;
-      }
-      setSelectedPdf(file);
-      setSelectedImage(null);
-      setImagePreview(null);
+      selectOrderSpecsFile(file);
     } else if (isLiquidTzLikeStep) {
       if (!isAllowedLiquidTzFile(file)) {
         alert('Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR (до 10 МБ)');
@@ -3053,6 +3180,46 @@ export function ChatWidget() {
       setSelectedImage(file);
       setImagePreview(URL.createObjectURL(file));
       setSelectedPdf(null);
+    }
+  };
+
+  const isOrderFileDropEnabled = isOrderPdfStep && !hintState.hintsOnly;
+
+  const eventHasFiles = (event) =>
+    Array.from(event.dataTransfer?.types || []).includes('Files');
+
+  const handleOrderFileDragEnter = (event) => {
+    if (!isOrderFileDropEnabled || !eventHasFiles(event)) return;
+    event.preventDefault();
+    orderFileDragDepthRef.current += 1;
+    setIsOrderFileDragActive(true);
+  };
+
+  const handleOrderFileDragOver = (event) => {
+    if (!isOrderFileDropEnabled || !eventHasFiles(event)) return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'copy';
+    setIsOrderFileDragActive(true);
+  };
+
+  const handleOrderFileDragLeave = (event) => {
+    if (!isOrderFileDropEnabled || !eventHasFiles(event)) return;
+    event.preventDefault();
+    orderFileDragDepthRef.current = Math.max(0, orderFileDragDepthRef.current - 1);
+    if (orderFileDragDepthRef.current === 0) {
+      setIsOrderFileDragActive(false);
+    }
+  };
+
+  const handleOrderFileDrop = (event) => {
+    if (!isOrderFileDropEnabled || !eventHasFiles(event)) return;
+    event.preventDefault();
+    orderFileDragDepthRef.current = 0;
+    setIsOrderFileDragActive(false);
+    const file = event.dataTransfer?.files?.[0];
+    selectOrderSpecsFile(file);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
     }
   };
 
@@ -3239,8 +3406,14 @@ export function ChatWidget() {
       <div
         className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
           isResizingChat ? ' chat-widget__window--resizing' : ''
+        }${isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''}${
+          isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''
         }`}
         style={{ height: chatWindowHeight }}
+        onDragEnter={handleOrderFileDragEnter}
+        onDragOver={handleOrderFileDragOver}
+        onDragLeave={handleOrderFileDragLeave}
+        onDrop={handleOrderFileDrop}
       >
         <div
           className="chat-widget__resize-handle"
@@ -3438,7 +3611,11 @@ export function ChatWidget() {
 
         </div>
 
-        <div className="chat-widget__footer">
+        <div
+          className={`chat-widget__footer${
+            isOrderFileDropEnabled ? ' chat-widget__footer--file-drop-enabled' : ''
+          }${isOrderFileDragActive ? ' chat-widget__footer--file-drop-active' : ''}`}
+        >
           {hintState.currentState === 'equipment_price_phone' && SHOW_EQUIPMENT_PRICE_DEBUG && (
             <div className="chat-widget__hints chat-widget__hints--debug">
               <button
@@ -3513,6 +3690,26 @@ export function ChatWidget() {
             </div>
           )}
 
+          {flowmeterResume && hintState.currentState === 'start' && !awaitingEquipmentSelection && !showExactCostHint && !showTkpPdfHint && !isSelectingAccessories && (
+            <div className="chat-widget__hints chat-widget__hints--resume">
+              <button
+                type="button"
+                className="chat-widget__hint chat-widget__hint--resume"
+                onClick={handleResumeFlowmeterScenario}
+              >
+                <span>Вернуться</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          )}
+
+          {isOrderFileDropEnabled && isOrderFileDragActive && (
+            <div className="chat-widget__file-dropzone" aria-live="polite">
+              <span className="chat-widget__file-dropzone-icon" aria-hidden="true">📎</span>
+              <span>Отпустите PDF или DOCX, чтобы прикрепить файл</span>
+            </div>
+          )}
+
           {imagePreview && (
             <div className="chat-widget__image-preview">
               <img src={imagePreview} alt="Превью" />
@@ -3555,6 +3752,7 @@ export function ChatWidget() {
             </button>
 
             <textarea
+              ref={inputRef}
               className="chat-widget__input"
               rows={1}
               placeholder={
@@ -3573,7 +3771,7 @@ export function ChatWidget() {
                         : 'Напишите сообщение...'
               }
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               disabled={hintState.hintsOnly}
               readOnly={hintState.hintsOnly}
