@@ -1,0 +1,424 @@
+{
+  "summary": {
+    "total_questions": 400,
+    "total_files": 20,
+    "overall_score_pct": 55.9,
+    "overall_retrieval_pct": 42.2,
+    "overall_good": 114,
+    "overall_partial": 219,
+    "overall_fail": 44,
+    "avg_total_ms": 7275.3,
+    "generated_at": "2026-05-27T09:22:10.568775+00:00"
+  },
+  "categories": {
+    "re": {
+      "questions": 140,
+      "score_pct": 54.3,
+      "retrieval_pct": 14.3,
+      "good": 14,
+      "partial": 124,
+      "fail": 2,
+      "avg_ms": 4882.8
+    },
+    "ot": {
+      "questions": 120,
+      "score_pct": 63.8,
+      "retrieval_pct": 37.5,
+      "good": 36,
+      "partial": 81,
+      "fail": 3,
+      "avg_ms": 6915.9
+    },
+    "gost": {
+      "questions": 140,
+      "score_pct": 58.9,
+      "retrieval_pct": 74.3,
+      "good": 64,
+      "partial": 37,
+      "fail": 39,
+      "avg_ms": 9976.0
+    }
+  },
+  "per_file": [
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "questions": 20,
+      "retrieval_pct": 10.0,
+      "good": 2,
+      "partial": 17,
+      "fail": 0,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 4324.9,
+      "score_pct": 52.5
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "questions": 20,
+      "retrieval_pct": 50.0,
+      "good": 9,
+      "partial": 7,
+      "fail": 1,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 5896.6,
+      "score_pct": 62.5
+    },
+    {
+      "source_file": "2939_63.pdf",
+      "questions": 20,
+      "retrieval_pct": 0.0,
+      "good": 0,
+      "partial": 7,
+      "fail": 9,
+      "avg_key_ratio": 0.3,
+      "avg_ms": 5354.6,
+      "score_pct": 17.5
+    },
+    {
+      "source_file": "8.587_2019.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 6,
+      "partial": 0,
+      "fail": 14,
+      "avg_key_ratio": 0.275,
+      "avg_ms": 3992.3,
+      "score_pct": 30.0
+    },
+    {
+      "source_file": "8.589_2007.pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 14,
+      "partial": 1,
+      "fail": 5,
+      "avg_key_ratio": 0.625,
+      "avg_ms": 10114.1,
+      "score_pct": 72.5
+    },
+    {
+      "source_file": "8.611_2013.pdf",
+      "questions": 20,
+      "retrieval_pct": 85.0,
+      "good": 12,
+      "partial": 6,
+      "fail": 2,
+      "avg_key_ratio": 0.625,
+      "avg_ms": 13826.0,
+      "score_pct": 75.0
+    },
+    {
+      "source_file": "8.647_2008.pdf",
+      "questions": 20,
+      "retrieval_pct": 80.0,
+      "good": 10,
+      "partial": 4,
+      "fail": 5,
+      "avg_key_ratio": 0.5,
+      "avg_ms": 10506.3,
+      "score_pct": 60.0
+    },
+    {
+      "source_file": "8.741_2019.pdf",
+      "questions": 20,
+      "retrieval_pct": 60.0,
+      "good": 6,
+      "partial": 10,
+      "fail": 4,
+      "avg_key_ratio": 0.533,
+      "avg_ms": 8433.2,
+      "score_pct": 55.0
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 20,
+      "retrieval_pct": 0.0,
+      "good": 0,
+      "partial": 18,
+      "fail": 0,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 2850.8,
+      "score_pct": 45.0
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 20,
+      "retrieval_pct": 35.0,
+      "good": 7,
+      "partial": 8,
+      "fail": 0,
+      "avg_key_ratio": 0.6,
+      "avg_ms": 12839.7,
+      "score_pct": 55.0
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 20,
+      "retrieval_pct": 40.0,
+      "good": 6,
+      "partial": 13,
+      "fail": 1,
+      "avg_key_ratio": 0.675,
+      "avg_ms": 5555.8,
+      "score_pct": 62.5
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 13,
+      "partial": 6,
+      "fail": 1,
+      "avg_key_ratio": 0.5,
+      "avg_ms": 11541.2,
+      "score_pct": 80.0
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "questions": 20,
+      "retrieval_pct": 5.0,
+      "good": 1,
+      "partial": 17,
+      "fail": 0,
+      "avg_key_ratio": 0.675,
+      "avg_ms": 2811.1,
+      "score_pct": 47.5
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "questions": 20,
+      "retrieval_pct": 5.0,
+      "good": 1,
+      "partial": 19,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 3678.7,
+      "score_pct": 52.5
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "questions": 20,
+      "retrieval_pct": 65.0,
+      "good": 10,
+      "partial": 8,
+      "fail": 1,
+      "avg_key_ratio": 0.675,
+      "avg_ms": 10409.9,
+      "score_pct": 70.0
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "questions": 20,
+      "retrieval_pct": 0.0,
+      "good": 0,
+      "partial": 20,
+      "fail": 0,
+      "avg_key_ratio": 0.8,
+      "avg_ms": 4129.3,
+      "score_pct": 50.0
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "questions": 20,
+      "retrieval_pct": 0.0,
+      "good": 0,
+      "partial": 19,
+      "fail": 0,
+      "avg_key_ratio": 0.625,
+      "avg_ms": 3553.4,
+      "score_pct": 47.5
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "questions": 20,
+      "retrieval_pct": 15.0,
+      "good": 1,
+      "partial": 16,
+      "fail": 0,
+      "avg_key_ratio": 0.5,
+      "avg_ms": 4682.7,
+      "score_pct": 45.0
+    },
+    {
+      "source_file": "РЭ_UFG мод. F Z (акт).pdf",
+      "questions": 20,
+      "retrieval_pct": 5.0,
+      "good": 0,
+      "partial": 19,
+      "fail": 1,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 3401.0,
+      "score_pct": 47.5
+    },
+    {
+      "source_file": "СТО Газпром 5.37-2020 - ЕДИНЫЕ ТЕХНИЧЕСКИЕ ТРЕБОВАНИЯ НА ОБОРУДОВАНИЕ УЗЛОВ ИЗМЕРЕНИЙ РАСХОДА природного газа.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 16,
+      "partial": 4,
+      "fail": 0,
+      "avg_key_ratio": 0.533,
+      "avg_ms": 17605.4,
+      "score_pct": 90.0
+    }
+  ],
+  "worst_files": [
+    {
+      "source_file": "2939_63.pdf",
+      "questions": 20,
+      "retrieval_pct": 0.0,
+      "good": 0,
+      "partial": 7,
+      "fail": 9,
+      "avg_key_ratio": 0.3,
+      "avg_ms": 5354.6,
+      "score_pct": 17.5
+    },
+    {
+      "source_file": "8.587_2019.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 6,
+      "partial": 0,
+      "fail": 14,
+      "avg_key_ratio": 0.275,
+      "avg_ms": 3992.3,
+      "score_pct": 30.0
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 20,
+      "retrieval_pct": 0.0,
+      "good": 0,
+      "partial": 18,
+      "fail": 0,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 2850.8,
+      "score_pct": 45.0
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "questions": 20,
+      "retrieval_pct": 15.0,
+      "good": 1,
+      "partial": 16,
+      "fail": 0,
+      "avg_key_ratio": 0.5,
+      "avg_ms": 4682.7,
+      "score_pct": 45.0
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "questions": 20,
+      "retrieval_pct": 5.0,
+      "good": 1,
+      "partial": 17,
+      "fail": 0,
+      "avg_key_ratio": 0.675,
+      "avg_ms": 2811.1,
+      "score_pct": 47.5
+    }
+  ],
+  "best_files": [
+    {
+      "source_file": "СТО Газпром 5.37-2020 - ЕДИНЫЕ ТЕХНИЧЕСКИЕ ТРЕБОВАНИЯ НА ОБОРУДОВАНИЕ УЗЛОВ ИЗМЕРЕНИЙ РАСХОДА природного газа.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 16,
+      "partial": 4,
+      "fail": 0,
+      "avg_key_ratio": 0.533,
+      "avg_ms": 17605.4,
+      "score_pct": 90.0
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 13,
+      "partial": 6,
+      "fail": 1,
+      "avg_key_ratio": 0.5,
+      "avg_ms": 11541.2,
+      "score_pct": 80.0
+    },
+    {
+      "source_file": "8.611_2013.pdf",
+      "questions": 20,
+      "retrieval_pct": 85.0,
+      "good": 12,
+      "partial": 6,
+      "fail": 2,
+      "avg_key_ratio": 0.625,
+      "avg_ms": 13826.0,
+      "score_pct": 75.0
+    },
+    {
+      "source_file": "8.589_2007.pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 14,
+      "partial": 1,
+      "fail": 5,
+      "avg_key_ratio": 0.625,
+      "avg_ms": 10114.1,
+      "score_pct": 72.5
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "questions": 20,
+      "retrieval_pct": 65.0,
+      "good": 10,
+      "partial": 8,
+      "fail": 1,
+      "avg_key_ratio": 0.675,
+      "avg_ms": 10409.9,
+      "score_pct": 70.0
+    }
+  ],
+  "fail_by_file": [
+    [
+      "8.587_2019.pdf",
+      14
+    ],
+    [
+      "2939_63.pdf",
+      9
+    ],
+    [
+      "8.589_2007.pdf",
+      5
+    ],
+    [
+      "8.647_2008.pdf",
+      5
+    ],
+    [
+      "8.741_2019.pdf",
+      4
+    ],
+    [
+      "8.611_2013.pdf",
+      2
+    ],
+    [
+      "2024-92051-24 ОТ UFL 2024.pdf",
+      1
+    ],
+    [
+      "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      1
+    ],
+    [
+      "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      1
+    ],
+    [
+      "РЭ UFL_(акт).pdf",
+      1
+    ],
+    [
+      "РЭ_UFG мод. F Z (акт).pdf",
+      1
+    ]
+  ]
+}

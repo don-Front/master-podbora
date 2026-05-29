@@ -11,11 +11,6 @@ from .start_flow import StartFlowHandler
 class MessageFlowRouter:
     @staticmethod
     def route(ctx: MessageFlowContext) -> None:
-        from . import faq_service
-
-        if ctx.is_hint_selection and faq_service.apply_to_context(ctx, from_hint=True):
-            return
-
         if ctx.is_hint_selection:
             HintFlowHandler.handle(ctx)
         elif ctx.is_start_like:
@@ -23,6 +18,8 @@ class MessageFlowRouter:
         elif ctx.hint_locked:
             LockedFlowHandler.handle(ctx)
         else:
+            from . import faq_service
+
             if faq_service.apply_to_context(ctx):
                 return
 

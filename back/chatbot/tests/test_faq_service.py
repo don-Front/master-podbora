@@ -47,12 +47,13 @@ class FaqServiceTests(SimpleTestCase):
         self.assertEqual(result.card["actions"][0]["type"], "email")
         self.assertEqual(result.card["actions"][0]["href"], "mailto:info@turbo-don.ru")
 
-    def test_uncertain_faq_intent_returns_two_hints(self):
+    def test_uncertain_faq_intent_returns_text_options_without_buttons(self):
         result = faq_service.answer("скачать документ ufg")
 
         self.assertTrue(result.handled)
-        self.assertEqual(result.hints[0], faq_service.CONSULTATION_HINT)
-        self.assertTrue(result.hints[1].startswith("Где скачать"))
+        self.assertFalse(result.hints)
+        self.assertIn(faq_service.CONSULTATION_HINT, result.text)
+        self.assertIn("Где скачать", result.text)
 
     def test_product_characteristics_question_goes_to_rag(self):
         result = faq_service.answer("какая погрешность у расходомера UFG-H?")

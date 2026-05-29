@@ -69,6 +69,33 @@ class _MetadataProductStore:
     ]
 
 
+class _OilProductStore:
+    active_doc_keys = None
+    chunks = [
+        {
+            "chunk_id": "pressure",
+            "product_title": "Датчик давления Turbo Flow PS",
+            "chunk_type": "catalog",
+            "content": "Датчик давления для промышленного оборудования.",
+            "metadata": {},
+        },
+        {
+            "chunk_id": "cfm",
+            "product_title": "Turbo Flow CFM-ULG",
+            "chunk_type": "passport",
+            "content": "Кориолисовый массовый расходомер для нефти и нефтепродуктов.",
+            "metadata": {"product_family": "CFM"},
+        },
+        {
+            "chunk_id": "ufl",
+            "product_title": "Turbo Flow UFL",
+            "chunk_type": "passport",
+            "content": "Ультразвуковой расходомер жидкости.",
+            "metadata": {"product_family": "UFL"},
+        },
+    ]
+
+
 class _NoRuntimeEncode:
     def encode(self, _text):
         raise AssertionError("search_chunks_by_product не должен кодировать content чанков")
@@ -111,3 +138,13 @@ class ProductDetectorSearchTests(SimpleTestCase):
 
         self.assertEqual(results[0]["chunk_id"], "passport-cfm")
         self.assertEqual(results[0]["metadata"]["source_file"], "РЭ СFМ (акт).pdf")
+
+    def test_oil_flowmeter_question_prefers_liquid_flowmeter_family(self):
+        detector = ProductDetector(_OilProductStore(), _NoRuntimeEncode())
+
+        product, score = detector.detect_product_from_question(
+            "Подбери расходомер для нефти, класс точности 0,1%"
+        )
+
+        self.assertIn("CFM", product)
+        self.assertGreaterEqual(score, 0.7)

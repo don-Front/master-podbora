@@ -226,7 +226,17 @@ def smart_search(
             )
 
             by_id: Dict[str, Dict] = {}
-            for chunk in product_chunks + vector_results:
+            for chunk in product_chunks:
+                chunk_id = chunk.get("chunk_id")
+                if not chunk_id:
+                    continue
+                item = dict(chunk)
+                # Если продукт уже определён, его собственные чанки должны остаться
+                # в контексте даже при сильных нормативных совпадениях BM25.
+                item["score"] = (item.get("score", 0) or 0) + 0.45
+                by_id[chunk_id] = item
+
+            for chunk in vector_results:
                 chunk_id = chunk.get("chunk_id")
                 if not chunk_id:
                     continue

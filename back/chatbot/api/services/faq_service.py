@@ -713,9 +713,10 @@ def answer(question: str, *, from_hint: bool = False) -> FaqAnswer:
             handled=True,
             text=(
                 "Похоже, вопрос может относиться к справочному разделу. "
-                "Выберите подходящий вариант ниже или продолжите формулировать вопрос — я отвечу через базу знаний."
+                f"Если нужен ответ из справочника, напишите: «{match.entry.question}». "
+                "Если нужна помощь специалиста, напишите: «Консультация». "
+                "Или уточните вопрос — я отвечу через базу знаний."
             ),
-            hints=(CONSULTATION_HINT, match.entry.question),
             match=match,
         )
 
@@ -731,9 +732,8 @@ def apply_to_context(ctx, *, from_hint: bool = False) -> bool:
     ctx.next_state = "start"
     ctx.hint_locked = False
     ctx.rag_llm_ms = 0.0
-    if faq_answer.hints:
-        ctx.gas_hints = [{"text": hint, "next_state": "start"} for hint in faq_answer.hints]
-        ctx.gas_expects = False
+    ctx.gas_hints = [{"text": hint, "next_state": "start"} for hint in faq_answer.hints]
+    ctx.gas_expects = False
     if faq_answer.attachment_path:
         ctx.bot_attachment_path = faq_answer.attachment_path
         ctx.bot_attachment_name = faq_answer.attachment_name

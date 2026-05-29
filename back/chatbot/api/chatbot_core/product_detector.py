@@ -84,6 +84,25 @@ def _chunk_product_text(chunk: Dict) -> str:
     )
 
 
+def _keyword_product_candidate(question: str, products: List[str]) -> Tuple[Optional[str], float]:
+    """Подсказка для общих запросов по среде, где модель явно не названа."""
+    q = (question or "").casefold().replace("ё", "е")
+    if not (
+        "расходомер" in q
+        and any(marker in q for marker in ("нефт", "жидк", "масл", "нефтепродукт"))
+    ):
+        return None, 0.0
+
+    normalized_products = [(product, _normalize_for_match(product)) for product in products]
+    priorities = ("cfm ulg", "turbo flow cfm", "cfm", "turbo flow ufl", "ufl")
+    for marker in priorities:
+        marker_norm = f" {_normalize_for_match(marker).strip()} "
+        for product, normalized in normalized_products:
+            if marker_norm in normalized:
+                return product, 0.78
+    return None, 0.0
+
+
 class ProductDetector:
     def __init__(self, store, embedder):
         self.store = store
@@ -147,6 +166,10 @@ class ProductDetector:
                         best_exact_score = score
                 if best_exact and best_exact_score >= 1:
                     return best_exact, 0.95
+
+            keyword_product, keyword_score = _keyword_product_candidate(question, products)
+            if keyword_product:
+                return keyword_product, keyword_score
             
             question_embedding = (
                 query_embedding if query_embedding is not None else self.embedder.encode(question)
