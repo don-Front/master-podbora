@@ -28,6 +28,7 @@ NUMERIC_KEYS = frozenset(
         "diameter",
     }
 )
+OPTIONAL_SPEC_KEYS = frozenset({"gas_type"})
 
 
 def _is_placeholder_text(s: str) -> bool:
@@ -75,7 +76,11 @@ def is_value_missing(key: str, value: Any) -> bool:
 
 def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
     d = merge_draft(draft)
-    return [k for k in SPEC_KEYS if is_value_missing(k, d.get(k))]
+    return [
+        k
+        for k in SPEC_KEYS
+        if k not in OPTIONAL_SPEC_KEYS and is_value_missing(k, d.get(k))
+    ]
 
 
 FIELD_PROMPTS: Dict[str, str] = {
@@ -186,7 +191,7 @@ ORDER_SPECS_CONFIRM_HINT = "Подтвердить и подобрать обо�
 
 FIELD_LABELS: Dict[str, str] = {
     "medium": "Среда измерения",
-    "gas_type": "Тип измеряемой среды",
+    "gas_type": "Тип газа (необязательно)",
     "flowMin": "Минимальный расход",
     "flowMax": "Максимальный расход",
     "flow_unit": "Единица расхода",
@@ -211,6 +216,8 @@ _MEDIUM_DISPLAY = {
 
 def _format_spec_display_value(key: str, value: Any, draft: Dict[str, Any] | None = None) -> str:
     if is_value_missing(key, value):
+        if key in OPTIONAL_SPEC_KEYS:
+            return ""
         return "—"
     if key == "medium":
         s = str(value).strip().lower()

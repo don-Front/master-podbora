@@ -145,6 +145,29 @@ const FLOWMETER_RESUME_MESSAGE_KINDS = new Set([
   'equipment',
 ]);
 
+const PDF_MODE_ORDER_SPECS = 'order_specs';
+const PDF_MODE_LIQUID_TZ = 'liquid_tz';
+const ORDER_SPECS_CONFIRM_TEXT = 'Подтвердить и подобрать оборудование';
+const GAZPROM_REGISTRY_HINT_TEXT = 'внесен в реестр  МТР ПАО "Газпром"';
+const GAZPROM_REGISTRY_EQUIPMENT_IDS = new Set([
+  'ufg2',
+  'tfgs1',
+  'tfgh1',
+  'ufgfc1',
+  'ufgh1',
+  'ufl1',
+]);
+
+function isGazpromRegistryEquipment(item) {
+  const id = equipmentIdFromItem(item).toLowerCase();
+  return GAZPROM_REGISTRY_EQUIPMENT_IDS.has(id);
+}
+
+function applyGazpromRegistryFilter(equipment, enabled) {
+  if (!enabled || !Array.isArray(equipment)) return equipment;
+  return equipment.filter(isGazpromRegistryEquipment);
+}
+
 function findLatestFlowmeterBotMessage(messages) {
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const msg = messages[i];
@@ -834,13 +857,32 @@ function fileNameFromUrl(url) {
   }
 }
 
+function attachmentFileKind(filename, url) {
+  const name = String(filename || fileNameFromUrl(url) || '')
+    .trim()
+    .toLowerCase()
+    .split('?')[0]
+    .split('#')[0];
+  if (name.endsWith('.docx')) return 'docx';
+  if (name.endsWith('.doc')) return 'doc';
+  return 'pdf';
+}
+
+function attachmentKindLabel(kind) {
+  if (kind === 'docx') return 'DOCX';
+  if (kind === 'doc') return 'DOC';
+  return 'PDF';
+}
+
 function AttachmentPdfCard({ url, filename, title = 'Файл для скачивания' }) {
   if (!url) return null;
   const displayName = filename || fileNameFromUrl(url) || 'Вложение.pdf';
+  const fileKind = attachmentFileKind(displayName, url);
+  const kindLabel = attachmentKindLabel(fileKind);
   return (
-    <div className="chat-widget__pdf-card chat-widget__pdf-card--attachment">
+    <div className={`chat-widget__pdf-card chat-widget__pdf-card--attachment chat-widget__pdf-card--${fileKind}`}>
       <a
-        className="chat-widget__pdf-preview-box"
+        className={`chat-widget__pdf-preview-box chat-widget__pdf-preview-box--${fileKind}`}
         href={url}
         target="_blank"
         rel="noopener noreferrer"
@@ -848,7 +890,7 @@ function AttachmentPdfCard({ url, filename, title = 'Файл для скачи�
         title={`Скачать ${displayName}`}
       >
         <div className="chat-widget__pdf-placeholder">
-          <span className="chat-widget__pdf-label">PDF</span>
+          <span className={`chat-widget__pdf-label chat-widget__pdf-label--${fileKind}`}>{kindLabel}</span>
         </div>
         <span className="chat-widget__pdf-download" aria-hidden="true">
           ↓
@@ -953,7 +995,7 @@ function AccessoriesSelector({ items, selectedIds, onToggle }) {
   );
 }
 
-function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
+function EquipmentShowcase({ items, onPick, onCurrentItemChange, pickDisabled = false }) {
   const [idx, setIdx] = useState(0);
   const [imageFailed, setImageFailed] = useState(false);
   const [urlIndex, setUrlIndex] = useState(0);
@@ -965,10 +1007,10 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
 
   const imageCandidates = useMemo(
     () => [
-      ...getBundledEquipmentImageUrls(item),
       ...getEquipmentImageCandidateUrlsFromItem(item),
+      ...getBundledEquipmentImageUrls(item),
     ],
-    [item.id, item.image, item.image_url, item.image_path]
+    [item.id, item.image, item.image_url, item.image_path, item.model, item.name]
   );
   const src = imageCandidates[urlIndex] || '';
 
@@ -985,6 +1027,7 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
   if (!Array.isArray(items) || items.length === 0) return null;
 
   const handleSelectCurrent = () => {
+    if (pickDisabled) return;
     if (typeof onPick !== 'function' || !item || Object.keys(item).length === 0) return;
     onPick({ ...item });
   };
@@ -1017,17 +1060,21 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange }) {
         </div>
       )}
       <div
-        className="chat-widget__equipment-card chat-widget__equipment-card--selectable"
+        className={`chat-widget__equipment-card chat-widget__equipment-card--selectable${
+          pickDisabled ? ' chat-widget__equipment-card--disabled' : ''
+        }`}
         role="button"
-        tabIndex={0}
+        tabIndex={pickDisabled ? -1 : 0}
         onClick={handleSelectCurrent}
         onKeyDown={(e) => {
+          if (pickDisabled) return;
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             handleSelectCurrent();
           }
         }}
-        aria-label={`Выбрать: ${label}`}
+        aria-disabled={pickDisabled}
+        aria-label={`Получить цену: ${label}`}
       >
         {src && !imageFailed ? (
           <img
@@ -1117,6 +1164,7 @@ export function ChatWidget() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [selectedPdf, setSelectedPdf] = useState(null);
+  const [selectedPdfMode, setSelectedPdfMode] = useState(null);
   const [isOrderFileDragActive, setIsOrderFileDragActive] = useState(false);
 
   const [hintState, setHintState] = useState({
@@ -1166,6 +1214,7 @@ export function ChatWidget() {
   const [showTkpPdfHint, setShowTkpPdfHint] = useState(false);
   const [flowmeterResume, setFlowmeterResume] = useState(null);
   const [isSelectingAccessories, setIsSelectingAccessories] = useState(false);
+  const [gazpromRegistryOnly, setGazpromRegistryOnly] = useState(false);
   /** На слайдере/аксессуарах не показываем меню order_final («Расходомеры», «Продажа»…). */
   const footerScenarioHints =
     awaitingEquipmentSelection || isSelectingAccessories || showExactCostHint || showTkpPdfHint
@@ -1216,6 +1265,9 @@ export function ChatWidget() {
   const gasSpuRef = useRef({});
   const selectedAccessoriesRef = useRef([]);
   const [selectedAccessoryIds, setSelectedAccessoryIds] = useState([]);
+  const showGazpromRegistryToggle =
+    hintState.currentState === 'order_specs_confirm' &&
+    footerScenarioHints.some((hint) => hint?.text === ORDER_SPECS_CONFIRM_TEXT);
 
   const beginTyping = useCallback((stage) => {
     const s = (stage && String(stage).trim()) || 'Обрабатываю запрос…';
@@ -1241,27 +1293,18 @@ export function ChatWidget() {
     setTypingDetailsOpen((open) => !open);
   }, []);
 
-  const pickEquipmentToInput = useCallback((raw) => {
-    if (typeof console.clear === 'function') {
-      console.clear();
-    }
-    if (raw && typeof raw === 'object') {
-      console.log({ ...raw });
-    } else {
-      console.log(raw);
-    }
-    const line = (raw?.model || raw?.name || '').toString().trim();
-    if (line) {
-      setInputValue(line);
-    }
-  }, []);
-
   const chatIdRef = useRef(null);
   const chatCreatePromiseRef = useRef(null);
 
   useEffect(() => {
     chatIdRef.current = chatId;
   }, [chatId]);
+
+  useEffect(() => {
+    if (hintState.currentState !== 'order_specs_confirm') {
+      setGazpromRegistryOnly(false);
+    }
+  }, [hintState.currentState]);
 
   /** Чат в БД создаётся при первом сообщении/подсказке (не при F5), чтобы не дублировать POST и не ловить 500 до действия пользователя. */
   const ensureChatId = useCallback(async () => {
@@ -1474,11 +1517,11 @@ export function ChatWidget() {
   }, [inputValue, adjustInputHeight, hintState.hintsOnly, hintState.currentState]);
 
   useEffect(() => {
-    if (!isOrderPdfStep) {
+    if (!isOpen) {
       orderFileDragDepthRef.current = 0;
       setIsOrderFileDragActive(false);
     }
-  }, [isOrderPdfStep]);
+  }, [isOpen]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -1835,13 +1878,17 @@ export function ChatWidget() {
 
       if (isOrderFinalWithSpecs(response.data)) {
         const specs = response.data.order_specs_json;
+        const registryOnlyForSearch =
+          gazpromRegistryOnly && hint?.text === ORDER_SPECS_CONFIRM_TEXT;
         try {
           updateTypingStage('Подбор оборудования (GET search-equipment)…');
           const res = await fetchSearchEquipment(specs);
           const d = res.data;
-          if (d?.status === 'success' && Array.isArray(d?.equipment) && d.equipment.length > 0) {
+          const foundEquipment = Array.isArray(d?.equipment) ? d.equipment : [];
+          const equipment = applyGazpromRegistryFilter(foundEquipment, registryOnlyForSearch);
+          if (d?.status === 'success' && equipment.length > 0) {
             lastOrderSpecsRef.current = specs;
-            const firstItem = d.equipment[0];
+            const firstItem = equipment[0];
             if (firstItem) sliderEquipmentRef.current = firstItem;
             setMessages((prev) => [
               ...prev,
@@ -1849,7 +1896,7 @@ export function ChatWidget() {
                 id: `eq-hint-${Date.now()}`,
                 from: 'bot',
                 kind: 'equipment',
-                equipment: d.equipment,
+                equipment,
                 orderSpecs: specs,
                 currentEquipment: firstItem || null,
                 time: new Date(),
@@ -1857,15 +1904,22 @@ export function ChatWidget() {
             ]);
             setAwaitingEquipmentSelection(true);
           } else {
+            const emptyRegistryMessage =
+              registryOnlyForSearch && foundEquipment.length > 0
+                ? 'Среди найденного оборудования нет приборов, внесённых в реестр МТР ПАО "Газпром".'
+                : null;
             setMessages((prev) => [
               ...prev,
               {
                 id: Date.now(),
                 from: 'bot',
-                text: d?.message || 'Данные приняты, список оборудования пуст.',
+                text: emptyRegistryMessage || d?.message || 'Данные приняты, список оборудования пуст.',
                 time: new Date(),
               },
             ]);
+          }
+          if (registryOnlyForSearch) {
+            setGazpromRegistryOnly(false);
           }
         } catch (err) {
           console.error('[search-equipment] ошибка:', err);
@@ -2121,8 +2175,12 @@ export function ChatWidget() {
     });
   }, []);
 
-  const handleGetPriceHint = async () => {
+  const handleGetPriceHint = async (equipmentOverride = null) => {
     if (equipmentPriceActionLockRef.current) return;
+    if (equipmentOverride && typeof equipmentOverride === 'object') {
+      sliderEquipmentRef.current = equipmentOverride;
+      syncSliderEquipment(equipmentOverride);
+    }
     const eq = resolveEquipmentForPrice(sliderEquipmentRef.current, messages);
     const label = (eq?.model || eq?.name || '').toString().trim();
     if (!label) {
@@ -2751,10 +2809,12 @@ export function ChatWidget() {
     }
   };
 
-  const addMessage = async (text, from = 'user', image = null, pdf = null) => {
+  const addMessage = async (text, from = 'user', image = null, pdf = null, options = {}) => {
     if (!text.trim() && !image && !pdf) return;
 
-    const hintStepWhenSending = hintState.currentState;
+    const forceOrderSpecsFlow = Boolean(options.forceOrderSpecsFlow);
+    const hintStepWhenSending = forceOrderSpecsFlow ? 'order_pdf_request' : hintState.currentState;
+    const hintLockedWhenSending = forceOrderSpecsFlow ? true : hintLocked;
 
     const newMessage = {
       id: Date.now(),
@@ -2784,9 +2844,9 @@ export function ChatWidget() {
         const id = await ensureChatId();
         const msgPayload = {
           content: text.trim(),
-          hint_state: hintState.currentState,
+          hint_state: hintStepWhenSending,
           is_hint_selection: false,
-          hint_locked: hintLocked,
+          hint_locked: hintLockedWhenSending,
         };
         if (hintStepWhenSending === 'verification_installations_liquid_tz_comments' && text.trim()) {
           liquidInstallationLeadRef.current = {
@@ -3006,13 +3066,16 @@ export function ChatWidget() {
 
         if (isOrderFinalWithSpecs(response.data)) {
           const specs = response.data.order_specs_json;
+          const registryOnlyForSearch = gazpromRegistryOnly;
           try {
             updateTypingStage('Подбор оборудования (GET search-equipment)…');
             const res = await fetchSearchEquipment(specs);
             const d = res.data;
-            if (d?.status === 'success' && Array.isArray(d?.equipment) && d.equipment.length > 0) {
+            const foundEquipment = Array.isArray(d?.equipment) ? d.equipment : [];
+            const equipment = applyGazpromRegistryFilter(foundEquipment, registryOnlyForSearch);
+            if (d?.status === 'success' && equipment.length > 0) {
               lastOrderSpecsRef.current = specs;
-              const firstItem = d.equipment[0];
+              const firstItem = equipment[0];
               if (firstItem) sliderEquipmentRef.current = firstItem;
               setMessages((prev) => [
                 ...prev,
@@ -3020,7 +3083,7 @@ export function ChatWidget() {
                   id: `eq-${Date.now()}`,
                   from: 'bot',
                   kind: 'equipment',
-                  equipment: d.equipment,
+                  equipment,
                   orderSpecs: specs,
                   currentEquipment: firstItem || null,
                   time: new Date(),
@@ -3028,15 +3091,22 @@ export function ChatWidget() {
               ]);
               setAwaitingEquipmentSelection(true);
             } else {
+              const emptyRegistryMessage =
+                registryOnlyForSearch && foundEquipment.length > 0
+                  ? 'Среди найденного оборудования нет приборов, внесённых в реестр МТР ПАО "Газпром".'
+                  : null;
               setMessages((prev) => [
                 ...prev,
                 {
                   id: Date.now(),
                   from: 'bot',
-                  text: d?.message || 'Данные приняты, список оборудования пуст.',
+                  text: emptyRegistryMessage || d?.message || 'Данные приняты, список оборудования пуст.',
                   time: new Date(),
                 },
               ]);
+            }
+            if (registryOnlyForSearch) {
+              setGazpromRegistryOnly(false);
             }
           } catch (err) {
             console.error('[search-equipment] ошибка:', err);
@@ -3139,6 +3209,7 @@ export function ChatWidget() {
       return false;
     }
     setSelectedPdf(file);
+    setSelectedPdfMode(PDF_MODE_ORDER_SPECS);
     setSelectedImage(null);
     setImagePreview(null);
     return true;
@@ -3160,6 +3231,7 @@ export function ChatWidget() {
         return;
       }
       setSelectedPdf(file);
+      setSelectedPdfMode(PDF_MODE_LIQUID_TZ);
       setSelectedImage(null);
       setImagePreview(null);
       liquidTzFileRef.current = {
@@ -3180,10 +3252,11 @@ export function ChatWidget() {
       setSelectedImage(file);
       setImagePreview(URL.createObjectURL(file));
       setSelectedPdf(null);
+      setSelectedPdfMode(null);
     }
   };
 
-  const isOrderFileDropEnabled = isOrderPdfStep && !hintState.hintsOnly;
+  const isOrderFileDropEnabled = isOpen;
 
   const eventHasFiles = (event) =>
     Array.from(event.dataTransfer?.types || []).includes('Files');
@@ -3227,6 +3300,7 @@ export function ChatWidget() {
     setSelectedImage(null);
     setImagePreview(null);
     setSelectedPdf(null);
+    setSelectedPdfMode(null);
     if (
       hintState.currentState === 'verification_installations_liquid_tz' ||
       hintState.currentState === 'verification_installations_gas_application_tz'
@@ -3243,12 +3317,16 @@ export function ChatWidget() {
   };
 
   const handleSend = () => {
-    if (hintState.hintsOnly) return;
+    const isOrderSpecsPdf = selectedPdf && selectedPdfMode === PDF_MODE_ORDER_SPECS;
+    if (hintState.hintsOnly && !isOrderSpecsPdf) return;
     if (!inputValue.trim() && !selectedImage && !selectedPdf) return;
-    addMessage(inputValue, 'user', selectedImage, selectedPdf);
+    addMessage(inputValue, 'user', selectedImage, selectedPdf, {
+      forceOrderSpecsFlow: isOrderSpecsPdf,
+    });
     setSelectedImage(null);
     setImagePreview(null);
     setSelectedPdf(null);
+    setSelectedPdfMode(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -3462,8 +3540,12 @@ export function ChatWidget() {
                 {message.kind === 'equipment' && message.equipment?.length ? (
                   <EquipmentShowcase
                     items={message.equipment}
-                    onPick={pickEquipmentToInput}
+                    onPick={(item) => {
+                      if (!awaitingEquipmentSelection || isEquipmentPriceActionBusy) return;
+                      handleGetPriceHint(item);
+                    }}
                     onCurrentItemChange={syncSliderEquipment}
+                    pickDisabled={!awaitingEquipmentSelection || isEquipmentPriceActionBusy}
                   />
                 ) : message.kind === 'order_specs_confirm' && message.orderSpecsRows?.length ? (
                   <OrderSpecsConfirmTable
@@ -3679,6 +3761,16 @@ export function ChatWidget() {
                   {hint.text}
                 </button>
               ))}
+              {showGazpromRegistryToggle && (
+                <button
+                  type="button"
+                  className={`chat-widget__hint chat-widget__hint--registry${gazpromRegistryOnly ? ' chat-widget__hint--registry-selected' : ''}`}
+                  onClick={() => setGazpromRegistryOnly((selected) => !selected)}
+                  aria-pressed={gazpromRegistryOnly}
+                >
+                  {GAZPROM_REGISTRY_HINT_TEXT}
+                </button>
+              )}
             </div>
           )}
 
@@ -3706,7 +3798,7 @@ export function ChatWidget() {
           {isOrderFileDropEnabled && isOrderFileDragActive && (
             <div className="chat-widget__file-dropzone" aria-live="polite">
               <span className="chat-widget__file-dropzone-icon" aria-hidden="true">📎</span>
-              <span>Отпустите PDF или DOCX, чтобы прикрепить файл</span>
+              <span>Отпустите PDF или DOCX, чтобы запустить подбор расходомеров</span>
             </div>
           )}
 
@@ -3780,7 +3872,7 @@ export function ChatWidget() {
               type="button"
               className="chat-widget__send-btn"
               onClick={handleSend}
-              disabled={!inputValue.trim() && !selectedImage && !selectedPdf}
+              disabled={(!inputValue.trim() && !selectedImage && !selectedPdf) || (hintState.hintsOnly && selectedPdfMode !== PDF_MODE_ORDER_SPECS)}
             >
               ➤
             </button>

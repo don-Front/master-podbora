@@ -1,5 +1,4 @@
 import turboFlowCfm from './equipment/Turbo_Flow_CFM.png';
-import turboFlowGfg from './equipment/Turbo Flow GFG.png';
 import turboFlowTfgH from './equipment/Turbo Flow TFG-H.png';
 import turboFlowTfgS from './equipment/Turbo Flow TFG-S.png';
 import turboFlowUdm from './equipment/Turbo Flow UDM.png';
@@ -11,8 +10,6 @@ import turboFlowUfl from './equipment/Turbo Flow UFL.png';
 const IMAGE_BY_FILE = new Map([
   ['turbo flow cfm.png', turboFlowCfm],
   ['turbo_flow_cfm.png', turboFlowCfm],
-  ['turbo flow gfg.png', turboFlowGfg],
-  ['turbo_flow_gfg.png', turboFlowGfg],
   ['turbo flow tfg-h.png', turboFlowTfgH],
   ['turbo_flow_tfg-h.png', turboFlowTfgH],
   ['turbo flow tfg-s.png', turboFlowTfgS],

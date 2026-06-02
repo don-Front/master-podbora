@@ -2,6 +2,7 @@
 
 from django.test import SimpleTestCase
 
+from api.order_specs_helpers import build_order_specs_review_rows, list_missing_fields
 from api.order_specs_text import looks_like_order_specs_request
 
 
@@ -27,3 +28,32 @@ class OrderSpecsIntentTest(SimpleTestCase):
     def test_short_or_empty(self):
         self.assertFalse(looks_like_order_specs_request("подбор"))
         self.assertFalse(looks_like_order_specs_request(""))
+
+
+class OrderSpecsOptionalFieldsTest(SimpleTestCase):
+    def test_gas_type_is_optional_for_selection(self):
+        draft = {
+            "medium": "gas",
+            "gas_type": None,
+            "flowMin": 10,
+            "flowMax": 500,
+            "flow_unit": "ст.м³/ч",
+            "pressureMin": 0.1,
+            "pressureMax": 1.6,
+            "pressure_unit": "МПа",
+            "tempMediumMin": -10,
+            "tempMediumMax": 30,
+            "tempAmbientMin": -40,
+            "tempAmbientMax": 40,
+            "temperature_unit": "°C",
+            "accuracy": "1%",
+            "diameter": 100,
+        }
+
+        self.assertNotIn("gas_type", list_missing_fields(draft))
+
+        gas_type_row = next(
+            row for row in build_order_specs_review_rows(draft) if row["key"] == "gas_type"
+        )
+        self.assertEqual(gas_type_row["label"], "Тип газа (необязательно)")
+        self.assertEqual(gas_type_row["value"], "")

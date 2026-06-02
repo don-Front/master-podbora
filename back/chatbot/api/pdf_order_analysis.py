@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import io
+import hashlib
 import json
 import logging
 import os
@@ -68,6 +69,14 @@ OCR_ZOOM = 1.25
 MAX_OCR_CHARS = 120_000
 MIN_PAGE_NATIVE_TEXT_CHARS = 40
 MAX_LLM_INPUT_CHARS = 12_000
+PIPELINE_CACHE_VERSION = "order-specs-pdf-v4"
+
+_PIPELINE_CACHE_DIR = os.path.normpath(
+    os.environ.get(
+        "ORDER_SPECS_PIPELINE_CACHE_DIR",
+        os.path.join(os.path.dirname(__file__), "..", "media", "order_specs_cache"),
+    )
+)
 
 # Строки с ключевыми словами для урезания текста перед LLM (полный текст — в postprocess)
 _LLM_KEYWORD_RE = re.compile(
@@ -84,6 +93,54 @@ def _get_easyocr_reader():
 
         _easyocr_reader = easyocr.Reader(["ru", "en"], gpu=False, verbose=False)
     return _easyocr_reader
+
+
+def _file_sha256(file_path: str) -> str:
+    h = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _pipeline_cache_path(file_hash: str) -> str:
+    safe_name = re.sub(r"[^a-fA-F0-9]", "", file_hash)
+    return os.path.join(_PIPELINE_CACHE_DIR, f"{PIPELINE_CACHE_VERSION}-{safe_name}.json")
+
+
+def _load_pipeline_cache(file_hash: str) -> Optional[Dict[str, Any]]:
+    path = _pipeline_cache_path(file_hash)
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            cached = json.load(f)
+    except FileNotFoundError:
+        return None
+    except Exception:
+        logger.exception("PDF pipeline cache read failed: %s", path)
+        return None
+
+    if not isinstance(cached, dict):
+        return None
+    if cached.get("version") != PIPELINE_CACHE_VERSION:
+        return None
+    payload = cached.get("payload")
+    return payload if isinstance(payload, dict) else None
+
+
+def _save_pipeline_cache(file_hash: str, payload: Dict[str, Any]) -> None:
+    try:
+        os.makedirs(_PIPELINE_CACHE_DIR, exist_ok=True)
+        path = _pipeline_cache_path(file_hash)
+        tmp_path = path + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(
+                {"version": PIPELINE_CACHE_VERSION, "payload": payload},
+                f,
+                ensure_ascii=False,
+            )
+        os.replace(tmp_path, path)
+    except Exception:
+        logger.exception("PDF pipeline cache write failed")
 
 
 def warmup_easyocr_reader() -> None:
@@ -144,19 +201,15 @@ def pdf_to_text(file_path: str) -> Tuple[str, str]:
                 ocr_indices.append(i)
                 if native:
                     parts_by_index[i] = native
-    finally:
-        doc.close()
 
-    if ocr_indices:
-        reader = _get_easyocr_reader()
-        doc = fitz.open(file_path)
-        try:
+        if ocr_indices:
+            reader = _get_easyocr_reader()
             for i in ocr_indices:
                 ocr_line = _ocr_page_text(doc[i], reader)
                 if ocr_line.strip():
                     parts_by_index[i] = ocr_line
-        finally:
-            doc.close()
+    finally:
+        doc.close()
 
     parts = [
         parts_by_index[i]
@@ -292,6 +345,35 @@ def _parse_json_from_llm(raw: str) -> Dict[str, Any]:
     return obj
 
 
+def _parse_specs_pairs_from_llm(raw: str) -> Dict[str, Any]:
+    """
+    Fallback для ответов, где модель начала корректный JSON с нужными ключами,
+    но затем добавила лишний вложенный блок и сломала общий парсинг.
+    """
+    text = raw or ""
+    data: Dict[str, Any] = {}
+    for key in SPEC_KEYS:
+        m = re.search(
+            rf'"{re.escape(key)}"\s*:\s*(null|"(?:\\.|[^"\\])*"|-?\d+(?:[.,]\d+)?)',
+            text,
+            re.IGNORECASE,
+        )
+        if not m:
+            continue
+        token = m.group(1)
+        if token == "null":
+            data[key] = None
+        elif token.startswith('"'):
+            try:
+                data[key] = json.loads(token)
+            except json.JSONDecodeError:
+                data[key] = token.strip('"')
+        else:
+            n = _parse_first_number(token)
+            data[key] = int(n) if n is not None and abs(n - int(n)) < 1e-9 else n
+    return data
+
+
 def _parse_first_number(text: str) -> Optional[float]:
     m = re.search(r"-?\d+(?:[.,]\d+)?", (text or "").replace(",", "."))
     if not m:
@@ -302,6 +384,30 @@ def _parse_first_number(text: str) -> Optional[float]:
         return None
 
 
+def _coerce_numeric_value(value: Any) -> Any:
+    if value is None or isinstance(value, (int, float)):
+        return value
+    if isinstance(value, str):
+        n = _parse_first_number(value)
+        if n is not None:
+            return int(n) if abs(n - int(n)) < 1e-9 else n
+    return value
+
+
+def _normalize_ocr_for_patterns(text: str) -> str:
+    """Упрощает типичные OCR-искажения, не меняя исходный текст для LLM."""
+    s = text or ""
+    replacements = {
+        "з": "3",
+        "З": "3",
+        "О": "0",
+        "о": "0",
+        "I": "1",
+        "l": "1",
+    }
+    return "".join(replacements.get(ch, ch) for ch in s)
+
+
 def extract_specs_heuristic(document_text: str) -> Dict[str, Any]:
     """
     Извлечение полей из типового опросного листа (без LLM).
@@ -309,6 +415,7 @@ def extract_specs_heuristic(document_text: str) -> Dict[str, Any]:
     """
     text = document_text or ""
     low = text.lower()
+    pattern_text = _normalize_ocr_for_patterns(text)
     out: Dict[str, Any] = {k: None for k in SPEC_KEYS}
 
     if re.search(r"природн\w*\s+газ", low) or "■" in text and "природный газ" in low:
@@ -365,6 +472,38 @@ def extract_specs_heuristic(document_text: str) -> Dict[str, Any]:
             out["flowMin"] = int(min(a, b))
             out["flowMax"] = int(max(a, b))
             out["flow_unit"] = "ст.м³/ч"
+    else:
+        m = re.search(
+            r"(?:измеряем\w*\s+расход|расход)[^\n\r]{0,120}?"
+            r"m\s*(?:i|1|l)?\s*n?\s*m\s*(?:a|n)?\s*x?[\s\S]{0,120}?(\d{2,7})"
+            r"(?:\s+(\d{2,7}))?",
+            pattern_text,
+            re.IGNORECASE,
+        )
+        if m:
+            nums = [
+                _parse_first_number(re.sub(r"\s", "", g))
+                for g in m.groups()
+                if g
+            ]
+            nums = [n for n in nums if n is not None and n > 0]
+            if nums:
+                if len(nums) >= 2:
+                    out["flowMin"] = int(min(nums))
+                    out["flowMax"] = int(max(nums))
+                else:
+                    out["flowMax"] = int(nums[0])
+                out["flow_unit"] = "ст.м³/ч" if re.search(r"м\s*[³3]?\s*/?\s*ч|т\s*ч", low) else out.get("flow_unit")
+
+    if out.get("diameter") is None:
+        m = re.search(
+            r"(?:внутренн\w*\s+диаметр\s+трубопровод\w*|номинальн\w*\s+диаметр|DN|ДУ)"
+            r"[\s\S]{0,120}?(\d{2,4})",
+            pattern_text,
+            re.IGNORECASE,
+        )
+        if m:
+            out["diameter"] = int(m.group(1))
 
     m = re.search(
         r"температур\w*\s+измеряем\w*\s+сред\w*[\s\S]{0,250}?min[^\d-]{0,30}(-?\d+)"
@@ -486,7 +625,20 @@ def _normalize_specs(data: Dict[str, Any]) -> Dict[str, Any]:
             merged[_SPEC_LEGACY_ALIASES[k]] = v
     out: Dict[str, Any] = {}
     for k in SPEC_KEYS:
-        out[k] = merged.get(k)
+        value = merged.get(k)
+        if k in (
+            "flowMin",
+            "flowMax",
+            "pressureMin",
+            "pressureMax",
+            "tempMediumMin",
+            "tempMediumMax",
+            "tempAmbientMin",
+            "tempAmbientMax",
+            "diameter",
+        ):
+            value = _coerce_numeric_value(value)
+        out[k] = value
     return out
 
 
@@ -506,6 +658,8 @@ def normalize_accuracy_value(value: Any) -> Any:
     if value is None:
         return None
     s = _normalize_accuracy_letter(str(value).strip())
+    if _is_missing_accuracy(s):
+        return None
     if s in {"А", "Б"}:
         return "0,5%"
     if s in {"В", "Г"}:
@@ -589,6 +743,8 @@ def _build_specs_extraction_prompt(document_text: str) -> Tuple[str, str]:
         "Ты извлекаешь технические параметры расходомера из опросного листа или ТУ. "
         "Ответ — только один JSON-объект, без markdown и пояснений. "
         f"Ключи: {', '.join(SPEC_KEYS)}. "
+        "Не добавляй другие ключи, вложенные объекты или таблицы состава газа. "
+        "Состав газа нужен только для вывода medium/gas_type, сами компоненты не перечисляй. "
         'medium: "gas", "liquid" или "unknown". '
         "tempMediumMin/Max — температура измеряемой среды; tempAmbientMin/Max — окружающей среды. "
         'temperature_unit — одна строка для всех четырёх температур. '
@@ -597,7 +753,8 @@ def _build_specs_extraction_prompt(document_text: str) -> Tuple[str, str]:
     )
     user_content = (
         "Извлеки параметры из текста опросного листа ниже. "
-        "Верни ТОЛЬКО JSON по структуре примера (значения замени на найденные в тексте).\n"
+        "Верни ТОЛЬКО JSON по структуре примера (значения замени на найденные в тексте). "
+        "Запрещено добавлять поля вне примера.\n"
         f"Пример структуры:\n{schema_hint}\n\n"
         f"Текст документа:\n---\n{user_block}\n---"
     )
@@ -663,10 +820,20 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str, flo
         data = _parse_json_from_llm(raw)
     except Exception as llm_err:
         llm_ms = _ms_elapsed(t_llm)
-        logger.warning("LM Studio извлечение не удалось: %s", llm_err)
+        recovered = _parse_specs_pairs_from_llm(raw)
+        if recovered:
+            data = recovered
+            logger.warning(
+                "LM Studio вернула невалидный JSON (%s); восстановлено %s полей по SPEC_KEYS",
+                llm_err,
+                sum(1 for v in recovered.values() if v is not None),
+            )
+        else:
+            logger.warning("LM Studio извлечение не удалось: %s", llm_err)
 
     specs = _merge_specs(data, heuristic)
     specs = _postprocess_specs(specs, ocr_text)
+    specs = _prefer_consistent_heuristic_ranges(specs, heuristic)
 
     missing = list_missing_fields(specs)
     if len(missing) > 6 and full_len > 500:
@@ -680,6 +847,30 @@ def analyze_specs_with_llm(ocr_text: str, llm) -> Tuple[Dict[str, Any], str, flo
         raise RuntimeError("не удалось извлечь параметры из документа")
 
     return specs, raw, llm_ms
+
+
+def _prefer_consistent_heuristic_ranges(specs: Dict[str, Any], heuristic: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    LLM иногда выбирает число из соседней строки таблицы как минимум расхода/давления.
+    Если эвристика нашла только верхний предел, а LLM добавила меньший минимум,
+    оставляем максимум из эвристики как более надёжный и не придумываем минимум.
+    """
+    out = _normalize_specs(specs)
+    h = _normalize_specs(heuristic)
+
+    for min_key, max_key in (("flowMin", "flowMax"), ("pressureMin", "pressureMax")):
+        h_max = h.get(max_key)
+        h_min = h.get(min_key)
+        out_min = out.get(min_key)
+        out_max = out.get(max_key)
+        if h_max is None or h_min is not None:
+            continue
+        if out_max is None or abs(float(out_max) - float(h_max)) > 1e-9:
+            continue
+        if out_min is not None and float(out_min) < float(h_max):
+            out[min_key] = None
+
+    return _normalize_specs(out)
 
 
 def run_pdf_order_pipeline(
@@ -697,6 +888,7 @@ def run_pdf_order_pipeline(
     err = ""
     ocr_text = ""
     llm_ms = 0.0
+    file_hash = ""
     text_source = "pdf_ocr"
     if is_docx_attachment(attachment_abs_path):
         text_source = "docx"
@@ -707,7 +899,38 @@ def run_pdf_order_pipeline(
         "ocr_chars": 0,
         "llm_input_chars": 0,
         "text_source": text_source,
+        "cache_hit": False,
     }
+
+    try:
+        file_hash = _file_sha256(attachment_abs_path)
+        cached = _load_pipeline_cache(file_hash)
+    except Exception:
+        logger.exception("PDF pipeline cache lookup failed")
+        cached = None
+
+    if cached:
+        specs = _normalize_specs(cached.get("specs") or {})
+        ocr_text = str(cached.get("ocr_text") or "")
+        err = str(cached.get("err") or "")
+        llm_raw = str(cached.get("llm_raw") or "")
+        cached_timing = cached.get("timing") if isinstance(cached.get("timing"), dict) else {}
+        timing.update(cached_timing)
+        timing["cache_hit"] = True
+        timing["cached_ocr_ms"] = cached_timing.get("ocr_ms", 0)
+        timing["cached_llm_ms"] = cached_timing.get("llm_ms", 0)
+        timing["cached_pipeline_ms"] = cached_timing.get("pipeline_ms", 0)
+        timing["ocr_ms"] = 0.0
+        timing["llm_ms"] = 0.0
+        timing["pipeline_ms"] = _ms_elapsed(t_pipeline)
+        timing["ocr_chars"] = len(ocr_text or "")
+        timing["llm_input_chars"] = len(trim_text_for_llm(ocr_text))
+        logger.info(
+            "[Чатбот заказ] PDF pipeline cache hit: %s символов, исходный пайплайн %s ms",
+            timing["ocr_chars"],
+            timing.get("cached_pipeline_ms"),
+        )
+        return specs, ocr_text, err, llm_raw, timing
 
     ext = os.path.splitext(attachment_abs_path)[1].lower()
     logger.info(
@@ -768,5 +991,21 @@ def run_pdf_order_pipeline(
             )
         except Exception:
             logger.exception("PDF timing log failed")
+
+    if file_hash and (
+        ocr_text.strip()
+        or llm_raw.strip()
+        or any(specs.get(k) is not None for k in SPEC_KEYS)
+    ):
+        _save_pipeline_cache(
+            file_hash,
+            {
+                "specs": _normalize_specs(specs),
+                "ocr_text": ocr_text,
+                "err": err,
+                "llm_raw": llm_raw,
+                "timing": timing,
+            },
+        )
 
     return specs, ocr_text, err, llm_raw, timing
