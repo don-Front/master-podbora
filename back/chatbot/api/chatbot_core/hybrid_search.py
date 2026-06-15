@@ -24,7 +24,19 @@ class HybridRetriever:
         self.store = vector_store
         self.chunks = vector_store.chunks
         self.vector_weight = vector_weight
-        self.corpus_tokens = [_tokenize(c.get("content", "")) for c in self.chunks]
+        self.corpus_tokens = [
+            _tokenize(
+                " ".join(
+                    (
+                        c.get("content", ""),
+                        (c.get("metadata") or {}).get("source_file", ""),
+                        (c.get("metadata") or {}).get("document_name", ""),
+                        c.get("product_title", ""),
+                    )
+                )
+            )
+            for c in self.chunks
+        ]
         self.bm25 = BM25Okapi(self.corpus_tokens)
         self._chunk_id_to_idx: Dict[str, int] = {
             c["chunk_id"]: i

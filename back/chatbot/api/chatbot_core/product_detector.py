@@ -103,6 +103,36 @@ def _keyword_product_candidate(question: str, products: List[str]) -> Tuple[Opti
     return None, 0.0
 
 
+def _is_malfunction_chunk(meta: dict) -> bool:
+    if (meta or {}).get("document_kind") == "malfunctions":
+        return True
+    source = ((meta or {}).get("source_file") or "").casefold().replace("ё", "е")
+    return "неисправност" in source
+
+
+def _is_malfunction_query(text: str) -> bool:
+    q = (text or "").casefold().replace("ё", "е")
+    markers = (
+        "неисправ",
+        "устран",
+        "самодиагност",
+        "авар",
+        "ненорма",
+        "внимание",
+        " нс ",
+        "причин",
+        "метод устран",
+        "методы устран",
+        "неисправност",
+        "сигнал-шум",
+        "соотношение сигнал",
+        "арu",
+        "завихрен",
+        "симметри",
+    )
+    return any(m in q for m in markers)
+
+
 class ProductDetector:
     def __init__(self, store, embedder):
         self.store = store
@@ -269,6 +299,11 @@ class ProductDetector:
             meta = chunk.get("metadata") or {}
             if meta.get("doc_type") == "passport":
                 score = min(0.95, score + 0.2)
+            if _is_malfunction_query(query_text):
+                if _is_malfunction_chunk(meta):
+                    score = min(0.98, score + 0.5)
+                elif meta.get("document_kind") == "manual":
+                    score = max(0.05, score - 0.12)
 
             results.append({
                 "chunk_id": chunk.get("chunk_id"),
@@ -280,5 +315,14 @@ class ProductDetector:
             })
 
         results.sort(key=lambda x: x["score"], reverse=True)
+        if _is_malfunction_query(query_text):
+            malfunctions = [
+                r
+                for r in results
+                if _is_malfunction_chunk(r.get("metadata") or {})
+            ]
+            if malfunctions:
+                rest = [r for r in results if r not in malfunctions]
+                results = malfunctions + rest
         return results[:top_k]
 

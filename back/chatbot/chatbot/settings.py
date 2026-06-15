@@ -16,16 +16,25 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SERVICE_8010_ORIGIN = 'http://192.168.5.49:8010'
-OLD_SERVICE_8010_HOST = '192.168.2.41:8010'
-SERVICE_8010_HOST = '192.168.5.49:8010'
+PODBOR_SERVICE_ORIGIN = 'https://turbo-podbor.ru'
+# Обратная совместимость с прежним именем настройки
+SERVICE_8010_ORIGIN = PODBOR_SERVICE_ORIGIN
+_LEGACY_PODBOR_HOSTS = (
+    '192.168.2.41:8010',
+    '192.168.3.1:8010',
+    '192.168.5.49:8010',
+    '127.0.0.1:8010',
+)
 
 
 def normalize_service_8010_url(value: str, default: str = '') -> str:
     url = (value or default or '').strip()
     if not url:
         return ''
-    return url.replace(OLD_SERVICE_8010_HOST, SERVICE_8010_HOST).rstrip('/')
+    for legacy in _LEGACY_PODBOR_HOSTS:
+        url = url.replace(f'http://{legacy}', PODBOR_SERVICE_ORIGIN)
+        url = url.replace(f'https://{legacy}', PODBOR_SERVICE_ORIGIN)
+    return url.rstrip('/')
 
 
 # Сервис отправки кода и проверки почты (см. api/verification_client.py)
@@ -37,13 +46,13 @@ VERIFICATION_SERVICE_ORIGIN = normalize_service_8010_url(
 # Полный URL POST заявки «жидкость» (если пусто — {VERIFICATION_SERVICE_ORIGIN}/api/submit-verification-liquid-request)
 SUBMIT_VERIFICATION_LIQUID_URL = normalize_service_8010_url(os.environ.get('SUBMIT_VERIFICATION_LIQUID_URL'))
 
-# Полный URL POST заявки «бытовые счётчики газа» (по умолчанию сервис 1С на 192.168.5.49:8010)
+# Полный URL POST заявки «бытовые счётчики газа» (по умолчанию turbo-podbor.ru)
 SUBMIT_HOUSEHOLD_GAS_URL = normalize_service_8010_url(
     os.environ.get('SUBMIT_HOUSEHOLD_GAS_URL'),
     f'{SERVICE_8010_ORIGIN}/api/submit-household-gas-request',
 )
 
-# Полный URL POST заявки «СПУ газ» после подбора (по умолчанию 192.168.5.49:8010/api/submit-spu-application)
+# Полный URL POST заявки «СПУ газ» после подбора (по умолчанию turbo-podbor.ru)
 SUBMIT_SPU_APPLICATION_URL = normalize_service_8010_url(
     os.environ.get('SUBMIT_SPU_APPLICATION_URL'),
     f'{SERVICE_8010_ORIGIN}/api/submit-spu-application',
@@ -61,7 +70,16 @@ SECRET_KEY = 'django-insecure-*u1il21cgp6v2zzx0_&y2v*n7k^&8&2pfq(-q$3(gusz)isa2i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.5.219', '192.168.5.49', '192.168.2.17', '192.168.2.41']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '192.168.2.225',
+    '192.168.3.1',
+    '192.168.5.219',
+    '192.168.5.49',
+    '192.168.2.17',
+    '192.168.2.41',
+]
 
 # Application definition
 
@@ -78,8 +96,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -168,11 +186,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
+    "https://turbo-podbor.ru",
+    "https://turbo-don.ru",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
-    "http://192.168.5.49:3000",
+    "http://192.168.3.1:3000",
+    "http://192.168.3.1:3001",
     "http://192.168.5.49:3001",
     "http://192.168.5.219:3000",
     "http://192.168.5.219:3001",
@@ -181,13 +202,16 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.2.41:3000",
     "http://192.168.2.41:3001",
 ]
+CORS_ALLOW_CREDENTIALS = True
 
-# Доступ с любого ПК в локальной подсети (React dev по http://192.168.x.x:3000 → API на этом хосте)
+# Dev-фронт с любого IP в LAN (React на http://192.168.x.x:3001)
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^http://192\.168\.\d{1,3}\.\d{1,3}(:[0-9]+)?$",
+    r"^http://10\.\d{1,3}\.\d{1,3}\.\d{1,3}(:[0-9]+)?$",
+    r"^http://localhost(:[0-9]+)?$",
+    r"^http://127\.0\.0\.1(:[0-9]+)?$",
+]
 if DEBUG:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^http://192\.168\.\d{1,3}\.\d{1,3}(:[0-9]+)?$",
-        r"^http://10\.\d{1,3}\.\d{1,3}\.\d{1,3}(:[0-9]+)?$",
-    ]
     CSRF_TRUSTED_ORIGINS = [*CORS_ALLOWED_ORIGINS]
 
 # Default primary key field type

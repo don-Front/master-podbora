@@ -3,6 +3,7 @@ import {
   createChat,
   createMessage,
   finalizeChat,
+  fetchQmaxHint,
   getHints,
   fetchSearchEquipment,
   postEstimatePrice,
@@ -28,13 +29,15 @@ import {
   OrderSpecsConfirmTable,
   enrichBotMessage,
   shouldShowOrderSpecsBotMessage,
+  FLOW_MAX_AT_25_ROW_KEY,
 } from './orderSpecsConfirmTable';
 import { OrderSpecsTextClarify } from './OrderSpecsTextClarify';
 import { getBundledEquipmentImageUrls } from '../assets/equipmentImages';
-import { GrandGasMetersPriceBlock } from './GrandGasMetersPriceBlock';
+import { EquipmentNoMatchCard } from './EquipmentNoMatchCard';
 import { normalizeSpecs } from '../utils/searchEquipment';
+import { extractQmaxHintParams, isQmaxFlowWarning } from '../utils/qmaxHint';
 
-/** Консоль браузера: фактический POST на :8010 выполняет Django; здесь URL/тело совпадают с серверным запросом. */
+/** Консоль браузера: фактический POST на turbo-podbor.ru выполняет Django; здесь URL/тело совпадают с серверным запросом. */
 /** Текст подсказки и кнопки на карточке СПУ — синхронно с backend (gas_spu_wizard.GAS_SPU_LEAVE_REQUEST). */
 const GAS_SPU_LEAVE_REQUEST = 'Оставить заявку →';
 
@@ -61,13 +64,13 @@ function logSubmitSpuApplicationResponse(apiResponse) {
   const url = request?.url || getSubmitSpuApplicationUrl();
   const response = apiResponse.data.submit_spu_application;
   // eslint-disable-next-line no-console
-  console.log('[submit-spu-application → 8010] method:', method);
+  console.log('[submit-spu-application → podbor] method:', method);
   // eslint-disable-next-line no-console
-  console.log('[submit-spu-application → 8010] url:', url);
+  console.log('[submit-spu-application → podbor] url:', url);
   // eslint-disable-next-line no-console
-  console.log('[submit-spu-application → 8010] body:', JSON.stringify(requestBody, null, 2));
+  console.log('[submit-spu-application → podbor] body:', JSON.stringify(requestBody, null, 2));
   // eslint-disable-next-line no-console
-  console.log('[submit-spu-application → 8010] response:', JSON.stringify(response, null, 2));
+  console.log('[submit-spu-application → podbor] response:', JSON.stringify(response, null, 2));
 }
 
 function logSubmitHouseholdGasResponse(apiResponse) {
@@ -88,7 +91,7 @@ function logSubmitHouseholdGasResponse(apiResponse) {
       }
     : null;
   // eslint-disable-next-line no-console
-  console.log('[submit-household-gas → 8010]', {
+  console.log('[submit-household-gas → podbor]', {
     method: 'POST',
     url: getSubmitHouseholdGasRequestUrl(),
     body: requestBody,
@@ -98,6 +101,34 @@ function logSubmitHouseholdGasResponse(apiResponse) {
 
 function isOrderFinalWithSpecs(data) {
   return data?.hint_state?.current_state === 'order_final' && data?.order_specs_json != null;
+}
+
+/** Сообщение в чат, когда search-equipment не нашёл модели. */
+function buildEquipmentNoMatchMessage(data, emptyRegistryMessage) {
+  if (emptyRegistryMessage) {
+    return {
+      id: Date.now(),
+      from: 'bot',
+      text: emptyRegistryMessage,
+      time: new Date(),
+    };
+  }
+  const analysis = data?.no_match_analysis;
+  if (analysis && typeof analysis === 'object') {
+    return {
+      id: `eq-no-match-${Date.now()}`,
+      from: 'bot',
+      kind: 'equipment_no_match',
+      noMatchAnalysis: analysis,
+      time: new Date(),
+    };
+  }
+  return {
+    id: Date.now(),
+    from: 'bot',
+    text: data?.message || 'Данные приняты, список оборудования пуст.',
+    time: new Date(),
+  };
 }
 
 /** Синхронизация hintState с ответом API (current_state → currentState). */
@@ -369,7 +400,7 @@ function orderSpecsRowsToDraft(rows) {
   if (!Array.isArray(rows)) return null;
   const draft = {};
   for (const row of rows) {
-    if (!row?.key) continue;
+    if (!row?.key || row.key === FLOW_MAX_AT_25_ROW_KEY) continue;
     const v = (row.value ?? '').toString().trim();
     if (!v || v === '—') continue;
     draft[row.key] = v;
@@ -574,7 +605,7 @@ function tkpServiceOrigin() {
   try {
     return new URL(TKP_PDF_URL).origin;
   } catch {
-    return 'http://192.168.5.49:8010';
+    return 'https://turbo-podbor.ru';
   }
 }
 
@@ -1158,6 +1189,7 @@ export function ChatWidget() {
   const fileInputRef = useRef(null);
   const inputRef = useRef(null);
   const orderFileDragDepthRef = useRef(0);
+  const widgetResizeFrameRef = useRef(null);
   /** Защита от двойного нажатия «Получить цену» / debug на шаге телефона (дубли одного и того же ответа бота). */
   const equipmentPriceActionLockRef = useRef(false);
 
@@ -1208,18 +1240,87 @@ export function ChatWidget() {
   const [awaitingEquipmentSelection, setAwaitingEquipmentSelection] = useState(false);
   /** Текущая карточка на слайдере (для «Получить цену»). */
   const sliderEquipmentRef = useRef(null);
-  /** Спецификация из PDF (для расчёта цены на :8010), заполняется при ответе 1С. */
+  /** Спецификация из PDF (для расчёта цены на turbo-podbor.ru), заполняется при ответе 1С. */
   const lastOrderSpecsRef = useRef(null);
   const [showExactCostHint, setShowExactCostHint] = useState(false);
   const [showTkpPdfHint, setShowTkpPdfHint] = useState(false);
   const [flowmeterResume, setFlowmeterResume] = useState(null);
   const [isSelectingAccessories, setIsSelectingAccessories] = useState(false);
   const [gazpromRegistryOnly, setGazpromRegistryOnly] = useState(false);
+  const [orderSpecsFlowMaxAt25Enabled, setOrderSpecsFlowMaxAt25Enabled] = useState(false);
+  const orderSpecsFlowMaxAt25Ref = useRef(false);
+  const orderSpecsConfirmSessionRef = useRef(false);
+  const orderSpecsEditFocusPendingRef = useRef(false);
+  const prevHintStateRef = useRef(hintState.currentState);
   /** На слайдере/аксессуарах не показываем меню order_final («Расходомеры», «Продажа»…). */
   const footerScenarioHints =
     awaitingEquipmentSelection || isSelectingAccessories || showExactCostHint || showTkpPdfHint
       ? []
       : hintState.hints || [];
+  const latestOrderSpecsConfirmMessage = useMemo(() => {
+    for (let i = messages.length - 1; i >= 0; i -= 1) {
+      const m = messages[i];
+      if (m.kind === 'order_specs_confirm' && m.orderSpecsRows?.length) return m;
+    }
+    return null;
+  }, [messages]);
+  const latestOrderSpecsConfirmId = latestOrderSpecsConfirmMessage?.id ?? null;
+  const latestOrderSpecsRows = latestOrderSpecsConfirmMessage?.orderSpecsRows ?? null;
+
+  const [qmaxHintLoading, setQmaxHintLoading] = useState(false);
+  const [qmaxHintData, setQmaxHintData] = useState(null);
+
+  const qmaxHintParams = useMemo(() => {
+    if (hintState.currentState !== 'order_specs_confirm') return null;
+    return extractQmaxHintParams(latestOrderSpecsRows, lastOrderSpecsRef.current);
+  }, [hintState.currentState, latestOrderSpecsRows]);
+
+  useEffect(() => {
+    if (!qmaxHintParams?.diameter || !qmaxHintParams?.medium) {
+      setQmaxHintData(null);
+      setQmaxHintLoading(false);
+      return undefined;
+    }
+
+    const controller = new AbortController();
+    setQmaxHintLoading(true);
+
+    fetchQmaxHint(qmaxHintParams.diameter, qmaxHintParams.medium, { signal: controller.signal })
+      .then((res) => {
+        if (res.data?.status === 'success') {
+          setQmaxHintData(res.data);
+        } else {
+          setQmaxHintData(null);
+        }
+      })
+      .catch((err) => {
+        if (err?.code === 'ERR_CANCELED' || err?.name === 'CanceledError') return;
+        setQmaxHintData(null);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) {
+          setQmaxHintLoading(false);
+        }
+      });
+
+    return () => controller.abort();
+  }, [qmaxHintParams?.diameter, qmaxHintParams?.medium]);
+
+  const qmaxHintView = useMemo(() => {
+    if (hintState.currentState !== 'order_specs_confirm') return null;
+    if (!qmaxHintLoading && !qmaxHintData) return null;
+    const isWarning = isQmaxFlowWarning(qmaxHintData?.qmax_m3h, qmaxHintParams?.userFlowMax);
+    return {
+      loading: qmaxHintLoading,
+      data: qmaxHintData,
+      isWarning,
+    };
+  }, [
+    hintState.currentState,
+    qmaxHintLoading,
+    qmaxHintData,
+    qmaxHintParams?.userFlowMax,
+  ]);
   const exactCostBodyRef = useRef(null);
   const estimateQuoteRef = useRef(null);
   const pendingEstimateBodyRef = useRef(null);
@@ -1306,13 +1407,42 @@ export function ChatWidget() {
     }
   }, [hintState.currentState]);
 
+  /** Сброс виджета расхода при выходе из таблицы (кроме редактирования параметра). */
+  useEffect(() => {
+    const prev = prevHintStateRef.current;
+    const curr = hintState.currentState;
+    prevHintStateRef.current = curr;
+    if (
+      prev === 'order_specs_confirm' &&
+      curr !== 'order_specs_confirm' &&
+      curr !== 'order_specs_clarify'
+    ) {
+      orderSpecsConfirmSessionRef.current = false;
+      orderSpecsFlowMaxAt25Ref.current = false;
+      setOrderSpecsFlowMaxAt25Enabled(false);
+    }
+  }, [hintState.currentState]);
+
+  const handleOrderSpecsFlowMaxAt25Toggle = useCallback(() => {
+    setOrderSpecsFlowMaxAt25Enabled((prev) => {
+      const next = !prev;
+      orderSpecsFlowMaxAt25Ref.current = next;
+      return next;
+    });
+  }, []);
+
   /** Чат в БД создаётся при первом сообщении/подсказке (не при F5), чтобы не дублировать POST и не ловить 500 до действия пользователя. */
   const ensureChatId = useCallback(async () => {
     if (chatIdRef.current != null) return chatIdRef.current;
     if (!chatCreatePromiseRef.current) {
       chatCreatePromiseRef.current = createChat({ title: 'Новый чат' })
         .then((res) => {
-          const id = res.data.id;
+          const id = res.data?.id;
+          if (id == null || id === '') {
+            throw new Error(
+              'Сервер не вернул id чата. Проверьте, что Django доступен на порту 8002 (не на порту фронта).',
+            );
+          }
           chatIdRef.current = id;
           setChatId(id);
           return id;
@@ -1517,6 +1647,18 @@ export function ChatWidget() {
   }, [inputValue, adjustInputHeight, hintState.hintsOnly, hintState.currentState]);
 
   useEffect(() => {
+    if (isTyping || !orderSpecsEditFocusPendingRef.current) return;
+    orderSpecsEditFocusPendingRef.current = false;
+    const timer = window.setTimeout(() => {
+      const el = inputRef.current;
+      if (el && !el.disabled && !el.readOnly) {
+        el.focus();
+      }
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [isTyping, hintState.currentState, hintState.hintsOnly]);
+
+  useEffect(() => {
     if (!isOpen) {
       orderFileDragDepthRef.current = 0;
       setIsOrderFileDragActive(false);
@@ -1540,6 +1682,37 @@ export function ChatWidget() {
   useEffect(() => {
     if (isOpen) setShowGreetingTeaser(false);
   }, [isOpen]);
+
+  useEffect(() => {
+    if (window.parent === window) return;
+
+    const targetHeight = isOpen
+      ? Math.max(chatWindowHeight + 128, 620)
+      : showGreetingTeaser
+        ? 120
+        : 96;
+    const height = `${targetHeight}px`;
+    document.documentElement.style.minHeight = height;
+    document.body.style.minHeight = height;
+    const root = document.getElementById('root');
+    if (root) {
+      root.style.minHeight = height;
+    }
+
+    if (widgetResizeFrameRef.current) {
+      window.cancelAnimationFrame(widgetResizeFrameRef.current);
+    }
+    widgetResizeFrameRef.current = window.requestAnimationFrame(() => {
+      widgetResizeFrameRef.current = null;
+      window.parent.postMessage({ type: 'RESIZE', height: document.body.scrollHeight }, '*');
+    });
+  });
+
+  useEffect(() => () => {
+    if (widgetResizeFrameRef.current) {
+      window.cancelAnimationFrame(widgetResizeFrameRef.current);
+    }
+  }, []);
 
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -1617,9 +1790,11 @@ export function ChatWidget() {
     [chatWindowHeight],
   );
 
-  const handleOrderSpecsEdit = async (row) => {
+  const handleOrderSpecsEdit = async (row, options = {}) => {
     if (!row?.key || isTyping) return;
+    orderSpecsEditFocusPendingRef.current = true;
     const label = row.label || row.key;
+    const hintStateForRequest = options.hintState || hintState.currentState;
     const userMessage = {
       id: Date.now(),
       from: 'user',
@@ -1633,7 +1808,7 @@ export function ChatWidget() {
       const id = await ensureChatId();
       const response = await createMessage(id, {
         content: userMessage.text,
-        hint_state: hintState.currentState,
+        hint_state: hintStateForRequest,
         is_hint_selection: false,
         hint_locked: hintLocked,
         order_specs_edit_field: row.key,
@@ -1910,12 +2085,7 @@ export function ChatWidget() {
                 : null;
             setMessages((prev) => [
               ...prev,
-              {
-                id: Date.now(),
-                from: 'bot',
-                text: emptyRegistryMessage || d?.message || 'Данные приняты, список оборудования пуст.',
-                time: new Date(),
-              },
+              buildEquipmentNoMatchMessage(d, emptyRegistryMessage),
             ]);
           }
           if (registryOnlyForSearch) {
@@ -1939,42 +2109,45 @@ export function ChatWidget() {
           ]);
         }
       } else {
-        const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
-        if (botMessages.length > 0 && shouldShowOrderSpecsBotMessage(response, botMessages)) {
-          const hs = response.data.hint_state;
-          const firstBotMessage = botMessages[0] || {};
-          const botMsg = {
-            id: firstBotMessage.id,
-            from: 'bot',
-            text: firstBotMessage.content || '',
-            time: new Date(firstBotMessage.created_at),
-            ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
-            ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
-          };
-          if (
-            response.data.submit_verification_liquid?.status === 'success' ||
-            response.data.submit_household_gas?.status === 'success' ||
-            response.data.submit_spu_application?.status === 'success'
-          ) {
-            botMsg.kind = 'liquid_verification_contact';
-          } else if (
-            hs?.current_state === 'verification_installations_liquid_tz' ||
-            hs?.current_state === 'verification_installations_gas_application_tz'
-          ) {
-            botMsg.kind = 'liquid_tz_prompt';
+        const restoredConfirmTable = tryRestoreOrderSpecsConfirmFromResponse(response);
+        if (!restoredConfirmTable) {
+          const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
+          if (botMessages.length > 0 && shouldShowOrderSpecsBotMessage(response, botMessages)) {
+            const hs = response.data.hint_state;
+            const firstBotMessage = botMessages[0] || {};
+            const botMsg = {
+              id: firstBotMessage.id,
+              from: 'bot',
+              text: firstBotMessage.content || '',
+              time: new Date(firstBotMessage.created_at),
+              ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+              ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
+            };
+            if (
+              response.data.submit_verification_liquid?.status === 'success' ||
+              response.data.submit_household_gas?.status === 'success' ||
+              response.data.submit_spu_application?.status === 'success'
+            ) {
+              botMsg.kind = 'liquid_verification_contact';
+            } else if (
+              hs?.current_state === 'verification_installations_liquid_tz' ||
+              hs?.current_state === 'verification_installations_gas_application_tz'
+            ) {
+              botMsg.kind = 'liquid_tz_prompt';
+            }
+            setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
+          } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+            const firstBotMessage = botMessages[0] || {};
+            const fallbackMsg = {
+              id: firstBotMessage.id,
+              from: 'bot',
+              text: firstBotMessage.content,
+              time: new Date(firstBotMessage.created_at),
+              ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+              ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
+            };
+            setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
           }
-          setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
-        } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
-          const firstBotMessage = botMessages[0] || {};
-          const fallbackMsg = {
-            id: firstBotMessage.id,
-            from: 'bot',
-            text: firstBotMessage.content,
-            time: new Date(firstBotMessage.created_at),
-            ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
-            ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
-          };
-          setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
         }
       }
 
@@ -2615,44 +2788,101 @@ export function ChatWidget() {
     }
   };
 
-  const scrollToOrderSpecsConfirm = useCallback(() => {
+  const scrollToOrderSpecsConfirmMessage = useCallback((messageId) => {
+    if (!messageId) return;
     requestAnimationFrame(() => {
-      const el = document.querySelector('[data-order-specs-confirm="true"]');
+      const el = document.querySelector(`[data-order-specs-confirm-id="${messageId}"]`);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   }, []);
 
-  const restoreOrderSpecsConfirmInChat = useCallback(
-    (preview) => {
+  /** Добавляет в чат новую таблицу параметров (не заменяет старые сообщения). */
+  const appendOrderSpecsConfirmInChat = useCallback(
+    (preview, options = {}) => {
       const rows = preview?.review_rows;
-      if (!Array.isArray(rows) || rows.length === 0) return;
+      if (!Array.isArray(rows) || rows.length === 0) return null;
+
+      const preserveFlowMax =
+        options.preserveFlowMaxToggle ?? orderSpecsConfirmSessionRef.current;
+      if (preserveFlowMax) {
+        setOrderSpecsFlowMaxAt25Enabled(orderSpecsFlowMaxAt25Ref.current);
+      } else {
+        orderSpecsFlowMaxAt25Ref.current = false;
+        setOrderSpecsFlowMaxAt25Enabled(false);
+      }
+      orderSpecsConfirmSessionRef.current = true;
+
       const draftFromTable = orderSpecsRowsToDraft(rows);
       if (draftFromTable) {
         lastOrderSpecsRef.current = draftFromTable;
       }
-      setMessages((prev) => {
-        const idx = prev.findIndex((m) => m.kind === 'order_specs_confirm');
-        const msg = {
-          id: idx >= 0 ? prev[idx].id : `order-specs-confirm-${Date.now()}`,
-          from: 'bot',
-          kind: 'order_specs_confirm',
-          orderSpecsTitle: preview.review_title || 'Проверьте итоговые параметры спецификации:',
-          orderSpecsRows: rows,
-          text: preview.footer || '',
-          time: new Date(),
-        };
-        if (idx >= 0) {
-          const next = [...prev];
-          next[idx] = msg;
-          return next;
-        }
-        return [...prev, msg];
-      });
-      scrollToOrderSpecsConfirm();
+
+      const msgId = `order-specs-confirm-${Date.now()}`;
+      const msg = {
+        id: msgId,
+        from: 'bot',
+        kind: 'order_specs_confirm',
+        orderSpecsTitle: preview.review_title || 'Проверьте итоговые параметры спецификации:',
+        orderSpecsRows: rows,
+        text: preview.footer || '',
+        time: new Date(),
+      };
+      setMessages((prev) => [...prev, msg]);
+
+      if (options.scroll !== false) {
+        scrollToOrderSpecsConfirmMessage(msgId);
+      }
+      return msgId;
     },
-    [scrollToOrderSpecsConfirm],
+    [scrollToOrderSpecsConfirmMessage],
+  );
+
+  const handleReturnToOrderSpecsConfirm = async (editParam = null) => {
+    if (isTyping) return;
+
+    if (editParam?.key) {
+      await handleOrderSpecsEdit(
+        { key: editParam.key, label: editParam.label || editParam.key },
+        { hintState: 'order_specs_confirm' },
+      );
+      return;
+    }
+
+    if (hintState.currentState === 'order_final') {
+      await handleBack();
+      return;
+    }
+
+    const lastConfirm = [...messages]
+      .reverse()
+      .find((m) => m.kind === 'order_specs_confirm' && m.orderSpecsRows?.length);
+    if (lastConfirm) {
+      appendOrderSpecsConfirmInChat(
+        {
+          review_rows: lastConfirm.orderSpecsRows,
+          review_title: lastConfirm.orderSpecsTitle,
+          footer: lastConfirm.text,
+        },
+        { scroll: true, preserveFlowMaxToggle: true },
+      );
+    }
+  };
+
+  const tryRestoreOrderSpecsConfirmFromResponse = useCallback(
+    (response, options = {}) => {
+      const preview = response?.data?.order_specs_preview;
+      const state = response?.data?.hint_state?.current_state;
+      if (!preview?.review_rows?.length) return false;
+      if (state !== 'order_specs_confirm') return false;
+      appendOrderSpecsConfirmInChat(preview, {
+        scroll: options.scroll !== false,
+        preserveFlowMaxToggle: true,
+      });
+      return true;
+    },
+    [appendOrderSpecsConfirmInChat],
   );
 
   const handleResumeFlowmeterScenario = () => {
@@ -2782,7 +3012,7 @@ export function ChatWidget() {
       if (newState === 'order_specs_confirm') {
         const preview = response.data.order_specs_preview;
         if (preview?.review_rows?.length) {
-          restoreOrderSpecsConfirmInChat(preview);
+          appendOrderSpecsConfirmInChat(preview, { scroll: true, preserveFlowMaxToggle: true });
         } else if (response.data.bot_message) {
           const botMsg = {
             id: Date.now(),
@@ -3097,12 +3327,7 @@ export function ChatWidget() {
                   : null;
               setMessages((prev) => [
                 ...prev,
-                {
-                  id: Date.now(),
-                  from: 'bot',
-                  text: emptyRegistryMessage || d?.message || 'Данные приняты, список оборудования пуст.',
-                  time: new Date(),
-                },
+                buildEquipmentNoMatchMessage(d, emptyRegistryMessage),
               ]);
             }
             if (registryOnlyForSearch) {
@@ -3126,42 +3351,45 @@ export function ChatWidget() {
             ]);
           }
         } else {
-          const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
-          if (botMessages.length > 0 && shouldShowOrderSpecsBotMessage(response, botMessages)) {
-            const hs = response.data.hint_state;
-            const firstBotMessage = botMessages[0] || {};
-            const botMsg = {
-              id: firstBotMessage.id,
-              from: 'bot',
-              text: firstBotMessage.content || '',
-              time: new Date(firstBotMessage.created_at),
-              ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
-              ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
-            };
-            if (
-              response.data.submit_verification_liquid?.status === 'success' ||
-              response.data.submit_household_gas?.status === 'success' ||
-              response.data.submit_spu_application?.status === 'success'
-            ) {
-              botMsg.kind = 'liquid_verification_contact';
-            } else if (
-              hs?.current_state === 'verification_installations_liquid_tz' ||
-              hs?.current_state === 'verification_installations_gas_application_tz'
-            ) {
-              botMsg.kind = 'liquid_tz_prompt';
+          const restoredConfirmTable = tryRestoreOrderSpecsConfirmFromResponse(response);
+          if (!restoredConfirmTable) {
+            const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
+            if (botMessages.length > 0 && shouldShowOrderSpecsBotMessage(response, botMessages)) {
+              const hs = response.data.hint_state;
+              const firstBotMessage = botMessages[0] || {};
+              const botMsg = {
+                id: firstBotMessage.id,
+                from: 'bot',
+                text: firstBotMessage.content || '',
+                time: new Date(firstBotMessage.created_at),
+                ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+                ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
+              };
+              if (
+                response.data.submit_verification_liquid?.status === 'success' ||
+                response.data.submit_household_gas?.status === 'success' ||
+                response.data.submit_spu_application?.status === 'success'
+              ) {
+                botMsg.kind = 'liquid_verification_contact';
+              } else if (
+                hs?.current_state === 'verification_installations_liquid_tz' ||
+                hs?.current_state === 'verification_installations_gas_application_tz'
+              ) {
+                botMsg.kind = 'liquid_tz_prompt';
+              }
+              setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
+            } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+              const firstBotMessage = botMessages[0] || {};
+              const fallbackMsg = {
+                id: firstBotMessage.id,
+                from: 'bot',
+                text: firstBotMessage.content,
+                time: new Date(firstBotMessage.created_at),
+                ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+                ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
+              };
+              setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
             }
-            setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
-          } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
-            const firstBotMessage = botMessages[0] || {};
-            const fallbackMsg = {
-              id: firstBotMessage.id,
-              from: 'bot',
-              text: firstBotMessage.content,
-              time: new Date(firstBotMessage.created_at),
-              ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
-              ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
-            };
-            setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
           }
           if (response.data.verification_passed) {
             const contact = response.data.verified_contact || {};
@@ -3477,16 +3705,20 @@ export function ChatWidget() {
           type="button"
           className={`chat-widget__toggle ${isOpen ? 'chat-widget__toggle--open' : 'chat-widget__toggle--pulse'}`}
           onClick={toggleOpen}
-          aria-label="Открыть чат"
+          aria-label={isOpen ? 'Закрыть чат' : 'Открыть чат'}
+          aria-expanded={isOpen}
+          aria-controls="turbo-don-chat-window"
         />
       </div>
 
       <div
+        id="turbo-don-chat-window"
         className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
           isResizingChat ? ' chat-widget__window--resizing' : ''
         }${isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''}${
           isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''
         }`}
+        aria-hidden={!isOpen}
         style={{ height: chatWindowHeight }}
         onDragEnter={handleOrderFileDragEnter}
         onDragOver={handleOrderFileDragOver}
@@ -3520,11 +3752,15 @@ export function ChatWidget() {
               className={`chat-widget__message chat-widget__message--${message.from}${
                 message.kind === 'order_specs_confirm' ? ' chat-widget__message--order-specs-confirm' : ''
               }${
+                message.kind === 'equipment_no_match' ? ' chat-widget__message--equipment-no-match' : ''
+              }${
                 message.kind === 'order_specs_text_clarify'
                   ? ' chat-widget__message--order-specs-clarify'
                   : ''
               }`}
-              {...(message.kind === 'order_specs_confirm' ? { 'data-order-specs-confirm': 'true' } : {})}
+              {...(message.kind === 'order_specs_confirm'
+                ? { 'data-order-specs-confirm-id': String(message.id) }
+                : {})}
             >
               <div
                 className={`chat-widget__bubble${
@@ -3534,8 +3770,8 @@ export function ChatWidget() {
                 }${message.kind === 'gas_spu_card' ? ' chat-widget__bubble--gas-spu' : ''}${
                   message.kind === 'gas_spu_review' ? ' chat-widget__bubble--gas-spu-review' : ''
                 }${message.kind === 'order_specs_confirm' ? ' chat-widget__bubble--order-specs-confirm' : ''}${
-                  message.kind === 'order_specs_text_clarify' ? ' chat-widget__bubble--order-specs-clarify' : ''
-                }`}
+                  message.kind === 'equipment_no_match' ? ' chat-widget__bubble--equipment-no-match' : ''
+                }${message.kind === 'order_specs_text_clarify' ? ' chat-widget__bubble--order-specs-clarify' : ''}`}
               >
                 {message.kind === 'equipment' && message.equipment?.length ? (
                   <EquipmentShowcase
@@ -3547,6 +3783,12 @@ export function ChatWidget() {
                     onCurrentItemChange={syncSliderEquipment}
                     pickDisabled={!awaitingEquipmentSelection || isEquipmentPriceActionBusy}
                   />
+                ) : message.kind === 'equipment_no_match' && message.noMatchAnalysis ? (
+                  <EquipmentNoMatchCard
+                    analysis={message.noMatchAnalysis}
+                    editBusy={isTyping}
+                    onRetry={() => handleReturnToOrderSpecsConfirm()}
+                  />
                 ) : message.kind === 'order_specs_confirm' && message.orderSpecsRows?.length ? (
                   <OrderSpecsConfirmTable
                     title={message.orderSpecsTitle}
@@ -3554,7 +3796,23 @@ export function ChatWidget() {
                     footer={message.text}
                     editBusy={isTyping}
                     onEditRow={
-                      hintState.currentState === 'order_specs_confirm' ? handleOrderSpecsEdit : undefined
+                      hintState.currentState === 'order_specs_confirm' &&
+                      message.id === latestOrderSpecsConfirmId
+                        ? handleOrderSpecsEdit
+                        : undefined
+                    }
+                    flowMaxAt25Enabled={orderSpecsFlowMaxAt25Enabled}
+                    onFlowMaxAt25Toggle={
+                      hintState.currentState === 'order_specs_confirm' &&
+                      message.id === latestOrderSpecsConfirmId
+                        ? handleOrderSpecsFlowMaxAt25Toggle
+                        : undefined
+                    }
+                    qmaxHint={
+                      hintState.currentState === 'order_specs_confirm' &&
+                      message.id === latestOrderSpecsConfirmId
+                        ? qmaxHintView
+                        : null
                     }
                   />
                 ) : message.kind === 'order_specs_text_clarify' && message.orderSpecsClarifyPreview ? (

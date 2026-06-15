@@ -11,7 +11,7 @@ import requests
 logger = logging.getLogger(__name__)
 
 # Явный URL из техзадания: для этого сценария endpoint не переопределяем env-настройками.
-SUBMIT_SPU_APPLICATION_URL_FALLBACK = 'http://192.168.5.49:8010/api/submit-spu-application'
+SUBMIT_SPU_APPLICATION_URL_FALLBACK = 'https://turbo-podbor.ru/api/submit-spu-application'
 
 def submit_spu_application_url() -> str:
     return SUBMIT_SPU_APPLICATION_URL_FALLBACK

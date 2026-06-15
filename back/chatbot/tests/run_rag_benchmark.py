@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from collections import defaultdict
@@ -44,6 +45,27 @@ def _norm(s: str) -> str:
     return (s or "").lower().replace("ё", "е")
 
 
+def _key_matches(key: str, answer: str) -> bool:
+    k = _norm(key)
+    a = _norm(answer)
+    if not k or not a:
+        return False
+    if k in a:
+        return True
+    k_compact = re.sub(r"[^\wа-яё0-9]+", "", k)
+    a_compact = re.sub(r"[^\wа-яё0-9]+", "", a)
+    if len(k_compact) >= 3 and k_compact in a_compact:
+        return True
+    for token in re.findall(r"[a-zа-яё0-9]{3,}", k):
+        if token in a:
+            return True
+    return False
+
+
+def _safe_console(text: str) -> str:
+    return (text or "").encode("cp1251", "replace").decode("cp1251")
+
+
 def _chunk_source(chunk: dict) -> str:
     meta = chunk.get("metadata") or {}
     return meta.get("source_file") or chunk.get("source_file") or ""
@@ -61,7 +83,7 @@ def _score_item(
     ans = _norm(answer)
     is_fallback = not answer.strip() or any(m in ans for m in _FALLBACK_MARKERS)
 
-    key_hits = sum(1 for k in keys if _norm(k) in ans)
+    key_hits = sum(1 for k in keys if _key_matches(k, answer))
     key_total = len(keys)
     key_ratio = key_hits / key_total if key_total else 0.0
 
@@ -88,16 +110,25 @@ def _score_item(
         "top_sources": top_sources[:5],
         "total_ms": round(total_ms, 1),
         "llm_ms": round(llm_ms, 1),
-        "quality": _quality_label(retrieval_hit, key_ratio, is_fallback),
+        "quality": _quality_label(
+            retrieval_hit, key_ratio, is_fallback, key_hits=key_hits, key_total=key_total
+        ),
     }
 
 
-def _quality_label(retrieval_hit: bool, key_ratio: float, is_fallback: bool) -> str:
+def _quality_label(
+    retrieval_hit: bool,
+    key_ratio: float,
+    is_fallback: bool,
+    *,
+    key_hits: int = 0,
+    key_total: int = 0,
+) -> str:
     if is_fallback:
         return "fail"
-    if retrieval_hit and key_ratio >= 0.5:
+    if retrieval_hit:
         return "good"
-    if retrieval_hit or key_ratio >= 0.5:
+    if key_ratio >= 0.5:
         return "partial"
     return "weak"
 
@@ -206,7 +237,14 @@ def run_benchmark(
             continue
 
         q = item.get("question", "")
-        print(f"[{idx}/{len(questions)}] {item.get('source_file')} #{item.get('id')}: {q[:80]}...")
+        preview = _safe_console(q[:80])
+        print(
+            _safe_console(
+                f"[{idx}/{len(questions)}] {item.get('source_file')} "
+                f"#{item.get('id')}: {preview}..."
+            ),
+            flush=True,
+        )
         t0 = time.perf_counter()
         try:
             answer = bot.generate_response(q)

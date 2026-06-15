@@ -4,14 +4,29 @@ import { AdminPanel } from './components/AdminPanel';
 import { ChatWidget } from './components/ChatWidget';
 import './App.css';
 
+function WidgetPage() {
+  return (
+    <main className="widget-page" aria-label="Чат-виджет Turbo-don">
+      <ChatWidget />
+    </main>
+  );
+}
+
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <Routes>
-          <Route path="/" element={<ChatWidget />} />
-          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/" element={<WidgetPage />} />
+          <Route
+            path="/admin"
+            element={(
+              <>
+                <Header />
+                <AdminPanel />
+              </>
+            )}
+          />
         </Routes>
       </div>
     </Router>

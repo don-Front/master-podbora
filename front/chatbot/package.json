@@ -16,7 +16,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env HOST=0.0.0.0 PORT=3001 DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
+    "start:lan": "cross-env HOST=0.0.0.0 PORT=3001 DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
+    "serve:lan": "cross-env REACT_APP_USE_API_PROXY=false REACT_APP_API_URL=http://192.168.2.225:8002 npm run build && serve -s build -l tcp://0.0.0.0:3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -38,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "serve": "^14.2.6"
   }
 }

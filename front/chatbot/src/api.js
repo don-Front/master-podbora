@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   API_BASE_URL,
   ESTIMATE_PRICE_URL,
+  buildQmaxHintUrl,
   getGrandGasMetersPriceUrl,
   getSearchEquipmentUrl,
   TKP_ACCESSORIES_URL,
@@ -153,6 +154,12 @@ export function fetchSearchEquipment(specsObject) {
     });
 }
 
+/** GET подсказка qmax-hint при изменении диаметра / среды измерения. */
+export function fetchQmaxHint(diameter, medium, options = {}) {
+  const url = buildQmaxHintUrl(diameter, medium);
+  return axios.get(url, { timeout: 30000, ...options });
+}
+
 /** @deprecated используйте fetchSearchEquipment */
 export function postEquipmentSpecsTo1c(specsObject) {
   return fetchSearchEquipment(specsObject);
@@ -178,7 +185,7 @@ export function postTkpPdf(body) {
   });
 }
 
-/** GET прайс СГ Гранд с сервиса на :8010 (см. `getGrandGasMetersPriceUrl`). */
+/** GET прайс СГ Гранд с сервиса подбора (см. `getGrandGasMetersPriceUrl`). */
 export function getGrandGasMetersPrices() {
   return axios.get(getGrandGasMetersPriceUrl(), { timeout: 60000 });
 }

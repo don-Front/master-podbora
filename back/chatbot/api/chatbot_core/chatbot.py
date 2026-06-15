@@ -9,7 +9,7 @@ from typing import List, Dict, Tuple
 from .embeddings import EmbeddingModel
 from .vector_store import VectorStore
 from .llm_client import LLMClient
-from .product_detector import ProductDetector
+from .product_detector import ProductDetector, _is_malfunction_query
 from .question_classifier import QuestionClassifier
 from .hybrid_search import HybridRetriever
 
@@ -124,13 +124,45 @@ _DOCUMENT_REFERENCE_RE = re.compile(
     r"(?i)\b(?:ГОСТ|СТО|РЭ|ОТ)\b|"
     r"(?:описани[ея]\s+типа)|(?:руководств[оае]\s+по\s+эксплуатации)|"
     r"(?:\b8\.\d{3}\b)|(?:\b2939\s*[-–—]?\s*63\b)|"
-    r"(?:\b\d{5}[-–—]\d{2}\b)"
+    r"(?:\b\d{5}[-–—]\d{2}\b)|"
+    r"(?:свидетельств|сертификат|приказ|приложени[ея]|паспорт|поверк)|"
+    r"(?:\bдокумент\b)|(?:\.pdf\b)"
 )
+
+def _filename_from_pdf_anchor(text: str, anchor: re.Match[str]) -> str:
+    """Имя файла из '(....pdf)' непосредственно перед anchor (например '.pdf) о:')."""
+    close_paren = anchor.start() + 4  # позиция ')' в '.pdf)'
+    depth = 1
+    for i in range(close_paren - 1, -1, -1):
+        ch = text[i]
+        if ch == ")":
+            depth += 1
+        elif ch == "(":
+            depth -= 1
+            if depth == 0:
+                return text[i + 1 : close_paren].strip(" «»\"'")
+    return ""
+
+
+def _source_file_hint(question: str) -> str:
+    """Имя PDF из вопроса, если пользователь ссылается на конкретный файл."""
+    text = (question or "").strip()
+    doc_match = re.search(r"(?i)по документу\s*\((.+\.pdf)\)", text)
+    if doc_match:
+        return doc_match.group(1).strip(" «»\"'")
+    for pattern in (r"(?i)\.pdf\)\s*о:", r"(?i)\.pdf\)\s*:"):
+        anchor = re.search(pattern, text)
+        if anchor:
+            name = _filename_from_pdf_anchor(text, anchor)
+            if name:
+                return name
+    return ""
 
 
 def _has_document_reference(question: str) -> bool:
     """Явная ссылка на норматив/документ: не даем ProductDetector увести поиск в каталог."""
-    return bool(_DOCUMENT_REFERENCE_RE.search(question or ""))
+    text = question or ""
+    return bool(_DOCUMENT_REFERENCE_RE.search(text)) or bool(_source_file_hint(text))
 
 
 def _chunk_doc_type(chunk: Dict) -> str:
@@ -159,14 +191,119 @@ def _document_boost(chunk: Dict, prefer_documents: bool) -> float:
     return 0.0
 
 
-def _rank_chunks(chunks: List[Dict], *, prefer_documents: bool) -> List[Dict]:
+def _is_text_stub(chunk: Dict) -> bool:
+    meta = chunk.get("metadata") or {}
+    return bool(meta.get("is_text_stub")) or "_stub" in str(chunk.get("chunk_id") or "")
+
+
+def _stub_penalty(chunk: Dict, hinted_file: str) -> float:
+    if not _is_text_stub(chunk):
+        return 0.0
+    meta = chunk.get("metadata") or {}
+    source = (meta.get("source_file") or "").casefold().replace("ё", "е")
+    hint = (hinted_file or "").casefold().replace("ё", "е")
+    if hint and source and hint == source:
+        return 0.0
+    return -0.65
+
+
+def _source_file_boost(chunk: Dict, hinted_file: str) -> float:
+    if not hinted_file:
+        return 0.0
+    meta = chunk.get("metadata") or {}
+    source = meta.get("source_file") or chunk.get("source_file") or ""
+    if not source:
+        return 0.0
+    hint = hinted_file.casefold().replace("ё", "е")
+    src = source.casefold().replace("ё", "е")
+    if hint == src or hint in src or src in hint:
+        return 2.5
+    return 0.0
+
+
+def _inject_source_file_chunks(
+    store,
+    chunks: List[Dict],
+    source_file_hint: str,
+) -> List[Dict]:
+    """Гарантирует чанки целевого PDF в пуле кандидатов (важно для 1-страничных сканов)."""
+    if not source_file_hint:
+        return chunks
+    hint = source_file_hint.casefold().replace("ё", "е")
+    by_id: Dict[str, Dict] = {
+        c["chunk_id"]: dict(c)
+        for c in chunks
+        if c.get("chunk_id")
+    }
+    for chunk in store.chunks:
+        meta = chunk.get("metadata") or {}
+        source = (meta.get("source_file") or "").casefold().replace("ё", "е")
+        if not source or source != hint:
+            continue
+        cid = chunk.get("chunk_id")
+        if not cid:
+            continue
+        if cid not in by_id:
+            item = dict(chunk)
+            item["score"] = item.get("score", 0) or 0.35
+            by_id[cid] = item
+    return list(by_id.values())
+
+
+def _rank_chunks(
+    chunks: List[Dict],
+    *,
+    prefer_documents: bool,
+    source_file_hint: str = "",
+) -> List[Dict]:
     ranked = []
     for chunk in chunks:
         item = dict(chunk)
         base_score = item.get("score", 0) or 0
-        item["score"] = base_score + _document_boost(item, prefer_documents)
+        item["score"] = (
+            base_score
+            + _document_boost(item, prefer_documents)
+            + _source_file_boost(item, source_file_hint)
+            + (_stub_penalty(item, source_file_hint) if source_file_hint else 0.0)
+        )
         ranked.append(item)
     return sorted(ranked, key=lambda x: x.get("score", 0), reverse=True)
+
+
+def _is_malfunction_chunk(meta: dict) -> bool:
+    if (meta or {}).get("document_kind") == "malfunctions":
+        return True
+    source = ((meta or {}).get("source_file") or "").casefold().replace("ё", "е")
+    return "неисправност" in source
+
+
+def _inject_malfunction_chunks(
+    store,
+    chunks: List[Dict],
+    product_name: str,
+    question: str,
+) -> List[Dict]:
+    """Гарантирует чанки справочника неисправностей для выбранного прибора."""
+    if not _is_malfunction_query(question) or not product_name:
+        return chunks
+    product_lower = product_name.casefold().replace("ё", "е")
+    by_id: Dict[str, Dict] = {
+        c["chunk_id"]: dict(c) for c in chunks if c.get("chunk_id")
+    }
+    for chunk in store.chunks:
+        meta = chunk.get("metadata") or {}
+        if not _is_malfunction_chunk(meta):
+            continue
+        chunk_product = (chunk.get("product_title") or "").casefold().replace("ё", "е")
+        if product_lower not in chunk_product and chunk_product not in product_lower:
+            continue
+        cid = chunk.get("chunk_id")
+        if not cid:
+            continue
+        item = dict(by_id.get(cid) or chunk)
+        item["score"] = max(item.get("score", 0) or 0, 1.25)
+        by_id[cid] = item
+    return list(by_id.values())
 
 
 def smart_search(
@@ -182,6 +319,7 @@ def smart_search(
     """Умный поиск с определением продукта"""
     top_k = search_params["top_k"]
     context_top_k = search_params.get("context_top_k", top_k)
+    file_hint = _source_file_hint(question)
     has_document_reference = _has_document_reference(question)
     prefer_documents = has_document_reference or question_type.get("is_attribute", False)
 
@@ -198,7 +336,12 @@ def smart_search(
             top_k,
             use_hybrid=use_hybrid,
         )
-        return _rank_chunks(results, prefer_documents=True)[:context_top_k]
+        merged = _inject_source_file_chunks(store, results, file_hint)
+        return _rank_chunks(
+            merged,
+            prefer_documents=True,
+            source_file_hint=file_hint,
+        )[:context_top_k]
 
     product, product_score = product_detector.detect_product_from_question(
         question, query_embedding=query_embedding
@@ -208,7 +351,10 @@ def smart_search(
         _safe_print(f"[DEBUG] Определен продукт: '{product}' (уверенность: {product_score:.2f})")
         
         product_chunks = product_detector.search_chunks_by_product(
-            product, top_k=15, query_embedding=query_embedding, query_text=question
+            product,
+            top_k=30 if _is_malfunction_query(question) else 15,
+            query_embedding=query_embedding,
+            query_text=question,
         )
 
         if product_chunks:
@@ -234,6 +380,9 @@ def smart_search(
                 # Если продукт уже определён, его собственные чанки должны остаться
                 # в контексте даже при сильных нормативных совпадениях BM25.
                 item["score"] = (item.get("score", 0) or 0) + 0.45
+                if _is_malfunction_query(question):
+                    if _is_malfunction_chunk(item.get("metadata") or {}):
+                        item["score"] += 0.35
                 by_id[chunk_id] = item
 
             for chunk in vector_results:
@@ -245,7 +394,9 @@ def smart_search(
                     by_id[chunk_id] = chunk
 
             unique_chunks = _rank_chunks(
-                list(by_id.values()), prefer_documents=prefer_documents
+                _inject_malfunction_chunks(store, list(by_id.values()), product, question),
+                prefer_documents=prefer_documents,
+                source_file_hint=file_hint,
             )
             return unique_chunks[:context_top_k]
     
@@ -259,7 +410,12 @@ def smart_search(
         top_k,
         use_hybrid=use_hybrid,
     )
-    return _rank_chunks(results, prefer_documents=prefer_documents)[:context_top_k]
+    merged = _inject_source_file_chunks(store, results, file_hint)
+    return _rank_chunks(
+        merged,
+        prefer_documents=prefer_documents,
+        source_file_hint=file_hint,
+    )[:context_top_k]
 
 
 class AdvancedChatbot:

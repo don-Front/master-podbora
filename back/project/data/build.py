@@ -74,6 +74,14 @@ def _norm_filename(value: str) -> str:
     return value.replace("н", "h")
 
 
+def _raw_filename(value: str) -> str:
+    return (value or "").casefold().replace("ё", "е")
+
+
+def _is_malfunctions_filename(value: str) -> bool:
+    return "неисправност" in _raw_filename(value)
+
+
 def _document_kind(path: Path, doc_type: str) -> str:
     name = _norm_filename(path.name)
     if doc_type == "catalog":
@@ -130,11 +138,18 @@ def _product_identity_from_file(path: Path, doc_type: str, document_name: str) -
     elif "плотномер" in name:
         product_family = "UDM"
         product_title = "Плотномер 4.0"
+    elif _is_malfunctions_filename(path.name):
+        product_family = "faults"
+        product_title = document_name or "Основные неисправности приборов"
+
+    document_kind = _document_kind(path, doc_type)
+    if _is_malfunctions_filename(path.name):
+        document_kind = "malfunctions"
 
     return {
         "product_title": product_title,
         "product_family": product_family,
-        "document_kind": _document_kind(path, doc_type),
+        "document_kind": document_kind,
     }
 
 
@@ -144,8 +159,16 @@ def _apply_document_identity(
     doc_type: str,
     document_name: str,
     file_hash: str,
+    *,
+    product_title_override: str | None = None,
+    product_family_override: str | None = None,
+    section_label: str | None = None,
 ) -> Dict:
     identity = _product_identity_from_file(path, doc_type, document_name)
+    if product_title_override:
+        identity["product_title"] = product_title_override
+    if product_family_override:
+        identity["product_family"] = product_family_override
     chunk["product_title"] = identity["product_title"]
     meta = dict(chunk.get("metadata") or {})
     meta["source_file"] = path.name
@@ -154,8 +177,258 @@ def _apply_document_identity(
     meta["product_title"] = identity["product_title"]
     meta["product_family"] = identity["product_family"]
     meta["document_kind"] = identity["document_kind"]
+    if section_label:
+        meta["section_title"] = section_label
     chunk["metadata"] = meta
     return chunk
+
+
+def _docx_iter_blocks(document):
+    """Параграфы и таблицы в порядке следования в DOCX."""
+    from docx.document import Document as DocumentClass
+    from docx.oxml.table import CT_Tbl
+    from docx.oxml.text.paragraph import CT_P
+    from docx.table import Table
+    from docx.text.paragraph import Paragraph
+
+    if not isinstance(document, DocumentClass):
+        return
+    for child in document.element.body:
+        if isinstance(child, CT_P):
+            yield Paragraph(child, document)
+        elif isinstance(child, CT_Tbl):
+            yield Table(child, document)
+
+
+def _docx_section_from_paragraph(text: str) -> tuple[str | None, str | None]:
+    """Возвращает (product_title, section_label) из заголовка раздела."""
+    t = (text or "").strip()
+    low = t.casefold().replace("ё", "е")
+    if not t:
+        return None, None
+    if "самодиагност" in low:
+        return "Turbo Flow UFG", "Функции самодиагностики расходомера"
+    if "ufg" in low:
+        return "Turbo Flow UFG", "Неисправности и способы устранения"
+    if "tfg" in low:
+        return "Turbo Flow TFG", "Неисправности и способы устранения"
+    if "gfg" in low:
+        return "Turbo Flow GFG", "Неисправности и способы устранения"
+    return None, None
+
+
+def _docx_family_from_product(product_title: str) -> str:
+    title = (product_title or "").upper()
+    if "UFG" in title:
+        return "UFG"
+    if "TFG" in title:
+        return "TFG"
+    if "GFG" in title:
+        return "GFG"
+    return "faults"
+
+
+def _docx_row_is_header(cells: list[str]) -> bool:
+    """Заголовок таблицы — только по первым ячейкам (не по колонке «Примечания»)."""
+    head = [c.strip() for c in cells[:2] if (c or "").strip()]
+    if not head:
+        return False
+    joined = " ".join(head).casefold().replace("ё", "е")
+    markers = (
+        "неисправност",
+        "параметр",
+        "пороговое",
+        "причина",
+        "метод устран",
+        "возможные причины",
+        "методы устран",
+        "сообщение предупреж",
+    )
+    return any(m in joined for m in markers)
+
+
+def _docx_infer_product_from_table(table) -> tuple[str | None, str | None]:
+    """Определяет прибор по шапке таблицы, если заголовок раздела ещё не встречался."""
+    if not table.rows:
+        return None, None
+    header_cells = [cell.text.strip() for cell in table.rows[0].cells]
+    joined = " ".join(header_cells).casefold().replace("ё", "е")
+    num_cols = len(table.columns)
+    if num_cols >= 4 and "неисправност" in joined:
+        return "Turbo Flow UFG", "Неисправности и способы устранения"
+    if num_cols >= 4 and "параметр" in joined and "порог" in joined:
+        return "Turbo Flow UFG", "Функции самодиагностики расходомера"
+    return None, None
+
+
+def _docx_format_fault_row(
+    *,
+    document_name: str,
+    product_title: str,
+    section_label: str,
+    cells: list[str],
+    table_kind: str,
+) -> str:
+    clean = [c.strip().replace("\n", " ") for c in cells if (c or "").strip()]
+    if not clean:
+        return ""
+    parts = [
+        f"Документ: {document_name}.",
+        f"Прибор: {product_title}.",
+        f"Раздел: {section_label}.",
+    ]
+    if table_kind == "ufg_faults" and len(clean) >= 3:
+        parts.extend(
+            [
+                f"Неисправность: {clean[0]}.",
+                f"Причина: {clean[1]}.",
+                f"Метод устранения: {clean[2]}.",
+            ]
+        )
+        if len(clean) >= 4 and clean[3]:
+            parts.append(f"Примечание: {clean[3]}.")
+    elif table_kind == "ufg_self_diag":
+        param = clean[0] if clean[0] else "—"
+        threshold = clean[1] if len(clean) > 1 else "—"
+        message = clean[2] if len(clean) > 2 else "—"
+        notes = clean[3] if len(clean) > 3 else ""
+        parts.extend(
+            [
+                "Тип записи: самодиагностика.",
+                f"Параметр: {param}.",
+                f"Пороговое значение: {threshold}.",
+                f"Сообщение: {message}.",
+            ]
+        )
+        if notes:
+            parts.append(f"Примечания: {notes}.")
+    elif table_kind in ("tfg_ns", "gfg_ns") and len(clean) >= 3:
+        parts.extend(
+            [
+                f"НС (неисправность): {clean[0]}.",
+                f"Возможные причины: {clean[1]}.",
+                f"Методы устранения: {clean[2]}.",
+            ]
+        )
+    else:
+        parts.append(" | ".join(clean))
+    return " ".join(parts)
+
+
+def _docx_table_kind(product_title: str, section_label: str, num_cols: int) -> str:
+    section = (section_label or "").casefold().replace("ё", "е")
+    if "UFG" in (product_title or "") and "самодиагност" in section:
+        return "ufg_self_diag"
+    if "UFG" in (product_title or ""):
+        return "ufg_faults"
+    if "TFG" in (product_title or ""):
+        return "tfg_ns"
+    if "GFG" in (product_title or ""):
+        return "gfg_ns"
+    return "generic"
+
+
+def chunks_from_docx(path: Path, doc_type: str) -> List[Dict]:
+    try:
+        from docx import Document
+    except ImportError:
+        print(f"[WARN] python-docx не установлен — пропуск {path.name}", file=sys.stderr)
+        return []
+
+    document_name = _document_name_from_file(path, doc_type)
+    file_hash = compute_file_hash(path)
+    doc = Document(str(path))
+    chunks: List[Dict] = []
+
+    current_product: str | None = None
+    current_section: str | None = None
+    block_idx = 0
+    table_idx = 0
+
+    for block in _docx_iter_blocks(doc):
+        if hasattr(block, "text"):
+            text = (block.text or "").strip()
+            if not text:
+                continue
+            product, section = _docx_section_from_paragraph(text)
+            if product:
+                current_product = product
+                current_section = section
+            if len(text) >= MIN_PAGE_TEXT_LEN and not product:
+                base_id = f"doc_{doc_type}_{path.stem}_para_{block_idx + 1}"
+                chunk = _make_doc_chunk(
+                    base_id,
+                    text,
+                    document_name,
+                    doc_type,
+                    page_number=None,
+                    source_file=path.name,
+                    file_hash=file_hash,
+                )
+                chunk["metadata"]["paragraph"] = block_idx + 1
+                chunks.append(
+                    _apply_document_identity(
+                        chunk,
+                        path,
+                        doc_type,
+                        document_name,
+                        file_hash,
+                        product_title_override=current_product,
+                        product_family_override=_docx_family_from_product(current_product or ""),
+                        section_label=current_section,
+                    )
+                )
+            block_idx += 1
+            continue
+
+        if current_product is None:
+            inferred_product, inferred_section = _docx_infer_product_from_table(block)
+            if inferred_product:
+                current_product = inferred_product
+                current_section = inferred_section
+
+        if current_product is None:
+            table_idx += 1
+            continue
+
+        table_kind = _docx_table_kind(current_product, current_section or "", len(block.columns))
+        row_num = 0
+        last_param_name = ""
+        for row in block.rows:
+            cells = [cell.text.strip() for cell in row.cells]
+            if table_kind == "ufg_self_diag" and cells and not cells[0].strip() and last_param_name:
+                cells[0] = last_param_name
+            elif table_kind == "ufg_self_diag" and cells and cells[0].strip():
+                last_param_name = cells[0]
+            if not any(cells) or _docx_row_is_header(cells):
+                continue
+            content = _docx_format_fault_row(
+                document_name=document_name,
+                product_title=current_product,
+                section_label=current_section or "",
+                cells=cells,
+                table_kind=table_kind,
+            )
+            if len(content) < MIN_PAGE_TEXT_LEN:
+                continue
+            row_num += 1
+            base_id = f"doc_{doc_type}_{path.stem}_tbl{table_idx}_row{row_num}"
+            for part in _split_long_text(content, document_name, base_id, doc_type, None):
+                chunks.append(
+                    _apply_document_identity(
+                        part,
+                        path,
+                        doc_type,
+                        document_name,
+                        file_hash,
+                        product_title_override=current_product,
+                        product_family_override=_docx_family_from_product(current_product),
+                        section_label=current_section,
+                    )
+                )
+        table_idx += 1
+
+    return chunks
 
 
 def compute_file_hash(path: Path) -> str:
@@ -306,30 +579,88 @@ def _make_doc_chunk(
     }
 
 
-def chunks_from_pdf(path: Path, doc_type: str) -> List[Dict]:
+def _pdf_pages_text_pypdf(path: Path) -> List[str]:
     try:
         from pypdf import PdfReader
     except ImportError:
-        print(f"[WARN] pypdf не установлен — пропуск {path.name}", file=sys.stderr)
         return []
-
-    document_name = _document_name_from_file(path, doc_type)
-    file_hash = compute_file_hash(path)
     reader = PdfReader(str(path))
-    chunks: List[Dict] = []
+    return [(page.extract_text() or "").strip() for page in reader.pages]
 
-    for page_idx, page in enumerate(reader.pages):
-        text = (page.extract_text() or "").strip()
+
+def _pdf_pages_text_pymupdf(path: Path) -> List[str]:
+    try:
+        import fitz
+    except ImportError:
+        return []
+    doc = fitz.open(str(path))
+    pages: List[str] = []
+    for page in doc:
+        pages.append((page.get_text("text") or "").strip())
+    doc.close()
+    return pages
+
+
+def _pdf_pages_to_chunks(
+    pages: List[str],
+    path: Path,
+    doc_type: str,
+    document_name: str,
+    file_hash: str,
+    *,
+    engine: str,
+) -> List[Dict]:
+    chunks: List[Dict] = []
+    for page_idx, text in enumerate(pages):
         if len(text) < MIN_PAGE_TEXT_LEN:
             continue
         page_number = page_idx + 1
-        base_id = f"doc_{doc_type}_{path.stem}_p{page_number}"
+        base_id = f"doc_{doc_type}_{path.stem}_{engine}_p{page_number}"
         for part in _split_long_text(text, document_name, base_id, doc_type, page_number):
             chunks.append(
                 _apply_document_identity(part, path, doc_type, document_name, file_hash)
             )
-
     return chunks
+
+
+def chunks_from_pdf(path: Path, doc_type: str) -> List[Dict]:
+    document_name = _document_name_from_file(path, doc_type)
+    file_hash = compute_file_hash(path)
+
+    pypdf_pages = _pdf_pages_text_pypdf(path)
+    chunks = _pdf_pages_to_chunks(
+        pypdf_pages, path, doc_type, document_name, file_hash, engine="pypdf"
+    )
+    if chunks:
+        return chunks
+
+    pymupdf_pages = _pdf_pages_text_pymupdf(path)
+    chunks = _pdf_pages_to_chunks(
+        pymupdf_pages, path, doc_type, document_name, file_hash, engine="fitz"
+    )
+    if chunks:
+        print(f"[INFO] {path.name}: извлечено через PyMuPDF ({len(chunks)} чанков)")
+        return chunks
+
+    if not pypdf_pages and not pymupdf_pages:
+        print(f"[WARN] PDF-парсеры недоступны — пропуск {path.name}", file=sys.stderr)
+        return []
+
+    # Скан/OCR: хотя бы один чанк из имени файла для retrieval по метаданным
+    identity = _product_identity_from_file(path, doc_type, document_name)
+    stub = (
+        f"Документ: {document_name}. Файл: {path.name}. "
+        f"Продукт: {identity['product_title']}. "
+        f"Тип документа: {doc_type}. "
+        f"Вид: {identity['document_kind']}."
+    )
+    base_id = f"doc_{doc_type}_{path.stem}_stub"
+    chunk = _make_doc_chunk(
+        base_id, stub, document_name, doc_type, page_number=1, source_file=path.name, file_hash=file_hash
+    )
+    chunk.setdefault("metadata", {})["is_text_stub"] = True
+    print(f"[WARN] {path.name}: текст не извлечён — stub-чанк (скан/OCR)")
+    return [_apply_document_identity(chunk, path, doc_type, document_name, file_hash)]
 
 
 def chunks_from_txt(path: Path, doc_type: str) -> List[Dict]:
@@ -345,41 +676,6 @@ def chunks_from_txt(path: Path, doc_type: str) -> List[Dict]:
         chunks.append(
             _apply_document_identity(part, path, doc_type, document_name, file_hash)
         )
-    return chunks
-
-
-def chunks_from_docx(path: Path, doc_type: str) -> List[Dict]:
-    try:
-        from docx import Document
-    except ImportError:
-        print(f"[WARN] python-docx не установлен — пропуск {path.name}", file=sys.stderr)
-        return []
-
-    document_name = _document_name_from_file(path, doc_type)
-    file_hash = compute_file_hash(path)
-    doc = Document(str(path))
-    chunks: List[Dict] = []
-
-    for page_idx, para in enumerate(doc.paragraphs):
-        text = (para.text or "").strip()
-        if len(text) < MIN_PAGE_TEXT_LEN:
-            continue
-        # DOCX не имеет страниц — используем порядковый номер абзаца как paragraph
-        base_id = f"doc_{doc_type}_{path.stem}_para_{page_idx + 1}"
-        chunk = _make_doc_chunk(
-            base_id,
-            text,
-            document_name,
-            doc_type,
-            page_number=None,
-            source_file=path.name,
-            file_hash=file_hash,
-        )
-        chunk["metadata"]["paragraph"] = page_idx + 1
-        chunks.append(
-            _apply_document_identity(chunk, path, doc_type, document_name, file_hash)
-        )
-
     return chunks
 
 

@@ -21,7 +21,7 @@ def submit_verification_liquid_url() -> str:
     full = (getattr(settings, 'SUBMIT_VERIFICATION_LIQUID_URL', None) or '').strip().rstrip('/')
     if full:
         return full
-    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'http://127.0.0.1:8010')
+    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'https://turbo-podbor.ru')
     return f"{str(origin).rstrip('/')}/api/submit-verification-liquid-request"
 
 

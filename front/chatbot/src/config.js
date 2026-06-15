@@ -1,10 +1,25 @@
 /**
- * Базовый URL REST API Django (путь до `/api`, без завершающего слэша).
+ * Django-чат (hints, messages, RAG) — локальный бэкенд `back/chatbot`, порт 8002.
+ * FastAPI (подбор, цена, ТКП) — https://turbo-podbor.ru/api/...
  *
- * В development по умолчанию — прямой адрес бэкенда :8002 (не зависит от proxy CRA).
- * Если REACT_APP_API_URL случайно указывает на порт React (3000/3001), он игнорируется.
+ * В dev при REACT_APP_USE_API_PROXY=true запросы идут на `/api` через setupProxy.js → Django :8002.
  */
-const DEV_DJANGO_API = 'http://127.0.0.1:8002/api';
+const PODBOR_API_ORIGIN = 'https://turbo-podbor.ru';
+const DEFAULT_DJANGO_API = 'http://127.0.0.1:8002/api';
+
+function podborApiUrl(path = '') {
+  const cleanPath = String(path || '').replace(/^\/+/, '');
+  return `${PODBOR_API_ORIGIN}/api${cleanPath ? `/${cleanPath}` : ''}`;
+}
+
+function sameOriginApiUrl(path = '') {
+  const cleanPath = String(path || '').replace(/^\/+/, '');
+  const suffix = cleanPath ? `/${cleanPath}` : '';
+  if (typeof window !== 'undefined' && window.location?.origin) {
+    return `${window.location.origin.replace(/\/+$/, '')}/api${suffix}`;
+  }
+  return `${DEFAULT_DJANGO_API}${suffix}`;
+}
 
 function apiUrlPointsToCraDevServer(urlString) {
   try {
@@ -18,30 +33,75 @@ function apiUrlPointsToCraDevServer(urlString) {
   }
 }
 
+function normalizeDjangoApiBaseUrl(urlString) {
+  const raw = (urlString || '').trim().replace(/\/+$/, '');
+  if (!raw) return '';
+  try {
+    const withProto = /^https?:\/\//i.test(raw) ? raw : `http://${raw}`;
+    const u = new URL(withProto);
+    const path = u.pathname.replace(/\/+$/, '');
+    if (path === '' || path === '/') {
+      return `${u.origin}/api`;
+    }
+    if (path.endsWith('/api')) {
+      return `${u.origin}${path}`;
+    }
+    return `${u.origin}${path}/api`;
+  } catch {
+    return raw;
+  }
+}
+
+function isStaticDevServerPort(port) {
+  return port === '3000' || port === '3001';
+}
+
+/**
+ * CRA dev или `serve -s build` на :3000/:3001 — API не на том же порту, а на Django :8002.
+ * В браузере (production bundle) без REACT_APP_API_URL иначе запросы попадают в index.html.
+ */
+function resolveStaticDevServerDjangoApi() {
+  if (typeof window === 'undefined' || !window.location?.hostname) {
+    return '';
+  }
+  const port = window.location.port || '';
+  if (!isStaticDevServerPort(port)) {
+    return '';
+  }
+  const envApi = (process.env.REACT_APP_API_URL || '').trim();
+  if (envApi) {
+    return normalizeDjangoApiBaseUrl(envApi);
+  }
+  const host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return DEFAULT_DJANGO_API;
+  }
+  return `http://${host}:8002/api`;
+}
+
 function resolveApiBaseUrl() {
+  const useDevProxy = (process.env.REACT_APP_USE_API_PROXY || '').trim() === 'true';
+  if (process.env.NODE_ENV === 'development' && useDevProxy) {
+    return '/api';
+  }
+
   let raw = (process.env.REACT_APP_API_URL || '').trim();
   if (raw) {
-    raw = raw.replace(/\/+$/, '');
-    try {
-      const withProto = /^https?:\/\//i.test(raw) ? raw : `http://${raw}`;
-      const u = new URL(withProto);
-      if (u.pathname === '/' || u.pathname === '') {
-        raw = `${u.origin}/api`;
-      } else {
-        raw = `${u.origin}${u.pathname}`.replace(/\/+$/, '');
-      }
-    } catch {
-      /* оставляем raw как есть */
-    }
+    raw = normalizeDjangoApiBaseUrl(raw);
     if (process.env.NODE_ENV === 'development' && apiUrlPointsToCraDevServer(raw)) {
-      return DEV_DJANGO_API;
+      return DEFAULT_DJANGO_API;
     }
     return raw;
   }
   if (process.env.NODE_ENV === 'development') {
-    return DEV_DJANGO_API;
+    return DEFAULT_DJANGO_API;
   }
-  return 'http://192.168.5.219:8000/api';
+
+  const staticDevApi = resolveStaticDevServerDjangoApi();
+  if (staticDevApi) {
+    return staticDevApi;
+  }
+  return sameOriginApiUrl();
 }
 
 export const API_BASE_URL = resolveApiBaseUrl();
@@ -188,7 +248,7 @@ export const LIQUID_TZ_QUESTIONNAIRE_URL = (
  * Переопределение: REACT_APP_1C_DATA_URL.
  */
 export const ONE_C_DATA_URL = (
-  process.env.REACT_APP_1C_DATA_URL || 'http://192.168.5.49:8010/api/1c/data'
+  process.env.REACT_APP_1C_DATA_URL || podborApiUrl('/1c/data')
 ).trim();
 
 /**
@@ -196,26 +256,40 @@ export const ONE_C_DATA_URL = (
  * Переопределение: REACT_APP_SEARCH_EQUIPMENT_URL.
  */
 export const SEARCH_EQUIPMENT_URL = (
-  process.env.REACT_APP_SEARCH_EQUIPMENT_URL || 'http://192.168.5.49:8010/api/search-equipment'
+  process.env.REACT_APP_SEARCH_EQUIPMENT_URL || podborApiUrl('/search-equipment')
 ).trim();
 
 export function getSearchEquipmentUrl() {
   return SEARCH_EQUIPMENT_URL;
 }
 
+/** GET подсказка по макс. расходу для диаметра и среды. */
+export const QMAX_HINT_URL = (
+  process.env.REACT_APP_QMAX_HINT_URL || podborApiUrl('qmax-hint')
+).trim();
+
+export function buildQmaxHintUrl(diameter, medium) {
+  const base = QMAX_HINT_URL.replace(/\/+$/, '');
+  const params = new URLSearchParams({
+    diameter: String(diameter),
+    medium: String(medium),
+  });
+  return `${base}?${params.toString()}`;
+}
+
 /** POST расчёта ориентировочной цены по выбранному прибору и итоговой спецификации. */
 export const ESTIMATE_PRICE_URL = (
-  process.env.REACT_APP_ESTIMATE_PRICE_URL || 'http://192.168.5.49:8010/api/estimate-price'
+  process.env.REACT_APP_ESTIMATE_PRICE_URL || podborApiUrl('/estimate-price')
 ).trim();
 
 /** POST подбора аксессуаров для точного ТКП по выбранному прибору и итоговой спецификации. */
 export const TKP_ACCESSORIES_URL = (
-  process.env.REACT_APP_TKP_ACCESSORIES_URL || 'http://192.168.5.49:8010/api/tkp-accessories'
+  process.env.REACT_APP_TKP_ACCESSORIES_URL || podborApiUrl('/tkp-accessories')
 ).trim();
 
 /** POST генерации PDF ТКП. */
 export const TKP_PDF_URL = (
-  process.env.REACT_APP_TKP_PDF_URL || 'http://192.168.5.49:8010/api/tkp-pdf'
+  process.env.REACT_APP_TKP_PDF_URL || podborApiUrl('/tkp-pdf')
 ).trim();
 
 /** Origin сервиса 1С (fallback для картинок, если не задан Django static). */
@@ -223,16 +297,16 @@ export function getOneCApiOrigin() {
   try {
     return new URL(ONE_C_DATA_URL).origin;
   } catch {
-    return 'http://192.168.5.49:8010';
+    return getDjangoApiOrigin();
   }
 }
 
 /**
- * GET прайс бытовых счётчиков Гранд — на сервисе 1С на :8010.
+ * GET прайс бытовых счётчиков Гранд — на сервисе подбора turbo-podbor.ru.
  * Дефолт держим отдельным URL, чтобы старый `REACT_APP_1C_DATA_URL` не уводил прайс на другой host.
  * Переопределение полного URL: `REACT_APP_GRAND_GAS_PRICE_URL`.
  */
-const DEFAULT_GRAND_GAS_PRICE_URL = 'http://192.168.5.49:8010/api/prices/grand-gas-meters';
+const DEFAULT_GRAND_GAS_PRICE_URL = podborApiUrl('/prices/grand-gas-meters');
 
 export function getGrandGasMetersPriceUrl() {
   const env = (process.env.REACT_APP_GRAND_GAS_PRICE_URL || '').trim();
@@ -242,19 +316,22 @@ export function getGrandGasMetersPriceUrl() {
   return DEFAULT_GRAND_GAS_PRICE_URL;
 }
 
-/** POST заявки «бытовые счётчики газа» на :8010 (для отладочного вывода в консоль). */
+/** POST заявки «бытовые счётчики газа» на turbo-podbor.ru (для отладочного вывода в консоль). */
 export function getSubmitHouseholdGasRequestUrl() {
   const env = (process.env.REACT_APP_SUBMIT_HOUSEHOLD_GAS_URL || '').trim();
   if (env) {
     return env.replace(/\/+$/, '');
   }
-  // Совпадает с дефолтом бэкенда (SERVICE_8010_ORIGIN + путь)
-  return 'http://192.168.5.49:8010/api/submit-household-gas-request';
+  return podborApiUrl('/submit-household-gas-request');
 }
 
 /** POST заявки по подобранной СПУ (газ); фактический вызов из Django — для лога в консоли. */
 export function getSubmitSpuApplicationUrl() {
-  return 'http://192.168.5.49:8010/api/submit-spu-application';
+  const env = (process.env.REACT_APP_SUBMIT_SPU_APPLICATION_URL || '').trim();
+  if (env) {
+    return env.replace(/\/+$/, '');
+  }
+  return podborApiUrl('/submit-spu-application');
 }
 
 /**
