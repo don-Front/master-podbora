@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
+import { useEffect, useLayoutEffect, useState, useCallback, useRef, useMemo } from 'react';
 import {
   createChat,
   createMessage,
@@ -1147,38 +1147,129 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange, pickDisabled = 
   );
 }
 
-const CHAT_HEIGHT_STORAGE_KEY = 'turbo-don-chat-window-height';
-const DEFAULT_CHAT_HEIGHT = 520;
-const MIN_CHAT_HEIGHT = 360;
+const GREETING_TEASER_ENGAGED_KEY = 'turbo-don-greeting-teaser-engaged';
+const GREETING_TEASER_SEEN_KEY = 'turbo-don-greeting-teaser-seen';
+const LEGACY_GREETING_TEASER_KEY = 'turbo-don-greeting-teaser-done';
+const MIN_CHAT_HEIGHT = 300;
+const MAX_VIEWPORT_HEIGHT_RATIO = 0.8;
 
 const CHAT_GREETING_TEASER_TEXT =
   'Здравствуйте! Помогу подобрать оборудование или ответить на ваши вопросы.';
 
-function getMaxChatHeight() {
-  return Math.max(MIN_CHAT_HEIGHT, window.innerHeight - 120);
+const WIDGET_TOGGLE_SIZE = 64;
+const WIDGET_LAUNCHER_INSET = 20;
+const WIDGET_SHADOW_BLEED = 28;
+const WIDGET_LAUNCHER_SIZE = WIDGET_TOGGLE_SIZE + WIDGET_LAUNCHER_INSET + WIDGET_SHADOW_BLEED;
+const WIDGET_CHAT_WIDTH = 380;
+const WIDGET_LAUNCHER_GAP = 80;
+
+let embedParentViewportHeight = null;
+
+function setEmbedParentViewport(height) {
+  const parsed = Number(height);
+  if (Number.isFinite(parsed) && parsed > 0) {
+    embedParentViewportHeight = parsed;
+  }
 }
 
-function readStoredChatHeight() {
+function isWidgetEmbedded() {
   try {
-    const stored = Number(localStorage.getItem(CHAT_HEIGHT_STORAGE_KEY));
-    if (Number.isFinite(stored) && stored >= MIN_CHAT_HEIGHT) {
-      return Math.min(stored, getMaxChatHeight());
+    return window.parent !== window;
+  } catch {
+    return true;
+  }
+}
+
+function getEmbedFrameHeight(chatWindowHeight) {
+  return chatWindowHeight + WIDGET_LAUNCHER_GAP + WIDGET_LAUNCHER_INSET;
+}
+
+function postEmbedResize(isOpen, chatWindowHeight) {
+  if (!isWidgetEmbedded()) return;
+  window.parent.postMessage(
+    {
+      type: 'RESIZE',
+      open: Boolean(isOpen),
+      height: isOpen ? getEmbedFrameHeight(chatWindowHeight) : undefined,
+    },
+    '*',
+  );
+}
+
+function getMaxChatHeight() {
+  const viewport = embedParentViewportHeight || window.innerHeight;
+  return Math.floor(viewport * MAX_VIEWPORT_HEIGHT_RATIO);
+}
+
+function readGreetingTeaserEngaged() {
+  try {
+    return localStorage.getItem(GREETING_TEASER_ENGAGED_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function readGreetingTeaserSeen() {
+  try {
+    return localStorage.getItem(GREETING_TEASER_SEEN_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function markGreetingTeaserEngaged() {
+  try {
+    localStorage.setItem(GREETING_TEASER_ENGAGED_KEY, '1');
+    localStorage.removeItem(LEGACY_GREETING_TEASER_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+function markGreetingTeaserSeen() {
+  try {
+    localStorage.setItem(GREETING_TEASER_SEEN_KEY, '1');
+    localStorage.removeItem(LEGACY_GREETING_TEASER_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+function shouldScheduleGreetingTeaser() {
+  try {
+    if (localStorage.getItem(LEGACY_GREETING_TEASER_KEY) === '1') {
+      localStorage.removeItem(LEGACY_GREETING_TEASER_KEY);
     }
   } catch {
     /* ignore */
   }
-  return Math.min(DEFAULT_CHAT_HEIGHT, getMaxChatHeight());
+  return !readGreetingTeaserEngaged() && !readGreetingTeaserSeen();
 }
 
 function clampChatHeight(height) {
   return Math.min(getMaxChatHeight(), Math.max(MIN_CHAT_HEIGHT, height));
 }
 
+function applyChatWindowHeight(node, height) {
+  if (!node) return;
+  const px = `${height}px`;
+  const maxPx = `${getMaxChatHeight()}px`;
+  node.style.setProperty('--chat-window-height', px);
+  node.style.setProperty('--chat-window-max-height', maxPx);
+  if (isWidgetEmbedded()) {
+    node.style.setProperty('height', px, 'important');
+    node.style.setProperty('max-height', maxPx, 'important');
+  } else {
+    node.style.height = px;
+    node.style.maxHeight = maxPx;
+  }
+}
+
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [showGreetingTeaser, setShowGreetingTeaser] = useState(false);
-  const [chatWindowHeight, setChatWindowHeight] = useState(readStoredChatHeight);
-  const [isResizingChat, setIsResizingChat] = useState(false);
+  const [chatWindowHeight, setChatWindowHeight] = useState(MIN_CHAT_HEIGHT);
+  const [viewportVersion, setViewportVersion] = useState(0);
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -1190,6 +1281,13 @@ export function ChatWidget() {
   const inputRef = useRef(null);
   const orderFileDragDepthRef = useRef(0);
   const widgetResizeFrameRef = useRef(null);
+  const chatWindowRef = useRef(null);
+  const chatHeaderRef = useRef(null);
+  const chatMessagesRef = useRef(null);
+  const chatFooterRef = useRef(null);
+  const chatWindowHeightRef = useRef(chatWindowHeight);
+  const greetingTeaserTimerRef = useRef(null);
+  const greetingTeaserShownRef = useRef(false);
   /** Защита от двойного нажатия «Получить цену» / debug на шаге телефона (дубли одного и того же ответа бота). */
   const equipmentPriceActionLockRef = useRef(false);
 
@@ -1675,38 +1773,140 @@ export function ChatWidget() {
   }, [initializeChat]);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setShowGreetingTeaser(true), 2000);
-    return () => window.clearTimeout(timer);
+    if (!shouldScheduleGreetingTeaser()) return undefined;
+
+    greetingTeaserTimerRef.current = window.setTimeout(() => {
+      greetingTeaserTimerRef.current = null;
+      if (readGreetingTeaserEngaged()) return;
+      greetingTeaserShownRef.current = true;
+      setShowGreetingTeaser(true);
+      markGreetingTeaserSeen();
+    }, 2000);
+
+    return () => {
+      if (greetingTeaserTimerRef.current) {
+        window.clearTimeout(greetingTeaserTimerRef.current);
+        greetingTeaserTimerRef.current = null;
+      }
+    };
   }, []);
 
   useEffect(() => {
-    if (isOpen) setShowGreetingTeaser(false);
+    if (!isOpen) return;
+    if (greetingTeaserTimerRef.current) {
+      window.clearTimeout(greetingTeaserTimerRef.current);
+      greetingTeaserTimerRef.current = null;
+    }
+    if (!greetingTeaserShownRef.current) {
+      markGreetingTeaserEngaged();
+    }
+    setShowGreetingTeaser(false);
   }, [isOpen]);
 
-  useEffect(() => {
-    if (window.parent === window) return;
+  useLayoutEffect(() => {
+    chatWindowHeightRef.current = chatWindowHeight;
+    applyChatWindowHeight(chatWindowRef.current, chatWindowHeight);
+  }, [chatWindowHeight]);
 
-    const targetHeight = isOpen
-      ? Math.max(chatWindowHeight + 128, 620)
-      : showGreetingTeaser
-        ? 120
-        : 96;
-    const height = `${targetHeight}px`;
-    document.documentElement.style.minHeight = height;
-    document.body.style.minHeight = height;
+  const syncChatWindowHeight = useCallback(() => {
+    if (!isOpen) return;
+    const header = chatHeaderRef.current;
+    const messages = chatMessagesRef.current;
+    const footer = chatFooterRef.current;
+    if (!header || !messages || !footer) return;
+
+    const maxH = getMaxChatHeight();
+    const contentH = header.offsetHeight + messages.scrollHeight + footer.offsetHeight;
+    const next = clampChatHeight(contentH);
+    chatWindowHeightRef.current = next;
+    setChatWindowHeight((prev) => (prev === next ? prev : next));
+  }, [isOpen]);
+
+  useLayoutEffect(() => {
+    if (!isOpen) return undefined;
+
+    syncChatWindowHeight();
+
+    const scheduleSync = () => {
+      if (widgetResizeFrameRef.current) {
+        window.cancelAnimationFrame(widgetResizeFrameRef.current);
+      }
+      widgetResizeFrameRef.current = window.requestAnimationFrame(syncChatWindowHeight);
+    };
+
+    const observer = new ResizeObserver(scheduleSync);
+    [chatHeaderRef.current, chatMessagesRef.current, chatFooterRef.current]
+      .filter(Boolean)
+      .forEach((node) => observer.observe(node));
+
+    return () => {
+      observer.disconnect();
+      if (widgetResizeFrameRef.current) {
+        window.cancelAnimationFrame(widgetResizeFrameRef.current);
+      }
+    };
+  }, [
+    isOpen,
+    syncChatWindowHeight,
+    messages,
+    isTyping,
+    typingDetailsOpen,
+    hintState,
+    viewportVersion,
+  ]);
+
+  useLayoutEffect(() => {
+    if (!isWidgetEmbedded()) return undefined;
+
+    document.documentElement.style.minHeight = '100vh';
+    document.documentElement.style.height = '100vh';
+    document.body.style.minHeight = '100vh';
+    document.body.style.height = '100vh';
     const root = document.getElementById('root');
     if (root) {
-      root.style.minHeight = height;
+      root.style.minHeight = '100vh';
+      root.style.height = '100vh';
     }
 
-    if (widgetResizeFrameRef.current) {
-      window.cancelAnimationFrame(widgetResizeFrameRef.current);
-    }
-    widgetResizeFrameRef.current = window.requestAnimationFrame(() => {
-      widgetResizeFrameRef.current = null;
-      window.parent.postMessage({ type: 'RESIZE', height: document.body.scrollHeight }, '*');
-    });
-  });
+    postEmbedResize(isOpen, chatWindowHeight);
+    window.parent.postMessage(
+      {
+        type: 'TEASER',
+        show: !isOpen && showGreetingTeaser,
+        text: CHAT_GREETING_TEASER_TEXT,
+      },
+      '*',
+    );
+
+    return undefined;
+  }, [isOpen, showGreetingTeaser, chatWindowHeight]);
+
+  useEffect(() => {
+    if (!isWidgetEmbedded()) return undefined;
+
+    window.parent.postMessage({ type: 'REQUEST_VIEWPORT' }, '*');
+
+    const onParentMessage = (event) => {
+      const data = event.data || {};
+      if (data.type === 'VIEWPORT') {
+        setEmbedParentViewport(data.height);
+        setViewportVersion((v) => v + 1);
+        setChatWindowHeight((height) => clampChatHeight(height));
+      }
+      if (data.type === 'OPEN_CHAT') {
+        postEmbedResize(true, chatWindowHeightRef.current);
+        setIsOpen(true);
+        setShowGreetingTeaser(false);
+      }
+      if (data.type === 'HIDE_TEASER') {
+        setShowGreetingTeaser(false);
+        markGreetingTeaserSeen();
+      }
+    };
+
+    window.addEventListener('message', onParentMessage);
+    return () => window.removeEventListener('message', onParentMessage);
+  }, []);
 
   useEffect(() => () => {
     if (widgetResizeFrameRef.current) {
@@ -1743,52 +1943,20 @@ export function ChatWidget() {
   }, [chatId]);
 
   const toggleOpen = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen((prev) => {
+      const next = !prev;
+      postEmbedResize(next, chatWindowHeight);
+      return next;
+    });
   };
 
   useEffect(() => {
     const onViewportResize = () => {
-      setChatWindowHeight((h) => clampChatHeight(h));
+      setViewportVersion((v) => v + 1);
     };
     window.addEventListener('resize', onViewportResize);
     return () => window.removeEventListener('resize', onViewportResize);
   }, []);
-
-  const handleChatResizePointerDown = useCallback(
-    (e) => {
-      e.preventDefault();
-      const startY = e.clientY;
-      const startHeight = chatWindowHeight;
-      setIsResizingChat(true);
-      document.body.style.userSelect = 'none';
-      document.body.style.cursor = 'ns-resize';
-
-      const onMove = (ev) => {
-        setChatWindowHeight(clampChatHeight(startHeight + (startY - ev.clientY)));
-      };
-      const onUp = () => {
-        setIsResizingChat(false);
-        document.body.style.userSelect = '';
-        document.body.style.cursor = '';
-        document.removeEventListener('pointermove', onMove);
-        document.removeEventListener('pointerup', onUp);
-        document.removeEventListener('pointercancel', onUp);
-        setChatWindowHeight((h) => {
-          try {
-            localStorage.setItem(CHAT_HEIGHT_STORAGE_KEY, String(h));
-          } catch {
-            /* ignore */
-          }
-          return h;
-        });
-      };
-
-      document.addEventListener('pointermove', onMove);
-      document.addEventListener('pointerup', onUp);
-      document.addEventListener('pointercancel', onUp);
-    },
-    [chatWindowHeight],
-  );
 
   const handleOrderSpecsEdit = async (row, options = {}) => {
     if (!row?.key || isTyping) return;
@@ -3682,13 +3850,16 @@ export function ChatWidget() {
   return (
     <div className="chat-widget">
       <div className="chat-widget__launcher">
-        {!isOpen && showGreetingTeaser ? (
+        {!isOpen && showGreetingTeaser && !isWidgetEmbedded() ? (
           <div className="chat-widget__greeting-teaser" role="status">
             <button
               type="button"
               className="chat-widget__greeting-teaser-close"
               aria-label="Скрыть приветствие"
-              onClick={() => setShowGreetingTeaser(false)}
+              onClick={() => {
+                setShowGreetingTeaser(false);
+                markGreetingTeaserSeen();
+              }}
             >
               ×
             </button>
@@ -3713,26 +3884,18 @@ export function ChatWidget() {
 
       <div
         id="turbo-don-chat-window"
+        ref={chatWindowRef}
         className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
-          isResizingChat ? ' chat-widget__window--resizing' : ''
-        }${isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''}${
-          isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''
-        }`}
+          isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''
+        }${isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''}`}
         aria-hidden={!isOpen}
-        style={{ height: chatWindowHeight }}
+        style={{ height: `${chatWindowHeight}px`, ['--chat-window-height']: `${chatWindowHeight}px` }}
         onDragEnter={handleOrderFileDragEnter}
         onDragOver={handleOrderFileDragOver}
         onDragLeave={handleOrderFileDragLeave}
         onDrop={handleOrderFileDrop}
       >
-        <div
-          className="chat-widget__resize-handle"
-          role="separator"
-          aria-orientation="horizontal"
-          aria-label="Потяните вверх или вниз, чтобы изменить высоту чата"
-          onPointerDown={handleChatResizePointerDown}
-        />
-        <header className="chat-widget__header">
+        <header ref={chatHeaderRef} className="chat-widget__header">
           <div className="chat-widget__header-info">
             <div className="chat-widget__avatar" />
             <div>
@@ -3745,7 +3908,7 @@ export function ChatWidget() {
           </button>
         </header>
 
-        <div className="chat-widget__messages">
+        <div ref={chatMessagesRef} className="chat-widget__messages">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -3952,6 +4115,7 @@ export function ChatWidget() {
         </div>
 
         <div
+          ref={chatFooterRef}
           className={`chat-widget__footer${
             isOrderFileDropEnabled ? ' chat-widget__footer--file-drop-enabled' : ''
           }${isOrderFileDragActive ? ' chat-widget__footer--file-drop-active' : ''}`}

@@ -9,6 +9,94 @@
   min-height: 100vh;
 }
 
+/* Встраивание через iframe на сторонний сайт: без фона на весь экран */
+html.widget-embed,
+html.widget-embed body,
+html.widget-embed #root,
+html.widget-embed .App,
+html.widget-embed .widget-page {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+html.widget-embed .chat-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  top: auto;
+  width: 380px;
+  max-width: 380px;
+  pointer-events: auto;
+}
+
+html.widget-embed .chat-widget__launcher {
+  display: flex;
+  justify-content: flex-end;
+}
+
+html.widget-embed .chat-widget__window {
+  width: 342px !important;
+  max-width: 342px !important;
+  height: var(--chat-window-height, 300px) !important;
+  max-height: var(--chat-window-max-height, 80vh) !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: 80px !important;
+}
+
+html.widget-embed .chat-widget__window.chat-widget__window--visible {
+  pointer-events: auto;
+}
+
+html.widget-embed .chat-widget__launcher,
+html.widget-embed .chat-widget__toggle {
+  pointer-events: auto;
+}
+
+/* Embed: без теней и blur — чат не выглядит отдельным затемнённым слоем */
+html.widget-embed .chat-widget__window {
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: #ffffff !important;
+  border-color: rgba(148, 163, 184, 0.35) !important;
+}
+
+html.widget-embed .chat-widget__toggle,
+html.widget-embed .chat-widget__toggle:hover,
+html.widget-embed .chat-widget__toggle--pulse,
+html.widget-embed .chat-widget__toggle--open {
+  box-shadow: none !important;
+}
+
+html.widget-embed .chat-widget__toggle--pulse {
+  animation: none;
+}
+
+@media (max-width: 480px) {
+  html.widget-embed .chat-widget {
+    right: 16px;
+    bottom: 16px;
+    left: auto;
+    width: 380px;
+    max-width: 380px;
+  }
+
+  html.widget-embed .chat-widget__window {
+    width: 342px !important;
+    max-width: 342px !important;
+    height: var(--chat-window-height, 300px) !important;
+    max-height: var(--chat-window-max-height, 80vh) !important;
+    bottom: 80px !important;
+  }
+}
+
 .chat-widget {
   position: fixed;
   right: 24px;
@@ -154,9 +242,9 @@
   position: absolute;
   right: 0;
   bottom: 80px;
-  /* окно точно над круглой иконкой; высота задаётся из JS (перетаскивание верхнего края) */
   width: 342px;
-  height: min(520px, calc(100vh - 120px));
+  height: 300px;
+  max-height: 80vh;
   border-radius: 20px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.95);
@@ -199,45 +287,9 @@
     right: 0;
     bottom: 76px;
     width: 100%;
-    height: min(620px, calc(100vh - 96px));
+    max-height: 80vh;
     border-radius: 18px;
   }
-}
-
-.chat-widget__window--resizing {
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  user-select: none;
-}
-
-.chat-widget__resize-handle {
-  flex-shrink: 0;
-  height: 10px;
-  cursor: ns-resize;
-  touch-action: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(226, 232, 240, 0.95), rgba(238, 242, 255, 0.6));
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-.chat-widget__resize-handle::before {
-  content: '';
-  width: 40px;
-  height: 4px;
-  border-radius: 999px;
-  background: rgba(100, 116, 139, 0.45);
-  box-shadow:
-    0 -5px 0 rgba(100, 116, 139, 0.3),
-    0 5px 0 rgba(100, 116, 139, 0.3);
-}
-
-.chat-widget__resize-handle:hover::before,
-.chat-widget__resize-handle:active::before {
-  background: rgba(59, 130, 246, 0.55);
-  box-shadow:
-    0 -5px 0 rgba(59, 130, 246, 0.4),
-    0 5px 0 rgba(59, 130, 246, 0.4);
 }
 
 .chat-widget__header {

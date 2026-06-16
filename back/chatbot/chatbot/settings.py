@@ -73,6 +73,10 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '193.105.37.142',
+    '192.168.5.53',
+    'turbo-podbor.ru',
+    'www.turbo-podbor.ru',
     '192.168.2.225',
     '192.168.3.1',
     '192.168.5.219',
@@ -212,7 +216,12 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://127\.0\.0\.1(:[0-9]+)?$",
 ]
 if DEBUG:
-    CSRF_TRUSTED_ORIGINS = [*CORS_ALLOWED_ORIGINS]
+    CSRF_TRUSTED_ORIGINS = [
+        *CORS_ALLOWED_ORIGINS,
+        "https://www.turbo-podbor.ru",
+        "http://193.105.37.142:10111",
+        "http://192.168.5.53:10111",
+    ]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
