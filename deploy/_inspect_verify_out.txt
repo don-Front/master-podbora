@@ -1,0 +1,7 @@
+=== docker exec turbo-podbor-app grep -n verification_codes /app/main.py
+89:verification_codes: Dict[str, Dict[str, Any]] = {}
+3942:        verification_codes[email] = {
+4025:        if email not in verification_codes:
+4031:        stored = verification_codes[email]
+4035:            del verification_codes[email]
+4049:        verification_codes[email]["verified"] = True

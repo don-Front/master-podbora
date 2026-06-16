@@ -1,0 +1,9 @@
+.git
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/node_modules
+front/chatbot/build
+back/chatbot/media
+back/chatbot/db.sqlite3
+back/UML

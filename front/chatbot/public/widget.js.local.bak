@@ -1,0 +1,251 @@
+(function () {
+  'use strict';
+
+  var WIDGET_ID = 'turbo-don-widget-frame';
+  var TEASER_ID = 'turbo-don-widget-teaser';
+  var DEFAULT_WIDGET_URL = 'https://turbo-podbor.ru/podbor-chat/';
+  var DEFAULT_TEASER_TEXT =
+    'Здравствуйте! Помогу подобрать оборудование или ответить на ваши вопросы.';
+
+  if (document.getElementById(WIDGET_ID)) {
+    return;
+  }
+
+  var currentScript = document.currentScript;
+
+  function getWidgetUrl() {
+    var fromAttribute = currentScript && currentScript.getAttribute('data-widget-url');
+    if (fromAttribute) {
+      return fromAttribute;
+    }
+
+    if (currentScript && currentScript.src) {
+      try {
+        return new URL('./', currentScript.src).href;
+      } catch (error) {
+        return DEFAULT_WIDGET_URL;
+      }
+    }
+
+    return DEFAULT_WIDGET_URL;
+  }
+
+  var config = {
+    url: getWidgetUrl(),
+    right: (currentScript && currentScript.getAttribute('data-right')) || '24px',
+    bottom: (currentScript && currentScript.getAttribute('data-bottom')) || '24px',
+    zIndex: (currentScript && currentScript.getAttribute('data-z-index')) || '2147483647',
+  };
+
+  var iframe = document.createElement('iframe');
+  iframe.id = WIDGET_ID;
+  iframe.title = 'Turbo-ассистент';
+  iframe.src = config.url;
+  iframe.loading = 'eager';
+  iframe.allow = 'clipboard-write';
+  iframe.setAttribute('aria-label', 'Turbo-ассистент');
+
+  var LAUNCHER_SIZE = '80px';
+
+  var collapsedStyle = {
+    position: 'fixed',
+    right: config.right,
+    bottom: config.bottom,
+    width: LAUNCHER_SIZE,
+    height: LAUNCHER_SIZE,
+    border: 'none',
+    borderRadius: '50%',
+    zIndex: config.zIndex,
+    background: 'transparent',
+    overflow: 'hidden',
+    transition: 'width 0.25s ease, height 0.25s ease, border-radius 0.25s ease',
+  };
+
+  var expanded = false;
+
+  Object.assign(iframe.style, collapsedStyle);
+
+  function isAllowedOrigin(origin) {
+    if (!origin) {
+      return true;
+    }
+    return (
+      origin.indexOf('turbo-podbor.ru') !== -1 ||
+      origin.indexOf('localhost') !== -1 ||
+      origin.indexOf('127.0.0.1') !== -1
+    );
+  }
+
+  function setExpanded(next) {
+    expanded = next;
+    if (expanded) {
+      Object.assign(iframe.style, {
+        width: 'min(400px, calc(100vw - 32px))',
+        height: 'min(640px, calc(100vh - 32px))',
+        borderRadius: '16px',
+        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.2)',
+        background: '#ffffff',
+        overflow: 'hidden',
+      });
+      setTeaser(false);
+    } else {
+      Object.assign(iframe.style, collapsedStyle);
+    }
+  }
+
+  function positionTeaser(el) {
+    var iframeRect = iframe.getBoundingClientRect();
+    var gap = 4;
+    el.style.right = window.innerWidth - iframeRect.left + gap + 'px';
+    el.style.top = 'auto';
+    var bottomPx = parseFloat(config.bottom) || 24;
+    var iconCenterY = window.innerHeight - bottomPx - iframeRect.height / 2;
+    var teaserH = el.offsetHeight || 56;
+    el.style.bottom = 'auto';
+    el.style.top = Math.max(8, iconCenterY - teaserH / 2) + 'px';
+
+    var arrow = el.querySelector('[data-teaser-arrow="true"]');
+    if (arrow && el.offsetHeight) {
+      arrow.style.bottom = Math.max(12, el.offsetHeight / 2 - 6) + 'px';
+    }
+  }
+
+  function setTeaser(visible, text) {
+    var existing = document.getElementById(TEASER_ID);
+    if (!visible || expanded) {
+      if (existing) {
+        existing.remove();
+      }
+      return;
+    }
+
+    var teaser = existing;
+    if (!teaser) {
+      teaser = document.createElement('div');
+      teaser.id = TEASER_ID;
+      teaser.setAttribute('role', 'status');
+      Object.assign(teaser.style, {
+        position: 'fixed',
+        zIndex: config.zIndex,
+        maxWidth: 'min(300px, calc(100vw - 160px))',
+        padding: '12px 34px 12px 14px',
+        borderRadius: '16px',
+        background: '#ffffff',
+        border: '2px solid rgba(100, 116, 139, 0.55)',
+        boxShadow: '0 10px 28px rgba(15, 23, 42, 0.14)',
+        fontFamily: 'system-ui, -apple-system, Segoe UI, sans-serif',
+        fontSize: '14px',
+        lineHeight: '1.45',
+        color: '#0f172a',
+        cursor: 'pointer',
+      });
+
+      var arrow = document.createElement('span');
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.setAttribute('data-teaser-arrow', 'true');
+      Object.assign(arrow.style, {
+        position: 'absolute',
+        right: '-6px',
+        bottom: '22px',
+        width: '12px',
+        height: '12px',
+        background: '#ffffff',
+        borderRight: '2px solid rgba(100, 116, 139, 0.55)',
+        borderBottom: '2px solid rgba(100, 116, 139, 0.55)',
+        transform: 'rotate(-45deg)',
+        boxSizing: 'border-box',
+        pointerEvents: 'none',
+      });
+
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.setAttribute('aria-label', 'Скрыть приветствие');
+      closeBtn.textContent = '×';
+      Object.assign(closeBtn.style, {
+        position: 'absolute',
+        top: '2px',
+        right: '4px',
+        width: '22px',
+        height: '22px',
+        padding: '0',
+        border: 'none',
+        borderRadius: '50%',
+        background: 'transparent',
+        color: '#94a3b8',
+        fontSize: '18px',
+        lineHeight: '1',
+        cursor: 'pointer',
+      });
+      closeBtn.addEventListener('click', function (event) {
+        event.stopPropagation();
+        setTeaser(false);
+      });
+
+      var textNode = document.createElement('span');
+      textNode.className = 'turbo-don-widget-teaser-text';
+
+      teaser.appendChild(arrow);
+      teaser.appendChild(closeBtn);
+      teaser.appendChild(textNode);
+
+      teaser.addEventListener('click', function () {
+        try {
+          iframe.contentWindow.postMessage({ type: 'turbo-don-chat-force-open' }, '*');
+        } catch (error) {
+          /* ignore */
+        }
+        setExpanded(true);
+      });
+
+      window.addEventListener('resize', function () {
+        if (document.getElementById(TEASER_ID)) {
+          positionTeaser(teaser);
+        }
+      });
+    }
+
+    var textEl = teaser.querySelector('.turbo-don-widget-teaser-text');
+    if (textEl) {
+      textEl.textContent = text || DEFAULT_TEASER_TEXT;
+    }
+
+    if (!teaser.parentNode) {
+      document.body.appendChild(teaser);
+    }
+    positionTeaser(teaser);
+    requestAnimationFrame(function () {
+      positionTeaser(teaser);
+    });
+  }
+
+  window.addEventListener('message', function (event) {
+    if (!event.data || typeof event.data !== 'object') {
+      return;
+    }
+    if (!isAllowedOrigin(event.origin)) {
+      return;
+    }
+    if (event.data.type === 'turbo-don-chat-open') {
+      setExpanded(true);
+    }
+    if (event.data.type === 'turbo-don-chat-close') {
+      setExpanded(false);
+    }
+    if (event.data.type === 'turbo-don-chat-teaser') {
+      setTeaser(!!event.data.visible, event.data.text);
+    }
+  });
+
+  function mount() {
+    if (document.getElementById(WIDGET_ID)) {
+      return;
+    }
+    document.body.appendChild(iframe);
+  }
+
+  if (document.body) {
+    mount();
+  } else {
+    document.addEventListener('DOMContentLoaded', mount);
+  }
+})();

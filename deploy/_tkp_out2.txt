@@ -1,0 +1,87 @@
+=== docker exec turbo-podbor-app sh -c 'grep -n def\ build_tkp_pdf /app/main.py /app
+/app/tkp_pdf.py:224:def build_tkp_pdf_bytes(body: TkpPdfRequest) -> bytes:
+
+=== docker exec turbo-podbor-app python3 -c "import reportlab; print('reportlab ok')
+reportlab ok
+
+=== docker logs turbo-podbor-app 2>&1 | tail -80
+Итого найдено неподходящего оборудования: 0
+INFO:     172.18.0.3:36312 - "GET /api/search-equipment?equipment_type=flowmeters&medium=%D0%BF%D1%80%D0%B5%D1%81%D0%BD%D0%B0%D1%8F+%D0%B2%D0%BE%D0%B4%D0%B0&application=industrial&gas_type=natural&flowMin=220&flowMax=140&flow_unit=%D0%BC%C2%B3%2F%D1%87&diameter=200&pressureMin=1.5&pressureMax=2&pressure_unit=%D0%9C%D0%9F%D0%B0&tempMediumMin=5&tempMediumMax=30&temperature_unit=%C2%B0C&tempAmbientMin=-30&tempAmbientMax=36&accuracy=1 HTTP/1.1" 200 OK
+INFO:     172.18.0.3:36272 - "POST /api/send-verification-code HTTP/1.1" 200 OK
+INFO:main:✅ Код верификации отправлен на rusdav14@gmail.com
+INFO:     172.18.0.3:49844 - "POST /api/verify-code HTTP/1.1" 200 OK
+INFO:main:✅ Email rusdav14@gmail.com подтверждён
+INFO:     172.18.0.3:49844 - "POST /api/estimate-price HTTP/1.1" 200 OK
+INFO:     172.18.0.3:60798 - "GET / HTTP/1.1" 200 OK
+INFO:     172.18.0.3:39542 - "GET / HTTP/1.1" 200 OK
+INFO:     172.18.0.3:58032 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:52852 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:51484 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:56770 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:54038 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:33750 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:33760 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:50892 - "GET /wp-content/themes/turbo-don/assets/js/ai/widget.js HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:44112 - "GET /wp-content/themes/turbo-don/assets/js/ai/widget.js HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:50160 - "GET /wp-content/themes/turbo-don/assets/js/ai/widget.js HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:57190 - "GET /wp-content/themes/turbo-don/assets/js/ai/widget.js HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:57206 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:57206 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:46510 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:46510 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:33012 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:50694 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:33038 - "GET /index HTTP/1.1" 404 Not Found
+INFO:     172.18.0.3:60694 - "GET /api/prices/grand-gas-meters HTTP/1.1" 200 OK
+
+=== ПОИСК ОБОРУДОВАНИЯ ===
+Параметры поиска: medium=пресная вода, application=industrial, gas_type=natural
+Расход: 220-140 м³/ч
+Давление: 1.5-2 МПа
+Температура: 5-30 °C
+Точность: 1
+Найдено оборудования в базе: 2
+
+Проверяем оборудование 1: Расходомер Turbo Flow CFM
+
+--- Проверка оборудования: Расходомер Turbo Flow CFM ---
+Проверка давления: требуется 1.5-2.0 МПа, спецификация: 0,0025-25 МПа
+Проверка температуры среды: требуется 5.0-30.0, спецификация: -200°C до +300°C
+Проверка температуры окружающей среды: требуется -30.0-36.0, спецификация: -50°C до +60°C
+Проверка расхода: требуется 220.0-140.0 м³/ч, спецификация: 0,15-2738,46 м³/ч
+Сравнение расхода: пользователь 220.0-140.0, спецификация 0.15-2738.46
+Проверка точности: требуется 1.0, спецификация: 0,1-5%
+DEBUG плотность: medium=пресная вода, density_min=None→None, density_max=None→None
+Проверка диаметра: требуется 200.0, спецификация: 10–300 мм
+ПОДХОДИТ: Расходомер Turbo Flow CFM прошло все проверки
+✓ Подходит!
+
+Проверяем оборудование 2: Расходомер Turbo Flow UFL
+
+--- Проверка оборудования: Расходомер Turbo Flow UFL ---
+Проверка давления: требуется 1.5-2.0 МПа, спецификация: 0-45 МПа
+Проверка температуры среды: требуется 5.0-30.0, спецификация: -45°C до +320°C
+Проверка температуры окружающей среды: требуется -30.0-36.0, спецификация: -60°C до +70°C
+Проверка расхода: требуется 220.0-140.0 м³/ч, спецификация: 0,11-144764,58 м³/ч
+Сравнение расхода: пользователь 220.0-140.0, спецификация 0.11-144764.58
+Проверка точности: требуется 1.0, спецификация: 0,3-3%
+DEBUG плотность: medium=пресная вода, density_min=None→None, density_max=None→None
+Проверка диаметра: требуется 200.0, спецификация: 25–1600 мм
+ПОДХОДИТ: Расходомер Turbo Flow UFL прошло все проверки
+✓ Подходит!
+
+Итого найдено подходящего оборудования: 2
+Итого найдено неподходящего оборудования: 0
+INFO:     172.18.0.3:45138 - "GET /api/search-equipment?equipment_type=flowmeters&medium=%D0%BF%D1%80%D0%B5%D1%81%D0%BD%D0%B0%D1%8F+%D0%B2%D0%BE%D0%B4%D0%B0&application=industrial&gas_type=natural&flowMin=220&flowMax=140&flow_unit=%D0%BC%C2%B3%2F%D1%87&diameter=200&pressureMin=1.5&pressureMax=2&pressure_unit=%D0%9C%D0%9F%D0%B0&tempMediumMin=5&tempMediumMax=30&temperature_unit=%C2%B0C&tempAmbientMin=-30&tempAmbientMax=36&accuracy=1 HTTP/1.1" 200 OK
+INFO:main:✅ Код верификации отправлен на rusdav14@gmail.com
+INFO:     172.18.0.3:38794 - "POST /api/send-verification-code HTTP/1.1" 200 OK
+INFO:     172.18.0.3:45018 - "POST /api/verify-code HTTP/1.1" 400 Bad Request
+INFO:     172.18.0.3:37096 - "POST /api/verify-code HTTP/1.1" 400 Bad Request
+INFO:main:✅ Код верификации отправлен на rusdav.data@gmail.com
+INFO:     172.18.0.3:52416 - "POST /api/send-verification-code HTTP/1.1" 200 OK
+INFO:main:✅ Email rusdav.data@gmail.com подтверждён
+INFO:     172.18.0.3:34674 - "POST /api/verify-code HTTP/1.1" 200 OK
+INFO:     172.18.0.3:34674 - "POST /api/estimate-price HTTP/1.1" 200 OK
+INFO:     172.18.0.3:58316 - "POST /api/tkp-accessories HTTP/1.1" 200 OK
+INFO:     172.18.0.3:58322 - "POST /api/tkp-pdf HTTP/1.1" 503 Service Unavailable
+INFO:     172.18.0.3:45340 - "POST /api/tkp-pdf HTTP/1.1" 422 Unprocessable Entity

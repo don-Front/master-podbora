@@ -1,0 +1,42 @@
+    y = draw_header()
+    title = body.document_title.upper()
+    title_w = pdfmetrics.stringWidth(title, bold_font_name, 16)
+    draw_text((width - title_w) / 2, y, title, 16, True, blue)
+    y -= 9 * mm
+
+    meta_lines = [
+        ("№ " + number, blue, False),
+        (f"Дата формирования: {now.strftime('%d.%m.%Y %H:%M')}", blue, True),
+        (f"Действительно до: {valid_until}", red, True),
+    ]
+    meta_line_h = 4.2 * mm
+    meta_pad_v = 3 * mm
+    meta_h = meta_pad_v * 2 + meta_line_h * len(meta_lines)
+    meta_top = y
+    meta_bottom = y - meta_h
+    c.setFillColor(light_blue)
+    c.roundRect(left, meta_bottom, right - left, meta_h, 2 * mm, stroke=0, fill=1)
+    c.setStrokeColor(border)
+    c.roundRect(left, meta_bottom, right - left, meta_h, 2 * mm, stroke=1, fill=0)
+    ty = meta_top - meta_pad_v - 3 * mm
+    for text, color, bold in meta_lines:
+        draw_text(left + 4 * mm, ty, text, 8, bold, color)
+        ty -= meta_line_h
+    y = meta_bottom - 6 * mm
+
+    contact_h = 12 * mm
+    c.setFillColor(pale_blue)
+    c.rect(left, y - contact_h, right - left, contact_h, fill=1, stroke=0)
+    c.setFillColor(green)
+    c.rect(left, y - contact_h, 3, contact_h, fill=1, stroke=0)
+    draw_text(left + 4 * mm, y - 4 * mm, f"E-mail клиента: {body.email or '—'}", 8, True, blue)
+    draw_text(left + 4 * mm, y - 8.5 * mm, f"Телефон: {body.phone or '—'}", 8, True, blue)
+    y -= contact_h + 4 * mm
+
+    y = section_title(y, "1. Основное оборудование")
+    y = draw_table(
+        y,
+        ["№", "Наименование", "Стоимость, ₽"],
+        [["1", body.equipment_name, _format_price(body.price)]],
+        [10 * mm, 128 * mm, 42 * mm],
+    )

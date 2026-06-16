@@ -1,0 +1,35 @@
+=== curl -sk -o /dev/null -w 'prod_html:%{http_code} size:%{size_download}\n' https://turbo-podbor.ru/podbor-chat/
+prod_html:200 size:704
+
+
+=== curl -sk -o /dev/null -w 'prod_js:%{http_code} size:%{size_download}\n' https://turbo-podbor.ru/podbor-chat/static/js/main.c3df7bcc.js
+prod_js:200 size:449718
+
+
+=== curl -sk -o /dev/null -w 'prod_css:%{http_code} size:%{size_download}\n' https://turbo-podbor.ru/podbor-chat/static/css/main.303c557e.css
+prod_css:200 size:44970
+
+
+=== curl -sk -o /dev/null -w 'prod_api:%{http_code}\n' 'https://turbo-podbor.ru/podbor-api/api/hints/?state=start'
+prod_api:400
+
+
+=== curl -s -o /dev/null -w 'pc_html:%{http_code} size:%{size_download}\n' http://193.105.37.142:10111/
+pc_html:200 size:704
+
+
+=== curl -s -o /dev/null -w 'pc_js:%{http_code} size:%{size_download}\n' http://193.105.37.142:10111/static/js/main.c3df7bcc.js
+pc_js:200 size:449718
+
+
+=== curl -s -o /dev/null -w 'pc_api:%{http_code}\n' 'http://193.105.37.142:10112/api/hints/?state=start'
+pc_api:400
+
+
+=== grep -n podbor-chat /opt/turbo-podbor/nginx/nginx.conf | head -20
+111:        location /podbor-chat/ {
+
+
+=== curl -sk https://turbo-podbor.ru/podbor-chat/ | head -c 500
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/podbor-chat/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/podbor-chat/logo192.png"/><link rel="manifest" href="/podbor-chat/manifest.json"/><title>React App</title><script defer="defer" src="/podbor-chat/static/js/main.c3df7
+
