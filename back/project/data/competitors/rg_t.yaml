@@ -1,0 +1,69 @@
+id: rg_t
+competitor: "РГ-Т"
+product_name: "Счётчик газа ротационный РГ-Т"
+source_document: "РЭ на турбинки РГ-Т.pdf"
+source_section: "Приложение А"
+document_code: "ЛГТИ.407221.011РЭ"
+mask_prefix: "РГ-Т"
+mask_example: "РГ-Т-G400-DN100-PN16-О"
+image: "rg_t.png"
+
+fields:
+  - id: size
+    label: "Типоразмер"
+    position: 1
+    prefix: "G"
+    allowed:
+      - G16
+      - G25
+      - G40
+      - G65
+      - G100
+      - G160
+      - G250
+      - G400
+      - G650
+      - G1000
+      - G1600
+      - G2500
+      - G4000
+
+  - id: dn
+    label: "Диаметр условного прохода"
+    position: 2
+    prefix: "DN"
+    allowed:
+      - DN50
+      - DN80
+      - DN100
+      - DN150
+      - DN200
+      - DN250
+      - DN300
+
+  - id: pn
+    label: "Исполнение по предельному рабочему давлению"
+    position: 3
+    prefix: "PN"
+    allowed:
+      - PN16
+      - PN100
+
+  - id: metrology
+    label: "Исполнение по метрологическим характеристикам"
+    position: 4
+    prefix: ""
+    allowed:
+      - "О"
+      - "2У"
+    aliases:
+      O: "О"
+      o: "О"
+      "2Y": "2У"
+      "2y": "2У"
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - size
+    - dn

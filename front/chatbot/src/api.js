@@ -7,6 +7,7 @@ import {
   getSearchEquipmentUrl,
   TKP_ACCESSORIES_URL,
   TKP_PDF_URL,
+  SEND_PRICE_INQUIRY_URL,
 } from './config';
 import { buildSearchEquipmentUrl } from './utils/searchEquipment';
 
@@ -121,6 +122,8 @@ export const createMessage = (chatId, data, image = null, pdf = null) => {
 // Hints system
 export const getHints = (state = 'start') => api.get('/hints/', { params: { state } });
 
+export const fetchServiceCenters = () => api.get('/service-centers/');
+
 export const transitionHints = (data) => api.post('/hints/', data);
 
 // Email validation
@@ -185,9 +188,28 @@ export function postTkpPdf(body) {
   });
 }
 
-/** GET прайс СГ Гранд с сервиса подбора (см. `getGrandGasMetersPriceUrl`). */
+/** Уведомление менеджеру о запросе цены (не пользователю). */
+export function postPriceInquiry(body) {
+  return axios.post(SEND_PRICE_INQUIRY_URL, body, {
+    headers: { 'Content-Type': 'application/json' },
+    timeout: 30000,
+  });
+}
+
+/** GET прайс СГ Гранд (каталог + плоский список «СГ Гранд»). */
 export function getGrandGasMetersPrices() {
   return axios.get(getGrandGasMetersPriceUrl(), { timeout: 60000 });
+}
+
+/**
+ * POST структурированный прайс: parent_tab «СГ Гранд» / «СГ Гранд SPI», для SPI — child_tab.
+ * @param {{ parent_tab: string, child_tab?: string }} body
+ */
+export function postGrandGasMetersPrices(body) {
+  return axios.post(getGrandGasMetersPriceUrl(), body, {
+    headers: { 'Content-Type': 'application/json' },
+    timeout: 60000,
+  });
 }
 
 export default api;

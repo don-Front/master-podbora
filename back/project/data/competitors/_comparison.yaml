@@ -1,0 +1,114 @@
+# Сравнение Turbo Flow UFG с конкурентами (источник: таблица сравнительного анализа)
+
+turbo_product:
+  brand: 'НПО «Турбулентность-Дон»'
+  product_name: 'Turbo Flow UFG-F-C'
+  image_key: turbo_flow_ufg-f-c.png
+  title: 'Расходомеры-счётчики Turbo Flow UFG UFG-F-C'
+  highlights:
+    - 'Возможность реверсивного исполнения'
+    - 'Возможность автономной работы до 5 лет'
+    - 'Давление: до 1,6 МПа'
+    - 'Диаметры условного прохода: 50, 80, 100 мм'
+    - 'Ожидается расширение диаметров 150, 200 мм'
+    - 'Динамический диапазон до 1:2600'
+
+comparisons:
+  irvis_ultra:
+    competitor_short: 'ИРВИС-Ультра'
+    rows:
+      - label: 'Динамический диапазон'
+        turbo: 'до 1:2600'
+        competitor: 'до 1:600'
+      - label: 'Мин. расход, м³/ч'
+        turbo: 'от 0,025'
+        competitor: 'от 0,12'
+      - label: 'Скорость газа, м/с'
+        turbo: 'до 45'
+        competitor: 'нет данных в РЭ'
+      - label: 'Давление'
+        turbo: 'до 1,6 МПа; до 32 МПа (корпус V)'
+        competitor: 'до 16 МПа'
+
+  ktm_600:
+    competitor_short: 'КТМ600 РУС'
+    rows:
+      - label: 'Динамический диапазон'
+        turbo: 'до 1:2600'
+        competitor: 'до 1:280'
+      - label: 'Мин. расход, м³/ч'
+        turbo: 'от 0,025'
+        competitor: 'от 5,0'
+      - label: 'Скорость газа, м/с'
+        turbo: 'до 45'
+        competitor: 'до 61'
+      - label: 'Давление'
+        turbo: 'до 1,6 МПа; до 32 МПа (корпус V)'
+        competitor: 'до 45 МПа'
+
+  rg_t:
+    competitor_short: 'РГ-Т'
+    rows:
+      - label: 'Динамический диапазон'
+        turbo: 'до 1:2600'
+        competitor: 'до 1:50'
+      - label: 'Мин. расход, м³/ч'
+        turbo: 'от 0,025'
+        competitor: 'от 5,0'
+      - label: 'Скорость газа, м/с'
+        turbo: 'до 45'
+        competitor: 'нет данных в РЭ'
+      - label: 'Давление'
+        turbo: 'до 1,6 МПа; до 32 МПа (корпус V)'
+        competitor: 'до 10–16 МПа'
+      - label: 'Погрешность'
+        turbo: '±0,5…±2%'
+        competitor: 'от ±0,9%'
+
+  rsg_signal:
+    competitor_short: 'РСГ СИГНАЛ'
+    rows:
+      - label: 'Динамический диапазон'
+        turbo: 'до 1:2600'
+        competitor: 'до 1:160'
+      - label: 'Мин. расход, м³/ч'
+        turbo: 'от 0,025'
+        competitor: 'от 10'
+      - label: 'Скорость газа, м/с'
+        turbo: 'до 45'
+        competitor: 'нет данных в РЭ'
+      - label: 'Давление'
+        turbo: 'до 1,6 МПа; до 32 МПа (корпус V)'
+        competitor: 'до 16 МПа'
+
+  ultramag:
+    competitor_short: 'ULTRAMAG'
+    rows:
+      - label: 'Динамический диапазон'
+        turbo: 'до 1:2600'
+        competitor: 'до 1:160'
+      - label: 'Мин. расход, м³/ч'
+        turbo: 'от 0,025'
+        competitor: 'от 10'
+      - label: 'Скорость газа, м/с'
+        turbo: 'до 45'
+        competitor: 'нет данных в РЭ'
+      - label: 'Давление'
+        turbo: 'до 1,6 МПа; до 32 МПа (корпус V)'
+        competitor: 'до 16 МПа'
+
+  vympel_500:
+    competitor_short: 'Вымпел-500'
+    rows:
+      - label: 'Динамический диапазон'
+        turbo: 'до 1:2600'
+        competitor: 'до 1:100'
+      - label: 'Мин. расход, м³/ч'
+        turbo: 'от 0,025'
+        competitor: 'от 1,6'
+      - label: 'Скорость газа, м/с'
+        turbo: 'до 45'
+        competitor: 'нет данных в РЭ'
+      - label: 'Давление'
+        turbo: 'до 1,6 МПа; до 32 МПа (корпус V)'
+        competitor: 'до 16 МПа'

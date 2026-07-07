@@ -10,6 +10,7 @@ import re
 from decimal import Decimal
 from typing import Any, Dict, List
 
+from .medium_normalize import normalize_medium_from_user_text
 from .pdf_order_analysis import SPEC_KEYS, _normalize_specs, _SPEC_LEGACY_ALIASES, normalize_accuracy_value
 
 logger = logging.getLogger(__name__)
@@ -30,6 +31,23 @@ NUMERIC_KEYS = frozenset(
 )
 OPTIONAL_SPEC_KEYS = frozenset({"gas_type"})
 
+_TEMPERATURE_UNIT_DEFAULT = "°C"
+_FLOW_UNIT_DEFAULT = "м³/ч"
+_PRESSURE_UNIT_DEFAULT = "МПа"
+_MEDIUM_TEMPERATURE_DEFAULTS: Dict[str, Dict[str, int]] = {
+    "gas": {
+        "tempAmbientMin": -30,
+        "tempAmbientMax": 70,
+        "tempMediumMin": -30,
+        "tempMediumMax": 70,
+    },
+    "liquid": {
+        "tempAmbientMin": -30,
+        "tempAmbientMax": 70,
+        "tempMediumMin": -30,
+        "tempMediumMax": 60,
+    },
+}
 
 def _is_placeholder_text(s: str) -> bool:
     """Текст считаем пустым: «не указано», n/a, одно тире и т.п."""
@@ -74,6 +92,49 @@ def is_value_missing(key: str, value: Any) -> bool:
     return False
 
 
+def apply_temperature_defaults(draft: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Подставляет типовые диапазоны температур, если среда известна (газ/жидкость),
+    а значения не были найдены или распознаны в тексте/файле.
+    """
+    d = dict(draft)
+    medium = str(d.get("medium") or "").strip().lower()
+    defaults = _MEDIUM_TEMPERATURE_DEFAULTS.get(medium)
+    if not defaults:
+        return d
+
+    applied: Dict[str, Any] = {}
+    for key, default_val in defaults.items():
+        if is_value_missing(key, d.get(key)):
+            d[key] = default_val
+            applied[key] = default_val
+    if is_value_missing("temperature_unit", d.get("temperature_unit")):
+        d["temperature_unit"] = _TEMPERATURE_UNIT_DEFAULT
+        applied["temperature_unit"] = _TEMPERATURE_UNIT_DEFAULT
+    if applied:
+        logger.info(
+            "Температурные значения по умолчанию (medium=%s): %s",
+            medium,
+            applied,
+        )
+    return d
+
+
+def apply_measurement_unit_defaults(draft: Dict[str, Any]) -> Dict[str, Any]:
+    """Подставляет единицы расхода и давления, если они не распознаны или не введены."""
+    d = dict(draft)
+    applied: Dict[str, Any] = {}
+    if is_value_missing("flow_unit", d.get("flow_unit")):
+        d["flow_unit"] = _FLOW_UNIT_DEFAULT
+        applied["flow_unit"] = _FLOW_UNIT_DEFAULT
+    if is_value_missing("pressure_unit", d.get("pressure_unit")):
+        d["pressure_unit"] = _PRESSURE_UNIT_DEFAULT
+        applied["pressure_unit"] = _PRESSURE_UNIT_DEFAULT
+    if applied:
+        logger.info("Единицы измерения по умолчанию: %s", applied)
+    return d
+
+
 def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
     d = merge_draft(draft)
     return [
@@ -84,11 +145,11 @@ def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
 
 
 FIELD_PROMPTS: Dict[str, str] = {
-    "medium": "Укажите среду измерения (например: gas — газ, liquid — жидкость). Одно слово или коротко.",
+    "medium": "Укажите среду измерения (газ или жидкость).",
     "gas_type": "Укажите тип измеряемой среды (например: природный газ, жидкость и т.п.).",
     "flowMin": "Укажите минимальный расход (число), например: 10",
     "flowMax": "Укажите максимальный расход (число), например: 500",
-    "flow_unit": "Укажите единицу расхода (например: ст.м³/ч).",
+    "flow_unit": "Укажите единицу расхода (например: м³/ч).",
     "pressureMin": "Укажите минимальное давление (число), например: 0.1",
     "pressureMax": "Укажите максимальное давление (число), например: 1.6",
     "pressure_unit": "Укажите единицу давления (например: МПа).",
@@ -130,21 +191,16 @@ def parse_field_value(key: str, text: str) -> Any:
         return normalize_accuracy_value(raw)
 
     if key == "medium":
-        low = raw.strip().lower()
-        if low in ("gas", "газ", "gaz"):
-            return "gas"
-        if low in ("liquid", "жидкость", "жидк", "fluid"):
-            return "liquid"
-        if low in ("unknown", "неизвестно", "не указано"):
-            return "unknown"
-        return raw
+        return normalize_medium_from_user_text(raw)
 
     # строковые поля
     return raw
 
 
 def merge_draft(base: Dict[str, Any]) -> Dict[str, Any]:
-    return _normalize_specs(base)
+    normalized = _normalize_specs(base)
+    with_units = apply_measurement_unit_defaults(normalized)
+    return apply_temperature_defaults(with_units)
 
 
 def _to_json_safe_scalar(v: Any) -> Any:

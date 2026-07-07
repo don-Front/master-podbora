@@ -57,3 +57,85 @@ class OrderSpecsOptionalFieldsTest(SimpleTestCase):
         )
         self.assertEqual(gas_type_row["label"], "Тип газа (необязательно)")
         self.assertEqual(gas_type_row["value"], "")
+
+
+class OrderSpecsTemperatureDefaultsTest(SimpleTestCase):
+    def test_gas_missing_temperatures_are_filled(self):
+        draft = {
+            "medium": "gas",
+            "flowMin": 10,
+            "flowMax": 500,
+            "flow_unit": "ст.м³/ч",
+            "pressureMin": 0.1,
+            "pressureMax": 1.6,
+            "pressure_unit": "МПа",
+            "accuracy": "1%",
+            "diameter": 100,
+        }
+        missing = list_missing_fields(draft)
+        self.assertNotIn("tempMediumMin", missing)
+        self.assertNotIn("tempMediumMax", missing)
+        self.assertNotIn("tempAmbientMin", missing)
+        self.assertNotIn("tempAmbientMax", missing)
+        self.assertNotIn("temperature_unit", missing)
+
+    def test_liquid_default_working_medium_max_is_60(self):
+        from api.order_specs_helpers import merge_draft
+
+        draft = merge_draft({"medium": "liquid", "flowMin": 1, "flowMax": 10})
+        self.assertEqual(draft["tempMediumMax"], 60)
+        self.assertEqual(draft["tempAmbientMax"], 70)
+
+    def test_recognized_temperatures_are_not_overwritten(self):
+        from api.order_specs_helpers import merge_draft
+
+        draft = merge_draft(
+            {
+                "medium": "gas",
+                "tempMediumMin": -10,
+                "tempMediumMax": 40,
+                "tempAmbientMin": -20,
+                "tempAmbientMax": 50,
+                "temperature_unit": "°C",
+            }
+        )
+        self.assertEqual(draft["tempMediumMin"], -10)
+        self.assertEqual(draft["tempMediumMax"], 40)
+        self.assertEqual(draft["tempAmbientMin"], -20)
+        self.assertEqual(draft["tempAmbientMax"], 50)
+
+
+class OrderSpecsMeasurementUnitDefaultsTest(SimpleTestCase):
+    def test_missing_flow_and_pressure_units_are_filled(self):
+        from api.order_specs_helpers import merge_draft, list_missing_fields
+
+        draft = merge_draft(
+            {
+                "medium": "gas",
+                "flowMin": 10,
+                "flowMax": 500,
+                "pressureMin": 0.1,
+                "pressureMax": 1.6,
+                "accuracy": "1%",
+                "diameter": 100,
+            }
+        )
+        self.assertEqual(draft["flow_unit"], "м³/ч")
+        self.assertEqual(draft["pressure_unit"], "МПа")
+        self.assertNotIn("flow_unit", list_missing_fields(draft))
+        self.assertNotIn("pressure_unit", list_missing_fields(draft))
+
+    def test_recognized_units_are_not_overwritten(self):
+        from api.order_specs_helpers import merge_draft
+
+        draft = merge_draft(
+            {
+                "flowMin": 1,
+                "flowMax": 2,
+                "flow_unit": "нм³/ч",
+                "pressureMax": 10,
+                "pressure_unit": "бар",
+            }
+        )
+        self.assertEqual(draft["flow_unit"], "нм³/ч")
+        self.assertEqual(draft["pressure_unit"], "бар")

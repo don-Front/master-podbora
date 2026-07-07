@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "total_questions": 50,
+  "questions": [
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 1,
+      "topic": "Назначение",
+      "question": "Для чего предназначен Turbo Flow TFG согласно руководству?",
+      "expected_keys": [
+        "назнач",
+        "измер"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 2,
+      "topic": "Принцип",
+      "question": "Какой принцип измерения у Turbo Flow TFG?",
+      "expected_keys": [
+        "принцип",
+        "метод"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 3,
+      "topic": "Параметры",
+      "question": "Какие параметры измеряет Turbo Flow TFG?",
+      "expected_keys": [
+        "расход",
+        "параметр"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 4,
+      "topic": "Диапазон",
+      "question": "Какие диапазоны расхода указаны для Turbo Flow TFG?",
+      "expected_keys": [
+        "диапазон",
+        "расход"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 5,
+      "topic": "DN",
+      "question": "Какие номинальные диаметры DN доступны для Turbo Flow TFG?",
+      "expected_keys": [
+        "DN",
+        "диаметр"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 6,
+      "topic": "Погрешность",
+      "question": "Какая погрешность измерения у Turbo Flow TFG?",
+      "expected_keys": [
+        "погреш",
+        "точност"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 7,
+      "topic": "Питание",
+      "question": "Какие параметры электропитания у Turbo Flow TFG?",
+      "expected_keys": [
+        "питан",
+        "напряж"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 8,
+      "topic": "Интерфейсы",
+      "question": "Какие интерфейсы связи предусмотрены у Turbo Flow TFG?",
+      "expected_keys": [
+        "RS-485",
+        "интерф"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 9,
+      "topic": "Эксплуатация",
+      "question": "Какие условия эксплуатации указаны для Turbo Flow TFG?",
+      "expected_keys": [
+        "температур",
+        "влажност"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 10,
+      "topic": "Монтаж",
+      "question": "Какие требования к монтажу Turbo Flow TFG?",
+      "expected_keys": [
+        "монтаж",
+        "установ"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 11,
+      "topic": "Среда",
+      "question": "Для каких сред предназначен Turbo Flow TFG?",
+      "expected_keys": [
+        "газ",
+        "среда"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 12,
+      "topic": "Давление",
+      "question": "Какое рабочее давление допускается для Turbo Flow TFG?",
+      "expected_keys": [
+        "давлен",
+        "МПа"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 13,
+      "topic": "Взрывозащита",
+      "question": "Какое исполнение по взрывозащите у Turbo Flow TFG?",
+      "expected_keys": [
+        "взрыв",
+        "Ex"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 14,
+      "topic": "Самодиагностика",
+      "question": "Какие функции самодиагностики есть у Turbo Flow TFG?",
+      "expected_keys": [
+        "диагност",
+        "архив"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 15,
+      "topic": "ПО",
+      "question": "Какое программное обеспечение используется с Turbo Flow TFG?",
+      "expected_keys": [
+        "программ",
+        "ПО"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 16,
+      "topic": "Корпус",
+      "question": "Какая степень защиты корпуса у Turbo Flow TFG?",
+      "expected_keys": [
+        "IP",
+        "защит"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 17,
+      "topic": "Габариты",
+      "question": "Какие габаритные размеры у Turbo Flow TFG?",
+      "expected_keys": [
+        "габарит",
+        "мм"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 18,
+      "topic": "Масса",
+      "question": "Какая масса прибора Turbo Flow TFG?",
+      "expected_keys": [
+        "масс",
+        "кг"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 19,
+      "topic": "TFG-S",
+      "question": "Чем отличается модификация TFG-S от TFG-H?",
+      "expected_keys": [
+        "TFG-S",
+        "TFG"
+      ]
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 20,
+      "topic": "Массовый расход",
+      "question": "Измеряет ли TFG массовый расход газа?",
+      "expected_keys": [
+        "массов",
+        "расход"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 1,
+      "topic": "Тип прибора",
+      "question": "Какой тип прибора указан в ОТ (2024-92051-24 UFL 2024.pdf) на Turbo Flow UFL?",
+      "expected_keys": [
+        "расходомер",
+        "UFL"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 2,
+      "topic": "Назначение",
+      "question": "Для какой среды предназначен Turbo Flow UFL в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "среда",
+        "измер"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 3,
+      "topic": "Диапазон расхода",
+      "question": "Какой диапазон расхода указан в ОТ (2024-92051-24 UFL 2024.pdf) для Turbo Flow UFL?",
+      "expected_keys": [
+        "расход",
+        "диапазон"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 4,
+      "topic": "Давление",
+      "question": "Какое давление указано в ОТ (2024-92051-24 UFL 2024.pdf) для Turbo Flow UFL?",
+      "expected_keys": [
+        "давлен",
+        "МПа"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 5,
+      "topic": "Температура",
+      "question": "Какие температуры среды указаны в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "температур",
+        "°C"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 6,
+      "topic": "Исполнение",
+      "question": "Какое исполнение прибора в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "исполнен",
+        "Ex"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 7,
+      "topic": "Точность",
+      "question": "Какой класс точности в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "точност",
+        "класс"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 8,
+      "topic": "DN",
+      "question": "Какой DN указан в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "DN",
+        "диаметр"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 9,
+      "topic": "Выходной сигнал",
+      "question": "Какие выходные сигналы указаны в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "4-20",
+        "импульс"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 10,
+      "topic": "Питание",
+      "question": "Какое питание указано в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "питан",
+        "В"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 11,
+      "topic": "Интерфейсы",
+      "question": "Какие интерфейсы связи в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "RS-485",
+        "HART"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 12,
+      "topic": "Комплектация",
+      "question": "Что входит в комплектацию по ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "комплект",
+        "датчик"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 13,
+      "topic": "ПО",
+      "question": "Какое ПО указано в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "программ",
+        "ПО"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 14,
+      "topic": "Заказчик",
+      "question": "Какие данные заказчика в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "заказчик",
+        "объект"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 15,
+      "topic": "Особые требования",
+      "question": "Какие особые требования в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "требован",
+        "особ"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 16,
+      "topic": "Сроки",
+      "question": "Какие сроки поставки в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "срок",
+        "постав"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 17,
+      "topic": "Монтаж",
+      "question": "Какие требования к монтажу в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "монтаж",
+        "установ"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 18,
+      "topic": "Поверка",
+      "question": "Какие сведения о поверке в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "поверк",
+        "метролог"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 19,
+      "topic": "Материалы",
+      "question": "Какие материалы корпуса указаны в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "материал",
+        "сталь"
+      ]
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 20,
+      "topic": "Примечание",
+      "question": "Какие примечания или ограничения в ОТ (2024-92051-24 UFL 2024.pdf)?",
+      "expected_keys": [
+        "примеч",
+        "огранич"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 1,
+      "topic": "Тип прибора",
+      "question": "Какой тип прибора указан в ОТ (CFM 83374-21) на Turbo Flow CFM?",
+      "expected_keys": [
+        "расходомер",
+        "CFM"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 2,
+      "topic": "Назначение",
+      "question": "Для какой среды предназначен Turbo Flow CFM в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "среда",
+        "измер"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 3,
+      "topic": "Диапазон расхода",
+      "question": "Какой диапазон расхода указан в ОТ (CFM 83374-21) для Turbo Flow CFM?",
+      "expected_keys": [
+        "расход",
+        "диапазон"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 4,
+      "topic": "Давление",
+      "question": "Какое давление указано в ОТ (CFM 83374-21) для Turbo Flow CFM?",
+      "expected_keys": [
+        "давлен",
+        "МПа"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 5,
+      "topic": "Температура",
+      "question": "Какие температуры среды указаны в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "температур",
+        "°C"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 6,
+      "topic": "Исполнение",
+      "question": "Какое исполнение прибора в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "исполнен",
+        "Ex"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 7,
+      "topic": "Точность",
+      "question": "Какой класс точности в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "точност",
+        "класс"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 8,
+      "topic": "DN",
+      "question": "Какой DN указан в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "DN",
+        "диаметр"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 9,
+      "topic": "Выходной сигнал",
+      "question": "Какие выходные сигналы указаны в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "4-20",
+        "импульс"
+      ]
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 10,
+      "topic": "Питание",
+      "question": "Какое питание указано в ОТ (CFM 83374-21)?",
+      "expected_keys": [
+        "питан",
+        "В"
+      ]
+    }
+  ]
+}

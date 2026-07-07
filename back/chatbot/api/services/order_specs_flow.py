@@ -14,6 +14,7 @@ from ..message_parsers import (
     _transition_to_order_specs_confirm,
 )
 from ..models import Chat
+from ..medium_normalize import MEDIUM_UNSUPPORTED_MESSAGE
 from ..order_specs_helpers import (
     ORDER_SPECS_CONFIRM_HINT,
     build_order_specs_preview,
@@ -114,20 +115,32 @@ class OrderSpecsFlowHandler:
                     ctx.hint_locked = True
             elif has_image:
                 ctx.bot_response = (
-                    "Нужен документ PDF или DOCX с характеристиками оборудования. "
-                    "Пожалуйста, прикрепите файл, а не изображение."
+                    "Для подбора расходомера нужен документ PDF/DOCX или текстовое описание "
+                    "характеристик (среда, расход, давление, температура, точность, DN). "
+                    "Пожалуйста, прикрепите файл или напишите параметры текстом — не изображение."
                 )
                 ctx.next_state = state
             elif text:
-                ctx.bot_response = (
-                    "Для оформления заказа пришлите, пожалуйста, файл PDF или DOCX с описанием "
-                    "характеристик оборудования (кнопка скрепки 📎)."
+                logger.info(
+                    "[Чатбот заказ] Текстовые характеристики в order_pdf_request (chat_id=%s)",
+                    chat_id,
                 )
-                ctx.next_state = state
+                specs_text_result = _handle_order_specs_text_message(
+                    chat_id, text, base_draft={}
+                )
+                ctx.next_state = specs_text_result["next_state"]
+                ctx.bot_response = specs_text_result["bot_response"]
+                ctx.order_specs_json = specs_text_result.get("order_specs_json")
+                ctx.order_specs_preview = specs_text_result.get("order_specs_preview")
+                ctx.order_specs_clarify_preview = specs_text_result.get(
+                    "order_specs_clarify_preview"
+                )
+                ctx.order_specs_llm_response = specs_text_result.get("order_specs_llm_response")
+                ctx.hint_locked = specs_text_result["hint_locked"]
             else:
                 ctx.bot_response = (
-                    "Пожалуйста, прикрепите и отправьте файл PDF или DOCX с описанием "
-                    "характеристик оборудования."
+                    "Пришлите файл PDF или DOCX с характеристиками либо напишите параметры "
+                    "текстом (среда, расход, давление, температура, точность, DN)."
                 )
                 ctx.next_state = state
 
@@ -206,10 +219,14 @@ class OrderSpecsFlowHandler:
                         try:
                             draft[key] = parse_field_value(key, text)
                         except ValueError as ve:
-                            ctx.bot_response = (
-                                f"Не удалось разобрать ответ ({ve}). "
-                                f"Повторите ввод.\n\n{format_prompt_for_field(key)}"
-                            )
+                            err = str(ve)
+                            if key == "medium" and err == MEDIUM_UNSUPPORTED_MESSAGE:
+                                ctx.bot_response = err
+                            else:
+                                ctx.bot_response = (
+                                    f"Не удалось разобрать ответ ({err}). "
+                                    f"Повторите ввод.\n\n{format_prompt_for_field(key)}"
+                                )
                             ctx.next_state = "order_specs_clarify"
                             ctx.order_specs_json = draft
                             ctx.hint_locked = True

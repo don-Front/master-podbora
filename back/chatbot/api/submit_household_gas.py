@@ -16,7 +16,7 @@ def submit_household_gas_url() -> str:
     full = (getattr(settings, 'SUBMIT_HOUSEHOLD_GAS_URL', None) or '').strip().rstrip('/')
     if full:
         return full
-    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'https://turbo-podbor.ru')
+    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'http://master-turbo-podbor.ru')
     return f"{str(origin).rstrip('/')}/api/submit-household-gas-request"
 
 

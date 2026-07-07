@@ -1,0 +1,133 @@
+{
+  "title": "RAG benchmark: 50 вопросов по РЭ/ОТ",
+  "generated_at": "2026-07-06T11:37:34.699397+00:00",
+  "current": {
+    "score_pct": 98.0,
+    "retrieval_pct": 98.0,
+    "good": 49,
+    "partial": 0,
+    "fail": 0,
+    "avg_ms": 5035.0,
+    "inline_citations": 0,
+    "avg_rag_sources": 3.94
+  },
+  "baseline": {
+    "score_pct": 82.0,
+    "matched": 50
+  },
+  "delta_score_pct": 16.0,
+  "quality_shift": {
+    "improved": 14,
+    "regressed": 1,
+    "same": 35
+  },
+  "quality_distribution": {
+    "good": 49,
+    "weak": 1
+  },
+  "per_file": [
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 19,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 6317.3,
+      "score_pct": 95.0
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 20,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 4432.9,
+      "score_pct": 100.0
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 10,
+      "retrieval_pct": 100.0,
+      "good": 10,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 3674.8,
+      "score_pct": 100.0
+    }
+  ],
+  "worst": [
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 19,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 6317.3,
+      "score_pct": 95.0
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 20,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 4432.9,
+      "score_pct": 100.0
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 10,
+      "retrieval_pct": 100.0,
+      "good": 10,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 3674.8,
+      "score_pct": 100.0
+    }
+  ],
+  "best": [
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "questions": 20,
+      "retrieval_pct": 100.0,
+      "good": 20,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.65,
+      "avg_ms": 4432.9,
+      "score_pct": 100.0
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 10,
+      "retrieval_pct": 100.0,
+      "good": 10,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 3674.8,
+      "score_pct": 100.0
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "questions": 20,
+      "retrieval_pct": 95.0,
+      "good": 19,
+      "partial": 0,
+      "fail": 0,
+      "avg_key_ratio": 0.75,
+      "avg_ms": 6317.3,
+      "score_pct": 95.0
+    }
+  ]
+}

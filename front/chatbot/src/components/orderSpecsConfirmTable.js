@@ -3,6 +3,7 @@
  */
 import { useMemo } from 'react';
 import { detectOrderSpecsRangeIssues } from '../utils/orderSpecsRangeWarnings';
+import { resolveAttachmentUrl, resolveFaqActionHref } from '../config';
 import {
   enhanceBotMessageWithGasSpuCard,
   enhanceBotMessageWithGasSpuReview,
@@ -338,9 +339,27 @@ export function shouldShowOrderSpecsBotMessage(response, botMessages) {
   return Array.isArray(preview?.review_rows) && preview.review_rows.length > 0;
 }
 
+export function shouldAppendBotMessageFromApi(response, botMessages) {
+  if (!Array.isArray(botMessages) || botMessages.length === 0) return false;
+  if (shouldShowOrderSpecsBotMessage(response, botMessages)) return true;
+  if (response?.data?.competitor_mask_card) return true;
+  return Boolean(String(botMessages[0]?.content || '').trim());
+}
+
 function enhanceBotMessageWithFaqCard(botMsg, response) {
   const faqCard = response?.data?.faq_card;
   if (!faqCard || typeof faqCard !== 'object') return botMsg;
+  if (faqCard.picker === 'service_center') {
+    return {
+      ...botMsg,
+      kind: 'service_center_picker',
+      text: '',
+      serviceCenterIntro: {
+        title: faqCard.title,
+        description: faqCard.description,
+      },
+    };
+  }
   const actions = Array.isArray(faqCard.actions) ? faqCard.actions : [];
   const attachmentUrl = botMsg?.attachmentUrl || response?.data?.messages?.find((msg) => !msg.is_user)?.attachment_url;
   const attachmentName = botMsg?.pdfName || response?.data?.messages?.find((msg) => !msg.is_user)?.attachment_name;
@@ -350,11 +369,13 @@ function enhanceBotMessageWithFaqCard(botMsg, response) {
     text: '',
     faqCard: {
       ...faqCard,
+      messageId: botMsg?.id,
       actions: actions.map((action) => {
         if (action?.type !== 'file') return action;
+        const fileHref = action.href || attachmentUrl;
         return {
           ...action,
-          href: action.href || attachmentUrl || '',
+          href: resolveFaqActionHref({ ...action, href: fileHref }, botMsg?.id),
           value: action.value || attachmentName || 'Файл',
         };
       }),
@@ -362,12 +383,72 @@ function enhanceBotMessageWithFaqCard(botMsg, response) {
   };
 }
 
+function enhanceBotMessageWithCompetitorMaskCard(botMsg, response) {
+  const card = response?.data?.competitor_mask_card;
+  if (!card || typeof card !== 'object') return botMsg;
+  return {
+    ...botMsg,
+    kind: 'competitor_mask_card',
+    competitorMaskCard: card,
+    text: '',
+  };
+}
+
+/** Сообщение с карточкой расшифровки маски конкурента (если есть в ответе API). */
+export function buildCompetitorMaskCardMessage(response) {
+  const card = response?.data?.competitor_mask_card;
+  if (!card || typeof card !== 'object') return null;
+  const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
+  const firstBotMessage = botMessages[0] || {};
+  return enrichBotMessage(
+    {
+      id: firstBotMessage.id || `competitor-mask-${Date.now()}`,
+      from: 'bot',
+      text: (firstBotMessage.content || '').trim(),
+      time: new Date(firstBotMessage.created_at || Date.now()),
+      ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+      ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
+    },
+    response,
+  );
+}
+
+/** Flip-карточка сравнения Turbo Flow UFG с конкурентом. */
+export function buildCompetitorComparisonCardMessage(response) {
+  const card = response?.data?.competitor_comparison_card;
+  if (!card || typeof card !== 'object') return null;
+  const rows = Array.isArray(card.rows) ? card.rows : [];
+  if (rows.length === 0) return null;
+  return {
+    id: `competitor-compare-${Date.now()}`,
+    from: 'bot',
+    kind: 'competitor_comparison_card',
+    competitorComparisonCard: card,
+    time: new Date(),
+  };
+}
+
+function enhanceBotMessageWithRagSources(botMsg, response) {
+  const sources = response?.data?.rag_sources;
+  if (!Array.isArray(sources) || sources.length === 0) return botMsg;
+  return {
+    ...botMsg,
+    ragSources: sources,
+  };
+}
+
 /** Цепочка обогащения ответа бота (FAQ + СПУ + таблица спецификации + уточнение параметров). */
 export function enrichBotMessage(botMsg, response) {
-  return enhanceBotMessageWithFaqCard(
-    enhanceBotMessageWithOrderSpecsClarify(
-      enhanceBotMessageWithOrderSpecsConfirm(
-        enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+  return enhanceBotMessageWithRagSources(
+    enhanceBotMessageWithFaqCard(
+      enhanceBotMessageWithCompetitorMaskCard(
+        enhanceBotMessageWithOrderSpecsClarify(
+          enhanceBotMessageWithOrderSpecsConfirm(
+            enhanceBotMessageWithGasSpuCard(enhanceBotMessageWithGasSpuReview(botMsg, response), response),
+            response,
+          ),
+          response,
+        ),
         response,
       ),
       response,

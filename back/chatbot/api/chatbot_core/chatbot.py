@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import re
 import shutil
@@ -9,23 +10,34 @@ from typing import List, Dict, Tuple
 from .embeddings import EmbeddingModel
 from .vector_store import VectorStore
 from .llm_client import LLMClient
-from .product_detector import ProductDetector, _is_malfunction_query
+from .product_detector import (
+    ProductDetector,
+    TROUBLESHOOTING_EQUIPMENT_CLARIFY,
+    _is_malfunction_query,
+    needs_troubleshooting_equipment_clarification,
+)
 from .question_classifier import QuestionClassifier
 from .hybrid_search import HybridRetriever
 
 
+logger = logging.getLogger(__name__)
+
+
 def _safe_print(*args, **kwargs) -> None:
-    """Print без UnicodeEncodeError в консоли Windows (cp1251)."""
+    """Print без UnicodeEncodeError / OSError в консоли Windows (Daphne без stdout)."""
     try:
         print(*args, **kwargs)
-    except UnicodeEncodeError:
-        text = " ".join(str(a) for a in args)
-        end = kwargs.get("end", "\n")
-        stream = kwargs.get("file", sys.stdout)
-        enc = getattr(stream, "encoding", None) or "utf-8"
-        stream.buffer.write(text.encode(enc, errors="replace"))
-        stream.buffer.write(end.encode(enc, errors="replace"))
-        stream.flush()
+    except (UnicodeEncodeError, OSError):
+        try:
+            text = " ".join(str(a) for a in args)
+            end = kwargs.get("end", "\n")
+            stream = kwargs.get("file", sys.stdout)
+            enc = getattr(stream, "encoding", None) or "utf-8"
+            stream.buffer.write(text.encode(enc, errors="replace"))
+            stream.buffer.write(end.encode(enc, errors="replace"))
+            stream.flush()
+        except (UnicodeEncodeError, OSError, AttributeError):
+            logger.info("%s", " ".join(str(a) for a in args))
 
 
 def adjust_search_parameters(question_type: dict, top_k: int, threshold: float) -> dict:
@@ -343,9 +355,64 @@ def smart_search(
             source_file_hint=file_hint,
         )[:context_top_k]
 
-    product, product_score = product_detector.detect_product_from_question(
+    detected_products = product_detector.detect_products_from_question(
         question, query_embedding=query_embedding
     )
+
+    if len(detected_products) >= 2:
+        _safe_print(
+            f"[DEBUG] Несколько продуктов: {[name for name, _ in detected_products]}"
+        )
+        by_id: Dict[str, Dict] = {}
+        per_product_k = max(10, context_top_k // len(detected_products))
+        for product_name, pscore in detected_products:
+            product_chunks = product_detector.search_chunks_by_product(
+                product_name,
+                top_k=per_product_k + 8,
+                query_embedding=query_embedding,
+                query_text=question,
+            )
+            for chunk in product_chunks:
+                chunk_id = chunk.get("chunk_id")
+                if not chunk_id:
+                    continue
+                item = dict(chunk)
+                item["score"] = (item.get("score", 0) or 0) + 0.45 + pscore * 0.1
+                prev = by_id.get(chunk_id)
+                if prev is None or item["score"] > prev.get("score", 0):
+                    by_id[chunk_id] = item
+
+        hybrid_label = "гибридный" if use_hybrid and hybrid_retriever else "векторный"
+        _safe_print(f"[DEBUG] Дополнительный {hybrid_label} поиск (multi-product), top_k={top_k}")
+        vector_results = _retrieval_search(
+            store,
+            hybrid_retriever,
+            query_embedding,
+            question,
+            top_k,
+            use_hybrid=use_hybrid,
+        )
+        for chunk in vector_results:
+            chunk_id = chunk.get("chunk_id")
+            if not chunk_id:
+                continue
+            prev = by_id.get(chunk_id)
+            if prev is None or chunk.get("score", 0) > prev.get("score", 0):
+                by_id[chunk_id] = chunk
+
+        unique_chunks = _rank_chunks(
+            list(by_id.values()),
+            prefer_documents=prefer_documents,
+            source_file_hint=file_hint,
+        )
+        return unique_chunks[:context_top_k]
+
+    if detected_products:
+        product, product_score = detected_products[0]
+    else:
+        product, product_score = product_detector.detect_product_from_question(
+            question, query_embedding=query_embedding
+        )
     
     if product and product_score > 0.4:
         _safe_print(f"[DEBUG] Определен продукт: '{product}' (уверенность: {product_score:.2f})")
@@ -554,6 +621,7 @@ class AdvancedChatbot:
             self.threshold = self.config["faiss"]["confidence_threshold"]
             self.top_k = self.config["faiss"]["top_k"]
             self.last_chunks = []
+            self.last_rag_sources: List[Dict] = []
             self.last_llm_elapsed_ms = 0.0
             
             _safe_print(f"[INFO] Chatbot initialized successfully")
@@ -561,8 +629,7 @@ class AdvancedChatbot:
             
         except Exception as e:
             _safe_print(f"[ERROR] Error initializing chatbot: {e}")
-            import traceback
-            traceback.print_exc()
+            logger.exception("Error initializing chatbot")
             self.config = None
     
     def is_greeting(self, text: str) -> bool:
@@ -618,22 +685,47 @@ class AdvancedChatbot:
                 _safe_print(f"[DEBUG] Обнаружено приветствие: '{question}'")
                 return self.get_greeting_response()
             
+            # Кодируем вопрос
+            from .query_rewrite import rewrite_rag_question
+
+            search_question = rewrite_rag_question(question)
+            if search_question != question:
+                _safe_print(f"[DEBUG] Query rewrite: {search_question!r}")
+            query_embedding = self.embedder.encode(search_question)
+
             # Классифицируем вопрос
-            question_type = self.classifier.classify(question)
+            question_type = self.classifier.classify(search_question)
+            detected_products = self.product_detector.detect_products_from_question(
+                search_question, query_embedding=query_embedding
+            )
+            if len(detected_products) >= 2:
+                question_type = dict(question_type)
+                question_type["detected_products"] = [name for name, _ in detected_products]
+
+            if needs_troubleshooting_equipment_clarification(question, detected_products):
+                _safe_print("[DEBUG] Неисправность без модели прибора — запрос уточнения")
+                self.last_rag_sources = []
+                return TROUBLESHOOTING_EQUIPMENT_CLARIFY
+
             _safe_print(f"[DEBUG] Тип вопроса: {question_type['main_type']}, уверенность: {question_type['confidence']:.2f}")
             
             # Настраиваем параметры поиска
             search_params = adjust_search_parameters(question_type, self.top_k, self.threshold)
-            
-            # Кодируем вопрос
-            query_embedding = self.embedder.encode(question)
+            if len(detected_products) >= 2:
+                search_params = dict(search_params)
+                search_params["top_k"] = max(search_params.get("top_k", self.top_k), 22)
+                search_params["context_top_k"] = max(search_params.get("context_top_k", self.top_k), 14)
+                search_params["threshold"] = min(
+                    float(search_params.get("threshold", self.threshold) or self.threshold),
+                    0.35,
+                )
             
             # Умный поиск
             results = smart_search(
                 self.store, 
                 self.product_detector, 
                 query_embedding, 
-                question, 
+                search_question, 
                 search_params, 
                 question_type,
                 hybrid_retriever=self.hybrid,
@@ -665,10 +757,12 @@ class AdvancedChatbot:
                     "[LLM] запрос к LM Studio НЕ выполняется: нет чанков после поиска "
                     "(проверьте FAISS/chunks и формулировку вопроса)."
                 )
+                self.last_rag_sources = []
                 return self.fallback
             
             self.last_chunks = results
-            
+            from .rag_sources import build_rag_sources, filter_source_chunks, strip_inline_citations
+
             # Проверка threshold (кроме атрибутных вопросов)
             if not question_type["is_attribute"]:
                 best = results[0]
@@ -679,11 +773,20 @@ class AdvancedChatbot:
                         f"[LLM] запрос к LM Studio НЕ выполняется: score={sc:.4f} < порога={th} "
                         f"(см. faiss.confidence_threshold в config.yaml; для атрибутных вопросов порог не применяется)."
                     )
+                    self.last_rag_sources = []
                     return self.fallback
             
             _safe_print("[LLM] отправка в LM Studio: RAG-ответ (generate)...")
             # Генерация ответа
-            answer = self.llm.generate(results, question, question_type)
+            answer = self.llm.generate(results, search_question, question_type)
+            answer = strip_inline_citations(answer)
+            source_chunks = filter_source_chunks(
+                results,
+                question=search_question,
+                answer=answer,
+                detected_products=detected_products,
+            )
+            self.last_rag_sources = build_rag_sources(source_chunks)
             self.last_llm_elapsed_ms = getattr(self.llm, "last_elapsed_ms", 0.0) or 0.0
             if self.last_llm_elapsed_ms > 0:
                 _safe_print(
@@ -696,7 +799,6 @@ class AdvancedChatbot:
             
         except Exception as e:
             _safe_print(f"[ERROR] Ошибка при генерации ответа: {e}")
-            import traceback
-            traceback.print_exc()
+            logger.exception("generate_response failed")
             return "Извините, произошла ошибка при обработке запроса."
 

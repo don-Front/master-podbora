@@ -1,0 +1,68 @@
+id: irvis_ultra
+competitor: "ООО НПП «Ирвис»"
+product_name: "Расходомер-счётчик ультразвуковой ИРВИС-Ультра (полнопроходной Пп)"
+source_document: "РЭ ИРВИС-Ультра.pdf"
+source_section: "п. 3.1, структура обозначения"
+document_code: "ИРВС 9100.0000.00 РЭ7"
+mask_prefix: "ИРВИС-Ультра-Пп"
+mask_example: "ИРВИС-Ультра-Пп-16-DN200-100-ГОТ"
+image: "irvis_ultra.png"
+
+fields:
+  - id: pressure
+    label: "Номинальное давление корпуса ПП (×0,1 МПа)"
+    position: 1
+    allowed:
+      - "16"
+      - "25"
+      - "40"
+      - "63"
+      - "100"
+      - "160"
+
+  - id: dn
+    label: "Номинальный диаметр ПП"
+    position: 2
+    allowed:
+      - DN50
+      - DN80
+      - DN100
+      - DN150
+      - DN200
+      - DN300
+      - DN400
+
+  - id: qmax
+    label: "Максимальный расход при рабочих условиях, м³/ч"
+    position: 3
+    allowed:
+      - G25
+      - "100"
+      - "270"
+
+  - id: power
+    label: "Исполнение по питанию"
+    position: 4
+    allowed:
+      - ВП
+      - АП
+    aliases:
+      VP: ВП
+      AP: АП
+
+  - id: accuracy
+    label: "Исполнение по точности"
+    position: 5
+    allowed:
+      - ГОТ
+      - ГПТ
+    aliases:
+      GOT: ГОТ
+      GPT: ГПТ
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - pressure
+    - dn
+    - qmax

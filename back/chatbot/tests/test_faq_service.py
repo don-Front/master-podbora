@@ -31,6 +31,24 @@ class FaqServiceTests(SimpleTestCase):
         self.assertTrue(result.attachment_path.is_file())
         self.assertIn("Памятка", result.attachment_name)
 
+    def test_repair_equipment_list_returns_personal_cabinet_card(self):
+        result = faq_service.answer("какие есть ремонтные приборы")
+
+        self.assertTrue(result.handled)
+        self.assertIn("личный кабинет", result.text.casefold())
+        self.assertIn("ремонтные приборы", result.text.casefold())
+        self.assertIsNotNone(result.card)
+        self.assertEqual(result.card["title"], "Ремонтные приборы")
+        self.assertEqual(result.card["actions"][0]["type"], "url")
+        self.assertEqual(result.card["actions"][0]["label"], "Личный кабинет")
+        self.assertEqual(result.card["actions"][0]["href"], faq_service.PERSONAL_CABINET_URL)
+
+    def test_repair_equipment_list_does_not_match_shipping_repair(self):
+        result = faq_service.answer("как отправить прибор в гарантийный ремонт")
+
+        self.assertTrue(result.handled)
+        self.assertEqual(result.card["actions"][0]["type"], "file")
+
     def test_support_answer_has_clickable_phone_card(self):
         result = faq_service.answer("контакты техподдержки")
 

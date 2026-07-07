@@ -3,6 +3,8 @@
  * Логика синхронизирована с back/chatbot/api/search_equipment.py
  */
 
+import { mediumApiFromValue } from './qmaxHint';
+
 const LEGACY_ALIASES = {
   flow_min: 'flowMin',
   flow_max: 'flowMax',
@@ -77,7 +79,7 @@ export function buildSearchEquipmentParams(specs) {
   const s = normalizeSpecs(specs);
   const params = {
     equipment_type: 'flowmeters',
-    medium: String(s.medium || 'gas').trim().toLowerCase() || 'gas',
+    medium: mediumApiFromValue(s.medium) || 'gas',
     application: 'industrial',
     gas_type: mapGasTypeToApi(s.gas_type),
   };

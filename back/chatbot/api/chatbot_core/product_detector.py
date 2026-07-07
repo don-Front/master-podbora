@@ -70,6 +70,37 @@ def _model_tokens(text: str) -> Set[str]:
     return tokens
 
 
+_SERIES_MARKERS = ("ufg", "tfg", "ufl", "cfm", "gfg", "udm", "cng")
+
+
+def _series_in_text(text: str) -> Set[str]:
+    """Серии Turbo Flow, явно упомянутые в вопросе (UFG, TFG и т.д.)."""
+    compact = _normalize_for_match(text).replace(" ", "")
+    return {marker for marker in _SERIES_MARKERS if marker in compact}
+
+
+def _best_product_for_series(series: str, products: List[str]) -> Tuple[Optional[str], float]:
+    """Лучшее название продукта из каталога для серии (ufg, tfg…)."""
+    best_product: Optional[str] = None
+    best_score = 0.0
+    for product in products:
+        normalized = _normalize_for_match(product).replace(" ", "")
+        if series not in normalized:
+            continue
+        score = 0.72
+        pl = product.lower()
+        if "turbo flow" in pl:
+            score += 0.12
+        if series in _model_tokens(product):
+            score += 0.1
+        if "расходомер" in pl or "счетчик" in pl or "счётчик" in pl:
+            score += 0.05
+        if score > best_score:
+            best_score = score
+            best_product = product
+    return best_product, best_score
+
+
 def _chunk_product_text(chunk: Dict) -> str:
     meta = chunk.get("metadata") or {}
     return " ".join(
@@ -129,8 +160,72 @@ def _is_malfunction_query(text: str) -> bool:
         "арu",
         "завихрен",
         "симметри",
+        "не работает",
+        "не включа",
+        "не показыва",
+        "оборвал",
+        " сломал",
+        "перестал",
+        "не горит",
+        "нет индикац",
+        "не видно",
+        "ошибк",
     )
     return any(m in q for m in markers)
+
+
+def _explicit_equipment_in_question(question: str) -> bool:
+    """True, если пользователь явно назвал серию или модель прибора."""
+    if _series_in_text(question):
+        return True
+    compact = _normalize_for_match(question).replace(" ", "")
+    return any(marker in compact for marker in _SERIES_MARKERS)
+
+
+TROUBLESHOOTING_EQUIPMENT_CLARIFY = (
+    "Чтобы подсказать неисправность и способ устранения, уточните, пожалуйста, "
+    "модель или серию прибора — например, Turbo Flow UFG, TFG, UFL, CFM."
+)
+
+
+def needs_troubleshooting_equipment_clarification(
+    question: str,
+    detected_products: Optional[List[Tuple[str, float]]] = None,
+) -> bool:
+    """
+    Запрос про неисправность/симптом без явного указания оборудования —
+    нужно уточнение, а не RAG по случайной серии.
+
+    Embedding-детектор продукта игнорируется: он часто «угадывает» UFG
+    по общим словам (индикатор, провод) и даёт ложный ответ.
+    """
+    del detected_products  # не используем — только явный текст вопроса
+    if not _is_malfunction_query(question):
+        return False
+    return not _explicit_equipment_in_question(question)
+
+
+def looks_like_equipment_clarification_reply(text: str) -> bool:
+    """Короткий ответ только с моделью/серией после запроса уточнения."""
+    t = (text or "").strip()
+    if not t or len(t) > 64:
+        return False
+    if not _explicit_equipment_in_question(t):
+        return False
+    if _is_malfunction_query(t):
+        return False
+    return True
+
+
+def merge_troubleshooting_followup(original_question: str, equipment_reply: str) -> str:
+    """Склеивает исходный симптом и уточнённую модель в один RAG-запрос."""
+    base = (original_question or "").strip()
+    equipment = (equipment_reply or "").strip()
+    if not base:
+        return equipment
+    if not equipment:
+        return base
+    return f"{base}. Прибор/серия: {equipment}"
 
 
 class ProductDetector:
@@ -238,7 +333,32 @@ class ProductDetector:
         except Exception as e:
             print(f"[ERROR] Ошибка при определении продукта: {e}")
             return None, 0.0
-    
+
+    def detect_products_from_question(
+        self,
+        question: str,
+        query_embedding: Optional[np.ndarray] = None,
+    ) -> List[Tuple[str, float]]:
+        """
+        Определяет один или несколько продуктов из вопроса.
+        Если в тексте явно несколько серий (UFG и TFG) — возвращает обе.
+        """
+        series = _series_in_text(question)
+        if len(series) >= 2:
+            products = self.extract_product_names()
+            matched: List[Tuple[str, float]] = []
+            for marker in sorted(series):
+                product, score = _best_product_for_series(marker, products)
+                if product and score >= 0.5:
+                    matched.append((product, score))
+            if len(matched) >= 2:
+                return matched[:4]
+
+        single = self.detect_product_from_question(question, query_embedding=query_embedding)
+        if single[0]:
+            return [single]
+        return []
+
     @staticmethod
     def _cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
         a = np.asarray(a, dtype=float)

@@ -1,0 +1,122 @@
+id: ultramag
+competitor: "ООО ЭПО «Сигнал»"
+product_name: "Счётчик-расходомер ультразвуковой ULTRAMAG"
+source_document: "РЭ ULTRAMAG.pdf"
+source_section: "п. 2.1.10"
+document_code: "СЯМИ.407229-722 РЭ"
+mask_prefix: "ULTRAMAG"
+mask_example: "ULTRAMAG-Б-А-PTZ-50-G25-1:160-1-1А-П-R"
+image: "ultramag.png"
+
+fields:
+  - id: ivb
+    label: "Вариант ИВБ"
+    position: 1
+    allowed:
+      - Б
+      - М
+    aliases:
+      B: Б
+      M: М
+
+  - id: layout
+    label: "Расположение ПЭП (однолучевой/многолучевой)"
+    position: 2
+    allowed:
+      - А
+      - Т
+    aliases:
+      A: А
+      T: Т
+
+  - id: channels
+    label: "Каналы измерений"
+    position: 3
+    allowed:
+      - PTZ
+      - TZ
+      - Z
+
+  - id: dn
+    label: "Номинальный диаметр DN, мм"
+    position: 4
+    allowed:
+      - "32"
+      - "40"
+      - "50"
+      - "80"
+      - "100"
+      - "150"
+      - "200"
+      - "250"
+      - "300"
+
+  - id: size
+    label: "Номинальный рабочий расход G"
+    position: 5
+    allowed:
+      - G10
+      - G16
+      - G25
+      - G40
+      - G65
+      - G100
+      - G160
+      - G250
+      - G400
+      - G650
+      - G1000
+      - G1600
+      - G2500
+      - G4000
+
+  - id: dynamic_range
+    label: "Динамический диапазон измерения"
+    position: 6
+    allowed:
+      - "1:100"
+      - "1:160"
+      - "1:200"
+      - "1:250"
+      - "1:320"
+      - "1:400"
+      - "1:450"
+      - "1:500"
+
+  - id: accuracy
+    label: "Класс точности, %"
+    position: 7
+    allowed:
+      - "0.5"
+      - "1"
+      - "1.5"
+
+  - id: pressure_channel
+    label: "Верхний предел канала измерения давления"
+    position: 8
+    allowed:
+      - "1"
+      - "1А"
+      - "1A"
+
+  - id: direction
+    label: "Направление потока"
+    position: 9
+    allowed:
+      - П
+      - Л
+    aliases:
+      P: П
+      L: Л
+
+  - id: reversible
+    label: "Реверсивный тип"
+    position: 10
+    allowed:
+      - R
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - size
+    - dn

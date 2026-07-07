@@ -53,7 +53,7 @@ def spu_card_url() -> str:
     u = (getattr(settings, 'SPU_CARD_API_URL', None) or '').strip().rstrip('/')
     if u:
         return u
-    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'https://turbo-podbor.ru')
+    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'http://master-turbo-podbor.ru')
     return f"{str(origin).rstrip('/')}/api/spu/card"
 
 

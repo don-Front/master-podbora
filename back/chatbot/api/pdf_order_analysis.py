@@ -683,16 +683,9 @@ def _extract_accuracy_from_ocr(ocr_text: str) -> Optional[str]:
 
 
 def _normalize_medium_value(value: Any) -> Any:
-    if value is None:
-        return None
-    s = str(value).strip().lower()
-    if s in ("gas", "liquid", "unknown"):
-        return s
-    if "жидк" in s or s == "liquid":
-        return "liquid"
-    if "газ" in s or "природн" in s or s == "газ":
-        return "gas"
-    return value
+    from .medium_normalize import try_normalize_medium_value
+
+    return try_normalize_medium_value(value)
 
 
 def _postprocess_specs(specs: Dict[str, Any], ocr_text: str) -> Dict[str, Any]:

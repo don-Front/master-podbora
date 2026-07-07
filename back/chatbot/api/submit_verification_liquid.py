@@ -21,7 +21,7 @@ def submit_verification_liquid_url() -> str:
     full = (getattr(settings, 'SUBMIT_VERIFICATION_LIQUID_URL', None) or '').strip().rstrip('/')
     if full:
         return full
-    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'https://turbo-podbor.ru')
+    origin = getattr(settings, 'VERIFICATION_SERVICE_ORIGIN', 'http://master-turbo-podbor.ru')
     return f"{str(origin).rstrip('/')}/api/submit-verification-liquid-request"
 
 
@@ -40,9 +40,35 @@ def _normalize_url_path(url: str) -> str:
 
 
 def media_path_from_attachment_url(url: str) -> Optional[str]:
-    """Публичный URL вложения (/media/...) → абсолютный путь к файлу на диске."""
+    """Публичный URL вложения → абсолютный путь к файлу на диске."""
     if not url or not isinstance(url, str):
         return None
+
+    from .attachment_urls import extract_chat_attachment_relpath, extract_message_id_from_attachment_url
+    from .models import Message
+
+    message_id = extract_message_id_from_attachment_url(url)
+    if message_id:
+        try:
+            msg = Message.objects.get(pk=message_id)
+            if msg.attachment:
+                p = Path(msg.attachment.path)
+                if p.is_file():
+                    return str(p)
+        except Message.DoesNotExist:
+            pass
+        except OSError:
+            pass
+
+    rel = extract_chat_attachment_relpath(url)
+    if rel:
+        full = Path(settings.MEDIA_ROOT) / "chat_attachments" / rel
+        try:
+            if full.is_file():
+                return str(full)
+        except OSError:
+            pass
+
     path = _normalize_url_path(url)
     if not path:
         return None

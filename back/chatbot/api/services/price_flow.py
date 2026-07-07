@@ -30,6 +30,23 @@ class PriceFlowHandler:
         return state in _PRICE_STATES
 
     @staticmethod
+    def can_start_from_slider(ctx: MessageFlowContext) -> bool:
+        """
+        Запрос цены со слайдера аналогов конкурента: hint_state ещё start,
+        но фронт передаёт equipment_for_price + order_specs_for_price.
+        """
+        if ctx.current_state != "start":
+            return False
+        eq_obj = _parse_equipment_for_price(ctx.request_data)
+        if not eq_obj:
+            return False
+        label = (eq_obj.get("model") or eq_obj.get("name") or "").strip()
+        if not label:
+            return False
+        specs = _parse_order_specs_for_price(ctx.request_data)
+        return bool(specs)
+
+    @staticmethod
     def handle_price_hint(ctx: MessageFlowContext) -> None:
         data = ctx.request_data
         eq_obj = _parse_equipment_for_price(data)

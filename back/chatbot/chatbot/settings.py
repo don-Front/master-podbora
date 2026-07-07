@@ -16,7 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-PODBOR_SERVICE_ORIGIN = 'https://turbo-podbor.ru'
+PODBOR_SERVICE_ORIGIN = 'https://master-turbo-podbor.ru'
 # Обратная совместимость с прежним именем настройки
 SERVICE_8010_ORIGIN = PODBOR_SERVICE_ORIGIN
 _LEGACY_PODBOR_HOSTS = (
@@ -61,6 +61,17 @@ SUBMIT_SPU_APPLICATION_URL = normalize_service_8010_url(
 # Полный URL POST карточки СПУ (если пусто — {VERIFICATION_SERVICE_ORIGIN}/api/spu/card)
 SPU_CARD_API_URL = normalize_service_8010_url(os.environ.get('SPU_CARD_API_URL'))
 
+# Учёт обращений в поддержку (аналитика FastAPI)
+ANALYTICS_SUPPORT_REQUEST_URL = normalize_service_8010_url(
+    os.environ.get('ANALYTICS_SUPPORT_REQUEST_URL'),
+    f'{PODBOR_SERVICE_ORIGIN}/api/analytics/support-request',
+)
+ANALYTICS_API_TOKEN = (
+    os.environ.get('ANALYTICS_API_TOKEN')
+    or os.environ.get('API_TOKEN')
+    or 'change-me'
+).strip()
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -68,15 +79,15 @@ SPU_CARD_API_URL = normalize_service_8010_url(os.environ.get('SPU_CARD_API_URL')
 SECRET_KEY = 'django-insecure-*u1il21cgp6v2zzx0_&y2v*n7k^&8&2pfq(-q$3(gusz)isa2i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '1').strip().lower() in ('1', 'true', 'yes')
 
-ALLOWED_HOSTS = [
+_DEFAULT_ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '193.105.37.142',
     '192.168.5.53',
-    'turbo-podbor.ru',
-    'www.turbo-podbor.ru',
+    'master-turbo-podbor.ru',
+    'www.master-turbo-podbor.ru',
     '192.168.2.225',
     '192.168.3.1',
     '192.168.5.219',
@@ -84,6 +95,12 @@ ALLOWED_HOSTS = [
     '192.168.2.17',
     '192.168.2.41',
 ]
+_env_allowed_hosts = [
+    h.strip()
+    for h in os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
+    if h.strip()
+]
+ALLOWED_HOSTS = _env_allowed_hosts or _DEFAULT_ALLOWED_HOSTS
 
 # Application definition
 
@@ -189,9 +206,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # CORS settings
-CORS_ALLOWED_ORIGINS = [
-    "https://turbo-podbor.ru",
+_DEFAULT_CORS_ORIGINS = [
+    "http://master-turbo-podbor.ru",
+    "https://master-turbo-podbor.ru",
+    "http://www.master-turbo-podbor.ru",
+    "https://www.master-turbo-podbor.ru",
     "https://turbo-don.ru",
+    "http://193.105.37.142:10111",
+    "http://193.105.37.142:10112",
+    "http://192.168.5.53:10111",
+    "http://192.168.5.53:10112",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:3001",
@@ -206,6 +230,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.2.41:3000",
     "http://192.168.2.41:3001",
 ]
+_env_cors = [
+    o.strip()
+    for o in os.environ.get('DJANGO_CORS_ALLOWED_ORIGINS', '').split(',')
+    if o.strip()
+]
+CORS_ALLOWED_ORIGINS = list(dict.fromkeys(_env_cors + _DEFAULT_CORS_ORIGINS))
 CORS_ALLOW_CREDENTIALS = True
 
 # Dev-фронт с любого IP в LAN (React на http://192.168.x.x:3001)
@@ -215,13 +245,24 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://localhost(:[0-9]+)?$",
     r"^http://127\.0\.0\.1(:[0-9]+)?$",
 ]
+_DEFAULT_CSRF_ORIGINS = [
+    "http://master-turbo-podbor.ru",
+    "https://master-turbo-podbor.ru",
+    "http://www.master-turbo-podbor.ru",
+    "https://www.master-turbo-podbor.ru",
+    "http://193.105.37.142:10111",
+    "http://193.105.37.142:10112",
+    "http://192.168.5.53:10111",
+    "http://192.168.5.53:10112",
+]
+_env_csrf = [
+    o.strip()
+    for o in os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS', '').split(',')
+    if o.strip()
+]
+CSRF_TRUSTED_ORIGINS = list(dict.fromkeys(_env_csrf + _DEFAULT_CSRF_ORIGINS))
 if DEBUG:
-    CSRF_TRUSTED_ORIGINS = [
-        *CORS_ALLOWED_ORIGINS,
-        "https://www.turbo-podbor.ru",
-        "http://193.105.37.142:10111",
-        "http://192.168.5.53:10111",
-    ]
+    CSRF_TRUSTED_ORIGINS = list(dict.fromkeys(CSRF_TRUSTED_ORIGINS + list(CORS_ALLOWED_ORIGINS)))
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

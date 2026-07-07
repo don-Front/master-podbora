@@ -49,6 +49,12 @@ class MessageFlowContext:
     bot_attachment_path: Any = None
     bot_attachment_name: str = ""
     faq_card: Any = None
+    competitor_mask_card: Any = None
+    competitor_comparison_card: Any = None
+    competitor_analog_specs: Any = None
+    competitor_analog_intro: str | None = None
+    competitor_analog_skip_reason: str | None = None
+    rag_sources: Any = field(default_factory=list)
 
     def apply_result(self, result: Dict[str, Any]) -> None:
         """Применить dict результата от flow-обработчика."""
@@ -80,4 +86,7 @@ class MessageFlowContext:
             "gas_spu_card": self.gas_spu_card,
             "gas_spu_preview": self.gas_spu_preview,
             "faq_card": self.faq_card,
+            "competitor_mask_card": self.competitor_mask_card,
+            "competitor_comparison_card": self.competitor_comparison_card,
+            "rag_sources": self.rag_sources or None,
         }

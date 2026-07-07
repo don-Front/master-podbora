@@ -22,6 +22,12 @@ from .email_config import (
     EMAIL_VALIDATION,
     EMAIL_TEMPLATES
 )
+from .tech_support_email import (
+    build_tech_support_context,
+    build_tech_support_html,
+    resolve_region,
+)
+from .analytics_client import record_support_request
 
 
 class EmailValidator:
@@ -384,19 +390,114 @@ class EmailSender:
             
             print(f"[INFO] Email notification sent for category: {category}")
             return True, ""
-            
+
         except smtplib.SMTPAuthenticationError:
             error = "Ошибка авторизации SMTP. Проверьте email и пароль в настройках."
             print(f"[ERROR] {error}")
             return False, error
-            
+
         except smtplib.SMTPException as e:
             error = f"Ошибка отправки email: {str(e)}"
             print(f"[ERROR] {error}")
             return False, error
-            
+
         except Exception as e:
             error = f"Неизвестная ошибка при отправке email: {str(e)}"
+            print(f"[ERROR] {error}")
+            return False, error
+
+    @classmethod
+    def send_tech_support_notification(
+        cls,
+        messages: List[dict],
+        client_email: str = "Не указан",
+        client_phone: str = "Не указан",
+        ip_address: str = "Неизвестен",
+        request_time: datetime = None,
+        chat_id: Optional[int] = None,
+    ) -> Tuple[bool, str]:
+        """Отправляет стилизованное письмо оператору техподдержки."""
+        try:
+            request_time = request_time or datetime.now()
+            context = build_tech_support_context(messages)
+            region = resolve_region(ip_address)
+
+            html_body = build_tech_support_html(
+                scenario_path=context["scenario_path"],
+                trigger_message=context["trigger_message"],
+                equipment_type=context["equipment_type"],
+                problem_description=context["problem_description"],
+                contact_info=context["contact_info"],
+                client_email=client_email,
+                client_phone=client_phone,
+                region=region,
+                request_time=request_time,
+                ip_address=ip_address,
+            )
+
+            recipient = NOTIFICATION_RECIPIENTS.get(
+                "tech_support_operator", "sktb_otp2@turbo-don.ru"
+            )
+            equipment = context["equipment_type"]
+            subject = f"Техподдержка: {equipment}"
+
+            msg = MIMEMultipart("alternative")
+            msg["Subject"] = subject
+            msg["From"] = (
+                f"{EMAIL_CREDENTIALS['sender_name']} "
+                f"<{EMAIL_CREDENTIALS['sender_email']}>"
+            )
+            msg["To"] = recipient
+            msg.attach(MIMEText(html_body, "html", "utf-8"))
+
+            with cls._create_smtp_connection() as server:
+                server.sendmail(
+                    EMAIL_CREDENTIALS["sender_email"],
+                    [recipient],
+                    msg.as_string(),
+                )
+
+            print(f"[INFO] Tech support email sent to {recipient}")
+
+            email_for_analytics = client_email if client_email and client_email != "Не указан" else ""
+            phone_for_analytics = client_phone if client_phone and client_phone != "Не указан" else ""
+            if not email_for_analytics and context.get("contact_info"):
+                em, ph = extract_contact_info(context["contact_info"])
+                email_for_analytics = em if em != "Не указан" else email_for_analytics
+                phone_for_analytics = ph if ph != "Не указан" else phone_for_analytics
+
+            topic = f"Техническая поддержка: {equipment}"
+            problem = (context.get("problem_description") or "").strip()
+            if problem and problem != "Не указано":
+                topic = f"{topic} — {problem[:120]}"
+
+            ok_analytics, analytics_err = record_support_request(
+                email=email_for_analytics,
+                phone=phone_for_analytics,
+                user_id=f"chat-{chat_id}" if chat_id else "",
+                topic=topic,
+                channel="chatbot",
+                source="chatbot",
+            )
+            if ok_analytics:
+                print("[INFO] Support request recorded in analytics")
+            else:
+                print(f"[WARNING] Analytics support-request failed: {analytics_err}")
+
+            return True, ""
+
+        except smtplib.SMTPAuthenticationError:
+            error = "Ошибка авторизации SMTP. Проверьте email и пароль в настройках."
+            print(f"[ERROR] {error}")
+            return False, error
+
+        except smtplib.SMTPException as e:
+            error = f"Ошибка отправки email: {str(e)}"
+            print(f"[ERROR] {error}")
+            return False, error
+
+        except Exception as e:
+            error = f"Неизвестная ошибка при отправке email техподдержки: {str(e)}"
             print(f"[ERROR] {error}")
             return False, error
 

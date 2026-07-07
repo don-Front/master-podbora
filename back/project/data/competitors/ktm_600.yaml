@@ -1,0 +1,126 @@
+id: ktm_600
+competitor: "РМТВ (КТМ600 РУС)"
+product_name: "Счётчик газа КТМ600 РУС"
+source_document: "Руководство_по_эксплуатации КТМ 600.pdf"
+source_section: "Приложение А, таблица А.1"
+document_code: "РМТВ.60.000.00.0000.000РЭ"
+mask_prefix: "КТМ600 РУС"
+mask_example: "КТМ600 РУС 2P01DN100PN0160L0300GB1N-М1-DC5"
+image: "ktm_600.png"
+
+fields:
+  - id: layout
+    label: "Расположение измерительных лучей"
+    position: 2
+    allowed:
+      - 2P
+      - 4P
+      - 2X
+
+  - id: material
+    label: "Материал корпуса измерительного"
+    position: 3
+    allowed:
+      - "01"
+      - "02"
+      - "03"
+      - XX
+
+  - id: dn
+    label: "Номинальный диаметр"
+    position: 4
+    allowed:
+      - DN50
+      - DN80
+      - DN100
+      - DN150
+      - DN200
+      - DN250
+      - DN300
+      - DN400
+      - DN500
+      - DN600
+      - DN700
+      - DN800
+      - DN1000
+      - DN1200
+      - DN1400
+
+  - id: pn
+    label: "Класс давления"
+    position: 5
+    allowed:
+      - PN0016
+      - PN0025
+      - PN0040
+      - PN0063
+      - PN0100
+      - PN0160
+      - PN0250
+      - PN0400
+      - PN0450
+
+  - id: length
+    label: "Длина корпуса измерительного, мм"
+    position: 6
+    allowed:
+      - L0150
+      - L0200
+      - L0250
+      - L0300
+      - L0350
+      - L0400
+      - L0500
+      - L0600
+      - L0800
+      - L1000
+      - L1200
+      - L1500
+      - L1800
+      - L2000
+      - L2500
+      - L2800
+
+  - id: flange
+    label: "Тип фланцевого соединения (ГОСТ 33259-2015)"
+    position: 7
+    allowed:
+      - GB1
+      - GB2
+      - GC1
+      - GC2
+      - GD1
+      - GD2
+
+  - id: tap
+    label: "Отверстие под датчик давления"
+    position: 8
+    allowed:
+      - N
+      - "12"
+      - "14"
+
+  - id: transducer
+    label: "Тип ультразвуковых приемопередатчиков"
+    position: 9
+    allowed:
+      - LX
+      - NX
+      - MX
+      - SX
+
+  - id: io
+    label: "Напряжение питания и вариант входов/выходов"
+    position: 10
+    allowed:
+      - DC1
+      - DC2
+      - DC3
+      - DC4
+      - DC5
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - pn

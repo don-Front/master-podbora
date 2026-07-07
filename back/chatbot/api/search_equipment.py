@@ -7,6 +7,7 @@ import re
 from typing import Any, Dict, Optional
 from urllib.parse import urlencode
 
+from .medium_normalize import try_normalize_medium_value
 from .order_specs_helpers import merge_draft
 
 # Ключи, уходящие в URL (camelCase как в API :8010)
@@ -54,9 +55,11 @@ def format_accuracy_for_api(value: Any) -> Optional[str]:
 def build_search_equipment_params(specs: Dict[str, Any]) -> Dict[str, str]:
     """Параметры GET /api/search-equipment из черновика спецификации."""
     s = merge_draft(specs)
+    medium_raw = try_normalize_medium_value(s.get("medium"))
+    medium = medium_raw if medium_raw in ("gas", "liquid") else "gas"
     params: Dict[str, str] = {
         "equipment_type": "flowmeters",
-        "medium": str(s.get("medium") or "gas").strip().lower() or "gas",
+        "medium": medium,
         "application": "industrial",
         "gas_type": map_gas_type_to_api(s.get("gas_type")),
     }

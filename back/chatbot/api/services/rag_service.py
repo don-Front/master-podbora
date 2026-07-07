@@ -2,10 +2,19 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from typing import Any, Dict, Optional
 
 from ..chatbot_core import AdvancedChatbot
+from ..chatbot_core.product_detector import (
+    TROUBLESHOOTING_EQUIPMENT_CLARIFY,
+    _is_malfunction_query,
+    looks_like_equipment_clarification_reply,
+    merge_troubleshooting_followup,
+)
+
+logger = logging.getLogger(__name__)
 
 
 def _resolve_config_path() -> str:
@@ -32,6 +41,7 @@ class RagService:
     def __init__(self) -> None:
         self._bot: Optional[AdvancedChatbot] = None
         self.last_llm_elapsed_ms = 0.0
+        self.last_rag_sources: list = []
 
     def get_bot(self) -> AdvancedChatbot:
         """Lazy init — torch/FAISS грузятся при первом обращении."""
@@ -45,10 +55,64 @@ class RagService:
         """RAG-ответ на вопрос пользователя."""
         if chat_id is not None:
             print(f"[DEBUG] RagService.answer chat_id={chat_id}")
+        effective = self._resolve_effective_question(question, chat_id)
+        if effective != (question or "").strip():
+            print(f"[DEBUG] RagService: follow-up merged -> {effective!r}")
         bot = self.get_bot()
-        text = bot.generate_response(question)
+        text = bot.generate_response(effective)
         self.last_llm_elapsed_ms = getattr(bot, "last_llm_elapsed_ms", 0.0) or 0.0
+        self.last_rag_sources = list(getattr(bot, "last_rag_sources", []) or [])
         return text
+
+    def _resolve_effective_question(self, question: str, chat_id: Optional[int]) -> str:
+        """
+        Если бот просил уточнить модель, а пользователь ответил «UFL» —
+        склеиваем с предыдущим вопросом про неисправность.
+        """
+        text = (question or "").strip()
+        if chat_id is None or not looks_like_equipment_clarification_reply(text):
+            return text
+
+        try:
+            from ..models import Message
+
+            recent = list(
+                Message.objects.filter(chat_id=chat_id).order_by("-created_at")[:8]
+            )
+        except Exception as exc:
+            logger.warning("Cannot load chat history for follow-up: %s", exc)
+            return text
+
+        if not recent:
+            return text
+
+        # Текущее user-сообщение уже сохранено во views до вызова answer().
+        idx = 0
+        if recent[0].is_user and (recent[0].content or "").strip() == text:
+            idx = 1
+
+        bot_msg = None
+        prev_user = None
+        for msg in recent[idx:]:
+            if not msg.is_user and bot_msg is None:
+                bot_msg = msg
+                continue
+            if bot_msg is not None and msg.is_user:
+                prev_user = msg
+                break
+
+        if bot_msg is None or prev_user is None:
+            return text
+
+        bot_text = (bot_msg.content or "").strip()
+        if TROUBLESHOOTING_EQUIPMENT_CLARIFY[:50] not in bot_text:
+            return text
+
+        prev_q = (prev_user.content or "").strip()
+        if not prev_q or not _is_malfunction_query(prev_q):
+            return text
+
+        return merge_troubleshooting_followup(prev_q, text)
 
     def reload(self) -> AdvancedChatbot:
         """Сброс singleton после смены config.yaml или пересборки индекса."""

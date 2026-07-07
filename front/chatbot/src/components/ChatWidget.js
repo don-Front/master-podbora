@@ -27,15 +27,32 @@ import {
 } from './gasSpuResultCard';
 import {
   OrderSpecsConfirmTable,
+  buildCompetitorMaskCardMessage,
+  buildCompetitorComparisonCardMessage,
   enrichBotMessage,
+  shouldAppendBotMessageFromApi,
   shouldShowOrderSpecsBotMessage,
   FLOW_MAX_AT_25_ROW_KEY,
 } from './orderSpecsConfirmTable';
 import { OrderSpecsTextClarify } from './OrderSpecsTextClarify';
 import { getBundledEquipmentImageUrls } from '../assets/equipmentImages';
 import { EquipmentNoMatchCard } from './EquipmentNoMatchCard';
+import { GrandGasMetersPriceBlock } from './GrandGasMetersPriceBlock';
+import { CompetitorMaskCard } from './CompetitorMaskCard';
+import { CompetitorComparisonCard } from './CompetitorComparisonCard';
+import { ServiceCenterPicker } from './ServiceCenterPicker';
+import { RagSourcesCard } from './RagSourcesCard';
 import { normalizeSpecs } from '../utils/searchEquipment';
 import { extractQmaxHintParams, isQmaxFlowWarning } from '../utils/qmaxHint';
+import {
+  applyChatWindowHeight,
+  clampChatHeight,
+  getDefaultChatWindowHeight,
+  getInitialChatWindowHeight,
+  isWidgetEmbedded,
+  useChatWidgetResize,
+  WIDGET_CONTAINER_EXTRA,
+} from './chatWidgetResize';
 
 /** Консоль браузера: фактический POST на turbo-podbor.ru выполняет Django; здесь URL/тело совпадают с серверным запросом. */
 /** Текст подсказки и кнопки на карточке СПУ — синхронно с backend (gas_spu_wizard.GAS_SPU_LEAVE_REQUEST). */
@@ -129,6 +146,120 @@ function buildEquipmentNoMatchMessage(data, emptyRegistryMessage) {
     text: data?.message || 'Данные приняты, список оборудования пуст.',
     time: new Date(),
   };
+}
+
+const COMPETITOR_ANALOG_INTRO_DEFAULT = 'Рекомендуемые аналоги НПО «Турбулентность-Дон»';
+
+async function appendEquipmentSliderFromSpecs({
+  specs,
+  setMessages,
+  updateTypingStage,
+  lastOrderSpecsRef,
+  sliderEquipmentRef,
+  setAwaitingEquipmentSelection,
+  intro = '',
+  isCompetitorAnalog = false,
+  registryOnlyForSearch = false,
+  messageIdPrefix = 'eq',
+}) {
+  if (!specs || typeof specs !== 'object') return;
+
+  const introText = (intro || '').trim();
+  if (introText) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: `${messageIdPrefix}-intro-${Date.now()}`,
+        from: 'bot',
+        text: introText,
+        time: new Date(),
+      },
+    ]);
+  }
+
+  try {
+    updateTypingStage(
+      isCompetitorAnalog
+        ? 'Подбор аналогов Turbo-Don (GET search-equipment)…'
+        : 'Подбор оборудования (GET search-equipment)…',
+    );
+    const res = await fetchSearchEquipment(specs);
+    const payload = res.data;
+    const foundEquipment = Array.isArray(payload?.equipment) ? payload.equipment : [];
+    const equipment = applyGazpromRegistryFilter(foundEquipment, registryOnlyForSearch);
+    if (payload?.status === 'success' && equipment.length > 0) {
+      lastOrderSpecsRef.current = specs;
+      const firstItem = equipment[0];
+      if (firstItem) sliderEquipmentRef.current = firstItem;
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `${messageIdPrefix}-${Date.now()}`,
+          from: 'bot',
+          kind: 'equipment',
+          equipment,
+          orderSpecs: specs,
+          currentEquipment: firstItem || null,
+          ...(isCompetitorAnalog ? { isCompetitorAnalog: true } : {}),
+          time: new Date(),
+        },
+      ]);
+      setAwaitingEquipmentSelection(true);
+      return;
+    }
+    const emptyRegistryMessage =
+      registryOnlyForSearch && foundEquipment.length > 0
+        ? 'Среди найденного оборудования нет приборов, внесённых в реестр МТР ПАО "Газпром".'
+        : null;
+    setMessages((prev) => [...prev, buildEquipmentNoMatchMessage(payload, emptyRegistryMessage)]);
+  } catch (err) {
+    console.error('[search-equipment] ошибка:', err);
+    const msg =
+      err?.response?.data?.message ||
+      (typeof err?.response?.data === 'string' ? err.response.data : null) ||
+      err?.message ||
+      'Ошибка сети';
+    const errorPrefix = isCompetitorAnalog
+      ? 'Не удалось подобрать аналоги Turbo-Don'
+      : 'Не удалось получить подбор оборудования';
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        from: 'bot',
+        text: `${errorPrefix}: ${msg}`,
+        time: new Date(),
+      },
+    ]);
+  }
+}
+
+async function appendEquipmentSliderFromOrderFinalResponse(response, deps) {
+  if (!isOrderFinalWithSpecs(response.data)) return;
+
+  const competitorMsg = buildCompetitorMaskCardMessage(response);
+  const comparisonMsg = buildCompetitorComparisonCardMessage(response);
+  if ((competitorMsg || comparisonMsg) && typeof deps.setMessages === 'function') {
+    deps.setMessages((prev) => {
+      const next = [...prev];
+      if (competitorMsg) next.push(competitorMsg);
+      if (comparisonMsg) next.push(comparisonMsg);
+      return next;
+    });
+  }
+
+  const specs = response.data.order_specs_json;
+  const introRaw = (response.data.competitor_analog_intro || '').trim();
+  const intro =
+    comparisonMsg ? '' : introRaw || (response.data.competitor_analog_specs ? COMPETITOR_ANALOG_INTRO_DEFAULT : '');
+  const isCompetitorAnalog = Boolean(comparisonMsg || intro);
+  await appendEquipmentSliderFromSpecs({
+    specs,
+    intro,
+    isCompetitorAnalog,
+    messageIdPrefix: isCompetitorAnalog ? 'competitor-analog-eq' : deps.messageIdPrefix || 'eq',
+    ...deps,
+  });
 }
 
 /** Синхронизация hintState с ответом API (current_state → currentState). */
@@ -252,6 +383,32 @@ function isLiquidTzBotMessage(msg) {
   if (msg.kind === 'liquid_tz_prompt') return true;
   const t = msg.text || '';
   return t.includes('техническое задание') && t.includes('10 МБ') && t.includes('Далее');
+}
+
+const BOT_WIDGET_MESSAGE_KINDS = new Set([
+  'equipment',
+  'equipment_no_match',
+  'order_specs_confirm',
+  'order_specs_text_clarify',
+  'gas_spu_review',
+  'gas_spu_card',
+  'accessories',
+  'tkpPdf',
+  'faq_card',
+  'competitor_mask_card',
+  'competitor_comparison_card',
+  'liquid_verification_contact',
+  'liquid_tz_prompt',
+  'service_center_picker',
+]);
+
+/** Только текст/вложение без карточек и интерактивных блоков — может занимать всю ширину чата. */
+function isTextOnlyBotMessage(msg) {
+  if (!msg || msg.from !== 'bot') return false;
+  if (Array.isArray(msg.ragSources) && msg.ragSources.length > 0) return false;
+  if (msg.kind && BOT_WIDGET_MESSAGE_KINDS.has(msg.kind)) return false;
+  if (isLiquidTzBotMessage(msg)) return false;
+  return true;
 }
 
 /** Карточка-подсказка для шага загрузки ТЗ (стиль как в макете). */
@@ -504,10 +661,41 @@ function buildEstimatePriceBody(equipment, specs) {
   };
 }
 
-function buildTkpAccessoriesBody(estimateBody) {
+/** FastAPI /api/tkp-accessories падает с 500 на части id каталога (ufg2, tfgs1, tfgh1). */
+const TKP_ACCESSORIES_EQUIPMENT_ID_ALIASES = {
+  ufg2: 'ufgfv',
+  'ufg-f-v': 'ufgfv',
+  tfgs1: 'tfg1',
+  tfgh1: 'tfg1',
+  tfgs: 'tfg1',
+  tfgh: 'tfg1',
+  'tfg-s': 'tfg1',
+  'tfg-h': 'tfg1',
+};
+
+function resolveTkpAccessoriesEquipmentId(rawId, estimateDetail) {
+  const id = String(rawId || '').trim().toLowerCase();
+  if (!id) return '';
+  const calc = String(estimateDetail?.calc || '').trim().toLowerCase();
+  if (calc) {
+    const fromCalc = TKP_ACCESSORIES_EQUIPMENT_ID_ALIASES[calc] || calc;
+    if (fromCalc !== id) return fromCalc;
+  }
+  return TKP_ACCESSORIES_EQUIPMENT_ID_ALIASES[id] || id;
+}
+
+function buildTkpAccessoriesBody(estimateBody, options = {}) {
   if (!estimateBody?.equipment?.id) return null;
+  const tkpEquipmentId = resolveTkpAccessoriesEquipmentId(
+    estimateBody.equipment.id,
+    options.estimateDetail,
+  );
+  if (!tkpEquipmentId) return null;
   return {
-    equipment: { id: estimateBody.equipment.id },
+    equipment: {
+      id: tkpEquipmentId,
+      name: estimateBody.equipment.name || '',
+    },
     dn: estimateBody.dn,
     pressure_max_mpa: estimateBody.pressure_max_mpa,
     accuracy_percent: estimateBody.accuracy_percent,
@@ -1150,56 +1338,9 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange, pickDisabled = 
 const GREETING_TEASER_ENGAGED_KEY = 'turbo-don-greeting-teaser-engaged';
 const GREETING_TEASER_SEEN_KEY = 'turbo-don-greeting-teaser-seen';
 const LEGACY_GREETING_TEASER_KEY = 'turbo-don-greeting-teaser-done';
-const MIN_CHAT_HEIGHT = 300;
-const MAX_VIEWPORT_HEIGHT_RATIO = 0.8;
 
 const CHAT_GREETING_TEASER_TEXT =
   'Здравствуйте! Помогу подобрать оборудование или ответить на ваши вопросы.';
-
-const WIDGET_TOGGLE_SIZE = 64;
-const WIDGET_LAUNCHER_INSET = 20;
-const WIDGET_SHADOW_BLEED = 28;
-const WIDGET_LAUNCHER_SIZE = WIDGET_TOGGLE_SIZE + WIDGET_LAUNCHER_INSET + WIDGET_SHADOW_BLEED;
-const WIDGET_CHAT_WIDTH = 380;
-const WIDGET_LAUNCHER_GAP = 80;
-
-let embedParentViewportHeight = null;
-
-function setEmbedParentViewport(height) {
-  const parsed = Number(height);
-  if (Number.isFinite(parsed) && parsed > 0) {
-    embedParentViewportHeight = parsed;
-  }
-}
-
-function isWidgetEmbedded() {
-  try {
-    return window.parent !== window;
-  } catch {
-    return true;
-  }
-}
-
-function getEmbedFrameHeight(chatWindowHeight) {
-  return chatWindowHeight + WIDGET_LAUNCHER_GAP + WIDGET_LAUNCHER_INSET;
-}
-
-function postEmbedResize(isOpen, chatWindowHeight) {
-  if (!isWidgetEmbedded()) return;
-  window.parent.postMessage(
-    {
-      type: 'RESIZE',
-      open: Boolean(isOpen),
-      height: isOpen ? getEmbedFrameHeight(chatWindowHeight) : undefined,
-    },
-    '*',
-  );
-}
-
-function getMaxChatHeight() {
-  const viewport = embedParentViewportHeight || window.innerHeight;
-  return Math.floor(viewport * MAX_VIEWPORT_HEIGHT_RATIO);
-}
 
 function readGreetingTeaserEngaged() {
   try {
@@ -1246,29 +1387,10 @@ function shouldScheduleGreetingTeaser() {
   return !readGreetingTeaserEngaged() && !readGreetingTeaserSeen();
 }
 
-function clampChatHeight(height) {
-  return Math.min(getMaxChatHeight(), Math.max(MIN_CHAT_HEIGHT, height));
-}
-
-function applyChatWindowHeight(node, height) {
-  if (!node) return;
-  const px = `${height}px`;
-  const maxPx = `${getMaxChatHeight()}px`;
-  node.style.setProperty('--chat-window-height', px);
-  node.style.setProperty('--chat-window-max-height', maxPx);
-  if (isWidgetEmbedded()) {
-    node.style.setProperty('height', px, 'important');
-    node.style.setProperty('max-height', maxPx, 'important');
-  } else {
-    node.style.height = px;
-    node.style.maxHeight = maxPx;
-  }
-}
-
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [showGreetingTeaser, setShowGreetingTeaser] = useState(false);
-  const [chatWindowHeight, setChatWindowHeight] = useState(MIN_CHAT_HEIGHT);
+  const [chatWindowHeight, setChatWindowHeight] = useState(getInitialChatWindowHeight);
   const [viewportVersion, setViewportVersion] = useState(0);
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
@@ -1280,7 +1402,11 @@ export function ChatWidget() {
   const fileInputRef = useRef(null);
   const inputRef = useRef(null);
   const orderFileDragDepthRef = useRef(0);
-  const widgetResizeFrameRef = useRef(null);
+  const messagesScrollDebounceRef = useRef(null);
+  const isTypingRef = useRef(false);
+  const lastMessagesScrollHeightRef = useRef(0);
+  const chatWidgetRef = useRef(null);
+  const chatPanelRef = useRef(null);
   const chatWindowRef = useRef(null);
   const chatHeaderRef = useRef(null);
   const chatMessagesRef = useRef(null);
@@ -1288,6 +1414,24 @@ export function ChatWidget() {
   const chatWindowHeightRef = useRef(chatWindowHeight);
   const greetingTeaserTimerRef = useRef(null);
   const greetingTeaserShownRef = useRef(false);
+  const {
+    applyDefaultChatSize,
+    chatWindowWidth,
+    handleViewportMessage,
+    notifyEmbedResize,
+    renderResizeHandles,
+    shouldSkipAutoHeightSync,
+  } = useChatWidgetResize({
+    isOpen,
+    chatWindowHeight,
+    setChatWindowHeight,
+    chatWindowHeightRef,
+    viewportVersion,
+    setViewportVersion,
+    chatWidgetRef,
+    chatPanelRef,
+    chatWindowRef,
+  });
   /** Защита от двойного нажатия «Получить цену» / debug на шаге телефона (дубли одного и того же ответа бота). */
   const equipmentPriceActionLockRef = useRef(false);
 
@@ -1310,6 +1454,11 @@ export function ChatWidget() {
 
   const isOrderPdfStep = hintState.currentState === 'order_pdf_request';
   const isFlowmeterScenario = FLOWMETER_HINT_STATES.has(hintState.currentState);
+  const isPriceVerificationStep = [
+    'equipment_price_phone',
+    'equipment_price_email',
+    'equipment_price_verify_code',
+  ].includes(hintState.currentState);
   const isLiquidTzStep = hintState.currentState === 'verification_installations_liquid_tz';
   const isLiquidTzCommentsStep =
     hintState.currentState === 'verification_installations_liquid_tz_comments';
@@ -1473,6 +1622,7 @@ export function ChatWidget() {
     console.log('[Чатбот]', s);
     setTypingStage(s);
     setTypingDetailsOpen(false);
+    isTypingRef.current = true;
     setIsTyping(true);
   }, []);
 
@@ -1483,9 +1633,24 @@ export function ChatWidget() {
   }, []);
 
   const endTyping = useCallback(() => {
+    isTypingRef.current = false;
     setIsTyping(false);
     setTypingStage('');
     setTypingDetailsOpen(false);
+  }, []);
+
+  /** Прокрутка ленты сообщений без изменения высоты окна чата. */
+  const scrollMessagesToBottom = useCallback((options = {}) => {
+    const container = chatMessagesRef.current;
+    if (!container) return;
+    window.requestAnimationFrame(() => {
+      const target = container.scrollHeight;
+      if (!options.force && Math.abs(target - lastMessagesScrollHeightRef.current) < 6) {
+        return;
+      }
+      lastMessagesScrollHeightRef.current = target;
+      container.scrollTop = target;
+    });
   }, []);
 
   const toggleTypingDetails = useCallback(() => {
@@ -1791,7 +1956,7 @@ export function ChatWidget() {
     };
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen) return;
     if (greetingTeaserTimerRef.current) {
       window.clearTimeout(greetingTeaserTimerRef.current);
@@ -1801,59 +1966,39 @@ export function ChatWidget() {
       markGreetingTeaserEngaged();
     }
     setShowGreetingTeaser(false);
-  }, [isOpen]);
+    applyDefaultChatSize();
+    notifyEmbedResize();
+    adjustInputHeight();
+  }, [isOpen, applyDefaultChatSize, notifyEmbedResize, adjustInputHeight]);
 
   useLayoutEffect(() => {
+    if (shouldSkipAutoHeightSync()) return;
     chatWindowHeightRef.current = chatWindowHeight;
-    applyChatWindowHeight(chatWindowRef.current, chatWindowHeight);
-  }, [chatWindowHeight]);
+    applyChatWindowHeight(chatPanelRef.current || chatWindowRef.current, chatWindowHeight);
+  }, [chatWindowHeight, viewportVersion, shouldSkipAutoHeightSync]);
 
+  /**
+   * Высота окна — фиксированная (дефолт или ручной resize).
+   * Не подстраиваем под scrollHeight ленты: иначе длинные сообщения (маски UFG-F и т.п.)
+   * и ответ бота вызывают цикл resize iframe ↔ viewport ↔ высота.
+   */
   const syncChatWindowHeight = useCallback(() => {
     if (!isOpen) return;
-    const header = chatHeaderRef.current;
-    const messages = chatMessagesRef.current;
-    const footer = chatFooterRef.current;
-    if (!header || !messages || !footer) return;
+    if (shouldSkipAutoHeightSync()) return;
 
-    const maxH = getMaxChatHeight();
-    const contentH = header.offsetHeight + messages.scrollHeight + footer.offsetHeight;
-    const next = clampChatHeight(contentH);
+    const next = clampChatHeight(getDefaultChatWindowHeight());
+    if (Math.abs(chatWindowHeightRef.current - next) <= 2) {
+      return;
+    }
     chatWindowHeightRef.current = next;
-    setChatWindowHeight((prev) => (prev === next ? prev : next));
-  }, [isOpen]);
+    setChatWindowHeight((prev) => (Math.abs(prev - next) <= 2 ? prev : next));
+  }, [isOpen, shouldSkipAutoHeightSync]);
 
   useLayoutEffect(() => {
     if (!isOpen) return undefined;
-
     syncChatWindowHeight();
-
-    const scheduleSync = () => {
-      if (widgetResizeFrameRef.current) {
-        window.cancelAnimationFrame(widgetResizeFrameRef.current);
-      }
-      widgetResizeFrameRef.current = window.requestAnimationFrame(syncChatWindowHeight);
-    };
-
-    const observer = new ResizeObserver(scheduleSync);
-    [chatHeaderRef.current, chatMessagesRef.current, chatFooterRef.current]
-      .filter(Boolean)
-      .forEach((node) => observer.observe(node));
-
-    return () => {
-      observer.disconnect();
-      if (widgetResizeFrameRef.current) {
-        window.cancelAnimationFrame(widgetResizeFrameRef.current);
-      }
-    };
-  }, [
-    isOpen,
-    syncChatWindowHeight,
-    messages,
-    isTyping,
-    typingDetailsOpen,
-    hintState,
-    viewportVersion,
-  ]);
+    return undefined;
+  }, [isOpen, syncChatWindowHeight, viewportVersion]);
 
   useLayoutEffect(() => {
     if (!isWidgetEmbedded()) return undefined;
@@ -1868,7 +2013,7 @@ export function ChatWidget() {
       root.style.height = '100vh';
     }
 
-    postEmbedResize(isOpen, chatWindowHeight);
+    notifyEmbedResize();
     window.parent.postMessage(
       {
         type: 'TEASER',
@@ -1879,7 +2024,7 @@ export function ChatWidget() {
     );
 
     return undefined;
-  }, [isOpen, showGreetingTeaser, chatWindowHeight]);
+  }, [isOpen, showGreetingTeaser, chatWindowHeight, notifyEmbedResize]);
 
   useEffect(() => {
     if (!isWidgetEmbedded()) return undefined;
@@ -1889,12 +2034,12 @@ export function ChatWidget() {
     const onParentMessage = (event) => {
       const data = event.data || {};
       if (data.type === 'VIEWPORT') {
-        setEmbedParentViewport(data.height);
-        setViewportVersion((v) => v + 1);
-        setChatWindowHeight((height) => clampChatHeight(height));
+        if (handleViewportMessage(data)) {
+          setChatWindowHeight((height) => clampChatHeight(height));
+        }
       }
       if (data.type === 'OPEN_CHAT') {
-        postEmbedResize(true, chatWindowHeightRef.current);
+        notifyEmbedResize();
         setIsOpen(true);
         setShowGreetingTeaser(false);
       }
@@ -1906,12 +2051,6 @@ export function ChatWidget() {
 
     window.addEventListener('message', onParentMessage);
     return () => window.removeEventListener('message', onParentMessage);
-  }, []);
-
-  useEffect(() => () => {
-    if (widgetResizeFrameRef.current) {
-      window.cancelAnimationFrame(widgetResizeFrameRef.current);
-    }
   }, []);
 
   useEffect(() => {
@@ -1943,11 +2082,7 @@ export function ChatWidget() {
   }, [chatId]);
 
   const toggleOpen = () => {
-    setIsOpen((prev) => {
-      const next = !prev;
-      postEmbedResize(next, chatWindowHeight);
-      return next;
-    });
+    setIsOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -1994,12 +2129,12 @@ export function ChatWidget() {
           ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
         };
         setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
-      } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+      } else if (shouldAppendBotMessageFromApi(response, botMessages)) {
         const firstBotMessage = botMessages[0] || {};
         const fallbackMsg = {
           id: firstBotMessage.id,
           from: 'bot',
-          text: firstBotMessage.content,
+          text: firstBotMessage.content || '',
           time: new Date(firstBotMessage.created_at),
           ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
           ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
@@ -2220,61 +2355,19 @@ export function ChatWidget() {
       }
 
       if (isOrderFinalWithSpecs(response.data)) {
-        const specs = response.data.order_specs_json;
         const registryOnlyForSearch =
           gazpromRegistryOnly && hint?.text === ORDER_SPECS_CONFIRM_TEXT;
-        try {
-          updateTypingStage('Подбор оборудования (GET search-equipment)…');
-          const res = await fetchSearchEquipment(specs);
-          const d = res.data;
-          const foundEquipment = Array.isArray(d?.equipment) ? d.equipment : [];
-          const equipment = applyGazpromRegistryFilter(foundEquipment, registryOnlyForSearch);
-          if (d?.status === 'success' && equipment.length > 0) {
-            lastOrderSpecsRef.current = specs;
-            const firstItem = equipment[0];
-            if (firstItem) sliderEquipmentRef.current = firstItem;
-            setMessages((prev) => [
-              ...prev,
-              {
-                id: `eq-hint-${Date.now()}`,
-                from: 'bot',
-                kind: 'equipment',
-                equipment,
-                orderSpecs: specs,
-                currentEquipment: firstItem || null,
-                time: new Date(),
-              },
-            ]);
-            setAwaitingEquipmentSelection(true);
-          } else {
-            const emptyRegistryMessage =
-              registryOnlyForSearch && foundEquipment.length > 0
-                ? 'Среди найденного оборудования нет приборов, внесённых в реестр МТР ПАО "Газпром".'
-                : null;
-            setMessages((prev) => [
-              ...prev,
-              buildEquipmentNoMatchMessage(d, emptyRegistryMessage),
-            ]);
-          }
-          if (registryOnlyForSearch) {
-            setGazpromRegistryOnly(false);
-          }
-        } catch (err) {
-          console.error('[search-equipment] ошибка:', err);
-          const msg =
-            err?.response?.data?.message ||
-            (typeof err?.response?.data === 'string' ? err.response.data : null) ||
-            err?.message ||
-            'Ошибка сети';
-          setMessages((prev) => [
-            ...prev,
-            {
-              id: Date.now(),
-              from: 'bot',
-              text: `Не удалось получить подбор оборудования: ${msg}`,
-              time: new Date(),
-            },
-          ]);
+        await appendEquipmentSliderFromOrderFinalResponse(response, {
+          setMessages,
+          updateTypingStage,
+          lastOrderSpecsRef,
+          sliderEquipmentRef,
+          setAwaitingEquipmentSelection,
+          registryOnlyForSearch,
+          messageIdPrefix: 'eq-hint',
+        });
+        if (registryOnlyForSearch) {
+          setGazpromRegistryOnly(false);
         }
       } else {
         const restoredConfirmTable = tryRestoreOrderSpecsConfirmFromResponse(response);
@@ -2304,12 +2397,12 @@ export function ChatWidget() {
               botMsg.kind = 'liquid_tz_prompt';
             }
             setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
-          } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+          } else if (shouldAppendBotMessageFromApi(response, botMessages)) {
             const firstBotMessage = botMessages[0] || {};
             const fallbackMsg = {
               id: firstBotMessage.id,
               from: 'bot',
-              text: firstBotMessage.content,
+              text: firstBotMessage.content || '',
               time: new Date(firstBotMessage.created_at),
               ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
               ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
@@ -2317,6 +2410,18 @@ export function ChatWidget() {
             setMessages((prev) => [...prev, enrichBotMessage(fallbackMsg, response)]);
           }
         }
+      }
+
+      if (response.data.verification_passed) {
+        const contact = response.data.verified_contact || {};
+        verifiedContactRef.current = {
+          phone: contact.phone || '',
+          email: contact.email || '',
+        };
+        const pendingEstimate = pendingEstimateBodyRef.current;
+        const fallbackLabel = pendingEstimate?.equipment?.name || 'оборудование';
+        updateTypingStage('Запрос ориентировочной цены (estimate-price)…');
+        await runEstimatePrice(pendingEstimate, fallbackLabel);
       }
 
       const applicationSubmitted =
@@ -2456,7 +2561,9 @@ export function ChatWidget() {
           time: new Date(),
         },
       ]);
-      exactCostBodyRef.current = buildTkpAccessoriesBody(estimateBody);
+      exactCostBodyRef.current = buildTkpAccessoriesBody(estimateBody, {
+        estimateDetail: estimateData.detail,
+      });
       estimateQuoteRef.current = {
         equipmentName,
         equipmentId,
@@ -2537,6 +2644,11 @@ export function ChatWidget() {
     };
     setMessages((prev) => [...prev, userMessage]);
     hasMessages.current = true;
+    setShowExactCostHint(false);
+    setShowTkpPdfHint(false);
+    setIsSelectingAccessories(false);
+    selectedAccessoriesRef.current = [];
+    setSelectedAccessoryIds([]);
 
     if (isEquipmentPriceUnavailable(eq)) {
       setMessages((prev) => [
@@ -2609,20 +2721,17 @@ export function ChatWidget() {
       }
 
       const botMessages = response.data.messages?.filter((msg) => !msg.is_user) || [];
-      if (botMessages.length > 0) {
-        const t = (botMessages[0].content || '').trim();
-        if (t) {
-          const firstBotMessage = botMessages[0] || {};
-          const botMsg = {
-            id: firstBotMessage.id,
-            from: 'bot',
-            text: firstBotMessage.content || 'Пустой ответ сервера.',
-            time: new Date(firstBotMessage.created_at),
-            ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
-            ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
-          };
-          setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
-        }
+      if (shouldAppendBotMessageFromApi(response, botMessages)) {
+        const firstBotMessage = botMessages[0] || {};
+        const botMsg = {
+          id: firstBotMessage.id,
+          from: 'bot',
+          text: firstBotMessage.content || '',
+          time: new Date(firstBotMessage.created_at),
+          ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
+          ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
+        };
+        setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
       }
       if (!estimateBody) {
         exactCostBodyRef.current = null;
@@ -2961,7 +3070,7 @@ export function ChatWidget() {
     requestAnimationFrame(() => {
       const el = document.querySelector(`[data-order-specs-confirm-id="${messageId}"]`);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        el.scrollIntoView({ behavior: 'auto', block: 'nearest' });
       }
     });
   }, []);
@@ -3234,7 +3343,9 @@ export function ChatWidget() {
           : 'Отправляю PDF на сервер…'
         : image
           ? 'Отправляю изображение на сервер…'
-          : 'Отправляю сообщение на сервер…';
+          : hintStepWhenSending === 'order_pdf_request'
+            ? 'Разбираю характеристики расходомера…'
+            : 'Отправляю сообщение на сервер…';
       beginTyping(uploadLabel);
       const pdfPipelineClientStart =
         pdf && hintStepWhenSending === 'order_pdf_request' ? performance.now() : null;
@@ -3463,60 +3574,18 @@ export function ChatWidget() {
         }
 
         if (isOrderFinalWithSpecs(response.data)) {
-          const specs = response.data.order_specs_json;
           const registryOnlyForSearch = gazpromRegistryOnly;
-          try {
-            updateTypingStage('Подбор оборудования (GET search-equipment)…');
-            const res = await fetchSearchEquipment(specs);
-            const d = res.data;
-            const foundEquipment = Array.isArray(d?.equipment) ? d.equipment : [];
-            const equipment = applyGazpromRegistryFilter(foundEquipment, registryOnlyForSearch);
-            if (d?.status === 'success' && equipment.length > 0) {
-              lastOrderSpecsRef.current = specs;
-              const firstItem = equipment[0];
-              if (firstItem) sliderEquipmentRef.current = firstItem;
-              setMessages((prev) => [
-                ...prev,
-                {
-                  id: `eq-${Date.now()}`,
-                  from: 'bot',
-                  kind: 'equipment',
-                  equipment,
-                  orderSpecs: specs,
-                  currentEquipment: firstItem || null,
-                  time: new Date(),
-                },
-              ]);
-              setAwaitingEquipmentSelection(true);
-            } else {
-              const emptyRegistryMessage =
-                registryOnlyForSearch && foundEquipment.length > 0
-                  ? 'Среди найденного оборудования нет приборов, внесённых в реестр МТР ПАО "Газпром".'
-                  : null;
-              setMessages((prev) => [
-                ...prev,
-                buildEquipmentNoMatchMessage(d, emptyRegistryMessage),
-              ]);
-            }
-            if (registryOnlyForSearch) {
-              setGazpromRegistryOnly(false);
-            }
-          } catch (err) {
-            console.error('[search-equipment] ошибка:', err);
-            const msg =
-              err?.response?.data?.message ||
-              (typeof err?.response?.data === 'string' ? err.response.data : null) ||
-              err?.message ||
-              'Ошибка сети';
-            setMessages((prev) => [
-              ...prev,
-              {
-                id: Date.now(),
-                from: 'bot',
-                text: `Не удалось получить подбор оборудования: ${msg}`,
-                time: new Date(),
-              },
-            ]);
+          await appendEquipmentSliderFromOrderFinalResponse(response, {
+            setMessages,
+            updateTypingStage,
+            lastOrderSpecsRef,
+            sliderEquipmentRef,
+            setAwaitingEquipmentSelection,
+            registryOnlyForSearch,
+            messageIdPrefix: 'eq',
+          });
+          if (registryOnlyForSearch) {
+            setGazpromRegistryOnly(false);
           }
         } else {
           const restoredConfirmTable = tryRestoreOrderSpecsConfirmFromResponse(response);
@@ -3546,12 +3615,12 @@ export function ChatWidget() {
                 botMsg.kind = 'liquid_tz_prompt';
               }
               setMessages((prev) => [...prev, enrichBotMessage(botMsg, response)]);
-            } else if (botMessages.length > 0 && (botMessages[0].content || '').trim()) {
+            } else if (shouldAppendBotMessageFromApi(response, botMessages)) {
               const firstBotMessage = botMessages[0] || {};
               const fallbackMsg = {
                 id: firstBotMessage.id,
                 from: 'bot',
-                text: firstBotMessage.content,
+                text: firstBotMessage.content || '',
                 time: new Date(firstBotMessage.created_at),
                 ...(firstBotMessage.attachment_url ? { attachmentUrl: firstBotMessage.attachment_url } : {}),
                 ...(firstBotMessage.attachment_name ? { pdfName: firstBotMessage.attachment_name } : {}),
@@ -3590,6 +3659,7 @@ export function ChatWidget() {
         setMessages((prev) => [...prev, errorMsg]);
       } finally {
         endTyping();
+        scrollMessagesToBottom({ force: true });
       }
     }
   };
@@ -3741,11 +3811,23 @@ export function ChatWidget() {
   };
 
   useEffect(() => {
-    const container = document.querySelector('.chat-widget__messages');
-    if (container) {
-      container.scrollTop = container.scrollHeight;
+    if (isTyping || !isOpen) return undefined;
+
+    if (messagesScrollDebounceRef.current) {
+      window.clearTimeout(messagesScrollDebounceRef.current);
     }
-  }, [messages, isOpen, isTyping, hintState.currentState]);
+
+    messagesScrollDebounceRef.current = window.setTimeout(() => {
+      messagesScrollDebounceRef.current = null;
+      scrollMessagesToBottom();
+    }, 120);
+
+    return () => {
+      if (messagesScrollDebounceRef.current) {
+        window.clearTimeout(messagesScrollDebounceRef.current);
+      }
+    };
+  }, [messages, isOpen, isTyping, hintState.currentState, scrollMessagesToBottom]);
 
   const handleGrandGasLeaveRequest = useCallback(async (payload = {}) => {
     const selectedItems = Array.isArray(payload.selected_items) ? payload.selected_items : [];
@@ -3848,7 +3930,14 @@ export function ChatWidget() {
   }, [beginTyping, ensureChatId, hintLocked, updateTypingStage]);
 
   return (
-    <div className="chat-widget">
+    <div
+      ref={chatWidgetRef}
+      className={`chat-widget${isOpen ? '' : ' chat-widget--launcher-only'}`}
+      style={{
+        ['--chat-window-width']: `${chatWindowWidth}px`,
+        ['--chat-widget-width']: `${chatWindowWidth + WIDGET_CONTAINER_EXTRA}px`,
+      }}
+    >
       <div className="chat-widget__launcher">
         {!isOpen && showGreetingTeaser && !isWidgetEmbedded() ? (
           <div className="chat-widget__greeting-teaser" role="status">
@@ -3883,18 +3972,25 @@ export function ChatWidget() {
       </div>
 
       <div
+        ref={chatPanelRef}
         id="turbo-don-chat-window"
-        ref={chatWindowRef}
-        className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
-          isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''
-        }${isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''}`}
+        className={`chat-widget__panel${isOpen ? ' chat-widget__panel--visible' : ''}`}
         aria-hidden={!isOpen}
-        style={{ height: `${chatWindowHeight}px`, ['--chat-window-height']: `${chatWindowHeight}px` }}
-        onDragEnter={handleOrderFileDragEnter}
-        onDragOver={handleOrderFileDragOver}
-        onDragLeave={handleOrderFileDragLeave}
-        onDrop={handleOrderFileDrop}
+        style={{
+          ['--chat-window-height']: `${chatWindowHeight}px`,
+          ['--chat-window-width']: `${chatWindowWidth}px`,
+        }}
       >
+        <div
+          ref={chatWindowRef}
+          className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
+            isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''
+          }${isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''}`}
+          onDragEnter={handleOrderFileDragEnter}
+          onDragOver={handleOrderFileDragOver}
+          onDragLeave={handleOrderFileDragLeave}
+          onDrop={handleOrderFileDrop}
+        >
         <header ref={chatHeaderRef} className="chat-widget__header">
           <div className="chat-widget__header-info">
             <div className="chat-widget__avatar" />
@@ -3913,6 +4009,10 @@ export function ChatWidget() {
             <div
               key={message.id}
               className={`chat-widget__message chat-widget__message--${message.from}${
+                message.from === 'bot' && isTextOnlyBotMessage(message)
+                  ? ' chat-widget__message--text-only'
+                  : ''
+              }${
                 message.kind === 'order_specs_confirm' ? ' chat-widget__message--order-specs-confirm' : ''
               }${
                 message.kind === 'equipment_no_match' ? ' chat-widget__message--equipment-no-match' : ''
@@ -3920,6 +4020,10 @@ export function ChatWidget() {
                 message.kind === 'order_specs_text_clarify'
                   ? ' chat-widget__message--order-specs-clarify'
                   : ''
+              }${
+                message.kind === 'competitor_mask_card' ? ' chat-widget__message--competitor-mask' : ''
+              }${
+                message.kind === 'competitor_comparison_card' ? ' chat-widget__message--competitor-compare' : ''
               }`}
               {...(message.kind === 'order_specs_confirm'
                 ? { 'data-order-specs-confirm-id': String(message.id) }
@@ -3934,7 +4038,27 @@ export function ChatWidget() {
                   message.kind === 'gas_spu_review' ? ' chat-widget__bubble--gas-spu-review' : ''
                 }${message.kind === 'order_specs_confirm' ? ' chat-widget__bubble--order-specs-confirm' : ''}${
                   message.kind === 'equipment_no_match' ? ' chat-widget__bubble--equipment-no-match' : ''
-                }${message.kind === 'order_specs_text_clarify' ? ' chat-widget__bubble--order-specs-clarify' : ''}`}
+                }${message.kind === 'order_specs_text_clarify' ? ' chat-widget__bubble--order-specs-clarify' : ''}${
+                  message.kind === 'faq_card' ? ' chat-widget__bubble--faq-shell' : ''
+                }${message.kind === 'service_center_picker' ? ' chat-widget__bubble--sc-picker' : ''}${
+                  message.from === 'bot' && isTextOnlyBotMessage(message)
+                    ? ' chat-widget__bubble--text-only'
+                    : ''
+                }${
+                  Array.isArray(message.ragSources) && message.ragSources.length
+                    ? ' chat-widget__bubble--rag-sources'
+                    : ''
+                }${
+                  message.kind === 'competitor_mask_card'
+                    ? ` chat-widget__bubble--competitor-mask${
+                        message.text ? ' chat-widget__bubble--competitor-mask-with-text' : ''
+                      }`
+                    : ''
+                }${
+                  message.kind === 'competitor_comparison_card'
+                    ? ' chat-widget__bubble--competitor-compare'
+                    : ''
+                }`}
               >
                 {message.kind === 'equipment' && message.equipment?.length ? (
                   <EquipmentShowcase
@@ -4016,6 +4140,19 @@ export function ChatWidget() {
                   </>
                 ) : message.kind === 'faq_card' ? (
                   <FaqCard card={message.faqCard} />
+                ) : message.kind === 'service_center_picker' ? (
+                  <ServiceCenterPicker intro={message.serviceCenterIntro} />
+                ) : message.kind === 'competitor_comparison_card' && message.competitorComparisonCard ? (
+                  <CompetitorComparisonCard card={message.competitorComparisonCard} />
+                ) : message.kind === 'competitor_mask_card' && message.competitorMaskCard ? (
+                  <>
+                    {message.text ? (
+                      <span className="chat-widget__message-text chat-widget__message-text--competitor">
+                        {message.text}
+                      </span>
+                    ) : null}
+                    <CompetitorMaskCard card={message.competitorMaskCard} />
+                  </>
                 ) : message.kind === 'liquid_verification_contact' ? (
                   <>
                     {message.text && (
@@ -4028,6 +4165,9 @@ export function ChatWidget() {
                 ) : (
                   <>
                 {message.text && <span className="chat-widget__message-text">{message.text}</span>}
+                {Array.isArray(message.ragSources) && message.ragSources.length > 0 ? (
+                  <RagSourcesCard sources={message.ragSources} />
+                ) : null}
                 {(message.imageUrl || message.imagePreview) && (
                   <div className="chat-widget__image">
                     <img
@@ -4145,7 +4285,7 @@ export function ChatWidget() {
               </button>
             </div>
           )}
-          {showExactCostHint && !awaitingEquipmentSelection && (
+          {showExactCostHint && !awaitingEquipmentSelection && !isPriceVerificationStep && (
             <div className="chat-widget__hints">
               <button type="button" className="chat-widget__hint" onClick={handleExactCostHint}>
                 Рассчитать точную стоимость
@@ -4275,7 +4415,7 @@ export function ChatWidget() {
                   : hintState.hintsOnly
                     ? 'Выберите среду'
                     : isOrderPdfStep
-                      ? 'Прикрепите PDF со спецификацией (по желанию дополните текстом)...'
+                      ? 'Опишите характеристики текстом или прикрепите PDF/DOCX…'
                     : isLiquidTzLikeStep
                       ? 'Прикрепите файл ТЗ'
                       : isLiquidTzCommentsStep || isGasSpuApplicationTzCommentsStep
@@ -4300,6 +4440,8 @@ export function ChatWidget() {
             </button>
           </div>
         </div>
+        </div>
+        {isOpen ? renderResizeHandles() : null}
       </div>
     </div>
   );

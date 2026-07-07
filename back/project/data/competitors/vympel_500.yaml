@@ -1,0 +1,102 @@
+id: vympel_500
+competitor: "ООО «НПО «Вымпел»"
+product_name: "Комплекс измерительный ультразвуковой «Вымпел-500»"
+source_document: "руководство-по-эксплуатации-Вымпел-500-хх.09.17.НПУ.pdf"
+source_section: "Приложение А, п. А.1"
+document_code: "ВМПЛ1.456.014 РЭ"
+mask_prefix: "Вымпел-500"
+mask_example: "Вымпел-500-500-И6-0,5-1-4К-01-ТП200-ИБП-БИ-С-G"
+image: "vympel_500.png"
+
+fields:
+  - id: dn
+    label: "Номинальный диаметр трубопровода DN, мм"
+    position: 2
+    allowed:
+      - "50"
+      - "80"
+      - "100"
+      - "150"
+      - "200"
+      - "250"
+      - "300"
+      - "400"
+      - "500"
+      - "600"
+      - "700"
+      - "800"
+      - "1000"
+      - "1200"
+      - "1400"
+
+  - id: pressure
+    label: "Рабочее давление (А — абсолютное, И — избыточное), МПа"
+    position: 3
+    allowed:
+      - И6
+      - И16
+      - И20
+      - И75
+      - И100
+      - И160
+      - А6
+      - А16
+      - А20
+      - А75
+      - А100
+      - А160
+    aliases:
+      i6: И6
+      a6: А6
+
+  - id: accuracy
+    label: "Погрешность измерения в рабочих условиях, %"
+    position: 4
+    allowed:
+      - "0.3"
+      - "0.5"
+      - "0.7"
+      - "1.0"
+      - "1.5"
+
+  - id: blocks
+    label: "Количество блоков электроники"
+    position: 5
+    allowed:
+      - "1"
+      - "2"
+
+  - id: channels
+    label: "Количество каналов в блоке электроники"
+    position: 6
+    allowed:
+      - 2К
+      - 4К
+      - 8К
+    aliases:
+      2K: 2К
+      4K: 4К
+      8K: 8К
+
+  - id: layout
+    label: "Исполнение (01 — фланцевое, 02 — бесфланцевое)"
+    position: 7
+    allowed:
+      - "01"
+      - "02"
+
+  - id: power_type
+    label: "Питание (А — автономное, С — сетевое)"
+    position: 11
+    allowed:
+      - А
+      - С
+    aliases:
+      A: А
+      C: С
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - pressure

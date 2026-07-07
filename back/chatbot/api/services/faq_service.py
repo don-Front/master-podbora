@@ -11,9 +11,16 @@ from typing import Iterable, Optional
 
 from django.conf import settings
 
+from ..attachment_urls import faq_repair_memo_api_path
+
 
 CONSULTATION_HINT = "Консультация"
 REPAIR_ATTACHMENT_TITLE = "Памятка по отправке оборудования"
+PERSONAL_CABINET_URL = (
+    "https://web.turbo-don.ru/web1C/?n=user&p=turbo-don&/"
+    "#e1cib/app/Обработка.ТД_ЛичныйКабинет"
+)
+REPAIR_EQUIPMENT_FAQ_QUESTION = "Где посмотреть список ремонтных приборов"
 
 
 _FAQ_ROWS = [
@@ -59,7 +66,11 @@ _FAQ_ROWS = [
     ),
     (
         "Где посмотреть сведения о расходомере? Где посмотреть настроечные параметры?",
-        "http://84.47.149.194/",
+        PERSONAL_CABINET_URL,
+    ),
+    (
+        REPAIR_EQUIPMENT_FAQ_QUESTION,
+        PERSONAL_CABINET_URL,
     ),
     (
         "Где посмотреть сведения о поверке расходомера?",
@@ -183,6 +194,22 @@ def _aliases_for_question(question: str) -> str:
         aliases.extend(["мп", "поверка", "методика", "поверить"])
     if "сведения о расходомере" in q:
         aliases.extend(["настроечные", "параметры", "личный кабинет", "серийный"])
+    if "список ремонтных приборов" in q:
+        aliases.extend(
+            [
+                "ремонтные",
+                "ремонтный",
+                "прибор",
+                "приборы",
+                "оборудование",
+                "личный кабинет",
+                "кабинет",
+                "список",
+                "номер",
+                "серийный",
+                "заводской",
+            ]
+        )
     if "сведения о поверке" in q:
         aliases.extend(["аршин", "фгис", "результаты", "поверка"])
     if "техподдержка" in q:
@@ -232,6 +259,7 @@ _FAQ_INTENT_WORDS = {
     "центр",
     "письмо",
     "ремонт",
+    "ремонтные",
     "гарантийный",
     "платный",
     "документ",
@@ -291,6 +319,55 @@ def _entry_containing(*parts: str) -> Optional[FaqEntry]:
         ),
         None,
     )
+
+
+def _entry_repair_equipment_list() -> Optional[FaqEntry]:
+    return _entry_by_question_start(REPAIR_EQUIPMENT_FAQ_QUESTION)
+
+
+def _is_repair_equipment_list_intent(question: str) -> bool:
+    """Список ремонтных приборов в личном кабинете — не путать с отправкой на ремонт."""
+    raw = (question or "").casefold().replace("ё", "е")
+    normalized = _normalize(question)
+    if not raw.strip():
+        return False
+
+    shipping_markers = (
+        "отправ",
+        "отправк",
+        "гарантийн",
+        "платн",
+        "почин",
+        "сломал",
+        "памятк",
+        "упаков",
+        "пересыл",
+    )
+    if any(marker in raw for marker in shipping_markers):
+        return False
+
+    if "личный кабинет" in raw and "ремонт" in normalized:
+        return True
+
+    has_repair_equipment_topic = (
+        ("ремонтн" in raw or "ремонтные" in normalized or "ремонтный" in normalized)
+        and ("прибор" in raw or "оборудован" in raw)
+    )
+    if has_repair_equipment_topic:
+        return True
+
+    list_markers = ("список", "перечень", "какие", "какой", "где посмотреть", "где найти", "где узнать")
+    if any(marker in raw for marker in list_markers) and "ремонт" in normalized and (
+        "прибор" in raw or "оборудован" in raw
+    ):
+        return True
+
+    if re.search(r"\b(на\s+ремонте|в\s+ремонте)\b", raw) and (
+        "прибор" in raw or "оборудован" in raw or "расходомер" in raw or "счетчик" in raw
+    ):
+        return True
+
+    return False
 
 
 def _special_match(question: str) -> Optional[FaqMatch]:
@@ -366,6 +443,11 @@ def _special_match(question: str) -> Optional[FaqMatch]:
         entry = _entry_by_question_start("Где посмотреть сведения о расходомере")
         if entry:
             return FaqMatch(entry=entry, score=0.9, mode="meter_info_intent")
+
+    if _is_repair_equipment_list_intent(question):
+        entry = _entry_repair_equipment_list()
+        if entry:
+            return FaqMatch(entry=entry, score=0.94, mode="repair_equipment_list_intent")
 
     if "ремонт" in normalized and "город" in raw and (
         "оборудован" in raw or "оборудования" in tokens
@@ -487,10 +569,36 @@ def find_best_match(question: str) -> Optional[FaqMatch]:
 
 
 def _repair_attachment_path() -> Path:
-    return (Path(settings.BASE_DIR).parent.parent / "Памятка.pdf").resolve()
+    candidates = [
+        Path(settings.BASE_DIR) / "static_faq" / "pamyatka_remont.pdf",
+        Path(settings.BASE_DIR).parent.parent / "Памятка.pdf",
+    ]
+    for path in candidates:
+        if path.is_file():
+            return path.resolve()
+    return candidates[0].resolve()
+
+
+def _repair_equipment_list_text() -> str:
+    return (
+        "Сведения о ремонтных приборах доступны в личном кабинете на портале учёта оборудования "
+        'НПО «Турбулентность-ДОН».\n\n'
+        "Для просмотра списка:\n"
+        "1. Нажмите кнопку «Личный кабинет».\n"
+        "2. На открывшейся странице входа в систему 1С перейдите на вкладку «Ремонтные приборы».\n"
+        "3. В поле поиска укажите заводской или серийный номер — будет доступен список "
+        "ремонтных приборов по вашему запросу."
+    )
 
 
 def _format_answer(entry: FaqEntry) -> str:
+    if entry.question == REPAIR_EQUIPMENT_FAQ_QUESTION:
+        return _repair_equipment_list_text()
+    if "сервисный центр" in entry.question.casefold():
+        return (
+            "Выберите направление: промышленная группа или счётчики газа «Гранд». "
+            "Затем укажите страну, регион и нужный сервисный центр."
+        )
     if entry.answer.startswith(("http://", "https://")):
         return f"Откройте ссылку:\n{entry.answer}"
     if entry.answer == REPAIR_ATTACHMENT_TITLE:
@@ -550,6 +658,22 @@ def _base_card(entry: FaqEntry, *, title: Optional[str] = None, description: str
 
 def _card_for_entry(entry: FaqEntry) -> dict:
     answer = entry.answer.strip()
+    if entry.question == REPAIR_EQUIPMENT_FAQ_QUESTION:
+        card = _base_card(
+            entry,
+            title="Ремонтные приборы",
+            description=_repair_equipment_list_text(),
+        )
+        card["actions"].append(
+            {
+                "type": "url",
+                "label": "Личный кабинет",
+                "href": PERSONAL_CABINET_URL,
+                "value": PERSONAL_CABINET_URL,
+            }
+        )
+        return card
+
     if answer.startswith(("http://", "https://")):
         title = _entry_title(entry)
         label = _url_action_label(answer, title)
@@ -559,7 +683,7 @@ def _card_for_entry(entry: FaqEntry) -> dict:
             description = "Документ откроется в новой вкладке, его можно скачать."
         elif "fgis.gost.ru" in answer.lower():
             description = "Переход в реестр сведений о поверке расходомеров."
-        elif "84.47.149.194" in answer:
+        elif answer == PERSONAL_CABINET_URL:
             description = "Портал со сведениями и настроечными параметрами расходомера."
         else:
             description = "Откройте ресурс в новой вкладке."
@@ -594,6 +718,7 @@ def _card_for_entry(entry: FaqEntry) -> dict:
             {
                 "type": "file",
                 "label": "Скачать памятку",
+                "href": faq_repair_memo_api_path(),
                 "value": "Памятка по отправке оборудования.pdf",
             }
         )
@@ -611,17 +736,15 @@ def _card_for_entry(entry: FaqEntry) -> dict:
         return card
 
     if "сервисный центр" in entry.question.casefold():
-        url_match = re.search(r"https?://\S+", answer)
-        url = url_match.group(0) if url_match else ""
         card = _base_card(
             entry,
-            title="Сервисный центр",
-            description="Откройте карточку сервисного центра или дилера в регионе.",
+            title="Сервисные центры",
+            description=(
+                "Выберите направление: промышленная группа или счётчики газа «Гранд». "
+                "Затем укажите страну, регион и нужный сервисный центр."
+            ),
         )
-        if url:
-            card["actions"].append(
-                {"type": "url", "label": "Открыть сервисный центр", "href": url, "value": url}
-            )
+        card["picker"] = "service_center"
         return card
 
     if "предватительной оценки" in entry.question.casefold():

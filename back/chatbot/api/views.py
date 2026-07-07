@@ -5,6 +5,7 @@ import logging
 import mimetypes
 import os
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from rest_framework import viewsets, status
@@ -12,6 +13,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import action, api_view
 from rest_framework.views import APIView
 from django.db.models import Count
+from urllib.parse import quote
+
 from django.conf import settings
 from django.core.files import File
 from django.http import FileResponse, Http404
@@ -52,6 +55,99 @@ def equipment_media(request, relpath):
         raise Http404
     content_type, _ = mimetypes.guess_type(str(full))
     return FileResponse(full.open("rb"), content_type=content_type or "application/octet-stream")
+
+
+def _attachment_download_response(file_path: Path, download_name: str):
+    if not file_path.is_file():
+        raise Http404
+    content_type, _ = mimetypes.guess_type(download_name or str(file_path))
+    response = FileResponse(
+        file_path.open("rb"),
+        content_type=content_type or "application/octet-stream",
+    )
+    safe_name = (download_name or file_path.name or "attachment").replace('"', "")
+    ascii_name = safe_name.encode("ascii", "ignore").decode("ascii") or "attachment.pdf"
+    response["Content-Disposition"] = (
+        f'attachment; filename="{ascii_name}"; filename*=UTF-8\'\'{quote(safe_name)}'
+    )
+    return response
+
+
+@require_GET
+def message_attachment_download(request, message_id):
+    """Скачивание вложения сообщения через API (работает за /podbor-api/)."""
+    from .attachment_storage import resolve_message_attachment
+
+    try:
+        msg = Message.objects.get(pk=message_id)
+    except Message.DoesNotExist:
+        raise Http404
+    file_path, download_name = resolve_message_attachment(msg)
+    return _attachment_download_response(file_path, download_name)
+
+
+@api_view(['GET'])
+def service_centers_catalog(request):
+    """Каталог сервисных центров (промышленная группа / Гранд) для виджета чата."""
+    from .service_center_catalog import get_service_center_catalog
+
+    return Response(get_service_center_catalog())
+
+
+@require_GET
+def faq_repair_memo_download(request):
+    """Статическая памятка по ремонту (fallback, если media-файл недоступен)."""
+    from .attachment_storage import REPAIR_MEMO_DOWNLOAD_NAME, static_faq_repair_memo_path
+
+    return _attachment_download_response(static_faq_repair_memo_path(), REPAIR_MEMO_DOWNLOAD_NAME)
+
+
+@require_GET
+def knowledge_doc_download(request):
+    """Скачивание PDF/документа базы знаний RAG по knowledge_doc_key."""
+    from .knowledge_doc_storage import resolve_knowledge_document_path
+
+    key = (request.GET.get("key") or "").strip()
+    if not key:
+        raise Http404
+    file_path = resolve_knowledge_document_path(key)
+    if not file_path:
+        raise Http404
+    return _attachment_download_response(file_path, file_path.name)
+
+
+@require_GET
+def chat_attachment_download(request, relpath):
+    """Legacy/fallback: скачивание по пути в MEDIA_ROOT/chat_attachments/."""
+    from .attachment_storage import (
+        REPAIR_MEMO_DOWNLOAD_NAME,
+        static_faq_repair_memo_path,
+        _looks_like_repair_memo,
+    )
+    rel = (relpath or "").strip().replace("\\", "/")
+    if not rel:
+        raise Http404
+    for part in Path(rel).parts:
+        if part in ("..", "") or part.startswith("."):
+            raise Http404
+    root = Path(settings.MEDIA_ROOT).resolve() / "chat_attachments"
+    try:
+        full = (root / rel).resolve()
+        full.relative_to(root)
+    except ValueError:
+        raise Http404
+    except OSError:
+        raise Http404
+    download_name = Path(rel).name
+    try:
+        return _attachment_download_response(full, download_name)
+    except Http404:
+        if _looks_like_repair_memo(download_name):
+            return _attachment_download_response(
+                static_faq_repair_memo_path(),
+                REPAIR_MEMO_DOWNLOAD_NAME,
+            )
+        raise
 
 
 from .message_parsers import (
@@ -362,6 +458,11 @@ class MessageViewSet(viewsets.ModelViewSet):
         gas_spu_card = ctx.gas_spu_card
         gas_spu_preview = ctx.gas_spu_preview
         faq_card = ctx.faq_card
+        competitor_mask_card = ctx.competitor_mask_card
+        competitor_comparison_card = ctx.competitor_comparison_card
+        competitor_analog_specs = ctx.competitor_analog_specs
+        competitor_analog_intro = ctx.competitor_analog_intro
+        rag_sources = ctx.rag_sources
         _gas_hints = ctx.gas_hints
         _gas_expects = ctx.gas_expects
 
@@ -399,57 +500,38 @@ class MessageViewSet(viewsets.ModelViewSet):
         if _gas_expects is not None:
             next_state_data['expects_input'] = _gas_expects
 
-        # Если перешли в финальное состояние - отправляем email уведомление
+        # Письма менеджеру («обращение в чат») отключены. Письмо оператору — только
+        # при завершении сценария техподдержки + учёт в аналитике.
         email_sent = False
         email_error = ""
-        if next_state_data.get('is_final', False) and hint_locked and not suppress_chat_email:
+        if (
+            next_state == "tech_support_final"
+            and next_state_data.get("is_final", False)
+            and hint_locked
+            and not suppress_chat_email
+        ):
             try:
                 chat = Chat.objects.get(pk=chat_id)
-                chat_messages = chat.messages.all().order_by('created_at')
-                
-                # Собираем сообщения с путями к изображениям
-                all_messages = []
-                for msg in chat_messages:
-                    msg_data = {
-                        'content': msg.content,
-                        'is_user': msg.is_user,
-                        'created_at': msg.created_at,
+                chat_messages = chat.messages.all().order_by("created_at")
+                all_messages = [
+                    {
+                        "content": msg.content,
+                        "is_user": msg.is_user,
+                        "created_at": msg.created_at,
                     }
-                    # Добавляем путь к изображению и вложению (PDF) если есть
-                    if msg.image:
-                        msg_data['image'] = os.path.join(settings.MEDIA_ROOT, str(msg.image))
-                    if msg.attachment:
-                        msg_data['attachment'] = os.path.join(settings.MEDIA_ROOT, str(msg.attachment))
-                    all_messages.append(msg_data)
-                
-                # Определяем категорию по состоянию
-                category_map = {
-                    'sales_final': 'Продажа оборудования',
-                    'verification_final': 'Поверка',
-                    'commissioning_final': 'Пуско-наладочные работы',
-                    'tech_support_final': 'Техническая поддержка',
-                    'claims_final': 'Претензии',
-                    'vacancy_final': 'Отклик на вакансию',
-                    'other_final': 'Другое',
-                    'order_final': 'Оформление заказа',
-                }
-                category = category_map.get(next_state, 'Обращение')
-                
-                # Извлекаем контактную информацию из последнего сообщения пользователя
+                    for msg in chat_messages
+                ]
                 client_email, client_phone = extract_contact_info(question)
-                
-                # Отправляем email
-                email_sent, email_error = EmailSender.send_chat_notification(
-                    category=category,
+                email_sent, email_error = EmailSender.send_tech_support_notification(
                     messages=all_messages,
                     client_email=client_email,
                     client_phone=client_phone,
                     ip_address=chat.ip_address,
-                    chat_date=chat.created_at
+                    request_time=datetime.now(),
+                    chat_id=chat_id,
                 )
-                
             except Exception as e:
-                print(f"[ERROR] Failed to send email notification: {e}")
+                print(f"[ERROR] Failed to send tech support notification: {e}")
                 email_error = str(e)
 
         # Return both messages + hint state info
@@ -465,6 +547,16 @@ class MessageViewSet(viewsets.ModelViewSet):
             except Exception as e:
                 print(f"[ERROR] order_specs_json sanitize for response: {e}")
                 safe_order_specs = None
+
+        safe_competitor_analog_specs = None
+        if competitor_analog_specs is not None:
+            try:
+                from .order_specs_helpers import specs_for_api_response
+
+                safe_competitor_analog_specs = specs_for_api_response(competitor_analog_specs)
+            except Exception as e:
+                print(f"[ERROR] competitor_analog_specs sanitize for response: {e}")
+                safe_competitor_analog_specs = None
 
         return Response({
             'messages': response_serializer.data,
@@ -493,10 +585,15 @@ class MessageViewSet(viewsets.ModelViewSet):
             'gas_spu_card': gas_spu_card,
             'gas_spu_preview': gas_spu_preview,
             'faq_card': faq_card,
+            'competitor_mask_card': competitor_mask_card,
+            'competitor_comparison_card': competitor_comparison_card,
+            'competitor_analog_specs': safe_competitor_analog_specs,
+            'competitor_analog_intro': competitor_analog_intro,
             'order_specs_preview': order_specs_preview,
             'order_specs_clarify_preview': order_specs_clarify_preview,
             'order_specs_pipeline_timing': order_specs_pipeline_timing,
             'rag_llm_ms': rag_llm_ms if rag_llm_ms else None,
+            'rag_sources': rag_sources if rag_sources else None,
         }, status=status.HTTP_201_CREATED)
 
 

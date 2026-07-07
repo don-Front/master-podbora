@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Chat, Message
+from .attachment_urls import message_attachment_api_path
 
 
 class MessageSerializer(serializers.ModelSerializer):
@@ -29,10 +30,7 @@ class MessageSerializer(serializers.ModelSerializer):
 
     def get_attachment_url(self, obj):
         if obj.attachment:
-            request = self.context.get('request')
-            if request:
-                return request.build_absolute_uri(obj.attachment.url)
-            return obj.attachment.url
+            return message_attachment_api_path(obj.pk)
         return None
 
     def get_attachment_name(self, obj):

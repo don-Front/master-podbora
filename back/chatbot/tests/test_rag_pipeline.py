@@ -140,17 +140,15 @@ class RagPipelineIntegrationTests(TestCase):
 
         def fake_generate(chunks, question, question_type):
             title = chunks[0].get("product_title") or "Turbo Flow CFM-ULG"
-            cite = LLMClient._resolve_chunk_source(chunks[0])["citation"]
-            return (
-                f"Для учёта нефти рекомендуем {title} с точностью до 0,1%. {cite}"
-            )
+            return f"Для учёта нефти рекомендуем {title} с точностью до 0,1%."
 
         self.bot.llm.generate = fake_generate
         answer = self.bot.generate_response(OIL_FLOWMETER_QUESTION)
 
         self.assertNotIn("Не удалось найти", answer)
         self.assertRegex(answer, r"CFM|UFL|Turbo Flow", msg=answer)
-        self.assertRegex(answer, _citation_pattern(), msg=answer)
+        self.assertNotRegex(answer, _citation_pattern(), msg=answer)
+        self.assertGreaterEqual(len(self.bot.last_rag_sources), 1)
 
     @patch.object(AdvancedChatbot, "is_greeting", return_value=False)
     @patch("api.chatbot_core.chatbot.smart_search")
@@ -159,17 +157,13 @@ class RagPipelineIntegrationTests(TestCase):
         mock_search.return_value = [GOST_2939_CHUNK]
 
         def fake_generate(chunks, question, question_type):
-            cite = LLMClient._resolve_chunk_source(chunks[0])["citation"]
-            return (
-                "Влажность природного газа регламентирует ГОСТ 2939-63. "
-                f"{cite}"
-            )
+            return "Влажность природного газа регламентирует ГОСТ 2939-63."
 
         self.bot.llm.generate = fake_generate
         answer = self.bot.generate_response(GOST_HUMIDITY_QUESTION)
 
         self.assertIn("ГОСТ 2939-63", answer)
-        self.assertRegex(answer, _citation_pattern(), msg=answer)
+        self.assertNotRegex(answer, _citation_pattern(), msg=answer)
 
     def test_build_context_includes_source_citation_block(self):
         """Контекст для LLM содержит блок «Ссылка для ответа»."""

@@ -31,7 +31,10 @@ class HintFlowHandler:
         chat_id = ctx.chat_id
         order_specs_edit_field = ctx.order_specs_edit_field
 
-        if q_sel == 'Получить цену' and current_state == 'order_final':
+        if q_sel == 'Получить цену' and (
+            current_state == 'order_final'
+            or PriceFlowHandler.can_start_from_slider(ctx)
+        ):
             PriceFlowHandler.handle_price_hint(ctx)
         elif current_state == 'verification_installations_gas':
             from ..gas_spu_wizard import GAS_SPU_LEAVE_REQUEST

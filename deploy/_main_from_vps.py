@@ -1020,6 +1020,7 @@ async def api_estimate_price_discovery():
 @app.post("/api/estimate_price", response_model=EstimatePriceResponse, tags=["api"])
 async def api_estimate_price(payload: EstimatePriceRequest):
     """Примерная цена прибора (таблицы как в templates/index.html). Без авторизации."""
+    # Уведомление менеджеру — только через POST /api/send-price-inquiry после верификации.
     return estimate_from_request(payload)
 
 
@@ -3855,11 +3856,10 @@ ID заявки: PS-{timestamp}
         try:
             from email_config import (
                 SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD,
-                ENABLE_EMAIL
+                ENABLE_EMAIL, RECEIVER_EMAIL,
             )
             
-            # Используем тот же адрес, что и для датчиков давления в EQUIPMENT_EMAIL_ROUTES
-            RECIPIENT_EMAIL = "sktb_razvitie1@turbo-don.ru"
+            RECIPIENT_EMAIL = RECEIVER_EMAIL
             
             if ENABLE_EMAIL:
                 msg = MIMEMultipart()
@@ -3951,7 +3951,8 @@ async def send_verification_code(request: Request):
         # Отправляем email с кодом
         try:
             from email_config import (
-                SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, SEND_EMAIL
+                SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, SEND_EMAIL,
+                RECEIVER_EMAIL,
             )
             
             if not SEND_EMAIL:
@@ -4083,7 +4084,8 @@ async def send_price_inquiry(request: Request):
         # Отправляем email
         try:
             from email_config import (
-                SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, SEND_EMAIL
+                SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, SEND_EMAIL,
+                RECEIVER_EMAIL,
             )
             
             if not SEND_EMAIL:
@@ -4094,7 +4096,7 @@ async def send_price_inquiry(request: Request):
                 )
             
             # Email получателя
-            RECIPIENT_EMAIL = "sktb_razvitie1@turbo-don.ru"
+            RECIPIENT_EMAIL = RECEIVER_EMAIL
             
             msg = MIMEMultipart()
             msg['From'] = SENDER_EMAIL
@@ -4171,7 +4173,8 @@ async def send_tkp_request(request: Request):
         
         try:
             from email_config import (
-                SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, SEND_EMAIL
+                SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, SEND_EMAIL,
+                RECEIVER_EMAIL,
             )
             
             if not SEND_EMAIL:
@@ -4181,7 +4184,7 @@ async def send_tkp_request(request: Request):
                     content={"status": "success", "message": "Запрос ТКП отправлен (тестовый режим)"}
                 )
             
-            RECIPIENT_EMAIL = "sktb_razvitie1@turbo-don.ru"
+            RECIPIENT_EMAIL = RECEIVER_EMAIL
             
             accessories_text = ""
             if accessories:

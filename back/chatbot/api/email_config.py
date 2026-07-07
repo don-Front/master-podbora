@@ -26,7 +26,10 @@ EMAIL_CREDENTIALS = {
 # ===== ПОЛУЧАТЕЛИ УВЕДОМЛЕНИЙ =====
 NOTIFICATION_RECIPIENTS = {
     # Основной email для получения уведомлений о новых обращениях
-    "main_recipient": "mangasaryangeneral@gmail.com",
+    "main_recipient": "d.shamray@turbo-don.ru",
+
+    # Оператор техподдержки (стилизованное письмо при tech_support_final)
+    "tech_support_operator": "sktb_otp2@turbo-don.ru",
     
     # Дополнительные получатели (опционально)
     "cc_recipients": [

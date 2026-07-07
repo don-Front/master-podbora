@@ -1,4 +1,4 @@
-# Production dist для прокси https://turbo-podbor.ru/podbor-chat/ и /podbor-api/
+# Production dist for http://master-turbo-podbor.ru/podbor-chat/ and /podbor-api/
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
@@ -18,4 +18,4 @@ Get-Content $envFile | ForEach-Object {
 $env:BUILD_PATH = '../../dist'
 $env:NODE_ENV = 'production'
 npm run build
-Write-Host 'OK: dist built for https://turbo-podbor.ru/podbor-chat/'
+Write-Host 'OK: dist built for http://master-turbo-podbor.ru/podbor-chat/'

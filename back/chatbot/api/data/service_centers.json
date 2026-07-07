@@ -1,0 +1,1029 @@
+{
+  "categories": {
+    "industrial": {
+      "id": "industrial",
+      "title": "Сервисные центры по промышленной группе",
+      "subtitle": "Сервисное обслуживание промышленного оборудования",
+      "pageUrl": "https://www.turbo-don.ru/dilery/servisnyie-czentryi/",
+      "countries": [
+        {
+          "name": "Россия",
+          "regions": [
+            {
+              "name": "Амурская область",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Астраханская область",
+              "centers": [
+                {
+                  "name": "ФБУ \"Астраханский ЦСМ\"",
+                  "url": "https://www.turbo-don.ru/diler-card/fbu-astrahanskij-csm-2/"
+                }
+              ]
+            },
+            {
+              "name": "Владимирская область",
+              "centers": [
+                {
+                  "name": "ООО \"Учет-33\"",
+                  "url": "https://www.turbo-don.ru/diler-card/strong-ooo-uchet-33-strong/"
+                }
+              ]
+            },
+            {
+              "name": "Волгоградская область",
+              "centers": [
+                {
+                  "name": "ООО \"Центр сертификации и метрологии\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-centr-sertifikacii-i-metrologii/"
+                },
+                {
+                  "name": "ООО «ПриборАвтоматика»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-priboravtomatika/"
+                }
+              ]
+            },
+            {
+              "name": "Вологодская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Санкт-Петербург)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-2/"
+                }
+              ]
+            },
+            {
+              "name": "г. Москва и Московская область",
+              "centers": [
+                {
+                  "name": "ООО \"И-Технологии\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-i-tehnologii-2/"
+                }
+              ]
+            },
+            {
+              "name": "Донецкая Народная Республика",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Ростов-на-Дону)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-rostov-na-donu/"
+                }
+              ]
+            },
+            {
+              "name": "Еврейская автономная область",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Забайкальский край",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Ивановская область",
+              "centers": [
+                {
+                  "name": "ООО \"Учет-33\"",
+                  "url": "https://www.turbo-don.ru/diler-card/strong-ooo-uchet-33-strong/"
+                }
+              ]
+            },
+            {
+              "name": "Камчатский край",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Костромская область",
+              "centers": [
+                {
+                  "name": "ООО \"Учет-33\"",
+                  "url": "https://www.turbo-don.ru/diler-card/strong-ooo-uchet-33-strong/"
+                }
+              ]
+            },
+            {
+              "name": "Курганская область",
+              "centers": [
+                {
+                  "name": "ООО «Приборы и Системы»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-pribory-i-sistemy/"
+                }
+              ]
+            },
+            {
+              "name": "Ленинградская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever/"
+                }
+              ]
+            },
+            {
+              "name": "Липецкая область",
+              "centers": [
+                {
+                  "name": "ООО \"Компания ЛЭНКО\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kompanija-ljenko-3/"
+                }
+              ]
+            },
+            {
+              "name": "Луганская Народная Республика",
+              "centers": [
+                {
+                  "name": "ИП Кащенко",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-kashhenko/"
+                }
+              ]
+            },
+            {
+              "name": "Магаданская область",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Новгородская область",
+              "centers": [
+                {
+                  "name": "ООО \"Учет-33\"",
+                  "url": "https://www.turbo-don.ru/diler-card/strong-ooo-uchet-33-strong/"
+                }
+              ]
+            },
+            {
+              "name": "Оренбургская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Уфа)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-ufa/"
+                }
+              ]
+            },
+            {
+              "name": "Орловской область",
+              "centers": [
+                {
+                  "name": "ФБУ «Приокский ЦСМ»",
+                  "url": "https://www.turbo-don.ru/diler-card/fbu-tulskij-csm/"
+                }
+              ]
+            },
+            {
+              "name": "Пермский край",
+              "centers": [
+                {
+                  "name": "ООО \"МАЯК\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-majak-2/"
+                }
+              ]
+            },
+            {
+              "name": "Приморский край",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Псковская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Санкт-Петербург)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-2/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Башкортостан",
+              "centers": [
+                {
+                  "name": "ООО \"Газокомплект Плюс\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazokomplekt/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Бурятия",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Калмыкия",
+              "centers": [
+                {
+                  "name": "ФБУ \"Астраханский ЦСМ\"",
+                  "url": "https://www.turbo-don.ru/diler-card/fbu-astrahanskij-csm/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Карелия",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Санкт-Петербург)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-2/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Крым",
+              "centers": [
+                {
+                  "name": "ГУП РК «ЧЕРНОМОРНЕФТЕГАЗ»",
+                  "url": "https://www.turbo-don.ru/diler-card/gup-rk-chernomorneftegaz/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Марий Эл",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Волоколамск/СМЦ Уфа)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-volokolamsk-smc-ufa/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Саха",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Северная Осетия",
+              "centers": [
+                {
+                  "name": "Энергоцентр-Алания",
+                  "url": "https://www.turbo-don.ru/diler-card/jenergocentr-alanija/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Татарстан",
+              "centers": [
+                {
+                  "name": "ООО \"НМОП\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-nmop-2/"
+                }
+              ]
+            },
+            {
+              "name": "Рязансая область",
+              "centers": [
+                {
+                  "name": "ООО \"Учет-33\"",
+                  "url": "https://www.turbo-don.ru/diler-card/strong-ooo-uchet-33-strong/"
+                }
+              ]
+            },
+            {
+              "name": "Самарская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Уфа)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-ufa/"
+                }
+              ]
+            },
+            {
+              "name": "Сахалинская область",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Свердловская область",
+              "centers": [
+                {
+                  "name": "ФБУ «Уралтест»",
+                  "url": "https://www.turbo-don.ru/diler-card/fbu-uraltest/"
+                },
+                {
+                  "name": "ООО «Приборы и Системы»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-pribory-i-sistemy/"
+                }
+              ]
+            },
+            {
+              "name": "Тверская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Волоколамск)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-volokolamsk/"
+                }
+              ]
+            },
+            {
+              "name": "Тульская область",
+              "centers": [
+                {
+                  "name": "ФБУ «Приокский ЦСМ»",
+                  "url": "https://www.turbo-don.ru/diler-card/fbu-tulskij-csm/"
+                }
+              ]
+            },
+            {
+              "name": "Удмуртская Республика",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Уфа)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-ufa/"
+                }
+              ]
+            },
+            {
+              "name": "Хабаровский край",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Челябинская область",
+              "centers": [
+                {
+                  "name": "ООО «Приборы и Системы»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-pribory-i-sistemy/"
+                }
+              ]
+            },
+            {
+              "name": "Чувашская Республика",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Волоколамск/СМЦ Уфа)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-volokolamsk-smc-ufa/"
+                }
+              ]
+            },
+            {
+              "name": "Чукотский автономный округ",
+              "centers": [
+                {
+                  "name": "ООО «КИП-Инжиниринг»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kip-inzhiniring/"
+                }
+              ]
+            },
+            {
+              "name": "Ямало-Ненецкий автономный округ",
+              "centers": [
+                {
+                  "name": "ООО «ПрогрессАвтоматика»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-progressavtomatika/"
+                }
+              ]
+            },
+            {
+              "name": "Ярославская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Волоколамск)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-volokolamsk/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Беларусь",
+          "regions": [
+            {
+              "name": "Минск",
+              "centers": [
+                {
+                  "name": "ООО «Запад-ЕМ»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-zapad-em/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Казахстан",
+          "regions": [
+            {
+              "name": "Алматы",
+              "centers": [
+                {
+                  "name": "ТОО «DAMEL GROUP»",
+                  "url": "https://www.turbo-don.ru/diler-card/too-damel-group-3/"
+                }
+              ]
+            },
+            {
+              "name": "Кызылорда",
+              "centers": [
+                {
+                  "name": "ТОО «Инженерно-метрологический центр»",
+                  "url": "https://www.turbo-don.ru/diler-card/too-inzhenerno-metrologicheskij-centr/"
+                }
+              ]
+            },
+            {
+              "name": "Шымкент",
+              "centers": [
+                {
+                  "name": "ИП \"АТА-7\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-ata-7/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Узбекистан",
+          "regions": [
+            {
+              "name": "Ташкент",
+              "centers": [
+                {
+                  "name": "ООО «GLOBAL TASH PROGRESS»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-global-tash-progress/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Кировская область",
+          "regions": [
+            {
+              "name": "Кировская область",
+              "centers": [
+                {
+                  "name": "ООО \"РТ Клевер\" (СМЦ Уфа)",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-rt-klever-smc-ufa/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "grand": {
+      "id": "grand",
+      "title": "Сервисные центры счетчиков газа «Гранд»",
+      "subtitle": "Сервисное обслуживание бытовых счетчиков газа «Гранд»",
+      "pageUrl": "https://www.turbo-don.ru/dilery/servisnyie-czentryi-schetchikov-gaza-grand/",
+      "countries": [
+        {
+          "name": "Россия",
+          "regions": [
+            {
+              "name": "Алтайский край и Республика Алтай",
+              "centers": [
+                {
+                  "name": "Дмитриев Евгений Андреевич",
+                  "url": "https://www.turbo-don.ru/diler-card/dmitriev-evgenij-andreevich/"
+                }
+              ]
+            },
+            {
+              "name": "Астраханская область",
+              "centers": [
+                {
+                  "name": "ООО \"Газэнергоучет\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazjenergouchet/"
+                },
+                {
+                  "name": "ООО «Эталон Стандарт»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-jetalon-standart/"
+                }
+              ]
+            },
+            {
+              "name": "Белгородская область",
+              "centers": [
+                {
+                  "name": "ООО «ГАЗМАСТЕР»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazmaster-2/"
+                }
+              ]
+            },
+            {
+              "name": "Волгоградская область",
+              "centers": [
+                {
+                  "name": "ООО \"Газэнергоучет\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazjenergouchet-2/"
+                }
+              ]
+            },
+            {
+              "name": "Вологодская область",
+              "centers": [
+                {
+                  "name": "ООО «ВОЛОГДАСЕРВИСГАЗ»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-vologdaservisgaz/"
+                },
+                {
+                  "name": "ИП Шибанов Вячеслав Вячеславович (Российская газовая компания)",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-shibanov-vjacheslav-vjacheslavovich-rossijskaja-gazovaja-kompanija/"
+                }
+              ]
+            },
+            {
+              "name": "Воронежская область",
+              "centers": [
+                {
+                  "name": "ИП Тюкин Максим Витальевич",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-tjukin-maksim-vitalevich/"
+                },
+                {
+                  "name": "ООО ГК «ОБЛГАЗЭНЕРГОМОНТАЖ»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gk-oblgazjenergomontazh/"
+                }
+              ]
+            },
+            {
+              "name": "Ивановская область",
+              "centers": [
+                {
+                  "name": "ООО \"Газэнергоучет\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazjenergouchet-3/"
+                }
+              ]
+            },
+            {
+              "name": "Калужская область",
+              "centers": [
+                {
+                  "name": "ООО «Энергия ТЭК.Калуга»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-jenergija-tjek-kaluga/"
+                }
+              ]
+            },
+            {
+              "name": "Краснодарский край",
+              "centers": [
+                {
+                  "name": "ООО «Эталон Стандарт»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-jetalon-standart-2/"
+                }
+              ]
+            },
+            {
+              "name": "Красноярский край",
+              "centers": [
+                {
+                  "name": "ИП Каширин В.В.",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-kashirin-v-v/"
+                }
+              ]
+            },
+            {
+              "name": "Курская область",
+              "centers": [
+                {
+                  "name": "ООО «ГАЗМАСТЕР»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazmaster-3/"
+                }
+              ]
+            },
+            {
+              "name": "Ленинградская область",
+              "centers": [
+                {
+                  "name": "ООО «Горгаз М»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gorgaz-m/"
+                },
+                {
+                  "name": "ООО \"ГазМонтаж\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazmontazh/"
+                },
+                {
+                  "name": "ИП Любецкая Е.В.",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-ljubeckaja-e-v/"
+                },
+                {
+                  "name": "ИП Шибанов Вячеслав Вячеславович ( города Бокситогорск,Тихвин,Волхов,Кириши,Лодейное Поле)",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-shibanov-vjacheslav-vjacheslavovich-goroda-boksitogorsk-tihvin-volhov-kirishi-lodejnoe-pole/"
+                }
+              ]
+            },
+            {
+              "name": "Липецкая область",
+              "centers": [
+                {
+                  "name": "ООО \"КОМПАНИЯ ЛЭНКО\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-kompanija-ljenko/"
+                }
+              ]
+            },
+            {
+              "name": "Луганская Народная Республика (ЛНР)",
+              "centers": [
+                {
+                  "name": "ИП Кащенко Алексей Витальевич",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-kashhenko-aleksej-vitalevich-3/"
+                }
+              ]
+            },
+            {
+              "name": "Московская область",
+              "centers": [
+                {
+                  "name": "ИП Султанмуратов Эдуард Сынтимирович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-sultanmuratov-jeduard-syntimirovich/"
+                }
+              ]
+            },
+            {
+              "name": "Нижегородская область",
+              "centers": [
+                {
+                  "name": "ООО \"АРЗАМАСГОРГАЗ\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-arzamasgorgaz/"
+                },
+                {
+                  "name": "ООО ГК «ОБЛГАЗЭНЕРГОМОНТАЖ»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gk-oblgazjenergomontazh-2/"
+                },
+                {
+                  "name": "ООО \"Гарант Газ Сервис\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-garant-gaz-servis/"
+                },
+                {
+                  "name": "ООО «ГОРГАЗ-Сервис»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gorgaz-servis/"
+                },
+                {
+                  "name": "ООО \"СЭС\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-sjes/"
+                }
+              ]
+            },
+            {
+              "name": "Новгородская область",
+              "centers": [
+                {
+                  "name": "ООО «Горгаз М»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gorgaz-m/"
+                },
+                {
+                  "name": "ИП Султанмуратов Эдуард Сынтимирович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-sultanmuratov-jeduard-syntimirovich-2/"
+                }
+              ]
+            },
+            {
+              "name": "Оренбургская область",
+              "centers": [
+                {
+                  "name": "ООО \"ГАЗСЕРВИС\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazservis-5/"
+                },
+                {
+                  "name": "ООО \"Оренбургская независимая газовая компания\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-orenburgskaja-nezavisimaja-gazovaja-kompanija/"
+                }
+              ]
+            },
+            {
+              "name": "Пермский край",
+              "centers": [
+                {
+                  "name": "ИП Султанмуратов Эдуард Сынтимирович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-sultanmuratov-jeduard-syntimirovich-3/"
+                }
+              ]
+            },
+            {
+              "name": "Псковская область",
+              "centers": [
+                {
+                  "name": "ООО «Горгаз М»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gorgaz-m/"
+                },
+                {
+                  "name": "ООО «Региональный центр метрологии»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-regionalnyj-centr-metrologii/"
+                },
+                {
+                  "name": "ИП Султанмуратов Эдуард Сынтимирович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-sultanmuratov-jeduard-syntimirovich-4/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Башкортостан",
+              "centers": [
+                {
+                  "name": "ГазСервисЦентр102",
+                  "url": "https://www.turbo-don.ru/diler-card/gazserviscentr102/"
+                },
+                {
+                  "name": "ООО \"Газокомплект\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazokomplekt-2/"
+                },
+                {
+                  "name": "ООО \"ГАЗСЕРВИС\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazservis/"
+                },
+                {
+                  "name": "ИП Ялаев А.А",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-jalaev-a-a-3/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Дагестан",
+              "centers": [
+                {
+                  "name": "ООО \"Глобус-Д\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-globus-d/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Коми",
+              "centers": [
+                {
+                  "name": "ООО \"ГазТехМонтаж\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gaztehmontazh/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Марий Эл",
+              "centers": [
+                {
+                  "name": "ООО \"Газпремиум\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazpremium-3/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Мордовия",
+              "centers": [
+                {
+                  "name": "ООО \"ГазСервис\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazservis-2/"
+                }
+              ]
+            },
+            {
+              "name": "Республика Татарстан",
+              "centers": [
+                {
+                  "name": "ООО «Горгаз М»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gorgaz-m/"
+                },
+                {
+                  "name": "ООО \"НМОП\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-nmop/"
+                },
+                {
+                  "name": "ООО ПКФ \"ГазСервисСтрой\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-pkf-gazservisstroj/"
+                },
+                {
+                  "name": "ИП Султанмуратов Эдуард Сынтимирович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-sultanmuratov-jeduard-syntimirovich-5/"
+                },
+                {
+                  "name": "ООО \"РегионГаз\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-regiongaz-5/"
+                }
+              ]
+            },
+            {
+              "name": "Ростовская область",
+              "centers": [
+                {
+                  "name": "ООО «Метрогазсервис» СЦ г. Шахты",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-metrogazservis-sc-g-shahty/"
+                },
+                {
+                  "name": "ООО \"Метрогазсервис\" СЦ г. Каменск-Шахтинский",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-metrogazservis-sc-g-kamensk-shahtinskij/"
+                },
+                {
+                  "name": "ООО \"Метрогазсервис\" СЦ г. Аксай",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-metrogazservis-sc-g-aksaj/"
+                },
+                {
+                  "name": "ООО «Метрогазсервис» СЦ г. Ростов (магазин \"Гранд\")",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-metrogazservis-sc-g-rostov-magazin-grand/"
+                }
+              ]
+            },
+            {
+              "name": "Самарская область",
+              "centers": [
+                {
+                  "name": "ИП Золотова Влада Валерьевна",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-zolotova-vlada-valerevna/"
+                }
+              ]
+            },
+            {
+              "name": "Свердловская область",
+              "centers": [
+                {
+                  "name": "ИП Ишмуратов Рустам Махмутович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-ishmuratov-rustam-mahmutovich/"
+                }
+              ]
+            },
+            {
+              "name": "Смоленская область",
+              "centers": [
+                {
+                  "name": "ИП Иванов Д.В.",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-ivanov-d-v/"
+                }
+              ]
+            },
+            {
+              "name": "Ставропольский край",
+              "centers": [
+                {
+                  "name": "ИП Пушкарев Александр Артурович",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-pushkarev-aleksandr-arturovich/"
+                }
+              ]
+            },
+            {
+              "name": "Тамбовская область",
+              "centers": [
+                {
+                  "name": "ООО \"МЕТРОНОМ Т\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-metronom-t/"
+                },
+                {
+                  "name": "ООО \"Технопарк\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-tehnopark/"
+                },
+                {
+                  "name": "ООО «ЕДИНАЯ СЛУЖБА ПО УСТАНОВКЕ ПРИБОРОВ УЧЕТА»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-edinaja-sluzhba-po-ustanovke-priborov-ucheta/"
+                }
+              ]
+            },
+            {
+              "name": "Тульская область",
+              "centers": [
+                {
+                  "name": "ИП Бочков Дмитрий Дмитриевич",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-bochkov-dmitrij-dmitrievich/"
+                }
+              ]
+            },
+            {
+              "name": "Тюменская область",
+              "centers": [
+                {
+                  "name": "ООО «ГАЗСЕРВИС»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazservis-3/"
+                }
+              ]
+            },
+            {
+              "name": "Хабаровский край",
+              "centers": [
+                {
+                  "name": "ИП Юдичев Денис Владимирович (Техно Сервис)",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-judichev-denis-vladimirovich-tehno-servis/"
+                }
+              ]
+            },
+            {
+              "name": "Челябинская область",
+              "centers": [
+                {
+                  "name": "ИП Золотова Влада Валерьевна (Челябинск; Сосновский район)",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-zolotova-vlada-valerevna-cheljabinsk-sosnovskij-rajon/"
+                },
+                {
+                  "name": "ИП Арепина Галина Юрьевна",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-arepina-galina-jurevna/"
+                },
+                {
+                  "name": "ООО «ГАЗСЕРВИС»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazservis-4/"
+                }
+              ]
+            },
+            {
+              "name": "Чеченская Республика",
+              "centers": [
+                {
+                  "name": "ООО «Эталон Стандарт»",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-jetalon-standart-3/"
+                }
+              ]
+            },
+            {
+              "name": "Чувашская Республика",
+              "centers": [
+                {
+                  "name": "ООО \"Газпремиум\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ooo-gazpremium-4/"
+                }
+              ]
+            },
+            {
+              "name": "Ярославская область",
+              "centers": [
+                {
+                  "name": "ИП Прадед В.В. Сервисная служба \"Газсервис\"",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-praded-v-v-servisnaja-sluzhba-gazservis/"
+                },
+                {
+                  "name": "ИП Тюленев Виталий Юрьевич",
+                  "url": "https://www.turbo-don.ru/diler-card/ip-tjulenev-vitalij-jurevich/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Казахстан",
+          "regions": [
+            {
+              "name": "Алматы",
+              "centers": [
+                {
+                  "name": "ТОО «DAMEL GROUP»",
+                  "url": "https://www.turbo-don.ru/diler-card/too-damel-group-3/"
+                },
+                {
+                  "name": "ТОО \"АТА-7\"",
+                  "url": "https://www.turbo-don.ru/diler-card/too-ata-7-6/"
+                }
+              ]
+            },
+            {
+              "name": "Жамбылская область",
+              "centers": [
+                {
+                  "name": "ТОО \"АТА-7\"",
+                  "url": "https://www.turbo-don.ru/diler-card/too-ata-7-6/"
+                }
+              ]
+            },
+            {
+              "name": "Кызылординская область",
+              "centers": [
+                {
+                  "name": "ТОО \"АТА-7\"",
+                  "url": "https://www.turbo-don.ru/diler-card/too-ata-7-7/"
+                }
+              ]
+            },
+            {
+              "name": "Шымкент",
+              "centers": [
+                {
+                  "name": "ТОО \"АТА-7\"",
+                  "url": "https://www.turbo-don.ru/diler-card/too-ata-7-8/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

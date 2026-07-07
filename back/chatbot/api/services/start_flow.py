@@ -12,6 +12,11 @@ class StartFlowHandler:
         text = (ctx.question or "").strip()
         from ..services.order_specs_service import order_specs_service
 
+        from . import competitor_mask_service
+
+        if competitor_mask_service.apply_to_context(ctx):
+            return
+
         specs_text_result = None
         if order_specs_service.looks_like_order_specs(text):
             specs_text_result = _handle_order_specs_text_message(
@@ -27,7 +32,10 @@ class StartFlowHandler:
             ctx.order_specs_llm_response = specs_text_result.get("order_specs_llm_response")
             ctx.hint_locked = specs_text_result["hint_locked"]
         else:
-            from . import faq_service
+            from . import competitor_mask_service, faq_service
+
+            if competitor_mask_service.apply_to_context(ctx):
+                return
 
             if faq_service.apply_to_context(ctx):
                 return
@@ -36,4 +44,5 @@ class StartFlowHandler:
 
             ctx.bot_response = rag_service.answer(ctx.question, chat_id=ctx.chat_id)
             ctx.rag_llm_ms = rag_service.last_llm_elapsed_ms
+            ctx.rag_sources = list(rag_service.last_rag_sources or [])
             ctx.hint_locked = False

@@ -1,0 +1,74 @@
+id: rsg_signal
+competitor: "ООО ЭПО «Сигнал»"
+product_name: "Счётчик газа ротационный РСГ СИГНАЛ"
+source_document: "РЭ РСГ Сигнал ротационные.pdf"
+source_section: "п. 1.1, пример заказа"
+document_code: "СЯМИ.407273-561 РЭ"
+mask_prefix: "РСГ СИГНАЛ"
+mask_example: "РСГ СИГНАЛ-40-G10-1-PN16-B"
+image: "rsg_signal.png"
+
+fields:
+  - id: dn
+    label: "Диаметр условного прохода (Ду/DN)"
+    position: 1
+    display_as_dn: true
+    allowed:
+      - DN25
+      - DN40
+      - DN50
+      - DN80
+      - DN100
+      - DN150
+
+  - id: size
+    label: "Типоразмер (номинальный рабочий расход G)"
+    position: 2
+    allowed:
+      - G6
+      - G10
+      - G16
+      - G25
+      - G40
+      - G65
+      - G100
+      - G160
+      - G250
+      - G400
+      - G650
+
+  - id: accuracy_variant
+    label: "Вариант исполнения по погрешности"
+    position: 3
+    allowed:
+      - "1"
+      - "2"
+      - "3"
+
+  - id: pn
+    label: "Исполнение по давлению"
+    position: 4
+    allowed:
+      - PN10
+      - PN16
+      - PN25
+      - PN40
+      - PN100
+
+  - id: body
+    label: "Исполнение по внешнему виду"
+    position: 5
+    allowed:
+      - B
+      - S
+      - G
+    aliases:
+      b: B
+      s: S
+      g: G
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - size
+    - dn
