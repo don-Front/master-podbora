@@ -1,0 +1,1695 @@
+{
+  "generated_at": "2026-07-07T17:54:55.173590+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "WRONG_TOPIC": 6,
+    "CORRECT": 14,
+    "HALLUCINATION": 11,
+    "PARTIAL": 19
+  },
+  "bug_counts": {
+    "retrieval": 6,
+    "hallucination": 11
+  },
+  "accuracy_pct": 28.0,
+  "partial_pct": 38.0,
+  "bad_pct": 34.0,
+  "per_file": [
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "questions": 50,
+      "correct": 14,
+      "partial": 19,
+      "bad": 17,
+      "accuracy_pct": 28.0,
+      "retrieval_pct": 88.0,
+      "top_bugs": [
+        [
+          "partial",
+          19
+        ],
+        [
+          "hallucination",
+          11
+        ],
+        [
+          "retrieval",
+          6
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Для чего предназначен прибор или документ «!РЭ на TFG»?",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какой регистрационный или сертификационный номер указан в «!РЭ на TFG»?",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «!РЭ на TFG»?",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «!РЭ на TFG»?",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что входит в комплект поставки согласно «!РЭ на TFG»?",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «!РЭ на TFG»?",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 6 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентност",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 20 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 21 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 24 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 26 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 27 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 28 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 29 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 36 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 38 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 40 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентнос",
+      "source_file": "!РЭ на TFG.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «!РЭ на TFG»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/09/rje-na-tfg-2.pdf",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 251.8,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «!РЭ на TFG»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем или правообладателем в документе «!РЭ на TFG» указано ООО НПО «Турбулентность-ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 11785.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «!РЭ на TFG»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/09/rje-na-tfg-2.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 164.1,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «!РЭ на TFG»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «!РЭ на TFG» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 8396.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «!РЭ на TFG»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/MP_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 307.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «!РЭ на TFG»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S: от 1,6 до 758520 кг/ч (от 1,25 до 588000 м³/ч).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-Н: от 0,0645 до 1548 кг/ч (от 0,05 до 1200 м³/ч).\n- Диаметр трубопровода: для модификации TFG-S — от 50 до 1400 мм, для модификации TFG-Н — от 25 до 100 мм.\n- Пределы допускаемой относительной погрешности при измерении ма",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 22557.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «!РЭ на TFG»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/09/rje-na-tfg-2.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 192.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «!РЭ на TFG»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Карта регистров ModBus РШ TFG от 4.4.2018 версия ПО 6.7.4.6 и 6.6.4.6. Данные располагаются и передаются в кодировке BigEndian (сначала старший байт).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 11298.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «!РЭ на TFG»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/09/rje-na-tfg-2.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 134.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «!РЭ на TFG»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/09/rje-na-tfg-2.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 284.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «!РЭ на TFG» о: Расходомеры термоанемометрические Turbo Flow TFG Руководство по эксплуатации ТУАС.407279.002 РЭ?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Продукт: Turbo Flow TFG; - Тип информации: паспорт; - Название документа: Руководство по эксплуатации ТУАС.407279.002 РЭ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5697.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 2?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 2 указаны в документе.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 2595.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 3 CОДЕРЖАНИЕ 1 ОПИСАНИЕ И РАБОТА 5 1.1 Назнач?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Назначение расходомера Turbo Flow TFG указано на странице 3 документа «!РЭ на TFG».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4487.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 4 Настоящее руководство по эксплуатации , рас?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Настоящее руководство по эксплуатации распространяется на расходомеры термоанемометрические Turbo Flow TFG.\nРуководство предназначено для изучения технических характеристик, устройства и принципа действия и других сведений, необходимых для обеспечения монтажа, правильной эксплуатации и полного использования технических возможностей расходомеров.\nВвод в эксплуатацию должен производиться после монтажных и пусконаладочных работ специализированной организацией.\nК эксплуатации допускаются лица, изучи",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 7217.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 5 1 ОПИСАНИЕ И РАБОТА 1.1 Назначение Расходом?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "На странице 5 документа «!РЭ на TFG» в разделе «ОПИСАНИЕ И РАБОТА», пункте 1.1 указано назначение расходомера Turbo Flow TFG.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 7431.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 6 Основные метрологические и технические хара?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В указанном фрагменте документа «!РЭ на TFG» на странице 62 есть рисунок Б.7, который описывает организацию взрывозащиты ПП в исполнении Ex db ib. Конкретных значений основных метрологических и технических характеристик на этой странице не приведено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6615.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 7 Характеристика Значение характеристики для ?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Для модификации TFG-S и TFG-Н на странице 7 документа «!РЭ на TFG» информация о характеристиках не указана.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4239.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 8 Продолжение таблицы 1 Характеристика Значен?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В контексте нет информации со страницы 8 документа «!РЭ на TFG».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 1994.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 9 По материалам изготовления ПП: - стандартно?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» информации о материалах изготовления первичных преобразователей (ПП) для расходомеров Turbo Flow TFG на странице 9 не содержится.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6776.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 10 1.3.4 В соответствии с заказом расходомер ?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 10 документа «!РЭ на TFG» информации не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6264.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 11 1.4 Устройство и работа 1.4.1 Принцип дейс?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В указанном контексте на странице 11 документа «!РЭ на TFG» информация о принципе действия расходомеров Turbo Flow TFG в разделе 1.4 «Устройство и работа» не представлена.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6692.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 12 4) Определить массовую скорость : Re d F?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "$Re d FgVm$\nгде, $Fg$ – динамическая вязкость смеси.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5718.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 13 Во время выполнения самоочистки в архивы р?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 13 документа «!РЭ на TFG» информации о самоочистке и архивах не найдено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6655.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 14 1.5 Описание и работа составных частей рас?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» информации на странице 14 нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5906.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 15 напряжением 18 В от сети 10% %15 220   В?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 15 информации не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5894.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 16 1.5.3 Работа с протоколом Modbus 1.5.3.1 Н?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 16 документа «!РЭ на TFG» о расходомерах Turbo Flow TFG информации о работе с протоколом Modbus не найдено.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 7503.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 17 1.6 Обеспечение искробезопасности Взрывоза?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "На странице 17 документа «!РЭ на TFG» в разделе «Использование по назначению», пункте 2.2 указаны эксплуатационные ограничения и меры безопасности расходомера Turbo Flow TFG. Конкретной информации об обеспечении искробезопасности на этой странице нет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5789.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 18 2 ИСПОЛЬЗОВАНИЕ ПО НАЗНАЧЕНИЮ 2.1 Эксплуат?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "К сожалению, в представленном контексте на странице 18 документа «!РЭ на TFG» о расходомерах Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» нет информации по разделу «2 ИСПОЛЬЗОВАНИЕ ПО НАЗНАЧЕНИЮ 2.1 Эксплуатационные ограничения».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6925.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 19 2.1.14 Для сведения к минимуму влияния эле?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 19 информации не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4577.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 20 2.2 Меры безопасности 2.2.1 К эксплуатации?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В документе «!РЭ на TFG» на странице 20 в разделе 2.2 «Меры безопасности» информации о пункте 2.2.1 «К эксплуатации» не найдено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5583.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 21  исправности креплений;  состоянию сверл?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- При обнаружении внешних повреждений расходомера следует отложить монтаж до выяснения специалистом возможности его дальнейшего применения.\n- Состояние сверла: сверло с изломанными и затупленными режущими частями к применению не допускается.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4677.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 22 2 определение и вычисление размеров произв?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Определение и вычисление размеров производится по среднему арифметическому значению из четырёх.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 3886.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 23 - выполнить комплекс замеров и на основани?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 23 информации не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 7368.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 24  со стороны РШ припаять экранирующую опле?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Со стороны РШ припаять экранирующую оплётку у основания к корпусу разъёма DB-9F; подсоединить разъёмы сигнального кабеля к блоку ПП и к РШ.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 3362.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 25 Параметры, отображаемые на ЖКИ расходомера?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 25 информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4132.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 26 «.» - вывод на печать (для подменю « Архив?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Вывод на печать (для подменю «Архив»); - [←] [→] – горизонтальное перемещение курсора при вводе параметров и перехода из режима в режим; - [↑] [↓] - изменение значения при вводе параметров, перемещение по пунктам меню и подменю; - смена единиц измерения для давления: МПа, кПа, кгс/см², атм, мм рт. ст., мм в. ст., бар; - смена единиц измерения для температуры: °С, К, F.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5769.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 27 11:22:36 10.04.2012 С 1 СПП:00000005 – вре?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "– Время наработки расходомера с момента запуска в работу: 165 часов 30 минут 16 секунд; – Время простоя: 0 часов 0 минут 0 секунд.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6642.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 28 Вход в систему «ОСНОВНОЕ МЕНЮ» осуществляе?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 28 информации о входе в систему «ОСНОВНОЕ МЕНЮ» не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4190.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 29 < Печать К 1 Почасовые данные Посуточные д?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Пункт «Почасовые данные» обеспечивает вывод на печать данных за каждый час выбранного периода времени.\n- Пункт «Посуточные данные» обеспечивает вывод на печать данных за каждые сутки выбранного периода времени.\n- Для распечатки отчётов по этим данным необходимо выполнить действия, аналогичные описанным в пункте 2.5.12.1.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4694.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 30 < Архивные данные К1 Данные за месяц Данны?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В контексте на странице 30 документа «!РЭ на TFG» информации не представлено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6718.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 31 < Архивные данные К1 Данные за интервал Да?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте на странице 31 документа «!РЭ на TFG» информации не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 7392.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 32 < Управление паролями Поставщик Потребител?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 32 информации нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4084.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 33 3. Расчетные сутки 4. Диапазон 5. Восстано?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 33 информация не обнаружена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 3997.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 34 < Настройки К1 Диаметр Начало суток - изме?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В документе «!РЭ на TFG» на странице 34 информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4927.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 35 Для возврата в подменю « Настройки» необхо?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Для возврата в подменю «Настройки» необходимо повторно нажать [С].",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 2956.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 36 0,3Qmin ≤ Qотс ˂ Qmin 2. Значение отсечки ?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "2. Значение отсечки Qотс используется при накоплении архивных данных. При мгновенном значении расхода меньше значения Qmin, но больше Qотс, в архив записывается значение Qmin.\nПри значении мгновенного расхода менее значения отсечки Qотс в архив записывается значение Qмгн равное 0.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 6697.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 37 1. Выбрать параметр «при НС» и подтвердить?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных фрагментах документа «!РЭ на TFG» на странице 37 информации не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 3890.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 38 < Давление К1 Датчик давления Тип ДД Состо?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Тип датчика давления: абсолютный и избыточный.\n- Применяемый ДД: абсолютный, избыточный.\n- Ip_max — параметр для ввода максимального значения выходного сигнала с датчика давления по току.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 3753.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 49,
+      "topic": "стр.39",
+      "question": "Что указано на странице 39 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 39 < Давление К1 Тип ДД Ip_max17.000 А Ip_max?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Ip_max17.000 А",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 4991.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "!РЭ на TFG.pdf",
+      "id": 50,
+      "topic": "стр.40",
+      "question": "Что указано на странице 40 документа «!РЭ на TFG» о: Расходомеры Turbo Flow TFG ТУАС.407279.002 РЭ ООО НПО «Турбулентность-ДОН» 40 Ввод параметра осуществляется с помощью по?",
+      "expected_keys": [
+        "Расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Ввод параметра осуществляется с помощью повторного нажатия клавиши [ВВОД], после чего активная цифра выделяется подчёркиванием (режим редактирования). Изменение значений – клавишами [0]–[9], перемещение между цифрами – с помощью клавиш [←] [→]. \nНажатием клавиши [ВВОД] подтвердить выбранное значение, на дисплей выводится сообщение об изменении параметра. \nЗначения логических номеров ВРГ и ПП должны быть в пределах от 1 до 10. По умолчанию логический № ВРГ равен 1. \nПо умолчанию логический № ПП д",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 9417.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 0,
+  "source_file": "!РЭ на TFG.pdf",
+  "product": "Turbo Flow TFG"
+}

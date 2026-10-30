@@ -1,0 +1,76 @@
+id: elmetro_flomak
+competitor: "ООО «ЭлМетро Групп»"
+product_name: "Счётчик-расходомер массовый ЭЛМЕТРО-Фломак"
+source_document: "Rukovodstvo_po_expluatatsii_ELMETRO_Flomak_RE_v6.23.pdf"
+source_section: "Приложение А, таблица А.1"
+document_code: "3124.0000.00 РЭ"
+mask_prefix: "ЭЛМЕТРО-Фломак"
+mask_example: "ЭЛМЕТРО-Фломак-ExB-S025-LEU-301-RS-LUM-C-G-CZX-IXX"
+image: "elmetro_flomak.png"
+
+fields:
+  - id: ex_protection
+    label: "Исполнение по взрывозащите"
+    position: 2
+    allowed:
+      - ""
+      - ExB
+      - ExC
+
+  - id: sensor_type
+    label: "Тип датчика"
+    position: 3
+    allowed:
+      - S
+      - F
+      - U
+      - V
+      - G
+
+  - id: dn
+    label: "Диаметр условного прохода (DN), мм"
+    position: 4
+    allowed:
+      - "002"
+      - "003"
+      - "005"
+      - "010"
+      - "015"
+      - "025"
+      - "032"
+      - "040"
+      - "050"
+      - "070"
+      - "080"
+      - "100"
+      - "150"
+      - "200"
+
+  - id: pressure
+    label: "Исполнение по давлению (PN), МПа"
+    position: 5
+    allowed:
+      - L
+      - N
+      - M
+      - E
+      - H
+      - R
+      - S
+      - T
+      - Z
+
+  - id: accuracy
+    label: "Класс точности"
+    position: 6
+    allowed:
+      - E
+      - W
+      - A
+      - C
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - pressure

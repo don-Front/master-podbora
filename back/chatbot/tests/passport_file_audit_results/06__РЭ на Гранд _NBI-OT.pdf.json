@@ -1,0 +1,1689 @@
+{
+  "generated_at": "2026-07-07T18:17:58.891494+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 11,
+    "PARTIAL": 28,
+    "WRONG_TOPIC": 6,
+    "HALLUCINATION": 5
+  },
+  "bug_counts": {
+    "retrieval": 6,
+    "hallucination": 5
+  },
+  "accuracy_pct": 22.0,
+  "partial_pct": 56.0,
+  "bad_pct": 22.0,
+  "per_file": [
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "questions": 50,
+      "correct": 11,
+      "partial": 28,
+      "bad": 11,
+      "accuracy_pct": 22.0,
+      "retrieval_pct": 88.0,
+      "top_bugs": [
+        [
+          "partial",
+          28
+        ],
+        [
+          "retrieval",
+          6
+        ],
+        [
+          "hallucination",
+          5
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 1 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации ТУАС.40729",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 12 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 12 ООО НП",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что указано на странице 15 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что указано на странице 21 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 23 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что указано на странице 30 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 30 ООО НП",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что указано на странице 32 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 32 ООО НП",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 35 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 36 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 36 ООО НП",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 37 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «1.1 Назначение ................................................................................» ",
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "РЭ"
+      ],
+      "answer_preview": "Руководство по эксплуатации предназначено для изучения принципа действия, устройства, правил эксплуатации, монтажа и технического обслуживания счётчиков газа Гранд NBI-OT.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 3120.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем указан ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 3467.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» регистрационный или сертификационный номер не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об утверждении типа ПУРС-М",
+        "РЭ на Гранд  NBI-OT",
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 2998.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024",
+        "Серт УТ Гранд SPI до 2028",
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 2819.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки — МП 208-016-2023.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)",
+        "Приложение к приказу №789 22.04.2025",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 3066.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Максимальный расход: 1,6 м³/ч, 2,4 м³/ч, 3,2 м³/ч, 4 м³/ч, 6 м³/ч, 10 м³/ч, 16 м³/ч, 25 м³/ч.\n- Диапазон измерений: 1:40, 1:60, 1:80, 1:100, 1:140, 1:160.\n- Пределы допускаемой относительной погрешности при измерении объёма газа: ±2,5%, ±1,0%, ±1,5%.\n- Потери давления при Qmax: не более 2 кПа.\n- Избыточное давление измеряемой среды: не более 50 кПа.\n- Напряжение литиевой батареи: 3,6 В.\n- Масса: не более 3 кг.\n- Габаритные размеры: не более 220х130х135 мм.\n- Степень защиты по ГОСТ 14254: IP 50",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 7441.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Избыточное давление измеряемой среды: не более 50 кПа.\n- Потери давления при Qmax: не более 2 кПа.\n- Температура окружающего воздуха и измеряемой среды: от -10 до +50 °С.\n- Относительная влажность воздуха: до 80 %.\n- Атмосферное давление: от 84,0 до 106,7 кПа.\n- Диапазон температур рабочей среды для маркировки на корпусе счётчика: не указан конкретный диапазон для всех модификаций в общем списке характеристик.\n- Максимальный расход: 1,6 м³/ч (для модификации Гранд – 1,6), 2,4 м³/ч (для модифик",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 8660.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» указано, что счётчики газа Гранд могут быть оснащены модулем NB-IOT. Также упоминается работа встроенного отсечного клапана, который можно управлять удалённо с сервера поставщика газа через блок телеметрии. Связь может быть инициирована как по сценарию, так и принудительно с помощью магнитной кнопки.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 4438.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В комплект поставки счётчика газа «Гранд» входят:\n* счётчик газа (модель Гранд-1,6; 2,4; 3,2; 4; 6; 10; 16; 25 или их модификации с буквой «К»); * фильтр (фильтрующая сетка) — 1 шт.; * паспорт на счётчик — 1 экз.; * упаковка индивидуальная — 1 шт.; * комплект монтажных частей — 1 комплект (по отдельному заказу); * методика поверки МП 208-016-2023 — 1 экз. (по отдельному заказу).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 5992.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «РЭ на Гранд NBI-OT» ссылается на технические условия ТУ 4 213-004-70670506-2010.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 3489.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации ТУАС.407299.003 РЭ?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 153.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 2 ООО НПО «Турбулентность – ДОН»?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 2 документа «РЭ на Гранд NBI-OT» указано общее введение к руководству по эксплуатации счётчиков газа Гранд.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1851.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 3 Содержание 1 ОПИСАНИЕ И РАБОТА ........?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "На странице 3 документа «РЭ на Гранд NBI-OT» указано содержание руководства по эксплуатации счётчиков газа Гранд, включая разделы о назначении, технических и метрологических характеристиках, комплектности, устройстве и работе, маркировке и пломбировании, упаковке.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2760.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 4 ООО НПО «Турбулентность – ДОН» Настоящее руководство по эксплуатации (?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "Настоящее руководство по эксплуатации распространяется на счётчики газа Гранд, изготавливаемые по техническим условиям ТУ 4 213-004-70670506-2010. Руководство предназначено для изучения принципа действия, устройства, эксплуатации, правил монтажа и технического обслуживания.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2519.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 5 1 ОПИСАНИЕ И РАБОТА 1.1 Назначение 1.1.?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» на странице 5 информация отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2067.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 6 ООО НПО «Турбулентность – ДОН» Таблица 2 – Основные технические характ?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "В представленном контексте нет информации со страницы 6 документа «РЭ на Гранд NBI-OT».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1665.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 7 1.4 Устройство и работа 1.4.1 Принцип д?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 7 документа «РЭ на Гранд NBI-OT» о разделе «1.4 Устройство и работа 1.4.1 Принцип д».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2042.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 8 ООО НПО «Турбулентность – ДОН» 1.4.2 Конструктивные особенности Счетчи?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 8 документа «РЭ на Гранд NBI-OT» указано, что счётчики газа Гранд выпускаются в двух корпусах: со съёмными крышками отсеков съёмных батарей и без съёмных крышек отсеков съёмных батарей. Также указано, что счётчики могут дополнительно иметь внешний клапан для управления подачи газа. Счётчики с внешним клапаном имеют разъём для подключения сигнализатора загазованности с «сухим контактом» для передачи сигнала загазованности счётчику.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 3135.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 9 1.5 Маркировка и пломбирование 1.5.1 Ма?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "На странице 9 документа «РЭ на Гранд NBI-OT» о руководстве по эксплуатации счётчиков газа Гранд ООО НПО «Турбулентность – ДОН» информация не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2464.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 10 ООО НПО «Турбулентность – ДОН» 2 ИСПОЛЬЗОВАНИЕ ПО НАЗНАЧЕНИЮ 2.1 Эксп?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 10 документа «РЭ на Гранд NBI-OT» указано следующее:\n2.1 Эксплуатационные ограничения:\n* К монтажу, демонтажу, эксплуатации счётчика допускается персонал, имеющий необходимую квалификацию, допуск к проведению газоопасных работ, прошедший инструктаж по мерам безопасности и изучивший настоящее РЭ.\n* Запрещается использование счётчика во взрывоопасных зонах и помещениях.\n* Запрещается проведение каких-либо операций технического обслуживания и ремонта счётчика, подключённого к газораспре",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 9484.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 11 2.2 Указания по монтажу и эксплуатации?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» на странице 11 информация отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2053.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 12 ООО НПО «Турбулентность – ДОН»  вытяжной трубы отопительного газоисп?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "Вытяжной трубы отопительного газоиспользующего оборудования должны располагаться на боковых сторонах на расстоянии не менее 100 мм.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1651.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 13 2.2.8 С целью удобства считывания пока?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» на странице 13 нет информации.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1655.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 14 ООО НПО «Турбулентность – ДОН» Рисунок – 3 При удачном сеанс е связи ?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "При удачном сеансе связи на дисплее появится надпись «Conn 8».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1747.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 15 Рисунок – 5 Общее количество выходов н?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "Общее количество выходов на связь в сутки ограничено пятью попытками. В случае превышения лимита попыток выхода на связь в сутки счётчик повторит попытку выхода на связь на следующий день.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1872.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 16 ООО НПО «Турбулентность – ДОН» Таблица 4 Общее количество выходов на ?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "В таблице 4 на странице 16 документа «РЭ на Гранд NBI-OT» указано общее количество выходов на связь в сутки, количество попыток выхода на связь при обновлении, количество выходов на связь по расписанию, количество принудительных выходов на связь, успешные выходы, перезапросы. Пример максимального количества выходов на связь за одни сутки включает указанные параметры.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2637.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 17 – серийный номер; – дата производства;?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "На странице 17 документа «РЭ на Гранд NBI-OT» указаны следующие данные: серийный номер, дата производства, дата отключения, текущая дата и текущее время. Конкретные значения этих параметров в тексте не приведены.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 2282.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 18 ООО НПО «Турбулентность – ДОН» – напряжение основной батареи, В; – на?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 18 документа «РЭ на Гранд NBI-OT» указано напряжение основной батареи, В; напряжение модема, В; избыточное давление КПа; текущая температура, °С; маска событий; параметры для работы устройства в сети NB-IOT, включая IP-адрес сервера сбора данных, порт приёма соединений сервера сбора данных и тип расписания для автоматического выхода счётчика на связь с сервером.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2922.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 19 Рисунок 6 – Вкладка «Настройки» 2.3.3 ?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В контексте нет информации со страницы 19 документа «РЭ на Гранд NBI-OT» о вкладке «Настройки» и рисунке 6.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1911.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 20 ООО НПО «Турбулентность – ДОН» Рисунок 7 – Вкладке «Текущие параметры?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "После выхода на связь счётчик передаёт в АПК «ДОНТЕЛ» текущие параметры.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1589.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 21 Рисунок 8 – Вкладка «Данные группы/объ?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://web.turbo-don.ru/web1C/?n=user&p=turbo-don&/#e1cib/app/Обработка.ТД_ЛичныйКабинет",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 205.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 22 ООО НПО «Турбулентность – ДОН» 2.3.3.2 Выход на платформу МТС (рис.10?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 22 документа «РЭ на Гранд NBI-OT» указано, что управление встроенным запорным клапаном счётчика газа может осуществляться:\n* Непосредственно на объекте установки счётчика специалистом поставщика газа при помощи технологического ПО.\n* Удалённо с сервера поставщика газа. Сервером поставщика газа удалённо через блок телеметрии запорному клапану счётчика газа есть возможность передавать команды закрытия и «разрешить открыть клапан». Открытие клапана на объекте возможно после получения сч",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 3750.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 23 Клапан управляется при срабатывании вн?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "Процедура открытия клапана включает следующие шаги:\n1. Контролёр проверяет счётчик газа и газовое оборудование на предмет нештатных событий и утечек газа.\n2. Контролёр сообщает оператору создать задание на открытие клапана.\n3. Оператор создаёт задание на открытие клапана в пульте диспетчера.\n4. Контроллер запускает на счетчике внеочередной сеанс связи с клавиши управления.\n5. При выходе на связь счётчик получает задание на открытие клапана с проверкой утечки газа.\n6. При отсутствии утечки газа к",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 4421.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 24 ООО НПО «Турбулентность – ДОН» 3 ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ 3.1 Счетчик?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 24 документа «РЭ на Гранд NBI-OT» информации о счетчике газа Гранд нет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1774.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 25 ПРИЛОЖЕНИЕ А Общий вид счетчика 1– кры?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "На странице 25 документа «РЭ на Гранд NBI-OT» в Приложении А представлен общий вид счётчика газа Гранд с указанием элементов конструкции: крышки отсека батареи счётчика и крышки отсека батареи модема.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2421.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 26 ООО НПО «Турбулентность – ДОН» ПРИЛОЖЕНИЕ Б Схемы подключений счетчик?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "На странице 26 документа «РЭ на Гранд NBI-OT» в Приложении Б указаны схемы подключений счётчика к внешним устройствам: схема подключения к ПК (для корпуса без съёмных крышек), схема подключения к ПК (для корпуса со съёмными крышками) и схема подключения импульсного выхода (для корпуса без съёмных крышек).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2673.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 27 Рисунок Б.4 – Схема подключения импуль?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В документе «РЭ на Гранд NBI-OT» на странице 27 есть схемы подключений счётчика к внешним устройствам в Приложении Б, включая схему подключения импульсного выхода (для корпуса без съёмных крышек), но конкретного содержания Рисунка Б.4 о схеме подключения импульса в предоставленных фрагментах нет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 2477.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 28 ООО НПО «Турбулентность – ДОН» ПРИЛОЖЕНИЕ В Схема пломбировки от неса?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "В приложении В на странице 28 документа «РЭ на Гранд NBI-OT» представлена схема пломбировки от несанкционированного доступа и обозначение мест нанесения знака поверки. Указаны следующие элементы пломбировки:\n* навесная пломба, предотвращающая вскрытие кожуха; * самоклеющаяся пломба в виде наклейки из легкоразрушаемого материала, предотвращающая доступ к импульсному выходу счётчика; * самоклеющаяся пломба в виде наклейки из легкоразрушаемого материала, предотвращающая доступ к электронной части ч",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 3128.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 29 ПРИЛОЖЕНИЕ Г Описание протокола и карт?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В представленном контексте нет информации со страницы 29 документа «РЭ на Гранд NBI-OT».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1934.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 30 ООО НПО «Турбулентность – ДОН» 2 Идентификатор прибора (команда getID?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "При подключении к прибору первым делом необходимо прочитать информацию о нём с помощью команды 0x11. В результате выполнения команды мастер сможет получить сведения о типе прибора, его заводском номере и прочие сервисные параметры, которые позволят идентифицировать правильность установления связи.\nСмещение байтов и соответствующие значения:\n- Байт 0–3: идентификатор блока данных (0x57F24F1E).\n- Байт 4: номер версии формата (0x01).\n- Байт 5: размер блока (0x44).\n- Байт 6: идентификатор типа устро",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 8023.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 31 3 Текущие значения 3.1 Основные параме?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 31 документа «РЭ на Гранд NBI-OT».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1663.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 32 ООО НПО «Турбулентность – ДОН» 5 - ошибка CPIN CODE 6 - модем не отве?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "Чтобы подсказать неисправность и способ устранения, уточните, пожалуйста, модель или серию прибора — например, Turbo Flow UFG, TFG, UFL, CFM.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 180.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 33 Номер маска Описание Примечание 17 0х0?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "Номер маски — 17, код — 0х020000, описание — наличие расхода при закрытом клапане.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1928.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 34 ООО НПО «Турбулентность – ДОН» 4 Настройки 4.1 Общие настройки (0x100?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 34 документа «РЭ на Гранд NBI-OT».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1980.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 35 4.4 Формат IP адреса AAA.BBB.CCC.DDD С?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "Формат IP адреса AAA.BBB.CCC.DDD имеет следующую структуру:\n- Четвёртая цифра адреса — uint8 DDD; - Третья цифра адреса — uint8 CCC; - Вторая цифра адреса — uint8 BBB; - Первая цифра адреса — uint8 AAA.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)"
+      ],
+      "total_ms": 4011.3,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 36 ООО НПО «Турбулентность – ДОН» 5 Архивы 5.1 Регистры архива данных (0?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://web.turbo-don.ru/web1C/?n=user&p=turbo-don&/#e1cib/app/Обработка.ТД_ЛичныйКабинет",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 127.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «_РЭ на Гранд _NBI-OT» о: Руководство по эксплуатации Счетчики газа Гранд ООО НПО «Турбулентность – ДОН» 37 6 Протокол передачи данных по TCP/IP к?",
+      "expected_keys": [
+        "Руководство",
+        "Счетчики",
+        "Гранд"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://web.turbo-don.ru/web1C/?n=user&p=turbo-don&/#e1cib/app/Обработка.ТД_ЛичныйКабинет",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 147.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «_РЭ на Гранд _NBI-OT» о: Счетчики газа Гранд Руководство по эксплуатации 38 ООО НПО «Турбулентность – ДОН» выглядит следующим образом: MODBUS PDU?",
+      "expected_keys": [
+        "Счетчики",
+        "Гранд",
+        "Руководство"
+      ],
+      "answer_preview": "В представленном контексте информации на странице 38 документа «РЭ на Гранд NBI-OT» не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "РЭ на Гранд-SPI"
+      ],
+      "total_ms": 1889.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 49,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 ОПИСАНИЕ И РАБОТА .........................................................................» документа «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "ОПИСАНИЕ",
+        "РАБОТА"
+      ],
+      "answer_preview": "В разделе «1 ОПИСАНИЕ И РАБОТА» документа «РЭ на Гранд _NBI-OT» описаны назначение, технические и метрологические характеристики, комплектность, устройство и работа счётчика газа Гранд.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "РЭ на Гранд-SPI",
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 3096.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "id": 50,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1.1 Назначение ................................................................................» документа «_РЭ на Гранд _NBI-OT»?",
+      "expected_keys": [
+        "1.1",
+        "Назначение"
+      ],
+      "answer_preview": "Счетчики газа Гранд предназначены для измерений объёма природного газа по ГОСТ 5542 или паров сжиженного газа по ГОСТ 20448, а также других неагрессивных газов. Они применяются в системе контроля и учёта потребления природного газа или паров сжиженного газа индивидуальными потребителями.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 4482.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 5,
+  "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+  "product": "РЭ на Гранд  NBI-OT"
+}

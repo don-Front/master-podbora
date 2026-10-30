@@ -1,0 +1,1833 @@
+{
+  "generated_at": "2026-07-07T16:54:21.485574+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 11,
+    "PARTIAL": 10,
+    "STUB_ONLY": 29
+  },
+  "bug_counts": {
+    "stub": 29
+  },
+  "accuracy_pct": 22.0,
+  "partial_pct": 20.0,
+  "bad_pct": 58.0,
+  "per_file": [
+    {
+      "source_file": "Св об утв типа.pdf",
+      "questions": 50,
+      "correct": 11,
+      "partial": 10,
+      "bad": 29,
+      "accuracy_pct": 22.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "stub",
+          29
+        ],
+        [
+          "partial",
+          10
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #1): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #2): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #3): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #4): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #5): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #6): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #7): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #8): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #9): Документ: Св об утв типа. Файл: Св об утв типа.pdf.",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #10): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #11): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #12): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #13): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #14): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #15): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #16): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #17): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #18): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #19): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #20): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #21): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #22): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #23): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #24): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #25): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #26): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #27): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #28): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #29): Документ: Св об утв типа. Файл: Св об утв типа.pdf",
+      "source_file": "Св об утв типа.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Св об утв типа"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Св об утв типа»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Св"
+      ],
+      "answer_preview": "Документ «Св об утв типа» предназначен для паспортных данных утверждения типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2538.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Св об утв типа»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «Св об утв типа» информация о изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3136.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Св об утв типа»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе «Св об утв типа» регистрационный или сертификационный номер не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2583.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Св об утв типа»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В контексте не указано срока действия утверждения типа или сертификата в документе «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2746.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Св об утв типа»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе «Св об утв типа» нет информации о методике поверки или нормативном документе.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2649.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Св об утв типа»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «Св об утв типа» параметры не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2598.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Св об утв типа»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе «Св об утв типа» параметры давление, температура и расход не указаны.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2778.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Св об утв типа»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Св об утв типа» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2560.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Св об утв типа»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2679.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Св об утв типа»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте нет информации о том, на какие приказы, ГОСТ или ТУ ссылается документ «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2883.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Св об утв типа» о: Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа: passport. Вид: manual.?",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "На странице 1 документа «Св об утв типа» указаны общие сведения о паспорте продукта «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3258.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 12,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Св об утв типа»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «Св об утв типа» информация представлена в виде паспорта продукта. Конкретное применение продукции по данному документу не указано.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3137.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 13,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Св об утв типа»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В контексте не указаны требования к поверке в «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2356.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 14,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Св об утв типа»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования безопасности для «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2106.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 15,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Св об утв типа»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2844.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 16,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Св об утв типа»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе «Св об утв типа» гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2531.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 17,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Св об утв типа»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В контексте не указаны условия транспортирования и хранения в «Св об утв типа».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2452.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 18,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Св об утв типа»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе «Св об утв типа» показатели надёжности (наработка, срок службы) не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2467.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 19,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Св об утв типа»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе «Св об утв типа» интерфейсы связи не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2467.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 20,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Св об утв типа»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе «Св об утв типа» информация о взрывозащите или степени защиты IP не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2530.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 21,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Св об утв типа»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе «Св об утв типа» информация об испытательном центре отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2313.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 22,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #1): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2375.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #2): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "- Продукт: Св об утв типа\n- Тип документа: passport\n- Вид: manual",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2246.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #3): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2969.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #4): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 610.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #5): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3105.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #6): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2034.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #7): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2901.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #8): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "- Продукт: Св об утв типа\n- Тип документа: passport\n- Вид: manual",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2321.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #9): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2798.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #10): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3022.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #11): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1662.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #12): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2183.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #13): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1720.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #14): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1994.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #15): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1996.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #16): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1884.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #17): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1948.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #18): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 1857.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #19): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 645.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #20): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2062.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #21): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3019.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #22): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2991.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #23): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2999.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #24): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3172.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #25): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Документ: Св об утв типа\nФайл: Св об утв типа.pdf\nПродукт: Св об утв типа\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 3188.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #26): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2353.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #27): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 657.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #28): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 2056.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Св об утв типа.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Св об утв типа» (фрагмент стр. 1, #29): Документ: Св об утв типа. Файл: Св об утв типа.pdf. Продукт: Св об утв типа. Тип документа",
+      "expected_keys": [
+        "Документ",
+        "Файл",
+        "Продукт"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа"
+      ],
+      "total_ms": 647.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 58,
+  "source_file": "Св об утв типа.pdf",
+  "product": "Св об утв типа"
+}

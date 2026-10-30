@@ -1,0 +1,1655 @@
+{
+  "generated_at": "2026-07-07T14:18:48.044419+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "WRONG_TOPIC": 6,
+    "PARTIAL": 15,
+    "CORRECT": 22,
+    "HALLUCINATION": 7
+  },
+  "bug_counts": {
+    "retrieval": 6,
+    "hallucination": 7
+  },
+  "accuracy_pct": 44.0,
+  "partial_pct": 30.0,
+  "bad_pct": 26.0,
+  "per_file": [
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "questions": 50,
+      "correct": 22,
+      "partial": 15,
+      "bad": 13,
+      "accuracy_pct": 44.0,
+      "retrieval_pct": 88.0,
+      "top_bugs": [
+        [
+          "partial",
+          15
+        ],
+        [
+          "hallucination",
+          7
+        ],
+        [
+          "retrieval",
+          6
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Для чего предназначен прибор или документ «ОТ UFG 56432-14 от 17.11.2025»?",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ UFG 56432-14 от 17.11.2025»?",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ UFG 56432-14 от 17.11.2025»?",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ UFG 56432-14 от 17.11.2025»?",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что входит в комплект поставки согласно «ОТ UFG 56432-14 от 17.11.2025»?",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ UFG 56432-14 от 17.11.2025»?",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 2 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 2 Всего листов 20 Для возможности дистанци",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 3 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 3 Всего листов 20 C2TP + + + - + - - C4 + ",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 11 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 11 Всего листов 20 Программное обеспечени",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 13 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 13 Всего листов 20 Пределы допускаемой от",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 15 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 15 Всего листов 20 для исполнения М3 от -",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 16 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 16 Всего листов 20 Таблица 4 – Основные т",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 18 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 18 Всего листов 20 Таблица 5 – Диапазоны ",
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/ot-ufg-56432-14-do-16.11.2030.pdf",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 142.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем или правообладателем в документе «ОТ UFG 56432-14 от 17.11.2025» информация не указана напрямую.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 4720.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/ot-ufg-56432-14-do-16.11.2030.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 167.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок службы не указан в представленном документе.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 7982.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/metodika-poverki-mp-208-112-2024.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 209.8,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений объёмного расхода газа в рабочих условиях для модификаций UFG-H: от 0,016 до 1600 м³/ч; - диапазон для модификаций UFG-F: от 0,025 до 32000 м³/ч; - диапазон для модификаций UFG-Z: от 300 до 150000 м³/ч (односторонняя врезка) и от 1,41 до 665000 м³/ч (двухсторонняя врезка); - скорость потока газа в обоих направлениях не более: для UFG-H — 60 м/с, для UFG-F — 45 м/с, для UFG-Z — 35 м/с и 120 м/с; - пределы допускаемой относительной погрешности измерений объёмного расхода и объ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 13617.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/ot-ufg-56432-14-do-16.11.2030.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 166.1,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение расходомеров Turbo Flow UFG является встроенным. Оно разделено на метрологически значимую и метрологически незначимую части. Уровень защиты программного обеспечения от изменений — средний. \nИдентификационные данные программного обеспечения включают идентификационное наименование ПО, номер версии (идентификационный номер) и цифровой идентификатор ПО. Для модификаций Turbo Flow UFG-H, Turbo Flow UFG-F и Turbo Flow UFG-Z они следующие:\n* Идентификационное наименование ПО: UF",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 11550.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/ot-ufg-56432-14-do-16.11.2030.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 136.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/ot-ufg-56432-14-do-16.11.2030.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 156.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ UFG 56432-14 от 17.11.2025» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «____» _________ 2025 г. № ____?",
+      "expected_keys": [
+        "56432-14",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «____» _________ 2025 г. № ____.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 1682.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 2 Всего листов 20 Для возможности дистанционного считывания информации расходомер может быть укомплектован выносн?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "Для возможности дистанционного считывания информации расходомер может быть укомплектован выносным терминалом (далее – ВТ или ВТ (М), либо РШ с промышленным компьютером (далее –РШ с ПК).",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 2831.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 3 Всего листов 20 C2TP + + + - + - - C4 + - - - - + - C5TP + + + + - - + Примечание : «+» – входит в состав расхо?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "В модификации Turbo Flow UFG применяются исполнения С0, С1Т, С1ТР. \nВ состав расходомера входят: \n- C2TP — + + + - + - -; - C4 — + - - - - + -; - C5TP — + + + + - - +.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 3300.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 4 Всего листов 20 - текущего значения плотности газа при стандартных условиях***; - текущих параметров даты и вре?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "- Текущее значение плотности газа при стандартных условиях; - текущие параметры даты и времени.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 1958.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 5 Всего листов 20 Рисунок 3 – УПР в корпусе круглого сечения с защитным кожухом Рисунок 4 – Расходомерный шкаф с ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "На странице 5 документа «ОТ UFG 56432-14 от 17.11.2025» на листе № 5 указаны следующие рисунки и их содержание:\n* Рисунок 3 — УПР в корпусе круглого сечения с защитным кожухом; * Рисунок 4 — Расходомерный шкаф с промышленным компьютером.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 4180.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 6 Всего листов 20 Рисунок 10 – Расходомеры модификации Turbo Flow UFG-H с накидными гайками и комплектом монтажны?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "В контексте не удалось найти информацию на странице 6 документа «ОТ UFG 56432-14 от 17.11.2025».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 4975.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 7 Всего листов 20 Рисунок 12 – Расходомеры модификации Turbo Flow UFG-Z с креплением гайкой Рисунок 13 – Расходом?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации со страницы 7 документа «ОТ UFG 56432-14 от 17.11.2025».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5173.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 8 Всего листов 20 Вид сверху Вид сбоку Рисунок 18 – Корпус круглого сечения с раздельными защитными крышками Вид ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "На странице 8 документа «ОТ UFG 56432-14 от 17.11.2025» представлены рисунки и виды корпуса Turbo Flow UFG:\n* Вид сверху и сбоку для корпуса круглого сечения с раздельными защитными крышками (Рисунок 18).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 5643.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 9 Всего листов 20 Рисунок 21 – Расходомерный шкаф Рисунок 22 – Расходомеры модификации Turbo Flow UFG-H Рисунок 2?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации со страницы 9 документа «ОТ UFG 56432-14 от 17.11.2025».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 8107.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 10 Всего листов 20 1 – пломба свинцовая для нанесения знака поверки; 2 – пломба свинцовая предприятия-изготовител?",
+      "expected_keys": [
+        "Лист",
+        "10",
+        "Всего"
+      ],
+      "answer_preview": "На странице 10 документа «ОТ UFG 56432-14 от 17.11.2025» указаны следующие элементы:\n1. Пломба свинцовая для нанесения знака поверки.\n2. Пломба свинцовая предприятия-изготовителя.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 3738.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 11 Всего листов 20 Программное обеспечение Программное обеспечение ( далее - ПО) расходомеров по аппаратному обес?",
+      "expected_keys": [
+        "Лист",
+        "11",
+        "Всего"
+      ],
+      "answer_preview": "Программное обеспечение расходомеров по аппаратному обеспечению является встроенным. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. ПО хранится в энергонезависимой памяти. Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО.\nПрограммное обеспечение разделено на метрологически значимую и метрологически незначимую части. \nК метрологически зна",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 15233.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 12 Всего листов 20 Метрологические и технические характеристики Таблица 3 – Метрологические характеристики Наимен?",
+      "expected_keys": [
+        "Лист",
+        "12",
+        "Всего"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 12 документа «ОТ UFG 56432-14 от 17.11.2025».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 15450.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 13 Всего листов 20 Пределы допускаемой относи- тельной погрешности измере- ний объемного расхода и объе- ма газа,?",
+      "expected_keys": [
+        "Лист",
+        "13",
+        "Всего"
+      ],
+      "answer_preview": "- Для исполнений С1TP, С1TP/2, С2TP, С5ТР: ±2 ∙ √(𝛿² + 0.08)%; - для исполнения М: ±2 ∙ √(𝛿² + 0.01)%; - для исполнения Х: ±2 ∙ √(𝛿² + 0.02%), где δ — предел допускаемой относительной погрешности измерений объёмного расхода и объёма газа при рабочих условиях.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 3922.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 14 Всего листов 20 тельной погрешности измере- ний давления5), % где P – измеряемое давление Рабочий диапазон изм?",
+      "expected_keys": [
+        "Лист",
+        "14",
+        "Всего"
+      ],
+      "answer_preview": "Рабочий диапазон измерений давления: от 25 до 100 % ВПИ и от 10 до 100 %.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 4203.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 15 Всего листов 20 для исполнения М3 от -25 до +50 - - для исполнения Х от -50 до +70 от -65 до +280 для исполнен?",
+      "expected_keys": [
+        "Лист",
+        "15",
+        "Всего"
+      ],
+      "answer_preview": "Для исполнения М3 диапазон рабочих температур составляет от -25 до +50 °С.\nДля исполнения Х диапазон рабочих температур составляет от -50 до +70 °С.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 3935.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 16 Всего листов 20 Таблица 4 – Основные технические характеристики Наименование характеристики Значение UFG-H UFG?",
+      "expected_keys": [
+        "Лист",
+        "16",
+        "Всего"
+      ],
+      "answer_preview": "- Диаметр номинальный DN: от 15 до 100; - Порог чувствительности: 0,002Qном, где Qном=100Qmin (м³/ч); - Цифровые проводные интерфейсы: протокол HART, протокол MODBUS RTU по интерфейсам RS-232, RS-232 TTL и RS-485, Namur; - Цифровые беспроводные интерфейсы: GSM, GPRS, Bluetooth, IrDA (ИК-порт), Zig Bee, M2M 433/868 МГц, NB-IOT, NB-Fi, LoRa; - Маркировка взрывозащиты: 1Ex ib IIB T4 Gb X, 1Ex db ib [ia Ga] IIC T4 Gb, 1Ex db [ia Ga] IIC T4 G, 1Ex db ma ib [ia Ga] IIC T4 Gb, 1Ex db ma [ia Ga] IIC Т2 ",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 8841.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 17 Всего листов 20 для исполнения Х от -40 до +70 от -70 до +80 от -50 до +80 для исполнения К - - для исполнения?",
+      "expected_keys": [
+        "Лист",
+        "17",
+        "Всего"
+      ],
+      "answer_preview": "Для исполнения Х температура измеряемой среды составляет от -40 до +70 °С.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 3669.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 18 Всего листов 20 Таблица 5 – Диапазоны измерений расхода газа и скоростей потока газа, в которых обеспечивается?",
+      "expected_keys": [
+        "Лист",
+        "18",
+        "Всего"
+      ],
+      "answer_preview": "- DN50: минимальный расход газа — 14 м³/ч, максимальный расход газа — 280 м³/ч, минимальная скорость потока — 2,0 м/с, максимальная скорость потока — 40 м/с; - DN65: минимальный расход газа — 23 м³/ч, максимальный расход газа — 440 м³/ч, минимальная скорость потока — 2,0 м/с, максимальная скорость потока — 37 м/с; - DN80: минимальный расход газа — 36 м³/ч, максимальный расход газа — 700 м³/ч, минимальная скорость потока — 2,0 м/с, максимальная скорость потока — 39 м/с; - DN100: минимальный расхо",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 13247.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 19 Всего листов 20 Наименование Обозначение Количество Эксплуатационная документация на преобразователь плотности?",
+      "expected_keys": [
+        "Лист",
+        "19",
+        "Всего"
+      ],
+      "answer_preview": "На странице 19 документа «ОТ UFG 56432-14 от 17.11.2025» указано:\n* эксплуатационная документация на преобразователь плотности газа Turbo Flow UDM; * доступно на сайте изготовителя по адресу https://www.turbo-don.ru (для исполнения С5ТР); * комплект монтажных частей — 1 комплект (по заказу); * прямолинейные участки с устройством формирования потока УФП С1 — 1 комплект (по заказу); * ПО «АРМ „UFG View“» доступно на сайте изготовителя https://www.turbo-don.ru.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 11453.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «ОТ UFG 56432-14 от 17.11.2025» о: Лист № 20 Всего листов 20 Изготовитель Общество с ограниченной ответственностью НПО «Турбулентность -ДОН» (ООО НПО «Турб?",
+      "expected_keys": [
+        "Лист",
+        "20",
+        "Всего"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» на листе № 20 всего листов 20 информации о изготовителе ООО НПО «Турбулентность -ДОН» нет.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 16216.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 31,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 56432-14 и в каком контексте?",
+      "expected_keys": [
+        "56432-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 56432-14 указан на странице 1 документа «ОТ UFG 56432-14 от 17.11.2025».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 6042.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 32,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 86699-22 и в каком контексте?",
+      "expected_keys": [
+        "86699-22",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Преобразователь плотности газа Turbo Flow UDM имеет регистрационный номер 86699-22.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 18466.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 33,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 89873-23 и в каком контексте?",
+      "expected_keys": [
+        "89873-23",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 89873-23 в контексте вычислителя расхода (ВР), который обрабатывает входные сигналы и вычисляет объём, объёмный расход и объём газа, приведённый к стандартным условиям, а также массовый расход и массу газа, или корректор объёма газа Суперфлоу 23.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 11196.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 34,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 14254-20 и в каком контексте?",
+      "expected_keys": [
+        "14254-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» регистрационный номер 14254-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 6599.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 35,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» регистрационный номер 70506-22 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 4658.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 36,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UFG 56432-14 от 17.11.2025» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Уникальный номер записи в реестре аккредитованных лиц № 30004-13 указан в разделе паспорта продукта «Испытательный центр». Испытательный центр — Федеральное бюджетное учреждение «Научно-исследовательский центр прикладной метрологии - Ростест» (ФБУ «НИЦ ПМ - Ростест»).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 5369.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 2025 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "2025",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» указана дата — 17.11.2025.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 11745.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 56432 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "56432",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "56432-14 — регистрационный номер расходомеров – счётчиков газа ультразвуковых Turbo Flow UFG.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 15277.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 14 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "14",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "На странице 14 документа «ОТ UFG 56432-14 от 17.11.2025» указаны пределы допускаемой относительной погрешности измерений плотности газа для исполнения C5TP — ±0,14; ±0,3; ±0,5; ±1,5 %.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 13723.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» указаны следующие технические характеристики для продукта Turbo Flow UFG:\n* Диаметр номинальный DN: от 15 до 100 для модели UFG-H, от 15 до 500 для модели UFG-F, от 600 до 1400 для модели UFG-Z.\n* Порог чувствительности: 0,002 Qном, где Qном = 100 Qmin.\n* Диапазон измерений объёмного расхода газа в рабочих условиях: от 0,016 до 1600 м³/ч для модели UFG-H, от 0,025 до 32000 м³/ч для модели UFG-F, от 300 до 150000 м³/ч для модели UFG-Z.\n* Скорость потока",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 31473.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 5542 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "5542",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» нет упоминания значения 5542 и соответствующей характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 5325.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 22 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "22",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» нет информации со значением 22 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 16603.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 2939 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "2939",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» нет значения 2939 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 5332.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 63, и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "63,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» значение 63 не указано для конкретной характеристики в явном виде.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 1582.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 86699 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "86699",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» нет значения 86699 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 4169.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 23 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "23",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» указано значение средней наработки на отказ для расходомеров Turbo Flow UFG — не менее 70000 часов.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 1971.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 89873 и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "89873",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер 89873-23 у корректора объёма газа Суперфлоу 23.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 11234.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 48,
+      "topic": "значение",
+      "question": "Какое значение 0, и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "0,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» указаны следующие технические характеристики для продукта Turbo Flow UFG:\n* Порог чувствительности — $0,002Q_{ном}$, где $Q_{ном}=100Q_{min}$.\n* Скорость потока газа в обоих направлениях не более: 60 м/с для UFG-H, 45 м/с для UFG-F, 35 м/с для UFG-Z и 120 м/с.\n* Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма газа при рабочих условиях зависят от исполнения прибора и диапазона расходов.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 10619.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 49,
+      "topic": "значение",
+      "question": "Какое значение 2, и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма газа при рабочих условиях для исполнений С1TP/2 составляют ±2 ∙ √(𝛿²)+ 0,01 %, где δ — предел допускаемой относительной погрешности измерений объёмного расхода и объёма газа при рабочих условиях.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 6456.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "id": 50,
+      "topic": "значение",
+      "question": "Какое значение 4, и для какой характеристики указано в документе «ОТ UFG 56432-14 от 17.11.2025»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UFG 56432-14 от 17.11.2025» указаны следующие технические характеристики для расходомеров Turbo Flow UFG:\n* диапазон измерений объёмного расхода газа в рабочих условиях: для модификации UFG-H — от 0,016 до 1600 м³/ч; * диапазон измерений объёмного расхода газа в рабочих условиях: для модификации UFG-F — от 0,025 до 32000 м³/ч; * диапазон измерений объёмного расхода газа в рабочих условиях: для модификации UFG-Z — от 300 до 150000 м³/ч (односторонняя врезка) и другие.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025"
+      ],
+      "total_ms": 11483.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 30,
+  "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+  "product": "Turbo Flow UFG"
+}

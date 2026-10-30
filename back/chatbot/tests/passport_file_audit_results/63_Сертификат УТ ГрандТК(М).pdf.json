@@ -1,0 +1,1553 @@
+{
+  "generated_at": "2026-07-07T17:06:47.037459+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 39,
+    "PARTIAL": 10,
+    "STUB_ONLY": 1
+  },
+  "bug_counts": {
+    "stub": 1
+  },
+  "accuracy_pct": 78.0,
+  "partial_pct": 20.0,
+  "bad_pct": 2.0,
+  "per_file": [
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "questions": 50,
+      "correct": 39,
+      "partial": 10,
+      "bad": 1,
+      "accuracy_pct": 78.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ],
+        [
+          "stub",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 1 документа «Сертификат УТ ГрандТК(М)» о: Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат У",
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Сертификат"
+      ],
+      "answer_preview": "Сертификат УТ ГрандТК(М) предназначен для удостоверения соответствия продукции или оборудования определённым требованиям.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3947.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2436.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указано конкретного регистрационного или сертификационного номера.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2327.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2502.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) методика поверки или нормативный документ не упомянуты.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2470.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» информация о метрологических характеристиках отсутствует.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2327.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В контексте не указаны технические характеристики (давление, температура, расход) продукта «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2543.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2522.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно сертификату УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2563.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте нет информации о конкретных приказах, ГОСТ или ТУ, на которые ссылается документ «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2556.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Сертификат УТ ГрандТК(М)» о: Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертификат УТ ГрандТК(М). Тип документа?",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 1516.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 12,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В контексте нет информации о том, где и как применяется продукция по документу «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2423.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 13,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В контексте не указаны требования к поверке в «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2356.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 14,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В «Сертификат УТ ГрандТК(М)» информация о требованиях безопасности не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2274.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 15,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2451.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 16,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2318.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 17,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2080.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 18,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 855.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 19,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В «Сертификат УТ ГрандТК(М)» информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2216.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 20,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указаны параметры взрывозащиты или степень защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 1938.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 21,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Сертификат УТ ГрандТК(М)»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) испытательный центр не указан.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2515.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 22,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #1): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2474.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #2): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2293.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #3): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2227.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #4): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2262.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #5): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2160.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #6): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2361.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #7): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2258.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #8): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2069.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #9): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2362.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #10): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2108.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #11): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2419.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #12): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2302.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #13): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2164.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #14): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2209.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #15): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2142.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #16): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2232.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #17): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2103.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #18): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2120.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #19): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2088.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #20): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2443.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #21): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2366.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #22): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2492.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #23): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2487.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #24): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2459.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #25): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2708.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #26): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2704.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #27): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2380.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #28): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2383.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ ГрандТК(М)» (фрагмент стр. 1, #29): Документ: Сертификат УТ ГрандТК(М). Файл: Сертификат УТ ГрандТК(М).pdf. Продукт: Сертифика",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "ГрандТК"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2453.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 62,
+  "source_file": "Сертификат УТ ГрандТК(М).pdf",
+  "product": "Сертификат УТ ГрандТК(М)"
+}

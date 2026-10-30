@@ -1,0 +1,1553 @@
+{
+  "generated_at": "2026-07-07T15:44:54.132790+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 39,
+    "PARTIAL": 10,
+    "STUB_ONLY": 1
+  },
+  "bug_counts": {
+    "stub": 1
+  },
+  "accuracy_pct": 78.0,
+  "partial_pct": 20.0,
+  "bad_pct": 2.0,
+  "per_file": [
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "questions": 50,
+      "correct": 39,
+      "partial": 10,
+      "bad": 1,
+      "accuracy_pct": 78.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ],
+        [
+          "stub",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #1): Документ: ПУРС-В-1 Свидетельств",
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ПУРС-В-1"
+      ],
+      "answer_preview": "Документ «ПУРС-В-1 Свидетельство об утв.типа» предназначен для подтверждения утверждения типа продукта ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2499.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1_Свидетельство об утв.типа» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3393.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2873.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1_Свидетельство об утв.типа» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3323.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» не упоминается методика поверки или конкретный нормативный документ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3416.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1_Свидетельство об утв.типа» метрологические характеристики не приведены.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3356.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» не указаны технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3431.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1_Свидетельство об утв.типа» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3293.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно «ПУРС-В-1_Свидетельство об утв.типа».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3379.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» нет информации о ссылках на приказы, ГОСТ или ТУ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3360.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ПУРС-В-1_Свидетельство об утв.типа» о: Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF. Продукт: ПУРС-В-1 Свидетельс?",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "На странице 1 документа «ПУРС-В-1_Свидетельство об утв.типа» указаны общие сведения о продукте ПУРС-В-1 в формате паспорта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3799.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 12,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» информация о применении продукции не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3365.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 13,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» информация о требованиях к поверке не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1900.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 14,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования безопасности для «ПУРС-В-1_Свидетельство об утв.типа».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3167.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 15,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «ПУРС-В-1_Свидетельство об утв.типа».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3346.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 16,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3182.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 17,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» условия транспортирования и хранения не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2908.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 18,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» показатели надёжности (наработка, срок службы) не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3080.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 19,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» информация об интерфейсах связи не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2941.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 20,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе «ПУРС-В-1 Свидетельство об утв.типа» информация о взрывозащите или степени защиты IP не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3047.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 21,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «ПУРС-В-1_Свидетельство об утв.типа»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указан испытательный центр.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2503.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 22,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #1): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "- Продукт: ПУРС-В-1 Свидетельство об утв.типа.\n- Тип документа: passport.\n- Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 3141.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #2): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Продукт: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1009.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #3): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1247.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #4): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ «ПУРС-В-1 Свидетельство об утв.типа» является паспортом продукта ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2961.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #5): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2667.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #6): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2677.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #7): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2632.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #8): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Продукт: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2525.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #9): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1077.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #10): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1145.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #11): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1201.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #12): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1227.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #13): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2600.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #14): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2699.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #15): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2621.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #16): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2641.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #17): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ «ПУРС-В-1 Свидетельство об утв.типа» является паспортом продукта ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2983.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #18): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1019.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #19): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1129.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #20): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2673.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #21): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2640.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #22): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2631.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #23): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2754.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #24): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2660.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #25): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2730.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #26): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2637.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #27): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Тип информации: passport.\nПродукт: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2725.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #28): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 1108.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ПУРС-В-1_Свидетельство об утв.типа» (фрагмент стр. 1, #29): Документ: ПУРС-В-1 Свидетельство об утв.типа. Файл: ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "expected_keys": [
+        "Документ",
+        "ПУРС-В-",
+        "Свидетельство"
+      ],
+      "answer_preview": "Документ: ПУРС-В-1 Свидетельство об утв.типа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ПУРС-В-1 Свидетельство об утв.типа"
+      ],
+      "total_ms": 2557.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 43,
+  "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+  "product": "ПУРС-В-1 Свидетельство об утв.типа"
+}

@@ -1,0 +1,1582 @@
+{
+  "generated_at": "2026-07-07T16:08:32.246131+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "PARTIAL": 23,
+    "CORRECT": 23,
+    "HALLUCINATION": 4
+  },
+  "bug_counts": {
+    "hallucination": 4
+  },
+  "accuracy_pct": 46.0,
+  "partial_pct": 46.0,
+  "bad_pct": 8.0,
+  "per_file": [
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "questions": 50,
+      "correct": 23,
+      "partial": 23,
+      "bad": 4,
+      "accuracy_pct": 46.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          23
+        ],
+        [
+          "hallucination",
+          4
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какие метрологические характеристики приведены в документе «Приложение к приказу №789 22.04.2025»?",
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ]
+    },
+    {
+      "question": "Что указано на странице 1 документа «Приложение к приказу №789 22.04.2025» о: ПРИЛОЖЕНИЕ к приказу Федерального агентств",
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ]
+    },
+    {
+      "question": "Какое значение 12 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ]
+    },
+    {
+      "question": "Какое значение 1. и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Приложение"
+      ],
+      "answer_preview": "Приложение к приказу №789 от 22.04.2025 содержит сведения об утверждённом типе средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5869.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем и правообладателем указан ООО НПО «Турбулентность-ДОН», г. Москва.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4623.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "85230-22",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 3642.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "17.09.2023",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4898.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "МП 1359-13-2021, МП 1565-13-2023, МП 1714-13-2024",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5920.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе приведены следующие метрологические характеристики: методики поверки МП 1359-13-2021, МП 1565-13-2023, МП 1714-13-2024.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 6161.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе не указаны конкретные технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 1965.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4485.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте нет информации о комплекте поставки согласно «Приложению к приказу №789 22.04.2025».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7067.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В документе нет ссылок на конкретные приказы, ГОСТ или ТУ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4365.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Приложение к приказу №789 22.04.2025» о: ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № __?",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "В документе указаны сведения об утверждении типа средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений. Приведены данные о поверочной установке СПУ-7 модификации Р зав. № 000098, модификация С вариант С1 зав. №000099. Заводской номер — 000098 и 000099, регистрационный номер в ФИФ — 85230-22. Правообладатель — ООО НПО «Турбулентность-ДОН», город Москва. Методики поверки: МП 1359-13-2021, МП 1565-13-2023, МП 1714-13",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 11123.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 12,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2023 Общество с» документа «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "2023",
+        "Общество"
+      ],
+      "answer_preview": "В разделе «2023 Общество с» документа «Приложение к приказу №789 22.04.2025» указано, что установка поверочная СПУ-7 модификации Р зав. № 000098 и модификация С вариант С1 зав. №000099 имеет регистрационный номер 85230-22. Правообладателем является Общество с ограниченной ответственностью НПО «Турбулентность-ДОН», г. Москва. Методики поверки: МП 1359-13-2021, МП 1565-13-2023, МП 1714-13-2024. Дата утверждения акта испытаний — 17.09.2023.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 10608.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 13,
+      "topic": "рег.номер",
+      "question": "Где в документе «Приложение к приказу №789 22.04.2025» упоминается регистрационный номер 85230-22 и в каком контексте?",
+      "expected_keys": [
+        "85230-22",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 85230-22 указан в документе «Приложение к приказу №789 22.04.2025» для установки поверочной СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7056.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 2025 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "2025",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "Дата утверждения акта испытаний: 17.09.2023",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4049.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» значение 10 не указано для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4585.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 16,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "Заявитель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4533.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 17,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "Заявитель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва, дата утверждения акта испытаний — 17.09.2023.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5138.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 13 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "13",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "Заявитель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 2490.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "В документе указано, что изменяются методики поверки для установок поверочных СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4990.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 000098, и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "000098,",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "Заводской номер установки поверочной СПУ-7 модификации Р — 000098.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4190.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 000099 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "000099",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "Заводской номер 000099 указан для установки поверочной СПУ-7 модификация С вариант С1.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4577.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 85230 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "85230",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "85230-22 — регистрационный номер в ФИФ установки поверочной СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5735.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 22 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "22",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "В документе указано, что номер 22 относится к регистрационному номеру в ФИФ установки поверочной СПУ-7 модификации Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 3804.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 1359 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "1359",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "МП 1359-13-2021 — отменяемая методика поверки для установки поверочной СПУ-7 модификации Р зав. № 000098, модификации С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 3136.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 2021, и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "2021,",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "МП 1359-13-2021",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4009.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 1565 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "1565",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» значение 1565 указано как отменяемая методика поверки для установки поверочной СПУ-7 модификация С вариант С1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 6420.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 2023 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "2023",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» для установок поверочных СПУ-7 модификации Р зав. № 000098 и модификации С вариант С1 зав. №000099 указана методика поверки МП 1565-13-2023 на 2023 год.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 9109.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 1714 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "1714",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "МП 1714-13-2024 — устанавливаемая методика поверки для установки поверочной СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 6569.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» для характеристики методики поверки указана дата утверждения акта испытаний — 17.09.2023.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5272.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 17.09 и для какой характеристики указано в документе «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "17,09",
+        "характеристик",
+        "Приложение"
+      ],
+      "answer_preview": "17.09.2023 — дата утверждения акта испытаний установки поверочной СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7646.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 31,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Приложение к приказу №789 22.04.2025» о приказе № 000098?",
+      "expected_keys": [
+        "000098",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» упоминается установка поверочная СПУ-7 модификация Р зав. № 000098, но не содержится подробной информации о приказе № 000098.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 8521.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 32,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Приложение к приказу №789 22.04.2025» о приказе № 000099?",
+      "expected_keys": [
+        "000099",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «Приложение к приказу №789 22.04.2025» упоминается заводской номер 000099 у установки поверочной модификации С вариант С1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4784.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 33,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе указано применение поверочных установок СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7503.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 34,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "Для установки поверочной СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099 указаны следующие методики поверки: МП 1359-13-2021, МП 1565-13-2023, МП 1714-13-2024.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 9022.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 35,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе не указаны требования безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7321.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 36,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «Приложении к приказу №789 22.04.2025».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5635.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 37,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе нет информации о гарантийных обязательствах.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4861.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 38,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В представленном контексте информация об условиях транспортирования и хранения отсутствует.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 4799.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 39,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5169.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 40,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе не указаны интерфейсы связи.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7095.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 41,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7577.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 42,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Приложение к приказу №789 22.04.2025»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "ВНИИР – филиал ФГУП «ВНИИМ им. Д.И. Менделеева», г. Казань",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 6892.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #1): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "Приложение к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ содержит сведения об утверждении типа средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений. В документе упомянута установка поверочная СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099. Заводской номер — 000098 и 000099. Регистрационный номер в ФИФ — 85230-22. Правообл",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 13724.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #2): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ содержит сведения об утверждённом типе средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений. В документе упоминается установка поверочная СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099. Заводской номер — 000098 и 000099. Регистрационные номера в ФИФ: 85230-22. Право",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 13921.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #3): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ содержит сведения об утверждении типа средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений. В документе упомянута установка поверочная СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099. Заводской номер — 000098 и 000099. Регистрационный номер в ФИФ — 85230-22. Правообл",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 7830.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #4): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ содержит сведения об утверждении типа средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений. В документе упомянута установка поверочная СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099. Регистрационные номера в ФИФ: 85230-22. Правообладатель — Общество с ограниченной о",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 10603.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #5): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ Сведения об утверждённом типе средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 2504.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #6): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ Сведения об утверждённом типе средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 5850.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #7): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ содержит сведения об утверждении типа средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений. В документе упоминается установка поверочная СПУ-7 модификация Р зав. № 000098, модификация С вариант С1 зав. №000099. Заводской номер — 000098 и 000099. Регистрационный номер в ФИФ — 85230-22. Правоо",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 22393.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приложение к приказу №789 22.04.2025» (фрагмент стр. 1, #8): ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от ",
+      "expected_keys": [
+        "ПРИЛОЖЕНИЕ",
+        "Федерального",
+        "2025"
+      ],
+      "answer_preview": "ПРИЛОЖЕНИЕ к приказу Федерального агентства по техническому регулированию и метрологии от «___» ___________ 2025 г. № _____ Сведения об утверждённом типе средства измерений, подлежащие изменению в части конструктивных изменений, влияющих на метрологические характеристики средства измерений.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приложение к приказу №789 22.04.2025"
+      ],
+      "total_ms": 1780.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 49,
+  "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+  "product": "Приложение к приказу №789 22.04.2025"
+}

@@ -1,0 +1,1758 @@
+{
+  "generated_at": "2026-07-07T18:18:01.491964+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "WRONG_TOPIC": 15,
+    "PARTIAL": 15,
+    "CORRECT": 11,
+    "HALLUCINATION": 9
+  },
+  "bug_counts": {
+    "retrieval": 15,
+    "hallucination": 9
+  },
+  "accuracy_pct": 22.0,
+  "partial_pct": 30.0,
+  "bad_pct": 48.0,
+  "per_file": [
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "questions": 50,
+      "correct": 11,
+      "partial": 15,
+      "bad": 24,
+      "accuracy_pct": 22.0,
+      "retrieval_pct": 64.0,
+      "top_bugs": [
+        [
+          "retrieval",
+          15
+        ],
+        [
+          "partial",
+          15
+        ],
+        [
+          "hallucination",
+          9
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Для чего предназначен прибор или документ «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какие метрологические характеристики приведены в документе «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что входит в комплект поставки согласно «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 5 документа «Инструкция на Гранд-SPI» о: 5 3 Общие сведения 3.1 Назначение счетчика 3.1.1 Счетчи",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-6",
+        "46509-11-(fail-otobrazhenija) (2)",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 6 документа «Инструкция на Гранд-SPI» о: 6 Внешний вид счетчика представлен на рисунках 1 и 2. А",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "РЭ UFG мод. F Z (акт)",
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG-Н (акт)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 10 документа «Инструкция на Гранд-SPI» о: 10 5.2.3 Дополнительна экранная форма заданных настрое",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 12 документа «Инструкция на Гранд-SPI» о: 12 Таблица 2 № Обозначение Что делать? 1 «Газ» убедить",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)",
+        "Пункты учета и редуцирования газа ПУРГС"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3 Содержание» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «1 Назначение и область применения счетчиков .................................................» до",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «2 Общие указания для абонента ...............................................................» до",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3 Общие сведения ............................................................................» до",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «3.1 Назначение счетчика .......................................................................» ",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «3.2 Устройство счетчика .......................................................................» ",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «4 Пополнение баланса ........................................................................» до",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «6 Звуковые сигналы ..........................................................................» до",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «4 Введение» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «1 Назначение и область применения счетчиков» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «2 Общие указания для абонента» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «2.1 При покупке счетчика необходимо проверить:» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «2.2 Установку, монтаж, ввод в эксплуатацию, ремонт и обслуживание счетчика» документа «Инструкция",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «2.3 При эксплуатации необходимо помнить, что счетчик является газовым» документа «Инструкция на Г",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ на Гранд-SPI",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3 Общие сведения» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «3.1 Назначение счетчика» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что описано в разделе «3.2 Устройство счетчика» документа «Инструкция на Гранд-SPI»?",
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Инструкция"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 130.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «Инструкция на Гранд-SPI» информация об изготовителе или правообладателе не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 5771.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В «Инструкции на Гранд-SPI» регистрационный или сертификационный номер не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об утверждении типа ПУРС-М",
+        "РЭ на Гранд-SPI",
+        "РЭ на Гранд  NBI-OT",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7034.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок действия утверждения типа счётчиков газа Гранд-SPI не указан в представленном фрагменте инструкции.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028",
+        "ОТ ГРАНД ТК(М) от 28.10.2024",
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "ТР ТС 12 Гранд-SPI до 01.09.2028"
+      ],
+      "total_ms": 5031.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В «Инструкции на Гранд-SPI» упоминается методика поверки счётчика газа Гранд-SPI.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая",
+        "07 МП 1734-13-2025 МП СПУ-5 корр",
+        "Приказ ПУРС-С и ПУРС-М",
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 6425.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диаметр условного прохода: 15; 20; 25; 25; 32; 50 мм.\n- Максимальное избыточное давление измеряемой среды: до 300 кПа.\n- Напряжение питания: 3,6 В.\n- Маркировка взрывозащиты: 1 Ex ib IIВ T4 Gb X.\n- Условия эксплуатации: температура окружающей среды от -40 °С до +60 °С.\n- Масса: не более 3,0; 3,5; 4,0; 7,5 кг.\n- Габаритные размеры: не более 220×130×135 мм; 290×130×135 мм.\n- Наработка на отказ: не менее 80000 часов.\n- Средний срок службы: не менее 10 лет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 10511.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Максимальное избыточное давление измеряемой среды: до 300 кПа.\n- Температура окружающей среды: от –40 °С до +60 °С.\n- Диаметр условного прохода: 15 мм, 20 мм, 25 мм, 25 мм, 32 мм, 50 мм.\n- Напряжение питания: 3,6 В.\n- Количество разрядов отсчётного устройства: 10.\n- Наработка на отказ: не менее 80000 часов.\n- Средний срок службы: не менее 10 лет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11761.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В инструкции не содержится подробной информации о программном обеспечении счётчика газа «Гранд-SPI». Указано, что счётчик может осуществлять дистанционную передачу данных в диспетчерский пункт (ДП) по сети GPRS и получать информацию от ДП. Также упоминается возможность управления запорным клапаном по команде сервера.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 4255.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 131.8,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «Инструкция на Гранд-SPI» не ссылается на конкретные приказы или ГОСТы, но упоминаются технические условия ТУ 4 213-015-70670506-2013.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд-SPI",
+        "Инструкция на Гранд-SPI",
+        "Приказ ПУРС-С и ПУРС-М",
+        "Счетчик газа Гранд SPI с системой телеметрии"
+      ],
+      "total_ms": 3912.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Инструкция на Гранд-SPI» о: Счетчик газа Гранд –SPI Инструкция пользователя для абонента GFGB.00.00.000-24 ИС?",
+      "expected_keys": [
+        "Счетчик",
+        "Гранд",
+        "SPI"
+      ],
+      "answer_preview": "На странице 1 документа «Инструкция на Гранд-SPI» указано следующее:\nСчётчик газа «Гранд – SPI» предназначен для коммерческого учёта количества потребляемого природного газа индивидуальными потребителями. Инструкция пользователя для абонента описывает устройство счётчика, его функции, принципы работы, алгоритм работы со счётчиком и руководство к действию в нестандартных ситуациях.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 4640.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 12,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «Инструкция на Гранд-SPI» о: 3 Содержание Введение ..................................................................................................?",
+      "expected_keys": [
+        "Содержание",
+        "Введение",
+        "Назначение"
+      ],
+      "answer_preview": "Содержание инструкции включает разделы: введение, назначение и область применения счётчиков, общие указания для абонента, общие сведения, пополнение баланса, описание компонентов и функций счётчика, звуковые сигналы, а также приложение с примером записи обозначения счётчика при его заказе и в технической документации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 4702.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 13,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «Инструкция на Гранд-SPI» о: 4 Введение Настоящая инструкция пользователя для а бонента (далее – инструкция) предназначена для абонентов – собственни?",
+      "expected_keys": [
+        "Введение",
+        "Настоящая",
+        "Гранд-SPI"
+      ],
+      "answer_preview": "Настоящая инструкция пользователя для абонента предназначена для абонентов – собственников счётчиков газа «Гранд-SPI» с запорным клапаном и телеметрией. В инструкции дано представление об устройстве счётчика, его функциях, принципах работы, описан алгоритм работы со счётчиком и руководство к действию в нестандартных ситуациях.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 5348.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 14,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «Инструкция на Гранд-SPI» о: 5 3 Общие сведения 3.1 Назначение счетчика 3.1.1 Счетчик предназначен для реализации следующих основных задач: – непреры?",
+      "expected_keys": [
+        "Общие",
+        "3.1",
+        "Назначение"
+      ],
+      "answer_preview": "Счетчик предназначен для реализации следующих основных задач: \n– непрерывное измерение объема расхода газа; – индикация текущих измеряемых параметров, настроек и эксплуатационных параметров; – ведение архива текущих показаний счетчика, ведение архива нештатных ситуаций и вмешательств, ведение архива срабатываний клапана; – дистанционная передача в ДП данных о расходе газа и функционировании объекта; – дистанционное получение информации от ДП; – контроль состояния подключенного датчика загазованн",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-6",
+        "46509-11-(fail-otobrazhenija) (2)",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12605.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 15,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «Инструкция на Гранд-SPI» о: 6 Внешний вид счетчика представлен на рисунках 1 и 2. Аналогово-цифровой блок Корпус счетчика с присоединительными патру?",
+      "expected_keys": [
+        "Внешний",
+        "2.",
+        "Аналогово-цифровой"
+      ],
+      "answer_preview": "В представленном контексте нет информации о внешнем виде счётчика и аналого-цифрового блока по инструкции на Гранд-SPI.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "РЭ UFG мод. F Z (акт)",
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 17150.1,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 16,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «Инструкция на Гранд-SPI» о: 7 4 Пополнение баланса 4.2 В случае если прибор настроен на автоматическое управление клапаном в зависимости от состояни?",
+      "expected_keys": [
+        "Пополнение",
+        "4.2",
+        "3.1"
+      ],
+      "answer_preview": "В случае если прибор настроен на автоматическое управление клапаном в зависимости от состояния баланса абонента (режим 1 п. 3.1.3), необходимо следить за балансом и значением доступного объёма газа во избежание закрытия клапана. Условия закрытия клапана описаны в п. 5.5.3. Для увеличения значения в поле «Баланс» абоненту необходимо совершить оплату в РСО. При этом пополняемый объём отправляется счётчику в качестве команды по телеметрии (сети GPRS). После внесения оплаты не предпринимать никаких ",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-3М от 28.10.2024",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 10447.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 17,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «Инструкция на Гранд-SPI» о: 8 где [↑] [↓] – переключение экранных форм; [ОК] – подтверждение действия/выход на связь при нажатии 4 раза подряд. Рису?",
+      "expected_keys": [
+        "Рисунок",
+        "5.1",
+        "Дисплей"
+      ],
+      "answer_preview": "[↑] [↓] – переключение экранных форм; [ОК] – подтверждение действия/выход на связь при нажатии 4 раза подряд.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 2939.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 18,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «Инструкция на Гранд-SPI» о: 9 5.2.1 Основная экранная форма счетчика представлена на рисунке 4. где Температура – измеряемая температура газа; Давле?",
+      "expected_keys": [
+        "5.2",
+        "Основная",
+        "4."
+      ],
+      "answer_preview": "- Температура – измеряемая температура газа; - Давление – измеряемое абсолютное давление.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "РЭ на Гранд-SPI",
+        "Пункт учета газа ПУГС"
+      ],
+      "total_ms": 3876.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 19,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «Инструкция на Гранд-SPI» о: 10 5.2.3 Дополнительна экранная форма заданных настроек РСО Пн 10.11.2014 12:42 2.3.2.3_101010141 S IP: Порт: Баланс: 10?",
+      "expected_keys": [
+        "10",
+        "5.2",
+        "Дополнительна"
+      ],
+      "answer_preview": "На странице 10 документа «Инструкция на Гранд-SPI» указано, что IP — это IP-адрес сервера связи (задается при настройке РСО); Порт — порт сервера связи (задаётся при настройке РСО); Баланс — доступный объём газа (задаётся при настройке РСО).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)"
+      ],
+      "total_ms": 3727.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 20,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «Инструкция на Гранд-SPI» о: 11 В случае обнаружения подключенным датчиком загазованности концентрации газа, счетчик выдает звуковой сигнал. Клапан з?",
+      "expected_keys": [
+        "11",
+        "Клапан",
+        "Газ"
+      ],
+      "answer_preview": "В случае обнаружения подключённым датчиком загазованности концентрации газа счётчик выдаёт звуковой сигнал. Клапан закрывается. На дисплее счётчика отображается надпись «Газ». Одновременно счётчик оповещает о нештатной ситуации тройным прерывистым звуковым сигналом и выходит на связь с ДП.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "РЭ на Гранд-SPI",
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 2837.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 21,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «Инструкция на Гранд-SPI» о: 12 Таблица 2 № Обозначение Что делать? 1 «Газ» убедиться, что все газовые приборы выключены ↓ проветрить помещение ↓ дож?",
+      "expected_keys": [
+        "12",
+        "Таблица",
+        "Обозначение"
+      ],
+      "answer_preview": "1. Убедиться, что все газовые приборы выключены.\n2. Проветрить помещение.\n3. Дождаться автоматического открытия клапана.\n4. Связаться с аварийной службой газа, если причина возникшей загазованности требует выяснения.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)",
+        "Пункты учета и редуцирования газа ПУРГС"
+      ],
+      "total_ms": 4556.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 22,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «Инструкция на Гранд-SPI» о: 13 Приложение А (обязательное) Пример записи обозначения счетчика при его заказе и в технической документации Гранд – SP?",
+      "expected_keys": [
+        "13",
+        "Приложение",
+        "Пример"
+      ],
+      "answer_preview": "Пример записи обозначения счётчика при его заказе и в технической документации: Гранд – SPI – ХХХ – ХХ – X Х – XХX – X X – X ХХХ\nМаксимальный расход газа, м³/ч\nИсполнение по приведению к стандартным условиям:\nТ – корректировка объёма газа по методу T-пересчёт\nТР – корректировка объёма газа по методу pT-пересчёт\nТРZ – корректировка объёма газа по методу pTZ-пересчёт\nИсполнение по наличию запорного клапана:\n0 – без клапана\n1 – с клапаном\nИсполнение по наличию блока телеметрии:\n0 – без модема\n1 – с",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд-SPI",
+        "РЭ на Гранд  NBI-OT",
+        "Приказ ПУРС-С и ПУРС-М",
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 16172.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 23,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3 Содержание» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Содержание"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 150.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 24,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 Назначение и область применения счетчиков .................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Назначение"
+      ],
+      "answer_preview": "Счетчик газа Гранд-SPI предназначен для коммерческого учёта количества потребляемого природного газа индивидуальными потребителями. Область применения: в коммунальном, бытовом хозяйстве, на предприятиях различных отраслей промышленности и в других сферах деятельности человека, требующих учёта потребляемого газа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 4050.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 25,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Общие указания для абонента ...............................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Общие"
+      ],
+      "answer_preview": "При покупке счётчика «Гранд-SPI» необходимо проверить:\n* комплектность счётчика; * наличие и целостность пломб; * отсутствие механических повреждений; * идентичность номера счётчика с номером, указанным в паспорте; * наличие в паспорте отметки магазина о продаже счётчика.\nУстановку, монтаж, ввод в эксплуатацию, ремонт и обслуживание счётчика осуществляет организация, уполномоченная проводить данные работы.\nПри эксплуатации необходимо помнить, что счётчик является газовым электронным прибором, по",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 7262.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 26,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3 Общие сведения ............................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Общие"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 155.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 27,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.1 Назначение счетчика .......................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.1",
+        "Назначение"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 171.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 28,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.2 Устройство счетчика .......................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.2",
+        "Устройство"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 144.8,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 29,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4 Пополнение баланса ........................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Пополнение"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 147.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 30,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5 Описание компонентов и функций счетчика ...................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Описание"
+      ],
+      "answer_preview": "В разделе «5 Описание компонентов и функций счетчика» документа «Инструкция на Гранд-SPI» описаны следующие компоненты и функции счётчика Гранд-SPI:\n* преобразователь расхода газа — струйный генератор и пьезоэлемент; * встроенный датчик температуры; * встроенный датчик давления для исполнений TP и TPz; * аналого-цифровой блок; * вычислительный блок; * интерфейсный блок; * элементы питания; * корпус счётчика с присоединительными патрубками; * GSM/GPRS модем (в зависимости от исполнения); * запорн",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-6",
+        "46509-11-(fail-otobrazhenija) (2)",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 18962.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 31,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5.1 Лицевая панель счетчиков ..................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "5.1",
+        "Лицевая"
+      ],
+      "answer_preview": "Просмотр информации на лицевой панели счётчика производится при помощи дисплея и клавиатуры с четырьмя кнопками.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 1335.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 32,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5.2 Экранные формы счетчика ...................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "5.2",
+        "Экранные"
+      ],
+      "answer_preview": "Вся информация, отображаемая на дисплее счётчика, представлена на трёх экранных формах: основной и двух дополнительных.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 17376.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 33,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5.3 Обмен данными с диспетчерским пунктом ....................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "5.3",
+        "Обмен"
+      ],
+      "answer_preview": "Обмен данными с диспетчерским пунктом осуществляется посредством встроенного модема (по каналу GPRS). Он обеспечивает дистанционную передачу в диспетчерский пункт данных о расходе газа и функционировании объекта, а также дистанционное получение информации от ДП (с возможностью изменения настроек по GPRS).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Свидетельство об УТ СПУ-6",
+        "Инструкция на Гранд-SPI",
+        "РЭ на Гранд-SPI",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6336.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 34,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5.4 Принудительный вывод прибора на связь .....................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "5.4",
+        "Принудительный"
+      ],
+      "answer_preview": "В данном контексте нет информации о разделе «5.4 Принудительный вывод прибора на связь» документа «Инструкция на Гранд-SPI».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)"
+      ],
+      "total_ms": 1550.1,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 2,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 35,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5.5 Работа клапана. Случаи закрытия и необходимые действия ....................... 10» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "5.5",
+        "Работа",
+        "Случаи"
+      ],
+      "answer_preview": "Работа клапана в счётчике предусматривает закрытие клапана при срабатывании датчика загазованности (см. №1 таблицы 2). Для принудительного вывода прибора на связь с сервером вне расписания выхода на связь необходимо 4 раза подряд нажать на кнопку «ОК». Дальнейшие действия — по инструкции РСО (в зависимости от цели вывода прибора на связь). При выходе счётчика на связь на дисплее отображается иконка «M», свидетельствующая об активности модема. После установления соединения с сервером на дисплее о",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Свидетельство об УТ СПУ-6",
+        "Инструкция на Гранд-SPI",
+        "46509-11-(fail-otobrazhenija) (2)",
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 12993.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 36,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6 Звуковые сигналы ..........................................................................» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Звуковые"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 133.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 37,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4 Введение» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Введение"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 152.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 38,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 Назначение и область применения счетчиков» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Назначение"
+      ],
+      "answer_preview": "Счетчик газа Гранд-SPI предназначен для коммерческого учёта количества потребляемого природного газа индивидуальными потребителями. Область применения: в коммунальном, бытовом хозяйстве, на предприятиях различных отраслей промышленности и в других сферах деятельности человека, требующих учёта потребляемого газа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 11240.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 39,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Общие указания для абонента» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Общие"
+      ],
+      "answer_preview": "При покупке счётчика «Гранд-SPI» необходимо проверить:\n* комплектность счётчика; * наличие и целостность пломб; * отсутствие механических повреждений; * идентичность номера счётчика с номером, указанным в паспорте; * наличие в паспорте отметки магазина о продаже счётчика.\nУстановку, монтаж, ввод в эксплуатацию, ремонт и обслуживание счётчика осуществляет организация, уполномоченная проводить данные работы.\nПри эксплуатации необходимо избегать попадания грязи, воды, струй пара на счётчик, оберега",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 9631.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 40,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2.1 При покупке счетчика необходимо проверить:» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "2.1"
+      ],
+      "answer_preview": "При покупке счётчика «Гранд-SPI» необходимо проверить:\n* комплектность счётчика; * наличие и целостность пломб; * отсутствие механических повреждений; * идентичность номера счётчика с номером, указанным в паспорте; * наличие в паспорте отметки магазина о продаже счётчика.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 18091.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 41,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2.2 Установку, монтаж, ввод в эксплуатацию, ремонт и обслуживание счетчика» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "2.2",
+        "Установку"
+      ],
+      "answer_preview": "Памятка по отправке оборудования для платного или гарантийного ремонта.\n\nСкачайте PDF-файл ниже и приложите к отправке необходимые документы.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 144.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 42,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2.3 При эксплуатации необходимо помнить, что счетчик является газовым» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "2.3"
+      ],
+      "answer_preview": "- Избегайте попадания грязи, воды, струй пара на счетчик; - оберегайте его от механических повреждений; - не допускайте нарушения пломб.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд-SPI",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 12023.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 43,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3 Общие сведения» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Общие"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 158.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 44,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.1 Назначение счетчика» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.1",
+        "Назначение"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 148.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 45,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.1.1 Счетчик предназначен для реализации следующих основных задач:» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.1",
+        "Счетчик"
+      ],
+      "answer_preview": "Счетчик Гранд-SPI предназначен для реализации следующих основных задач:\n* непрерывное измерение объёма расхода газа; * индикация текущих измеряемых параметров, настроек и эксплуатационных параметров; * ведение архива текущих показаний счетчика, архива нештатных ситуаций и вмешательств, архива срабатываний клапана; * дистанционная передача в ДП данных о расходе газа и функционировании объекта; * дистанционное получение информации от ДП; * контроль состояния подключенного датчика загазованности; *",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 4844.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 46,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.1.2 Счетчик может обеспечивать управление газоснабжением абонента» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.1",
+        "Счетчик"
+      ],
+      "answer_preview": "При настройке счётчика в РСО происходит установка одного из режимов работы клапана: \n* Режим 1: автоматическое управление клапаном по состоянию баланса и истечению доступного объёма газа (условие автоматического закрытия: баланс меньше нуля).\n* Режим 2: автоматическое закрытие клапана по состоянию баланса и истечению доступного объёма газа не производится. Открытие/закрытие клапана при неоплате выполняется по команде оператора ДП, передаваемой по телеметрии (сети GPRS).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на Гранд-SPI",
+        "Инструкция на Гранд-SPI",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 6714.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 47,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.1.3 При настройке счетчика в РСО происходит установка одного из режимов» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.1",
+        "РСО"
+      ],
+      "answer_preview": "В представленном контексте нет информации о разделе «3.1.3 При настройке счетчика в РСО происходит установка одного из режимов» документа «Инструкция на Гранд-SPI».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15371.7,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 48,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.2 Устройство счетчика» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.2",
+        "Устройство"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 155.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 49,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.2.1 Счетчик состоит из:» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "3.2",
+        "Счетчик"
+      ],
+      "answer_preview": "Счетчик состоит из следующих компонентов: \n* преобразователь расхода газа — струйный генератор и пьезоэлемент; * встроенный датчик температуры; * встроенный датчик давления для исполнений TP и TPz; * аналого-цифровой блок; * вычислительный блок; * интерфейсный блок; * элементы питания; * корпус счетчика с присоединительными патрубками; * GSM/GPRS модем (в зависимости от исполнения); * запорный клапан (в зависимости от исполнения).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Инструкция на Гранд-SPI"
+      ],
+      "total_ms": 9525.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "id": 50,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6 Внешний вид счетчика представлен на рисунках 1 и 2.» документа «Инструкция на Гранд-SPI»?",
+      "expected_keys": [
+        "Внешний",
+        "2."
+      ],
+      "answer_preview": "В документе нет информации об инструкции на Гранд-SPI. Описаны внешний вид расходомеров Turbo Flow UFG в корпусе круглого сечения с раздельными защитными крышками (Рисунок 1) и в корпусе прямоугольного сечения с совмещёнными защитными крышками (Рисунок 2).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG мод. F Z (акт)",
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 3722.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 14,
+  "source_file": "Инструкция на Гранд-SPI.pdf",
+  "product": "Инструкция на Гранд-SPI"
+}

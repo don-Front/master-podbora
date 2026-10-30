@@ -1,0 +1,1535 @@
+{
+  "generated_at": "2026-07-07T15:58:13.723392+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 39,
+    "PARTIAL": 11
+  },
+  "bug_counts": {},
+  "accuracy_pct": 78.0,
+  "partial_pct": 22.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "questions": 50,
+      "correct": 39,
+      "partial": 11,
+      "bad": 0,
+      "accuracy_pct": 78.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          11
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Приказ Росстандарта»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Приказ"
+      ],
+      "answer_preview": "Документ «Приказ Росстандарта» предназначен для ознакомления в виде паспорта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 3562.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Приказ Росстандарта»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «Приказ Росстандарта» нет информации об изготовителе или правообладателе.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 3854.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В контексте не указан регистрационный или сертификационный номер в «Приказе Росстандарта».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2675.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Приказ Росстандарта»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «Приказ Росстандарта» информация о сроке действия утверждения типа или сертификата не указана.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2386.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Приказ Росстандарта",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2082.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Приказ Росстандарта»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «Приказ Росстандарта» метрологические характеристики не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2456.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе не указаны технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2480.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Приказ Росстандарта»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Приказ Росстандарта» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2401.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Приказ Росстандарта»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте нет информации о комплекте поставки согласно «Приказу Росстандарта».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2677.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Приказ Росстандарта»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте нет информации о том, на какие другие приказы, ГОСТ или ТУ ссылается документ «Приказ Росстандарта».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2989.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Приказ Росстандарта» о: Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта. Тип документа: passport. Вид?",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "На странице 1 документа «Приказ Росстандарта» указано следующее: тип информации — passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2890.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 12,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Приказ Росстандарта»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «Приказ Росстандарта» нет информации о том, где и как применяется продукция.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2929.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 13,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования к поверке в «Приказе Росстандарта».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2612.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 14,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования безопасности из Приказа Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2411.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 15,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «Приказе Росстандарта».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2796.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 16,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В Приказе Росстандарта гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2601.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 17,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2425.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 18,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2293.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 19,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В «Приказе Росстандарта» информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2535.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 20,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В «Приказе Росстандарта» информация о взрывозащите или степени защиты IP не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2546.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 21,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Приказ Росстандарта»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указано, какой именно испытательный центр упомянут.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2546.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 22,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #1): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2355.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #2): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2429.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #3): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2300.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #4): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ «Приказ Росстандарта» является паспортом продукта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2303.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #5): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2015.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #6): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2128.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #7): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2344.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #8): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2338.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #9): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2427.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #10): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2365.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #11): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2305.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #12): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2150.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #13): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2295.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #14): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2328.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #15): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2394.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #16): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2329.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #17): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2208.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #18): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2063.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #19): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2350.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #20): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2241.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #21): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2206.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #22): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2468.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #23): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2422.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #24): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2363.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #25): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2259.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #26): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2337.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #27): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2399.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #28): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2419.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Приказ Росстандарта.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Приказ Росстандарта» (фрагмент стр. 1, #29): Документ: Приказ Росстандарта. Файл: Приказ Росстандарта.pdf. Продукт: Приказ Росстандарта",
+      "expected_keys": [
+        "Документ",
+        "Приказ",
+        "Росстандарта"
+      ],
+      "answer_preview": "Документ: Приказ Росстандарта.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ Росстандарта"
+      ],
+      "total_ms": 2432.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 47,
+  "source_file": "Приказ Росстандарта.pdf",
+  "product": "Приказ Росстандарта"
+}

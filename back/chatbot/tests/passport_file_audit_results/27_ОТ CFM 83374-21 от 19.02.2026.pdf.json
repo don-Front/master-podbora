@@ -1,0 +1,1612 @@
+{
+  "generated_at": "2026-07-07T13:49:48.089205+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 29,
+    "PARTIAL": 14,
+    "HALLUCINATION": 7
+  },
+  "bug_counts": {
+    "hallucination": 7
+  },
+  "accuracy_pct": 58.0,
+  "partial_pct": 28.0,
+  "bad_pct": 14.0,
+  "per_file": [
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 50,
+      "correct": 29,
+      "partial": 14,
+      "bad": 7,
+      "accuracy_pct": 58.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          14
+        ],
+        [
+          "hallucination",
+          7
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 4 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 4 Всего листов 11 Рисунок 4 – Электронный ",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    },
+    {
+      "question": "Что указано на странице 5 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 5 Всего листов 11 Рисунок 7 – Выносной тер",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    },
+    {
+      "question": "Что указано на странице 6 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 6 Всего листов 11 Метрологические характер",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    },
+    {
+      "question": "Что указано на странице 7 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 7 Всего листов 11 Наименование характерист",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    },
+    {
+      "question": "Что указано на странице 8 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 8 Всего листов 11 Наименование характерист",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    },
+    {
+      "question": "Что указано на странице 9 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 9 Всего листов 11 Таблица 3 – Основные тех",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    },
+    {
+      "question": "Что указано на странице 10 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 10 Всего листов 11 Комплектность средства",
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Документ «ОТ CFM 83374-21 от 19.02.2026» является паспортом средства измерений — счётчиков-расходомеров массовых Turbo Flow CFМ. Счётчики-расходомеры массовые Turbo Flow CFМ предназначены для измерения массового расхода и массы, температуры и давления жидкости и газов, а также объёмного расхода, объёма и плотности жидкости, в том числе сероводорода, кислот и других агрессивных сред.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 9571.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Правообладатель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 8285.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер: 83374-21",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 7743.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 7122.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» нет упоминания методики поверки или конкретного нормативного документа, регламентирующего процесс поверки.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 8634.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диаметр условный Ду, мм: от 1 до 350; - Верхняя граница диапазона измерений массового расхода жидкости QМmax(F), кг/ч: от 19,8 до 4350000; - Верхняя граница диапазона измерений объёмного расхода жидкости (по воде при температуре 20 °С и абсолютном давлении 0,1 МПа) QVmax(F), м³/ч: от 0,02 до 2722; - Верхняя граница диапазона измерений массового расхода газа QМmax(G), кг/ч: зависит от плотности газа при рабочих условиях и коэффициента kG; - Стабильность нуля при измерении массового расхода (в з",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 13194.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Диапазон температуры окружающего воздуха для электронного блока: от –60 до +70 °С; - диапазон относительной влажности воздуха: до 95%; - диапазон атмосферного давления: от 84,0 до 106,7 кПа; - напряжение питания расходомера от сети постоянного тока: от 12 до 14 В; - напряжение питания расходомера от сети переменного тока: от 24 до 30 В; - напряжение питания выносного терминала (ВТ) от сети переменного тока: от 187 до 242 В; - напряжение питания ВТ от АКБ или автономного источника постоянного т",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 18263.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение расходомера является встроенным. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. ПО хранится в энергонезависимой памяти. \nИдентификационные данные программного обеспечения:\n- идентификационное наименование ПО — CFM; - номер версии (идентификационный номер) ПО — не ниже 1.0; - цифровой идентификатор ПО — 0x66808DB2; - алгоритм вычисления цифрового идентификатора программного обеспе",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 14142.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Счётчик-расходомер массовый Turbo Flow CFМ — 1 шт.; - Руководство по эксплуатации ТУАС.407281.001 РЭ — 1 экз.; - Паспорт ТУАС.407281.001 ПС — 1 экз.; - Комплект монтажных частей — 1 комплект (по заказу); - ПО ПК конфигурирования расходомера (компакт-диск или Flash-накопитель) — 1 шт. (по заказу); - Система кабельных соединений — 1 шт. (по заказу).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 11466.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «ОТ CFM 83374-21 от 19.02.2026» утверждён приказом Федерального агентства по техническому регулированию и метрологии.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 16061.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ CFM 83374-21 от 19.02.2026» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «____» _________ 2026 г. № ____?",
+      "expected_keys": [
+        "83374-21",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «____» _________ 2026 г. № ____.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 4019.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 2 Всего листов 11 ПП устанавливается в трубопровод и преобразует параметры процесса (расход, плотность, температу?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "- Расход; - плотность; - температура.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 696.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 3 Всего листов 11 Рисунок 1 – Общий вид расходомеров Рисунок 2 – Общий вид ЭБ Рисунок 3 – Общий вид РШ с ПК, ВТ и?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На странице 3 документа «ОТ CFM 83374-21 от 19.02.2026» указаны:\n* лист № 3; * всего листов — 11; * рисунок 1 – общий вид расходомеров; * рисунок 2 – общий вид ЭБ (электрооборудования); * рисунок 3 – общий вид РШ с ПК, ВТ и ВТ(М).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 2646.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 4 Всего листов 11 Рисунок 4 – Электронный блок а) вид сбоку б) вид сверху Рисунок 5 – Пломбировка ПП и ЭБ (распол?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На странице 4 документа «ОТ CFM 83374-21 от 19.02.2026» представлены рисунки:\n* Рисунок 4 — Электронный блок (вид сбоку и вид сверху).\n* Рисунок 5 — Пломбировка ПП и ЭБ (расположение ЭБ на ПП).",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 2376.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 5 Всего листов 11 Рисунок 7 – Выносной терминал (ВТ) Рисунок 8 – Выносной терминал в металлическом корпусе (ВТМ) ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На странице 5 документа «ОТ CFM 83374-21 от 19.02.2026» представлены рисунки выносного терминала (ВТ) и выносного терминала в металлическом корпусе (ВТМ), а также указаны места для пломбирования, включая свинцовую пломбу предприятия-изготовителя и отверстия для пломбирования эксплуатирующими организациями.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 2856.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 6 Всего листов 11 Метрологические характеристики расходомеров нормированы с учетом влияния программного обеспечен?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "- Метрологические характеристики расходомеров нормированы с учётом влияния программного обеспечения.\n- Программное обеспечение разделено на метрологически значимую и метрологически незначимую части.\n- Уровень защиты ПО от преднамеренных и непреднамеренных изменений — «высокий» в соответствии с Р 50.2.077 -2014.\n- К метрологически значимой части ПО относятся программные модули, участвующие в обработке (расчётах) результатов измерений или влияющие на них, а также осуществляющие отображение измерит",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 9098.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 7 Всего листов 11 Наименование характеристики Значение Пределы допускаемой относительной погрешности при измерени?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "Пределы допускаемой относительной погрешности при измерении массового расхода и массы жидкости, %:\n- при $Q_м ≥ 100·Z/δ_0$ — ±$δ_0$; - при $Q_м < 100·Z/δ_0$ — ±$(Z/Q_м)·100$, где $δ_0$ – значение, численно равное КТ при проведении поверки проливным методом или $(КТ+0,2)$ при проведении поверки имитационным методом, %; $Z$ – стабильность нуля, кг/ч.\nПределы допускаемой относительной погрешности при измерении массового расхода и массы газа, %:\n- при $Q_м ≥ (100 · Z / δ_G)$ — ±$δ_G$; - при $Q_м < (",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 13000.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 8 Всего листов 11 Наименование характеристики Значение Пределы допускаемой основной относительной погрешности при?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "Пределы допускаемой основной относительной погрешности при измерении объёмного расхода δQV и объёма δV жидкости, %: ±0,15 для класса точности 0,1 и ∆ρ = ±1 кг/м³; для других сочетаний классов точности и ∆ρ и при измерении объёмного расхода и объёма газа также ±0,15.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 8954.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 9 Всего листов 11 Таблица 3 – Основные технические характеристики Наименование характеристики Значение Диапазон в?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "- Диапазон выходных сигналов: частотный — от 0 до 10000 Гц; - Диапазон выходных сигналов: токовый — от 4 до 20 мА; - Диапазон выходных сигналов: дискретный — оптронный, с открытым коллектором.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 9897.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 10 Всего листов 11 Комплектность средства измерений Таблица 5 – Комплектность средства измерений Наименование Обо?",
+      "expected_keys": [
+        "Лист",
+        "10",
+        "Всего"
+      ],
+      "answer_preview": "- Счётчик-расходомер массовый Turbo Flow CFМ — 1 шт.; - Руководство по эксплуатации ТУАС.407281.001 РЭ — 1 шт.; - Паспорт ТУАС.407281.001 ПС — 1 шт.; - Комплект монтажных частей — 1 (по заказу); - ПО ПК конфигурирования расходомера (компакт-диск или Flash-накопитель) — 1 (по заказу); - Система кабельных соединений — 1 (по заказу).",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 11475.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «ОТ CFM 83374-21 от 19.02.2026» о: Лист № 11 Всего листов 11 Изготовитель Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбу?",
+      "expected_keys": [
+        "Лист",
+        "11",
+        "Всего"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» на листе № 11 всего листов 11 нет информации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 6393.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 22,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2350 Маркировка взрывозащиты:» документа «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "2350",
+        "Маркировка"
+      ],
+      "answer_preview": "Маркировка взрывозащиты:\n– первичный преобразователь (ПП) — 0Ex iа IIC Т4…Т1 Ga Х; – электронный блок (ЭБ) — 1Ex db [iа Ga] IIC Т6 Gb Х.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 6227.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ CFM 83374-21 от 19.02.2026» упоминается регистрационный номер 83374-21 и в каком контексте?",
+      "expected_keys": [
+        "83374-21",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 83374-21 указан на первой странице документа «ОТ CFM 83374-21 от 19.02.2026» в строке «Регистрационный № 83374-21».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 8325.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ CFM 83374-21 от 19.02.2026» упоминается регистрационный номер 14254-20 и в каком контексте?",
+      "expected_keys": [
+        "14254-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» регистрационный номер 14254-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 5207.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 25,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ CFM 83374-21 от 19.02.2026» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 5102.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 26,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ CFM 83374-21 от 19.02.2026» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационного номера 30004-13 в документе «ОТ CFM 83374-21 от 19.02.2026» упоминается в контексте уникального номера записи об аккредитации испытательного центра ФГБУ «ВНИИМС».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 5117.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 2026 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "2026",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Документ утверждён приказом Федерального агентства по техническому регулированию и метрологии от 19.02.2026 года.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 1352.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 83374 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "83374",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер документа: 83374-21.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 14790.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 21 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "21",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой относительной погрешности при измерении массового расхода и массы жидкости, δM, %: ±δ0 при Qм ≥ 100·Z/δ0; ±(Z/Qм)·100 при Qм < 100·Z/δ0.\n- Пределы допускаемой относительной погрешности при измерении массового расхода и массы газа, %: ±δG при Qм ≥ (100 · Z / δG); ±(Z/Qм)·100 при Qм < (100 · Z / δG).\n- Пределы допускаемой основной абсолютной погрешности при измерении плотности рабочей среды ∆ρ, кг/м3: ±0,3; ±0,5; ±1; ±2; ±5; ±10.\n- Пределы допускаемой дополнительной абсолютно",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 15081.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой основной относительной погрешности при измерении объёмного расхода жидкости: ±0,15 %.\n- Диапазон измерений температуры рабочей среды: от –200 до +400 °С.\n- Пределы допускаемой абсолютной погрешности при измерении температуры рабочей среды при использовании интегрированного в ПП преобразователя температуры: ±(0,3 + 0,005·|t|), где t — измеряемое значение температуры, °C.\n- Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 105 МПа.\n- Верхний предел измерений а",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 15539.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 1, и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой основной относительной погрешности при измерении объёмного расхода жидкости: ±0,15 %.\n- Диапазон измерений температуры рабочей среды: от –200 до +400 °С.\n- Пределы допускаемой абсолютной погрешности при измерении температуры рабочей среды при использовании интегрированного в ПП преобразователя температуры: ±(0,3 + 0,005·|t|), где t — измеряемое значение температуры, °C.\n- Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 105 МПа.\n- Верхний предел измерений а",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 17385.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой основной относительной погрешности при измерении объёмного расхода жидкости и объёма жидкости: ±0,15 %.\n- Диапазон измерений температуры рабочей среды: от –200 до +400 °С.\n- Пределы допускаемой абсолютной погрешности при измерении температуры рабочей среды при использовании интегрированного в ПП преобразователя температуры: ±(0,3 + 0,005·|t|), где t — измеряемое значение температуры, °C.\n- Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 105 МПа.\n- Верхний ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 19539.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 3. и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой относительной погрешности при измерении массового расхода и массы жидкости, δM, %: ±δ0 при Qм ≥ 100·Z/δ0; ±(Z/Qм)·100 при Qм < 100·Z/δ0.\n- Пределы допускаемой относительной погрешности при измерении массового расхода и массы газа, δG, %: ±δG при Qм ≥ (100 · Z / δG); ±(Z/Qм)·100 при Qм < (100 · Z / δG).\n- Диапазон измерений плотности рабочей среды, кг/м3: от 650 до 2000.\n- Пределы допускаемой основной абсолютной погрешности при измерении плотности рабочей среды ∆ρ, кг/м3: ±0",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 19675.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 9. и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "9,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой основной относительной погрешности при измерении объёмного расхода δQV и объёма δV жидкости: ±0,15 %.\n- Диапазон измерений температуры рабочей среды: от –200 до +400 °С.\n- Пределы допускаемой абсолютной погрешности при измерении температуры рабочей среды при использовании интегрированного в ПП преобразователя температуры: ±(0,3 + 0,005·|t|), где t — измеряемое значение температуры, °C.\n- Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 105 МПа.\n- Верхний пр",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 18709.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 8. и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "8,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой основной относительной погрешности при измерении объёмного расхода δQV и объёма δV жидкости: ±0,15 %.\n- Диапазон измерений температуры рабочей среды: от –200 до +400 °С.\n- Пределы допускаемой абсолютной погрешности при измерении температуры рабочей среды при использовании интегрированного в ПП преобразователя температуры: ±(0,3 + 0,005·|t|), где t — измеряемое значение температуры, °C.\n- Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 105 МПа.\n- Верхний пр",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 44177.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» указаны следующие характеристики счётчиков-расходомеров массовых Turbo Flow CFМ:\n* Предназначены для измерений массового расхода и массы, температуры и давления жидкости и газов, а также объёмного расхода, объёма и плотности жидкости, в том числе сероводорода, кислот и других агрессивных сред.\n* Пределы допускаемой относительной погрешности при измерении массового расхода δQM и массы жидкости, δM, %: при Qм ≥ 100·Z/δ0 ±δ0; при Qм < 100·Z/δ0 ±(Z/Qм)·100",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 22387.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 1.0 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "1,0",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Номер версии (идентификационный номер) программного обеспечения расходомера — не ниже 1.0.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 17658.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 66808 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "66808",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО — 0x66808DB2.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 18294.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Пределы допускаемой основной абсолютной погрешности при измерении плотности рабочей среды ±0,3; ±0,5; ±1; ±2; ±5; ±10 кг/м³.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 6254.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» не указано значение параметра 50.2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 19440.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» нет значения параметра под номером 077.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 4547.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Уровень защиты ПО от преднамеренных и непреднамеренных изменений – «высокий» в соответствии с Р 50.2.077 -2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 6421.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 350 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "350",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Стабильность нуля при измерении массового расхода (в зависимости от Ду) Z1), кг/ч — от 0,005 до 350.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 5519.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 19,8 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "19,8",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» не указано значение 19,8 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 6714.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 4350000 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "4350000",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Верхняя граница диапазона измерений массового расхода жидкости QМmax(F) для Turbo Flow CFM составляет 4350000 кг/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 5536.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 0,1 и для какой характеристики указано в документе «ОТ CFM 83374-21 от 19.02.2026»?",
+      "expected_keys": [
+        "0,1",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Пределы допускаемой основной относительной погрешности при измерении объёмного расхода δQV и объёма δV жидкости составляют ±0,15 % для класса точности 0,1 и ∆ρ = ±1 кг/м³.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 5623.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ CFM 83374-21 от 19.02.2026» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» нет информации о приказе № 1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 1600.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ CFM 83374-21 от 19.02.2026» о приказе № 83374?",
+      "expected_keys": [
+        "83374",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказ № 83374 утверждён Федеральным агентством по техническому регулированию и метрологии от «____» _________ 2026 г., регистрационный номер 83374-21.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 13953.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ CFM 83374-21 от 19.02.2026» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» нет информации о приказе № 2.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 14461.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ CFM 83374-21 от 19.02.2026» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ CFM 83374-21 от 19.02.2026» нет информации о приказе № 3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ CFM 83374-21 от 19.02.2026"
+      ],
+      "total_ms": 15683.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 26,
+  "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+  "product": "Turbo Flow CFM"
+}

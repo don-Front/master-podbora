@@ -1,0 +1,1546 @@
+{
+  "generated_at": "2026-07-07T14:36:48.001443+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 33,
+    "PARTIAL": 16,
+    "HALLUCINATION": 1
+  },
+  "bug_counts": {
+    "hallucination": 1
+  },
+  "accuracy_pct": 66.0,
+  "partial_pct": 32.0,
+  "bad_pct": 2.0,
+  "per_file": [
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "questions": 50,
+      "correct": 33,
+      "partial": 16,
+      "bad": 1,
+      "accuracy_pct": 66.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          16
+        ],
+        [
+          "hallucination",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 6 документа «ОТ Гранд (изм адр 2024)» о: Лист № 6 Всего листов 7 Продолжение таблицы 3 Наименова",
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ОТ"
+      ],
+      "answer_preview": "Счетчики газа «Гранд» предназначены для измерений объёма природного газа по ГОСТ 5542 или паров сжиженного газа по ГОСТ 20448, а также других неагрессивных газов. Они измеряют объём газа при рабочих условиях, приведённого к температуре плюс 20 °С или к стандартным условиям по ГОСТ 2939-63.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 20344.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 11584.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер: 46503-11",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4234.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» срок действия утверждения типа не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 3907.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки — МП 208-016-2023.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 15181.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Максимальный расход: 1,6 м³/ч (для модели Гранд-1,6), 2,4 м³/ч (для модели Гранд-2,4) и так далее до 25 м³/ч (для модели Гранд-25).\n- Минимальный расход: 0,04 м³/ч для моделей Гранд-1,6, Гранд-2,4, Гранд-3,2, Гранд-4, Гранд-6; 0,063 м³/ч для модели Гранд-10; 0,1 м³/ч для модели Гранд-16; 0,156 м³/ч для модели Гранд-25.\n- Диапазон измерений Qmin / Qmax: 1:40 (для модели Гранд-1,6), 1:60 (для модели Гранд-2,4) и так далее до 1:160 (для модели Гранд-25).\n- Пределы допускаемой относительной погреш",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 13442.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Избыточное давление измеряемой среды: не более 50 кПа.\n- Температура окружающего воздуха и измеряемой среды: от –10 до +50 °С.\n- Относительная влажность воздуха: не более 80 %.\n- Атмосферное давление: от 84,0 до 106,7 кПа.\n- Минимальный расход для модификаций Гранд–1,6: 0,04 м³/ч.\n- Минимальный расход для модификаций Гранд–2,4, Гранд–3,2, Гранд–4, Гранд–6, Гранд–10, Гранд–16, Гранд–25: 0,04 м³/ч.\n- Минимальный расход для модификации Гранд–10ТК: 0,063 м³/ч.\n- Максимальный расход для модификаций",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 17100.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В счётчиках применяется встроенное программное обеспечение (ПО). Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО. ПО разделено на метрологически значимую часть и метрологически незначимую часть. Идентификационные данные ПО: идентификационное наименование — 1.11.2010.01, номер версии (идентификационный номер) ПО — не ниже 01, цифровой идентификатор ПО — EBD608F5, алгоритм вычисления цифрового идентификатора ПО — CRC32 PKZIP. Уров",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 10703.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В комплект поставки счётчика газа «Гранд» входят:\n* счётчик газа (модель Гранд-1,6; 2,4; 3,2; 4; 6; 10; 16; 25 или их модификации с буквой «ТК»); * фильтр (фильтрующая сетка) — 1 шт.; * паспорт счётчика газа (GFGB.00.00.000 ПС) — 1 экз.; * упаковка индивидуальная — 1 шт.; * комплект монтажных частей — 1 комплект (по заказу); * методика поверки МП 208-016-2023 — 1 экз. (по заказу).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 9053.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «ОТ Гранд (изм адр 2024)» ссылается на следующие нормативные документы:\n* Приказ Росстандарта от 11 мая 2022 г. № 1133 «Об утверждении государственной поверочной схемы для средств измерений объёмного и массового расходов газа»; * ТУ 4213-004-70670506-2010 «Счётчик газа Гранд. Технические условия».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4206.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ Гранд (изм адр 2024)» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «10» июня 2024 г. № 1389 Лист №?",
+      "expected_keys": [
+        "46503-11",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «10» июня 2024 г. № 1389.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 5842.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ Гранд (изм адр 2024)» о: Лист № 2 Всего листов 7 Счетчики имеют исполнение корпуса с несъемной и съемной батареей. Так же в счётчике есть возможн?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Счетчики"
+      ],
+      "answer_preview": "Счетчики имеют исполнение корпуса с несъемной и съемной батареей. Также в счётчике есть возможность подключения внешнего сигнализатора загазованности. Счетчик может быть со встроенным запорным клапаном. В зависимости от пределов допускаемой относительной погрешности счетчики выпускаются в исполнении 1 или 2.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 2342.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ Гранд (изм адр 2024)» о: Лист № 3 Всего листов 7 Рисунок 2 – Общий вид счетчиков с указанием места нанесения знака утверждения типа, заводского н?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "На странице 3 документа «ОТ Гранд (изм адр 2024)» на Листе № 3 представлен рисунок 2 – общий вид счётчиков с указанием места нанесения знака утверждения типа и заводского номера счётчика.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4973.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ Гранд (изм адр 2024)» о: Лист № 4 Всего листов 7 1 – навесная пломба со знаком поверки, предотвращающая вскрытие кожуха; 2 – навесная пломба заво?",
+      "expected_keys": [
+        "Лист",
+        "Всего"
+      ],
+      "answer_preview": "На листе № 4 документа «ОТ Гранд (изм адр 2024) указано следующее:\n1 – навесная пломба со знаком поверки, предотвращающая вскрытие кожуха; 2 – навесная пломба завода-изготовителя или организации, выполнявшей ремонт, предотвращающая вскрытие кожуха и доступ к батарее питания модема (при наличии модема).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 3556.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ Гранд (изм адр 2024)» о: Лист № 5 Всего листов 7 Метрологические и технические характеристики Таблица 2 – Метрологические характеристики Наименов?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Метрологические"
+      ],
+      "answer_preview": "В таблице 2 указаны следующие метрологические характеристики продукта «ОТ Гранд (изм адр 2024)»:\n- Максимальный расход: 1,6 м³/ч, 2,4 м³/ч, 3,2 м³/ч, 4 м³/ч, 6 м³/ч, 10 м³/ч, 16 м³/ч, 25 м³/ч.\n- Минимальный расход: 0,04 м³/ч (для моделей 1,6–4 м³/ч), 0,063 м³/ч (для модели 6 м³/ч), 0,1 м³/ч (для модели 10 м³/ч), 0,156 м³/ч (для модели 25 м³/ч).\n- Диапазон измерений: 1:40 (для модели 1,6 м³/ч), 1:60 (для модели 2,4 м³/ч), 1:80 (для модели 3,2 м³/ч), 1:100 (для модели 4 м³/ч), 1:140 (для модели 6 ",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 10593.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ Гранд (изм адр 2024)» о: Лист № 6 Всего листов 7 Продолжение таблицы 3 Наименование характеристики Значение Гранд – 1,6 Гранд – 2,4 Гранд – 3,2 Г?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Продолжение"
+      ],
+      "answer_preview": "На странице 6 документа «ОТ Гранд (изм адр 2024)» в продолжении таблицы 3 указаны следующие значения характеристик для различных моделей счётчика газа «Гранд»:\n- Гранд – 1,6; - Гранд – 2,4; - Гранд – 3,2.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 9064.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ Гранд (изм адр 2024)» о: Лист № 7 Всего листов 7 Изготовитель Общество с ограниченной ответственностью НПО «Турбулентность -ДОН» (ООО НПО «Турбул?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Изготовитель"
+      ],
+      "answer_preview": "На странице 7 документа «ОТ Гранд (изм адр 2024)» указано:\n- Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность -ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 8326.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 18,
+      "topic": "раздел",
+      "question": "Что описано в разделе «50 Потери давления при Qmax, кПа,» документа «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "50",
+        "Потери",
+        "Qmax"
+      ],
+      "answer_preview": "Потери давления при Qmax, кПа, не более 2.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4121.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 19,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Количество разрядов отсчетного» документа «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "Количество"
+      ],
+      "answer_preview": "Количество разрядов отсчетного устройства — 9.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 14051.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 20,
+      "topic": "раздел",
+      "question": "Что описано в разделе «9 Цифровые беспроводные» документа «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "Цифровые"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» в разделе о технических характеристиках указано, что счётчик газа «Гранд» имеет следующие цифровые беспроводные интерфейсы: GSM, GPRS, Bluetooth, IrDA (ИК-порт), Zig Bee, M2M 433/868 МГц, NB-IOT, NB-Fi, LoRa.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 18676.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 21,
+      "topic": "раздел",
+      "question": "Что описано в разделе «135 Степень защиты по ГОСТ 14254 IP 50» документа «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "135",
+        "Степень",
+        "ГОСТ"
+      ],
+      "answer_preview": "Степень защиты по ГОСТ 14254 IP 50 для счётчиков газа «Гранд» — IP 50.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 14780.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 22,
+      "topic": "раздел",
+      "question": "Что описано в разделе «12 Средний срок службы счетчика,» документа «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "12",
+        "Средний"
+      ],
+      "answer_preview": "Средний срок службы счетчика, лет, не менее — 24.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 14190.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 23,
+      "topic": "раздел",
+      "question": "Что описано в разделе «24 Знак утверждения типа» документа «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "24",
+        "Знак"
+      ],
+      "answer_preview": "Знак утверждения типа наносится на лицевую панель счётчика методом фотопечати и на первый лист паспорта печатным способом.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 10745.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ Гранд (изм адр 2024)» упоминается регистрационный номер 46503-11 и в каком контексте?",
+      "expected_keys": [
+        "46503-11",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 46503-11 указан на листе № 1 документа «ОТ Гранд (изм адр 2024)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4058.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 25,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ Гранд (изм адр 2024)» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 3914.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 26,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ Гранд (изм адр 2024)» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Уникальный номер записи в реестре аккредитованных лиц № 30004-13 указан на странице 7 документа «ОТ Гранд (изм адр 2024)» в разделе, описывающем испытательный центр.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 5270.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход для модификации Гранд – 10 составляет 10 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4080.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» указано значение года выпуска — 2024.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4965.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 1389 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "1389",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «10» июня 2024 г. № 1389.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 15189.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 46503 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "46503",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер 46503-11 указан в паспорте средства измерений «Счётчики газа Гранд».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4818.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» нет значения 11 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 16367.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 5542 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "5542",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» нет упоминания значения 5542 и характеристики, связанной с этим числом.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 16891.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 20448, и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "20448,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» указано, что счётчики газа Гранд предназначены для измерений паров сжиженного газа по ГОСТ 20448.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 16829.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» указано значение температуры плюс 20 °С для условий приведения объёма газа к стандартным условиям по ГОСТ 2939-63.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 15336.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 2939 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "2939",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» ГОСТ 2939-63 указан в контексте стандартных условий для измерений объёма газа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 25741.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 63. и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "63,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» указано значение 63 для характеристики минимального расхода Qmin, м³/ч для модификации счетчика газа Гранд – 10.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 5915.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 63, и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "63,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Минимальный расход для модификации Гранд – 10 составляет 0,063 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4131.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 63 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "63",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Минимальный расход для модификации Гранд – 10 составляет 0,063 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 11015.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» указаны следующие значения характеристик:\n- Максимальный расход для модификаций Гранд – 1,6 м³/ч; 2,4 м³/ч; 3,2 м³/ч; 4 м³/ч; 6 м³/ч; 10 м³/ч; 16 м³/ч; 25 м³/ч.\n- Минимальный расход для модификаций Гранд – 0,04 м³/ч (для моделей 1,6; 2,4; 3,2; 4); 0,063 м³/ч (для модели 6); 0,1 м³/ч (для модели 10); 0,156 м³/ч (для модели 16 и 25).\n- Диапазон измерений Qmin /Qmax для модификаций Гранд – 1:40; 1:60; 1:80; 1:100; 1:140; 1:160.\n- Пределы допускаемой относительн",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 28725.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход для модели «Гранд – 1,6» составляет 1,6 м³/ч.\nМинимальный расход для модели «Гранд – 1,6» составляет 0,04 м³/ч.\nДиапазон измерений для модели «Гранд – 1,6» — 1:40 (Qmin / Qmax).\nПределы допускаемой относительной погрешности измерений объёма газа при рабочих условиях для модели «Гранд – 1,6»: ±2,5 % в диапазоне расходов Qmin ≤ Q < 0,2 Qmax.\nНоминальный диаметр DN для модели «Гранд – 1,6» — 15.\nИзбыточное давление измеряемой среды не более 50 кПа.\nПотери давления при Qmax не бо",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 35839.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» на странице 6 указаны условия эксплуатации счётчика газа «Гранд»: температура окружающего воздуха и измеряемой среды составляет от -10 до +50 °С.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 12489.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 1.11 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "1,11",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Идентификационное наименование ПО — 1.11.2010.01.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4617.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 2010.01 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "2010,01",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Идентификационное наименование программного обеспечения счётчика газа «Гранд» — 1.11.2010.01.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 1216.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 01 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "01",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Идентификационное наименование ПО — 1.11.2010.01, номер версии (идентификационный номер) ПО — не ниже 01, цифровой идентификатор ПО — EBD608F5, алгоритм вычисления цифрового идентификатора ПО — CRC32 PKZIP.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 5692.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 608 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "608",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» нет значения 608 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 13625.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Избыточное давление измеряемой среды, кПа, не более — 50.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4554.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» нет значения 50.2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 5791.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 48,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» нет информации о значении 077 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 7524.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 49,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд (изм адр 2024)» нет информации за 2014 год.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 4368.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "id": 50,
+      "topic": "значение",
+      "question": "Какое значение 1,6 и для какой характеристики указано в документе «ОТ Гранд (изм адр 2024)»?",
+      "expected_keys": [
+        "1,6",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход для модели «Гранд – 1,6» составляет 1,6 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд (изм адр 2024)"
+      ],
+      "total_ms": 1170.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 32,
+  "source_file": "ОТ Гранд (изм адр 2024).pdf",
+  "product": "ОТ Гранд (изм адр 2024)"
+}

@@ -11,7 +11,15 @@ from decimal import Decimal
 from typing import Any, Dict, List
 
 from .medium_normalize import normalize_medium_from_user_text
-from .pdf_order_analysis import SPEC_KEYS, _normalize_specs, _SPEC_LEGACY_ALIASES, normalize_accuracy_value
+from .pdf_order_analysis import (
+    DUPLICATION_DEFAULT,
+    DUPLICATION_DISPLAY,
+    SPEC_KEYS,
+    _SPEC_LEGACY_ALIASES,
+    _normalize_specs,
+    normalize_accuracy_value,
+    normalize_duplication_type,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -76,6 +84,8 @@ def _is_placeholder_text(s: str) -> bool:
 
 def is_value_missing(key: str, value: Any) -> bool:
     """Пусто: None, пустая строка, \"0\", число 0, строка «не указано» и аналоги."""
+    if key == "duplication_type":
+        return normalize_duplication_type(value) is None
     if value is None:
         return True
     if isinstance(value, Decimal):
@@ -135,18 +145,37 @@ def apply_measurement_unit_defaults(draft: Dict[str, Any]) -> Dict[str, Any]:
     return d
 
 
+def apply_duplication_defaults(draft: Dict[str, Any]) -> Dict[str, Any]:
+    """Для газовых расходомеров тип дублирования по умолчанию — без дублирования."""
+    d = dict(draft)
+    medium = str(d.get("medium") or "").strip().lower()
+    if medium == "gas":
+        normalized = normalize_duplication_type(d.get("duplication_type"))
+        d["duplication_type"] = normalized if normalized is not None else DUPLICATION_DEFAULT
+    elif medium == "liquid":
+        d["duplication_type"] = None
+    return d
+
+
 def list_missing_fields(draft: Dict[str, Any]) -> List[str]:
     d = merge_draft(draft)
+    medium = str(d.get("medium") or "").strip().lower()
     return [
         k
         for k in SPEC_KEYS
-        if k not in OPTIONAL_SPEC_KEYS and is_value_missing(k, d.get(k))
+        if k not in OPTIONAL_SPEC_KEYS
+        and not (k == "duplication_type" and medium != "gas")
+        and is_value_missing(k, d.get(k))
     ]
 
 
 FIELD_PROMPTS: Dict[str, str] = {
     "medium": "Укажите среду измерения (газ или жидкость).",
     "gas_type": "Укажите тип измеряемой среды (например: природный газ, жидкость и т.п.).",
+    "duplication_type": (
+        "Укажите тип дублирования для газового расходомера. "
+        "Доступно только 3 варианта: без дублирования, частичное дублирование, полное дублирование."
+    ),
     "flowMin": "Укажите минимальный расход (число), например: 10",
     "flowMax": "Укажите максимальный расход (число), например: 500",
     "flow_unit": "Укажите единицу расхода (например: м³/ч).",
@@ -193,6 +222,15 @@ def parse_field_value(key: str, text: str) -> Any:
     if key == "medium":
         return normalize_medium_from_user_text(raw)
 
+    if key == "duplication_type":
+        normalized = normalize_duplication_type(raw)
+        if normalized is None:
+            raise ValueError(
+                "доступны только 3 типа дублирования: без дублирования, "
+                "частичное дублирование или полное дублирование"
+            )
+        return normalized
+
     # строковые поля
     return raw
 
@@ -200,7 +238,8 @@ def parse_field_value(key: str, text: str) -> Any:
 def merge_draft(base: Dict[str, Any]) -> Dict[str, Any]:
     normalized = _normalize_specs(base)
     with_units = apply_measurement_unit_defaults(normalized)
-    return apply_temperature_defaults(with_units)
+    with_temperatures = apply_temperature_defaults(with_units)
+    return apply_duplication_defaults(with_temperatures)
 
 
 def _to_json_safe_scalar(v: Any) -> Any:
@@ -248,6 +287,7 @@ ORDER_SPECS_CONFIRM_HINT = "Подтвердить и подобрать обо�
 FIELD_LABELS: Dict[str, str] = {
     "medium": "Среда измерения",
     "gas_type": "Тип газа (необязательно)",
+    "duplication_type": "Тип дублирования",
     "flowMin": "Минимальный расход",
     "flowMax": "Максимальный расход",
     "flow_unit": "Единица расхода",
@@ -278,6 +318,9 @@ def _format_spec_display_value(key: str, value: Any, draft: Dict[str, Any] | Non
     if key == "medium":
         s = str(value).strip().lower()
         return _MEDIUM_DISPLAY.get(s, str(value))
+    if key == "duplication_type":
+        normalized = normalize_duplication_type(value)
+        return DUPLICATION_DISPLAY.get(normalized or "", str(value))
     if key in NUMERIC_KEYS and isinstance(value, (int, float)):
         if key == "diameter":
             return f"{value} мм"
@@ -297,11 +340,23 @@ def _format_spec_display_value(key: str, value: Any, draft: Dict[str, Any] | Non
 ORDER_SPECS_REVIEW_TITLE = "Проверьте итоговые параметры спецификации:"
 
 
+def is_spec_row_visible(key: str, draft: Dict[str, Any]) -> bool:
+    """Какие поля показывать в таблице подтверждения в зависимости от среды."""
+    medium = str(draft.get("medium") or "").strip().lower()
+    if key == "duplication_type" and medium != "gas":
+        return False
+    if key == "gas_type" and medium == "liquid":
+        return False
+    return True
+
+
 def build_order_specs_review_rows(draft: Dict[str, Any]) -> List[Dict[str, str]]:
     """Строки таблицы для UI подтверждения (ключ, подпись, значение)."""
     d = merge_draft(draft)
     rows: List[Dict[str, str]] = []
     for key in SPEC_KEYS:
+        if not is_spec_row_visible(key, d):
+            continue
         rows.append(
             {
                 "key": key,

@@ -100,6 +100,7 @@ class EquipmentParams(BaseModel):
     medium: str
     application: Optional[str] = None
     gas_type: Optional[str] = None
+    duplication_type: Optional[str] = None  # none | partial | full, только газовые расходомеры
     flow_min: Optional[str] = None  # Изменено на str для поддержки запятых
     flow_max: Optional[str] = None  # Изменено на str для поддержки запятых
     flow_unit: Optional[str] = None  # "м³/ч", "кг/ч", "ст.м³/ч"
@@ -504,6 +505,7 @@ async def search_equipment_api(
                       medium: Optional[str] = None,
                       application: Optional[str] = None, 
                       gas_type: Optional[str] = None,
+                      duplication_type: Optional[str] = None,
                       flowMin: Optional[str] = None,
                       flowMax: Optional[str] = None,
                       flow_unit: Optional[str] = None,
@@ -525,6 +527,7 @@ async def search_equipment_api(
         medium=medium or "gas",
         application=application,
         gas_type=gas_type,
+        duplication_type=duplication_type if (medium or "gas") == "gas" else None,
         flow_min=flowMin,
         flow_max=flowMax,
         flow_unit=flow_unit or "м³/ч",  # Используем переданное значение или м³/ч по умолчанию
@@ -1473,6 +1476,7 @@ def find_equipment_with_unsuitable(params: EquipmentParams) -> tuple[List[Dict[s
             medium=params.medium,
             application=params.application,
             gas_type=params.gas_type,
+            duplication_type=params.duplication_type,
             flow_min=flow_min_converted,
             flow_max=flow_max_converted,
             flow_unit="м³/ч",  # Меняем единицу на м³/ч (рабочие условия)
@@ -1498,7 +1502,10 @@ def find_equipment_with_unsuitable(params: EquipmentParams) -> tuple[List[Dict[s
     
     # Отладочная информация
     print(f"\n=== ПОИСК ОБОРУДОВАНИЯ ===")
-    print(f"Параметры поиска: medium={params.medium}, application={params.application}, gas_type={params.gas_type}")
+    print(
+        f"Параметры поиска: medium={params.medium}, application={params.application}, "
+        f"gas_type={params.gas_type}, duplication_type={params.duplication_type}"
+    )
     print(f"Расход: {params.flow_min}-{params.flow_max} {params.flow_unit}")
     print(f"Давление: {params.pressure_min}-{params.pressure_max} {params.pressure_unit}")
     print(f"Температура: {params.temperature_min}-{params.temperature_max} {params.temperature_unit}")
@@ -1530,11 +1537,42 @@ def find_equipment_with_unsuitable(params: EquipmentParams) -> tuple[List[Dict[s
     print(f"Итого найдено неподходящего оборудования: {len(unsuitable_results)}")
     return suitable_results, unsuitable_results
 
+
+def _equipment_duplication_type(equipment: Dict[str, Any]) -> str:
+    """Классификация газовых расходомеров по типу дублирования."""
+    text = " ".join(
+        str(v or "")
+        for v in (
+            equipment.get("id"),
+            equipment.get("name"),
+            equipment.get("model"),
+            equipment.get("title"),
+        )
+    ).casefold().replace("ё", "е")
+    if "дублир" in text and ("полн" in text or "полное" in text):
+        return "full"
+    if "дублир" in text and ("част" in text or "частич" in text):
+        return "partial"
+    if "ufg-f-v" in text or "ufgfv" in text or "ufg-f v" in text:
+        return "full"
+    if "ufg-f-c" in text or "ufgfc" in text or "ufg-f c" in text:
+        return "partial"
+    return "none"
+
 def is_equipment_suitable(equipment: Dict[str, Any], params: EquipmentParams) -> bool:
     """Проверка соответствия оборудования заданным параметрам"""
     specs = equipment.get("specs", {})
     equipment_name = equipment.get("name", "Unknown")
     print(f"\n--- Проверка оборудования: {equipment_name} ---")
+
+    if params.medium == "gas" and params.duplication_type:
+        expected_duplication = _equipment_duplication_type(equipment)
+        if params.duplication_type != expected_duplication:
+            print(
+                f"ОТКЛОНЕНО: тип дублирования {expected_duplication} "
+                f"не соответствует требуемому {params.duplication_type}"
+            )
+            return False
     
     # Конвертируем строковые параметры в числа
     def safe_float(value):

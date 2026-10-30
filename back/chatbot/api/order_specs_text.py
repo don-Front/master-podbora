@@ -13,6 +13,7 @@ from .chatbot_core.llm_client import LLMClient
 from .order_specs_helpers import (
     FIELD_LABELS,
     _format_spec_display_value,
+    is_spec_row_visible,
     is_value_missing,
     merge_draft,
 )
@@ -23,6 +24,7 @@ from .pdf_order_analysis import (
     _parse_json_from_llm,
     _postprocess_specs,
     extract_specs_heuristic,
+    extract_duplication_type_from_text,
     normalize_accuracy_value,
 )
 
@@ -116,6 +118,10 @@ def extract_specs_from_short_text(text: str) -> Dict[str, Any]:
         out["medium"] = "liquid"
         out["gas_type"] = "жидкость"
 
+    duplication_type = extract_duplication_type_from_text(raw)
+    if duplication_type:
+        out["duplication_type"] = duplication_type
+
     m = re.search(r"(?:\bDN|\bДУ|\bDy|диаметр|ду)\s*[-:=]?\s*(\d{2,4})", raw, re.IGNORECASE)
     if m:
         out["diameter"] = int(m.group(1))
@@ -190,6 +196,9 @@ def _llm_extract_text_specs(text: str, llm, base_draft: Dict[str, Any] | None = 
         f"Ключи строго такие: {', '.join(SPEC_KEYS)}. "
         'medium: "gas", "liquid" или "unknown". '
         "gas_type — тип среды (например, природный газ). "
+        'duplication_type — только для газового оборудования: "none" (без дублирования), '
+        '"partial" (частичное дублирование) или "full" (полное дублирование). '
+        "Если пользователь не указал тип дублирования — null. Для жидкости — null. "
         "flowMin/flowMax — расход, pressureMin/pressureMax — давление, "
         "tempMediumMin/Max — температура измеряемой среды, "
         "tempAmbientMin/Max — температура окружающей среды. "
@@ -413,7 +422,7 @@ def present_fields(draft: Dict[str, Any]) -> List[str]:
     return [
         _field_line(k, d.get(k), d)
         for k in SPEC_KEYS
-        if not is_value_missing(k, d.get(k))
+        if is_spec_row_visible(k, d) and not is_value_missing(k, d.get(k))
     ]
 
 
@@ -425,7 +434,7 @@ def present_field_rows(draft: Dict[str, Any]) -> List[Dict[str, str]]:
             "value": _format_spec_display_value(k, d.get(k), d),
         }
         for k in SPEC_KEYS
-        if not is_value_missing(k, d.get(k))
+        if is_spec_row_visible(k, d) and not is_value_missing(k, d.get(k))
     ]
 
 

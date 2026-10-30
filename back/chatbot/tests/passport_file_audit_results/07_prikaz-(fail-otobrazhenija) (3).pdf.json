@@ -1,0 +1,1743 @@
+{
+  "generated_at": "2026-07-07T18:17:59.469950+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "PARTIAL": 11,
+    "CORRECT": 33,
+    "WRONG_TOPIC": 4,
+    "HALLUCINATION": 2
+  },
+  "bug_counts": {
+    "retrieval": 4,
+    "hallucination": 2
+  },
+  "accuracy_pct": 66.0,
+  "partial_pct": 22.0,
+  "bad_pct": 12.0,
+  "per_file": [
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "questions": 50,
+      "correct": 33,
+      "partial": 11,
+      "bad": 6,
+      "accuracy_pct": 66.0,
+      "retrieval_pct": 82.0,
+      "top_bugs": [
+        [
+          "partial",
+          11
+        ],
+        [
+          "retrieval",
+          4
+        ],
+        [
+          "hallucination",
+          2
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какие метрологические характеристики приведены в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "07 МП 1734-13-2025 МП СПУ-5 корр",
+        "ОТ CFM 83374-21 от 19.02.2026",
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ]
+    },
+    {
+      "question": "Где и как применяется продукция по документу «prikaz-(fail-otobrazhenija) (3)»?",
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ СПУ-3М от 28.10.2024"
+      ]
+    },
+    {
+      "question": "Какие гарантийные обязательства указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "РЭ UFG мод. F Z (акт)",
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG-Н (акт)",
+        "основные неисправности приборов 1"
+      ]
+    },
+    {
+      "question": "Какие интерфейсы связи указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Аппаратно-программный комплекс «ДОНТЕЛ»"
+      ]
+    },
+    {
+      "question": "Какой испытательный центр указан в «prikaz-(fail-otobrazhenija) (3)»?",
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)",
+        "основные неисправности приборов 1"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #1): О внесении изменений в сведения об",
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "prikaz-(fail"
+      ],
+      "answer_preview": "Документ «prikaz-(fail-otobrazhenija) (3)» содержит информацию о внесении изменений в сведения об утверждённом типе средства измерений в соответствии с Административным регламентом Федерального агентства по техническому регулированию и метрологии.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ СПУ-3М от 28.10.2024",
+        "46509-11-(fail-otobrazhenija) (2)"
+      ],
+      "total_ms": 9320.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» не указан изготовитель или правообладатель.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Описание типа ПУРС-С",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)"
+      ],
+      "total_ms": 3035.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» регистрационный номер не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "8.741 2019",
+        "РЭ на Гранд  NBI-OT"
+      ],
+      "total_ms": 3491.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» информация о сроке действия утверждения типа или сертификата не указана.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ ГРАНД ТК(М) от 28.10.2024",
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)"
+      ],
+      "total_ms": 3486.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» упомянута методика поверки МП 1734-13-2025 для вновь изготавливаемых средств измерений в дополнение к МП 1352-13-2021.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prilozhenie-(fail-otobrazhenija) (39) (1)",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ ПУРС-С и ПУРС-М",
+        "8.611 2013"
+      ],
+      "total_ms": 4543.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет метрологических характеристик.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "07 МП 1734-13-2025 МП СПУ-5 корр",
+        "ОТ CFM 83374-21 от 19.02.2026",
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 4425.1,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» не указаны технические характеристики давления, температуры, расхода.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)"
+      ],
+      "total_ms": 4283.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение установки по аппаратному обеспечению является встроенным. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. ПО хранится в энергонезависимой памяти. Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО. \nПрограммное обеспечение установки разделено на:\n- метрологически значимую часть; - метрологически незначимую часть. \nРа",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 17782.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет информации о комплекте поставки.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)",
+        "prikaz-(fail-otobrazhenija) (3)"
+      ],
+      "total_ms": 5228.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Приказ ссылается на Административный регламент по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённый приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "8.589 2007",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)",
+        "8.611 2013"
+      ],
+      "total_ms": 10503.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «prikaz-(fail-otobrazhenija) (3)» о: О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с Административным регламентом по?",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики, согласно приложению к приказу № 2346 от 12 ноября 2018 года. Также утверждено изменённое описание типа средства измерений, прил",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG мод. F Z (акт)",
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 20831.0,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 3,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 12,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» не указано значение 12 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)"
+      ],
+      "total_ms": 9087.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 2018 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2018",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В представленном контексте нет информации о значении 2018 и характеристике, связанной с «prikaz-(fail-otobrazhenija) (3)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "МП 2025 85230-22"
+      ],
+      "total_ms": 11208.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 2346, и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2346,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» значение 2346 является номером приказа Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 года.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "2939 63",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 4544.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет конкретных характеристик или параметров, указанных в вопросе.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 16178.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 16,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» не указаны конкретные значения характеристик.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 17987.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 17,
+      "topic": "значение",
+      "question": "Какое значение 3. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет конкретных значений характеристик, указанных в виде цифры 3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)"
+      ],
+      "total_ms": 16869.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 28 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "28",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет информации о значении 28 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)"
+      ],
+      "total_ms": 14449.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2020 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2020",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет конкретных числовых значений за 2020 год для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП 2023",
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4536.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 2906. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2906,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» не указано значение 2906 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "2939 63",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 5919.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет информации о характеристике с номером 4.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Методика поверки ПУРС-С"
+      ],
+      "total_ms": 16166.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 22,
+      "topic": "приказ",
+      "question": "Что говорится в документе «prikaz-(fail-otobrazhenija) (3)» о приказе № 2346?",
+      "expected_keys": [
+        "2346",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В соответствии с приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346 в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики. Также утверждено изменённое описание типа средства измерений, прилагаемое к этому приказу.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "8.589 2007",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 18730.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 23,
+      "topic": "приказ",
+      "question": "Что говорится в документе «prikaz-(fail-otobrazhenija) (3)» о приказе № 2906?",
+      "expected_keys": [
+        "2906",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В соответствии с приказом № 2906 от 28 августа 2020 года Министерства промышленности и торговли Российской Федерации ФБУ «НИЦ ПМ – Ростест» должны внести сведения об утверждённом типе средства измерений согласно приложению к приказу в Федеральный информационный фонд по обеспечению единства измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "8.589 2007",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 16443.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 24,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» не указано, где и как применяется продукция. Документ содержит информацию о внесении изменений в сведения об утверждённом типе средства измерений.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 16804.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 25,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» указаны изменения в сведениях об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждена изменённая методика поверки для вновь изготавливаемых средств измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "07 МП 1734-13-2025 МП СПУ-5 корр",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "prilozhenie-(fail-otobrazhenija) (39) (1)",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 12563.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 26,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» нет информации о требованиях безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Приказ 2973 от 25.11.2022",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Приказ ПУРС-С и ПУРС-М"
+      ],
+      "total_ms": 17293.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 27,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «prikaz-(fail-otobrazhenija) (3)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Св об утв типа",
+        "Приказ ПУРС-С и ПУРС-М",
+        "46509-11-(fail-otobrazhenija) (2)",
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4689.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 28,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "Гарантийные обязательства приведены в разделе 4 Расходомера-счётчика газа ультразвукового Turbo Flow UFG ТУАС.407252.001 ПС.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "РЭ UFG мод. F Z (акт)",
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG-Н (акт)",
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 4659.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 29,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "- **Транспортирование:** упакованные компоненты должны транспортироваться в закрытых транспортных средствах всеми видами транспорта, кроме морского, в том числе воздушным, в отапливаемых герметизированных отсеках, в соответствии с правилами перевозок грузов, действующими на каждом виде транспорта. \n- **Условия транспортирования в части воздействия климатических факторов** должны соответствовать группе условий 5 (ОЖ4) по ГОСТ 15150 – для крытых транспортных средств. \n- **Условия транспортирования",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015",
+        "РЭ СFМ (акт)",
+        "РЭ UFG-Н (акт)",
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 13327.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 30,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе «prikaz-(fail-otobrazhenija) (3)» информация о показателях надёжности не представлена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "Приказ ПУРС-С и ПУРС-М",
+        "prikaz-(fail-otobrazhenija) (3)",
+        "46509-11-(fail-otobrazhenija) (2)"
+      ],
+      "total_ms": 17560.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 31,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В контексте нет информации об интерфейсах связи комплекса «ДОНТЕЛ».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Аппаратно-программный комплекс «ДОНТЕЛ»"
+      ],
+      "total_ms": 4424.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 32,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В предоставленном контексте информация о взрывозащите или степени защиты IP не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "ОТ СПУ-3 от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4267.1,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 33,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "Испытательный центр — Федеральное бюджетное учреждение «Научно-исследовательский центр прикладной метрологии - Ростест» (ФБУ «НИЦ ПМ - Ростест»).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "ОТ UFG 56432-14 от 17.11.2025",
+        "РЭ UFG-Н (акт)",
+        "РЭ UFG мод. F Z (акт)",
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 4758.3,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #1): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с приказом внесены изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждено изменённое описание типа средства измерений. ФБУ «НИЦ ПМ – Ростест» должно внести соответствующие сведения в Федеральный информационный фонд по обеспечению единства измерений.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 8757.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #2): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, внесены изменения в сведения об утвержденном типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждено измененное описание типа средства измерений согласно приложению к настоящему приказу.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 17768.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #3): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, внесены изменения в сведения об утвержденном типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждено измененное описание типа средства измерений согласно приложению к настоящему приказу.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 8669.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #4): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, внесены изменения в сведения об утвержденном типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждено измененное описание типа средства измерений. ФБУ «НИЦ ПМ – Ростест» должно внести сведения об утвержденном типе сред",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 8928.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #5): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики, согласно п",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5635.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #6): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, вносятся изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики, согласно ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 28515.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #7): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, внесены изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики, согласно п",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 11530.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #8): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, в сведения об утвержденном типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждено измененное описание типа средства измерений. ФБУ «НИЦ ПМ – Ростест» должно внести соответствующие сведения в Федерал",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 9162.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #9): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, вносятся изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики, согласно ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 23844.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #10): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, вносятся изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики, согласно ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 24537.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #11): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, вносятся изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики, согласно ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 13123.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #12): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики, согласно п",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 12809.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #13): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики, согласно п",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 28319.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #14): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики, согласно п",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 11838.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #15): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, вносятся изменения в сведения об утверждённом типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики, согласно ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 24585.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #16): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, внесены изменения в сведения об утвержденном типе средства измерений в части конструктивных изменений, влияющих на его метрологические характеристики. Утверждено измененное описание типа средства измерений. ФБУ «НИЦ ПМ – Ростест» должно внести соответствующие сведения в Федерал",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 23362.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #17): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "answer_preview": "В соответствии с Административным регламентом по предоставлению Федеральным агентством по техническому регулированию и метрологии государственной услуги по утверждению типа стандартных образцов или типа средств измерений, утверждённым приказом Федерального агентства по техническому регулированию и метрологии от 12 ноября 2018 г. № 2346, в сведения об утверждённом типе средства измерений внесены изменения в части конструктивных изменений, влияющих на его метрологические характеристики, согласно п",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "prikaz-(fail-otobrazhenija) (3)",
+        "Приказ 2973 от 25.11.2022",
+        "Приказ СПУ-7 №789 22.04.2025",
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 23661.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 6,
+  "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+  "product": "prikaz-(fail-otobrazhenija) (3)"
+}

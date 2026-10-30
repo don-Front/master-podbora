@@ -1,0 +1,1595 @@
+{
+  "generated_at": "2026-07-07T15:35:09.038913+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 32,
+    "WRONG_TOPIC": 1,
+    "HALLUCINATION": 4,
+    "PARTIAL": 13
+  },
+  "bug_counts": {
+    "retrieval": 1,
+    "hallucination": 4
+  },
+  "accuracy_pct": 64.0,
+  "partial_pct": 26.0,
+  "bad_pct": 10.0,
+  "per_file": [
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "questions": 50,
+      "correct": 32,
+      "partial": 13,
+      "bad": 5,
+      "accuracy_pct": 64.0,
+      "retrieval_pct": 98.0,
+      "top_bugs": [
+        [
+          "partial",
+          13
+        ],
+        [
+          "hallucination",
+          4
+        ],
+        [
+          "retrieval",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какой регистрационный или сертификационный номер указан в «Описание типа ПУРС-М»?",
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Описание типа ПУРС-М»?",
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «Описание типа ПУРС-М» о: Лист № 4 Всего листов 6 Программное обеспечение Программно",
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ]
+    },
+    {
+      "question": "Какое значение 14 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ]
+    },
+    {
+      "question": "Какое значение 2. и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Описание"
+      ],
+      "answer_preview": "Установки поверочные передвижные ПУРС-М предназначены для измерений, воспроизведения, хранения и передачи единицы объёма жидкости в потоке и уровня жидкости при проведении исследований, испытаний, поверки, калибровки и других работ по определению метрологических характеристик средств измерений объёма и уровня жидкости.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 6029.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель и правообладатель в документе «Описание типа ПУРС-М» — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5469.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать Описание типа UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 219.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Утверждение типа средства измерений ПУРС-М утверждено приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500. Срок действия утверждения не указан в представленном документе.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5457.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости»; Приказ Росстандарта от 30 декабря 2019 г. № 3459 «Об утверждении Государственной поверочной схемы для средств измерений уровня жидкости и сыпучих материалов».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 10064.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых объёмов жидкости: от 1 до 700 м³.\n- Диапазон объёмного расхода жидкости: от 6 до 30 м³/ч.\n- Пределы допускаемой относительной погрешности при измерении (воспроизведении единицы) объёма жидкости в потоке: ±0,15 %.\n- Диапазон измерений (воспроизведения) уровня жидкости: от 0,01 до 4 м.\n- Пределы допускаемой абсолютной погрешности установки при измерении уровня жидкости: ±1 мм.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 9575.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Избыточное давление жидкости: не более 1,6 МПа; - Температура жидкости: от +5 °С до +35 °С; - Диапазон объёмного расхода жидкости: от 6 м³/ч до 30 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5328.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Функции программного обеспечения установок ПУРС-М: \n* сбор, отображение и регистрация информации со средств измерений в ходе проведения калибровок и поверок; * выполнение математической обработки результатов измерений; * хранение и редактирование базы данных с параметрами поверяемых средств измерений и средств измерений установки; * генерация отчётов о результатах проведения калибровок и поверок средств измерений; * управление и контроль состояния исполнительных механизмов установки.\nВ программн",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 13952.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Установка поверочная передвижная ПУРС-М – 1 шт.; - Руководство по эксплуатации ПУРС-М.30.00.00.000 - 01 РЭ – 1 экз.; - Паспорт ПУРС-М.30.00.00.000 - 01 ПС – 1 экз.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 16699.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «Описание типа ПУРС-М» ссылается на следующие нормативные документы:\n* Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости»; * Приказ Росстандарта от 30 декабря 2019 г. № 3459 «Об утверждении Государственной поверочной схемы для средств измерений уровня жидкости и сыпучих материалов»; * ТУ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 11979.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Описание типа ПУРС-М» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500 Лист №?",
+      "expected_keys": [
+        "94896-25",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500. Лист № 1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 6693.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «Описание типа ПУРС-М» о: Лист № 2 Всего листов 6 Персональный компьютер (далее – ПК) с помощью ПО позволяет осуществлять управление установкой, к?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Персональный"
+      ],
+      "answer_preview": "Персональный компьютер с помощью ПО позволяет осуществлять управление установкой, контроль её параметров, хранение данных о поверяемых средствах измерений, результатов поверки, автоматическое формирование протоколов поверки.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 2082.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «Описание типа ПУРС-М» о: Лист № 3 Всего листов 6 Схема пломбировки от несанкционированного доступа, обозначение места нанесения знаков поверки пр?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Схема"
+      ],
+      "answer_preview": "На странице 3 документа «Описание типа ПУРС-М» указано следующее:\n* Схема пломбировки от несанкционированного доступа, обозначение места нанесения знаков поверки приведены на рисунке 2.\n* Заводской номер установки, состоящий из трёх арабских цифр, наносится на маркировочную табличку, закреплённую на корпусе установки, методом лазерной гравировки.\n* Обозначения мест нанесения знака утверждения типа и заводского номера представлены на рисунке 3.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 6691.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «Описание типа ПУРС-М» о: Лист № 4 Всего листов 6 Программное обеспечение Программное обеспечение установок автономное Функции программного обеспе?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Программное"
+      ],
+      "answer_preview": "Функции программного обеспечения установок ПУРС-М: \n* сбор, отображение и регистрирование информации со средств измерений в ходе проведения калибровок и поверок; * выполнение математической обработки результатов измерений; * хранение и редактирование базы данных с параметрами поверяемых средств измерений и средств измерений установки; * генерация отчётов о результатах проведения калибровок и поверок средств измерений; * управление и контроль состояния исполнительных механизмов установки.\nВ прогр",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 7271.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «Описание типа ПУРС-М» о: Лист № 5 Всего листов 6 1 2 Параметры электрического питания: – напряжение переменного тока, В (380 ± 38)/(220 ± 22) – ч?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Параметры"
+      ],
+      "answer_preview": "- Напряжение переменного тока, В: (380 ± 38)/(220 ± 22)\n- Частота переменного тока, Гц: 50±1",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 3945.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «Описание типа ПУРС-М» о: Лист № 6 Всего листов 6 Правообладатель Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турб?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Правообладатель"
+      ],
+      "answer_preview": "На странице 6 документа «Описание типа ПУРС-М» указано:\n- Правообладатель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).\n- ИНН правообладателя: 6141021685.\n- Юридический адрес: 129110, г. Москва, вн.тер.г. Мещанский, ул. Щепкина, д. 47, стр. 1, оф. V, ком. 11.\n- Телефон/факс: +7 (863) 203-77-80 / 203-77-81.\n- E-mail: info@turbo-don.ru.\n- Web-сайт: www.turbo-don.ru.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 13844.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 17,
+      "topic": "раздел",
+      "question": "Что описано в разделе «800 Масса, кг, не более 450» документа «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "800",
+        "Масса",
+        "450"
+      ],
+      "answer_preview": "Масса, кг, не более 450",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 9439.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 18,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 94896-25 и в каком контексте?",
+      "expected_keys": [
+        "94896-25",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 94896-25 упоминается на первой странице документа «Описание типа ПУРС-М» в разделе паспорт средства измерений.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5121.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 19,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 83374-21 и в каком контексте?",
+      "expected_keys": [
+        "83374-21",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В установке поверочной передвижной ПУРС-М в качестве средства измерений объёма жидкости в потоке применяется счётчик-расходомер массовый Turbo Flow CFM (регистрационный номер 83374-21).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5486.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 58711-14 и в каком контексте?",
+      "expected_keys": [
+        "58711-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 58711-14 упоминается в контексте использования системы измерительной «СТРУНА+» с первичным преобразователем параметров ППП1 в качестве средства измерений уровня жидкости.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5367.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 21,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 51409-12 и в каком контексте?",
+      "expected_keys": [
+        "51409-12",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 51409-12 упоминается в контексте средств измерений избыточного давления жидкости — датчики давления Turbo Flow PS.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5335.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 50519-17 и в каком контексте?",
+      "expected_keys": [
+        "50519-17",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 50519-11 упоминается в контексте средств измерений температуры жидкости — термопреобразователи универсальные ТПУ 0304/М3 -МВ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5387.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 47933-11 и в каком контексте?",
+      "expected_keys": [
+        "47933-11",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 47933-11 упоминается в контексте средств измерений температуры жидкости — термопреобразователи универсальные ТПУ 0304/М3 -МВ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 13024.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-М» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 10751.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 13 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "13",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет значения 13 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4970.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 2025 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "2025",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер средства измерений ПУРС-М — 94896-25.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4660.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 500 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "500",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер средства измерений ПУРС-М — 94896-25.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4692.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 94896 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "94896",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер 94896-25 указан в документе для установки поверочной передвижной ПУРС-М.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4835.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 25 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "25",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет характеристики с номером 25.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4740.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 83374 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "83374",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 83374 у средства измерений объёма жидкости в потоке — счётчики-расходомеры массовые Turbo Flow CFM.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5045.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 21 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "21",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет значения 21 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 1974.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 58711 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "58711",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 58711 указан для системы измерительной «СТРУНА+» с первичным преобразователем параметров ППП1, применяемой в качестве средства измерений уровня жидкости.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 9462.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 14 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "14",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых объёмов жидкости: от 1 до 700 м³; - диапазон объёмного расхода жидкости: от 6 до 30 м³/ч; - пределы допускаемой относительной погрешности при измерении (воспроизведении единицы) объёма жидкости в потоке: ±0,15 %; - диапазон измерений (воспроизведения) уровня жидкости: от 0,01 до 4 м; - пределы допускаемой абсолютной погрешности установки при измерении уровня жидкости: ±1 мм; - температура жидкости: от +5 до +35 °С; - избыточное давление жидкости: не более 1,6 МПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 7143.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 51409 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "51409",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 51409 указан для датчиков давления Turbo Flow PS.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 9785.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Средний срок службы установок поверочных передвижных ПУРС-М составляет 12 лет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4835.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 0304 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "0304",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет информации о характеристике с номером 0304.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 10694.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 50519 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "50519",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 50519 указан для термопреобразователей универсальных ТПУ 0304/М3 -МВ в качестве средства измерений температуры жидкости.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 8650.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 17 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "17",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет значения 17 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4773.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 804 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "804",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» указано, что плотномеры 804 применяются для измерения плотности жидкости. Других значений параметра 804 в контексте не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 9998.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 47933 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "47933",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» регистрационный номер 47933 указан для термопреобразователей универсальных ТПУ 0304/М3 -МВ в качестве средства измерений температуры жидкости.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5282.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет значения 11 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4824.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Диапазон воспроизводимых объёмов жидкости: от 1 до 700 м³.\nДиапазон объёмного расхода жидкости: от 6 до 30 м³/ч.\nПределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) установки при измерении (воспроизведении единицы) объёма жидкости в потоке: ±0,15 %.\nДиапазон измерений (воспроизведения) уровня жидкости: от 0,01 до 4 м.\nПределы допускаемой абсолютной погрешности установки при измерении уровня жидкости: ±1 мм.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 10768.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Уровень защиты программного обеспечения от преднамеренных и непреднамеренных изменений соответствует уровню «высокий» согласно Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5170.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-М» нет значения 077 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4725.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Уровень защиты программного обеспечения от преднамеренных и непреднамеренных изменений соответствует уровню «высокий» согласно Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5070.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Диапазон воспроизводимых объёмов жидкости: от 1 до 700 м³.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 1913.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 57605 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "57605",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Цифровой идентификатор программного обеспечения установок ПУРС-М — 0x57605D2C.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5046.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 48,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «Описание типа ПУРС-М»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО: 0x57605D2C.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4661.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Описание типа ПУРС-М» о приказе № 500?",
+      "expected_keys": [
+        "500",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 4917.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Описание типа ПУРС-М» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-М"
+      ],
+      "total_ms": 5680.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 41,
+  "source_file": "Описание типа ПУРС-М.pdf",
+  "product": "Описание типа ПУРС-М"
+}

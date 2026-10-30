@@ -1,0 +1,1571 @@
+{
+  "generated_at": "2026-07-07T16:52:10.153751+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 37,
+    "PARTIAL": 10,
+    "WRONG_TOPIC": 2,
+    "STUB_ONLY": 1
+  },
+  "bug_counts": {
+    "retrieval": 2,
+    "stub": 1
+  },
+  "accuracy_pct": 74.0,
+  "partial_pct": 20.0,
+  "bad_pct": 6.0,
+  "per_file": [
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "questions": 50,
+      "correct": 37,
+      "partial": 10,
+      "bad": 3,
+      "accuracy_pct": 74.0,
+      "retrieval_pct": 96.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ],
+        [
+          "retrieval",
+          2
+        ],
+        [
+          "stub",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какие сведения о программном обеспечении есть в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «СПУ-3М-100_Методика поверки_09.2015»?",
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #20): Документ: СПУ-3М-100 Методика",
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "СПУ-3М-100"
+      ],
+      "answer_preview": "Документ «СПУ-3М-100 Методика поверки 09.2015» предназначен для поверки прибора СПУ-3М-100.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3107.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100_Методика поверки_09.2015» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3939.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» регистрационный или сертификационный номер не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3844.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100_Методика поверки_09.2015» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2343.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки СПУ-3М-100 от 09.2015.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3539.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100_Методика поверки_09.2015» конкретные метрологические характеристики не приведены.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2065.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» технические характеристики (давление, температура, расход) не указаны.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1644.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://fgis.gost.ru/fundmetrology/cm/results",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 189.3,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» информации о комплекте поставки не содержится.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1737.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://fgis.gost.ru/fundmetrology/cm/results",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 238.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «СПУ-3М-100_Методика поверки_09.2015» о: Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.pdf. Продукт: СПУ-3М-100 Методи?",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "На странице 1 документа «СПУ-3М-100 Методика поверки 09.2015» содержится общая информация о методике поверки прибора СПУ-3М-100.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2485.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 12,
+      "topic": "значение",
+      "question": "Какое значение 100 и для какой характеристики указано в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "100",
+        "характеристик",
+        "СПУ-3М-100"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» значение 100 не указано для конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3707.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 09.2015 и для какой характеристики указано в документе «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "09,2015",
+        "характеристик",
+        "СПУ-3М-100"
+      ],
+      "answer_preview": "Дата документа: 09.2015.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2997.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 14,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» нет информации о применении продукции.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2204.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 15,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "Требования к поверке указаны в документе «СПУ-3М-100 Методика поверки 09.2015». Конкретные требования не перечислены в представленном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2462.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 16,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» требования безопасности не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2097.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 17,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о том, как наносится маркировка и знак утверждения типа в «СПУ-3М-100_Методика поверки_09.2015».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 4088.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 18,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» информация о гарантийных обязательствах не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3882.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 19,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» условия транспортирования и хранения не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1849.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 20,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» показатели надёжности (наработка, срок службы) не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 4010.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 21,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» интерфейсы связи не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3855.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 22,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе «СПУ-3М-100 Методика поверки 09.2015» информация о взрывозащите или степени защиты IP не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3958.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 23,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «СПУ-3М-100_Методика поверки_09.2015»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указан испытательный центр.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3119.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #1): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2128.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #2): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3313.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #3): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1977.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #4): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1321.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #5): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров и их значений в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2169.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #6): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2012.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #7): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1347.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #8): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров или значений в запросе #8.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2124.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #9): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 содержит общую информацию о методике поверки прибора СПУ-3М-100. Конкретные параметры или значения на странице 1 не указаны.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 4451.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #10): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2849.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #11): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит фактов по позиции №11.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1664.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #12): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 1134.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #13): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров с номерами #13.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3222.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #14): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров или значений в указанном фрагменте #14.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3346.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #15): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2934.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #16): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2986.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #17): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3502.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #18): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3384.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #19): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в запросе #19.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3411.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #20): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.pdf. Продукт: СПУ-3М-100 Методика поверки 09.2015. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 4958.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #21): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров или значений в указанном фрагменте #21.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3462.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #22): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 2582.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #23): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит фактов под номером #23.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3398.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #24): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3635.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #25): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных числовых параметров или значений в указанном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3481.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #26): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3004.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «СПУ-3М-100_Методика поверки_09.2015» (фрагмент стр. 1, #27): Документ: СПУ-3М-100 Методика поверки 09.2015. Файл: СПУ-3М-100_Методика поверки_09.2015.p",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "100"
+      ],
+      "answer_preview": "Документ: СПУ-3М-100 Методика поверки 09.2015, стр. 1 не содержит конкретных параметров в указанном фрагменте #27.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3326.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 57,
+  "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+  "product": "СПУ-3М-100 Методика поверки 09.2015"
+}

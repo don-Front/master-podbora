@@ -1,0 +1,1573 @@
+{
+  "generated_at": "2026-07-07T16:23:09.555313+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 39,
+    "HALLUCINATION": 3,
+    "PARTIAL": 8
+  },
+  "bug_counts": {
+    "hallucination": 3
+  },
+  "accuracy_pct": 78.0,
+  "partial_pct": 16.0,
+  "bad_pct": 6.0,
+  "per_file": [
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "questions": 50,
+      "correct": 39,
+      "partial": 8,
+      "bad": 3,
+      "accuracy_pct": 78.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          8
+        ],
+        [
+          "hallucination",
+          3
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какие метрологические характеристики приведены в документе «РЭ UFL_(акт)»?",
+      "source_file": "РЭ UFL_(акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 7 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность",
+      "source_file": "РЭ UFL_(акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Что указано на странице 27 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентност",
+      "source_file": "РЭ UFL_(акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Документ «РЭ UFL_(акт)» является руководством по эксплуатации для прибора Turbo Flow UFL. Он содержит информацию о работе с прибором, его органах управления, функциях и настройках. В частности, в нём описаны назначение кнопок, работа с экраном, параметры настройки и архивы, а также подключение к ПК через ПО \"АРМ \"UFG View\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 6678.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем указан ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 4874.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В маркировочной табличке №1 на расходомере Turbo Flow UFL указаны заводской номер и дата изготовления.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 7405.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «РЭ UFL_(акт)» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 7177.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В руководстве по эксплуатации Turbo Flow UFL упоминается поверка по расходу (стр. 104), тест сигнальных выходов (стр. 105), поверка канала измерения температуры (стр. 108), поверка канала измерения давления (стр. 109).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 11511.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «РЭ UFL_(акт)» метрологические характеристики расходомеров Turbo Flow UFL нормированы с учётом влияния программного обеспечения. Конкретные значения метрологических характеристик в предоставленных фрагментах не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 5736.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Диапазон измерений объёмного расхода: от 0,11 до 144764,58 м³/ч; - Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 45 МПа; - Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Пределы допускаемой основной приведённой к ВПИ погрешности измерений давления: ±0,25; ±0,5; - Диапазон измерений температуры: для исполнения Т0 — от 0 до +80 °С, для исполнения Т6 — от -45 до +80 °С, для исполнения Т5 — от -45 до +95 °С, для исполнения Т4 — от -45 до +130 °С, для и",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 21637.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «РЭ UFL_(акт)» содержатся следующие сведения о программном обеспечении Turbo Flow UFL:\n* Экранная форма «О программе» предназначена для просмотра сведений о программе, включая наименование, версию, год выпуска и назначение программного обеспечения ПО «АРМ \"UFG View\"».\n* Экранная форма «История изменений» позволяет просмотреть историю изменений, внесённых в ПО, и отобразить изменения текущей версии программы по сравнению с одной из её предыдущих версий. Данная ЭФ доступна не во всех и",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 11979.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В комплект поставки Turbo Flow UFL входят:\n* Расходомер-счётчик жидкости ультразвуковой Turbo Flow UFL – 1 шт.; * Руководство по эксплуатации ТУАС.407252.002 РЭ – 1 экз.; * Паспорт ТУАС.407252.002 ПС – 1 экз.; * Комплект монтажных частей (по заказу).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 6937.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ UFL_(акт)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «РЭ UFL_(акт)» ссылается на следующие стандарты и технические условия:\n* ГОСТ 31610.0-2014; * ГОСТ Р IEC 60079-1-2013; * ГОСТ 31610.11-2014; * ГОСТ 31610.18-2016; * ГОСТ 2991-85; * ГОСТ 10198-91; * ГОСТ Р 52931-2008; * ГОСТ 15150-69; * ГОСТ 24634-81; * ГОСТ 26828-86; * ГОСТ 33259-2015; * ГОСТ 9293-74.\n* ТУ 26.51.52-037-70670506-2023.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFL (акт)"
+      ],
+      "total_ms": 15360.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «РЭ UFL_(акт)» о: Расходомеры-счетчики жидкости ультразвуковые Turbo Flow UFL Руководство по эксплуатации ТУАС.407252.002 РЭ?",
+      "expected_keys": [
+        "Расходомеры-счетчики",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Расходомеры-счётчики жидкости ультразвуковые Turbo Flow UFL предназначены для измерений объёмного расхода и объёма жидкости, в том числе сжиженного газа, а также для вычислений массового расхода и массы жидкости.\n- Принцип работы основан на методе измерений разности между временем прохождения ультразвуковых импульсов по потоку и против потока жидкости.\n- В состав расходомера входят: преобразователь расхода ультразвуковой с установленными ультразвуковыми приёмо-передатчиками и электронный блок,",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 13203.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\" Содержание 1 ОПИСАНИЕ И РАБОТА .............?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В таблице 1 на странице 2 указаны исполнения расходомеров Turbo Flow UFL в зависимости от состава и выполняемых функций. Указано, что в расходомер могут входить (опционально) функции измерения температуры и давления, а также другие параметры. Также указано, что предусмотрены возможность замены приемопередатчиков под рабочим давлением без остановки потока, автоматическая самодиагностика, реверсивный режим измерений и другие функции.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 5873.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 3 ............................................?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "На странице 3 документа «2024-92051-24 ОТ UFL 2024» указаны рисунки, изображающие различные конструкции корпуса расходомера Turbo Flow UFL: круглого сечения с защитным кожухом, прямоугольного сечения с совмещёнными защитными крышками и выносной терминал (ВТ), а также расходомер с дублированием.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 4076.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 4 ООО НПО \"Турбулентность – ДОН\" Настоящее руководство по эксплуа тации ( дал?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "На странице 4 документа «2024-92051-24 ОТ UFL 2024» о Turbo Flow UFL приведены рисунки с маркировочной табличкой расходомеров – счётчиков Turbo Flow UFL (вид сверху и сбоку), схемы пломбировки от несанкционированного доступа, обозначение мест нанесения знаков поверки. Также указано, что программное обеспечение расходомеров является встроенным, преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 6722.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 5 1 Описание и работа 1.1 Назначение 1.1.1 Рас?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "На странице 5 документа «2024-92051-24 ОТ UFL 2024» о Turbo Flow UFL указано следующее:\n* Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО.\n* Программное обеспечение разделено на метрологически значимую и метрологически незначимую части.\n* Уровень защиты программного обеспечения расходомеров от преднамеренных и непредумышленных изменений — «высокий» в соответствии с Р 50.2.077-2014.\n* Идентификационные данные ПО: идентификационно",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 13226.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 6 ООО НПО \"Турбулентность – ДОН\" Программное обеспечение разделено на: - метр?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В документе на странице 6 о Turbo Flow UFL не указано ничего о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 2550.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 7 1.2 Устройство и работа 1.2.1 Функциональная?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Степень защиты по ГОСТ 14254-2015: IP 65; - маркировка взрывозащиты: 1Ex db [ia Ga] IIC T6…T1 Gb X; - параметры электрического питания от встроенной батареи: 3,6 В; - параметры электрического питания от внешнего блока питания: от 12 до 30 В; - параметры электрического питания от внешнего источника питания: от 187 до 242 В; - потребляемая мощность постоянный ток, Вт, не более: 10; - потребляемая мощность переменный ток, В·А, не более: 10; - условия эксплуатации температура окружающего воздуха д",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 14127.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 8 ООО НПО \"Турбулентность – ДОН\" Для возможности дистанционного считывания ин?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "На странице 8 документа «2024-92051-24 ОТ UFL 2024» указаны следующие сведения о Turbo Flow UFL:\n* нормативные и технические документы, устанавливающие требования к средству измерений — Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости»; ТУ 26.51.52 -037-70670506-2023 Расходомеры – счётчики жидко",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 9978.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 9 Массовый расход 𝑄𝑚 = 𝑄𝑣 ∙ 𝜌 , где 𝜌 – плотно?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 9 документа «РЭ UFL_(акт)» информации нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 1227.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 10 ООО НПО \"Турбулентность – ДОН\" Рисунок 1.4 – Сигнал с выхода оконечного ус?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В предоставленных документах нет информации на странице 10 документа «РЭ UFL_(акт)» о Turbo Flow UFL Руководство по эксплуатации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 8591.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 11 1.3 Основные характеристики 1.3.1 Основные ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 11 документа «РЭ UFL_(акт)».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 15877.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 12 ООО НПО \"Турбулентность – ДОН\" Таблица 1.2 – Основные технические характер?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 12 документа «РЭ UFL_(акт)» о руководстве по эксплуатации для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 8148.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 13 1.4 Обеспечение взрывозащищенности 1.4.1 Вз?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 13 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" в разделе 1.4 «Обеспечение взрывозащищенности» 1.4.1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18185.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 14 ООО НПО \"Турбулентность – ДОН\" 1.5 Маркировка и пломбирование 1.5.1 Маркир?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 14 документа «РЭ UFL_(акт)» о Turbo Flow UFL Руководство по эксплуатации 14 ООО НПО \"Турбулентность – ДОН\" 1.5 Маркировка и пломбирование 1.5.1 Маркир.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 17629.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 15 Эксплуатационная документация и упаковочный?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 15 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16827.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 16 ООО НПО \"Турбулентность – ДОН\" Питание преобразователя температуры и давле?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 16 документа «РЭ UFL_(акт)» о питании преобразователя температуры и давления для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16590.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 17 1.7.2.7 Конвертор Данное устройство подключ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 17 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 17722.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 18 ООО НПО \"Турбулентность – ДОН\" 2 Использование по назначению 2.1 Меры безо?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 18 документа «РЭ UFL_(акт)».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18804.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 19 2.2 Эксплуатационные ограничения 2.2.1 Монт?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 19 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 19488.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 20 ООО НПО \"Турбулентность – ДОН\" 2.3 Сигнальные выходы 2.3.1 Общая информаци?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 20 документа «РЭ UFL_(акт)» о Turbo Flow UFL Руководство по эксплуатации 20 ООО НПО \"Турбулентность – ДОН\" 2.3 Сигнальные выходы 2.3.1 Общая информация.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18601.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 21 выхода\" (Рисунок 2.3). Рисунок 2.3 – Настро?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 21 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 17126.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 22 ООО НПО \"Турбулентность – ДОН\" информация о прямом расходе. Для включения ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 22 документа «РЭ UFL_(акт)» о прямом расходе для включения для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16360.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 23 однако не может превышать 5000 Гц. В случае?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте на странице 23 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL нет информации.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16418.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 24 ООО НПО \"Турбулентность – ДОН\" Дальнейшие настройки импульсных выходов нах?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В предоставленных документах нет информации на странице 24 в руководстве по эксплуатации для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16106.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 25 Рисунок 2.8в – Настройка дискретного выхода?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о содержании страницы 25 документа «РЭ UFL_(акт)» из Руководства по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 2346.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 26 ООО НПО \"Турбулентность – ДОН\" 2.3.5.1 Основной интерфейс RS-485 Основной ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 26 документа «РЭ UFL_(акт)».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 15588.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 27 Рисунок 2.12 – Несколько расходомеров на од?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 27 документа «РЭ UFL_(акт)» о рисунке 2.12 и о нескольких расходомерах на нём.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 15969.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 28 ООО НПО \"Турбулентность – ДОН\" Рисунок 2.14 – Возможные скорости работы RS?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 28 документа «РЭ UFL_(акт)» о возможных скоростях работы RS для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16271.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 29 2.4 Выбор кабеля питания и связи Питание ос?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 29 документа «РЭ UFL_(акт)» о выборе кабеля питания и связи для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16521.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 30 ООО НПО \"Турбулентность – ДОН\" Данный кабель предназначен для передачи дан?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте на странице 30 документа «РЭ UFL_(акт)» о Turbo Flow UFL Руководство по эксплуатации нет информации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16435.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 31 2.5 Рекомендации по монтажу 2.5.1 Для исклю?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 31 документа «РЭ UFL_(акт)» о руководстве по эксплуатации Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16778.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 32 ООО НПО \"Турбулентность – ДОН\" Рис.2.15 - Рекомендуемые места установки ра?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 32 документа «РЭ UFL_(акт)» о рекомендуемых местах установки расходомеров Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 19066.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 33 – визуально проверить состояние контакт ов ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 33 документа «РЭ UFL_(акт)» о проверке состояния контактов.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18663.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 34 ООО НПО \"Турбулентность – ДОН\" 1) ПЕРЕД НАЧАЛОМ СВАРОЧНЫХ РАБОТ НЕОБХОДИ М?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 34 документа «РЭ UFL_(акт)» о том, что необходимо сделать перед началом сварочных работ для Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 17729.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 35 2.8 Работа с ЭБ 2.8.1 Органы управления и Ж?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 35 документа «РЭ UFL_(акт)».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 15098.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 36 ООО НПО \"Турбулентность – ДОН\" – \"5\" - ожидание входящих соединений; – \"6\"?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 36 документа «РЭ UFL_(акт)» о Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16074.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 37 – давление абсолютное (Ра), кПа; – давление?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 37 документа «РЭ UFL_(акт)».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 15637.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 38 ООО НПО \"Турбулентность – ДОН\" – скорость потока (Vпот), м/с; – скорость з?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 38 документа «РЭ UFL_(акт)» о Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16086.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 49,
+      "topic": "стр.39",
+      "question": "Что указано на странице 39 документа «РЭ UFL_(акт)» о: Руководство по эксплуатации Turbo Flow UFL ООО НПО \"Турбулентность – ДОН\" 39 – нештатные ситуации (Код НС); – флаги собы?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленных документах нет информации на странице 39.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 14488.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFL_(акт).pdf",
+      "id": 50,
+      "topic": "стр.40",
+      "question": "Что указано на странице 40 документа «РЭ UFL_(акт)» о: Turbo Flow UFL Руководство по эксплуатации 40 ООО НПО \"Турбулентность – ДОН\" – суммарный прямой объем (Vраб), м3; – сумм?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFL"
+      ],
+      "answer_preview": "В представленном контексте нет информации о суммарном прямом объёме ($V_{раб}$, $м^3$) для Turbo Flow UFL на странице 40 документа «РЭ UFL_(акт)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 1977.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 51,
+  "source_file": "РЭ UFL_(акт).pdf",
+  "product": "Turbo Flow UFL"
+}

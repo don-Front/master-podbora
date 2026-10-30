@@ -1,0 +1,639 @@
+{
+  "generated_at": "2026-07-14T11:28:32.583139+00:00",
+  "total_files": 62,
+  "processed_ok": 61,
+  "excluded_non_ol": [
+    "перечень вопросов.docx"
+  ],
+  "initial_audit_avg_pct": 84.6,
+  "delta_vs_initial_pct": 11.5,
+  "avg_accuracy_pct": 96.1,
+  "median_accuracy_pct": 100.0,
+  "low_ocr_files": [],
+  "field_problem_stats": {
+    "medium": {
+      "wrong": 0,
+      "bot_missing": 0,
+      "bot_extra": 1,
+      "checked": 35
+    },
+    "gas_type": {
+      "wrong": 0,
+      "bot_missing": 0,
+      "bot_extra": 0,
+      "checked": 22
+    },
+    "duplication_type": {
+      "wrong": 0,
+      "bot_missing": 0,
+      "bot_extra": 0,
+      "checked": 4
+    },
+    "flowMin": {
+      "wrong": 5,
+      "bot_missing": 0,
+      "bot_extra": 2,
+      "checked": 16
+    },
+    "flowMax": {
+      "wrong": 5,
+      "bot_missing": 0,
+      "bot_extra": 0,
+      "checked": 17
+    },
+    "flow_unit": {
+      "wrong": 2,
+      "bot_missing": 0,
+      "bot_extra": 0,
+      "checked": 17
+    },
+    "pressureMin": {
+      "wrong": 0,
+      "bot_missing": 2,
+      "bot_extra": 3,
+      "checked": 16
+    },
+    "pressureMax": {
+      "wrong": 1,
+      "bot_missing": 0,
+      "bot_extra": 4,
+      "checked": 15
+    },
+    "pressure_unit": {
+      "wrong": 0,
+      "bot_missing": 0,
+      "bot_extra": 4,
+      "checked": 16
+    },
+    "tempMediumMin": {
+      "wrong": 2,
+      "bot_missing": 0,
+      "bot_extra": 1,
+      "checked": 14
+    },
+    "tempMediumMax": {
+      "wrong": 3,
+      "bot_missing": 1,
+      "bot_extra": 0,
+      "checked": 14
+    },
+    "tempAmbientMin": {
+      "wrong": 1,
+      "bot_missing": 0,
+      "bot_extra": 2,
+      "checked": 14
+    },
+    "tempAmbientMax": {
+      "wrong": 2,
+      "bot_missing": 1,
+      "bot_extra": 2,
+      "checked": 12
+    },
+    "temperature_unit": {
+      "wrong": 0,
+      "bot_missing": 0,
+      "bot_extra": 3,
+      "checked": 16
+    },
+    "accuracy": {
+      "wrong": 4,
+      "bot_missing": 0,
+      "bot_extra": 0,
+      "checked": 18
+    },
+    "diameter": {
+      "wrong": 3,
+      "bot_missing": 0,
+      "bot_extra": 1,
+      "checked": 18
+    }
+  },
+  "worst_files": [
+    {
+      "file": "6120.001.П.0_0.0001-МЕО.УИРГ.ОЛ.PDF",
+      "accuracy_pct": 66.7,
+      "mismatches": 5,
+      "bot_missing": 0
+    },
+    {
+      "file": "Опросники\\TFG\\ОЛ Вектор подписанный.pdf",
+      "accuracy_pct": 71.4,
+      "mismatches": 3,
+      "bot_missing": 1
+    },
+    {
+      "file": "Опросники\\UFG\\Z958957_ОЛ.pdf",
+      "accuracy_pct": 77.8,
+      "mismatches": 1,
+      "bot_missing": 1
+    },
+    {
+      "file": "Опросники\\UFG\\1100487960000010_ОЛ.pdf",
+      "accuracy_pct": 78.6,
+      "mismatches": 3,
+      "bot_missing": 0
+    },
+    {
+      "file": "ОЛ CFM.pdf",
+      "accuracy_pct": 81.8,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист (6).pdf",
+      "accuracy_pct": 84.6,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ_1.pdf",
+      "accuracy_pct": 84.6,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "Опросники\\UFL\\Опросный лист (2).pdf",
+      "accuracy_pct": 85.7,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "UFL (1).docx",
+      "accuracy_pct": 86.7,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "UFL.docx",
+      "accuracy_pct": 86.7,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист (4).pdf",
+      "accuracy_pct": 86.7,
+      "mismatches": 1,
+      "bot_missing": 1
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ 21810 (100070173617 ГРС Железногорск) согласовано.pdf",
+      "accuracy_pct": 87.5,
+      "mismatches": 2,
+      "bot_missing": 0
+    },
+    {
+      "file": "тендер.PDF",
+      "accuracy_pct": 88.9,
+      "mismatches": 1,
+      "bot_missing": 0
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист_подписан ОВЛ.pdf",
+      "accuracy_pct": 93.3,
+      "mismatches": 0,
+      "bot_missing": 1
+    },
+    {
+      "file": "DN400 - 1,6.pdf",
+      "accuracy_pct": 100.0,
+      "mismatches": 0,
+      "bot_missing": 0
+    }
+  ],
+  "files": [
+    {
+      "file": "6120.001.П.0_0.0001-МЕО.УИРГ.ОЛ.PDF",
+      "accuracy_pct": 66.7,
+      "ocr_chars": 13671,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "DN400 - 1,6.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 2544,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "UFL (1).docx",
+      "accuracy_pct": 86.7,
+      "ocr_chars": 6428,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "UFL.docx",
+      "accuracy_pct": 86.7,
+      "ocr_chars": 6428,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "ОЛ CFM.pdf",
+      "accuracy_pct": 81.8,
+      "ocr_chars": 8731,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\doc12380920231128083016.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4952,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11444 ANSI600.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3376,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11445 ANSI600.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3331,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11446 ANSI600.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3386,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11448 ANSI600.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3419,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11449 ANSI600.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3313,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11450 ANSI600.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3423,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\CFM\\ОЛ 11750 подписан.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 2950,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\2 ОЛ согласованные.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 8740,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\24892.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3546,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc13736620250704121531.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5457,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc14253420260121064736.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5732,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc14253520260121064800.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5825,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc14253620260121064825.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5849,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc14253720260121064849.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5771,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc14304620250402081846.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4328,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc15167120250820172619.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4687,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc15804320251208143347.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4387,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc15893620260119164310.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4475,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc16125520260618081644.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4424,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\doc16125920260618082130.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4491,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\ОЛ TFG DN25 PN100 основной замер.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5386,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\ОЛ Вектор подписанный.pdf",
+      "accuracy_pct": 71.4,
+      "ocr_chars": 5328,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист (25219) подписанный.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4256,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист (4).pdf",
+      "accuracy_pct": 86.7,
+      "ocr_chars": 5655,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист (5).pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4961,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист (6).pdf",
+      "accuracy_pct": 84.6,
+      "ocr_chars": 4988,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\TFG\\Опросный лист_подписан ОВЛ.pdf",
+      "accuracy_pct": 93.3,
+      "ocr_chars": 4891,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\1100452033000010.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 7142,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\1100487960000010_ОЛ.pdf",
+      "accuracy_pct": 78.6,
+      "ocr_chars": 14335,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\18762.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 1011,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\20246.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 698,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\20249.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 946,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\85-89  ОЛ 07.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5441,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12379520231127161452.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5206,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12379620231127161715.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5020,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12379720231127161831.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5057,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12586420240115110359.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5007,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12703720240209161814.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 4801,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12909320240404164147.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 1949,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\doc12938620240410162945.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 2041,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\Z958957_ОЛ.pdf",
+      "accuracy_pct": 77.8,
+      "ocr_chars": 2089,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ 19755 Ду300 Вознесенское (подп) (2).pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3212,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ 19758 Ду100 Вознесенское (подп) (2).pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3351,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ 21810 (100070173617 ГРС Железногорск) согласовано.pdf",
+      "accuracy_pct": 87.5,
+      "ocr_chars": 10984,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ(Изм.2) DN100 Поляна+подписанный.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3334,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ(Изм.2) DN100 Шаран+подписанный.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 3412,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFG\\ОЛ_1.pdf",
+      "accuracy_pct": 84.6,
+      "ocr_chars": 12634,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\doc15076220250806152213.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 6912,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\doc15187820250825131403.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 7024,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\doc15353020250922092331.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 5356,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\doc15669120251114144130.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 7025,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\doc16119320260611084721.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 6250,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\doc16119720260611110324.pdf",
+      "accuracy_pct": 100.0,
+      "ocr_chars": 6339,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "Опросники\\UFL\\Опросный лист (2).pdf",
+      "accuracy_pct": 85.7,
+      "ocr_chars": 11522,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "перечень вопросов.docx",
+      "accuracy_pct": 50.0,
+      "ocr_chars": 3908,
+      "error": null,
+      "warning": null
+    },
+    {
+      "file": "тендер.PDF",
+      "accuracy_pct": 88.9,
+      "ocr_chars": 4438,
+      "error": null,
+      "warning": null
+    }
+  ]
+}

@@ -1,0 +1,1793 @@
+{
+  "generated_at": "2026-07-07T13:13:00.419282+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "PARTIAL": 12,
+    "CORRECT": 13,
+    "STUB_ONLY": 25
+  },
+  "bug_counts": {
+    "stub": 25
+  },
+  "accuracy_pct": 26.0,
+  "partial_pct": 24.0,
+  "bad_pct": 50.0,
+  "per_file": [
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "questions": 50,
+      "correct": 13,
+      "partial": 12,
+      "bad": 25,
+      "accuracy_pct": 26.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "stub",
+          25
+        ],
+        [
+          "partial",
+          12
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #1): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #2): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #3): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #4): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #5): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #6): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #7): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #8): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #9): Документ: МП-2022-47370-11. Файл: МП-2022-47370-1",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #10): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #11): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #12): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #13): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #14): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #15): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #16): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #17): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #18): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #19): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #20): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #21): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #22): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #23): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #24): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #25): Документ: МП-2022-47370-11. Файл: МП-2022-47370-",
+      "source_file": "МП-2022-47370-11.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП-2022-47370-11"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «МП-2022-47370-11»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "МП-2022-4737"
+      ],
+      "answer_preview": "Документ «МП-2022-47370-11» является паспортом продукта МП-2022-47370-11.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2710.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2071.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "МП-2022-47370-11",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2000.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» информация о сроке действия утверждения типа или сертификата отсутствует.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2156.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе МП-2022-47370-11 нет информации о методике поверки или нормативном документе.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2140.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» конкретные метрологические характеристики не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2205.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе не указаны конкретные технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1906.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 956.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «МП-2022-47370-11»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно «МП-2022-47370-11».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1030.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «МП-2022-47370-11»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» нет информации о ссылках на приказы, ГОСТ или ТУ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2271.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «МП-2022-47370-11» о: Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип документа: passport. Вид: manual.?",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "На странице 1 документа «МП-2022-47370-11» указан тип информации — passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2369.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 12,
+      "topic": "рег.номер",
+      "question": "Где в документе «МП-2022-47370-11» упоминается регистрационный номер 47370-11 и в каком контексте?",
+      "expected_keys": [
+        "47370-11",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 47370-11 упоминается в документе МП-2022-47370-11 на странице 1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2284.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 2022 и для какой характеристики указано в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "2022",
+        "характеристик",
+        "МП-2022-47"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» значение 2022 не связано с конкретной характеристикой продукта.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2389.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 47370 и для какой характеристики указано в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "47370",
+        "характеристик",
+        "МП-2022-47"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» значение 47370 не расшифровано.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2165.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 11. и для какой характеристики указано в документе «МП-2022-47370-11»?",
+      "expected_keys": [
+        "11,",
+        "характеристик",
+        "МП-2022-47"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» значение 11 не указано для конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2043.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 16,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «МП-2022-47370-11»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» информация о применении продукции не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2203.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 17,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе не указаны требования к поверке.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1672.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 18,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе «МП-2022-47370-11» информация о требованиях безопасности не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 919.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 19,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В документе нет информации о том, как наносится маркировка и знак утверждения типа в «МП-2022-47370-11».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1325.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 20,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе МП-2022-47370-11 гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2138.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 21,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения продукта МП-2022-47370-11.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2166.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 22,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе МП-2022-47370-11 показатели надёжности (наработка, срок службы) не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2195.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 23,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе МП-2022-47370-11 информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2155.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 24,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1760.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 25,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «МП-2022-47370-11»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе МП-2022-47370-11 информация об испытательном центре не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1930.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #1): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3022.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #2): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3033.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #3): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3125.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #4): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nТип документа: passport",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2439.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #5): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1669.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #6): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1905.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #7): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1682.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #8): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1677.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #9): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1667.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #10): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1685.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #11): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1696.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #12): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1883.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #13): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 4610.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #14): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3121.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #15): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2956.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #16): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3047.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #17): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3310.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #18): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 3482.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #19): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1781.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #20): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1668.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #21): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2754.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #22): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2777.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #23): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2877.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #24): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 1737.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП-2022-47370-11.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП-2022-47370-11» (фрагмент стр. 1, #25): Документ: МП-2022-47370-11. Файл: МП-2022-47370-11.pdf. Продукт: МП-2022-47370-11. Тип док",
+      "expected_keys": [
+        "47370-11",
+        "Документ",
+        "МП-"
+      ],
+      "answer_preview": "Документ: МП-2022-47370-11\nФайл: МП-2022-47370-11.pdf\nПродукт: МП-2022-47370-11\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП-2022-47370-11"
+      ],
+      "total_ms": 2704.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 19,
+  "source_file": "МП-2022-47370-11.pdf",
+  "product": "МП-2022-47370-11"
+}

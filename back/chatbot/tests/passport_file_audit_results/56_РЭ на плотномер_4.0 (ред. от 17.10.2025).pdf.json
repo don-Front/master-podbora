@@ -1,0 +1,1633 @@
+{
+  "generated_at": "2026-07-07T16:47:16.207865+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 11,
+    "PARTIAL": 30,
+    "WRONG_TOPIC": 9
+  },
+  "bug_counts": {
+    "retrieval": 9
+  },
+  "accuracy_pct": 22.0,
+  "partial_pct": 60.0,
+  "bad_pct": 18.0,
+  "per_file": [
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "questions": 50,
+      "correct": 11,
+      "partial": 30,
+      "bad": 9,
+      "accuracy_pct": 22.0,
+      "retrieval_pct": 22.0,
+      "top_bugs": [
+        [
+          "partial",
+          30
+        ],
+        [
+          "retrieval",
+          9
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 8 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуат",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 9 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 15 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flo",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 17 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flo",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 27 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flo",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 30 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуа",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 33 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flo",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 36 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуа",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 39 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flo",
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "РЭ"
+      ],
+      "answer_preview": "Руководство по эксплуатации плотномера 4.0 предназначено для ознакомления с работой прибора и содержит информацию о его настройке, использовании и просмотре данных. В частности, в нём описаны функции записи и архивирования данных, работа с ПО «АРМ \"UFG View\"», управление настройками программы и другие аспекты использования плотномера.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 6512.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем указан ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 5600.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Заводской номер и дата изготовления указаны на маркировочной табличке №1 плотномера.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 5795.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указано срока действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 4551.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки плотномеров Turbo Flow UDM указана в документе МП 2302-0003-2022 «Преобразователи плотности газа Turbo Flow UDM. Методика поверки», утверждённому ФГУП «ВНИИМ» 12.04.2022 г.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 9008.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» приведены следующие метрологические характеристики:\n- Диапазоны измерений плотности газа в рабочих условиях: от 0,14 до 350,00 кг/м³; от 0,42 кг/м³ до 350,00; от 0,48 до 3,50 кг/м³.\n- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях: ±0,3; ±0,5 во всём диапазоне измерений плотности газа; ±0,14 только в поддиапазоне измерений; ±1,5 во всём диапазоне измерений плотности газа.\n- Пределы допускаемой относ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 12842.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Диапазон измерений плотности газа в рабочих условиях для модификации UDM-B и UDM-I исполнение S: от 0,14 до 350,00 кг/м³.\n- Для модификации UDM-I исполнение H диапазон измерений плотности газа в рабочих условиях: от 0,42 кг/м³ до 350,00 и от 0,48 до 3,50 кг/м³.\n- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях: ±0,3; ±0,5 во всём диапазоне измерений плотности газа (для модификации UDM-B и UDM-I исполнение S); ±0,14 при условии измерений температуры газ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 20645.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "- Наименование, версия, год выпуска и назначение программного обеспечения ПО «АРМ \"UFG View\"».\n- История изменений текущей версии программы по сравнению с предыдущими версиями.\n- Настройки блютуз (включён/выключен).\n- Сведения об устройстве для его идентификации.\n- Параметры настройки времени на ведомых устройствах.\n- Элементы управления для сбора и записи значений параметров в файл.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 11481.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Преобразователь плотности UDM Turbo Flow UDM – 1 шт.\n- Руководство по эксплуатации ТУАС.413161.001 РЭ – 1 шт. (по заказу)\n- Паспорт ТУАС.413161.001 ПС – 1 шт.\n- Копия методики поверки – 1 шт. (по заказу)\n- Комплект монтажных частей – 1 шт. (по заказу)\n- ПО ПК конфигурирования (компакт-диск или Flash-накопитель) – 1 шт. (по заказу)\n- Система кабельных соединений – 1 шт. (по заказу)",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 12135.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ на плотномер_4.0 (ред. от 17.10.2025)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "- ТУ 26.51.52-033-70670506-2021; - ГОСТ 23170; - ГОСТ 21140.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 3191.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Преобразователи плотности газа Turbo Flow UDM Руководство по эксплуатации ТУАС. 413161.001 РЭ?",
+      "expected_keys": [
+        "Преобразователи",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Преобразователи плотности газа Turbo Flow UDM \nРуководство по эксплуатации ТУАС. 413161.001 РЭ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+      ],
+      "total_ms": 2256.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\" Содержание .................................?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» или «Turbo Flow UDM Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\"».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3535.0,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 3 ПРИЛОЖЕНИЕ Л ...............................?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" приложение Л.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5243.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 4 ООО НПО \"Турбулентность – ДОН\" Настоящее руководство по эксплуа тации ( РЭ)?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» или «Turbo Flow UDM Руководство по эксплуатации 4 ООО НПО \"Турбулентность – ДОН\"».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5651.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 5 1 Описание и работа 1.1 Назначение 1.1.1 Нас?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1495.1,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 6 ООО НПО \"Турбулентность – ДОН\" способом «закрытый байпас». Информацию о тек?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном документе нет информации о «РЭ на плотномер_4.0 (ред. от 17.10.2025)», «Turbo Flow UDM Руководство по эксплуатации» или способе «закрытый байпас».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2485.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 7 1.2 Технические характеристики 1.2.1 Основны?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН», в том числе технических характеристик на странице 7 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2883.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 8 ООО НПО \"Турбулентность – ДОН\" Наименование характеристики Значение UDM-B U?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о характеристиках UDM-B U из документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5677.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 9 выборе класса точности плотномера газа, рабо?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе такой информации нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3421.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 10 ООО НПО \"Турбулентность – ДОН\" 1.3 Устройство и работа 1.3.1 Конструкция П?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации «Turbo Flow UDM» от ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2634.7,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 11 Рисунок 1б – Общий вид преобразователей пло?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН», рисунке 1б и его содержании нет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1696.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 12 ООО НПО \"Турбулентность – ДОН\" Flow UDM-В требует применения внешнего прео?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» или о руководстве по эксплуатации для Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4997.2,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 13 1.5 Маркировка и пломбирование 1.5.1 Маркир?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН», включая раздел 1.5 «Маркировка и пломбирование», нет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5002.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 14 ООО НПО \"Турбулентность – ДОН\" тип номинальной статической характеристики ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации для Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4832.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 15 1.7 Комплектность 1.7.1 Комплект поставки п?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о странице 15 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и его содержании не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5047.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 16 ООО НПО \"Турбулентность – ДОН\" 2 Использование по назначению 2.1 Меры безо?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 16 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и о руководстве по эксплуатации Turbo Flow UDM от ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5417.2,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 17 2.2 Эксплуатационные ограничения 2.2.1 Монт?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о странице 17 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и его содержании нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5030.8,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 18 ООО НПО \"Турбулентность – ДОН\" ВНИМАНИЕ! ВСЕ ПОДКЛЮЧЕНИЕ ПЛОТНОМЕР А ПРОИЗ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» или «Turbo Flow UDM Руководство по эксплуатации».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5018.1,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 19 +I -I +- I Источник ЭДС от 12 до 24 В Rн Ри?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН» и параметрах источника ЭДС от 12 до 24 В Rн Ри на странице 19 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3386.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 20 ООО НПО \"Турбулентность – ДОН\" 𝐼 = ((𝐼𝑚𝑎𝑥 − 𝐼0)∙ 𝜌изм 𝜌𝑚𝑎𝑥 ) + 𝐼0, (2.1) г?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте информации о странице 20 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и параметрах Turbo Flow UDM не содержится.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5215.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 21 Рисунок 2.5 – Настройка частотныех выходов ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН», рисунок 2.5 — «Настройка частотных выходов».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4694.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 22 ООО НПО \"Турбулентность – ДОН\" выхода\" предназначены для калибровки ча сто?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о руководстве по эксплуатации «Turbo Flow UDM» и его параметрах для калибровки.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3887.0,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 23 зарезервированы для внутренних нужд и испол?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5269.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 24 ООО НПО \"Турбулентность – ДОН\" и GND RS2 необходимо подать напряжение от 5?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и о Turbo Flow UDM Руководство по эксплуатации 24 ООО НПО \"Турбулентность – ДОН\" и GND RS2.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5806.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 25 приведена на рисунке 2.9. При организации э?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 25 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5578.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 26 ООО НПО \"Турбулентность – ДОН\" 2.4.1 Распределительные коробки с кабельным?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации для Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5109.9,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 27 Характеристики: OOO «ЗАВОД ГОРЭЛТЕХ» ЩОРВА1?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и характеристиках OOO «ЗАВОД ГОРЭЛТЕХ» ЩОРВА1.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5285.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 28 ООО НПО \"Турбулентность – ДОН\" 1 КОВTBЛ1МGНК (A), (Г) - (2 шт) кабельный в?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте информации о странице 28 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации для Turbo Flow UDM нет.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5317.0,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 29 2.5.6 Установка плотномера на линию трубопр?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН», в том числе о процедуре установки плотномера на линию трубопровода.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4807.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 30 ООО НПО \"Турбулентность – ДОН\" 2.5.6.4 В системе отбора газовой пробы испо?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 30 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и о системе отбора газовой пробы в руководстве по эксплуатации 2.5.6.4 ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5550.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 31 2.5.6.6 Процедура установки плотномера UDM-?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН» и процедуре установки плотномера UDM.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4572.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 32 ООО НПО \"Турбулентность – ДОН\" 1 – вычислительный модуль плотномера, 2 – и?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации для Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5117.1,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 33 Рисунок 2.12 – Погружной плотномер UDM-I (р?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о руководстве по эксплуатации «РЭ на плотномер_4.0» и рисунке 2.12 – погружной плотномер UDM-I.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4989.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 34 ООО НПО \"Турбулентность – ДОН\" – выполнить спуск давления на участке трубо?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 34 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации для Turbo Flow UDM от ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5801.1,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 35 2.6 Подключение плотномера 2.6.1 Монтаж сое?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 35 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5537.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 36 ООО НПО \"Турбулентность – ДОН\" 2.7 Пуск плотномера 2.7.1 Перед пуском плот?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и его содержании на странице 36.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5070.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 37 2.8 Работа с ЭБ 2.8.1 Органы управления и Ж?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 37 о руководстве по эксплуатации Turbo Flow UDM ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4586.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 38 ООО НПО \"Турбулентность – ДОН\" – \"*\" - прибор оснащен модулем блютуз (в да?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте информации о приборе Turbo Flow UDM и его модуле блютуз не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3894.7,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 49,
+      "topic": "стр.39",
+      "question": "Что указано на странице 39 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Руководство по эксплуатации Turbo Flow UDM ООО НПО \"Турбулентность – ДОН\" 39 – температура газа (T), K; – давление абсол?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о параметрах температуры газа (T) и давления абсолютного для плотномера 4.0 РЭ на плотномер_4.0 (ред. от 17.10.2025) ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2755.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "id": 50,
+      "topic": "стр.40",
+      "question": "Что указано на странице 40 документа «РЭ на плотномер_4.0 (ред. от 17.10.2025)» о: Turbo Flow UDM Руководство по эксплуатации 40 ООО НПО \"Турбулентность – ДОН\" – давление избыточное (Ри), кПа; – коэффици?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UDM"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ на плотномер_4.0 (ред. от 17.10.2025)» и руководстве по эксплуатации для Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 6648.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 55,
+  "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+  "product": "РЭ на плотномер 4.0 (ред. от 17.10.2025)"
+}

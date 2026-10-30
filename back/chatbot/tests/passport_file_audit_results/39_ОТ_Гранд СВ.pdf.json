@@ -1,0 +1,1535 @@
+{
+  "generated_at": "2026-07-07T15:18:50.685454+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 40,
+    "PARTIAL": 10
+  },
+  "bug_counts": {},
+  "accuracy_pct": 80.0,
+  "partial_pct": 20.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "questions": 50,
+      "correct": 40,
+      "partial": 10,
+      "bad": 0,
+      "accuracy_pct": 80.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ОТ"
+      ],
+      "answer_preview": "Документ «ОТ_Гранд СВ» предназначен для продукта ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 11972.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем или правообладателем в документе «ОТ_Гранд СВ» не указано.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 1077.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 1253.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «ОТ_Гранд СВ» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 1527.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» нет информации о методике поверки или нормативном документе.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2592.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «ОТ_Гранд СВ» метрологические характеристики не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2506.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе не указаны конкретные технические характеристики, такие как давление, температура и расход для продукта ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2420.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «ОТ_Гранд СВ» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 1281.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» информация о комплекте поставки отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2215.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте нет информации о конкретных приказах, ГОСТ или ТУ, на которые ссылается документ «ОТ_Гранд СВ».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2595.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ_Гранд СВ» о: Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passport. Вид: manual.?",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "На странице 1 документа «ОТ_Гранд СВ» указан паспорт продукта ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2803.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 12,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «ОТ_Гранд СВ» информация о применении продукции конкретно не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2550.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 13,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» информация о требованиях к поверке не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2498.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 14,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе не указаны конкретные требования безопасности для «ОТ Гранд СВ».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2146.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 15,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "Информация о том, как наносится маркировка и знак утверждения типа в «ОТ Гранд СВ», в предоставленных документах отсутствует.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2669.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 16,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2487.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 17,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения для продукта «ОТ Гранд СВ».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2448.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 18,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы) для «ОТ Гранд СВ».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2417.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 19,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2298.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 20,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» информация о взрывозащите или степени защиты IP отсутствует.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2722.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 21,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «ОТ_Гранд СВ»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе «ОТ Гранд СВ» информация об испытательном центре отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2505.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 22,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #1): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ «ОТ Гранд СВ» является паспортом продукта ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2533.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #2): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2081.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #3): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 932.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #4): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ «ОТ Гранд СВ» является паспортом продукта ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 1206.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #5): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 693.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #6): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 930.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #7): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 947.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #8): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 968.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #9): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 909.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #10): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 911.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #11): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 914.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #12): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 919.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #13): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 929.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #14): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 929.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #15): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2059.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #16): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2001.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #17): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2096.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #18): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 930.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #19): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 895.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #20): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 934.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #21): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 2000.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #22): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 1054.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #23): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 951.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #24): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 928.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #25): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 916.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #26): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 921.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #27): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 940.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #28): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 912.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «ОТ_Гранд СВ» (фрагмент стр. 1, #29): Документ: ОТ Гранд СВ. Файл: ОТ_Гранд СВ.pdf. Продукт: ОТ Гранд СВ. Тип документа: passpor",
+      "expected_keys": [
+        "Документ",
+        "Гранд",
+        "Файл"
+      ],
+      "answer_preview": "Документ: ОТ Гранд СВ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд СВ"
+      ],
+      "total_ms": 905.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 38,
+  "source_file": "ОТ_Гранд СВ.pdf",
+  "product": "ОТ Гранд СВ"
+}

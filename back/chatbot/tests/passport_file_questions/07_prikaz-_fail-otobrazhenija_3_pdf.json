@@ -1,0 +1,588 @@
+{
+  "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+  "product": "prikaz-(fail-otobrazhenija) (3)",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "prikaz-(fail"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «prikaz-(fail-otobrazhenija) (3)» о: О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с Административным регламентом по?",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 12,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 2018 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2018",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 2346, и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2346,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 16,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 17,
+      "topic": "значение",
+      "question": "Какое значение 3. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 28 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "28",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2020 и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2020",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 2906. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "2906,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "prikaz-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 22,
+      "topic": "приказ",
+      "question": "Что говорится в документе «prikaz-(fail-otobrazhenija) (3)» о приказе № 2346?",
+      "expected_keys": [
+        "2346",
+        "приказ",
+        "Росстандарт"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 23,
+      "topic": "приказ",
+      "question": "Что говорится в документе «prikaz-(fail-otobrazhenija) (3)» о приказе № 2906?",
+      "expected_keys": [
+        "2906",
+        "приказ",
+        "Росстандарт"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 24,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 25,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 26,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 27,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 28,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 29,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 30,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 31,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 32,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 33,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «prikaz-(fail-otobrazhenija) (3)»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #1): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #2): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #3): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #4): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #5): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #6): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #7): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #8): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #9): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #10): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #11): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #12): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #13): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #14): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #15): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #16): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «prikaz-(fail-otobrazhenija) (3)» (фрагмент стр. 1, #17): О внесении изменений в сведения об утвержденном типе средства измерений В соответствии с А",
+      "expected_keys": [
+        "Административным",
+        "Федеральным"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    }
+  ]
+}

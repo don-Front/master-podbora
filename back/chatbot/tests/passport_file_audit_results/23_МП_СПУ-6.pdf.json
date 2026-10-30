@@ -1,0 +1,1549 @@
+{
+  "generated_at": "2026-07-07T13:24:09.179082+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 40,
+    "PARTIAL": 10
+  },
+  "bug_counts": {},
+  "accuracy_pct": 80.0,
+  "partial_pct": 20.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "questions": 50,
+      "correct": 40,
+      "partial": 10,
+      "bad": 0,
+      "accuracy_pct": 80.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «МП_СПУ-6»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "МП"
+      ],
+      "answer_preview": "Прибор МП СПУ-6 предназначен для использования в соответствии с паспортом устройства.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1760.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «МП_СПУ-6»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «МП_СПУ-6» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1877.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «МП_СПУ-6»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1722.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «МП_СПУ-6»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «МП_СПУ-6» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1837.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «МП_СПУ-6»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе МП СПУ-6 нет информации о методике поверки или нормативном документе.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1834.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «МП_СПУ-6»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «МП_СПУ-6» метрологические характеристики не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1831.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «МП_СПУ-6»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В контексте не указаны конкретные технические характеристики (давление, температура, расход) для МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1933.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "j"В контексте не указаны конкретные технические характеристики (давление, температура, расхо"document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «МП_СПУ-6»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «МП_СПУ-6» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1858.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «МП_СПУ-6»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте информации о комплекте поставки МП СПУ-6 не предоставлено.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1811.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «МП_СПУ-6»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте не указаны конкретные приказы, ГОСТ или ТУ, на которые ссылается документ «МП_СПУ-6».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1941.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «МП_СПУ-6» о: Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: manual.?",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "На странице 1 документа «МП_СПУ-6» указан паспорт продукта МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 2000.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 12,
+      "topic": "значение",
+      "question": "Какое значение 6. и для какой характеристики указано в документе «МП_СПУ-6»?",
+      "expected_keys": [
+        "6,",
+        "характеристик",
+        "МП_СПУ-6"
+      ],
+      "answer_preview": "В документе «МП_СПУ-6» нет конкретной информации о значении 6 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 2024.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 13,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «МП_СПУ-6»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «МП_СПУ-6» информация о применении продукта не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1708.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 14,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «МП_СПУ-6»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе не указаны требования к поверке прибора МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1839.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 15,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «МП_СПУ-6»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования безопасности для «МП СПУ-6».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+  ,
+      "question": "Какие требования безопасности есть в «МП_СПУ-6»?",
+      "expected_keys": [
+        "безопасно,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 16,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «МП_СПУ-6»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В паспорте МП СПУ-6 информация о нанесении маркировки и знака утверждения типа не представлена.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1860.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 17,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «МП_СПУ-6»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе не указаны гарантийные обязательства.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1629.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 18,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «МП_СПУ-6»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1743.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 19,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «МП_СПУ-6»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы) для МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1989.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 20,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «МП_СПУ-6»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе нет информации об интерфейсах связи.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1485.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 21,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «МП_СПУ-6»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP для МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1940.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 22,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «МП_СПУ-6»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе «МП СПУ-6» не указано информации об испытательном центре.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1797.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #1): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: М�"source_file": "МП_СПУ-6.pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1721.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #2): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 734.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #3): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 779.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #4): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 690.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #5): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 716.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #6): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 749.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #7): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 724.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #8): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 752.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #9): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1604.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #10): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 785.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #11): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1655.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #12): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 713.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #13): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 758.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #14): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 723.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #15): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 735.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #16): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "t"Приведите факты из документа «МП"judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #17): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 703.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #18): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 734.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #19): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 719.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #20): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1678.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #21): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 756.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #22): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 722.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #23): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 763.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #24): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "ex"judge_verdict": "CORRECT",
+      "bug_type": "none",
+      ",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1609.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #25): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 1629.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #26): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 535.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #27): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 715.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_СПУ-6.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП_СПУ-6» (фрагмент стр. 1, #28): Документ: МП СПУ-6. Файл: МП_СПУ-6.pdf. Продукт: МП СПУ-6. Тип документа: passport. Вид: m",
+      "expected_keys": [
+        "Документ",
+        "СПУ-",
+        "6."
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 760.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 22,
+  "source_file": "МП_СПУ-6.pdf",
+  "product": "МП СПУ-6"
+}
+      ],
+      "answer_preview": "Документ: МП СПУ-6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-6"
+      ],
+      "total_ms": 711.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 22,
+  "source_file": "МП_СПУ-6.pdf",
+  "product": "МП СПУ-6"
+}

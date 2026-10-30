@@ -1,0 +1,199 @@
+{
+  "file": "Опросники\\UFG\\Z958957_ОЛ.pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\Опросники\\UFG\\Z958957_ОЛ.pdf",
+  "size_bytes": 2697996,
+  "generated_at": "2026-07-14T11:05:26.079266+00:00",
+  "text_source": "pdf_text",
+  "ocr_chars": 2089,
+  "ocr_preview": "1 \n \n \n \n \n \n \n3253\n-\n1 \n \n \n \n \n \n \n.\n \n \n21.03.23\n \n \n \n \n \n \n21.03.23\n \n1 \n8 \n \n \n \n \n \n \n \n \n \n21.03.23\n \n \n \n21.03.23\n \n \n \n \n \n043647 \n \n \n \n \n \n \n \nc. \n \n \n \n \n  \nDN150 \n \nDN50 \n \n \n \n \n \nDN150 \nDN50 \n \n6,3 \n \n30 \n \n20000 \n \n \n  \n(\n-2010) \n3  \n24 \n 12 500 \n \n \n \n0,53 \n \n \n10 \n \nCH4  98,86 \nC2H6  0,100 \nC3H8  0,009 \nC4H10  0,002 \nC5H12  \n \nCO2  0,100 \nN2  0,880 \nAr  0,033 \n3  \n0,72 \n \n4 \n-\n2002;  \n-2002 \nIIA-T1 \n \n \n \n, \n \n28 \n25\n\n3253\n-\n1 \n \n \n \n \n \n \n2 \n.\n \n \n \n \n \n \n \n043647 \n, \n, \n24\n \n \n \n \n2 \n3 \n2 \n1,5 \nII\n \n0,3 \n \n \n4 \n \n \n \nDn \nDN150 \nDN50 \n \n \n-2020 \nIII \n \n. \n \n \n \n \n \n \n), % \n \nQmin \n,01Qmax \n2 \n1 \n0,5 \n0,5 \n0,01Qmax \nQmax \n1 \n1 \n0,5 \n0,3 \n \n \n \n \n \n \n \n-1 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nP\nDn 50-\n1%)) \nP\n.> \n1%) \n \n \n-008-2010.\n\n3253\n-\n1 \n \n \n \n \n \n \n3 \n.\n \n \n \n \n \n \n \n043647 \n \n5 \n \n \n: 15  \n: (\n \n \n \n \n \n \n1 \n \n \n \n \nD\nS \n \n \n \n159 6,0 / \n6,0 \n57x6,0 / 57\n \n \n \n \n \n \n \n \n \n-69 \n \n \n \n-\n \n \n-\n22.07.2008) \n \n 30852.9-2002 \n2 \n-\n-\n \n-1  \n-1-\n-1-2020) \nIIA-T1 \n(\n \n \n2,5\n \n \n7 \n \n \n \n \n \n \n \n \nDn \nDn \nDn \n \n \n0.5%-0.3%\n20\n5\n\n3253\n-\n1 \n \n \n \n \n \n \n4 \n.\n \n \n \n \n \n \n \n043647 \n2*\n10\n5\n2*\n5\n3*\n \n \nDn \nDn \nDn \n \n \n0.5%-0.5% \n20\n5\n2*\n10\n5\n2*\n5\n3*\n1.0%-1.5% \n20\n5*\n2*\n5\n3*\n2.0% - 1.0%\n5\n3*\n* - \nDn 50-\nDn \n \n \n \n \nDn \nDn \n \n \n \n0.5%-0.3%\n-\n20\n20\n0.5%-0.5%\n-\n20\n20\n1.0%-1.5%\n-\n10\n10\n2.0% - 1.0%\n-\n5\n5\n \n \n \n8 \n \n \nDn\n \nV\nD  \n \n \nC\n- \nPn16\nPn63\nPn100\nPn16\nDN 150\n 159  5 \n 159  6\n 159 \n 165 \n \n 165  9\n165 \n \n 168  9,5 \n 168  10,5\n168 \n \nDN 50\n 57  5 \n 57  6\n57 \n \n \n9\n\n325",
+  "bot_specs": {
+    "medium": "gas",
+    "gas_type": "CH4, C2H6, C3H8, C4H10, C5H12, CO2, N2, AR",
+    "duplication_type": null,
+    "flowMin": 0.01,
+    "flowMax": 0.5,
+    "flow_unit": "Qmax",
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": -20,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "1%",
+    "diameter": 150
+  },
+  "reference_specs": {
+    "medium": "gas",
+    "gas_type": "CH4, C2H6, C3H8, C4H10, C5H12, CO2, N2, Ar",
+    "duplication_type": null,
+    "flowMin": 0.01,
+    "flowMax": 0.5,
+    "flow_unit": "Qmax",
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": -20,
+    "tempMediumMax": 100,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": null,
+    "accuracy": "0.5%-0.3%",
+    "diameter": 150
+  },
+  "heuristic_specs": {
+    "medium": "gas",
+    "gas_type": "CH4, C2H6, C3H8, C4H10, C5H12, CO2, N2, AR",
+    "duplication_type": null,
+    "flowMin": 0.01,
+    "flowMax": 0.5,
+    "flow_unit": "Qmax",
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": null,
+    "accuracy": "0.5%-0.3%",
+    "diameter": 150
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "gas",
+        "bot": "gas"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "match",
+        "reference": "CH4, C2H6, C3H8, C4H10, C5H12, CO2, N2, Ar",
+        "bot": "CH4, C2H6, C3H8, C4H10, C5H12, CO2, N2, AR"
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "match",
+        "reference": 0.01,
+        "bot": 0.01
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "match",
+        "reference": 0.5,
+        "bot": 0.5
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "Qmax",
+        "bot": "Qmax"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "match",
+        "reference": -20,
+        "bot": -20
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "bot_missing",
+        "reference": 100,
+        "bot": null
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "bot_extra",
+        "reference": null,
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "wrong",
+        "reference": "0.5%-0.3%",
+        "bot": "1%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 150,
+        "bot": 150
+      }
+    ],
+    "ref_filled": 9,
+    "matched": 7,
+    "mismatches": 1,
+    "bot_missing": 1,
+    "bot_extra": 1,
+    "accuracy_pct": 77.8
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 261.8,
+    "llm_ms": 3912.7,
+    "pipeline_ms": 4183.7,
+    "ocr_chars": 2089,
+    "llm_input_chars": 2089,
+    "text_source": "pdf_text",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 4959.7,
+  "bot_llm_raw_preview": "```\n{\n\"medium\": \"CH4\",\n\"gas_type\": \"природный газ\",\n\"duplication_type\": null,\n\"flowMin\": null,\n\"flowMax\": null,\n\"flow_unit\": null,\n\"pressureMin\": null,\n\"pressureMax\": null,\n\"pressure_unit\": null,\n\"tempMediumMin\": -20,\n\"tempMediumMax\": null,\n\"tempAmbientMin\": null,\n\"tempAmbientMax\": null,\n\"temperature_unit\": \"°C\",\n\"accuracy\": \"1%\",\n\"diameter\": \"DN150 DN50\"\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n    \"medium\": \"газ\",\n    \"gas_type\": \"CH4, C2H6, C3H8, C4H10, C5H12, CO2, N2, Ar\",\n    \"duplication_type\": null,\n    \"flowMin\": 0.01,\n    \"flowMax\": 0.5,\n    \"flow_unit\": \"Qmax\",\n    \"pressureMin\": null,\n    \"pressureMax\": null,\n    \"pressure_unit\": null,\n    \"tempMediumMin\": -20,\n    \"tempMediumMax\": 100,\n    \"tempAmbientMin\": null,\n    \"tempAmbientMax\": null,\n    \"temperature_unit\": null,\n    \"accuracy\": \"0.5%-0.3%\",\n    \"diameter\": \"DN150 DN50\"\n}\n```",
+  "elapsed_ms": 9858.8
+}

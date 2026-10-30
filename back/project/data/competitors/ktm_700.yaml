@@ -1,0 +1,141 @@
+id: ktm_700
+competitor: "РМТВ (КТМ700 РУС)"
+product_name: "Счётчик газа КТМ700 РУС"
+source_document: "Руководство_по_эксплуатации КТМ 700.pdf"
+source_section: "Приложение А, таблица А.1"
+document_code: "РМТВ.70.000.00.0000.000РЭ"
+mask_prefix: "КТМ700 РУС"
+mask_example: "КТМ700 РУС 2P01DN0050PN0160GB1N20NL3N01AC1"
+image: "ktm_700.png"
+
+fields:
+  - id: layout
+    label: "Конфигурация лучей"
+    position: 2
+    allowed:
+      - 1P
+      - 2P
+      - 4P
+      - 8P
+      - 2Q
+      - 4Q
+
+  - id: material
+    label: "Материал корпуса измерительного"
+    position: 3
+    allowed:
+      - "01"
+      - "02"
+      - "03"
+      - "04"
+      - "05"
+      - "06"
+      - "07"
+      - "08"
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "13"
+      - "14"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "19"
+
+  - id: dn
+    label: "Номинальный диаметр"
+    position: 4
+    allowed:
+      - DN0050
+      - DN0080
+      - DN0100
+      - DN0150
+      - DN0200
+      - DN0250
+      - DN0300
+      - DN0400
+      - DN0500
+      - DN0600
+      - DN0700
+      - DN0800
+      - DN1000
+      - DN1200
+      - DN1400
+
+  - id: pn
+    label: "Класс давления"
+    position: 5
+    allowed:
+      - PN0016
+      - PN0025
+      - PN0040
+      - PN0063
+      - PN0100
+      - PN0160
+      - PN0250
+      - PN0400
+      - PN0450
+
+  - id: flange
+    label: "Тип фланцевого соединения"
+    position: 6
+    allowed:
+      - GB1
+      - GB2
+      - GC1
+      - GC2
+      - GD1
+      - GD2
+
+  - id: removable
+    label: "Возможность извлечения приемопередатчиков под давлением"
+    position: 7
+    allowed:
+      - S
+      - N
+
+  - id: pressure_tap
+    label: "Отверстие отбора давления"
+    position: 8
+    allowed:
+      - "00"
+      - "12"
+      - "20"
+      - "25"
+      - "50"
+
+  - id: built_in_pressure
+    label: "Встроенный датчик давления"
+    position: 9
+    allowed:
+      - N
+      - Y
+
+  - id: boi
+    label: "Исполнение БОИ"
+    position: 10
+    allowed:
+      - F1
+      - F2
+      - L1
+      - L2
+      - L3
+      - L4
+      - L5
+      - L7
+
+  - id: temp
+    label: "Температурное исполнение"
+    position: 11
+    allowed:
+      - C1
+      - C2
+      - C3
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - pn

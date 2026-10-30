@@ -1,0 +1,1612 @@
+{
+  "generated_at": "2026-07-07T15:29:20.497398+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 29,
+    "PARTIAL": 14,
+    "HALLUCINATION": 7
+  },
+  "bug_counts": {
+    "hallucination": 7
+  },
+  "accuracy_pct": 58.0,
+  "partial_pct": 28.0,
+  "bad_pct": 14.0,
+  "per_file": [
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "questions": 50,
+      "correct": 29,
+      "partial": 14,
+      "bad": 7,
+      "accuracy_pct": 58.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          14
+        ],
+        [
+          "hallucination",
+          7
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что входит в комплект поставки согласно «Описание типа ПУРС-В-1»?",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 1 документа «Описание типа ПУРС-В-1» о: [trp n,roxenlle K cB I{AereJ,I I}cTBv oS y:reepx4ennlr r",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 2 документа «Описание типа ПУРС-В-1» о: ((B3ner - 3M>, rr3Mepr4TenbHbrfi KaH€ur, loBepoqHbre yqa",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 3 документа «Описание типа ПУРС-В-1» о: l. 2. OCHOBHbIE TEXHUqE CKrIE XAPAKTEPIICTI,IKII Pa6o.{a",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «Описание типа ПУРС-В-1» о: KOMTIJIEKTHOCTb Konrnrerr nocraBKpr npr4BeAeH e ra6rraqe",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 5 документа «Описание типа ПУРС-В-1» о: I I HOPMATT4BHbTE r4 TEXHT,TqECKI,TE AOKyMEHTbT |OCT 8.1",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    },
+    {
+      "question": "Какие требования безопасности есть в «Описание типа ПУРС-В-1»?",
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Описание"
+      ],
+      "answer_preview": "Установка поверочная расходомерная ПУРС-В-1 предназначена для поверки средств измерения расхода и объёма жидкостей.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 8996.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем или правообладателем в документе «Описание типа ПУРС-В-1» указано ООО НПО «Турубнеристость-Дон».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14514.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 15693.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 16699.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки установки поверочной расходомерной ПУРС-В-1 соответствует методике поверки «Установка поверочная расходная ПУРС-В-1. Методика поверки», согласованной с ФГУП «Ростовский ЦСМ» в апреле 2009 года.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 17172.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "1. Диапазон измерения расхода от 0,03 до 217,2 м³/ч по весовому методу; 2. Диапазон измерения расхода от 0,34 до 217,2 м³/ч по объёмному методу; 3. Допустимая относительная погрешность при измерении: ±0,3% для весового метода и ±0,07% для объёмного метода; 4. Рабочая температура воды — в соответствии с ГОСТ Р 51232-98; 5. Максимальное давление рабочей жидкости не более 2,5 МПа; 6. Допустимая относительная влажность не более 9%; 7. Максимальная потребляемая мощность не более 18,5 кВт.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 19886.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Максимальная температура рабочей среды воды — не более 40 °C; - Максимальное давление рабочей жидкости — не более 2,5 МПа; - Расход по контуру I (несопоставимый метод) от 0,03 до 217,2 л/ч; - Расход по контуру II (общий метод) от 0,34 до 217,2 л/ч.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 3712.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 1130.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Весы напольные Jaxta-6000-A с ценой деления 1 г; - секундомер СОПпр Рн 3; - термометр преобразования ТCM-1 1 99; - набор эталонных гирь, класс M1 по ГОСТ 7328.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 15772.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «Описание типа ПУРС-В-1» ссылается на следующие ГОСТы:\n* ГОСТ 8.156; * ГОСТ 8.252; * ГОСТ 8.320; * ГОСТ 8.608.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 2687.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Описание типа ПУРС-В-1» о: [trp n,roxenlle K cB I{AereJ,I I}cTBv oS y:reepx4ennlr rnr{a cpeAGTB usuepennfi COIJIACOBAHO: Pyronognte.rrr II$ CII orv?",
+      "expected_keys": [
+        "AereJ",
+        "TBv",
+        "AGTB"
+      ],
+      "answer_preview": "На странице 1 документа «Описание типа ПУРС-В-1» указано, что установка поверочная расходомерная ПУРС-В-1 предназначена для поверки средств измерения расхода и объёма жидкостей, газов и паров. Установка реализует два метода измерения величин расхода и количества жидкостей: объёмный и весовой. В работе используется вода по ГОСТ 51232-98.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 5584.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «Описание типа ПУРС-В-1» о: ((B3ner - 3M>, rr3Mepr4TenbHbrfi KaH€ur, loBepoqHbre yqacrKr.r H o6opor- Hrrfi 6ar (peanu:oBaH MeroA Henocpe.qcrBeHHoro ?",
+      "expected_keys": [
+        "Mepr",
+        "TenbHbrfi",
+        "KaH"
+      ],
+      "answer_preview": "Измерительный канал, поверяемые участки и оборотный бак (реален методом непосредственного сличения показаний) указаны в документе «Описание типа ПУРС-В-1» на странице 2.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 5157.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «Описание типа ПУРС-В-1» о: l. 2. OCHOBHbIE TEXHUqE CKrIE XAPAKTEPIICTI,IKII Pa6o.{aq cpeAa BoAa BoAorIpoBoAHa.s nl4rbeBaq no |OCT P 51232-98 .{uaua?",
+      "expected_keys": [
+        "51232-98",
+        "2.",
+        "OCHOBHbIE"
+      ],
+      "answer_preview": "Основные технические характеристики: рабочая среда — вода водопроводная; допустимые расходы по контуру I (песочная решётка) и контуру II (общий лоток); диапазон измерения расхода от 0,03 до 217,2 м³/ч; погрешность установки: не более 6%; температура воды в диапазоне от +5 °C до +40 °C; максимальное количество одновременно поверяемых счётчиков.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 5252.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «Описание типа ПУРС-В-1» о: KOMTIJIEKTHOCTb Konrnrerr nocraBKpr npr4BeAeH e ra6rraqe 1. TIOBBPKA llonepr<a ycraHoBKI4 BbllroJrHqercf, corJracHo Mero?",
+      "expected_keys": [
+        "KOMTIJIEKTHOCTb",
+        "Konrnrerr",
+        "BKpr"
+      ],
+      "answer_preview": "Согласно методике поверки «Установка поверочная расходомерная ПУРС-В-1. Методика поверки», согласованной с ГЦИ СИ (г. Ростов-на-Дону) в апреле 2009 года, комплектация поставки прибора включает следующие основные средства поверки: весы платформенные лабораторные ЛАХТА-6000-А с ценой деления 1 г, по ГОСТ 29329; секундомер СОП пр. 3; термометр преобразования сопр. ТCM-1 1 99; набор образцовых гирь, класса М1 по ГОСТ 7328.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 6893.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «Описание типа ПУРС-В-1» о: I I HOPMATT4BHbTE r4 TEXHT,TqECKI,TE AOKyMEHTbT |OCT 8.156 lCW. C.{er.ruxu xoroAnofi BoAbr. Mero.qrr u cpeAcrBa rroBepKr?",
+      "expected_keys": [
+        "HOPMATT",
+        "BHbTE",
+        "TEXHT"
+      ],
+      "answer_preview": "На странице 5 документа «Описание типа ПУРС-В-1» указаны технические характеристики установки расходомера ПУРС-В-1, соответствующие государственным стандартам, включая ГОСТ 8.156, ГОСТ 8.252 и ГОСТ 8.320.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 4806.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 16,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Kolaurerr [epexoAHr4KoB» документа «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "Kolaurerr",
+        "AHr",
+        "KoB"
+      ],
+      "answer_preview": "В разделе «2 Kolaurerr [epexoAHr4KoB» документа «Описание типа ПУРС-В-1» описаны методика поверки расходомера ПУРС-В-1 и руководство по эксплуатации при установке поверяемого расходомера.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 10901.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 17,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5 Kounnerr gKc[Jryaraur4-» документа «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "Kounnerr",
+        "Jryaraur"
+      ],
+      "answer_preview": "В разделе «5 Kounnerr gKc[Jlyaraur4-» документа «Описание типа ПУРС-В-1» описаны средства поверки и эксплуатационная документация на средства измерений расхода и объёма воды.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 9993.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 18,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-В-1» упоминается регистрационный номер 51232-98 и в каком контексте?",
+      "expected_keys": [
+        "51232-98",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» регистрационный номер 51232-98 упоминается в контексте рабочей среды воды, которая должна быть водоподготовлена согласно ГОСТ Р 51232-98.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 8236.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2009 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "2009",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» за 2009 год указано следующее:\n- Методика поверки расходомера ПУРС-В-1 согласована в соответствии с ГОСТ Р 8.3292-98.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 9868.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 01. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "01,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» указано значение для характеристики поверки установки поверочной расходомерной ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 2518.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 43 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "43",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» нет информации о значении 43 и для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14110.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 6000 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "6000",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Весы «Лахтар-6000-A» используются для поверки расходомеров.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14245.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 51232 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "51232",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "|OCT 51232-98 — это государственный стандарт, указанный в документе «Описание типа ПУРС-В-1». В контексте документа он относится к характеристикам рабочей среды (воды).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 9664.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 98. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "98,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» не указано значение 98 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 2105.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 3,0 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "3,0",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "3,0 — это значение объёма бачка в установке ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14016.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 10, и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "10,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» указано значение 10 для характеристики расхода воды при использовании расходомера ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14624.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» указано следующее:\n* Расходомеры работают по двум методам измерения: общему методу (общий контур) и весовому методу (несомый контур). \n* Диапазон измерений объёмного расхода воды по общему контуру составляет от 0,34 до 217,2 л/ч.\n* Диапазон измерений объёмного расхода воды по весовому контуру составляет от 0,03 до 217,2 л/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 17152.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 922 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "922",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» нет упоминания значения 922 и какой-либо характеристики, связанной с ним.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14179.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 32, и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "32,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе указано значение 32 для характеристики расхода воды при использовании расходомера ПУРС-В-1 по общему методу измерения (общий контур).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14518.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 80 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "80",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» значение 80 указано для относительной влажности при эксплуатации устройства.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 13927.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» нет конкретного упоминания значения 10 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14064.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» указаны диапазоны значений для измерения расхода воды по двум контурам: \n* по контуру I (несовому методу) — от 0,03 до 217,2 м³/ч; * по контуру II (объёмному методу) — от 0,34 до 217,2 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 3867.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 0,34 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,34",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Значение 0,34 указано для характеристики расхода воды при использовании общего метода измерения (общий контур).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14174.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 7,2 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "7,2",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» нет информации о значении 7,2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 16642.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 0,3 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,3",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Значение 0,3 указано для относительной погрешности измерения расхода воды по общему методу (общий контур).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 1620.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 0,03 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,03",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Значение 0,03 указано для характеристики расхода воды при использовании весового метода измерения по второму контуру.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 16605.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 217 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "217",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "217,2 $\\frac{г}{л}$ — максимально возможное значение расхода воды при поверке по общему методу измерения.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 16114.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 0,07 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,07",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Значение 0,07 указано для относительной погрешности измерения при использовании весового метода.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 1358.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 19,1 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "19,1",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Значение 19,1 указано для характеристики регулирования расходов воды по первому контуру (непрерывный метод).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 1688.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 19, и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "19,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "19,1 $\\frac{л}{ч}$ — это значение расхода воды при настройке расходомера по первому контуру (несовому контуру).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14736.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 3. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» указаны технические характеристики установки поверочной расходомерной ПУРС-В-1. Конкретное значение 3 указано в контексте допустимой относительной погрешности при измерениях по общему контуру (общий контур — один из двух контуров измерений). Допустимая относительная погрешность составляет не более ±0,3%.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 16288.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 42,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "Установка поверочная расходомерная ПУРС-В-1 предназначена для поверки средств измерения расхода и объёма жидкостей (в частности, воды) в различных системах водоснабжения. Применяется с использованием весового метода или общего метода измерения.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 2153.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 43,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "- Поверка установки проводится согласно методике поверки «Установка поверяльная расходомерная ПУРС-В-1. Методика поверки», согласованной ФГУП «Ростест-Москва» в апреле 2009 года.\n- Основные средства поверки: весы напольные электронные Jaxta-6000-A с ценой деления 1 г, по ГОСТ 29329; секундомер СОПпр-Рг-3; термометр стеклянный ртутный ТCM-1-199; набор эталонных гирь класса M1 по ГОСТ 7328.\n- Диапазон измерений объёмного расхода: по контуру I (несопоставимый метод) от 0,03 до 217,2 м³/ч с относите",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 9069.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 44,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "1. Максимальная температура рабочей жидкости — не более 40 °C.\n2. Допустимые колебания температуры окружающего воздуха при эксплуатации от 5 до 40 °C.\n3. Рабочее давление рабочей жидкости — не более 2,5 МПа.\n4. Относительная влажность при проверке — от 30% до 80%.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 3407.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 45,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В документе не указано, каким образом наносится маркировка и знак утверждения типа на ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 13391.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 46,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» нет информации о конкретных сроках или условиях гарантийного обслуживания.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 14079.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 47,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны конкретные условия транспортирования и хранения установки ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 13932.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 48,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны конкретные показатели надёжности (наработка, срок службы) для ПУРС-В-1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 5182.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 49,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-В-1» информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 793.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "id": 50,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-В-1"
+      ],
+      "total_ms": 4743.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 40,
+  "source_file": "Описание типа ПУРС-В-1.PDF",
+  "product": "Описание типа ПУРС-В-1"
+}

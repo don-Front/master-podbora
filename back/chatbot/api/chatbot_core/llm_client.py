@@ -1,8 +1,13 @@
 from openai import OpenAI
 from typing import List, Dict, Any, Optional
 import logging
+import os
 import re
 import time
+
+import httpx
+
+from .rag_messages import MSG_REPHRASE, MSG_SERVER_ERROR, is_llm_system_error
 
 logger = logging.getLogger(__name__)
 
@@ -36,19 +41,48 @@ def _normalize_lm_base_url(base_url: str) -> str:
     return f"{u}/v1"
 
 
+def resolve_llm_api_key(api_key: Optional[str] = None) -> str:
+    """Токен LM Studio: config llm.api_key → LM_STUDIO_API_KEY / LM_API_TOKEN → lm-studio."""
+    for candidate in (
+        api_key,
+        os.environ.get("LM_STUDIO_API_KEY"),
+        os.environ.get("LM_API_TOKEN"),
+    ):
+        if candidate and str(candidate).strip():
+            return str(candidate).strip()
+    return "lm-studio"
+
+
 class LLMClient:
-    def __init__(self, base_url: str, model: str, temperature: float, max_tokens: int, timeout: int = 60):
+    def __init__(
+        self,
+        base_url: str,
+        model: str,
+        temperature: float,
+        max_tokens: int,
+        timeout: int = 60,
+        api_key: Optional[str] = None,
+    ):
         base_url = _normalize_lm_base_url(base_url)
+        resolved_key = resolve_llm_api_key(api_key)
+        # trust_env=False: не подхватывать HTTP(S)_PROXY/socks из окружения —
+        # иначе httpx падает на socks4:// и RAG не инициализируется.
         self.client = OpenAI(
             base_url=base_url,
-            api_key="lm-studio",
-            timeout=timeout
+            api_key=resolved_key,
+            timeout=timeout,
+            http_client=httpx.Client(trust_env=False, timeout=timeout),
         )
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.timeout = timeout
         self.last_elapsed_ms = 0.0
+        self.last_error_kind: str | None = None
+
+    def _fail(self, kind: str, message: str) -> str:
+        self.last_error_kind = kind
+        return message
 
     @staticmethod
     def _resolve_chunk_source(chunk: Dict) -> Dict[str, str]:
@@ -125,6 +159,9 @@ class LLMClient:
 
 Не описывай ход рассуждений, не используй заголовок «Thinking Process», не пиши пошаговый разбор на английском,
 не перечисляй роли (Role), задачи (Task), не ссылайся на «chunk» / «context» / «фрагмент» — клиент этого не должен видеть.
+Отвечай строго на заданный вопрос: не добавляй смежные характеристики, сроки, модели или справочную информацию,
+если пользователь прямо об этом не спрашивал.
+Если в контексте несколько документов или продуктов, используй только те фрагменты, которые напрямую относятся к вопросу.
 {_CITATION_INSTRUCTION}
 ТЕРМИНЫ:
 - Если в вопросе «среда» без уточнения «программная» — это измеряемая среда (газ/жидкость), для которой предназначен прибор.
@@ -138,7 +175,18 @@ class LLMClient:
 
 """
         
-        if question_type.get("is_attribute", False):
+        if question_type.get("is_definition", False):
+            prompt = base_prompt + """
+Сформулируй понятное определение для клиента:
+1. Что это за оборудование.
+2. Для чего оно предназначено.
+3. Где или в каких задачах применяется, если это есть в контексте.
+
+Пиши 2-4 коротких предложения без технической воды. Если в контексте есть только часть фактов — используй только её.
+Не добавляй характеристики, поверку, сроки, документы или сравнения, если пользователь прямо не спрашивал.
+Начинай сразу с ответа, без вступления.
+"""
+        elif question_type.get("is_attribute", False):
             prompt = base_prompt + """
 Сформулируй ответ для клиента: только найденные в контексте значения параметров (с единицами измерения).
 Если для разных модификаций значения различаются — перечисли по модификациям. Если параметра в тексте нет — напиши об этом.
@@ -156,6 +204,7 @@ class LLMClient:
             prompt = base_prompt + """
 Сформулируй ответ для клиента: по существу вопроса, по-русски, структурируй при необходимости списком.
 Сохраняй в ответе ключевые термины, числа и обозначения из контекста (модели, ГОСТ, параметры) без искажений.
+Если найден только частичный факт — ответь только найденной частью и явно не додумывай остальное.
 Начинай сразу с ответа, без вступления и без описания своих шагов.
 """
         
@@ -260,6 +309,7 @@ class LLMClient:
     def _call_llm(self, prompt: str) -> str:
         """Вызывает LLM API"""
         self.last_elapsed_ms = 0.0
+        self.last_error_kind = None
         max_retries = 2
         retry_delay = 2
         
@@ -317,28 +367,25 @@ class LLMClient:
                             f"[WARNING] LLM пустой ответ (finish_reason={finish!r}). "
                             "Проверьте max_tokens в config.yaml и вывод модели в LM Studio."
                         )
-                        return (
-                            "Модель вернула пустой ответ. Увеличьте max_tokens в config.yaml "
-                            "или повторите вопрос."
-                        )
+                        return self._fail("rephrase", MSG_REPHRASE)
                     return answer
                 else:
-                    return "Извините, не удалось получить ответ от сервера."
-                    
+                    return self._fail("server", MSG_SERVER_ERROR)
+
             except Exception as e:
                 error_msg = str(e).lower()
                 is_timeout = "timeout" in error_msg or "timed out" in error_msg
-                
+
                 if is_timeout and attempt < max_retries:
                     print(f"[WARNING] Таймаут запроса (попытка {attempt + 1}/{max_retries + 1}). Повтор через {retry_delay} сек...")
                     time.sleep(retry_delay)
-                    retry_delay *= 2  # Увеличиваем задержку для следующей попытки
+                    retry_delay *= 2
                     continue
-                else:
-                    print(f"Ошибка при генерации ответа: {e}")
-                    if is_timeout:
-                        return "Извините, запрос занял слишком много времени. Попробуйте переформулировать вопрос или обратиться в поддержку."
-                    return "Извините, произошла ошибка при обработке запроса."
+
+                print(f"Ошибка при генерации ответа: {e}")
+                if is_timeout or is_llm_system_error(e):
+                    return self._fail("server", MSG_SERVER_ERROR)
+                return self._fail("rephrase", MSG_REPHRASE)
 
     def _post_process_answer(self, answer: str) -> str:
         """Пост-обработка ответа для улучшения качества"""

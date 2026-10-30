@@ -1,0 +1,1067 @@
+{
+  "updated_at": "2026-07-07T18:18:02.401916+00:00",
+  "files_total": 75,
+  "files_done": 75,
+  "avg_accuracy_pct": 52.1,
+  "avg_retrieval_pct": 90.7,
+  "per_file": [
+    {
+      "file_index": 0,
+      "source_file": "!РЭ на TFG.pdf",
+      "questions": 50,
+      "accuracy_pct": 28.0,
+      "partial_pct": 38.0,
+      "bad_pct": 34.0,
+      "retrieval_pct": 88.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 6,
+        "CORRECT": 14,
+        "HALLUCINATION": 11,
+        "PARTIAL": 19
+      }
+    },
+    {
+      "file_index": 1,
+      "source_file": "07 МП 1734-13-2025_МП_СПУ-5_корр.pdf",
+      "questions": 50,
+      "accuracy_pct": 38.0,
+      "partial_pct": 28.0,
+      "bad_pct": 34.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 19,
+        "PARTIAL": 14,
+        "NO_ANSWER": 3,
+        "HALLUCINATION": 14
+      }
+    },
+    {
+      "file_index": 2,
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "questions": 50,
+      "accuracy_pct": 50.0,
+      "partial_pct": 32.0,
+      "bad_pct": 18.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 25,
+        "HALLUCINATION": 9,
+        "PARTIAL": 16
+      }
+    },
+    {
+      "file_index": 3,
+      "source_file": "46509-11-(fail-otobrazhenija) (2).pdf",
+      "questions": 50,
+      "accuracy_pct": 72.0,
+      "partial_pct": 20.0,
+      "bad_pct": 8.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 36,
+        "PARTIAL": 10,
+        "HALLUCINATION": 4
+      }
+    },
+    {
+      "file_index": 4,
+      "source_file": "85230-22-Описание типа СПУ-7.pdf",
+      "questions": 50,
+      "accuracy_pct": 56.0,
+      "partial_pct": 22.0,
+      "bad_pct": 22.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 28,
+        "PARTIAL": 11,
+        "HALLUCINATION": 11
+      }
+    },
+    {
+      "file_index": 5,
+      "source_file": "_РЭ на Гранд _NBI-OT.pdf",
+      "questions": 50,
+      "accuracy_pct": 22.0,
+      "partial_pct": 56.0,
+      "bad_pct": 22.0,
+      "retrieval_pct": 88.0,
+      "verdict_counts": {
+        "CORRECT": 11,
+        "PARTIAL": 28,
+        "WRONG_TOPIC": 6,
+        "HALLUCINATION": 5
+      }
+    },
+    {
+      "file_index": 6,
+      "source_file": "prikaz-(fail-otobrazhenija) (3).pdf",
+      "questions": 50,
+      "accuracy_pct": 66.0,
+      "partial_pct": 22.0,
+      "bad_pct": 12.0,
+      "retrieval_pct": 82.0,
+      "verdict_counts": {
+        "PARTIAL": 11,
+        "CORRECT": 33,
+        "WRONG_TOPIC": 4,
+        "HALLUCINATION": 2
+      }
+    },
+    {
+      "file_index": 7,
+      "source_file": "prilozhenie-(fail-otobrazhenija) (39) (1).pdf",
+      "questions": 50,
+      "accuracy_pct": 34.0,
+      "partial_pct": 54.0,
+      "bad_pct": 12.0,
+      "retrieval_pct": 84.0,
+      "verdict_counts": {
+        "PARTIAL": 27,
+        "CORRECT": 17,
+        "WRONG_TOPIC": 5,
+        "HALLUCINATION": 1
+      }
+    },
+    {
+      "file_index": 8,
+      "source_file": "Гранд ТК(М)_Методика поверки.pdf",
+      "questions": 50,
+      "accuracy_pct": 42.0,
+      "partial_pct": 36.0,
+      "bad_pct": 22.0,
+      "retrieval_pct": 92.0,
+      "verdict_counts": {
+        "CORRECT": 21,
+        "PARTIAL": 18,
+        "WRONG_TOPIC": 3,
+        "HALLUCINATION": 8
+      }
+    },
+    {
+      "file_index": 9,
+      "source_file": "ДС ТР ТС 004, ТР ТС 020 СПУ-3М.pdf",
+      "questions": 50,
+      "accuracy_pct": 68.0,
+      "partial_pct": 20.0,
+      "bad_pct": 12.0,
+      "retrieval_pct": 96.0,
+      "verdict_counts": {
+        "PARTIAL": 10,
+        "CORRECT": 34,
+        "WRONG_TOPIC": 2,
+        "STUB_ONLY": 4
+      }
+    },
+    {
+      "file_index": 10,
+      "source_file": "ДС ТР ТС 004, ТР ТС 020 СПУ-5.pdf",
+      "questions": 50,
+      "accuracy_pct": 76.0,
+      "partial_pct": 14.0,
+      "bad_pct": 10.0,
+      "retrieval_pct": 96.0,
+      "verdict_counts": {
+        "PARTIAL": 7,
+        "CORRECT": 38,
+        "HALLUCINATION": 2,
+        "WRONG_TOPIC": 2,
+        "STUB_ONLY": 1
+      }
+    },
+    {
+      "file_index": 11,
+      "source_file": "ДС выгрузка ФГИС  от 11.11.2025 СПУ-5.pdf",
+      "questions": 50,
+      "accuracy_pct": 54.0,
+      "partial_pct": 38.0,
+      "bad_pct": 8.0,
+      "retrieval_pct": 90.0,
+      "verdict_counts": {
+        "PARTIAL": 19,
+        "CORRECT": 27,
+        "WRONG_TOPIC": 3,
+        "HALLUCINATION": 1
+      }
+    },
+    {
+      "file_index": 12,
+      "source_file": "ДС выгрузка ФГИС от 11.11.2025 СПУ-3М.pdf",
+      "questions": 50,
+      "accuracy_pct": 48.0,
+      "partial_pct": 38.0,
+      "bad_pct": 14.0,
+      "retrieval_pct": 86.0,
+      "verdict_counts": {
+        "PARTIAL": 19,
+        "CORRECT": 24,
+        "WRONG_TOPIC": 5,
+        "HALLUCINATION": 2
+      }
+    },
+    {
+      "file_index": 13,
+      "source_file": "Декларация ТР ТС 004,020_ до 09.07.2029.pdf",
+      "questions": 50,
+      "accuracy_pct": 72.0,
+      "partial_pct": 20.0,
+      "bad_pct": 8.0,
+      "retrieval_pct": 90.0,
+      "verdict_counts": {
+        "PARTIAL": 10,
+        "CORRECT": 36,
+        "WRONG_TOPIC": 4
+      }
+    },
+    {
+      "file_index": 14,
+      "source_file": "Инструкция на Гранд-SPI.pdf",
+      "questions": 50,
+      "accuracy_pct": 22.0,
+      "partial_pct": 30.0,
+      "bad_pct": 48.0,
+      "retrieval_pct": 64.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 15,
+        "PARTIAL": 15,
+        "CORRECT": 11,
+        "HALLUCINATION": 9
+      }
+    },
+    {
+      "file_index": 15,
+      "source_file": "МИ 3400-13_СПУ-3 на месте эксплуатац..pdf",
+      "questions": 50,
+      "accuracy_pct": 60.0,
+      "partial_pct": 34.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 90.0,
+      "verdict_counts": {
+        "PARTIAL": 17,
+        "CORRECT": 30,
+        "WRONG_TOPIC": 3
+      }
+    },
+    {
+      "file_index": 16,
+      "source_file": "МП 2023.pdf",
+      "questions": 50,
+      "accuracy_pct": 36.0,
+      "partial_pct": 18.0,
+      "bad_pct": 46.0,
+      "retrieval_pct": 92.0,
+      "verdict_counts": {
+        "PARTIAL": 9,
+        "CORRECT": 18,
+        "WRONG_TOPIC": 2,
+        "STUB_ONLY": 21
+      }
+    },
+    {
+      "file_index": 17,
+      "source_file": "МП 2025 85230-22.pdf",
+      "questions": 50,
+      "accuracy_pct": 32.0,
+      "partial_pct": 42.0,
+      "bad_pct": 26.0,
+      "retrieval_pct": 98.0,
+      "verdict_counts": {
+        "PARTIAL": 21,
+        "CORRECT": 16,
+        "HALLUCINATION": 13
+      }
+    },
+    {
+      "file_index": 18,
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "questions": 50,
+      "accuracy_pct": 40.0,
+      "partial_pct": 22.0,
+      "bad_pct": 38.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 11,
+        "CORRECT": 20,
+        "STUB_ONLY": 19
+      }
+    },
+    {
+      "file_index": 19,
+      "source_file": "МП-2022-47370-11.pdf",
+      "questions": 50,
+      "accuracy_pct": 26.0,
+      "partial_pct": 24.0,
+      "bad_pct": 50.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 12,
+        "CORRECT": 13,
+        "STUB_ONLY": 25
+      }
+    },
+    {
+      "file_index": 20,
+      "source_file": "МП_Гранд СВ.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 21,
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "questions": 50,
+      "accuracy_pct": 46.0,
+      "partial_pct": 36.0,
+      "bad_pct": 18.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 23,
+        "PARTIAL": 18,
+        "HALLUCINATION": 9
+      }
+    },
+    {
+      "file_index": 22,
+      "source_file": "МП_СПУ-6.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 23,
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "questions": 50,
+      "accuracy_pct": 76.0,
+      "partial_pct": 18.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 96.0,
+      "verdict_counts": {
+        "CORRECT": 38,
+        "PARTIAL": 9,
+        "WRONG_TOPIC": 2,
+        "STUB_ONLY": 1
+      }
+    },
+    {
+      "file_index": 24,
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "questions": 50,
+      "accuracy_pct": 32.0,
+      "partial_pct": 34.0,
+      "bad_pct": 34.0,
+      "retrieval_pct": 96.0,
+      "verdict_counts": {
+        "CORRECT": 16,
+        "PARTIAL": 17,
+        "WRONG_TOPIC": 2,
+        "HALLUCINATION": 15
+      }
+    },
+    {
+      "file_index": 25,
+      "source_file": "Методика поверки ПУРС-С.pdf",
+      "questions": 50,
+      "accuracy_pct": 34.0,
+      "partial_pct": 30.0,
+      "bad_pct": 36.0,
+      "retrieval_pct": 96.0,
+      "verdict_counts": {
+        "CORRECT": 17,
+        "PARTIAL": 15,
+        "WRONG_TOPIC": 2,
+        "HALLUCINATION": 16
+      }
+    },
+    {
+      "file_index": 26,
+      "source_file": "ОТ CFM 83374-21 от 19.02.2026.pdf",
+      "questions": 50,
+      "accuracy_pct": 58.0,
+      "partial_pct": 28.0,
+      "bad_pct": 14.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 29,
+        "PARTIAL": 14,
+        "HALLUCINATION": 7
+      }
+    },
+    {
+      "file_index": 27,
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "accuracy_pct": 60.0,
+      "partial_pct": 26.0,
+      "bad_pct": 14.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 30,
+        "PARTIAL": 13,
+        "HALLUCINATION": 7
+      }
+    },
+    {
+      "file_index": 28,
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "accuracy_pct": 44.0,
+      "partial_pct": 34.0,
+      "bad_pct": 22.0,
+      "retrieval_pct": 86.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 7,
+        "CORRECT": 22,
+        "HALLUCINATION": 4,
+        "PARTIAL": 17
+      }
+    },
+    {
+      "file_index": 29,
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "accuracy_pct": 58.0,
+      "partial_pct": 32.0,
+      "bad_pct": 10.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 29,
+        "PARTIAL": 16,
+        "HALLUCINATION": 5
+      }
+    },
+    {
+      "file_index": 30,
+      "source_file": "ОТ UFG 56432-14 от 17.11.2025.pdf",
+      "questions": 50,
+      "accuracy_pct": 44.0,
+      "partial_pct": 30.0,
+      "bad_pct": 26.0,
+      "retrieval_pct": 88.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 6,
+        "PARTIAL": 15,
+        "CORRECT": 22,
+        "HALLUCINATION": 7
+      }
+    },
+    {
+      "file_index": 31,
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "questions": 50,
+      "accuracy_pct": 70.0,
+      "partial_pct": 30.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 35,
+        "PARTIAL": 15
+      }
+    },
+    {
+      "file_index": 32,
+      "source_file": "ОТ Гранд (изм адр 2024).pdf",
+      "questions": 50,
+      "accuracy_pct": 66.0,
+      "partial_pct": 32.0,
+      "bad_pct": 2.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 33,
+        "PARTIAL": 16,
+        "HALLUCINATION": 1
+      }
+    },
+    {
+      "file_index": 33,
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "accuracy_pct": 60.0,
+      "partial_pct": 34.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 30,
+        "PARTIAL": 17,
+        "HALLUCINATION": 3
+      }
+    },
+    {
+      "file_index": 34,
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "questions": 50,
+      "accuracy_pct": 54.0,
+      "partial_pct": 42.0,
+      "bad_pct": 4.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 27,
+        "PARTIAL": 21,
+        "HALLUCINATION": 2
+      }
+    },
+    {
+      "file_index": 35,
+      "source_file": "ОТ СПУ-3 от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "accuracy_pct": 62.0,
+      "partial_pct": 30.0,
+      "bad_pct": 8.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 31,
+        "HALLUCINATION": 4,
+        "PARTIAL": 15
+      }
+    },
+    {
+      "file_index": 36,
+      "source_file": "ОТ СПУ-3М от 28.10.2024.pdf",
+      "questions": 50,
+      "accuracy_pct": 60.0,
+      "partial_pct": 34.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 30,
+        "HALLUCINATION": 3,
+        "PARTIAL": 17
+      }
+    },
+    {
+      "file_index": 37,
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "questions": 50,
+      "accuracy_pct": 74.0,
+      "partial_pct": 20.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 37,
+        "HALLUCINATION": 3,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 38,
+      "source_file": "ОТ_Гранд СВ.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 39,
+      "source_file": "ОТ_СПУ-6.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 40,
+      "source_file": "Описание типа ПУРС-В-1.PDF",
+      "questions": 50,
+      "accuracy_pct": 58.0,
+      "partial_pct": 28.0,
+      "bad_pct": 14.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 29,
+        "PARTIAL": 14,
+        "HALLUCINATION": 7
+      }
+    },
+    {
+      "file_index": 41,
+      "source_file": "Описание типа ПУРС-М.pdf",
+      "questions": 50,
+      "accuracy_pct": 64.0,
+      "partial_pct": 26.0,
+      "bad_pct": 10.0,
+      "retrieval_pct": 98.0,
+      "verdict_counts": {
+        "CORRECT": 32,
+        "WRONG_TOPIC": 1,
+        "HALLUCINATION": 4,
+        "PARTIAL": 13
+      }
+    },
+    {
+      "file_index": 42,
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "questions": 50,
+      "accuracy_pct": 62.0,
+      "partial_pct": 20.0,
+      "bad_pct": 18.0,
+      "retrieval_pct": 98.0,
+      "verdict_counts": {
+        "CORRECT": 31,
+        "WRONG_TOPIC": 1,
+        "HALLUCINATION": 8,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 43,
+      "source_file": "ПУРС-В-1_Свидетельство об утв.типа.PDF",
+      "questions": 50,
+      "accuracy_pct": 78.0,
+      "partial_pct": 20.0,
+      "bad_pct": 2.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 39,
+        "PARTIAL": 10,
+        "STUB_ONLY": 1
+      }
+    },
+    {
+      "file_index": 44,
+      "source_file": "Письмо РСТ_Турбулентность-ДОН_испр. ОТ_адрес_(файл отображения) (003).pdf",
+      "questions": 50,
+      "accuracy_pct": 0.0,
+      "partial_pct": 2.0,
+      "bad_pct": 98.0,
+      "retrieval_pct": 0.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 49,
+        "PARTIAL": 1
+      }
+    },
+    {
+      "file_index": 45,
+      "source_file": "Приказ 2973 от 25.11.2022.pdf",
+      "questions": 50,
+      "accuracy_pct": 56.0,
+      "partial_pct": 22.0,
+      "bad_pct": 22.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 28,
+        "PARTIAL": 11,
+        "STUB_ONLY": 11
+      }
+    },
+    {
+      "file_index": 46,
+      "source_file": "Приказ ПУРС-С и ПУРС-М.pdf",
+      "questions": 50,
+      "accuracy_pct": 34.0,
+      "partial_pct": 50.0,
+      "bad_pct": 16.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 17,
+        "PARTIAL": 25,
+        "HALLUCINATION": 8
+      }
+    },
+    {
+      "file_index": 47,
+      "source_file": "Приказ Росстандарта.pdf",
+      "questions": 50,
+      "accuracy_pct": 78.0,
+      "partial_pct": 22.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 39,
+        "PARTIAL": 11
+      }
+    },
+    {
+      "file_index": 48,
+      "source_file": "Приказ СПУ-7 №789 22.04.2025.pdf",
+      "questions": 50,
+      "accuracy_pct": 36.0,
+      "partial_pct": 26.0,
+      "bad_pct": 38.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 18,
+        "PARTIAL": 13,
+        "HALLUCINATION": 19
+      }
+    },
+    {
+      "file_index": 49,
+      "source_file": "Приложение к приказу №789 22.04.2025.pdf",
+      "questions": 50,
+      "accuracy_pct": 46.0,
+      "partial_pct": 46.0,
+      "bad_pct": 8.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 23,
+        "CORRECT": 23,
+        "HALLUCINATION": 4
+      }
+    },
+    {
+      "file_index": 50,
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "questions": 50,
+      "accuracy_pct": 78.0,
+      "partial_pct": 4.0,
+      "bad_pct": 18.0,
+      "retrieval_pct": 88.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 6,
+        "CORRECT": 39,
+        "PARTIAL": 2,
+        "HALLUCINATION": 3
+      }
+    },
+    {
+      "file_index": 51,
+      "source_file": "РЭ UFL_(акт).pdf",
+      "questions": 50,
+      "accuracy_pct": 78.0,
+      "partial_pct": 16.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 39,
+        "HALLUCINATION": 3,
+        "PARTIAL": 8
+      }
+    },
+    {
+      "file_index": 52,
+      "source_file": "РЭ СFМ (акт).pdf",
+      "questions": 50,
+      "accuracy_pct": 14.0,
+      "partial_pct": 54.0,
+      "bad_pct": 32.0,
+      "retrieval_pct": 16.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 15,
+        "CORRECT": 7,
+        "HALLUCINATION": 1,
+        "PARTIAL": 27
+      }
+    },
+    {
+      "file_index": 53,
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "questions": 50,
+      "accuracy_pct": 34.0,
+      "partial_pct": 52.0,
+      "bad_pct": 14.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 17,
+        "PARTIAL": 26,
+        "HALLUCINATION": 7
+      }
+    },
+    {
+      "file_index": 54,
+      "source_file": "РЭ на Гранд-SPI.pdf",
+      "questions": 50,
+      "accuracy_pct": 32.0,
+      "partial_pct": 4.0,
+      "bad_pct": 64.0,
+      "retrieval_pct": 36.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 32,
+        "CORRECT": 16,
+        "PARTIAL": 2
+      }
+    },
+    {
+      "file_index": 55,
+      "source_file": "РЭ на плотномер_4.0 (ред. от 17.10.2025).pdf",
+      "questions": 50,
+      "accuracy_pct": 22.0,
+      "partial_pct": 60.0,
+      "bad_pct": 18.0,
+      "retrieval_pct": 22.0,
+      "verdict_counts": {
+        "CORRECT": 11,
+        "PARTIAL": 30,
+        "WRONG_TOPIC": 9
+      }
+    },
+    {
+      "file_index": 56,
+      "source_file": "РЭ_UFG мод. F Z (акт).pdf",
+      "questions": 50,
+      "accuracy_pct": 14.0,
+      "partial_pct": 48.0,
+      "bad_pct": 38.0,
+      "retrieval_pct": 22.0,
+      "verdict_counts": {
+        "CORRECT": 7,
+        "WRONG_TOPIC": 19,
+        "PARTIAL": 24
+      }
+    },
+    {
+      "file_index": 57,
+      "source_file": "СПУ-3М-100_Методика поверки_09.2015.pdf",
+      "questions": 50,
+      "accuracy_pct": 74.0,
+      "partial_pct": 20.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 96.0,
+      "verdict_counts": {
+        "CORRECT": 37,
+        "PARTIAL": 10,
+        "WRONG_TOPIC": 2,
+        "STUB_ONLY": 1
+      }
+    },
+    {
+      "file_index": 58,
+      "source_file": "Св об утв типа.pdf",
+      "questions": 50,
+      "accuracy_pct": 22.0,
+      "partial_pct": 20.0,
+      "bad_pct": 58.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 11,
+        "PARTIAL": 10,
+        "STUB_ONLY": 29
+      }
+    },
+    {
+      "file_index": 59,
+      "source_file": "Св-во об УТ_СПУ ПГ-2М.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 60,
+      "source_file": "Свидетельство об УТ_СПУ-6.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 61,
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "questions": 50,
+      "accuracy_pct": 32.0,
+      "partial_pct": 68.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 16,
+        "PARTIAL": 34
+      }
+    },
+    {
+      "file_index": 62,
+      "source_file": "Сертификат УТ ГрандТК(М).pdf",
+      "questions": 50,
+      "accuracy_pct": 78.0,
+      "partial_pct": 20.0,
+      "bad_pct": 2.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 39,
+        "PARTIAL": 10,
+        "STUB_ONLY": 1
+      }
+    },
+    {
+      "file_index": 63,
+      "source_file": "Сертификат УТ СПУ-3-М-100 до 13.08.2030 + ОТ.pdf",
+      "questions": 50,
+      "accuracy_pct": 76.0,
+      "partial_pct": 18.0,
+      "bad_pct": 6.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 38,
+        "PARTIAL": 9,
+        "STUB_ONLY": 2,
+        "HALLUCINATION": 1
+      }
+    },
+    {
+      "file_index": 64,
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "questions": 50,
+      "accuracy_pct": 74.0,
+      "partial_pct": 22.0,
+      "bad_pct": 4.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 37,
+        "PARTIAL": 11,
+        "STUB_ONLY": 2
+      }
+    },
+    {
+      "file_index": 65,
+      "source_file": "Сертификат УТ.pdf",
+      "questions": 50,
+      "accuracy_pct": 78.0,
+      "partial_pct": 22.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 39,
+        "PARTIAL": 11
+      }
+    },
+    {
+      "file_index": 66,
+      "source_file": "Сертификат об УТ_СПУ-3 до 24.06.26.pdf",
+      "questions": 50,
+      "accuracy_pct": 20.0,
+      "partial_pct": 80.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 40,
+        "CORRECT": 10
+      }
+    },
+    {
+      "file_index": 67,
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "questions": 50,
+      "accuracy_pct": 26.0,
+      "partial_pct": 74.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 13,
+        "PARTIAL": 37
+      }
+    },
+    {
+      "file_index": 68,
+      "source_file": "Сертификат об утверждении типа ПУРС-М.pdf",
+      "questions": 50,
+      "accuracy_pct": 22.0,
+      "partial_pct": 74.0,
+      "bad_pct": 4.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 37,
+        "CORRECT": 11,
+        "HALLUCINATION": 2
+      }
+    },
+    {
+      "file_index": 69,
+      "source_file": "Сертификат об утверждении типа ПУРС-С.pdf",
+      "questions": 50,
+      "accuracy_pct": 24.0,
+      "partial_pct": 74.0,
+      "bad_pct": 2.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 37,
+        "CORRECT": 12,
+        "HALLUCINATION": 1
+      }
+    },
+    {
+      "file_index": 70,
+      "source_file": "ТР ТС 004, 020_до 19.06.2029.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 71,
+      "source_file": "ТР ТС 12 Гранд-SPI до 01.09.2028.pdf",
+      "questions": 50,
+      "accuracy_pct": 80.0,
+      "partial_pct": 20.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 40,
+        "PARTIAL": 10
+      }
+    },
+    {
+      "file_index": 72,
+      "source_file": "ТР ТС 20 (эмс) ГРАНД, ТК(М), SPI до 23.06.2029.pdf",
+      "questions": 50,
+      "accuracy_pct": 68.0,
+      "partial_pct": 32.0,
+      "bad_pct": 0.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "CORRECT": 34,
+        "PARTIAL": 16
+      }
+    },
+    {
+      "file_index": 73,
+      "source_file": "основные неисправности приборов 1.docx",
+      "questions": 50,
+      "accuracy_pct": 0.0,
+      "partial_pct": 2.0,
+      "bad_pct": 98.0,
+      "retrieval_pct": 28.0,
+      "verdict_counts": {
+        "WRONG_TOPIC": 36,
+        "HALLUCINATION": 13,
+        "PARTIAL": 1
+      }
+    },
+    {
+      "file_index": 74,
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "questions": 50,
+      "accuracy_pct": 48.0,
+      "partial_pct": 24.0,
+      "bad_pct": 28.0,
+      "retrieval_pct": 100.0,
+      "verdict_counts": {
+        "PARTIAL": 12,
+        "CORRECT": 24,
+        "STUB_ONLY": 14
+      }
+    }
+  ]
+}

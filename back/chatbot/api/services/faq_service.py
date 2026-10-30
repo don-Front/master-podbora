@@ -176,6 +176,28 @@ def _tokens(text: str) -> frozenset[str]:
     )
 
 
+def _looks_like_document_fact_question(text: str) -> bool:
+    """Фактические вопросы по РЭ/МП/ОТ/сертификатам должны идти в RAG, не FAQ."""
+    raw = (text or "").casefold().replace("ё", "е")
+    if not raw:
+        return False
+    if re.search(r"\b(скачать|ссылка|где взять|открой|загрузить)\b", raw):
+        return False
+    has_doc_marker = bool(
+        re.search(
+            r"\b(рэ|руководств|мп|методик|от|описани[ея]\s+типа|паспорт|сертификат|декларац|фгис|приказ|приложени[ея])\b",
+            raw,
+        )
+    )
+    asks_document_fact = bool(
+        re.search(
+            r"(в документе|документа|на страниц|стр\.|что указано|что описано|какой срок|какой номер|какие характеристики)",
+            raw,
+        )
+    )
+    return has_doc_marker and asks_document_fact
+
+
 def _entry_id(question: str) -> str:
     slug = re.sub(r"[^a-zа-я0-9]+", "-", _normalize(question)).strip("-")
     return slug[:80] or "faq"
@@ -784,6 +806,9 @@ def _faq_intent_present(question: str) -> bool:
 def answer(question: str, *, from_hint: bool = False) -> FaqAnswer:
     text = (question or "").strip()
     if not text:
+        return FaqAnswer(handled=False, needs_rag=True)
+
+    if not from_hint and _looks_like_document_fact_question(text):
         return FaqAnswer(handled=False, needs_rag=True)
 
     if text.casefold() == CONSULTATION_HINT.casefold():

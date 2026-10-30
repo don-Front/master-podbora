@@ -1,0 +1,1571 @@
+{
+  "generated_at": "2026-07-07T14:44:23.116903+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 30,
+    "PARTIAL": 17,
+    "HALLUCINATION": 3
+  },
+  "bug_counts": {
+    "hallucination": 3
+  },
+  "accuracy_pct": 60.0,
+  "partial_pct": 34.0,
+  "bad_pct": 6.0,
+  "per_file": [
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "correct": 30,
+      "partial": 17,
+      "bad": 3,
+      "accuracy_pct": 60.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          17
+        ],
+        [
+          "hallucination",
+          3
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 3 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 3 Всего листов 7 Рисунок 1 -",
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 5 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 7 Метрологиче",
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 6 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 7 Таблица 3 –",
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ОТ"
+      ],
+      "answer_preview": "Счетчики газа Гранд-SPI предназначены для измерений объёма природного газа по ГОСТ 5542-13 или паров сжиженного газа по ГОСТ 20448-90 и других неагрессивных газов, приведённого к стандартным условиям, по ГОСТ 2939-63.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6452.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5306.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер — 56433-14.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13919.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок действия утверждения типа не указан в представленном документе.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4731.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки — МП 208-054-2017.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5517.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Максимальный расход в рабочих условиях, Qmax, м³/ч: 4, 6, 10, 16, 25, 40, 65, 100.\n- Диапазон измерений в рабочих условиях, Qmin/Qmax: 1:100, 1:140, 1:160, 1:250.\n- Пределы допускаемой относительной погрешности измерений объёма газа в рабочих условиях, %: ±2,0 (при Qmin ≤ Q < 0,2 Qmax), ±1,0 (при 0,2 Qmax ≤ Q ≤ Qmax).\n- Диапазон измерений объёмного расхода, приведённого к стандартным условиям, м³/ч: от 0,029 до 18,79, от 0,032 до 28,19, от 0,046 до 46,98, от 0,074 до 75,17, от 0,074 до 117,5, ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 19640.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Максимальное избыточное давление измеряемой среды: 300 кПа; - Диапазон температуры окружающей среды: от –40 °С до +60 °С; - Диапазон измерений температуры рабочей среды: от –20 °С до +60 °С; - Верхний предел измерений абсолютного давления: от 100 до 400 кПа; - Верхний предел измерений избыточного давления: от 2,5 до 300 кПа; - Максимальный расход в рабочих условиях (Qmax): для модели «Гранд SPI – 4» — 4 м³/ч, для модели «Гранд SPI – 6» — 6 м³/ч и т. д.; - Диапазон измерений объёмного расхода, ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 17082.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение счётчиков Гранд-SPI является встроенным. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. \nПрограммное обеспечение разделено на метрологически значимую и незначимую части. К метрологически значимой части относятся программные модули, участвующие в обработке результатов измерений, параметры ПО, влияющие на результат измерений, а также компоненты защищённого интерфейса для обмена дан",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 23705.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- счётчик газа Гранд-SPI; - руководство по эксплуатации ТУАС.407299.002 РЭ; - паспорт ТУАС.407299.002 ПС; - методика поверки МП 208-054-2017; - GSM-антенна; - комплект монтажных частей.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 16326.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» ссылается на следующие нормативные документы:\n* ГОСТ Р 8.618-2014 ГСИ. Государственная поверочная схема для средств измерений объёмного и массового расхода газа; * ГОСТ 30319.2-2015 Газ природный. Методы расчёта физических свойств. Вычисление физических свойств на основе данных о плотности при стандартных условиях и содержании азота и диоксида углерода; * ГОСТ 31369-2008 Газ природный. Вычисление теплоты сгорания, плотности, относительной пл",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18688.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655 Лист №?",
+      "expected_keys": [
+        "56433-14",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655. Регистрационный номер средства измерений — 56433-14.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4740.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 7 В зависимости от диапазона температуры окружающей среды счетчики и меют следующие исполнения: - ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "20"
+      ],
+      "answer_preview": "- исполнение Н — от минус 20 до плюс 60 °С; - исполнение Х — от минус 40 до плюс 60 °С.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3167.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 3 Всего листов 7 Рисунок 1 - Общий вид счетчиков газа Гранд - SPI Схема пломбировки от несанкционированного досту?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "На странице 3 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» представлены:\n* общий вид счётчиков газа Гранд-SPI; * схема пломбировки от несанкционированного доступа; * обозначение мест нанесения знака поверки.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4066.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 7 - метрологически незначимую часть. Разделение программного обеспечения выполнено внутри кода ПО ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Разделение"
+      ],
+      "answer_preview": "Разделение программного обеспечения выполнено внутри кода ПО на уровне языка программирования. К метрологически значимой части ПО относятся программные модули, принимающие участие в обработке (расчётах) результатов измерений или влияющие на них; программные модули, осуществляющие отображение измерительной информации, её хранение, передачу, идентификацию, защиту ПО и данных; параметры ПО, участвующие в вычислениях и влияющие на результат измерений; компоненты защищённого интерфейса для обмена дан",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4088.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 7 Метрологические и технические характеристики Таблица 2 – Метрологические характеристики Наименов?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Метрологические"
+      ],
+      "answer_preview": "- Максимальный расход в рабочих условиях, Qmax, м³/ч: 4, 6, 10, 16, 25, 40, 65, 100.\n- Диапазон измерений в рабочих условиях, Qmin/Qmax: 1:100, 1:140, 1:160, 1:250.\n- Пределы допускаемой относительной погрешности измерений объёма газа в рабочих условиях, %: ±2,0 (при Qmin ≤ Q < 0,2 Qmax), ±1,0 (при 0,2 Qmax ≤ Q ≤ Qmax).\n- Диапазон измерений объёмного расхода, приведённого к стандартным условиям, м³/ч: от 0,029 до 18,79, от 0,032 до 28,19, от 0,046 до 46,98, от 0,074 до 75,17, от 0,074 до 117,5, ",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11989.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 7 Таблица 3 – Основные технические характеристики Наименование характеристики Значение Гранд - SPI?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Таблица"
+      ],
+      "answer_preview": "- Диаметр условного прохода: 15; 20; 25; 25; 32; 50 мм.\n- Максимальное избыточное давление измеряемой среды: 300 кПа.\n- Количество разрядов отсчётного устройства: 10.\n- Напряжение питания: 3,6 В.\n- Маркировка взрывозащиты: 1 Ex ib IIВ T4 Gb X.\n- Условия эксплуатации: температура от -40 до +60 °С, относительная влажность воздуха до 95%.\n- Масса: не более 3,0; 3,5; 4,0; 7,5 кг в зависимости от модели.\n- Габаритные размеры: не более 220×130×135 мм для некоторых моделей и 290×130×135 мм для других.\n",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7071.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о: Лист № 7 Всего листов 7 Сведения о методиках (методах) измерений приведены в эксплуатационном документе. Нормативные и т?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Сведения"
+      ],
+      "answer_preview": "На странице 7 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» указаны следующие сведения:\n* Сведения о методиках (методах) измерений приведены в эксплуатационном документе.\n* Нормативные и технические документы, устанавливающие требования к счётчикам газа Гранд-SPI:\n * ГОСТ Р 8.618 -2014 ГСИ. Государственная поверочная схема для средств измерений объёмного и массового расхода газа; * ГОСТ 30319.2-2015 Газ природный. Методы расчёта физических свойств. Вычисление физических свойств на осно",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 20749.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 18,
+      "topic": "раздел",
+      "question": "Что описано в разделе «300 Цифровые проводные» документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "300",
+        "Цифровые"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» нет информации о разделе «300 Цифровые проводные».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18130.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 19,
+      "topic": "раздел",
+      "question": "Что описано в разделе «10 Знак утверждения типа» документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "10",
+        "Знак"
+      ],
+      "answer_preview": "Знак утверждения типа наносится на лицевую панель счётчика методом аппликации и на титульные листы руководства по эксплуатации и паспорта типографским способом.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13774.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 56433-14 и в каком контексте?",
+      "expected_keys": [
+        "56433-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 56433-14 указан на листе № 1 документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 20486.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 21,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» регистрационный номер 705-015-70670506-2013 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 24067.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Уникальный номер записи в реестре аккредитованных лиц № 30004-13 указан на странице паспорта документа «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» в разделе, относящемся к испытательному центру ФГУП «ВНИИМС».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5732.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход в рабочих условиях для модели Гранд-SPI-16 составляет 16 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4622.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6115.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 1655 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1655",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер приказа Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г., упомянутый в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)», — № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5405.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 56433 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "56433",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер: 56433-14.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4533.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 14 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "14",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» нет характеристики с номером 14.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6017.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 5542 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "5542",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» не указано значение характеристики 5542.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 19744.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 13 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "13",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» нет значения 13 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5535.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 20448 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "20448",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» параметр с номером 20448 не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4988.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 90 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "90",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход в рабочих условиях для модели Гранд-SPI составляет 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5157.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 2939 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2939",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "ГОСТ 2939-63 указан в описании средства измерений как стандарт, к которому приводится объём газа при стандартных условиях.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5867.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 63. и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "63,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход в рабочих условиях, Qmax, м³/ч для модификации Гранд-SPI-65 — 65.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18598.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 30319.2 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "30319,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "ГОСТ 30319.2-2015 Газ природный. Методы расчёта физических свойств. Вычисление физических свойств на основе данных о плотности при стандартных условиях и содержании азота и диоксида углерода.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15203.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 2015. и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2015,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» указано значение ГОСТ 30319.2-2015 — это методы расчёта физических свойств газа, вычисление физических свойств на основе данных о плотности при стандартных условиях и содержании азота и диоксида углерода.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 19716.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 300 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "300",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальное избыточное давление измеряемой среды, кПа — 300.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5695.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход в рабочих условиях для модели Гранд-SPI-25 составляет 25 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1068.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 60 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "60",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон измерений объёмного расхода, приведённого к стандартным условиям, для модели Гранд-SPI составляет от 0,295 м³/ч до 470,0 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5179.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 40 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "40",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход в рабочих условиях для модели Гранд-SPI 40 составляет 40 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4705.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальное избыточное давление измеряемой среды — 300 кПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4884.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальное избыточное давление измеряемой среды — 300 кПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4988.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 1.4 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1,4",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер версии (идентификационный номер) ПО счётчиков газа Гранд-SPI — 1.4.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4989.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 209590 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "209590",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО счётчиков газа Гранд-SPI — 0x6D209590.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4971.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальное избыточное давление измеряемой среды: 300 кПа.\nМаксимальный расход в рабочих условиях для модификации Гранд-SPI-6: 6 м³/ч.\nДиапазон измерений в рабочих условиях для модификации Гранд-SPI-6: 1:140 (Qmin/Qmax).\nПределы допускаемой относительной погрешности измерений объёма газа в рабочих условиях для Qmin ≤ Q < 0,2 Qmax для модификации Гранд-SPI-6: ±2,0 %.\nДиапазон измерений объёмного расхода, приведённого к стандартным условиям, для модификации Гранд-SPI-6: от 0,032 до 28,19 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11978.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 45,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о приказе № 1655?",
+      "expected_keys": [
+        "1655",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5406.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 46,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4946.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о приказе № 56433?",
+      "expected_keys": [
+        "56433",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Регистрационный номер счётчиков газа Гранд-SPI — 56433-14.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4949.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13237.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» не упоминается приказ № 3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5232.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» о приказе № 4?",
+      "expected_keys": [
+        "4",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)» не упоминается приказ № 4.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4055.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 33,
+  "source_file": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес).pdf",
+  "product": "ОТ Гранд-SPI от 12.07.2024 (изм факт адрес)"
+}

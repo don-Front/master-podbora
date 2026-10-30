@@ -1,0 +1,605 @@
+{
+  "source_file": "46509-11-(fail-otobrazhenija) (2).pdf",
+  "product": "46509-11-(fail-otobrazhenija) (2)",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "46509-11-(fa"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «46509-11-(fail-otobrazhenija) (2)» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «____» _________ 2025 г. № ____?",
+      "expected_keys": [
+        "46509-11",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 2 Всего листов 8 Сопла работают в критическом режиме. С помощью каждого сопла установки задается определенный объ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Сопла"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 3 Всего листов 8 в результате чего воздух из помещения начинает поступать через поверяемые средства измерений, а ?",
+      "expected_keys": [
+        "Лист",
+        "Всего"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 4 Всего листов 8 Рисунок 3 – СПУ-5-Х-3 Установка с четырьмя одновременно подключаемыми счетчиками Рисунок 4 – СПУ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 5 Всего листов 8 Разделение программного обеспечения выпол нено внутри кода ПО на уровне языка программирования. ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Разделение"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 6 Всего листов 8 Наименование характеристики Значение Диапазон измерений канала вакуумметрического давления, кПа ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Наименование"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 7 Всего листов 8 Знак утверждения типа наносится на маркировочную табличку методом лазерной гравировки или термот?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Знак"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «46509-11-(fail-otobrazhenija) (2)» о: Лист № 8 Всего листов 8 Испытательный центр Федеральное государственное унитарное предприятие «Всероссийский научно-иссл?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Испытательный"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 19,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2100 Масса, кг, не более 1000» документа «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "2100",
+        "Масса",
+        "1000"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 46509-11 и в каком контексте?",
+      "expected_keys": [
+        "46509-11",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 21,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 46434-11 и в каком контексте?",
+      "expected_keys": [
+        "46434-11",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 82393-21 и в каком контексте?",
+      "expected_keys": [
+        "82393-21",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 71394-18 и в каком контексте?",
+      "expected_keys": [
+        "71394-18",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 73018-18 и в каком контексте?",
+      "expected_keys": [
+        "73018-18",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 25,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 50519-17 и в каком контексте?",
+      "expected_keys": [
+        "50519-17",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 26,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 69551-17 и в каком контексте?",
+      "expected_keys": [
+        "69551-17",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 27,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 51409-12 и в каком контексте?",
+      "expected_keys": [
+        "51409-12",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 28,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 59550-14 и в каком контексте?",
+      "expected_keys": [
+        "59550-14",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 29,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 71767-18 и в каком контексте?",
+      "expected_keys": [
+        "71767-18",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 30,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 31,
+      "topic": "рег.номер",
+      "question": "Где в документе «46509-11-(fail-otobrazhenija) (2)» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 2025 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "2025",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 46509 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "46509",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 6, и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "6,",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение ±0, и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "±0,",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение ±3 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "±3",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 46434 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "46434",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение ±0,2 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "±0,2",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 82393 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "82393",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 21 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "21",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 7, и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "7,",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 71394 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "71394",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 18 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "18",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 73018 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "73018",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 50519 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "50519",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 48,
+      "topic": "значение",
+      "question": "Какое значение 17 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "17",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 49,
+      "topic": "значение",
+      "question": "Какое значение 69551 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "69551",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 50,
+      "topic": "значение",
+      "question": "Какое значение 51409 и для какой характеристики указано в документе «46509-11-(fail-otobrazhenija) (2)»?",
+      "expected_keys": [
+        "51409",
+        "характеристик",
+        "46509-11-("
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    }
+  ]
+}

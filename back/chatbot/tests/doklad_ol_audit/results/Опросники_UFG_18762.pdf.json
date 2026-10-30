@@ -1,0 +1,199 @@
+{
+  "file": "Опросники\\UFG\\18762.pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\Опросники\\UFG\\18762.pdf",
+  "size_bytes": 887807,
+  "generated_at": "2026-07-14T10:51:49.354264+00:00",
+  "text_source": "pdf_ocr",
+  "ocr_chars": 1011,
+  "ocr_preview": "Иипгтынтыинъ\nЛуночпишт-панэ\n70v\nшиьчb1aм\nТЧРБЧАЕНТНОСТЬ\nид,7 ~07 ;\nmta nz\n7пп\nДОН;\nОпвосныи пист Пасхода чера\nUFG NDDOU 18762\n02.11,20211 .\nЕЗp .\nмшмiмu\n1аmй 4 11Рр П4\nпu wи,\n1те |\nеш\n[rамт\nm\n1шае\nРж.р\n1)1м\n\"1 +\nFтxu\n4ыы;\nПехничсыме тшвашэчин 3AaGuuy\nшята \n1i1\n1mг тnе ,\nNa . \nVnм\n41\nWmr\nзиJлLi\n5mfriiiti \nсJы\nПньцхамгыозиз аыръмучг-ошнvn 1aw\n\"Радошалаг ьан мъадамъwляу\nEnnuniim\nозла |яънф\n'ufрrce T1\n'm51\n1м1\n\"52iнс7я , ыамu\"дъwъэз + Buа\"е*\nа15шш\n1et uia |\n11\n41 |\nтzшм\nстEn'\n\n1ш11нн\nТwушuнидwпmk\nчwlwuwuщuнu\nТЧРБЧАЕНТНОСТЬ\nLshбjii\nAn}uиuагвн\nД.Н\n1pm\nшшлы паuw\nuinns\nшenч Птаъ ,\nОпросный лист пастадомгря UFG MDDOO1 762\n02,11 ?023r.\nm1\nr\n'11mie\nскшио;шыъэ\nшш,амuгuum\n1nvah4\nсаагманви\nhлаu\nn\n\" \n|1-1\n1a1m,\n's [ta\nТЕПТЕОЕЛГЕ Dartc#\n~маа1 яцы\n24\n\n4 1 {нТърыпыш ШNе\nInhn1 1\nТЧРБЧАЕНТНОСТ\n{ор чэ\"яо=\n71n14 ,1\nDUН;\n 1ll 1\nОпросный лнст расходомера UFG NuuuUD18762 от 02.11.2U23г\nмаача пъналтгзав\n1ь ,; ;ча\n1м #u\n\"rтаапэ\nшГушннлг\nТн Билими\nZкмытг\nтanuaiua\n1]\n1u\nKCca2\nЁ221ul4\nаъ ,к угr\nTntacrie\nIamqаг'11 Аnv\nаао\nщw ;",
+  "bot_specs": {
+    "medium": null,
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": null,
+    "accuracy": null,
+    "diameter": null
+  },
+  "reference_specs": {
+    "medium": null,
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": null,
+    "accuracy": null,
+    "diameter": null
+  },
+  "heuristic_specs": {
+    "medium": null,
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": null,
+    "accuracy": null,
+    "diameter": null
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      }
+    ],
+    "ref_filled": 0,
+    "matched": 0,
+    "mismatches": 0,
+    "bot_missing": 0,
+    "bot_extra": 0,
+    "accuracy_pct": 100.0
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 16766.0,
+    "llm_ms": 936.1,
+    "pipeline_ms": 17708.6,
+    "ocr_chars": 1011,
+    "llm_input_chars": 1011,
+    "text_source": "pdf_ocr",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 2996.5,
+  "bot_llm_raw_preview": "{}",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": null,\n  \"gas_type\": null,\n  \"duplication_type\": null,\n  \"flowMin\": null,\n  \"flowMax\": null,\n  \"flow_unit\": null,\n  \"pressureMin\": null,\n  \"pressureMax\": null,\n  \"pressure_unit\": null,\n  \"tempMediumMin\": null,\n  \"tempMediumMax\": null,\n  \"tempAmbientMin\": null,\n  \"tempAmbientMax\": null,\n  \"temperature_unit\": null,\n  \"accuracy\": null,\n  \"diameter\": null\n}\n```",
+  "elapsed_ms": 37513.1
+}

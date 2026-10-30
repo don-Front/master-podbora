@@ -42,6 +42,7 @@ import { CompetitorMaskCard } from './CompetitorMaskCard';
 import { CompetitorComparisonCard } from './CompetitorComparisonCard';
 import { ServiceCenterPicker } from './ServiceCenterPicker';
 import { RagSourcesCard } from './RagSourcesCard';
+import { DeveloperContactIcon, DeveloperContactPanel } from './DeveloperContactPanel';
 import { normalizeSpecs } from '../utils/searchEquipment';
 import { extractQmaxHintParams, isQmaxFlowWarning } from '../utils/qmaxHint';
 import {
@@ -374,6 +375,25 @@ function isAllowedLiquidTzFile(file) {
   return LIQUID_TZ_EXTS.some((ext) => n.endsWith(ext));
 }
 
+function formatChatSendError(error) {
+  if (!error) return 'Извините, произошла ошибка. Попробуйте позже.';
+  if (error.code === 'ECONNABORTED') {
+    return 'Превышено время ожидания ответа сервера. Если вы отправляли опросный лист — попробуйте ещё раз.';
+  }
+  const status = error.response?.status;
+  if (status === 413) {
+    return 'Файл слишком большой для отправки. Максимальный размер — 15 МБ.';
+  }
+  const data = error.response?.data;
+  if (typeof data === 'string' && data.trim()) return data.trim();
+  if (data?.detail) {
+    return typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail);
+  }
+  if (data?.message) return String(data.message);
+  if (error.message) return `Ошибка отправки: ${error.message}`;
+  return 'Извините, произошла ошибка. Попробуйте позже.';
+}
+
 /** accept для input[type=file] на шаге ТЗ */
 const LIQUID_TZ_ACCEPT =
   '.pdf,.doc,.docx,.txt,.zip,.rar,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,application/zip,application/x-zip-compressed,application/x-rar-compressed,application/vnd.rar';
@@ -402,7 +422,7 @@ const BOT_WIDGET_MESSAGE_KINDS = new Set([
   'service_center_picker',
 ]);
 
-/** Только текст/вложение без карточек и интерактивных блоков — может занимать всю ширину чата. */
+/** Только текст/вложение без карточек и интерактивных блоков. */
 function isTextOnlyBotMessage(msg) {
   if (!msg || msg.from !== 'bot') return false;
   if (Array.isArray(msg.ragSources) && msg.ragSources.length > 0) return false;
@@ -1337,6 +1357,7 @@ function EquipmentShowcase({ items, onPick, onCurrentItemChange, pickDisabled = 
 
 const GREETING_TEASER_ENGAGED_KEY = 'turbo-don-greeting-teaser-engaged';
 const GREETING_TEASER_SEEN_KEY = 'turbo-don-greeting-teaser-seen';
+const GREETING_TEASER_SESSION_KEY = 'turbo-don-greeting-teaser-session';
 const LEGACY_GREETING_TEASER_KEY = 'turbo-don-greeting-teaser-done';
 
 const CHAT_GREETING_TEASER_TEXT =
@@ -1371,29 +1392,62 @@ function markGreetingTeaserSeen() {
   try {
     localStorage.setItem(GREETING_TEASER_SEEN_KEY, '1');
     localStorage.removeItem(LEGACY_GREETING_TEASER_KEY);
+    sessionStorage.setItem(GREETING_TEASER_SESSION_KEY, '1');
+  } catch {
+    /* ignore */
+  }
+}
+
+function markGreetingTeaserSessionHidden() {
+  try {
+    sessionStorage.setItem(GREETING_TEASER_SESSION_KEY, '1');
+  } catch {
+    /* ignore */
+  }
+}
+
+function readGreetingTeaserSessionHidden() {
+  try {
+    return sessionStorage.getItem(GREETING_TEASER_SESSION_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function clearLegacyGreetingTeaserStorage() {
+  try {
+    localStorage.removeItem(LEGACY_GREETING_TEASER_KEY);
+    localStorage.removeItem(GREETING_TEASER_ENGAGED_KEY);
+    localStorage.removeItem(GREETING_TEASER_SEEN_KEY);
+    sessionStorage.removeItem(GREETING_TEASER_SESSION_KEY);
   } catch {
     /* ignore */
   }
 }
 
 function shouldScheduleGreetingTeaser() {
-  try {
-    if (localStorage.getItem(LEGACY_GREETING_TEASER_KEY) === '1') {
-      localStorage.removeItem(LEGACY_GREETING_TEASER_KEY);
-    }
-  } catch {
-    /* ignore */
-  }
-  return !readGreetingTeaserEngaged() && !readGreetingTeaserSeen();
+  clearLegacyGreetingTeaserStorage();
+  return true;
+}
+
+function dismissGreetingTeaser(setter) {
+  setter(false);
 }
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showGreetingTeaser, setShowGreetingTeaser] = useState(false);
+  const [showGreetingTeaser, setShowGreetingTeaser] = useState(() => shouldScheduleGreetingTeaser());
   const [chatWindowHeight, setChatWindowHeight] = useState(getInitialChatWindowHeight);
   const [viewportVersion, setViewportVersion] = useState(0);
   const [inputValue, setInputValue] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(() => [
+    {
+      id: 1,
+      from: 'bot',
+      text: FALLBACK_HINTS_START.bot_message,
+      time: new Date(),
+    },
+  ]);
   const [isTyping, setIsTyping] = useState(false);
   const [typingStage, setTypingStage] = useState('');
   const [typingDetailsOpen, setTypingDetailsOpen] = useState(false);
@@ -1441,14 +1495,14 @@ export function ChatWidget() {
   const [selectedPdfMode, setSelectedPdfMode] = useState(null);
   const [isOrderFileDragActive, setIsOrderFileDragActive] = useState(false);
 
-  const [hintState, setHintState] = useState({
-    currentState: 'start',
-    hints: [],
-    showBack: false,
-    isFinal: false,
-    expectsInput: false,
-    hintsOnly: false,
-  });
+  const [hintState, setHintState] = useState(() => ({
+    currentState: FALLBACK_HINTS_START.current_state,
+    hints: FALLBACK_HINTS_START.hints || [],
+    showBack: FALLBACK_HINTS_START.show_back,
+    isFinal: FALLBACK_HINTS_START.is_final,
+    expectsInput: FALLBACK_HINTS_START.expects_input,
+    hintsOnly: FALLBACK_HINTS_START.hints_only ?? false,
+  }));
   const [hintLocked, setHintLocked] = useState(false);
   const [isEquipmentPriceActionBusy, setIsEquipmentPriceActionBusy] = useState(false);
 
@@ -1495,6 +1549,7 @@ export function ChatWidget() {
   const [isSelectingAccessories, setIsSelectingAccessories] = useState(false);
   const [gazpromRegistryOnly, setGazpromRegistryOnly] = useState(false);
   const [orderSpecsFlowMaxAt25Enabled, setOrderSpecsFlowMaxAt25Enabled] = useState(false);
+  const [isDeveloperContactOpen, setIsDeveloperContactOpen] = useState(false);
   const orderSpecsFlowMaxAt25Ref = useRef(false);
   const orderSpecsConfirmSessionRef = useRef(false);
   const orderSpecsEditFocusPendingRef = useRef(false);
@@ -1938,15 +1993,13 @@ export function ChatWidget() {
   }, [initializeChat]);
 
   useEffect(() => {
-    if (!shouldScheduleGreetingTeaser()) return undefined;
+    if (!shouldScheduleGreetingTeaser()) {
+      setShowGreetingTeaser(false);
+      return undefined;
+    }
 
-    greetingTeaserTimerRef.current = window.setTimeout(() => {
-      greetingTeaserTimerRef.current = null;
-      if (readGreetingTeaserEngaged()) return;
-      greetingTeaserShownRef.current = true;
-      setShowGreetingTeaser(true);
-      markGreetingTeaserSeen();
-    }, 2000);
+    greetingTeaserShownRef.current = true;
+    setShowGreetingTeaser(true);
 
     return () => {
       if (greetingTeaserTimerRef.current) {
@@ -1962,10 +2015,7 @@ export function ChatWidget() {
       window.clearTimeout(greetingTeaserTimerRef.current);
       greetingTeaserTimerRef.current = null;
     }
-    if (!greetingTeaserShownRef.current) {
-      markGreetingTeaserEngaged();
-    }
-    setShowGreetingTeaser(false);
+    dismissGreetingTeaser(setShowGreetingTeaser);
     applyDefaultChatSize();
     notifyEmbedResize();
     adjustInputHeight();
@@ -2026,6 +2076,14 @@ export function ChatWidget() {
     return undefined;
   }, [isOpen, showGreetingTeaser, chatWindowHeight, notifyEmbedResize]);
 
+  useLayoutEffect(() => {
+    if (!isWidgetEmbedded()) return undefined;
+    document.documentElement.classList.toggle('widget-embed--launcher-only', !isOpen);
+    return () => {
+      document.documentElement.classList.remove('widget-embed--launcher-only');
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     if (!isWidgetEmbedded()) return undefined;
 
@@ -2041,11 +2099,10 @@ export function ChatWidget() {
       if (data.type === 'OPEN_CHAT') {
         notifyEmbedResize();
         setIsOpen(true);
-        setShowGreetingTeaser(false);
+        dismissGreetingTeaser(setShowGreetingTeaser);
       }
       if (data.type === 'HIDE_TEASER') {
-        setShowGreetingTeaser(false);
-        markGreetingTeaserSeen();
+        dismissGreetingTeaser(setShowGreetingTeaser);
       }
     };
 
@@ -2084,6 +2141,20 @@ export function ChatWidget() {
   const toggleOpen = () => {
     setIsOpen((prev) => !prev);
   };
+
+  const handleOpenDeveloperContact = useCallback(() => {
+    setIsDeveloperContactOpen(true);
+  }, []);
+
+  const handleCloseDeveloperContact = useCallback(() => {
+    setIsDeveloperContactOpen(false);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsDeveloperContactOpen(false);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const onViewportResize = () => {
@@ -3653,7 +3724,7 @@ export function ChatWidget() {
         const errorMsg = {
           id: Date.now() + 1,
           from: 'bot',
-          text: 'Извините, произошла ошибка. Попробуйте позже.',
+          text: formatChatSendError(error),
           time: new Date(),
         };
         setMessages((prev) => [...prev, errorMsg]);
@@ -3756,7 +3827,52 @@ export function ChatWidget() {
     orderFileDragDepthRef.current = 0;
     setIsOrderFileDragActive(false);
     const file = event.dataTransfer?.files?.[0];
-    selectOrderSpecsFile(file);
+    if (!file) return;
+
+    if (isOrderPdfStep || hintState.currentState === 'start') {
+      if (!isAllowedOrderSpecsFile(file)) {
+        alert('Пожалуйста, выберите файл в формате PDF или DOCX');
+        return;
+      }
+      if (file.size > ORDER_SPECS_MAX_BYTES) {
+        alert('Размер файла не должен превышать 15 МБ');
+        return;
+      }
+      addMessage('', 'user', null, file, { forceOrderSpecsFlow: true });
+    } else if (isLiquidTzLikeStep) {
+      if (!isAllowedLiquidTzFile(file)) {
+        alert('Допустимые форматы: PDF, DOC, DOCX, TXT, ZIP, RAR (до 10 МБ)');
+        return;
+      }
+      if (file.size > LIQUID_TZ_MAX_BYTES) {
+        alert('Размер файла не должен превышать 10 МБ');
+        return;
+      }
+      setSelectedPdf(file);
+      setSelectedPdfMode(PDF_MODE_LIQUID_TZ);
+      setSelectedImage(null);
+      setImagePreview(null);
+      liquidTzFileRef.current = {
+        file,
+        fileName: file.name || '',
+        uploadedUrl: '',
+        uploadedName: '',
+      };
+    } else if (file.type?.startsWith('image/')) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Размер файла не должен превышать 5MB');
+        return;
+      }
+      setSelectedImage(file);
+      setImagePreview(URL.createObjectURL(file));
+      setSelectedPdf(null);
+      setSelectedPdfMode(null);
+    } else if (isAllowedOrderSpecsFile(file)) {
+      addMessage('', 'user', null, file, { forceOrderSpecsFlow: true });
+    } else {
+      alert('Для подбора оборудования используйте PDF или DOCX.');
+    }
+
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -3945,10 +4061,7 @@ export function ChatWidget() {
               type="button"
               className="chat-widget__greeting-teaser-close"
               aria-label="Скрыть приветствие"
-              onClick={() => {
-                setShowGreetingTeaser(false);
-                markGreetingTeaserSeen();
-              }}
+              onClick={() => dismissGreetingTeaser(setShowGreetingTeaser)}
             >
               ×
             </button>
@@ -3985,13 +4098,23 @@ export function ChatWidget() {
           ref={chatWindowRef}
           className={`chat-widget__window ${isOpen ? 'chat-widget__window--visible' : ''}${
             isOrderFileDropEnabled ? ' chat-widget__window--file-drop-enabled' : ''
-          }${isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''}`}
+          }${isOrderFileDragActive ? ' chat-widget__window--file-drop-active' : ''}${
+            isDeveloperContactOpen ? ' chat-widget__window--developer-flip' : ''
+          }`}
           onDragEnter={handleOrderFileDragEnter}
           onDragOver={handleOrderFileDragOver}
           onDragLeave={handleOrderFileDragLeave}
           onDrop={handleOrderFileDrop}
         >
-        <header ref={chatHeaderRef} className="chat-widget__header">
+        <div className={`chat-widget__flip${isDeveloperContactOpen ? ' chat-widget__flip--open' : ''}`}>
+          <div className="chat-widget__flip-inner">
+            <div className="chat-widget__flip-face chat-widget__flip-face--front">
+        <header
+          ref={chatHeaderRef}
+          className={`chat-widget__header${
+            chatWindowWidth <= 420 ? ' chat-widget__header--compact' : ''
+          }${chatWindowWidth <= 320 ? ' chat-widget__header--narrow' : ''}`}
+        >
           <div className="chat-widget__header-info">
             <div className="chat-widget__avatar" />
             <div>
@@ -3999,9 +4122,21 @@ export function ChatWidget() {
               <div className="chat-widget__subtitle">Онлайн • обычно отвечает за пару секунд</div>
             </div>
           </div>
-          <button type="button" className="chat-widget__close" onClick={toggleOpen} aria-label="Закрыть чат">
-            ×
-          </button>
+          <div className="chat-widget__header-actions">
+            <button
+              type="button"
+              className="chat-widget__developer-contact"
+              onClick={handleOpenDeveloperContact}
+              aria-label="Связаться с разработчиком сервиса"
+              title="Связаться с разработчиком"
+            >
+              <DeveloperContactIcon className="chat-widget__developer-contact-icon" width={18} height={18} />
+              <span className="chat-widget__developer-contact-label">Связаться с разработчиком</span>
+            </button>
+            <button type="button" className="chat-widget__close" onClick={toggleOpen} aria-label="Закрыть чат">
+              ×
+            </button>
+          </div>
         </header>
 
         <div ref={chatMessagesRef} className="chat-widget__messages">
@@ -4100,6 +4235,12 @@ export function ChatWidget() {
                       message.id === latestOrderSpecsConfirmId
                         ? qmaxHintView
                         : null
+                    }
+                    onDeveloperContact={
+                      hintState.currentState === 'order_specs_confirm' &&
+                      message.id === latestOrderSpecsConfirmId
+                        ? handleOpenDeveloperContact
+                        : undefined
                     }
                   />
                 ) : message.kind === 'order_specs_text_clarify' && message.orderSpecsClarifyPreview ? (
@@ -4440,8 +4581,17 @@ export function ChatWidget() {
             </button>
           </div>
         </div>
+            </div>
+            <div className="chat-widget__flip-face chat-widget__flip-face--back">
+              <DeveloperContactPanel
+                onClose={handleCloseDeveloperContact}
+                isOpen={isDeveloperContactOpen}
+              />
+            </div>
+          </div>
         </div>
-        {isOpen ? renderResizeHandles() : null}
+        </div>
+        {isOpen && !isDeveloperContactOpen ? renderResizeHandles() : null}
       </div>
     </div>
   );

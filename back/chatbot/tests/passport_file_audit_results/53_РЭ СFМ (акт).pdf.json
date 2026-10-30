@@ -1,0 +1,1697 @@
+{
+  "generated_at": "2026-07-07T16:27:02.294432+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "WRONG_TOPIC": 15,
+    "CORRECT": 7,
+    "HALLUCINATION": 1,
+    "PARTIAL": 27
+  },
+  "bug_counts": {
+    "retrieval": 15,
+    "hallucination": 1
+  },
+  "accuracy_pct": 14.0,
+  "partial_pct": 54.0,
+  "bad_pct": 32.0,
+  "per_file": [
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "questions": 50,
+      "correct": 7,
+      "partial": 27,
+      "bad": 16,
+      "accuracy_pct": 14.0,
+      "retrieval_pct": 16.0,
+      "top_bugs": [
+        [
+          "partial",
+          27
+        ],
+        [
+          "retrieval",
+          15
+        ],
+        [
+          "hallucination",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Для чего предназначен прибор или документ «РЭ СFМ (акт)»?",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ СFМ (акт)»?",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ]
+    },
+    {
+      "question": "Что входит в комплект поставки согласно «РЭ СFМ (акт)»?",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ СFМ (акт)»?",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 2 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 2 ООО НПО \"Турбулентнос",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 7 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 12 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 12 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 14 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 14 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 18 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 18 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 19 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентност",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 20 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 20 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 25 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентност",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 26 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 26 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 32 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 32 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 34 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 34 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 36 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 36 ООО НПО \"Турбулентн",
+      "source_file": "РЭ СFМ (акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 155.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем указан ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 8677.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В представленном контексте не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 5971.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «РЭ СFМ (акт)» не указано срока действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 8281.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "При эксплуатации расходомеров Turbo Flow СFМ дополнительно руководствоваться паспортом ТУАС.407281.001 ПС. Расходомер соответствует требованиям ТУ 26.51.52-031-70670506-2020.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 9933.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диаметр условный Ду: от 1 до 350 мм; - Верхняя граница диапазона измерений массового расхода жидкости QMmax(F): от 19,8 до 4350000 кг/ч; - Верхняя граница диапазона измерений объёмного расхода жидкости (по воде при температуре 20 °С и абсолютном давлении 0,1 МПа) QVmax(F): от 0,02 до 2722 м³/ч; - Стабильность нуля при измерении массового расхода: от 0,005 до 350 кг/ч; - Класс точности: 0,1; 0,15; 0,2; 0,25; 0,5; - Пределы допускаемой относительной погрешности при измерении массового расхода δQ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 23978.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Давление 1 абсолютное, МПа (float32 R); - Давление 1 избыточное, МПа (float32 R); - Давление 2 абсолютное, МПа (float32 R); - Давление 2 избыточное, МПа (float32 R); - Температура внутренняя (float32 R); - Температура внешняя (float32 R); - Температура среды встроенного датчика, °С (float32 R); - Температура среды внешнего датчика, °С (float32 R); - Текущий массовый расход, кг/ч (float32 R); - Текущий объёмный рабочий расход, м³/ч (float32 R); - Текущий объёмный приведённый расход, м³/ч (float",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 13908.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «РЭ СFМ (акт)» упоминаются следующие сведения о программном обеспечении:\n- Работа расходомера с использованием ПО \"АРМ \"СФМ View\".\n- Система архивирования данных.\n- Система защиты доступа к параметрам расходомера.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 3548.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 256.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ СFМ (акт)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать руководство по эксплуатации UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 235.7,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «РЭ СFМ (акт)» о: Счётчики-расходомеры массовые Turbo Flow СFМ Руководство по эксплуатации ТУАС.407281.001 РЭ?",
+      "expected_keys": [
+        "Счётчики-расходомеры",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "- Продукт: Turbo Flow CFM; - Тип информации: паспорт; - Руководство по эксплуатации: ТУАС.407281.001 РЭ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ СFМ (акт)"
+      ],
+      "total_ms": 2053.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\"?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о «РЭ СFМ (акт)» и «Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\"».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3049.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 3 Содержание 1 Описание и работа..............?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о содержании страницы 3 документа «РЭ СFМ (акт)» о Руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2505.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 4 ООО НПО \"Турбулентность – ДОН\" Настоящее руководство по эксплуатации (далее?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 4 документа «РЭ СFМ (акт)» или о руководстве по эксплуатации для Turbo Flow СFМ от ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5145.2,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 5 1 ОПИСАНИЕ И РАБОТА 1.1 Назначение 1.1.1 Счё?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 5 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5082.9,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 6 ООО НПО \"Турбулентность – ДОН\" шкафом с промышленным компьютером (РШ с ПК) ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном контексте информации о странице 6 документа «РЭ СFМ (акт)» о Turbo Flow СFМ Руководство по эксплуатации 6 ООО НПО \"Турбулентность – ДОН\" шкафом с промышленным компьютером (РШ с ПК) нет.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5576.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 7 Наименование характеристики Значение Пределы?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о характеристиках, пределах и других значениях для РЭ СFМ ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1565.1,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 8 ООО НПО \"Турбулентность – ДОН\" Верхний предел измерений избыточного давлени?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о верхнем пределе измерений избыточного давления для Turbo Flow СFM Руководство по эксплуатации 8 ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1905.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 9 Таблица 2 – Основные технические характерист?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном документе нет информации о странице 9 документа «РЭ СFМ (акт)» и содержании таблицы 2 – Основные технические характеристики руководства по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2443.0,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 10 ООО НПО \"Турбулентность – ДОН\" Таблица 3.1 – Первичный преобразователь рас?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 10 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 10 ООО НПО \"Турбулентность – ДОН\" Таблица 3.1 – Первичный преобразователь рас.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2531.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 11 Токовый выход имеет гальваническую развязку?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о том, что указано на странице 11 документа «РЭ СFМ (акт)» о руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" относительно наличия гальванической развязки у токового выхода.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2520.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 12 ООО НПО \"Турбулентность – ДОН\" приведенная плотность, температура, давлени?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о приведённых значениях плотности, температуры и давления.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1185.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 13 г/см3 г/см3 g/cm3 грамм на сантиметр кубиче?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе на странице 13 нет информации о руководстве по эксплуатации Turbo Flow СFM ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1670.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 14 ООО НПО \"Турбулентность – ДОН\" 1.2.10 Расходомеры являются стойкими к возд?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе на странице 14 нет информации о стойкости расходомеров к воздействию воздуха.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1289.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 15 соответствует диапазону температуры измеряе?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о диапазоне температуры эксплуатации прибора Turbo Flow СFM ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4334.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 16 ООО НПО \"Турбулентность – ДОН\" 1.3 Комплектность 1.3.1 Комплектность средс?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 16 о РЭ СFМ (акт) о: Turbo Flow СFМ Руководство по эксплуатации 16 ООО НПО \"Турбулентность – ДОН\" 1.3 Комплектность 1.3.1 Комплектность средств.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3045.0,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 17 Кроме того, ЭБ обрабатывае т управляющие си?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 17 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\", а также ничего не сказано об ЭБ, обрабатывающем управляющие системы.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2593.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 18 ООО НПО \"Турбулентность – ДОН\" 1.4.2 Принцип работы расходомера Расходомер?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 18 документа «РЭ СFМ (акт)» и принципе работы расходомера.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1827.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 19 детекторы, расположенные с каждой стороны т?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе на странице 19 нет информации о детекторах и их расположении.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3766.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 20 ООО НПО \"Турбулентность – ДОН\" отождествлять диаметр условного прохода тру?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о том, как отождествлять диаметр условного прохода тру на странице 20 документа «РЭ СFМ (акт)» для ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5045.1,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 21 Наименование и адреса регистров Основные па?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 21 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4931.9,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 22 ООО НПО \"Турбулентность – ДОН\" 0x003A Код состояния токового выхода: 0 - о?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о странице 22 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 22 ООО НПО \"Турбулентность – ДОН\" 0x003A Код состояния токового выхода: 0 -.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5680.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 23 0x0090 Накопленный приведенный реверсивный ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 23 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1958.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 24 ООО НПО \"Турбулентность – ДОН\" Адрес Наименование Тип данных Доступ Примеч?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 24 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 24 ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5227.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 25 Адрес Наименование Тип данных Доступ Примеч?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 25.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 3981.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 26 ООО НПО \"Турбулентность – ДОН\" N бита Битовая маска кода НС Описание Приме?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 26.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 817.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 27 N бита Маска события Описание Комментарий 1?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о странице 27 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4600.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 28 ООО НПО \"Турбулентность – ДОН\" Единицы измерения объемного расхода Значени?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 28 о РЭ СFМ (акт) для Turbo Flow СFМ Руководство по эксплуатации ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4698.2,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 29 Единицы измерения плотности Значение Описан?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о единицах измерения плотности и их значениях для ООО НПО «Турбулентность – ДОН» в руководстве по эксплуатации Turbo Flow СFМ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5067.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 30 ООО НПО \"Турбулентность – ДОН\" 12 объемный приведенный расход (инвентариза?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 30 о РЭ СFМ (акт) для Turbo Flow СFМ Руководство по эксплуатации ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 1888.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 31 ТС 012/2011, ГОСТ 31610.0-2019, ГОСТ 31610.?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 31 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 31 ТС 012/2011, ГОСТ 31610.0-2019, ГОСТ 31610.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 6177.8,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 32 ООО НПО \"Турбулентность – ДОН\" U0= 11,22 В, I0= 0,5 А, С0= 1 мкФ, L0= 0,15?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 32 документа «РЭ СFМ (акт)» и значениях параметров U0, I0, C0, L0 для ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5472.3,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 33 Неиспользуемые места установки кабельных вв?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о странице 33 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5397.7,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 34 ООО НПО \"Турбулентность – ДОН\" - наименование предприятия-изготовителя; - ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 34.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4083.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 35 Эксплуатационная документация упаковывается?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 35 документа «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5167.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 36 ООО НПО \"Турбулентность – ДОН\" 2 ИСПОЛЬЗОВАНИЕ ПО НАЗНАЧЕНИЮ 2.1 Эксплуата?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 36.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 4164.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 37 «Земля» к болту крепления на трубопровод. Р?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о документе «РЭ СFМ (акт)» и руководстве по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" на странице 37.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2036.4,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 38 ООО НПО \"Турбулентность – ДОН\" Для жидкости - ПП вниз, чтобы воздух не ска?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 38 и о параметрах, связанных с «РЭ СFМ (акт)» для Turbo Flow СFМ Руководство по эксплуатации 38 ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 2233.6,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 49,
+      "topic": "стр.39",
+      "question": "Что указано на странице 39 документа «РЭ СFМ (акт)» о: Руководство по эксплуатации Turbo Flow СFМ ООО НПО \"Турбулентность – ДОН\" 39 2.4 Подготовка трубопровода Правильная сист?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном документе нет информации на странице 39 о РЭ СFМ (акт) и руководстве по эксплуатации Turbo Flow СFМ ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5015.3,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ СFМ (акт).pdf",
+      "id": 50,
+      "topic": "стр.40",
+      "question": "Что указано на странице 40 документа «РЭ СFМ (акт)» о: Turbo Flow СFМ Руководство по эксплуатации 40 ООО НПО \"Турбулентность – ДОН\" - обеспечение компенсации тепловых деформац?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "СFМ"
+      ],
+      "answer_preview": "В представленном документе нет информации о странице 40 документа «РЭ СFМ (акт)» и содержании акта по эксплуатации Turbo Flow СFМ от ООО НПО «Турбулентность – ДОН» относительно обеспечения компенсации тепловых деформаций.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "Письмо РСТ Турбулентность-ДОН испр. ОТ адрес (файл отображения) (003)"
+      ],
+      "total_ms": 5544.5,
+      "heuristic_quality": "partial",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 52,
+  "source_file": "РЭ СFМ (акт).pdf",
+  "product": "Turbo Flow CFM"
+}

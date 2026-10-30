@@ -1,0 +1,1535 @@
+{
+  "generated_at": "2026-07-07T14:28:43.158341+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 35,
+    "PARTIAL": 15
+  },
+  "bug_counts": {},
+  "accuracy_pct": 70.0,
+  "partial_pct": 30.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "questions": 50,
+      "correct": 35,
+      "partial": 15,
+      "bad": 0,
+      "accuracy_pct": 70.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          15
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ОТ"
+      ],
+      "answer_preview": "Счетчики газа Гранд ТК(М) предназначены для измерений объёма природного газа по ГОСТ 5542-2014 или паров сжиженного газа по ГОСТ 20448-90, а также других неагрессивных газов.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 4565.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 4850.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер — 61928-15.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 5019.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок службы утверждён приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 4921.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки указана в комплекте поставки счётчика газа Гранд ТК(М), один экземпляр допускается поставлять по одному адресу отгрузки. Нормативный документ, устанавливающий требования к счётчикам газа Гранд-ТК(М): ТУ 4213-026-70670506-2015 «Счётчик газа Гранд ТК(М). Технические условия».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 7600.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диаметр условный: 20; 25; 32 мм.\n- Максимальный расход: 4 м³/ч, 6 м³/ч, 10 м³/ч, 16 м³/ч, 25 м³/ч.\n- Диапазон измерений: 1:100, 1:140, 1:160.\n- Пределы допускаемой относительной погрешности измерений объёма газа: ± 2,5 % (для Qmin ≤ Q < 0,2 Qmax), ± 1,0 % (для 0,2 Qmax ≤ Q ≤Qmax) для исполнения 1, ± 1,5 % (для 0,2 Qmax ≤ Q ≤Qmax) для исполнения 2.\n- Порог чувствительности: 0,038 м³/ч, 0,040 м³/ч, 0,060 м³/ч, 0,095 м³/ч, 0,150 м³/ч.\n- Избыточное давление: не более 5 кПа.\n- Падение давления при ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 13447.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Избыточное давление: не более 5 кПа; - Падение давления при Qmax: не более 1,5 кПа; - Температура окружающего воздуха: от –30 °С до +50 °С; - Максимальный расход (Qmax): для Гранд–4 ТК(М) — 4 м³/ч, для Гранд–6 ТК(М) — 6 м³/ч, для Гранд–10 ТК(М) — 10 м³/ч, для Гранд–16 ТК(М) — 16 м³/ч, для Гранд–25 ТК(М) — 25 м³/ч; - Порог чувствительности: для Гранд–4 ТК(М) — 0,038 м³/ч, для Гранд–6 ТК(М) — 0,040 м³/ч, для Гранд–10 ТК(М) — 0,060 м³/ч, для Гранд–16 ТК(М) — 0,095 м³/ч, для Гранд–25 ТК(М) — 0,150",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 10434.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» указано, что счётчики содержат встроенное программное обеспечение (ПО) и энергонезависимую память для хранения данных заводских настроек. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. ПО располагается в энергонезависимой памяти микроконтроллера, обеспечивающего аппаратную защиту от считывания ПО или его части с целью копирования или внесения изменений. Идентиф",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 8367.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Счетчик газа Гранд ТК(М) GFGB.00.00.000 — 1 шт.\n- Паспорт счетчика газа Гранд ТК(М) GFGB.00.00.000 ПС — 1 экз.\n- Методика поверки — 1 экз. (допускается поставлять один экземпляр в один адрес отгрузки).\n- Прокладка ПМБ — 1 шт.\n- Прокладка с фильтром — 1 шт.\n- Упаковка — 1 шт.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 13575.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «ОТ ГРАНД ТК(М) от 28.10.2024» ссылается на следующие нормативные документы:\n* ГОСТ 14254-96; * ТУ 4213-026-70670506-2015 «Счётчик газа Гранд ТК(М). Технические условия»; * ГОСТ 5542–2014; * ГОСТ 20448–90; * Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 6055.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ ГРАНД ТК(М) от 28.10.2024» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555 Лис?",
+      "expected_keys": [
+        "61928-15",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 2975.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ ГРАНД ТК(М) от 28.10.2024» о: Лист № 2 Всего листов 5 Рисунок 1 – Общий вид счетчиков газа Гранд ТК(М) Рисунок 2 – Схема пломбирования счетчиков газа ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "На листе № 2 документа «ОТ ГРАНД ТК(М) от 28.10.2024» представлены:\n- общий вид счётчиков газа Гранд ТК(М) (Рисунок 1); - схема пломбирования счётчиков газа Гранд ТК(М) (Рисунок 2).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 2497.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ ГРАНД ТК(М) от 28.10.2024» о: Лист № 3 Всего листов 5 Таблица 1 Идентификационные данные (признаки) Значение Идентификационное наименование ПО 1.11.20?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Таблица"
+      ],
+      "answer_preview": "Идентификационное наименование ПО — 1.11.2010.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 2810.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ ГРАНД ТК(М) от 28.10.2024» о: Лист № 4 Всего листов 5 Характеристика Гранд – 4 ТК(М) Гранд – 6 ТК(М) Гранд – 10 ТК(М) Гранд – 16 ТК(М) Гранд – 25 ТК(М?",
+      "expected_keys": [
+        "14254-96",
+        "Лист",
+        "Всего"
+      ],
+      "answer_preview": "На листе № 4 документа «ОТ ГРАНД ТК(М) от 28.10.2024» указаны следующие характеристики счётчиков газа Гранд – ТК(М): средний срок службы не менее 20 лет, степень защиты по ГОСТ 14254-96 IP65.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 3971.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ ГРАНД ТК(М) от 28.10.2024» о: Лист № 5 Всего листов 5 Испытательный центр Федеральное государственное унитарное предприятие «Всероссийский научно-иссл?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Испытательный"
+      ],
+      "answer_preview": "На странице 5 документа «ОТ ГРАНД ТК(М) от 28.10.2024» указано:\n- лист № 5; - всего листов 5; - Испытательный центр — Федеральное государственное унитарное предприятие «Всероссийский научно-исследовательский институт метрологической службы» (ФГУП «ВНИИМС»); - адрес: 119361, г. Москва, ул. Озёрная, д. 46; - телефон/факс: (495) 437-55-77 / 437-56-66; - e-mail: office@vniims.ru; - web-сайт: www.vniims.ru; - уникальный номер записи в реестре аккредитованных лиц № 30004-13.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 6259.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 16,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ ГРАНД ТК(М) от 28.10.2024» упоминается регистрационный номер 61928-15 и в каком контексте?",
+      "expected_keys": [
+        "61928-15",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 61928-15 указан на первой странице документа «ОТ ГРАНД ТК(М) от 28.10.2024» в разделе «Паспорт средства измерений».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 9566.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 17,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ ГРАНД ТК(М) от 28.10.2024» упоминается регистрационный номер 14254-96 и в каком контексте?",
+      "expected_keys": [
+        "14254-96",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» регистрационный номер 14254-96 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 10372.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 18,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ ГРАНД ТК(М) от 28.10.2024» упоминается регистрационный номер 23358-87 и в каком контексте?",
+      "expected_keys": [
+        "23358-87",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» регистрационный номер 23358-87 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 4725.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 19,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ ГРАНД ТК(М) от 28.10.2024» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 9994.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ ГРАНД ТК(М) от 28.10.2024» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 30004-13 указан в разделе паспорта на продукт «ОТ ГРАНД ТК(М) от 28.10.2024» в пункте, где перечислены данные испытательного центра — ФГУП «ВНИИМС».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 10118.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 28 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "28",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» указано число 28 в контексте утверждения документа приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 11496.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 18787.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 2555 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "2555",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер приказа Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г., указанный в документе «ОТ ГРАНД ТК(М) от 28.10.2024», — № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 11099.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 61928 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "61928",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер 61928-15 указан в документе для счётчиков газа Гранд ТК(М).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 10881.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 15 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "15",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» нет значения 15 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 6054.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 5542 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "5542",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» счётчики газа Гранд ТК(М) предназначены для измерений объёма природного газа по ГОСТ 5542-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 6324.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 2014 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "2014",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» счётчики газа Гранд ТК(М) предназначены для измерений объёма природного газа по ГОСТ 5542-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 11548.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 20448 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "20448",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» счётчики газа Гранд ТК(М) предназначены для измерений паров сжиженного газа по ГОСТ 20448-90.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 11435.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 90, и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "90,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Наработка на отказ счётчиков газа Гранд ТК(М) составляет не менее 90 000 часов.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 18775.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Средний срок службы счётчиков газа Гранд ТК(М) составляет не менее 20 лет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 18999.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» указаны следующие характеристики счётчиков газа Гранд ТК(М):\n* Средний срок службы — не менее 20 лет.\n* Степень защиты — IP65 по ГОСТ 14254-96.\n* Диаметр условный: 20; 25; 32 мм; 25; 32 мм; 40 мм.\n* Максимальный расход: 4 м³/ч, 6 м³/ч, 10 м³/ч, 16 м³/ч, 25 м³/ч.\n* Диапазон измерений Qmin /Q max: 1:100, 1:140, 1:160.\n* Пределы допускаемой относительной погрешности измерений объёма газа: ± 2,5 %, ± 1,0 %, ± 1,5 %.\n* Порог чувствительности: 0,038 м³/ч, 0,0",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 28973.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» указаны следующие характеристики счётчиков газа Гранд ТК(М):\n* Средний срок службы — не менее 20 лет.\n* Степень защиты — IP65 по ГОСТ 14254-96.\n* Диаметр условный: 20; 25; 32 мм; 25; 32 мм; 40 мм.\n* Максимальный расход: 4 м³/ч, 6 м³/ч, 10 м³/ч, 16 м³/ч, 25 м³/ч.\n* Диапазон измерений Qmin /Q max: 1:100, 1:140, 1:160.\n* Пределы допускаемой относительной погрешности измерений объёма газа: ± 2,5 %, ± 1,0 %, ± 1,5 %.\n* Порог чувствительности: 0,038 м³/ч, 0,0",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 43800.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 1.11 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "1,11",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Идентификационное наименование ПО указано на странице 3 документа «ОТ ГРАНД ТК(М) от 28.10.2024», значение — 1.11.2010.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 18791.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 2010 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "2010",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Идентификационное наименование ПО указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024» — 1.11.2010.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 17870.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 01 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "01",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер версии (идентификационный номер) ПО счётчика газа Гранд ТК(М) должен быть не ниже 01.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 19631.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 76 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "76",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО — 76СС.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 19044.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» значение 50.2 не указано.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 12820.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Уровень защиты от непреднамеренных и преднамеренных изменений – «высокий» в соответствии с Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 21588.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» счётчики газа Гранд ТК(М) предназначены для измерений объёма природного газа по ГОСТ 5542-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 23709.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход для модели Гранд – 10 ТК(М) составляет 10 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 8685.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 16 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "16",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальный расход для модели Гранд ТК(М) составляет 16 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 11883.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 25 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "25",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ ГРАНД ТК(М) от 28.10.2024» значение 25 указано для характеристики «Максимальный расход, Qmax, м³/ч».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 10858.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диаметр условный — 32 мм.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 9805.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 40 и для какой характеристики указано в документе «ОТ ГРАНД ТК(М) от 28.10.2024»?",
+      "expected_keys": [
+        "40",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диаметр условный счётчика газа Гранд ТК(М) составляет 40 мм.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 10801.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 45,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ ГРАНД ТК(М) от 28.10.2024» о приказе № 2555?",
+      "expected_keys": [
+        "2555",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 18767.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 46,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ ГРАНД ТК(М) от 28.10.2024» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 12001.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ ГРАНД ТК(М) от 28.10.2024» о приказе № 61928?",
+      "expected_keys": [
+        "61928",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Регистрационный номер средства измерений «Счётчики газа Гранд ТК(М)» — 61928-15.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 8379.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ ГРАНД ТК(М) от 28.10.2024» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 11468.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ ГРАНД ТК(М) от 28.10.2024» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 4553.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ ГРАНД ТК(М) от 28.10.2024» о приказе № 4?",
+      "expected_keys": [
+        "4",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ ГРАНД ТК(М) от 28.10.2024"
+      ],
+      "total_ms": 3708.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 31,
+  "source_file": "ОТ ГРАНД ТК(М) от 28.10.2024.pdf",
+  "product": "ОТ ГРАНД ТК(М) от 28.10.2024"
+}

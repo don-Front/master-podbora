@@ -1,0 +1,78 @@
+id: elmetro_flous_dru
+competitor: "ООО «ЭлМетро Групп»"
+product_name: "Расходомер-счётчик газа ультразвуковой ЭЛМЕТРО-Флоус (ДРУ)"
+source_document: "Rukovodstvo_po_expluatatsii_ELMETRO_Flous_DRU_.pdf"
+source_section: "Приложение А, таблица А.1"
+document_code: "3068.00.00.000 РЭ"
+mask_prefix: "ЭЛМЕТРО-Флоус"
+mask_example: "ЭЛМЕТРО-Флоус.1-Ex-C050-CI-BN-XXXS-015-OM-AC-G-CZX-XX"
+image: "elmetro_flous_dru.png"
+
+fields:
+  - id: channels
+    label: "Количество акустических каналов (лучей)"
+    position: 2
+    allowed:
+      - "1"
+      - "2"
+      - "4"
+
+  - id: ex_protection
+    label: "Исполнение по взрывозащите"
+    position: 3
+    allowed:
+      - ""
+      - Ex
+
+  - id: body
+    label: "Конструктивное исполнение"
+    position: 4
+    allowed:
+      - C
+      - P
+
+  - id: dn
+    label: "Типоразмер (DN), мм"
+    position: 5
+    allowed:
+      - "050"
+      - "080"
+      - "100"
+      - "150"
+      - "200"
+      - "250"
+      - "300"
+
+  - id: accuracy
+    label: "Класс точности (погрешность при рабочих условиях)"
+    position: 6
+    allowed:
+      - A
+      - B
+      - C
+      - D
+      - F
+
+  - id: function
+    label: "Исполнение по составу и измеряемым величинам"
+    position: 7
+    allowed:
+      - W
+      - I
+
+  - id: pressure
+    label: "Исполнение по давлению, МПа"
+    position: 8
+    allowed:
+      - B
+      - L
+      - S
+      - M
+      - E
+      - H
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - pressure

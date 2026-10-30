@@ -1,0 +1,1673 @@
+{
+  "generated_at": "2026-07-07T13:33:38.833658+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 16,
+    "PARTIAL": 17,
+    "WRONG_TOPIC": 2,
+    "HALLUCINATION": 15
+  },
+  "bug_counts": {
+    "retrieval": 2,
+    "hallucination": 15
+  },
+  "accuracy_pct": 32.0,
+  "partial_pct": 34.0,
+  "bad_pct": 34.0,
+  "per_file": [
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "questions": 50,
+      "correct": 16,
+      "partial": 17,
+      "bad": 17,
+      "accuracy_pct": 32.0,
+      "retrieval_pct": 96.0,
+      "top_bugs": [
+        [
+          "partial",
+          17
+        ],
+        [
+          "hallucination",
+          15
+        ],
+        [
+          "retrieval",
+          2
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какие сведения о программном обеспечении есть в документе «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 1 документа «Методика поверки ПУРС-М» о: ФЕДЕРАJIЬНОЕ ГОСУДАРСТВЕННОЕ УНИТАРНОЕ ПРЕДПРИJIТИЕ (ВС",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что указано на странице 7 документа «Методика поверки ПУРС-М» о: Прпмечаrия: 1. Есrи у эталона не нормировано СКО при во",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «1 Общпе положения» документа «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3 Требовrпия к усповпям проведения поверкш» документа «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3.1 При проведении поверки соб.шодают следующие условия, если не оговорено особо:» документа «Мет",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3.2 Средства измерений, предн.ц}наченные для измерений условий окружающей среды и» документа «Мет",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «4 Требовапия к спецпдJrиgтдм, осуществляющпм поверIсу» документа «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «5 Метролоrическше и техпические требования к средствам поверкп» документа «Методика поверки ПУРС-",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «6 Требованпя ýс.ловпя) по обеспечеппю безопаспости проведенпя поверкш» документа «Методика поверк",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «6.4 При появлении течи жидкости и друптх ситуаций, нарушающих процесс проведени,I» документа «Мет",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «7 Внешпий осмотр средства tlзмерений» документа «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «9 Проверка прогрsммпого обеспечеппя средствд пзмереппй» документа «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «11.1 Опрелеление опlосительной погрешности (доверительньD( границ срrмарной» документа «Методика ",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «12 Оформлеппе результдтов поверки» документа «Методика поверки ПУРС-М»?",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3 Проверка программного обеспечения: (положительныйr/отрицательный, пункг 9)» документа «Методика",
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Методика"
+      ],
+      "answer_preview": "Методика поверки ПУРС-М предназначена для проведения поверки установок поверочных передвижных ПУРС-М. Она включает методы передачи единиц величин непосредственным сличением и проверки метрологических требований установок при измерении объёма жидкости в потоке, массового и объёмного расходов жидкости.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 9814.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем или правообладателем в документе «Методика поверки ПУРС-М» указано ФГУП «ВНИИМ им. Д.И. Менделеева».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11752.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационного или сертификационного номера в «Методике поверки ПУРС-М» не указано.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 9812.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 9523.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки ПУРС-М описана в документе «Методика поверки ПУРС-М» (МП 1715_1_2024).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11920.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых объёмов жидкости: от 1 до 700 м³/ч; - диапазон объёмного расхода жидкости: от 6 до 30 м³/ч; - пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) установки при измерении (воспроизведении единицы) объёма жидкости в потоке: ±0,15%; - диапазон измерения уровня жидкости: от 0,01 до 4 м; - пределы допускаемой абсолютной погрешности установки при измерении уровня жидкости: ±1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 12035.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Давление: не более 1,6 МПа; - Температура: от +5 °C до +35 °C; - Диапазон объёмного расхода жидкости: от 0,01 м³/ч до 30 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 12133.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://fgis.gost.ru/fundmetrology/cm/results",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 170.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В методике поверки ПУРС-М информация о комплекте поставки не указана.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 9788.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://fgis.gost.ru/fundmetrology/cm/results",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 143.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Методика поверки ПУРС-М» о: ФЕДЕРАJIЬНОЕ ГОСУДАРСТВЕННОЕ УНИТАРНОЕ ПРЕДПРИJIТИЕ (ВСЕРОССИЙСКИЙ нАучно-исслЕдовАтЕльскиЙ инстиryт мЕтрологии им.Д.И.М?",
+      "expected_keys": [
+        "ФЕДЕРАJIЬНОЕ",
+        "ГОСУДАРСТВЕННОЕ",
+        "УНИТАРНОЕ"
+      ],
+      "answer_preview": "На странице 1 документа «Методика поверки ПУРС-М» указано, что документ согласован заместителем директора филиала ФГУП ВНИИМ им. Д.И. Менделеева.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 2085.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «Методика поверки ПУРС-М» о: 1 Общпе положения Настоящий доку rент распространяется на устalновки поверочные пере,щижные ПУРС-М (ла;lее - устаповки).?",
+      "expected_keys": [
+        "Общпе",
+        "Настоящий",
+        "ПУРС-М"
+      ],
+      "answer_preview": "Настоящий документ распространяется на установки поверочные переносные ПУРС-М. Прослеживаемость установок обеспечивается к Государственному первичному специальному эталону единиц массы и объёма жидкости в потоке, массового и объёмного расходов жидкости ГЭТ 63-2019 в соответствии с Государственной поверочной схемой для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях массового и объёмного расходов жидкости (часть 1), согласно приказу Рос",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 9191.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «Методика поверки ПУРС-М» о: Окружающая среда - воздух с параJuетрtlми: - темпераryра, oCl) от +5 до +35 - относrгельнм влахность, О/о от 30 до 80 - ?",
+      "expected_keys": [
+        "Окружающая",
+        "Juетрtlми",
+        "35"
+      ],
+      "answer_preview": "Температура воздуха: от +5 °C до +35 °C.\nОтносительная влажность воздуха: от 30 % до 80 %.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 5093.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «Методика поверки ПУРС-М» о: 6.2 К средствам поверки и ycTtlнoвKe обеспечивают свободньй доступ. 6.3 Освещенность доJDкна обеспе.п.rвать отчетлив},ю ?",
+      "expected_keys": [
+        "6.2",
+        "TtlнoвKe",
+        "6.3"
+      ],
+      "answer_preview": "6.2 К средствам поверки и установке обеспечивают свободный доступ.\n6.3 Освещенность должна обеспечивать отчётливую видимость средств поверки и установки, а также снятие показаний с них.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 4230.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «Методика поверки ПУРС-М» о: 9 Проверка прогрsммпого обеспечеппя средствд пзмереппй Операцию полверждения соответствия прогр:tммного обеспечения (дал?",
+      "expected_keys": [
+        "Проверка",
+        "Операцию",
+        "JIЕяют"
+      ],
+      "answer_preview": "Операцию подтверждения соответствия программного обеспечения выполняют с использованием персонального компьютера, входящего в состав установки, и ПО установки. Определение идентификационных данных ПО осуществляют согласно руководству по эксплуатации на установку. Результат считается положительным, если полученные идентификационные данные ПО установки (идентификационное наименование, номер версии, цифровой идентификатор, алгоритм вычисления цифрового идентификатора) соответствуют данным, указанны",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 6346.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «Методика поверки ПУРС-М» о: Отклонение показания устtlновки от показания эталона при передаче единицы объема жидкости в потоке в7-ой то.п<е расхода ?",
+      "expected_keys": [
+        "Отклонение",
+        "FIисJIяют"
+      ],
+      "answer_preview": "Отклонение показания установки от показания эталона при передаче единицы объёма жидкости в потоке в 7-ой точке расхода при i-ом измерении $6(V)_i$, % вычисляют по формуле:\n$6(V)_i = \\frac{V_i - V_{эт}}{V_{эт}} \\cdot 100\\%$,\nгде:\n* $V_i$ — объём жидкости в потоке по показаниям установки, м$^3$; * $V_{эт}$ — объём жидкости в потоке по показаниям эталона, м$^3$; * $i$ — индекс измерения.\nСреднее арифметическое отклонение показаний установки от показаний эталона при передаче единицы объёма жидкости ",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 8081.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «Методика поверки ПУРС-М» о: Прпмечаrия: 1. Есrи у эталона не нормировано СКО при воспроизведении едIЕицы объема жидкости в потоке ,S(И).., , то СКО ?",
+      "expected_keys": [
+        "Прпмечаrия",
+        "1.",
+        "Есrи"
+      ],
+      "answer_preview": "СКО установки при воспроизведении единицы объёма жидкости в потоке определяют без учёта СКО эталона, если у эталона не нормировано СКО при воспроизведении единицы объёма жидкости в потоке.\nНеисключённую систематическую погрешность (НСП) установки при воспроизведении единицы объёма жидкости в потоке вычисляют по формуле О(И)=11,1 +s(и).* где s(и), — НСП эталона при воспроизведении единицы объёма жидкости в потоке, %.\nВместо НСП эталона можно брать относительную погрешность (доверительные границы ",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 4468.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «Методика поверки ПУРС-М» о: Результат считalют положительным, если зЕачения относительной погрешности (доверительньо< граIrиц ср{марной погрешности)?",
+      "expected_keys": [
+        "Результат",
+        "Еачения",
+        "Irиц"
+      ],
+      "answer_preview": "Результат считают положительным, если значения относительной погрешности (доверительные границы суммарной погрешности) установки при измерении (воспроизведении единицы) объёма жидкости в потоке не превышают значений, указанных в таблице 3.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 4105.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «Методика поверки ПУРС-М» о: Приложение А Форма протокола поверки средства измерений (Рекомендуемая) ПРотокол ПоВЕРКИ Nq Стр из Наименование ср€дства?",
+      "expected_keys": [
+        "Приложение",
+        "Форма",
+        "Рекомендуемая"
+      ],
+      "answer_preview": "В Приложении А «Форма протокола поверки средства измерений (Рекомендуемая)» указаны следующие данные:\n- Наименование средства измерений; - Тип, модель, изготовитель; - Заводской номер; - Наименование и адрес заказчика; - Методика поверки; - Место проведения поверки; - Поверка выполнена с применением; - Условия проведения поверки (температура окружающей среды, атмосферное давление, относительная влажность); - Результаты поверки по пунктам: внешний осмотр средства измерений, подготовка к поверке и",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11038.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «Методика поверки ПУРС-М» о: из Определение относительной погрешности (доверrгельных границ суммарной погрешности) установки при измерении (воспроизв?",
+      "expected_keys": [
+        "Определение",
+        "Таблица",
+        "Стр"
+      ],
+      "answer_preview": "- Таблица А.2; - параметры и их обозначения не расшифрованы на данной странице.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 2200.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «Методика поверки ПУРС-М» о: Стр. из таблицы А.2 Результат: (положrrrе.льный/сrгрицательный) опрделение допускаемой абсолютной погрешности установки ?",
+      "expected_keys": [
+        "Стр",
+        "Результат"
+      ],
+      "answer_preview": "Результат: положительный/отрицательный не указан.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 972.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 22,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 Общпе положения» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Общпе"
+      ],
+      "answer_preview": "В разделе «1 Общие положения» документа «Методика поверки ПУРС-М» указано, что настоящий документ распространяется на установки поверочные передвижные ПУРС-М. Прослеживаемость установок обеспечивается в соответствии с Государственной поверочной схемой для средств измерений массы и объёма жидкости в потоке, массового и объёмного расходов жидкости. Поверка проводится согласно приказу Росстандарта от 26.09.2022 № 2356.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 14982.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 23,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Перечевь операцпй поверкп» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Перечевь"
+      ],
+      "answer_preview": "При проведении поверки выполняют следующие операции, указанные в таблице 2.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 7549.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 24,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3 Требовrпия к усповпям проведения поверкш» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Требовrпия"
+      ],
+      "answer_preview": "В разделе «3 Требования к условиям проведения поверки» документа «Методика поверки ПУРС-М» описаны следующие условия проведения поверки:\n1. Измеряемая среда — жидкость (вода питьевая) с параметрами: температура от +5 °C до +35 °C, давление не более 1,6 МПа.\n2. Окружающая среда — воздух с параметрами: температура от +5 °C до +35 °C, относительная влажность от 30 % до 80 %, атмосферное давление от 84 кПа до 106 кПа.\n3. Средства измерений, предназначенные для измерений условий окружающей среды и из",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 18462.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 25,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.1 При проведении поверки соб.шодают следующие условия, если не оговорено особо:» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "3.1"
+      ],
+      "answer_preview": "- Измеряемая среда — жидкость (вода питьевая) с параметрами: температура от +5 °C до +35 °C; давление, МПа, не более 1,6.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11668.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 26,
+      "topic": "раздел",
+      "question": "Что описано в разделе «9 Окружающая среда - воздух с параJuетрtlми:» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Окружающая",
+        "Juетрtlми"
+      ],
+      "answer_preview": "- Температура: от +5 до +35 °C; - Относительная влажность: от 30% до 80%; - Атмосферное давление: от 84 кПа до 106 кПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11289.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 27,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.2 Средства измерений, предн.ц}наченные для измерений условий окружающей среды и» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "3.2",
+        "Средства"
+      ],
+      "answer_preview": "- Температура окружающей среды: от +5 °C до +35 °C; - Относительная влажность: от 30 % до 80 %; - Атмосферное давление: от 84 кПа до 106 кПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 10740.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 28,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.3 Средства измерений, преднаlначенные для измерений температуры, плотности! уровIIя» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "3.3",
+        "Средства",
+        "IIя"
+      ],
+      "answer_preview": "Средства измерений, предназначенные для измерений температуры, плотности и уровня жидкости, входящие в состав установки, на момент поверки установки должны иметь действующие сведения о положительных результатах поверки средств измерений, включённые в Федеральный информационный фонд по обеспечению единства измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 6074.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 29,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3.4 Если срок периодfiеской поверки средств измерений из cocTrвa уст:мовки наступает» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "3.4",
+        "Если",
+        "Trвa"
+      ],
+      "answer_preview": "Если срок периодической поверки средств измерений из состава установки наступает до срока периодической поверки установки, или появилась необходимость проведения внеочередной поверки средств измерений, то поверяется только это средство измерений, при этом внеочередную поверку установки не проводят.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 7244.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 30,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4 Требовапия к спецпдJrиgтдм, осуществляющпм поверIсу» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Требовапия",
+        "Jrиgтдм",
+        "Iсу"
+      ],
+      "answer_preview": "При проведении поверки специалисты должны соответствовать следующим требованиям:\n- знать требования руководства по эксплуатации на установку и на применяемые средства поверки; - знать требования данного документа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 10162.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 31,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5 Метролоrическше и техпические требования к средствам поверкп» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Метролоrическше"
+      ],
+      "answer_preview": "Метрологические и технические требования к средствам поверки приведены в таблице 3. Для проведения поверки используются рабочий эталон 1-го разряда согласно ГПС (часть 1), утверждённой приказом Росстандарта от 26.09.2022 № 2356 с необходимым диапазоном расхода.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 18546.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 32,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6 Требованпя ýс.ловпя) по обеспечеппю безопаспости проведенпя поверкш» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Требованпя"
+      ],
+      "answer_preview": "При проведении поверки соблюдают следующие требования (условия):\n- правила техники безопасности, действующие на месте проведения поверки; - правила безопасности при эксплуатации средств поверки и установки, приведённые в эксплуатационных документах; - правила по охране труда, действующие на месте проведения поверки.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 6154.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 33,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6.2 К средствам поверки и ycTtlнoвKe обеспечивают свободньй доступ.» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "6.2",
+        "TtlнoвKe"
+      ],
+      "answer_preview": "К средствам поверки и установке обеспечивают свободный доступ.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 6404.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 34,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6.3 Освещенность доJDкна обеспе.п.rвать отчетлив},ю видимость средств поверки и» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "6.3",
+        "Освещенность",
+        "JDкна"
+      ],
+      "answer_preview": "Освещенность должна обеспечивать отчетливую видимость средств поверки и снятие показаний с них.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 6428.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 35,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6.4 При появлении течи жидкости и друптх ситуаций, нарушающих процесс проведени,I» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "6.4"
+      ],
+      "answer_preview": "При появлении течи жидкости и других ситуаций, нарушающих процесс проведения поверки, поверка должна быть прекращена или приостановлена до устранения неисправностей.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 9963.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 36,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7 Внешпий осмотр средства tlзмерений» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Внешпий"
+      ],
+      "answer_preview": "При внешнем осмотре установки устанавливают соответствие следующим требованиям:\n- внешний вид установки должен соответствовать описанию и изображению, приведённому в описании типа; - комплектность и маркировка установки должны соответствовать эксплуатационным документам; - на установке не должно быть внешних механических повреждений и дефектов, препятствующих её применению; - на установке должна быть возможность нанесения знака поверки в целях защиты от несанкционированного вмешательства.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 8099.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 37,
+      "topic": "раздел",
+      "question": "Что описано в разделе «8 Подготовка к поверке п опробованпе средства измереццй» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Подготовка"
+      ],
+      "answer_preview": "При подготовке к поверке выполняют следующие работы:\n- проверка выполнения условий разделов 3, 4, 5 и 6 настоящего документа; - подготовка к работе установки и средств поверки согласно их эксплуатационным документам; - проверка герметичности соединений и узлов гидравлической системы рабочим давлением; - удаление воздуха из трубопроводов установки после заполнения жидкостью согласно руководству по эксплуатации установки.\nПри опробовании проверяют работоспособность установки путём увеличения или у",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 10063.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 38,
+      "topic": "раздел",
+      "question": "Что описано в разделе «8.1 Подготовка к поверке» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "8.1",
+        "Подготовка"
+      ],
+      "answer_preview": "При подготовке к поверке выполняют следующие работы:\n- проверка выполнения условий разделов 3, 4, 5 и 6 настоящего документа; - подготовка к работе установки и средств поверки согласно их эксплуатационным документам; - проверка герметичности соединений и узлов гидравлической системы рабочим давлением; - удаление воздуха из трубопроводов установки после заполнения жидкостью согласно руководству по эксплуатации установки.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 23002.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 39,
+      "topic": "раздел",
+      "question": "Что описано в разделе «9 Проверка прогрsммпого обеспечеппя средствд пзмереппй» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Проверка"
+      ],
+      "answer_preview": "Операцию подтверждения соответствия программного обеспечения заявленным идентификационным данным выполняют с использованием персонального компьютера, входящего в состав установки, и ПО установки. \nОпределение идентификационных данных ПО осуществляют согласно руководству по эксплуатации на установку. \nРезультат подтверждения считается положительным, если полученные идентификационные данные ПО установки (идентификационное наименование, номер версии, цифровой идентификатор, алгоритм вычисления цифр",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 13266.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 40,
+      "topic": "раздел",
+      "question": "Что описано в разделе «10.1 Определение относительной погреIшrости (доверитеJIьньD( границ сулrмарной» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "10.1",
+        "Определение",
+        "Iшrости"
+      ],
+      "answer_preview": "В разделе «10.1 Определение относительной погрешности (доверительных границ суммарной погрешности)» документа «Методика поверки ПУРС-М» описано определение относительной погрешности установки при измерении (воспроизведении единицы) объёма жидкости в потоке методом непосредственного сличения для каждого расходомера, входящего в состав установки.\nДля этого выбираются точки расхода в зависимости от диапазона расходов. Количество измерений в каждой точке должно быть не менее 5. Расход устанавливаетс",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 7787.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 41,
+      "topic": "раздел",
+      "question": "Что описано в разделе «11 Подтверzrцеппе соответствия средства пзмерепий метрологическпм цlебовапиям» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "11",
+        "Подтверzrцеппе"
+      ],
+      "answer_preview": "В разделе «11 Подтверждение соответствия средства измерений метрологическим требованиям» документа «Методика поверки ПУРС-М» описано определение относительной погрешности (доверительных границ суммарной погрешности) установки при измерении (воспроизведении единиц) объёма жидкости в потоке и объёмного расхода жидкости непосредственным сличением.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 7039.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 42,
+      "topic": "раздел",
+      "question": "Что описано в разделе «11.1 Опрелеление опlосительной погрешности (доверительньD( границ срrмарной» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "11.1",
+        "Опрелеление"
+      ],
+      "answer_preview": "Определение относительной погрешности (доверительных границ суммарной погрешности) установки при измерении (воспроизведении единицы) объёма жидкости в потоке выполняется при применении расходомеров. Количество измерений в каждой точке расхода должно быть не менее 5. Расход устанавливается с допуском ±5 %.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 7687.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 43,
+      "topic": "раздел",
+      "question": "Что описано в разделе «12 Оформлеппе результдтов поверки» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "12",
+        "Оформлеппе"
+      ],
+      "answer_preview": "Результаты измерений и вычислений вносят в протокол поверки (рекомендуемая форма указана в Приложении А). Сведения о результатах поверки передают в Федеральный информационный фонд по обеспечению единства измерений в соответствии с порядком проведения поверки средств измерений, предусмотренным действующим законодательством Российской Федерации в области обеспечения единства измерений. \nПри положительных результатах поверки по заявлению заказчика оформляют свидетельство о поверке, подтверждающее с",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 18958.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 44,
+      "topic": "раздел",
+      "question": "Что описано в разделе «12.1 Результаты измерений и вьт.плслений вЕосят в протокол поверки фекоменлуемм» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "12.1",
+        "Результаты",
+        "Еосят"
+      ],
+      "answer_preview": "Результаты измерений и вычислений вносят в протокол поверки. Рекомендуемая форма протокола поверки указана в Приложении А.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 18989.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 45,
+      "topic": "раздел",
+      "question": "Что описано в разделе «12.3 При отрицательньD( результатarх поверки ycTalнoBKy к применению не догryскalют, по» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "12.3",
+        "TalнoBKy"
+      ],
+      "answer_preview": "При отрицательных результатах поверки установку к применению не допускают.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 5326.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 46,
+      "topic": "раздел",
+      "question": "Что описано в разделе «8 Приложение А» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Приложение"
+      ],
+      "answer_preview": "В разделе «Приложение А» документа «Методика поверки ПУРС-М» представлена форма протокола поверки средства измерений (рекомендуемая).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 6359.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 47,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Подготовка к поверке и опробование средства измерений: (положительныйt/отрицательный, rryнк» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Подготовка"
+      ],
+      "answer_preview": "При подготовке к поверке выполняют следующие работы:\n- проверка выполнения условий разделов 3, 4, 5 и 6 настоящего документа; - подготовка к работе установки и средств поверки согласно их эксплуатационным документам; - проверка герметичности соединений и узлов гидравлической системы рабочим давлением; - удаление воздуха из трубопроводов установки после заполнения жидкостью согласно руководству по эксплуатации установки.\nПри опробовании проверяют работоспособность установки путём увеличения или у",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11177.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 48,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3 Проверка программного обеспечения: (положительныйr/отрицательный, пункг 9)» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Проверка"
+      ],
+      "answer_preview": "Операцию подтверждения соответствия программного обеспечения заявленным идентификационным данным выполняют с использованием персонального компьютера, входящего в состав установки, и ПО установки. \nОпределение идентификационных данных ПО осуществляют согласно руководству по эксплуатации на установку. \nРезультат подтверждения соответствия программного обеспечения считается положительным, если полученные идентификационные данные ПО установки (идентификационное наименование, номер версии, цифровой и",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11569.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 49,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4 Определение метрологических характеристик средства измерений и подтверждение соответствия с» документа «Методика поверки ПУРС-М»?",
+      "expected_keys": [
+        "Определение"
+      ],
+      "answer_preview": "- Определение относительной погрешности (доверительные границы суммарной погрешности) установки при измерении (воспроизведении единицы) объёма жидкости в потоке методом непосредственным сличением для каждого расходомера, входящего в состав установки.\n- Выбор точек расхода в зависимости от диапазона расходов.\n- Количество измерений в каждой точке расхода должно быть не менее 5.\n- Определение допускаемой абсолютной погрешности установки при измерении уровня жидкости.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11755.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-М.pdf",
+      "id": 50,
+      "topic": "рег.номер",
+      "question": "Где в документе «Методика поверки ПУРС-М» упоминается регистрационный номер 71416-18 и в каком контексте?",
+      "expected_keys": [
+        "71416-18",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 71416-18 упоминается на странице 4 документа «Методика поверки ПУРС-М» в контексте упоминания установки поверочной передвижной ПУРС-М (эталон).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-М"
+      ],
+      "total_ms": 11461.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 24,
+  "source_file": "Методика поверки ПУРС-М.pdf",
+  "product": "Методика поверки ПУРС-М"
+}

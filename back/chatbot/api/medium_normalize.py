@@ -81,8 +81,14 @@ def normalize_medium_from_user_text(text: str) -> str:
     raise ValueError(MEDIUM_UNSUPPORTED_MESSAGE)
 
 
+_GAS_FORMULA_RE = re.compile(
+    r"^(?:ch4|c2h6|c3h8|c4h10|c5h12|co2|n2|ar|h2s|o2)(?:\s*\+\s*(?:ch4|c2h6|c3h8|co2|n2))?$",
+    re.IGNORECASE,
+)
+
+
 def try_normalize_medium_value(value: Any) -> Any:
-    """Мягкая нормализация для LLM/OCR: gas, liquid, unknown или исходное значение."""
+    """Мягкая нормализация для LLM/OCR: только gas, liquid или unknown."""
     if value is None:
         return None
     s = _prepare_medium_text(str(value))
@@ -95,4 +101,8 @@ def try_normalize_medium_value(value: Any) -> Any:
     try:
         return normalize_medium_from_user_text(str(value))
     except ValueError:
-        return value
+        if _GAS_FORMULA_RE.match(s.replace(" ", "")):
+            return "gas"
+        if re.search(r"\bch\d|состав\s+газ", s):
+            return "gas"
+        return "unknown"

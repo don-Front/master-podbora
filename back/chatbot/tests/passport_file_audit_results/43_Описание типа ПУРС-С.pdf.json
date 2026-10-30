@@ -1,0 +1,1635 @@
+{
+  "generated_at": "2026-07-07T15:42:28.893967+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 31,
+    "WRONG_TOPIC": 1,
+    "HALLUCINATION": 8,
+    "PARTIAL": 10
+  },
+  "bug_counts": {
+    "retrieval": 1,
+    "hallucination": 8
+  },
+  "accuracy_pct": 62.0,
+  "partial_pct": 20.0,
+  "bad_pct": 18.0,
+  "per_file": [
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "questions": 50,
+      "correct": 31,
+      "partial": 10,
+      "bad": 9,
+      "accuracy_pct": 62.0,
+      "retrieval_pct": 98.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ],
+        [
+          "hallucination",
+          8
+        ],
+        [
+          "retrieval",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какой регистрационный или сертификационный номер указан в «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Что указано на странице 3 документа «Описание типа ПУРС-С» о: Лист № 3 Всего листов 7 Рисунок 1 – Общий вид установок Пл",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Какое значение 13 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Какое значение 25 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Какое значение 22 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Какое значение 24 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Какое значение 21 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    },
+    {
+      "question": "Какое значение 23 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Описание"
+      ],
+      "answer_preview": "Установки поверочные стационарные ПУРС-С предназначены для измерений, воспроизведения, хранения и передачи единиц массы жидкости в потоке и/или объёма жидкости в потоке, и/или массового расхода жидкости, и/или объёмного расхода жидкости при проведении исследований, испытаний, поверки, калибровки и других работ по определению метрологических характеристик средств измерений и эталонов единиц массы жидкости в потоке и/или объёма жидкости в потоке, и/или массового расхода жидкости, и/или объёмного р",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 12419.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5698.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Похоже, вопрос может относиться к справочному разделу. Если нужен ответ из справочника, напишите: «Где скачать Описание типа UFG». Если нужна помощь специалиста, напишите: «Консультация». Или уточните вопрос — я отвечу через базу знаний.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 160.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5769.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 11293.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Преде",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 13101.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Температура окружающего воздуха: от +10 до +30 °С; - относительная влажность воздуха: от 30 до 80 %; - атмосферное давление: от 84 до 106 кПа; - температура жидкости: от +10 до +30 °С; - избыточное давление жидкости: не более 0,6 МПа; - диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 т/ч (м³/ч) до 140 т/ч (м³/ч); - диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 м³/ч до 140 м³/ч; - пр",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 14873.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "- Программное обеспечение установок автономное.\n- Функции программного обеспечения: сбор, отображение и регистрирование информации со средств измерений в ходе проведения калибровок и поверок, выполнение математической обработки результатов измерений, хранение и редактирование базы данных с параметрами поверяемых средств измерений и средств измерений установки, генерация отчетов о результатах проведения калибровок и поверок средств измерений, управление и контроль состояния исполнительных механиз",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 17529.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Установка поверочная стационарная ПУРС-С — 1 шт.; - Руководство по эксплуатации ПУРС-С.00.001 РЭ — 1 экз.; - Паспорт — 1 экз.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6748.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости».\nТУ 26.51.66-039-70670506-2024 «Установки поверочные стационарные ПУРС-С. Технические условия».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 9279.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Описание типа ПУРС-С» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500 Лист №?",
+      "expected_keys": [
+        "94895-25",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «13» марта 2025 г. № 500. Лист № 1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 2384.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «Описание типа ПУРС-С» о: Лист № 2 Всего листов 7 (регистрационный номер 86613 -22), расходомеры-счетчики массовые OPTIMAS (регистрационный номера?",
+      "expected_keys": [
+        "78635-20",
+        "Лист",
+        "Всего"
+      ],
+      "answer_preview": "Расходомеры-счётчики массовые OPTIMAS (регистрационный номер 50998 -12, 78635-20).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5107.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «Описание типа ПУРС-С» о: Лист № 3 Всего листов 7 Рисунок 1 – Общий вид установок Пломбировка установок осуществляется с помощью нанесения давлени?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "Пломбировка установок осуществляется с помощью нанесения давлением знака поверки на свинцовые (пластмассовые) пломбы, которыми пломбируются фланцевые соединения расходомеров.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 2366.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «Описание типа ПУРС-С» о: Лист № 4 Всего листов 7 Заводской номер установок, состоящий из шести арабских цифр, наносится на маркировочную табличку?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Заводской"
+      ],
+      "answer_preview": "Заводской номер установок, состоящий из шести арабских цифр, наносится на маркировочную табличку, закреплённую на раме установки, методом лазерной гравировки или термотрансферной печати.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 4087.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «Описание типа ПУРС-С» о: Лист № 5 Всего листов 7 журналов действий пользователя). Уровень защиты программного обеспечения от преднамеренных и неп?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Уровень"
+      ],
+      "answer_preview": "Уровень защиты программного обеспечения от преднамеренных и непреднамеренных изменений соответствует уровню «высокий» согласно Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 4868.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «Описание типа ПУРС-С» о: Лист № 6 Всего листов 7 Наименование характеристики Значение Условия эксплуатации: – температура окружающего воздуха, °С?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Наименование"
+      ],
+      "answer_preview": "от +10 до +30 °С",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 3177.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «Описание типа ПУРС-С» о: Лист № 7 Всего листов 7 Изготовитель Общество с ограниченной ответственностью НПО «Турбулентность -ДОН» (ООО НПО «Турбул?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Изготовитель"
+      ],
+      "answer_preview": "Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).\nИНН: 6141021685.\nАдрес места осуществления деятельности: 346815, Ростовская обл., Мясниковский м.р-н, Краснокрымское сп., автодорога Ростов-на-Дону – Новошахтинск тер., 1-й км, зд. 6/8.\nЮридический адрес: 129110, Москва г, вн.тер.г. Мещанский, ул. Щепкина, д. 47, стр. 1, оф. V, ком. 11.\nТелефон/факс: +7 (863) 203-77-80 / 203-77-81.\nE-mail: info@turbo-don.ru.\nWeb-сайт: www.turbo-don.ru.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 12550.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 18,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 94895-25 и в каком контексте?",
+      "expected_keys": [
+        "94895-25",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 94895-25 указан на странице 1 документа «Описание типа ПУРС-С».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 7956.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 19,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 86321-22 и в каком контексте?",
+      "expected_keys": [
+        "86321-22",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 86321-22 упоминается в контексте расходомеров-счётчиков электромагнитных ВЗЛЕТ -ТЭР.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 14519.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 77657-20 и в каком контексте?",
+      "expected_keys": [
+        "77657-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 77657-22 упоминается в контексте средств измерений массы жидкости в потоке и массового расхода жидкости — счётчики-расходомеры массовые Turbo Flow CFM (регистрационный номер 77657-20).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6210.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 21,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 68358-17 и в каком контексте?",
+      "expected_keys": [
+        "68358-17",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 68374-21 упоминается в контексте расходомеров-счётчиков массовых Turbo Flow CFM.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 7146.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 78635-20 и в каком контексте?",
+      "expected_keys": [
+        "78635-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 78635-22 упоминается в контексте расходомеров-счётчиков массовых OPTIMAS (регистрационные номера 50998 -12, 78635-20).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 10891.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 71393-18 и в каком контексте?",
+      "expected_keys": [
+        "71393-18",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 71393-1Регистрационный номер 71393-18 упоминается в контексте средств измерений — счётчиков-расходомеров массовых Micro Motion.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6591.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 45115-16 и в каком контексте?",
+      "expected_keys": [
+        "45115-16",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 45115-16 упоминается в контексте средств измерений расхода жидкости — счётчиков-расходомеров массовых Micro Motion (регистрационный номер 71393-18, 45115-16).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6615.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 25,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 51409-12 и в каком контексте?",
+      "expected_keys": [
+        "51409-12",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В качестве средств измерений избыточного давления жидкости в составе установок применяются датчики давления Turbo Flow PS (регистрационный номер 51409-12).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5760.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 26,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 63044-16 и в каком контексте?",
+      "expected_keys": [
+        "63044-16",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В качестве средств измерений избыточного давления жидкости в составе установок применяются преобразователи давления измерительные АИР-20/М2 (регистрационный номер 63044-16).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6112.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 27,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 56560-14 и в каком контексте?",
+      "expected_keys": [
+        "56560-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 56560-14 упоминается в контексте средств измерений температуры жидкости — термопреобразователи сопротивления ТСП -0193, ТСП -1293, ТСП -1393, ТСП-1193, ТСП -1195, ТСП -0196, ТСП -0395, ТСП -0397, ТСМ -0193, ТСМ -1293, ТСМ -1193, ТСМ-1393, ТСМ-0196, ТСМ-0395.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 13792.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 28,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 50519-17 и в каком контексте?",
+      "expected_keys": [
+        "50519-17",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 50519-16 упоминается в контексте средств измерений температуры жидкости — термопреобразователи универсальные ТПУ 0304.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5948.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 29,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 28354-10 и в каком контексте?",
+      "expected_keys": [
+        "28354-10",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 28354-10 упоминается в контексте средств измерений температуры жидкости — термометров сопротивления (термопреобразователей сопротивления) ДТС.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6213.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 30,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 47933-11 и в каком контексте?",
+      "expected_keys": [
+        "47933-11",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В качестве средств измерений температуры жидкости в составе установок применяются термопреобразователи сопротивления ТСП -0193, ТСП -1293, ТСП -1393, ТСП-1193, ТСП -1195, ТСП -0196, ТСП -0395, ТСП -0397, ТСМ -0193, ТСМ -1293, ТСМ -1193, ТСМ-1393, ТСМ-0196, ТСМ-0395 (регистрационный номер 47933-11).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 13787.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 31,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 71394-18 и в каком контексте?",
+      "expected_keys": [
+        "71394-18",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 71394-1Регистрационный номер 71394-18 упоминается в контексте средств измерений температуры жидкости — измеритель влажности и температуры ИВТМ -7.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 6118.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 32,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-С» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5778.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 13 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "13",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Пределы допускаемой относительной погрешности при и",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 17033.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 2025 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "2025",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» от 13 марта 2025 года № 500 указана дата утверждения приказом Федерального агентства по техническому регулированию и метрологии.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5941.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 500 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "500",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер 94895-25.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5582.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 94895 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "94895",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер 94895-25 указан в документе «Описание типа ПУРС-С».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5828.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 25 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "25",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Преде",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 14667.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 86321 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "86321",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 86321 указан для расходомеров-счётчиков электромагнитных ВЗЛЕТ -ТЭР.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5798.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 22 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "22",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Преде",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 14769.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 92051 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "92051",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» регистрационный номер 92051-24 у расходомеров-счётчиков жидкости ультразвуковых Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5784.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 24 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "24",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Преде",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 14887.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 83374 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "83374",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер счётчика-расходомера массового Turbo Flow CFM — 83374-21.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5550.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 21 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "21",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Преде",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 14906.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 260 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "260",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» не указано значение 260 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 5529.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 77657 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "77657",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» не указано значение 77657 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 8628.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Средний срок службы установок поверочных стационарных ПУРС-С составляет не менее 12 лет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 7624.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 89827 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "89827",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер 89827-23 у расходомера-счётчика массового Turbo Flow CFM.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 8178.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 48,
+      "topic": "значение",
+      "question": "Какое значение 23 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "23",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении весовых устройств: от 0,006 до 140 т/ч (м³/ч).\n- Диапазон измерений (воспроизведения) объёмного расхода жидкости при применении расходомеров: от 0,5 до 140 м³/ч.\n- Пределы допускаемой относительной погрешности (доверительные границы суммарной погрешности) при измерении (воспроизведении единиц) массы и объёма жидкости в потоке, массового и объёмного расходов жидкости при применении весовых устройств: ±0,06 %.\n- Преде",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 12211.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 49,
+      "topic": "значение",
+      "question": "Какое значение 300 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "300",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "В документе «Описание типа ПУРС-С» не указано значение 300 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 8466.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Описание типа ПУРС-С.pdf",
+      "id": 50,
+      "topic": "значение",
+      "question": "Какое значение 68358 и для какой характеристики указано в документе «Описание типа ПУРС-С»?",
+      "expected_keys": [
+        "68358",
+        "характеристик",
+        "Описание"
+      ],
+      "answer_preview": "Регистрационный номер 89827-23 имеет расходомер-счётчик массовый Turbo Flow CFM.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Описание типа ПУРС-С"
+      ],
+      "total_ms": 8295.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 42,
+  "source_file": "Описание типа ПУРС-С.pdf",
+  "product": "Описание типа ПУРС-С"
+}

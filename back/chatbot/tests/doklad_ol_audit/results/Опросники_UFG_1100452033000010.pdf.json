@@ -1,0 +1,199 @@
+{
+  "file": "Опросники\\UFG\\1100452033000010.pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\Опросники\\UFG\\1100452033000010.pdf",
+  "size_bytes": 2184173,
+  "generated_at": "2026-07-14T10:47:44.901986+00:00",
+  "text_source": "pdf_ocr",
+  "ocr_chars": 7142,
+  "ocr_preview": "ГЭЗ-Т138 00.00.0O-ГСВОЛЗ\nОПРОСНЫЙ ЛИIСТ ДЛЯ ВЫОРА\nРАСХОДОМЕРА\nПредприятие\nФилиал \"Газшром ВНИИГАЗ Тюмсньэ\nДята;\n4.02,2022\nАдрсс\nСтуаниця Xg\nКоштагтнос ло\nТед /фaкc:\nILPAMLIP\nПозншия\nFIT 35-22a\nпрсабрлзователь\nTT 35-Z2n\nZнПк\nтемперятуры\nРT 35-226\nднтчик дннеши\nКолчество\nШТ Ha\nОлак\nОбщее\nALИLш ;ци\nблока\nНлнменованне параметра\nЗначенне параметра\nизмер:\nОсновны€\nпаршеnы\nКоличсство\nТи расходомсра\nРасходомер технологический\nПредполагасмая модель\nУточняется пропзводнтелем\nНомиптллыый лахстр прохода DN\n(лнамстр\nрубопровода DNSO)\nНоминальнос Давленне PN\nMlla\nНаправленнс потока срсды (пpи распложс-\n]I]м]нн\nорганов упрлплёння\nСлена\nнапэанэ\nЦевой стороне)\nЖТIКОСТI\nЖЦКИё НСяПссспнне спслн\nпар\nнеагессттый прурродный газ\nТи регулируемой среды\nП?\naIntu шшLlг\nсрсды\nrl #7кость\nнтрессивные среды\nсодерж линем\nдрутая\nссроводородя\nTи устанонки\nнятевшия\nпитзсчняя\nМссто Устанав: N\nпощенн\nаткрытом нотдухс\nКлимятичсскос ПсПолнсннс *\nУКЛ1\nТемпература окружлющёй срёды *\nmп;\nшлс\nШЯх ;\nплас 20\nСсjiс лостойкостк\nШЕАЛ\nMSK 64\nб лллы\nПрпмсшшис:\nмпнус 61\nабсолюотная минпмальная температура\nсрелняя темпёратура нанболсе хололнойi пя-\nтилневки\nминус 53ЧС:\nПарсмемры сребы\nХарактер срсдн: (категорпя взрывоопаснссти\nCLёch\nтруппа взрыноопаснон смсси ia\nГОСТ 31610,20-\n2020 Клясс нзрнвоопяснойб\nПАТ3 B-Iг:\nзоны по ПГЭ, шласс взрывоопасной зоны По\nКЛясс\nвзрывоопасной зоны\nГОСТ 30852\nIUDZ :исс опясностн п\nКЛЛСС ОПЛСHОСТИ\nГОСТ 12\n067-76)\n\nГЭЗ-Т138 00.0О.0O-ГСВОЛЗ\nОПРОСНЫЙ ЛИIСТ ДЛЯ ВЫОРА\nРАСХОДОМЕРА\nМекяшгескне примесн\nMi:",
+  "bot_specs": {
+    "medium": "gas",
+    "gas_type": "по ГОСТ 9",
+    "duplication_type": "none",
+    "flowMin": 118.8,
+    "flowMax": 303.0,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.55,
+    "pressureMax": 1.57,
+    "pressure_unit": "МПа",
+    "tempMediumMin": 5,
+    "tempMediumMax": 20,
+    "tempAmbientMin": -53,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "3.1%",
+    "diameter": "DN SO"
+  },
+  "reference_specs": {
+    "medium": "gas",
+    "gas_type": "по ГОСТ 9",
+    "duplication_type": null,
+    "flowMin": 118.8,
+    "flowMax": 303.0,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.55,
+    "pressureMax": 1.57,
+    "pressure_unit": "МПа",
+    "tempMediumMin": 5,
+    "tempMediumMax": 20,
+    "tempAmbientMin": -53,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "3.1%",
+    "diameter": null
+  },
+  "heuristic_specs": {
+    "medium": "gas",
+    "gas_type": "по ГОСТ 9",
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": null,
+    "diameter": null
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "gas",
+        "bot": "gas"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "match",
+        "reference": "по ГОСТ 9",
+        "bot": "по ГОСТ 9"
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": "none"
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "match",
+        "reference": 118.8,
+        "bot": 118.8
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "match",
+        "reference": 303.0,
+        "bot": 303.0
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "м³/ч",
+        "bot": "м³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "match",
+        "reference": 1.55,
+        "bot": 1.55
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "match",
+        "reference": 1.57,
+        "bot": 1.57
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "match",
+        "reference": "МПа",
+        "bot": "МПа"
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "match",
+        "reference": 5,
+        "bot": 5
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "match",
+        "reference": 20,
+        "bot": 20
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "match",
+        "reference": -53,
+        "bot": -53
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°C",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "match",
+        "reference": "3.1%",
+        "bot": "3.1%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "bot_extra",
+        "reference": null,
+        "bot": "DN SO"
+      }
+    ],
+    "ref_filled": 13,
+    "matched": 13,
+    "mismatches": 0,
+    "bot_missing": 0,
+    "bot_extra": 1,
+    "accuracy_pct": 100.0
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 41645.0,
+    "llm_ms": 7783.2,
+    "pipeline_ms": 49447.3,
+    "ocr_chars": 7142,
+    "llm_input_chars": 7142,
+    "text_source": "pdf_ocr",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 5999.2,
+  "bot_llm_raw_preview": "```\n{\n  \"medium\": \"природный газ\",\n  \"gas_type\": \"неагрессивный природный газ\",\n  \"duplication_type\": \"none\",\n  \"flowMin\": 118.8,\n  \"flowMax\": 303.0,\n  \"flow_unit\": \"м³/ч\",\n  \"pressureMin\": 1.55,\n  \"pressureMax\": 1.57,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": 5,\n  \"tempMediumMax\": 20,\n  \"tempAmbientMin\": -53,\n  \"tempAmbientMax\": null,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"+3.1%\",\n  \"diameter\": \"DN SO\",\n  \"material\": \"углеродистая сталь\",\n  \"connection_type\": \"фланцевое\",\n  \"cable_type\": \"МКЭКПвнг(А)\",\n  \"guarantee_period\": \"24 месяца\",\n  \"storage_guarantee\": \"36 месяцев\",\n  \"consignment_date\": null\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": \"природный газ\",\n  \"gas_type\": \"углеводородный\",\n  \"duplication_type\": null,\n  \"flowMin\": 118.8,\n  \"flowMax\": 303.0,\n  \"flow_unit\": \"м³/ч\",\n  \"pressureMin\": 1.55,\n  \"pressureMax\": 1.57,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": \"+5\",\n  \"tempMediumMax\": \"+20\",\n  \"tempAmbientMin\": \"-53\",\n  \"tempAmbientMax\": null,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"+3.1%\",\n  \"diameter\": null\n}\n```",
+  "elapsed_ms": 93688.4
+}

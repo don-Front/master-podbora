@@ -1,0 +1,1563 @@
+{
+  "generated_at": "2026-07-07T14:52:23.606221+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 27,
+    "PARTIAL": 21,
+    "HALLUCINATION": 2
+  },
+  "bug_counts": {
+    "hallucination": 2
+  },
+  "accuracy_pct": 54.0,
+  "partial_pct": 42.0,
+  "bad_pct": 4.0,
+  "per_file": [
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "questions": 50,
+      "correct": 27,
+      "partial": 21,
+      "bad": 2,
+      "accuracy_pct": 54.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          21
+        ],
+        [
+          "hallucination",
+          2
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 3 документа «ОТ СПУ ПГ-2М 17.04.23» о: Лист № 3 Всего листов 5 Рисунок -5 Общий вид информационн",
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «ОТ СПУ ПГ-2М 17.04.23» о: Лист № 4 Всего листов 5 Продолжение таблицы 2 Доверительн",
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ОТ"
+      ],
+      "answer_preview": "Установка расходомерная СПУ ПГ-2М предназначена для воспроизведения объёмного расхода и объёма газа в рабочих условиях, а также массового расхода газа, объёмного расхода и объёма газа, приведённого к стандартным условиям. Применяется в качестве рабочего эталона 1 разряда в соответствии с Государственной поверочной схемы для средств измерений объёмного и массового расходов газа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 7350.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 3737.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер: 26624-04",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 3070.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 3542.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Сведения о методиках (методах) измерений приведены в разделе 2 «Использование по назначению» документа ТУАС.407349.001 РЭ «Установка расходомерная СПУ ПГ-2М. Руководство по эксплуатации».\nНормативные и технические документы, устанавливающие требования к средству измерений:\n* Приказ Росстандарта от 11 мая 2022 г. № 1133 «Об утверждении Государственной поверочной схемы для средств измерений объёмного и массового расходов газа»; * ТУ 42 1890-034-70670506-2004. Установка расходомерная СПУ ПГ-2М. Тех",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 9612.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч.\n- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч.\n- Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмно",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 9709.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Максимальное абсолютное давление измеряемой среды: 1000 кПа; - максимальное избыточное давление измеряемой среды: 900 кПа; - температура измеряемой среды: от -20 до 50 °С; - диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч; - диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч; - диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч; - доверительные границы допускаемой относительной ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 10614.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение СПУ ПГ-2М установлено на IBM-совместимом компьютере с блоками сопряжения. ПО обеспечивает обработку результатов измерений давлений, температуры, разности давлений, вычисляет объёмный расход газа в рабочих условиях, вычисляет объёмный расход газа, приведённый к стандартным условиям, массовый расход газа.\nИдентификационные данные программного обеспечения:\n* Идентификационное наименование ПО — MasterSCADA.\n* Номер версии (идентификационный номер) ПО — не ниже 3.6.\n* Цифровой",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 9846.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Установка расходомерная СПУ ПГ-2М – 1 шт.; - Руководство по эксплуатации ТУАС.407349.001 РЭ – 1 экз.; - Паспорт ТУАС.407349.001 ПС – 1 экз.; - Комплект документации на средства измерений и оборудование, входящих в состав установки – 1 комплект.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 8007.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "- Приказ Росстандарта от 11 мая 2022 г. № 1133 «Об утверждении Государственной поверочной схемы для средств измерений объёмного и массового расходов газа»; - ТУ 42 1890-034-70670506-2004. Установка расходомерная СПУ ПГ-2М. Технические условия.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 5734.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ СПУ ПГ-2М 17.04.23» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «17» апреля 2023 г. № 840 Лист ?",
+      "expected_keys": [
+        "26624-04",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «17» апреля 2023 г. № 840.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 3567.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ СПУ ПГ-2М 17.04.23» о: Лист № 2 Всего листов 5 Общий вид установки расходомерной СПУ ПГ-2М представлен на рисунках 1-4. Рисунок 1 – Комплект эт?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Общий"
+      ],
+      "answer_preview": "На странице 2 документа «ОТ СПУ ПГ-2М 17.04.23» указано, что общий вид установки расходомерной СПУ ПГ-2М представлен на рисунках 1–4. Рисунок 1 показывает комплект эталонных критических сопел и запорно-регулирующей арматуры.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 2590.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ СПУ ПГ-2М 17.04.23» о: Лист № 3 Всего листов 5 Рисунок -5 Общий вид информационной таблички Программное обеспечение Программное обеспечение (да?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "Программное обеспечение СПУ ПГ-2М установлено на IBM-совместимом компьютере с блоками сопряжения. Оно обеспечивает обработку результатов измерений давлений, температуры, разности давлений, вычисляет объёмный расход газа в рабочих условиях, вычисляет объёмный расход газа, приведённый к стандартным условиям, массовый расход газа.\nПрограммное обеспечение разделено на метрологически значимую часть и метрологически незначимую часть. \nУровень защиты программного обеспечения СПУ ПГ-2М от преднамеренных",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 4787.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ СПУ ПГ-2М 17.04.23» о: Лист № 4 Всего листов 5 Продолжение таблицы 2 Доверительные границы допускаемой относительной погрешности воспроизведени?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Продолжение"
+      ],
+      "answer_preview": "Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях Δ0, % ±0,45\nДоверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода газа, приведённого к стандартным условиям, % ±0,45\nДоверительные границы допускаемой относительной погрешности воспроизведения массового расхода газа, % ±0,45",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 5693.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ СПУ ПГ-2М 17.04.23» о: Лист № 5 Всего листов 5 Сведения о методиках (методах) измерений приведены в разделе 2 Использование по назначению, доку?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Сведения"
+      ],
+      "answer_preview": "Сведения о методиках (методах) измерений приведены в разделе 2 документа ТУАС.407349.001 РЭ «Установка расходомерная СПУ ПГ-2М. Руководство по эксплуатации».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 4293.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 16,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2800 Максимальное абсолютное давление измеряемой среды, кПа 1000» документа «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "2800",
+        "Максимальное",
+        "1000"
+      ],
+      "answer_preview": "Максимальное абсолютное давление измеряемой среды — 1000 кПа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 7995.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 17,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ ПГ-2М 17.04.23» упоминается регистрационный номер 26624-04 и в каком контексте?",
+      "expected_keys": [
+        "26624-04",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 26624-04 указан на листе № 1 документа «ОТ СПУ ПГ-2М 17.04.23».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 6578.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 18,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ ПГ-2М 17.04.23» упоминается регистрационный номер 77090-19 и в каком контексте?",
+      "expected_keys": [
+        "77090-19",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 77090-19 упоминается в составе средств измерений утверждённого типа СПУ ПГ-2М как регистрационный номер эталонного преобразователя давления «ЭЛМЕТРО -Паскаль-04».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 6142.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 19,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ ПГ-2М 17.04.23» упоминается регистрационный номер 50519-17 и в каком контексте?",
+      "expected_keys": [
+        "50519-17",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ СПУ ПГ-2М 17.04.23» регистрационный номер 50519-17 упоминается в контексте перечня средств измерений, используемых в составе установки расходомерной СПУ ПГ-2М. Среди них указаны три термопреобразователя универсальных ТПУ 0304 (регистрационный № 50519-17).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 7007.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ ПГ-2М 17.04.23» упоминается регистрационный номер 51409-12 и в каком контексте?",
+      "expected_keys": [
+        "51409-12",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Датчик перепада давления Turbo Flow PS имеет регистрационный номер 51409-12.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 5692.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 21,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ ПГ-2М 17.04.23» упоминается регистрационный номер 32854-09 и в каком контексте?",
+      "expected_keys": [
+        "32854-09",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Датчик давления Метран-150 имеет регистрационный номер 32854-09.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 5633.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ ПГ-2М 17.04.23» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ СПУ ПГ-2М 17.04.23» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 5840.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 17 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "17",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям Qст, м³/ч: от 1,7 до 20000; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях Δ0, %: ±0,45; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода газа, приведённого к стандартным условиям, %: ±0,45; - Доверительные границы допускаемой относительной погрешности воспроизведения массового расхо",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 16016.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 2023 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "2023",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч; - Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч; - Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмно",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 8807.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 840 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "840",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии от «17» апреля 2023 г. № 840.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 5856.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 26624 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "26624",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер 26624-04.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 12951.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 04 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "04",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода газа, приведённого к стандартным условиям: ±0,45 %; - Доверительные границы допускаемой относительной погрешности воспроизведения массового расхода газа: ±0,45 %.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 6876.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям Qст, м³/ч: от 1,7 до 20000; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях Δ0, %: ±0,45; - Температура измеряемой среды, °С: от -20 до 50.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 7336.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 2500 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "2500",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Подогрев и охлаждение газа от исходной температуры на 20 ºС производится с помощью теплообменных устройств при расходе до Qст= 2500 м³/ч (Qст – расход, приведённый к стандартным условиям).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 6332.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 77090 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "77090",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Преобразователь давления эталонный ЭЛМЕТРО-Паскаль-04, регистрационный номер 77090-19.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 14549.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 19 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "19",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч.\n- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч.\n- Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %.\n- Диаметры условного прохода поверяемых средств измерений: от 25 до 300 мм.\n- Напряже",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 21537.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 0304 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "0304",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "ТПУ 0304 — это регистрационный номер термопреобразователей универсальных, используемых в составе СПУ ПГ-2М.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 7080.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 50519 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "50519",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер термопреобразователя универсального ТПУ 0304 — 50519-17.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 6246.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 51409 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "51409",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Датчик перепада давления Turbo Flow PS (регистрационный № 51409-12)",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 14012.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч.\n- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч.\n- Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмно",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 17348.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 150 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "150",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ СПУ ПГ-2М 17.04.23» не указано значение 150 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 12567.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 32854 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "32854",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Датчик давления Метран-150 (регистрационный № 32854-09)",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 3468.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 09 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "09",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч.\n- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч.\n- Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмно",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 9498.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч.\n- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч.\n- Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмно",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 15718.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 5. и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "5,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч; - Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч; - Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч; - Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %; - Диаметры условного прохода поверяемых средств измерений: от 25 до 300 мм; - Напряже",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 14787.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизведения объёмного расхода газа в рабочих условиях: от 0,25 до 4400 м³/ч.\n- Диапазон воспроизведения объёмного расхода газа, приведённого к стандартным условиям: от 1,7 до 20000 м³/ч.\n- Диапазон воспроизведения массового расхода газа: от 1,25 до 17000 кг/ч.\n- Доверительные границы допускаемой относительной погрешности воспроизведения объёмного расхода и объёма газа в рабочих условиях: ±0,45 %.\n- Диаметры условного прохода поверяемых средств измерений: от 25 до 300 мм.\n- Напряже",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 24028.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 3.6 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "3,6",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер версии (идентификационный номер) программного обеспечения СПУ ПГ-2М — не ниже 3.6.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 12063.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 62 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "62",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО — 62b9553f.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 3192.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 9553 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "9553",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО СПУ ПГ-2М — 62b9553f.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 13466.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО: 62b9553f.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 14290.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ СПУ ПГ-2М 17.04.23» не указано значение 50.2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 21433.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «ОТ СПУ ПГ-2М 17.04.23»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Уровень защиты программного обеспечения СПУ ПГ-2М от преднамеренных и непреднамеренных изменений – «средний» в соответствии с Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 10558.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ ПГ-2М 17.04.23» о приказе № 840?",
+      "expected_keys": [
+        "840",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «17» апреля 2023 г. № 840.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 12226.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ ПГ-2М 17.04.23» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказ Росстандарта от 11 мая 2022 г. № 1133 «Об утверждении Государственной поверочной схемы для средств измерений объёмного и массового расходов газа».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 11411.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ ПГ-2М 17.04.23» о приказе № 26624?",
+      "expected_keys": [
+        "26624",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ СПУ ПГ-2М 17.04.23» регистрационный номер 26624 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ ПГ-2М 17.04.23"
+      ],
+      "total_ms": 4458.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 34,
+  "source_file": "ОТ СПУ ПГ-2М 17.04.23.pdf",
+  "product": "ОТ СПУ ПГ-2М 17.04.23"
+}

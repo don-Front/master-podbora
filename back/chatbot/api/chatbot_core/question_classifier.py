@@ -58,6 +58,7 @@ class QuestionClassifier:
     def classify(self, question: str) -> dict:
         """Классифицирует вопрос"""
         try:
+            is_definition = self.is_definition_question(question)
             question_embedding = self.embedder.encode(question)
             
             scores = {}
@@ -84,12 +85,24 @@ class QuestionClassifier:
                 "is_comparison": main_type == "comparison" and main_score > threshold,
                 "is_selection": main_type == "selection" and main_score > threshold,
                 "is_operation": main_type == "operation" and main_score > threshold,
+                "is_definition": is_definition,
                 "confidence": main_score,
                 "main_type": main_type
             }
         except Exception as e:
             print(f"[ERROR] Ошибка классификации: {e}")
             return self.keyword_classify(question)
+
+    @staticmethod
+    def is_definition_question(question: str) -> bool:
+        """Короткие вопросы на определение/назначение оборудования."""
+        q_lower = (question or "").lower()
+        return bool(
+            re.search(r"\bчто\s+такое\b", q_lower)
+            or "описание" in q_lower
+            or "назначение" in q_lower
+            or "для чего предназнач" in q_lower
+        )
     
     def keyword_classify(self, question: str) -> dict:
         """Классификация по ключевым словам"""
@@ -112,6 +125,7 @@ class QuestionClassifier:
                     "is_comparison": False,
                     "is_selection": False,
                     "is_operation": False,
+                    "is_definition": False,
                     "confidence": 0.6,
                     "main_type": "attribute"
                 }
@@ -123,6 +137,7 @@ class QuestionClassifier:
                 "is_comparison": False,
                 "is_selection": False,
                 "is_operation": False,
+                "is_definition": True,
                 "confidence": 0.7,
                 "main_type": "description"
             }
@@ -133,6 +148,7 @@ class QuestionClassifier:
             "is_comparison": False,
             "is_selection": False,
             "is_operation": False,
+            "is_definition": self.is_definition_question(question),
             "confidence": 0.3,
             "main_type": "description"
         }

@@ -7,8 +7,13 @@ from typing import Callable
 
 from .catalog import get_catalog
 from .detect import detect_catalog_id, looks_like_competitor_mask
+from .parsers.elmetro_flomak import parse_elmetro_flomak_mask
+from .parsers.elmetro_flous_dru import parse_elmetro_flous_dru_mask
+from .parsers.emis_mass_260 import parse_emis_mass_260_mask
 from .parsers.irvis_ultra import parse_irvis_ultra_mask
 from .parsers.ktm_600 import parse_ktm_600_mask
+from .parsers.ktm_700 import parse_ktm_700_mask
+from .parsers.ktm_rumass import parse_ktm_rumass_mask
 from .parsers.rg_t import parse_rg_t_mask
 from .parsers.rsg_signal import parse_rsg_signal_mask
 from .parsers.ultramag import parse_ultramag_mask
@@ -24,6 +29,11 @@ PARSERS: dict[str, Callable[..., MaskDecodeResult]] = {
     "ultramag": parse_ultramag_mask,
     "vympel_500": parse_vympel_500_mask,
     "ktm_600": parse_ktm_600_mask,
+    "ktm_700": parse_ktm_700_mask,
+    "ktm_rumass": parse_ktm_rumass_mask,
+    "elmetro_flomak": parse_elmetro_flomak_mask,
+    "elmetro_flous_dru": parse_elmetro_flous_dru_mask,
+    "emis_mass_260": parse_emis_mass_260_mask,
 }
 
 

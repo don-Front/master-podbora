@@ -1,0 +1,1593 @@
+{
+  "generated_at": "2026-07-07T14:12:21.744840+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 29,
+    "PARTIAL": 16,
+    "HALLUCINATION": 5
+  },
+  "bug_counts": {
+    "hallucination": 5
+  },
+  "accuracy_pct": 58.0,
+  "partial_pct": 32.0,
+  "bad_pct": 10.0,
+  "per_file": [
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "correct": 29,
+      "partial": 16,
+      "bad": 5,
+      "accuracy_pct": 58.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          16
+        ],
+        [
+          "hallucination",
+          5
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 2 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 10 Общий вид преобр",
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 10 Рисунок 2а Рисун",
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 5 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 10 Измерительная ин",
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 6 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 10 Рисунок 4а Рисун",
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 7 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 7 Всего листов 10 Программное обес",
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "UDM"
+      ],
+      "answer_preview": "Преобразователи плотности газа Turbo Flow UDM предназначены для измерений плотности газа.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6874.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «ОТ UDM от 12.07.2024 (изм факт адрес)» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7162.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер — 86699-22.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11682.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6604.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В представленном документе нет информации о методике поверки или конкретном нормативном документе.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6577.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазоны измерений плотности газа в рабочих условиях: \n - для модификации UDM-B: от 0,14 до 350,00 кг/м³; - для модификаций UDM-I (исполнение S): от 0,42 до 350,00 кг/м³; - для модификаций UDM-I (исполнение H): от 0,48 до 3,50 кг/м³.\n- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях:\n - ±0,3 % или ±0,5 % во всём диапазоне измерений плотности газа (для модификации UDM-B и UDM-I); - ±0,14 % только в поддиапазоне измерений плотности газа (для модификаций",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12025.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Температура окружающего воздуха: от –50 до +80 °С; - Относительная влажность воздуха: до 95 %; - Атмосферное давление: от 84,0 до 106,7 кПа; - Скорость потока газа: для UDM-B — не более 65 м/с, для UDM-I — не более 40 м/с и 120 м/с (в зависимости от исполнения); - Напряжение питания: от 12 до 24 В постоянного тока, 220 ± 10 В переменного тока, от 12 до 24 В постоянного тока от АКБ или автономного источника.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 10779.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение преобразователя плотности UDM является встроенным. Оно хранится в энергонезависимой памяти и разделено на метрологически значимую и метрологически незначимую часть. \nУровень защиты ПО от преднамеренных и непреднамеренных изменений — «высокий» в соответствии с Р 50.2.077-2014. Возможность влияния на метрологически значимую часть ПО через интерфейс связи отсутствует. \nИдентификационные данные программного обеспечения:\n* идентификационное наименование ПО — UDM; * номер верси",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 10598.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Преобразователь плотности UDM Turbo Flow UDM; - Руководство по эксплуатации ТУАС.413161.001 РЭ (по заказу); - Паспорт ТУАС.413161.001 ПС; - Копия методики поверки (по заказу); - Комплект монтажных частей (по заказу); - ПО ПК конфигурирования (компакт-диск или Flash-накопитель) (по заказу); - Система кабельных соединений (по заказу).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9074.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «ОТ UDM от 12.07.2024 (изм факт адрес)» утверждён приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5809.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655 Лист №?",
+      "expected_keys": [
+        "86699-22",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1909.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 10 Общий вид преобразователей плотности Turbo Flow модификации UDM -В представлен на рисунке 1а. Р?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Общий вид преобразователей плотности Turbo Flow модификации UDM-В представлен на рисунке 1а.\nПреобразователи плотности UDM модификации UDM-I предназначены для измерений плотности непосредственно в потоке или в среде газа при установке УПП внутрь трубопровода или резервуара для хранения газа (исполнение S) или в дымовую трубу (исполнение Н).\nИсполнения: S – инертные, углеводородные газы, не агрессивные к материалу УПП; H – дымовые газы. \nТипы крепления УПП к стенке трубопровода или резервуара: Г ",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3591.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 3 Всего листов 10 UDM, модификации UDM-I выпускают в двух исполнениях: К – ЭБ установлен на корпус УПП (рисунки 1?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Модификации UDM-I выпускают в двух исполнениях: \nК – ЭБ установлен на корпус УПП.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1825.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 10 Рисунок 2а Рисунок 2б Шифры исполнений указывают в паспорте на преобразователь плотности Turbo ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "На странице 4 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» указано, что шифры исполнений указывают в паспорте на преобразователь плотности Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3361.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 10 Измерительная информация считывается с ЭБ преобразователя плотности UDM с по- мощью специализир?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Измерительная информация считывается с ЭБ преобразователя плотности UDM с помощью специализированного программного обеспечения по проводным или беспроводным интерфейсам на ПК. Также имеется интерфейс для передачи информации в другие информационные системы управления или учёта ресурсов. Кроме того, ЭБ обрабатывает управляющие сигналы, которые поступают на цифровые входы, и обеспечивает связь с внешними ведущими устройствами по протоколам Modbus RTU или HART.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4384.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 10 Рисунок 4а Рисунок 4б Схема пломбировки от несанкционированного доступа представлены на рисунка?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "На странице 6 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» представлены схемы пломбировки от несанкционированного доступа на рисунках 5 – 6. Рисунок 6 показывает пломбировку УПП и ЭБ, включая расположение ЭБ относительно УПП, а также места для установки свинцовой пломбы и нанесения знака поверки способом давления на специальную мастику.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3723.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 7 Всего листов 10 Программное обеспечение Программное обеспечение (далее – ПО) преобразователя плотности UDM по а?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Программное обеспечение преобразователя плотности UDM является встроенным. Оно хранится в энергонезависимой памяти, разделено на метрологически значимую и метрологически незначимую часть. \n- Идентификационное наименование ПО: UDM.\n- Номер версии (идентификационный номер МЗЧ) ПО, не ниже 1.0.\n- Цифровой идентификатор ПО: 0x8D79EEBD.\n- Алгоритм вычисления цифрового идентификатора ПО: CRC-32.\n- Уровень защиты ПО от преднамеренных и непреднамеренных изменений – «высокий» в соответствии с Р 50.2.077-",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4335.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 8 Всего листов 10 Продолжение таблицы 2 * максимальный диапазон измерений плотности газа; для конкретного преобра?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "В документе указано, что максимальный диапазон измерений плотности газа не указан на листе 8. Указаны условия проведения измерений:\n* температура газа с абсолютной погрешностью, °С, не хуже ±(0,15 + 0,002·|t|), где t – измеренное значение температуры газа, °C; * давление газа с относительной погрешностью, %, не хуже ±(0,1+0,01Pmax/P), при Pmax/P ≤ 3, где P – измеренное значение давления газа, МПа, Pmax – верхний предел измерений используемого СИ давления, МПа.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6299.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 9 Всего листов 10 Продолжение таблицы 3 Наименование характеристики Значение UDM-B UDM-I исполнение S UDM-I испол?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Параметры окружающего воздуха для UDM-B UDM-I исполнение S UDM-I исполнение H:\n* температура окружающего воздуха, °С — от -50 до +80; * относительная влажность воздуха, % — до 95; * атмосферное давление, кПа — от 84,0 до 106,7.\n* скорость потока газа, м/с: для UDM-B — не более 65, для UDM-I исполнение S — не более 40, для UDM-I исполнение H — не более 120; * напряжение питания: от сети постоянного тока — от 12 до 24 В, от сети переменного тока — 220 ± 10 В, от АКБ или автономного источника посто",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6669.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «ОТ UDM от 12.07.2024 (изм факт адрес)» о: Лист № 10 Всего листов 10 Нормативные и технические документы, устанавливающие требования к средству измерений ТУ 26.51.?",
+      "expected_keys": [
+        "70506-20",
+        "Лист",
+        "10"
+      ],
+      "answer_preview": "Технические условия: ТУ 26.51.52-033-70670506-2021. Преобразователи плотности газа Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4289.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 21,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1700 Средняя наработка до отказа, ч, не менее 70 000» документа «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1700",
+        "Средняя",
+        "70"
+      ],
+      "answer_preview": "Средняя наработка до отказа, ч, не менее 70 000.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6419.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 86699-22 и в каком контексте?",
+      "expected_keys": [
+        "86699-22",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 86699-22 указан на листе №1 документа «ОТ UDM от 12.07.2024 (изм факт адрес)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7738.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В представленном документе «ОТ UDM от 12.07.2024 (изм факт адрес)» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12240.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Напряжение питания от сети постоянного тока: от 12 до 24 В; - Напряжение питания от сети переменного тока: 220 ± 10 В; - Напряжение питания от АКБ или автономного источника постоянного тока: от 12 до 24 В; - Диапазон выходных сигналов токовый: от 4 до 20 мА; - Потребляемая мощность, Вт, не более: 10; - Масса электронного блока, кг, не более: 6; - Масса первичного преобразователя (УПП), кг, не более: 20; - Габаритные размеры для модификаций, мм, не более: длина — 350, ширина — 350, высота — 170",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 17256.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Дата утверждения документа: 12 июля 2024 года.\n- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях для модификаций UDM-B и UDM-I: ±0,3; ±0,5 во всём диапазоне измерений плотности газа (%); ±0,14 только в поддиапазоне измерений плотности газа (%).\n- Диапазон выходных сигналов: от 4 до 20 мА.\n- Средняя наработка до отказа: не менее 70 000 часов.\n- Средний срок службы: 12 лет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12429.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 1655 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1655",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "№ 1655 — номер приказа Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 года, утвердившего данный документ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11111.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 86699 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "86699",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер 86699-22 указан в документе для преобразователей плотности газа Turbo Flow UDM.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3917.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 22 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "22",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон выходных сигналов: от 4 до 20 мА; - диапазон измерений плотности газа для UDM-B: от 0,14 до 350,00 кг/м³; - диапазон измерений плотности газа для UDM-I (исполнение S): от 0,42 до 350,00 кг/м³; - диапазон измерений плотности газа для UDM-I (исполнение H): от 0,48 до 3,50 кг/м³; - пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях для UDM-B: ±0,3%; - пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях для UDM-I",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12905.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон температуры окружающего воздуха: от –50 до +80 °С; - Относительная влажность воздуха: до 95 %; - Атмосферное давление: от 84,0 до 106,7 кПа; - Скорость потока газа: не более 65 м/с для UDM-B, 40 м/с для UDM-I исполнение S, 120 м/с для UDM-I исполнение H; - Напряжение питания от сети постоянного тока: от 12 до 24 В; - Напряжение питания от сети переменного тока: 220 ± 10 В; - Напряжение питания от АКБ или автономного источника постоянного тока: от 12 до 24 В; - Диапазон измерений плотн",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14271.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 100 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "100",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях для модификации UDM-B: ±0,3; ±0,5 во всём диапазоне измерений плотности газа 1); ±0,14** только в поддиапазоне измерений плотности газа 2).\n- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях для модификации UDM-I: ±1,5 во всём диапазоне измерений плотности газа.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9251.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 485 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "485",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе указано, что электронный блок преобразователя плотности UDM формирует цифровой выходной сигнал по интерфейсу RS485.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4524.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 1, и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UDM от 12.07.2024 (изм факт адрес)» указаны следующие значения характеристик для преобразователей плотности газа Turbo Flow UDM:\n- Диапазон измерений плотности газа в рабочих условиях для модификаций UDM-B исполнение S, UDM-I исполнение H составляет от 0,14 до 350,00 кг/м³.\n- Для модификации UDM-I исполнение H диапазон измерений плотности газа в рабочих условиях — от 0,48 до 3,50 кг/м³.\n- Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях со",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11851.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 2, и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Значение 2 для характеристики «диапазоны измерений плотности газа в рабочих условиях» у модификации UDM-I исполнение H составляет от 0,48 до 3,50 кг/м³.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4936.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Температура окружающего воздуха: от –50 до +80 °С; - Относительная влажность воздуха: до 95 %; - Атмосферное давление: от 84,0 до 106,7 кПа; - Скорость потока газа для модификаций UDM-B — не более 65 м/с, UDM-I (исполнение S) — не более 40 м/с, UDM-I (исполнение H) — не более 120 м/с; - Напряжение питания: от 12 до 24 В для сети постоянного тока, 220 ± 10 В для сети переменного тока, от 12 до 24 В для АКБ или автономного источника постоянного тока.\n- Диапазоны измерений плотности газа в рабочи",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15113.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 3. и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Температура окружающего воздуха: от –50 до +80 °С; - Относительная влажность воздуха: до 95 %; - Атмосферное давление: от 84,0 до 106,7 кПа; - Скорость потока газа: для UDM-B — не более 65 м/с, для UDM-I — не более 40 м/с, для других модификаций — не более 120 м/с; - Напряжение питания: от сети постоянного тока — от 12 до 24 В, от сети переменного тока — 220 ± 10 В, от АКБ или автономного источника постоянного тока — от 12 до 24 В.\n- Диапазоны измерений плотности газа в рабочих условиях для UD",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15371.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 6. и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "6,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений плотности газа в рабочих условиях для модификации UDM-B: от 0,14 до 350,00 кг/м³; - Диапазон измерений плотности газа в рабочих условиях для модификации UDM-I исполнение S: от 0,42 до 350,00 кг/м³ и от 0,48 до 3,50 кг/м³; - Пределы допускаемой относительной погрешности измерений плотности газа в рабочих условиях для модификации UDM-B и UDM-I: ±0,3 % или ±0,5 % во всём диапазоне измерений плотности газа; ±0,14 % только в поддиапазоне измерений плотности газа; ±1,5 % во всём д",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12267.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 1.0 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1,0",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Номер версии (идентификационный номер МЗЧ) ПО UDM — не ниже 1.0.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4442.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 79 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "79",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе нет информации о значении 79 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3402.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальное рабочее давление измеряемой среды, МПа, не более: 32.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4252.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ UDM от 12.07.2024 (изм факт адрес)» не указано значение параметра 50.2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4398.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО UDM — 0x8D79EEBD.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4260.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон выходных сигналов: токовый, мА — от 4 до 20; - Напряжение питания: от сети постоянного тока — от 12 до 24 В; - Напряжение питания: от сети переменного тока — 220 ± 10 В; - Напряжение питания: от АКБ или автономного источника постоянного тока — от 12 до 24 В.\n- Скорость потока газа, м/с, не более для UDM-B — 65; - Скорость потока газа, м/с, не более для UDM-I (исполнение H) — 120; - Максимальное рабочее давление измеряемой среды, МПа, не более — 32 для UDM-B и 0,14 для UDM-I.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11178.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 0,14 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "0,14",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Максимальное рабочее давление измеряемой среды, МПа, не более 0,14.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4381.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 350,00 и для какой характеристики указано в документе «ОТ UDM от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "350,00",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазоны измерений плотности газа в рабочих условиях для модификации UDM-B: от 0,14 до 350,00 кг/м³.\nДиапазоны измерений плотности газа в рабочих условиях для модификации UDM-I: от 0,42 до 350,00 кг/м³ и от 0,48 до 3,50 кг/м³.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9688.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 45,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» о приказе № 1655?",
+      "expected_keys": [
+        "1655",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4804.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 46,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4706.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» о приказе № 86699?",
+      "expected_keys": [
+        "86699",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12691.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12681.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12732.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ UDM от 12.07.2024 (изм факт адрес)» о приказе № 4?",
+      "expected_keys": [
+        "4",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ UDM от 12.07.2024 (изм факт адрес)» нет информации о приказе № 4.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ UDM от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4701.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 29,
+  "source_file": "ОТ UDM от 12.07.2024 (изм факт адрес).pdf",
+  "product": "UDM"
+}

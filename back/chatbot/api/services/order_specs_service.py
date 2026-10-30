@@ -24,10 +24,16 @@ from ..order_specs_text import (
     looks_like_order_specs_request,
     present_fields,
 )
+from ..chatbot_core.rag_messages import is_llm_system_error_text
 from ..pdf_order_analysis import run_pdf_order_pipeline
 from ..search_equipment import build_search_equipment_params
 
 logger = logging.getLogger(__name__)
+
+_LLM_UNAVAILABLE_WARNING = (
+    "Автоматическое извлечение через LLM временно недоступно; "
+    "часть параметров определена по текстовым правилам."
+)
 
 
 def _resolve_config_path() -> str:
@@ -139,17 +145,21 @@ class OrderSpecsService:
         try:
             draft, llm_raw, extract_err, _timing = self.extract_from_text(text, base, use_llm=True)
             if extract_err:
-                warning = (
-                    "Часть параметров удалось определить правилами, но LLM-извлечение вернуло предупреждение: "
-                    f"{extract_err}"
-                )
+                if is_llm_system_error_text(extract_err):
+                    logger.warning(
+                        "[OrderSpecsService] LLM extract error (masked): %s",
+                        extract_err,
+                    )
+                    warning = _LLM_UNAVAILABLE_WARNING
+                else:
+                    warning = (
+                        "Часть параметров удалось определить правилами, "
+                        "но LLM-извлечение вернуло предупреждение."
+                    )
         except Exception as exc:
             logger.exception("[OrderSpecsService] ошибка извлечения: %s", exc)
             draft, llm_raw, extract_err, _timing = self.extract_from_text(text, base, use_llm=False)
-            warning = (
-                "Автоматическое извлечение через LLM временно недоступно; "
-                "часть параметров определена по текстовым правилам."
-            )
+            warning = _LLM_UNAVAILABLE_WARNING
 
         draft = merge_draft(draft)
         missing = list_missing_fields(draft)

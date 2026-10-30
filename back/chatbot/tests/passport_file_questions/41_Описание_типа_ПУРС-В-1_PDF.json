@@ -1,0 +1,605 @@
+{
+  "source_file": "Описание типа ПУРС-В-1.PDF",
+  "product": "Описание типа ПУРС-В-1",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Описание типа ПУРС-В-1» о: [trp n,roxenlle K cB I{AereJ,I I}cTBv oS y:reepx4ennlr rnr{a cpeAGTB usuepennfi COIJIACOBAHO: Pyronognte.rrr II$ CII orv?",
+      "expected_keys": [
+        "AereJ",
+        "TBv",
+        "AGTB"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «Описание типа ПУРС-В-1» о: ((B3ner - 3M>, rr3Mepr4TenbHbrfi KaH€ur, loBepoqHbre yqacrKr.r H o6opor- Hrrfi 6ar (peanu:oBaH MeroA Henocpe.qcrBeHHoro ?",
+      "expected_keys": [
+        "Mepr",
+        "TenbHbrfi",
+        "KaH"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «Описание типа ПУРС-В-1» о: l. 2. OCHOBHbIE TEXHUqE CKrIE XAPAKTEPIICTI,IKII Pa6o.{aq cpeAa BoAa BoAorIpoBoAHa.s nl4rbeBaq no |OCT P 51232-98 .{uaua?",
+      "expected_keys": [
+        "51232-98",
+        "2.",
+        "OCHOBHbIE"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «Описание типа ПУРС-В-1» о: KOMTIJIEKTHOCTb Konrnrerr nocraBKpr npr4BeAeH e ra6rraqe 1. TIOBBPKA llonepr<a ycraHoBKI4 BbllroJrHqercf, corJracHo Mero?",
+      "expected_keys": [
+        "KOMTIJIEKTHOCTb",
+        "Konrnrerr",
+        "BKpr"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «Описание типа ПУРС-В-1» о: I I HOPMATT4BHbTE r4 TEXHT,TqECKI,TE AOKyMEHTbT |OCT 8.156 lCW. C.{er.ruxu xoroAnofi BoAbr. Mero.qrr u cpeAcrBa rroBepKr?",
+      "expected_keys": [
+        "HOPMATT",
+        "BHbTE",
+        "TEXHT"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 16,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Kolaurerr [epexoAHr4KoB» документа «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "Kolaurerr",
+        "AHr",
+        "KoB"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 17,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5 Kounnerr gKc[Jryaraur4-» документа «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "Kounnerr",
+        "Jryaraur"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 18,
+      "topic": "рег.номер",
+      "question": "Где в документе «Описание типа ПУРС-В-1» упоминается регистрационный номер 51232-98 и в каком контексте?",
+      "expected_keys": [
+        "51232-98",
+        "регистр",
+        "номер"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2009 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "2009",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 01. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "01,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 43 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "43",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 6000 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "6000",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 51232 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "51232",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 98. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "98,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 3,0 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "3,0",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 10, и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "10,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 922 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "922",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 32, и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "32,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 80 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "80",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 4. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 0,34 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,34",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 7,2 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "7,2",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 0,3 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,3",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 0,03 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,03",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 217 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "217",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 0,07 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "0,07",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 19,1 и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "19,1",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 19, и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "19,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 3. и для какой характеристики указано в документе «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "Описание"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 42,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 43,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 44,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 45,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 46,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 47,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 48,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 49,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    },
+    {
+      "id": 50,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Описание типа ПУРС-В-1»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "auto_generated": true,
+      "is_stub_doc": false
+    }
+  ]
+}

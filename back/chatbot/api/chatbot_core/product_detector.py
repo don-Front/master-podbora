@@ -61,16 +61,104 @@ def _normalize_for_match(text: str) -> str:
 
 def _model_tokens(text: str) -> Set[str]:
     """Выделяет короткие модельные обозначения: ufg h, ufg f, cfm, tfg и т.п."""
+    raw = (text or "").casefold().replace("ё", "е")
     normalized = _normalize_for_match(text)
-    tokens = set(re.findall(r"\b(?:ufg|ufl|cfm|tfg|gfg|udm|cng|flg|ulg|dp|[fhz])\b", normalized))
+    tokens = set(re.findall(r"\b(?:ufg|ufl|cfm|tfg|gfg|udm|cng|flg|ulg|dp|ps|[fhz])\b", normalized))
     compact = normalized.replace(" ", "")
-    for model in ("ufgh", "ufgf", "ufgz", "gfgdp", "cng", "flg", "ulg"):
+    for model in (
+        "ufgh",
+        "ufgf",
+        "ufgz",
+        "tfgs",
+        "tfgh",
+        "gfgf",
+        "gfgdp",
+        "cfmulg",
+        "cfmflg",
+        "cfmcng",
+        "udmv",
+        "udmi",
+        "cng",
+        "flg",
+        "ulg",
+    ):
         if model in compact:
             tokens.add(model)
+    if "ufg" in tokens:
+        if "f" in tokens:
+            tokens.add("ufgf")
+        if "h" in tokens:
+            tokens.add("ufgh")
+        if "z" in tokens:
+            tokens.add("ufgz")
+    if "tfg" in tokens:
+        if "s" in tokens or re.search(r"\btfg\s*[-/]?\s*s\b", normalized):
+            tokens.add("tfgs")
+        if "h" in tokens or re.search(r"\btfg\s*[-/]?\s*h\b", normalized):
+            tokens.add("tfgh")
+    if "gfg" in tokens:
+        if "f" in tokens:
+            tokens.add("gfgf")
+        if "dp" in tokens:
+            tokens.add("gfgdp")
+    if "cfm" in tokens:
+        if "ulg" in tokens:
+            tokens.add("cfmulg")
+        if "flg" in tokens:
+            tokens.add("cfmflg")
+        if "cng" in tokens:
+            tokens.add("cfmcng")
+    cyrillic_patterns = (
+        (r"\bспу\s*[-–—]?\s*3\s*м\s*[-–—]?\s*100\b", "spu3m100"),
+        (r"\bспу\s*[-–—]?\s*3\s*м\b", "spu3m"),
+        (r"\bспу\s*[-–—]?\s*3\b", "spu3"),
+        (r"\bспу\s*[-–—]?\s*5\b", "spu5"),
+        (r"\bспу\s*[-–—]?\s*6\b", "spu6"),
+        (r"\bспу\s*[-–—]?\s*7\b", "spu7"),
+        (r"\bспу\s*пг\s*[-–—]?\s*2\s*м\b", "spupg2m"),
+        (r"\bпурс\s*[-–—]?\s*в\s*[-–—]?\s*1\b", "pursv1"),
+        (r"\bпурс\s*[-–—]?\s*м\b", "pursm"),
+        (r"\bпурс\s*[-–—]?\s*с\b", "purss"),
+    )
+    for pattern, token in cyrillic_patterns:
+        if re.search(pattern, raw):
+            tokens.add(token)
     return tokens
 
 
-_SERIES_MARKERS = ("ufg", "tfg", "ufl", "cfm", "gfg", "udm", "cng")
+_SPECIFIC_MODEL_TOKENS = {
+    "ufgf",
+    "ufgh",
+    "ufgz",
+    "tfgs",
+    "tfgh",
+    "gfgf",
+    "gfgdp",
+    "cfmulg",
+    "cfmflg",
+    "cfmcng",
+    "udmv",
+    "udmi",
+    "spu3",
+    "spu3m",
+    "spu3m100",
+    "spu5",
+    "spu6",
+    "spu7",
+    "spupg2m",
+    "pursv1",
+    "pursm",
+    "purss",
+    "ps",
+}
+
+
+def _specific_model_tokens(text: str) -> Set[str]:
+    """Точные модели/модификации без общих серий, чтобы не смешивать соседние приборы."""
+    return _model_tokens(text) & _SPECIFIC_MODEL_TOKENS
+
+
+_SERIES_MARKERS = ("ufg", "tfg", "ufl", "cfm", "gfg", "udm", "cng", "spu", "purs", "ps")
 
 
 def _series_in_text(text: str) -> Set[str]:
@@ -228,6 +316,143 @@ def merge_troubleshooting_followup(original_question: str, equipment_reply: str)
     return f"{base}. Прибор/серия: {equipment}"
 
 
+def _is_verification_query(text: str) -> bool:
+    """Вопрос о поверке, методике поверки или метрологических документах."""
+    q = (text or "").casefold().replace("ё", "е")
+    if not q.strip():
+        return False
+    strong_markers = (
+        "поверк",
+        "межповероч",
+        "методик поверк",
+        "свидетельств о поверк",
+        "сертификат поверк",
+        "сертификат об ут",
+        "фгис",
+        "аршин",
+    )
+    if any(marker in q for marker in strong_markers):
+        return True
+    if "методик" in q and ("поверк" in q or "измер" in q or re.search(r"\bмп\b", q)):
+        return True
+    if re.search(r"\bкалибров", q) and (
+        "счетчик" in q or "расходомер" in q or re.search(r"\bси\b", q)
+    ):
+        return True
+    return False
+
+
+def _is_generic_verification_registry_query(text: str) -> bool:
+    """Общий запрос сведений о поверке в реестре без конкретной модели."""
+    q = (text or "").casefold().replace("ё", "е")
+    return ("поверк" in q or "фгис" in q or "аршин" in q) and (
+        "сведен" in q
+        or "посмотреть" in q
+        or "найти" in q
+        or "проверить" in q
+        or "ссыл" in q
+    )
+
+
+VERIFICATION_EQUIPMENT_CLARIFY = (
+    "Поверка какого оборудования вас интересует? "
+    "Укажите модель или серию прибора — например, Turbo Flow UFG, TFG, UFL, СПУ-5."
+)
+
+VERIFICATION_EQUIPMENT_NOT_FOUND = (
+    "Такого оборудования в каталоге не найдено. "
+    "Уточните модель или серию прибора либо задайте другой вопрос."
+)
+
+
+def needs_verification_equipment_clarification(question: str) -> bool:
+    """Поверка без явного указания оборудования — нужно уточнение."""
+    if not _is_verification_query(question):
+        return False
+    if _is_generic_verification_registry_query(question):
+        return False
+    return not _explicit_equipment_in_question(question)
+
+
+def looks_like_verification_equipment_reply(text: str) -> bool:
+    """Короткий ответ с моделью/серией после запроса уточнения по поверке."""
+    t = (text or "").strip()
+    if not t or len(t) > 80:
+        return False
+    if _is_malfunction_query(t):
+        return False
+    if _is_verification_query(t) and not _explicit_equipment_in_question(t):
+        return False
+    if _explicit_equipment_in_question(t):
+        return True
+    words = t.split()
+    return len(words) <= 4 and len(t) <= 48
+
+
+def merge_verification_followup(original_question: str, equipment_reply: str) -> str:
+    """Склеивает исходный вопрос о поверке и уточнённую модель."""
+    base = (original_question or "").strip()
+    equipment = (equipment_reply or "").strip()
+    if not base:
+        return f"Поверка оборудования {equipment}".strip()
+    if not equipment:
+        return base
+    if equipment.casefold() in base.casefold():
+        return base
+    return f"{base}. Оборудование: {equipment}"
+
+
+def inject_verification_equipment(question: str, equipment: str) -> str:
+    """Подставляет ранее выбранное оборудование в новый вопрос о поверке."""
+    base = (question or "").strip()
+    eq = (equipment or "").strip()
+    if not base or not eq:
+        return base
+    if _explicit_equipment_in_question(base):
+        return base
+    if eq.casefold() in base.casefold():
+        return base
+    return f"{base}. Оборудование: {eq}"
+
+
+def resolve_catalog_equipment(
+    text: str,
+    product_detector: "ProductDetector",
+) -> Tuple[bool, Optional[str]]:
+    """Проверяет, есть ли названное оборудование в каталоге RAG."""
+    raw = (text or "").strip()
+    if not raw:
+        return False, None
+
+    series = _series_in_text(raw)
+    if series:
+        products = product_detector.extract_product_names()
+        best_name: Optional[str] = None
+        best_score = 0.0
+        for marker in series:
+            product, score = _best_product_for_series(marker, products)
+            if product and score > best_score:
+                best_name = product
+                best_score = score
+        if best_name and best_score >= 0.72:
+            return True, best_name
+        return False, None
+
+    model_tokens = _model_tokens(raw)
+    if model_tokens:
+        products = product_detector.extract_product_names()
+        for product in products:
+            if model_tokens & _model_tokens(product):
+                return True, product
+        return False, None
+
+    product, score = product_detector.detect_product_from_question(raw)
+    threshold = 0.75 if len(raw) <= 64 else 0.55
+    if product and score >= threshold:
+        return True, product
+    return False, None
+
+
 class ProductDetector:
     def __init__(self, store, embedder):
         self.store = store
@@ -280,12 +505,15 @@ class ProductDetector:
                 return None, 0.0
 
             question_tokens = _model_tokens(question)
+            question_specific_tokens = _specific_model_tokens(question)
             if question_tokens:
                 best_exact = None
                 best_exact_score = 0
                 for product in products:
                     product_tokens = _model_tokens(product)
+                    product_specific_tokens = _specific_model_tokens(product)
                     score = len(question_tokens & product_tokens)
+                    score += 3 * len(question_specific_tokens & product_specific_tokens)
                     if score > best_exact_score:
                         best_exact = product
                         best_exact_score = score
@@ -381,6 +609,7 @@ class ProductDetector:
         product_lower = product_name.lower()
         query_tokens = _tokenize(f"{product_name} {query_text}")
         product_model_tokens = _model_tokens(product_name)
+        product_specific_tokens = _specific_model_tokens(product_name)
 
         product_variations = [
             product_lower,
@@ -393,15 +622,20 @@ class ProductDetector:
                 continue
             chunk_product_text = _chunk_product_text(chunk)
             chunk_product = chunk_product_text.lower()
-            chunk_model_tokens = _model_tokens(chunk_product_text)
+            chunk_search_text = f"{chunk_product_text} {chunk.get('content', '')}"
+            chunk_model_tokens = _model_tokens(chunk_search_text)
+            chunk_specific_tokens = _specific_model_tokens(chunk_search_text)
 
             match_found = False
-            for variant in product_variations:
-                if variant and (variant in chunk_product or chunk_product in variant):
-                    match_found = True
-                    break
-            if not match_found and product_model_tokens and chunk_model_tokens:
-                match_found = bool(product_model_tokens & chunk_model_tokens)
+            if product_specific_tokens:
+                match_found = bool(product_specific_tokens & chunk_specific_tokens)
+            else:
+                for variant in product_variations:
+                    if variant and (variant in chunk_product or chunk_product in variant):
+                        match_found = True
+                        break
+                if not match_found and product_model_tokens and chunk_model_tokens:
+                    match_found = bool(product_model_tokens & chunk_model_tokens)
 
             if not match_found:
                 continue

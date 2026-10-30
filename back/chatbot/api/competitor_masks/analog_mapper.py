@@ -170,6 +170,11 @@ def _build_specs_for_catalog(
         "ultramag": _map_ultramag,
         "vympel_500": _map_vympel_500,
         "ktm_600": _map_ktm_600,
+        "ktm_700": _map_ktm_700,
+        "ktm_rumass": _map_ktm_rumass,
+        "elmetro_flomak": _map_elmetro_flomak,
+        "elmetro_flous_dru": _map_elmetro_flous_dru,
+        "emis_mass_260": _map_emis_mass_260,
     }
     builder = builders.get(catalog_id)
     if not builder:
@@ -325,6 +330,91 @@ def _map_ktm_600(
         flow = _g_size_qmax(values["size"], shared)
         if flow is not None:
             specs["flowMax"] = flow
+
+
+def _map_ktm_700(
+    values: dict[str, str],
+    specs: dict[str, Any],
+    shared: dict[str, Any],
+    warnings: list[str],
+) -> None:
+    _map_ktm_600(values, specs, shared, warnings)
+
+
+def _map_ktm_rumass(
+    values: dict[str, str],
+    specs: dict[str, Any],
+    shared: dict[str, Any],
+    warnings: list[str],
+) -> None:
+    if values.get("dn"):
+        dn = _direct_numeric(values["dn"])
+        if dn is not None:
+            specs["diameter"] = dn
+    if values.get("accuracy"):
+        acc = _lookup(values["accuracy"], shared.get("ktm_rumass_accuracy") or {})
+        if acc is not None:
+            specs["accuracy"] = str(acc)
+
+
+def _map_elmetro_flomak(
+    values: dict[str, str],
+    specs: dict[str, Any],
+    shared: dict[str, Any],
+    warnings: list[str],
+) -> None:
+    if values.get("dn"):
+        dn = _direct_numeric(values["dn"])
+        if dn is not None:
+            specs["diameter"] = dn
+    if values.get("pressure"):
+        mpa = _lookup(values["pressure"], shared.get("elmetro_flomak_pressure_mpa") or {})
+        if mpa is not None:
+            specs["pressureMax"] = float(mpa)
+    if values.get("accuracy"):
+        acc = _lookup(values["accuracy"], shared.get("elmetro_flomak_accuracy") or {})
+        if acc is not None:
+            specs["accuracy"] = str(acc)
+
+
+def _map_elmetro_flous_dru(
+    values: dict[str, str],
+    specs: dict[str, Any],
+    shared: dict[str, Any],
+    warnings: list[str],
+) -> None:
+    if values.get("dn"):
+        dn = _direct_numeric(values["dn"])
+        if dn is not None:
+            specs["diameter"] = dn
+    if values.get("pressure"):
+        mpa = _lookup(values["pressure"], shared.get("elmetro_flous_pressure_mpa") or {})
+        if mpa is not None:
+            specs["pressureMax"] = float(mpa)
+    if values.get("accuracy"):
+        acc = _lookup(values["accuracy"], shared.get("elmetro_flous_accuracy") or {})
+        if acc is not None:
+            specs["accuracy"] = str(acc)
+
+
+def _map_emis_mass_260(
+    values: dict[str, str],
+    specs: dict[str, Any],
+    shared: dict[str, Any],
+    warnings: list[str],
+) -> None:
+    if values.get("dn"):
+        dn = _direct_numeric(values["dn"])
+        if dn is not None:
+            specs["diameter"] = dn
+    if values.get("pressure"):
+        mpa = _direct_numeric(values["pressure"].replace(",", "."))
+        if mpa is not None:
+            specs["pressureMax"] = float(mpa)
+    if values.get("accuracy"):
+        acc = _direct_numeric(values["accuracy"].replace(",", "."))
+        if acc is not None:
+            specs["accuracy"] = str(acc)
 
 
 def build_analog_search_specs(

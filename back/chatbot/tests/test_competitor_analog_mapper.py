@@ -92,7 +92,8 @@ class CompetitorComparisonBuilderTests(SimpleTestCase):
         assert card is not None
         self.assertEqual(card["competitor_name"], "ИРВИС-Ультра")
         labels = [row["label"] for row in card["rows"]]
-        self.assertIn("Динамический диапазон", labels)
+        self.assertIn("Диаметры, DN", labels)
+        self.assertIn("Давление", labels)
         self.assertTrue(card["turbo_slide"]["highlights"])
 
     def test_unknown_catalog_returns_none(self) -> None:

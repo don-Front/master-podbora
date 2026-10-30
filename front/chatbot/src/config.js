@@ -488,6 +488,11 @@ export const SEND_PRICE_INQUIRY_URL = (
   process.env.REACT_APP_SEND_PRICE_INQUIRY_URL || podborApiUrl('/send-price-inquiry')
 ).trim();
 
+/** POST обратной связи разработчикам из виджета подбора. */
+export const DEVELOPER_FEEDBACK_URL = (
+  process.env.REACT_APP_DEVELOPER_FEEDBACK_URL || podborApiUrl('/developer-feedback')
+).trim();
+
 /** Origin сервиса 1С (fallback для картинок, если не задан Django static). */
 export function getOneCApiOrigin() {
   try {

@@ -1,0 +1,199 @@
+{
+  "file": "ОЛ CFM.pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\ОЛ CFM.pdf",
+  "size_bytes": 1372893,
+  "generated_at": "2026-07-14T10:09:17.881426+00:00",
+  "text_source": "pdf_ocr",
+  "ocr_chars": 8731,
+  "ocr_preview": "Текничсские_шребования нарасrоdомеры\nПарамеmры рабочей\nСоzласно опросны м nuсmaм\nНасmройка Очаазона\nнуля\nнезчэичан\n=0,506\nОля 2азое)\nПоерсиносmь измерения no аналозобому выходному cu2-\nналу\n#0,2596 (Оля жиокостей)\nПоосоеоиненне\nпроиессу (mрубопроводу)\nФланиевое\nИсподнение\nСоеласно опросным\nписгтпн\nВыхобной сиzнал\n4-2OжA/HART-пpomокол\nНаличие ЖК- uндuxamopa\nТребуеmся\nУпраеление конфиеурацчей\nМесmноe wu nо HART-\nпроmоколу\nЭлекшрическое пооключенче\nСоаласно опросным лисmам\nНапряление numanuя\n24 VDC\nСmсheнь защиmы\nСенсор IРб8, элекmроника IР67\nИсполнение no взрывобезоласносmи\nИскробезоласное\nTeмnepamyрa окруэающей среды\nOm минус 4] %C\nд0 пюс 38 'С*\nKamezоpия разметения оборубования\nИсполнение У] no ГОСТ ]5150-69\nMamepuaa кориуса изжериmельноао преобразобаmeля\nАлюминиесый chлаб\nПервичная поверка\nТребуеmся\nМежк поверочный инmepeca; не менее\n48 месяцеб\nУсmаносленный срок службы, не мснее\n10 леm\nНаличие &неwнezo узла заземления\nB coomeemcmeuu\nТехническими mребованиями на проекmирование раздела авmомa-\nmизации ООО <ЛУКОЙЛ-Нижеаороонефmеоресинmез  mемnераmурный Очалазон эксплуа-\nпaqиu\nприбора Ооллен быmь om минус 40 00 >люс 65 C\n1\nИумииси-\nЗeки5н -\nщеинъптап\nДенж\nНечыт\nмянчы\nНомер\n5mgg (имnu\nПобинсь\nцawп\nGok;\nHoмера лurmач\nстpawи\nТаотина пазнсмранни кмЕнанич\n4001-123-2025-AГX ОЛЗ\nПМТ Vcm АВТ-6\nИзы:\nRшлU\n\"uенг\nЛаты\nПоончсь]Даmа\n(А40-00268-0001)\nРазрабоmiал\nСтешинский\n08 -53\nДообо-\nIucmoб\nДооборуоосание блока\nПвовер\nшп Еиинегти\n08 25\n=\nKUныRпн\nшАLнGF-и\nоемеркапmанизации керсина\nГласный\nО",
+  "bot_specs": {
+    "medium": "liquid",
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": 0,
+    "flowMax": 250,
+    "flow_unit": "м³/ч",
+    "pressureMin": 0.7,
+    "pressureMax": 1.47,
+    "pressure_unit": "МПа",
+    "tempMediumMin": -40,
+    "tempMediumMax": 30,
+    "tempAmbientMin": -40,
+    "tempAmbientMax": 38,
+    "temperature_unit": "°C",
+    "accuracy": null,
+    "diameter": 300
+  },
+  "reference_specs": {
+    "medium": null,
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": 250,
+    "flow_unit": "/ч",
+    "pressureMin": 0.7,
+    "pressureMax": 1.47,
+    "pressure_unit": "МПа",
+    "tempMediumMin": 24,
+    "tempMediumMax": 300,
+    "tempAmbientMin": -40,
+    "tempAmbientMax": 38,
+    "temperature_unit": "°C",
+    "accuracy": null,
+    "diameter": 300
+  },
+  "heuristic_specs": {
+    "medium": null,
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": null,
+    "accuracy": null,
+    "diameter": null
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "bot_extra",
+        "reference": null,
+        "bot": "liquid"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "bot_extra",
+        "reference": null,
+        "bot": 0
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "match",
+        "reference": 250,
+        "bot": 250
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "/ч",
+        "bot": "м³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "match",
+        "reference": 0.7,
+        "bot": 0.7
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "match",
+        "reference": 1.47,
+        "bot": 1.47
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "match",
+        "reference": "МПа",
+        "bot": "МПа"
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "wrong",
+        "reference": 24,
+        "bot": -40
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "wrong",
+        "reference": 300,
+        "bot": 30
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "match",
+        "reference": -40,
+        "bot": -40
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "match",
+        "reference": 38,
+        "bot": 38
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°C",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 300,
+        "bot": 300
+      }
+    ],
+    "ref_filled": 11,
+    "matched": 9,
+    "mismatches": 2,
+    "bot_missing": 0,
+    "bot_extra": 2,
+    "accuracy_pct": 81.8
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 38150.4,
+    "llm_ms": 7612.0,
+    "pipeline_ms": 45780.7,
+    "ocr_chars": 8731,
+    "llm_input_chars": 8731,
+    "text_source": "pdf_ocr",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 6329.3,
+  "bot_llm_raw_preview": "```\n{\n  \"medium\": \"жидкость\",\n  \"gas_type\": null,\n  \"duplication_type\": \"none\",\n  \"flowMin\": 0,\n  \"flowMax\": 250,\n  \"flow_unit\": \"м³/ч\",\n  \"pressureMin\": 0.7,\n  \"pressureMax\": 1.47,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": -40,\n  \"tempMediumMax\": 30,\n  \"tempAmbientMin\": -40,\n  \"tempAmbientMax\": 38,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": null,\n  \"diameter\": 300,\n  \"voltage\": \"24 VDC\",\n  \"signal_output\": \"4-20mA/HART\",\n  \"protection_degree\": \"IP67\",\n  \"connection_type\": \"фланцевое\",\n  \"explosion_safety\": \"IIB-ТЗ\"\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": [\"керосиновая фракция\", \"дизельная фракция\"],\n  \"gas_type\": null,\n  \"duplication_type\": null,\n  \"flowMin\": null,\n  \"flowMax\": 250,\n  \"flow_unit\": \"/ч\",\n  \"pressureMin\": 0.7,\n  \"pressureMax\": 1.47,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": 24,\n  \"tempMediumMax\": 300,\n  \"tempAmbientMin\": -40,\n  \"tempAmbientMax\": 38,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": null,\n  \"diameter\": 300\n}\n```",
+  "elapsed_ms": 90162.4
+}

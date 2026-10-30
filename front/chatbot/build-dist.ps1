@@ -25,4 +25,13 @@ Copy-Item (Join-Path $dist 'widget.js') $podborChat -Force
 Copy-Item (Join-Path $dist 'manifest.json') $podborChat -Force -ErrorAction SilentlyContinue
 Copy-Item (Join-Path $dist 'robots.txt') $podborChat -Force -ErrorAction SilentlyContinue
 
+$competitorsSrc = Join-Path $dist 'competitors'
+$competitorsDst = Join-Path $podborChat 'competitors'
+if (Test-Path $competitorsSrc) {
+  if (Test-Path $competitorsDst) {
+    Remove-Item $competitorsDst -Recurse -Force
+  }
+  Copy-Item $competitorsSrc $competitorsDst -Recurse -Force
+}
+
 Write-Host "OK: dist -> $dist"

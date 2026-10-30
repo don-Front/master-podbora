@@ -1,0 +1,1613 @@
+{
+  "generated_at": "2026-07-07T16:37:14.360311+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 17,
+    "PARTIAL": 26,
+    "HALLUCINATION": 7
+  },
+  "bug_counts": {
+    "hallucination": 7
+  },
+  "accuracy_pct": 34.0,
+  "partial_pct": 52.0,
+  "bad_pct": 14.0,
+  "per_file": [
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "questions": 50,
+      "correct": 17,
+      "partial": 26,
+      "bad": 7,
+      "accuracy_pct": 34.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          26
+        ],
+        [
+          "hallucination",
+          7
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 9 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО ",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 12 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 12 ",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 23 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 28 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 28 ",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 30 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 30 ",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 33 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 38 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 38 ",
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "GFG-F/GFG-dP"
+      ],
+      "answer_preview": "Расходомер Turbo Flow GFG модификаций GFG-F и GFG-∆P предназначен для измерения объёмного расхода газа в рабочих условиях и вычисления объёма, объёмного расхода и объёма газа, приведённого к стандартным условиям, массового расхода и массы газа — природного, воздуха, азота, а также других однокомпонентных газов и газовых смесей известного состава.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 8716.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель расходомера Turbo Flow GFG модификаций GFG-F и GFG-∆P — ООО НПО «Турбулентность – ДОН».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 8861.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В паспорте расходомера Turbo Flow GFG модификаций GFG-F и GFG-dP указан заводской номер и дата изготовления, а также версия ПО и ID, но нет информации о конкретном регистрационном или сертификационном номере.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 10718.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указано срока действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 8087.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки: МП 208-046-2021",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 6786.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений расхода газа: для модификации GFG-F — от 0,016 до 280 000 м³/ч, для модификации GFG-∆P — от 0,35 до 280 000 м³/ч.\n- Динамический диапазон Qmin/Qmax: 1:100 (1:160)* для GFG-F, 1:100 для GFG-∆P.\n- Диаметр условный: от 10 до 1400 мм для GFG-F, от 50 до 1400 мм для GFG-∆P.\n- Пределы относительной погрешности при измерении объёмного расхода газа в рабочих условиях: ±1,5% для Qmin ≤ Q < 0,01Qmax, ±1,0% для 0,01Qmax ≤ Q ≤ Qmax.\n- Диапазон избыточного давления газа: от 0 до 32,0 МПа",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 24194.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Рабочий диапазон измерений давления: от 33% до 100% ВПИ.\n- Диапазон температур газа: от минус 50 °С до плюс 70 °С.\n- Пределы допускаемой абсолютной погрешности при измерении температуры: ± (0,15 + 0,002|t|) °С, где t – измеряемая температура.\n- Пределы допускаемой относительной погрешности при вычислении массового расхода и массы газа, объёма, объёмного расхода и объёма газа, приведённого к стандартным условиям: ± 0,02%.\n- Пределы допускаемой приведённой погрешности при преобразовании измеренн",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 14598.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «РЭ на GFG-F и GFG-dP» информация о программном обеспечении отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 7403.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Преобразователь расхода GFG-F (в зависимости от исполнения).\n- Внешний терминал GFG2.01.00.000 — 1 шт.\n- Руководство по эксплуатации ТУАС.407299.001 РЭ — 1 экз.\n- Паспорт ТУАС.407299.001 ПС — 1 экз.\n- Методика поверки МП 208-046-2021 — 1 экз.\n- Преобразователь температуры — 1 шт. (в зависимости от исполнения).\n- Преобразователь давления — 1 экз.\n- Эксплуатационная документация на входящие в комплект СИ — 1 шт.\n- Антенна GSM — 1 к-т.\n- Комплект монтажных частей — 1 к-т.\nДля расходомера GFG-∆P:\n",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 24831.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ на GFG-F и GFG-dP»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Расходомер Turbo Flow GFG соответствует требованиям технических условий «Расходомер Turbo Flow GFG 4213-014-70670506-2013 ТУ».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ на GFG-F и GFG-dP"
+      ],
+      "total_ms": 11164.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG модификаций GFG-F и GFG-∆P Руководство по эксплуатации ТУАС.407299.001 РЭ?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Расходомеры Turbo Flow GFG предназначены для измерений объёмного расхода и объёма газа в рабочих условиях и вычислений объёмного расхода и объёма газа, приведённых к стандартным условиям, массового расхода и массы газа — природного, воздуха, азота, а также других однокомпонентных газов и газовых смесей известного состава.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7290.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 2 ООО НПО «Турбулентность – ДОН?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "- Расходомер Turbo Flow GFG имеет блок интерфейсов для настройки по каналам цифровой связи и передачи данных по стандартным аналоговым и цифровым протоколам на внешний терминал, принтер, ПК или устройства передачи данных по проводным и беспроводным интерфейсам с целью интеграции в автоматизированных системах управления технологическими процессами (АСУТП).\n- Возможность подключения внешних преобразователей параметров (плотномеры, анализаторы точки росы, хроматографы) по стандартным аналоговым и ц",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11500.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 3 Содержание 1 Описание и работа ра?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Для измерений объёмного расхода газа в прямом и обратном направлениях (реверсивный режим) применяются модификации Turbo Flow GFG-F и Turbo Flow GFG –ΔP исполнения R с установкой на одном УФР двух встречно включённых по направлению потока ПР и диафрагм для измерения реверсивных потоков.\nВ зависимости от максимального избыточного давления в трубопроводе расходомеры имеют следующие исполнения: \n* исполнение А — для установки в измерительные трубопроводы с максимальным избыточным давлением до 0,005 ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 17842.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 4 ООО НПО «Турбулентность – ДОН Настоящее руководство по эксплуата?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "На странице 4 документа «ОТ GFG от 12.07.2024» указаны рисунки с изображениями модификаций расходомеров Turbo Flow GFG, включая Turbo Flow GFG-F, Turbo Flow GFG-FR, Turbo Flow GFG-ΔP, Turbo Flow GFG-Z и Turbo Flow GFG-H.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4847.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 5 1 Описание и работа расходомера 1?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "На странице 5 документа «РЭ на GFG-F и GFG-dP» о расходомере Turbo Flow GFG представлено изображение Turbo Flow GFG-F.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3576.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 6 ООО НПО «Турбулентность – ДОН Продолжение таблицы 2 Наименование?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В документе на странице 6 нет информации о таблице 2 и её продолжении, а также о конкретных параметрах расходомера Turbo Flow GFG-F или других модификаций.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4849.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 7 Продолжение таблицы 3 Характерист?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "На странице 7 документа «РЭ на GFG-F и GFG-dP» о расходомере Turbo Flow GFG указано, что программное обеспечение расходомера по аппаратному обеспечению является встроенным. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. Программное обеспечение хранится в энергонезависимой памяти. Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО. \nПрограм",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9226.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 8 ООО НПО «Турбулентность – ДОН 1.3.3 В зависимости от состава и в?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "- Идентификационное наименование ПО: GFG; - Номер версии (идентификационный номер МЗЧ) ПО, не ниже: 4.51; - Цифровой идентификатор ПО: 0x0BF7815D; - Алгоритм вычисления цифрового идентификатора программного обеспечения: CRC-32; - Уровень защиты программного обеспечения расходомеров от преднамеренных и непреднамеренных изменений: высокий; - Диапазон измерений расхода газа для модификации GFG-F: от 0,016 до 280 000 м³/ч; - Динамический диапазон для модификации GFG-F: 1:100 (1:250*); - Диаметр усло",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 20194.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 9 1.3.6 Пределы измерений объемного?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Диапазон измерений расхода газа для модификации GFG-F: от 0,016 до 280 000 м³/ч.\nПределы относительной погрешности при измерении объёмного расхода газа в рабочих условиях:\n* В диапазоне Qmin ≤ Q < 0,01 Qmax: ± 1,5 %; * 0,01Qmax ≤ Q ≤ Qmax: ± 1,0 %.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7835.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 10 ООО НПО «Турбулентность – ДОН Продолжение таблицы 6 Исполнение ?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 10 документа «РЭ на GFG-F и GFG-dP» отсутствует информация.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7673.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 11 1.5 Принцип действия расходомера?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "Принцип работы расходомеров Turbo Flow GFG основан на зависимости частоты колебаний струи измеряемой среды в чувствительном элементе от объёмного расхода газа, протекающего через него. В качестве чувствительного элемента преобразователя расхода используется струйный генератор. Парциальный расход формируется устройством формирования расхода. Частота колебаний воспринимается пьезопреобразователем и преобразуется в электрический частотный сигнал, поступающий в электронный блок преобразователя расхо",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18718.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 12 ООО НПО «Турбулентность – ДОН Зависимость расхода от перепада д?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 12 документа «РЭ на GFG-F и GFG-dP» информации о зависимости расхода от перепада давления нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14724.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 13 1.6.2 Вычислитель параметров Выч?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 13 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14217.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 14 ООО НПО «Турбулентность – ДОН газа) и снижение ресурса работы р?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 14 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14606.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 15 1.7 Маркировка и пломбирование 1?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 15 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14560.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 16 ООО НПО «Турбулентность – ДОН 1.8 Упаковка 1.8.1 Упаковка расхо?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 16 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14725.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 17 2 Использование по назначению 2.?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 17 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13746.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 18 ООО НПО «Турбулентность – ДОН 2.2 Меры безопасности 2.2.1 К экс?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 18 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14633.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 19 – установить датчик температуры,?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о том, как установить датчик температуры на расходомер Turbo Flow GFG модификаций F и ΔP на странице 19 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15276.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 20 ООО НПО «Турбулентность – ДОН – затянуть винты. ВНИМАНИЕ! Много?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 20 документа «РЭ на GFG-F и GFG-dP» информации нет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13978.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 21 2.5.2.7 При наличии расхода в си?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 21 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14834.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 22 ООО НПО «Турбулентность – ДОН?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 22 документа нет информации.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14208.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 23 – расхода газа при стандартных у?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 23 документа нет информации о расходе газа при стандартных условиях для модификаций GFG-F и GFG-ΔP.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1835.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 24 ООО НПО «Турбулентность – ДОН – отношение коэффициентов (фактор?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 24 документа «РЭ на GFG-F и GFG-dP» информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15595.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 25 [3] – при однократном нажатии: а?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 25 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 16359.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 26 ООО НПО «Турбулентность – ДОН Для входа в подменю «Печать» необ?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 26 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 16069.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 27 < Печать Текущие данные Почасовы?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 27 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15239.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 28 ООО НПО «Турбулентность – ДОН < Архивные данные Данные за месяц?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 28 документа «РЭ на GFG-F и GFG-dP» не найдено информации о архивных данных за месяц.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14916.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 29 < Архивные данные Данные за инте?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 29 документа нет информации.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13647.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 30 ООО НПО «Турбулентность – ДОН < Состав газа СО2 Азот Сообщение ?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 30 документа не содержится информации о составе газа СО2 и азота для модификаций GFG-F и GFG-ΔP.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14540.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 31 – выбрать клавишами [↑] [↓] подм?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте на странице 31 документа информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14357.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 32 ООО НПО «Турбулентность – ДОН < Настройки Начало суток Расчетны?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В предоставленном контексте на странице 32 документа информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13662.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 33 Переключение в режим редактирова?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации о переключении в режим редактирования на странице 33 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1838.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 34 ООО НПО «Турбулентность – ДОН < Восстановление при НС При Q < Q?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В предоставленном контексте на странице 34 документа «РЭ на GFG-F и GFG-dP» информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14157.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 35 Ввод параметра осуществляется с ?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 35 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14593.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 36 ООО НПО «Турбулентность – ДОН < Настройки Метод расчета Связь Г?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 36 документа информация не найдена.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5266.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 37 < Настройки Связь > Инициализаци?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 37 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8045.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 38 ООО НПО «Турбулентность – ДОН ˂ Параметры ПР Токовый выход > Им?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 38 документа «РЭ на GFG-F и GFG-dP» не найдено информации о параметрах токового выхода для модификаций GFG-F и GFG-ΔP.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6578.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 49,
+      "topic": "стр.39",
+      "question": "Что указано на странице 39 документа «РЭ на GFG-F и GFG-dP» о: Расходомер Turbo Flow GFG Руководство по эксплуатации ООО НПО «Турбулентность – ДОН» 39 ˂ Токовый выход Включить / Отклю?",
+      "expected_keys": [
+        "Расходомер",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 39 документа «РЭ на GFG-F и GFG-dP».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6064.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+      "id": 50,
+      "topic": "стр.40",
+      "question": "Что указано на странице 40 документа «РЭ на GFG-F и GFG-dP» о: Руководство по эксплуатации Расходомер Turbo Flow GFG 40 ООО НПО «Турбулентность – ДОН Выбрать параметр «Q max» и подтве?",
+      "expected_keys": [
+        "Руководство",
+        "Расходомер",
+        "Turbo"
+      ],
+      "answer_preview": "В представленном контексте на странице 40 документа отсутствует информация о параметре «Q max».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5434.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 53,
+  "source_file": "РЭ на GFG-F и GFG-dP.pdf",
+  "product": "GFG-F/GFG-dP"
+}

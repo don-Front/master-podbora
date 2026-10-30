@@ -1,0 +1,199 @@
+{
+  "file": "UFL.docx",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\UFL.docx",
+  "size_bytes": 440043,
+  "generated_at": "2026-07-14T10:09:05.600499+00:00",
+  "text_source": "docx",
+  "ocr_chars": 6428,
+  "ocr_preview": "Приложение: Физико-химический состав среды\nПриложение: Эскиз\nПриложение: Прочие\nНомер ТКП/Проекта | Номер ТКП/Проекта | Номер ТКП/Проекта | Версия | Дата составления\n15058.00.00.000 ОЛ200 | 15058.00.00.000 ОЛ200 | 15058.00.00.000 ОЛ200 | 1 | 10.12.25\n№ п/п | № п/п | Общие данные | Общие данные | Общие данные | Требуемые параметры\nКонечный Заказчик | Конечный Заказчик | Конечный Заказчик | ООО «Лукойл-Инжиниринг»\nОбозначение на схеме | Обозначение на схеме | Обозначение на схеме | FT 0301, FT 0302, FT 0303\nКоличество | Количество | Количество | 3\nТ | Тип датчика | Тип датчика | Тип датчика | Электромагнитный\nТ | Количество лучей | Количество лучей | Количество лучей\nК | Способ монтажа | Способ монтажа | Способ монтажа | Фланцевый\nНазначенный срок службы, лет | Назначенный срок службы, лет | Назначенный срок службы, лет | 30\nК | Гарантийный период, мес. | Гарантийный период, мес. | Гарантийный период, мес. | 24/36\nМежповерочный интервал | Межповерочный интервал | Межповерочный интервал\nНаличие специализированных отраслевых стандартов Заказчика к оборудованию (ЕТТ, ОТТ, СТО и др.) | Наличие специализированных отраслевых стандартов Заказчика к оборудованию (ЕТТ, ОТТ, СТО и др.) | Наличие специализированных отраслевых стандартов Заказчика к оборудованию (ЕТТ, ОТТ, СТО и др.) | ЕТТ Роснефть\nНаименование стандарта | Наименование стандарта | Наименование стандарта\nХарактеристика условий эксплуатации | Характеристика условий эксплуатации | Характеристика условий эксплуатации\nМестность",
+  "bot_specs": {
+    "medium": "liquid",
+    "gas_type": "Пресная вода",
+    "duplication_type": null,
+    "flowMin": 140,
+    "flowMax": 220,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.5,
+    "pressureMax": 2.0,
+    "pressure_unit": "МПа",
+    "tempMediumMin": 5,
+    "tempMediumMax": 30,
+    "tempAmbientMin": -30,
+    "tempAmbientMax": 36,
+    "temperature_unit": "°C",
+    "accuracy": "1%",
+    "diameter": 200
+  },
+  "reference_specs": {
+    "medium": "liquid",
+    "gas_type": "Пресная вода",
+    "duplication_type": null,
+    "flowMin": 140,
+    "flowMax": 220,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.5,
+    "pressureMax": 2.0,
+    "pressure_unit": "МПа",
+    "tempMediumMin": 5,
+    "tempMediumMax": 30,
+    "tempAmbientMin": -30,
+    "tempAmbientMax": 40,
+    "temperature_unit": "°С",
+    "accuracy": "3",
+    "diameter": 200
+  },
+  "heuristic_specs": {
+    "medium": "liquid",
+    "gas_type": "Пресная вода",
+    "duplication_type": null,
+    "flowMin": 140.0,
+    "flowMax": 220.0,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.5,
+    "pressureMax": 2.0,
+    "pressure_unit": "МПа",
+    "tempMediumMin": 5.0,
+    "tempMediumMax": 30.0,
+    "tempAmbientMin": -30.0,
+    "tempAmbientMax": 36.0,
+    "temperature_unit": "°C",
+    "accuracy": null,
+    "diameter": 200
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "liquid",
+        "bot": "liquid"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "match",
+        "reference": "Пресная вода",
+        "bot": "Пресная вода"
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "match",
+        "reference": 140,
+        "bot": 140
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "match",
+        "reference": 220,
+        "bot": 220
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "м³/ч",
+        "bot": "м³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "match",
+        "reference": 1.5,
+        "bot": 1.5
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "match",
+        "reference": 2.0,
+        "bot": 2.0
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "match",
+        "reference": "МПа",
+        "bot": "МПа"
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "match",
+        "reference": 5,
+        "bot": 5
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "match",
+        "reference": 30,
+        "bot": 30
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "match",
+        "reference": -30,
+        "bot": -30
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "wrong",
+        "reference": 40,
+        "bot": 36
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°С",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "wrong",
+        "reference": "3",
+        "bot": "1%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 200,
+        "bot": 200
+      }
+    ],
+    "ref_filled": 15,
+    "matched": 13,
+    "mismatches": 2,
+    "bot_missing": 0,
+    "bot_extra": 0,
+    "accuracy_pct": 86.7
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 60.3,
+    "llm_ms": 3525.1,
+    "pipeline_ms": 3596.2,
+    "ocr_chars": 6428,
+    "llm_input_chars": 6428,
+    "text_source": "docx",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 8484.5,
+  "bot_llm_raw_preview": "```\n{\n  \"medium\": \"пресная вода\",\n  \"gas_type\": null,\n  \"duplication_type\": null,\n  \"flowMin\": 220,\n  \"flowMax\": 140,\n  \"flow_unit\": \"м³/ч\",\n  \"pressureMin\": 1.5,\n  \"pressureMax\": 2.0,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": 5,\n  \"tempMediumMax\": 30,\n  \"tempAmbientMin\": -30,\n  \"tempAmbientMax\": 36,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"1%\",\n  \"diameter\": 200\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": \"пресная вода\",\n  \"gas_type\": null,\n  \"duplication_type\": null,\n  \"flowMin\": 220,\n  \"flowMax\": 140,\n  \"flow_unit\": \"м³/ч\",\n  \"pressureMin\": 1.5,\n  \"pressureMax\": 2.0,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": 5,\n  \"tempMediumMax\": 30,\n  \"tempAmbientMin\": -30,\n  \"tempAmbientMax\": 40,\n  \"temperature_unit\": \"°С\",\n  \"accuracy\": null,\n  \"diameter\": \"Ду трубопровода – 200мм\"\n}\n```",
+  "elapsed_ms": 12278.2
+}

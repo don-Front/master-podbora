@@ -1,0 +1,104 @@
+id: emis_mass_260
+competitor: "ЭМИС"
+product_name: "Счётчик-расходомер массовый кориолисовый ЭМИС-МАСС 260"
+source_document: "ЭМ260 Руководство по эксплуатации МПИ5.pdf"
+source_section: "Раздел 1.3, карта заказа, таблица 1.1"
+document_code: "МПИ5"
+mask_prefix: "ЭМИС-МАСС-260"
+mask_example: "ЭМИС-МАСС-260 – Ex – 050К – И – Ж – 2,5 – 100 – 24 – А1 – 0,25 – 1,0 – 1,0 – НК – У – ГП – Е – ГОСТ"
+image: "emis_mass_260.png"
+
+fields:
+  - id: ex_protection
+    label: "Взрывозащита"
+    position: 2
+    allowed:
+      - ""
+      - Ex
+      - 0Ex
+      - Exa
+      - Extib
+      - Extia
+      - Extaib
+      - Extaia
+      - РВ
+      - РО-РВ
+
+  - id: dn
+    label: "Диаметр условного прохода (Ду), мм"
+    position: 3
+    allowed:
+      - "010"
+      - "015"
+      - "025"
+      - "040"
+      - "050"
+      - "080"
+      - "100"
+      - "150"
+      - "200"
+      - "250"
+      - "300"
+
+  - id: body
+    label: "Тип корпуса"
+    position: 4
+    allowed:
+      - ""
+      - К
+      - Х
+
+  - id: placement
+    label: "Размещение электронного блока"
+    position: 5
+    allowed:
+      - И
+      - ВТ
+      - Д
+      - ДМ
+
+  - id: calibration
+    label: "Калибровка"
+    position: 6
+    allowed:
+      - Ж
+      - Г
+
+  - id: pressure
+    label: "Максимальное давление измеряемой среды, МПа"
+    position: 7
+    allowed:
+      - "1,0"
+      - "1.0"
+      - "1,6"
+      - "1.6"
+      - "2,5"
+      - "2.5"
+      - "4,0"
+      - "4.0"
+      - "6,3"
+      - "6.3"
+      - "10"
+      - "16"
+      - "25"
+
+  - id: accuracy
+    label: "Класс точности, %"
+    position: 12
+    allowed:
+      - "0,1"
+      - "0.1"
+      - "0,15"
+      - "0.15"
+      - "0,2"
+      - "0.2"
+      - "0,25"
+      - "0.25"
+      - "0,5"
+      - "0.5"
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - pressure

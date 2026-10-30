@@ -1,0 +1,1613 @@
+{
+  "generated_at": "2026-07-07T13:56:54.557511+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 30,
+    "PARTIAL": 13,
+    "HALLUCINATION": 7
+  },
+  "bug_counts": {
+    "hallucination": 7
+  },
+  "accuracy_pct": 60.0,
+  "partial_pct": 26.0,
+  "bad_pct": 14.0,
+  "per_file": [
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "correct": 30,
+      "partial": 13,
+      "bad": 7,
+      "accuracy_pct": 60.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          13
+        ],
+        [
+          "hallucination",
+          7
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 2 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 11 - блока интерфей",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 3 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 3 Всего листов 11 Для измерений об",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 11 Рисунок 1 – Turb",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 7 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 7 Всего листов 11 Рисунок 16 - Вын",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 8 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 8 Всего листов 11 Идентификационны",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 9 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 9 Всего листов 11 Продолжение табл",
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Документ «ОТ GFG от 12.07.2024 (изм факт адрес)» содержит описание типа средства измерений — расходомеров Turbo Flow GFG. Расходомеры предназначены для измерений объёмного расхода и объёма газа в рабочих условиях и вычислений объёмного расхода и объёма газа, приведённых к стандартным условиям, массового расхода и массы газа — природного, воздуха, азота, а также других однокомпонентных газов и газовых смесей известного состава.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6791.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» правообладатель или изготовитель не указаны напрямую.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14058.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер: 57146-14",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13646.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 16305.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии от 11 мая 2022 г. № 1133 «Об утверждении государственной поверочной схемы для средств измерений объёмного и массового расходов газа».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7811.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений расхода газа: от 0,016 до 300 м³/ч (для модификации GFG-F), от 30 до 280 000 м³/ч (для модификации GFG-Z), от 0,016 до 280 000 м³/ч (для модификации GFG-F), от 0,35 до 280 000 м³/ч (для модификации GFG-ΔP).\n- Динамический диапазон Qmin/Qmax: 1:100 (1:250*), 1:20 (1:50*), 1:100 (1:160*), 1:100.\n- Диаметр условный: от 10 до 100 мм (для модификации GFG-F), от 100 до 1400 мм (для модификаций GFG-Z и GFG-ΔP), от 50 до 1400 мм (для модификации GFG-H).\n- Пределы относительной погре",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18145.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Диапазон температур газа: от -20 до +70 °С для модификации GFG-H; от -50 до +70 °С для модификаций GFG-Z, GFG-F, GFG-∆P.\n- Пределы допускаемой абсолютной погрешности при измерении температуры: ± (0,15 + 0,002|t|), где t – измеряемая температура.\n- Пределы допускаемой относительной погрешности при вычислении массового расхода и массы газа, объёма, объёмного расхода и объёма газа, приведённого к стандартным условиям: ± 0,02 %.\n- Пределы допускаемой приведённой погрешности при преобразовании изме",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13697.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "- Идентификационное наименование ПО: GFG.\n- Номер версии (идентификационный номер МЗЧ) ПО, не ниже 4.51.\n- Цифровой идентификатор ПО: 0x0BF7815D.\n- Алгоритм вычисления цифрового идентификатора программного обеспечения: CRC-32.\n- Уровень защиты программного обеспечения расходомеров от преднамеренных и непреднамеренных изменений соответствует уровню «высокий» в соответствии с Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 10734.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Расходомер Turbo Flow GFG (модификация зависит от заказа).\n- Руководство по эксплуатации ТУАС.407299.001 РЭ — 1 экз.\n- Паспорт ТУАС.407299.001 ПС — 1 экз.\n- ГСИ. Расходомеры Turbo Flow GFG. Методика поверки МП 208-046-2021 — 1 экз.\n- Комплект монтажных частей — 1 компл.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11842.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ «ОТ GFG от 12.07.2024 (изм факт адрес)» ссылается на следующие нормативные документы:\n* Приказ Федерального агентства по техническому регулированию и метрологии от 11 мая 2022 г. № 1133 «Об утверждении государственной поверочной схемы для средств измерений объёмного и массового расходов газа»; * ГОСТ 30319.2-2015 Газ природный. Методы расчёта физических свойств. Вычисление физических свойств на основе данных о плотности при стандартных условиях и содержании азота и диоксида углерода; * ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 19078.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655 Лист №?",
+      "expected_keys": [
+        "57146-14",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 2573.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 11 - блока интерфейсов (БИ), который предназначен для настройки расходомеров по кан а- лам цифрово?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "Блок интерфейсов (БИ) предназначен для настройки расходомеров по каналам цифровой связи и для передачи данных по стандартным аналоговым и цифровым протоколам на внешний терминал, принтер, ПК или устройства передачи данных по проводным и беспроводным интерфейсам с целью интеграции в автоматизированных системах управления технологическими процессами (АСУТП). \nТакже БИ позволяет подключать к расходомерам внешние преобразователи параметров (плотномеры, анализаторы точки росы, хроматографы) по станда",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4008.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 3 Всего листов 11 Для измерений объемного расхода газа в прямом и обратном направлениях (реверси в- ный режим) пр?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "Для измерений объёмного расхода газа в прямом и обратном направлениях (реверсивный режим) применяются модификации Turbo Flow GFG-F и Turbo Flow GFG –ΔP исполнения R с установкой на одном УФР двух встречно включённых по направлению потока ПР и диафрагм для измерения реверсивных потоков.\nВ зависимости от максимального избыточного давления в трубопроводе расходомеры имеют следующие исполнения:\n* исполнение А — для установки в измерительные трубопроводы с максимальным избыточным давлением до 0,005 М",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7810.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 11 Рисунок 1 – Turbo Flow GFG-F Рисунок 2 – Turbo Flow GFG-F Рисунок 3 – Внешний терминал расходом?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На странице 4 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» указаны следующие рисунки:\n- Рисунок 1 – Turbo Flow GFG-F; - Рисунок 2 – Turbo Flow GFG-F; - Рисунок 3 – Внешний терминал расходомера Turbo Flow GFG.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 2810.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 11 Рисунок 9 – Выносной терминал Рисунок 10 – Выносной терминал в металлическом корпусе Схема плом?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На странице 5 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» представлены рисунки 9 и 10, изображающие выносной терминал и выносной терминал в металлическом корпусе соответственно. Также указано, что схемы пломбировки от несанкционированного доступа и обозначения мест нанесения знака поверки представлены на рисунках 11–17. Рисунок 11 посвящён модели Turbo Flow GFG-F.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 2783.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 11 Рисунок 12 –Turbo Flow GFG-F Рисунок 13 – Внешний терминал Рисунок 14 – Внешний терминал в мета?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На листе № 6 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» указаны следующие рисунки и их содержание:\n- Рисунок 12 – Turbo Flow GFG-F; - Рисунок 13 – Внешний терминал; - Рисунок 14 – Внешний терминал в металлическом корпусе.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 2457.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 7 Всего листов 11 Рисунок 16 - Выносной терминал Рисунок 17 - Выносной терминал в металлическом корпусе 1 – пломб?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "На странице 7 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» указаны следующие элементы на рисунке 16 и рисунке 17:\n- пломба свинцовая для нанесения знака поверки; - пломба свинцовая предприятия-изготовителя; - места для нанесения знака поверки способом давления на специальную мастику; - пломбы предприятия-изготовителя способом давления на специальную мастику; - самоклеющаяся пломба из легкоразрушаемого материала предприятия-изготовителя; - отверстия для пломбирования газоснабжающими организа",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5116.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 8 Всего листов 11 Идентификационные данные ПО расходомеров приведены в таблице 2. Таблица 2 – Идентификационные д?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "Идентификационные данные ПО расходомеров:\n- идентификационное наименование ПО: GFG; - номер версии (идентификационный номер МЗЧ) ПО, не ниже 4.51; - цифровой идентификатор ПО: 0x0BF7815D; - алгоритм вычисления цифрового идентификатора программного обеспечения: CRC-32; - уровень защиты программного обеспечения расходомеров от преднамеренных и непреднамеренных изменений соответствует уровню «высокий» в соответствии с Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6033.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 9 Всего листов 11 Продолжение таблицы 3 Наименование характеристики Значение характеристики для модификации GFG-H?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "11"
+      ],
+      "answer_preview": "Диапазон температур газа для модификации GFG-H: от -20 до +70 °С.\nПределы допускаемой абсолютной погрешности при измерении температуры: ± (0,15 + 0,002|t|), где t – измеряемая температура.\nПределы допускаемой относительной погрешности при вычислении массового расхода и массы газа, объёма, объёмного расхода и объёма газа, приведённого к стандартным условиям: ± 0,02 %.\nПределы допускаемой приведённой погрешности при преобразовании измеренного расхода газа в выходной токовый сигнал (от 4 до 20 мА):",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5659.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 10 Всего листов 11 Продолжение таблицы 4 Наименование характеристики Значение характеристики для модификации GFG-?",
+      "expected_keys": [
+        "Лист",
+        "10",
+        "Всего"
+      ],
+      "answer_preview": "Условия эксплуатации: \n- температура окружающего воздуха, ºС: от -40 до +70; - относительная влажность воздуха, %: от -50 до +70 (до 95); Масса, кг: от 0,5 до 50 для модификации GFG-H, от 2 до 100 для GFG-Z, от 2 до 5000 для GFG-F; Габаритные размеры, мм: от (120×82×84) до (290×130×135) для GFG-H, от (150х125х80) до (1800х300х300) для GFG-Z, от (150х125х80) до (9000х2000х2000) для GFG-F.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7040.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» о: Лист № 11 Всего листов 11 Нормативные и технические документы, устанавливающие требования к средству измерений Приказ Фе?",
+      "expected_keys": [
+        "Лист",
+        "11",
+        "Всего"
+      ],
+      "answer_preview": "На странице 11 документа «ОТ GFG от 12.07.2024 (изм факт адрес)» указаны следующие нормативные и технические документы, устанавливающие требования к средству измерений:\n* Приказ Федерального агентства по техническому регулированию и метрологии от 11 мая 2022 г. № 1133 «Об утверждении государственной поверочной схемы для средств измерений объёмного и массового расходов газа»; * ГОСТ 30319.2-2015 Газ природный. Методы расчёта физических свойств. Вычисление физических свойств на основе данных о пло",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11766.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 57146-14 и в каком контексте?",
+      "expected_keys": [
+        "57146-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 57146-14 указан на первой странице документа «ОТ GFG от 12.07.2024 (изм факт адрес)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8739.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В представленном документе «ОТ GFG от 12.07.2024 (изм факт адрес)» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9393.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В представленном документе «ОТ GFG от 12.07.2024 (изм факт адрес)» регистрационный номер 30004-13 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 21318.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений расхода газа, м³/ч: \n - для модификации GFG-H: от 0,016 до 300; - для модификации GFG-Z: от 30 до 280 000; - для модификации GFG-F: от 0,016 до 280 000; - для модификации GFG-∆P: от 0,35 до 280 000.\n- Диапазон температур газа, °С:\n - для модификации GFG-H: от -20 до +70; - для модификации GFG-Z: от -50 до +70.\n- Пределы допускаемой относительной погрешности при измерении объёмного расхода газа в рабочих условиях, %:\n - Qmin ≤ Q < 0,01 Qmax: ± 1,5; - 0,01Qmax ≤ Q ≤ Qmax: ± 1,",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 19570.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5990.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 1655 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1655",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655 утвердил описание типа средства измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9072.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 57146 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "57146",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер средства измерений: 57146-14.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7251.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 14 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "14",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» нет информации с номером 14 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8516.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» указаны следующие значения характеристик для расходомеров Turbo Flow GFG:\n- диапазон измерений расхода газа — от 0,016 до 300 м³/ч для модификации GFG-H; - динамический диапазон Qmin/Qmax — 1:100; - диаметр условный — от 10 до 100 мм; - пределы относительной погрешности при измерении объёмного расхода газа в рабочих условиях — ± 1,0 % в диапазоне 0,01Qmax ≤ Q ≤ Qmax; - диапазон избыточного давления газа — от 0 до 6,3 МПа; - верхние пределы изме",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13044.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер версии (идентификационный номер МЗЧ) ПО для Turbo Flow GFG — не ниже 4.51.\nЦифровой идентификатор ПО — 0x0BF7815D.\nАлгоритм вычисления цифрового идентификатора программного обеспечения — CRC-32.\nДиапазон измерений расхода газа для модификации GFG-H: от 0,016 до 300 м³/ч.\nДиапазон измерений расхода газа для модификации GFG-Z: от 30 до 280 000 м³/ч.\nДиапазон измерений расхода газа для модификации GFG-F: от 0,016 до 280 000 м³/ч.\nДиапазон измерений расхода газа для модификации GFG-ΔP: от 0,35",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15936.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 0,005 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "0,005",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе не указано значение 0,005 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8357.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 0,6 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "0,6",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Верхние пределы измерений избыточного давления (ВПИ), МПа: 6,3\nВерхние пределы измерений абсолютного давления (ВПИ), МПа: 32\nДиапазон температур газа для модификации GFG-H: от -20 до +70 °С\nДиапазон температур газа для модификации GFG-Z: от -50 до +70 °С\nПределы допускаемой абсолютной погрешности при измерении температуры, °С: ± (0,15 + 0,002|t|)",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9987.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 1,6 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1,6",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе указано значение 1,6 для следующих характеристик:\n- Диапазон избыточного давления газа, МПа: от 0 до 32,0.\n- Верхние пределы измерений избыточного давления (ВПИ), МПа: 1,6.\n- Верхние пределы измерений абсолютного давления (ВПИ), МПа: 1,6.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9253.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 6,3 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "6,3",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон избыточного давления газа: от 0 до 6,3 МПа.\nДиапазон верхних пределов измерений избыточного давления (ВПИ): 6,3 МПа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8257.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» указаны следующие характеристики для модификаций Turbo Flow GFG:\n- диапазон измерений расхода газа — от 0,016 до 300 м³/ч для модели GFG-H; - динамический диапазон Qmin/Qmax — 1:100; - диаметр условный — от 10 до 100 мм для модели GFG-H; - пределы относительной погрешности при измерении объёмного расхода газа в рабочих условиях — ± 1,0% в диапазоне 0,01Qmax ≤ Q ≤ Qmax; - диапазон избыточного давления газа — от 0 до 6,3 МПа для модели GFG-H.\nТак",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12224.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 16 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "16",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» нет информации с номером 16 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9625.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Пределы допускаемой относительной погрешности при вычислении массового расхода и массы газа, объёма, объёмного расхода и объёма газа, приведённого к стандартным условиям — ± 0,02 %.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8601.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон избыточного давления газа: от 0 до 32,0 МПа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8088.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 10. и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "10,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» указано следующее значение характеристики для расходомеров Turbo Flow GFG: пределы допускаемой относительной погрешности при измерении объёмного расхода газа в рабочих условиях составляют ± 1,0% в диапазоне $0,01Q_{max} ≤ Q ≤ Q_{max}$.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13745.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 17. и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "17,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» нет информации с номером 17.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5343.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 13 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "13",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений расхода газа, м³/ч: \n - для модификации GFG-H: от 0,016 до 300; - для модификации GFG-Z: от 30 до 280 000; - для модификации GFG-F: от 0,016 до 280 000; - для модификации GFG-ΔP: от 0,35 до 280 000.\n- Динамический диапазон Qmin/Qmax:\n - для модификации GFG-H: 1:100 (1:250*); - для модификации GFG-Z: 1:20 (1:50*); - для модификации GFG-F: 1:100 (1:160*); - для модификации GFG-ΔP: 1:100.\n- Диаметр условный, мм:\n - от 10 до 100 для модификации GFG-H; - от 100 до 1400 для модифи",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 22422.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 15 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "15",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» нет информации со значением 15 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6501.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 17 и для какой характеристики указано в документе «ОТ GFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "17",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе нет информации с номером 17 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5590.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 45,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» о приказе № 1655?",
+      "expected_keys": [
+        "1655",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Расходомеры Turbo Flow GFG утверждены приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5187.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 46,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии от 11 мая 2022 г. № 1133 утверждает государственную поверочную схему для средств измерений объёмного и массового расходов газа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5014.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» о приказе № 57146?",
+      "expected_keys": [
+        "57146",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Регистрационный номер расходомера Turbo Flow GFG — 57146-14.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4836.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» не упоминается приказ № 2.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4907.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» не упоминается приказ № 3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5015.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ GFG от 12.07.2024 (изм факт адрес)» о приказе № 4?",
+      "expected_keys": [
+        "4",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ GFG от 12.07.2024 (изм факт адрес)» не упоминается приказ № 4.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ GFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1170.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 27,
+  "source_file": "ОТ GFG от 12.07.2024 (изм факт адрес).pdf",
+  "product": "Turbo Flow GFG"
+}

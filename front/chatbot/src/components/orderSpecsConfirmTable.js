@@ -3,6 +3,7 @@
  */
 import { useMemo } from 'react';
 import { detectOrderSpecsRangeIssues } from '../utils/orderSpecsRangeWarnings';
+import { DeveloperContactTrigger } from './DeveloperContactPanel';
 import { resolveAttachmentUrl, resolveFaqActionHref } from '../config';
 import {
   enhanceBotMessageWithGasSpuCard,
@@ -158,26 +159,31 @@ function QmaxHintPanel({ qmaxHint }) {
   );
 }
 
-function OrderSpecsRangeWarningsPanel({ rows }) {
+function OrderSpecsRangeWarningsPanel({ rows, onDeveloperContact, editBusy }) {
   const issues = useMemo(() => detectOrderSpecsRangeIssues(rows), [rows]);
   if (!issues.length) return null;
 
   return (
     <div className="order-specs-confirm__range-warn" role="note" aria-live="polite">
-      <ul className="order-specs-confirm__range-warn-list">
-        {issues.map((issue) => (
-          <li key={issue.id} className="order-specs-confirm__range-warn-item">
-            <span className="order-specs-confirm__range-warn-hint">{issue.hint}</span>
-            {' — '}
-            <span className="order-specs-confirm__range-warn-values">
-              сейчас{' '}
-              <span className="order-specs-confirm__range-warn-value">{issue.minText}</span>
-              {' > '}
-              <span className="order-specs-confirm__range-warn-value">{issue.maxText}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div className="order-specs-confirm__range-warn-head">
+        <ul className="order-specs-confirm__range-warn-list">
+          {issues.map((issue) => (
+            <li key={issue.id} className="order-specs-confirm__range-warn-item">
+              <span className="order-specs-confirm__range-warn-hint">{issue.hint}</span>
+              {' — '}
+              <span className="order-specs-confirm__range-warn-values">
+                сейчас{' '}
+                <span className="order-specs-confirm__range-warn-value">{issue.minText}</span>
+                {' > '}
+                <span className="order-specs-confirm__range-warn-value">{issue.maxText}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+        {typeof onDeveloperContact === 'function' ? (
+          <DeveloperContactTrigger onClick={onDeveloperContact} disabled={editBusy} />
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -252,6 +258,7 @@ export function OrderSpecsConfirmTable({
   flowMaxAt25Enabled = false,
   onFlowMaxAt25Toggle,
   qmaxHint = null,
+  onDeveloperContact,
 }) {
   const headingId = 'order-specs-confirm-heading';
   const displayRows = useMemo(
@@ -259,6 +266,9 @@ export function OrderSpecsConfirmTable({
     [rows, flowMaxAt25Enabled],
   );
   const showFlowMaxToggle = typeof onFlowMaxAt25Toggle === 'function';
+  const rangeIssues = useMemo(() => detectOrderSpecsRangeIssues(rows), [rows]);
+  const showDeveloperContactFallback =
+    typeof onDeveloperContact === 'function' && rangeIssues.length === 0;
 
   return (
     <div className="order-specs-confirm" role="region" aria-labelledby={headingId}>
@@ -310,7 +320,19 @@ export function OrderSpecsConfirmTable({
         />
       ) : null}
       <QmaxHintPanel qmaxHint={qmaxHint} />
-      <OrderSpecsRangeWarningsPanel rows={rows} />
+      <OrderSpecsRangeWarningsPanel
+        rows={rows}
+        onDeveloperContact={onDeveloperContact}
+        editBusy={editBusy}
+      />
+      {showDeveloperContactFallback ? (
+        <div className="order-specs-confirm__dev-contact-bar">
+          <DeveloperContactTrigger onClick={onDeveloperContact} disabled={editBusy} />
+          <span className="order-specs-confirm__dev-contact-caption">
+            Связаться с разработчиком сервиса
+          </span>
+        </div>
+      ) : null}
       {footer ? <p className="order-specs-confirm__footer">{footer}</p> : null}
     </div>
   );

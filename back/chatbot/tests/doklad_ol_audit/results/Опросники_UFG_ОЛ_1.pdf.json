@@ -1,0 +1,199 @@
+{
+  "file": "Опросники\\UFG\\ОЛ_1.pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\Опросники\\UFG\\ОЛ_1.pdf",
+  "size_bytes": 3013842,
+  "generated_at": "2026-07-14T11:11:27.384150+00:00",
+  "text_source": "pdf_ocr",
+  "ocr_chars": 12634,
+  "ocr_preview": "ОПРОСНЫЙ ЛИСТ No 1000701736/18\nдля заказа расходомсра СГ10.2\nОбшая информация\nЗаказчк\nООО <Газпром трансгаз Москва?\nфшшал Курское ЛПУМЕ\nКурская обл\nЖелезногорск\nМесторасположешее\nРайiон;\nKN Ю-в\nПасерково\nНанменованне технолопгеской установки\nГРС Железногорск\nПозиптя по схеме\nНепрерывный; крутлосуточный\nРежим работы установкн\nкруглогошчны\nКопигчество\nкохшект\nДнамет условный_ DN (мм)\nопределяется Поставшиком\nЦавлеше_условное\nPN (МПа)\nСрок службы лет\nВремя наработкиу на отказ\nHе менее\n20000\nУсловия работы\nхарактеристика среды\nНанменованне рабочей среды\nПрпроднкпй газ\nРасход нм'\nот 5500\n500\nРабочее давлене нa входе\nMIа (илб\nОт З.4до 5.4\nРабочая температура на входе\nшшус\nшпос 10\nCH; 98,860\nC_Hs _ 0,100\nCIIg _ 0,009\nC Hio - 0,002\nКомонентнйн состав; об\nCsHuz\nследы\nCOz- 0,100\nNi_0,880\nHe- 0,016\nA1 = 0,033\nПлогность Ipи стандартных условнях к /м'\n0,72\nКласс опасности ГОСТ 12\n0U7\nКатегория п группа взрывоопасности по ГОСТ 30852.1 ]-\nIIA-TI\n2002\nГОСТ 30852.5-2002\nФизическое состошше\nКлиматичсские условия\nE\nТемпература\nвоздута\nнапболее\nХоЛОдных\nсуток\nмппус 29\n[\nобеспеченностью\nТемпература\nвоздуха\nнапдолее\nхолодноЙ\nПяПИДНеВК\nмшус 25\nобеспеченностью\nТемперятура\nвоздуха\nнапдолее\nхолодной\nПЯТИДНеВК7[\nмпус 23\n1\n1000701736/18\nИзм:\nКБЛ ; 5\nJнu\nN\" Дин\nПплпнен\nДятл\nРазраб\nИсаЧн\nЦ4ш\nСташия\nЛистов_\nПровсрнл\nИренмпн\nЦав2\nТехннческос Перевооуженне\nГРС Жепезногорск\n1E\nОпросный ЛНСТ ДЛЯ Заkака\nШанова\n1463\nрясходонера CГ10, 2\nООО КИПИГАЗ\n[\nГIШ\nШарснов\n]Аьъ\nФормат А4\nдо35\n10 до\nЛпс\nконт\n\nобеспеченностью",
+  "bot_specs": {
+    "medium": "gas",
+    "gas_type": "по ГОСТ 30852.1",
+    "duplication_type": "none",
+    "flowMin": 5000,
+    "flowMax": 35000,
+    "flow_unit": "нм³/ч",
+    "pressureMin": 3.4,
+    "pressureMax": 5.4,
+    "pressure_unit": "МПа",
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": -35,
+    "tempAmbientMax": 39,
+    "temperature_unit": "°C",
+    "accuracy": "1%",
+    "diameter": 50
+  },
+  "reference_specs": {
+    "medium": "gas",
+    "gas_type": "по ГОСТ 30852.1",
+    "duplication_type": null,
+    "flowMin": 500,
+    "flowMax": 5500,
+    "flow_unit": "нм³/ч",
+    "pressureMin": 3.4,
+    "pressureMax": 5.4,
+    "pressure_unit": "МПа",
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": -35,
+    "tempAmbientMax": 39,
+    "temperature_unit": "°C",
+    "accuracy": "1%",
+    "diameter": 50
+  },
+  "heuristic_specs": {
+    "medium": "gas",
+    "gas_type": "природный газ",
+    "duplication_type": null,
+    "flowMin": 5000,
+    "flowMax": 35000,
+    "flow_unit": "нм³/ч",
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "9",
+    "diameter": 50
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "gas",
+        "bot": "gas"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "match",
+        "reference": "по ГОСТ 30852.1",
+        "bot": "по ГОСТ 30852.1"
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": "none"
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "wrong",
+        "reference": 500,
+        "bot": 5000
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "wrong",
+        "reference": 5500,
+        "bot": 35000
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "нм³/ч",
+        "bot": "нм³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "match",
+        "reference": 3.4,
+        "bot": 3.4
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "match",
+        "reference": 5.4,
+        "bot": 5.4
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "match",
+        "reference": "МПа",
+        "bot": "МПа"
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "match",
+        "reference": -35,
+        "bot": -35
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "match",
+        "reference": 39,
+        "bot": 39
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°C",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "match",
+        "reference": "1%",
+        "bot": "1%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 50,
+        "bot": 50
+      }
+    ],
+    "ref_filled": 13,
+    "matched": 11,
+    "mismatches": 2,
+    "bot_missing": 0,
+    "bot_extra": 0,
+    "accuracy_pct": 84.6
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 56417.9,
+    "llm_ms": 4469.7,
+    "pipeline_ms": 60920.3,
+    "ocr_chars": 12634,
+    "llm_input_chars": 4542,
+    "text_source": "pdf_ocr",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 4169.4,
+  "bot_llm_raw_preview": "```\n{\n  \"medium\": \"природный газ\",\n  \"gas_type\": \"природный газ\",\n  \"duplication_type\": \"none\",\n  \"flowMin\": 5500,\n  \"flowMax\": 35000,\n  \"flow_unit\": \"нм³/ч\",\n  \"pressureMin\": 3.4,\n  \"pressureMax\": 5.4,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": -35,\n  \"tempMediumMax\": 39,\n  \"tempAmbientMin\": null,\n  \"tempAmbientMax\": null,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"1%\",\n  \"diameter\": null\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": \"природный газ\",\n  \"gas_type\": \"пропан-бутан\",\n  \"duplication_type\": null,\n  \"flowMin\": 500,\n  \"flowMax\": 5500,\n  \"flow_unit\": \"нм³/ч\",\n  \"pressureMin\": 3.4,\n  \"pressureMax\": 5.4,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": null,\n  \"tempMediumMax\": null,\n  \"tempAmbientMin\": -35,\n  \"tempAmbientMax\": 39,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"1%\",\n  \"diameter\": null\n}\n```",
+  "elapsed_ms": 121444.1
+}

@@ -3,7 +3,12 @@
 
   var WIDGET_ID = 'turbo-don-widget-frame';
   var TEASER_ID = 'turbo-don-widget-teaser';
-  var LAUNCHER_SIZE = 112;
+  var TEASER_SEEN_KEY = 'turbo-don-widget-teaser-seen';
+  var TEASER_SESSION_KEY = 'turbo-don-widget-teaser-session-hidden';
+  var DEFAULT_TEASER_TEXT =
+    'Здравствуйте! Помогу подобрать оборудование или ответить на ваши вопросы.';
+  /* 64px кнопка + запас под пульс-кольцо без обрезки в iframe */
+  var LAUNCHER_SIZE = 128;
   var LAUNCHER_GAP = 80;
   var LAUNCHER_INSET = 20;
   var DEFAULT_CHAT_WIDTH_RATIO = 0.32;
@@ -73,7 +78,7 @@
     background: 'transparent',
     colorScheme: 'normal',
     zIndex: config.iframeZIndex,
-    overflow: 'hidden',
+    overflow: 'visible',
     opacity: '1',
     pointerEvents: 'auto',
     boxSizing: 'border-box',
@@ -81,6 +86,8 @@
 
   var teaserEl = null;
   var teaserVisible = false;
+  var teaserSuppressed = false;
+  var teaserFallbackTimer = null;
   var latestOpen = false;
   var latestChatFrameHeight = DEFAULT_OPEN_HEIGHT;
   var latestChatFrameWidth = CHAT_WIDTH;
@@ -106,6 +113,57 @@
       right: sideGutter + OFFSET_LEFT,
       bottom: Math.max(0, sideGutter - OFFSET_DOWN),
     };
+  }
+
+  function clearLegacyTeaserStorage() {
+    try {
+      localStorage.removeItem(TEASER_SEEN_KEY);
+      sessionStorage.removeItem(TEASER_SESSION_KEY);
+    } catch (error) {
+      /* ignore */
+    }
+  }
+
+  function shouldShowTeaser() {
+    return !latestOpen && !teaserSuppressed;
+  }
+
+  function suppressTeaserForPage() {
+    teaserSuppressed = true;
+  }
+
+  function setLauncherPulse(_active) {
+    /* Пульс только внутри iframe (CSS кнопки), не на всём фрейме — иначе обрезка и фризы */
+  }
+
+  function showDefaultTeaserIfNeeded() {
+    if (!shouldShowTeaser() || teaserVisible) {
+      return;
+    }
+    updateTeaser(true, DEFAULT_TEASER_TEXT);
+    window.requestAnimationFrame(positionTeaser);
+  }
+
+  function scheduleDefaultTeaser() {
+    if (!shouldShowTeaser()) {
+      return;
+    }
+    if (teaserFallbackTimer) {
+      window.clearTimeout(teaserFallbackTimer);
+      teaserFallbackTimer = null;
+    }
+    var attempts = 0;
+    function tryShow() {
+      attempts += 1;
+      showDefaultTeaserIfNeeded();
+      if (attempts < 10 && shouldShowTeaser() && !teaserVisible) {
+        teaserFallbackTimer = window.setTimeout(function () {
+          teaserFallbackTimer = null;
+          tryShow();
+        }, 300);
+      }
+    }
+    tryShow();
   }
 
   function postViewportToChild() {
@@ -294,6 +352,7 @@
     });
     closeBtn.addEventListener('click', function (event) {
       event.stopPropagation();
+      suppressTeaserForPage();
       updateTeaser(false, '');
       if (iframe.contentWindow) {
         iframe.contentWindow.postMessage({ type: 'HIDE_TEASER' }, '*');
@@ -320,19 +379,26 @@
 
   function positionTeaser() {
     if (!teaserEl || !teaserVisible) return;
-    var teaserRect = teaserEl.getBoundingClientRect();
     var gap = 12;
     var iframeRect = iframe.getBoundingClientRect();
-    var left = iframeRect.left - teaserRect.width - gap;
-    var bottom = Math.max(0, window.innerHeight - iframeRect.bottom + 10);
+    var teaserRect = teaserEl.getBoundingClientRect();
+    var teaserWidth = teaserRect.width || teaserEl.offsetWidth || 240;
+    var teaserHeight = teaserRect.height || teaserEl.offsetHeight || 56;
+    var left = iframeRect.left - teaserWidth - gap;
+    var placeAbove = left < 8;
 
-    if (left < 8) {
-      left = 8;
+    if (placeAbove) {
+      left = Math.max(8, iframeRect.right - teaserWidth);
+      teaserEl.style.left = left + 'px';
+      teaserEl.style.right = 'auto';
+      teaserEl.style.bottom = Math.max(8, window.innerHeight - iframeRect.top + gap) + 'px';
+      teaserEl.style.top = 'auto';
+      return;
     }
 
-    teaserEl.style.left = left + 'px';
+    teaserEl.style.left = Math.max(8, left) + 'px';
     teaserEl.style.right = 'auto';
-    teaserEl.style.bottom = bottom + 'px';
+    teaserEl.style.bottom = Math.max(0, window.innerHeight - iframeRect.bottom + 10) + 'px';
     teaserEl.style.top = 'auto';
   }
 
@@ -342,21 +408,31 @@
       if (teaserEl) {
         teaserEl.style.display = 'none';
       }
+      if (!latestOpen) {
+        setLauncherPulse(shouldShowTeaser());
+      } else {
+        setLauncherPulse(false);
+      }
       return;
     }
 
     var el = ensureTeaser();
     var textNode = el.querySelector('.turbo-don-widget-teaser__text');
     if (textNode) {
-      textNode.textContent = text || '';
+      textNode.textContent = text || DEFAULT_TEASER_TEXT;
     }
     el.style.display = 'block';
+    setLauncherPulse(true);
     positionTeaser();
   }
 
   iframe.addEventListener('load', function () {
     applyFrameState(false, latestChatFrameHeight, latestChatFrameWidth);
     postViewportToChild();
+    scheduleDefaultTeaser();
+    if (shouldShowTeaser()) {
+      setLauncherPulse(true);
+    }
   });
 
   window.addEventListener('message', function (event) {
@@ -375,6 +451,8 @@
       });
       if (nextOpen) {
         updateTeaser(false, '');
+      } else if (shouldShowTeaser()) {
+        scheduleDefaultTeaser();
       } else if (teaserVisible) {
         window.requestAnimationFrame(positionTeaser);
       }
@@ -392,8 +470,8 @@
     }
 
     if (data.type === 'TEASER') {
-      updateTeaser(data.show, data.text);
-      if (data.show) {
+      if (data.show && shouldShowTeaser()) {
+        updateTeaser(true, data.text || DEFAULT_TEASER_TEXT);
         window.requestAnimationFrame(positionTeaser);
       }
     }
@@ -412,9 +490,14 @@
   }, true);
 
   function mount() {
+    clearLegacyTeaserStorage();
     document.body.appendChild(iframe);
     commitSize(computeSize(false, latestChatFrameHeight, latestChatFrameWidth));
     setFrameTransitionEnabled(true);
+    if (shouldShowTeaser()) {
+      setLauncherPulse(true);
+      scheduleDefaultTeaser();
+    }
   }
 
   if (document.readyState === 'loading') {

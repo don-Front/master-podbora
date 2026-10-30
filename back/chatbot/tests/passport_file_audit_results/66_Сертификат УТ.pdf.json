@@ -1,0 +1,1535 @@
+{
+  "generated_at": "2026-07-07T17:15:18.537909+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 39,
+    "PARTIAL": 11
+  },
+  "bug_counts": {},
+  "accuracy_pct": 78.0,
+  "partial_pct": 22.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "questions": 50,
+      "correct": 39,
+      "partial": 11,
+      "bad": 0,
+      "accuracy_pct": 78.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          11
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Сертификат УТ»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Сертификат"
+      ],
+      "answer_preview": "Сертификат УТ ГрандТК(М) предназначен для удостоверения соответствия продукции определённым требованиям.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2837.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» изготовитель или правообладатель не указаны в представленном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2673.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Сертификат УТ»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В «Сертификат УТ ГрандТК(М)» регистрационный или сертификационный номер в представленном фрагменте не указан.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2674.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2541.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Сертификат УТ»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) методика поверки или нормативный документ не упомянуты.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2718.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» метрологические характеристики не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2628.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Сертификат УТ»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В контексте не указаны технические характеристики (давление, температура, расход).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2387.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» сведения о программном обеспечении не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2665.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Сертификат УТ»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2567.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Сертификат УТ»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте нет информации о конкретных приказах, ГОСТ или ТУ, на которые ссылается документ «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2727.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Сертификат УТ» о: ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении типа средств измерений № 8523?",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "Документ: Сертификат УТ ГрандТК(М).\nТип документа: паспорт.\nНомер сертификата: 8523.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3061.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 12,
+      "topic": "рег.номер",
+      "question": "Где в документе «Сертификат УТ» упоминается регистрационный номер 85230-22 и в каком контексте?",
+      "expected_keys": [
+        "85230-22",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В предоставленном контексте информация о регистрационном номере 85230-22 отсутствует.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2637.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 85230 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "85230",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» значение 85230 не указано.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2780.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 22 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "22",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет информации о значении 22 и для какой-либо конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3018.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 11 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "11",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет информации о значении 11 и для какой-либо конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2753.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 16,
+      "topic": "значение",
+      "question": "Какое значение 2027 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "2027",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» значение 2027 не указано.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2707.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 17,
+      "topic": "значение",
+      "question": "Какое значение 1565 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "1565",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» значение 1565 не указано.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2675.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 13 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "13",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет информации о характеристике с номером 13.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2745.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2023 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "2023",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет информации о значении 2023 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2691.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет информации о значении 20 и для какой-либо конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3042.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» нет информации о значении 2024 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3062.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 432. и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "432,",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» значение 432 не указано для конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2902.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 27 и для какой характеристики указано в документе «Сертификат УТ»?",
+      "expected_keys": [
+        "27",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» не указаны конкретные числовые значения характеристик с номером 27.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2810.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 24,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Сертификат УТ» о приказе № 85230?",
+      "expected_keys": [
+        "85230",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «Сертификат УТ ГрандТК(М)» информация о приказе № 85230 отсутствует.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3186.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 25,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Сертификат УТ»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В контексте нет информации о том, где и как применяется продукция по документу «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3048.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 26,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Сертификат УТ»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В контексте не указаны требования к поверке в «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2836.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 27,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Сертификат УТ»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования безопасности для «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2667.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 28,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Сертификат УТ»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «Сертификат УТ ГрандТК(М)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3047.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 29,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Сертификат УТ»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2836.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 30,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Сертификат УТ»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2513.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 31,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Сертификат УТ»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В представленном контексте информация о показателях надёжности (наработка, срок службы) не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2816.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 32,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Сертификат УТ»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2803.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 33,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Сертификат УТ»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указаны параметры взрывозащиты или степень защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2341.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 34,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Сертификат УТ»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В сертификате УТ ГрандТК(М) испытательный центр не указан.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2568.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #1): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3139.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #2): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3084.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #3): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3177.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #4): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3087.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #5): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2863.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #6): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3066.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #7): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 3047.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #8): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2979.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #9): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2955.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #10): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2904.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #11): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2792.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #12): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2898.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #13): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2971.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #14): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2876.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #15): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2771.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ» (фрагмент стр. 1, #16): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "85230-22",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ ГрандТК(М)"
+      ],
+      "total_ms": 2858.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 65,
+  "source_file": "Сертификат УТ.pdf",
+  "product": "Сертификат УТ"
+}

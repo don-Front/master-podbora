@@ -18,7 +18,10 @@ from api.chatbot_core.rag_sources import (
 from api.chatbot_core.product_detector import (
     looks_like_equipment_clarification_reply,
     merge_troubleshooting_followup,
+    merge_verification_followup,
     needs_troubleshooting_equipment_clarification,
+    needs_verification_equipment_clarification,
+    resolve_catalog_equipment,
 )
 from api.chatbot_core.query_rewrite import rewrite_rag_question
 
@@ -165,6 +168,54 @@ class RagSourcesHelpersTest(SimpleTestCase):
         )
         self.assertIn("катушка", merged)
         self.assertIn("UFL", merged)
+
+    def test_needs_verification_equipment_clarification(self):
+        self.assertTrue(
+            needs_verification_equipment_clarification("сертификат поверки предоставь")
+        )
+        self.assertTrue(
+            needs_verification_equipment_clarification("какая методика поверки расходомера")
+        )
+        self.assertFalse(
+            needs_verification_equipment_clarification("методика поверки UFG")
+        )
+        self.assertFalse(
+            needs_verification_equipment_clarification(
+                "где посмотреть сведения о поверке расходомера"
+            )
+        )
+
+    def test_verification_catalog_resolution(self):
+        store = type(
+            "Store",
+            (),
+            {
+                "active_doc_keys": None,
+                "chunks": [
+                    {
+                        "chunk_id": "ufg-h",
+                        "product_title": "Turbo Flow UFG-H",
+                        "chunk_type": "catalog",
+                        "content": "Turbo Flow UFG-H",
+                        "metadata": {},
+                    }
+                ],
+            },
+        )()
+        detector = ProductDetector(store, type("Enc", (), {"encode": staticmethod(lambda _: None)})())
+        found, name = resolve_catalog_equipment("UFG", detector)
+        self.assertTrue(found)
+        self.assertIn("UFG", name)
+        found_unknown, _ = resolve_catalog_equipment("несуществующий прибор xyz", detector)
+        self.assertFalse(found_unknown)
+
+    def test_verification_followup_merge(self):
+        merged = merge_verification_followup(
+            "сертификат поверки предоставь",
+            "Turbo Flow UFG-H",
+        )
+        self.assertIn("сертификат", merged)
+        self.assertIn("UFG", merged)
 
     def test_rewrite_medium_question(self):
         rewritten = rewrite_rag_question("какая среда у UFG а какая у UFL")

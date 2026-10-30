@@ -1,0 +1,1535 @@
+{
+  "generated_at": "2026-07-07T17:04:35.282283+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 16,
+    "PARTIAL": 34
+  },
+  "bug_counts": {},
+  "accuracy_pct": 32.0,
+  "partial_pct": 68.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "questions": 50,
+      "correct": 16,
+      "partial": 34,
+      "bad": 0,
+      "accuracy_pct": 32.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          34
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Серт"
+      ],
+      "answer_preview": "Сертификат УТ Гранд SPI до 2028 предназначен для утверждения типа средств измерений. Он подтверждает соответствие счётчиков газа Гранд-SPI установленным требованиям.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3960.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nПравообладатель не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4888.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "№ 56433-14",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3881.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок действия утверждения типа — до 19 июля 2028 г.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4081.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Документ на поверку: МП 208-054-2017.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4164.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе приведены следующие метрологические характеристики:\n- интервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4006.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе не указаны технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3894.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Серт УТ Гранд SPI до 2028» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4174.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В комплекте поставки согласно «Серт УТ Гранд SPI до 2028» не указано конкретного содержания.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4147.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Документ ссылается на приказ Федерального агентства по техническому регулированию и метрологии от 20 сентября 2023 г. № 1940 (с учётом изменений, внесённых приказом от 29 февраля 2024 г. № 548).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 5323.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Серт УТ Гранд SPI до 2028» о: ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении типа средств измерений № 5643?",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 56433-14; - срок действия утверждения типа до 19 июля 2028 г.; - наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI; - изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва; - код идентификации производства: ОС; - документ на поверку: МП 208-054-2017; - интервал между поверками: 5 лет; - срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническо",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 11575.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 12,
+      "topic": "рег.номер",
+      "question": "Где в документе «Серт УТ Гранд SPI до 2028» упоминается регистрационный номер 56433-14 и в каком контексте?",
+      "expected_keys": [
+        "56433-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 56433-14 упоминается в сертификате об утверждении типа средств измерений в строке «СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 5580.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 56433 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "56433",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "56433 — номер сертификата об утверждении типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4046.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 14 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "14",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "№ 56433-14 — номер сертификата об утверждении типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4170.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 19 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "19",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Срок действия утверждения типа счётчиков газа Гранд-SPI — до 19 июля 2028 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4309.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 16,
+      "topic": "значение",
+      "question": "Какое значение 2028 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "2028",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Срок действия утверждения типа счётчиков газа Гранд-SPI — до 19 июля 2028 года.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 5740.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 17,
+      "topic": "значение",
+      "question": "Какое значение 208 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "208",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Документ «Серт УТ Гранд SPI до 2028» содержит номер документа на поверку — МП 208-054-2017.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4649.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 054 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "054",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Документ «Серт УТ Гранд SPI до 2028» содержит код документа на поверку — МП 208-054-2017.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4793.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2017 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "2017",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Документ на поверку — МП 208-054-2017. Интервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6381.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 20 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "20",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Срок действия утверждения типа счётчиков газа Гранд-SPI — до 19 июля 2028 г. Интервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6423.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 2023 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "2023",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Срок действия утверждения типа счётчиков газа Гранд-SPI продлён приказом Федерального агентства по техническому регулированию и метрологии от 20 сентября 2023 г. № 1940.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6315.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 1940 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "1940",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии № 1940 от 20 сентября 2023 года продлил срок действия утверждённого типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6528.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 29 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "29",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "В документе «Серт УТ Гранд SPI до 2028» нет информации со значением 29 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3574.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Срок действия утверждения типа средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 29 февраля 2024 г. № 548.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4781.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 548 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "548",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "Приказ № 548 от 29 февраля 2024 года внёс изменения в приказ Федерального агентства по техническому регулированию и метрологии от 20 сентября 2023 года № 1940 о продлении срока действия утверждённого типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6969.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 01 и для какой характеристики указано в документе «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "01",
+        "характеристик",
+        "Серт"
+      ],
+      "answer_preview": "«01» марта 2024 г. — дата утверждения документа.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3437.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 27,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Серт УТ Гранд SPI до 2028» о приказе № 56433?",
+      "expected_keys": [
+        "56433",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «Серт УТ Гранд SPI до 2028» говорится, что сертификат об утверждении типа средств измерений № 56433-14 имеет срок действия утверждения типа до 19 июля 2028 г. Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 20 сентября 2023 г. № 1940 (с учётом изменений, внесённых приказом от 29 февраля 2024 г. № 548).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 7391.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 28,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "Продукция применяется для измерения расхода газа. Модель — счётчики газа Гранд-SPI.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6198.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 29,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "Интервал между поверками: 5 лет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 2908.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 30,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе не указаны конкретные требования безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 2726.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 31,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В документе нет информации о том, как наносится маркировка и знак утверждения типа в «Серт УТ Гранд SPI до 2028».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4304.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 32,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В «Серт УТ Гранд SPI до 2028» указан интервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 4125.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 33,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В представленном контексте информация об условиях транспортирования и хранения отсутствует.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3558.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 34,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3913.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 35,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе нет информации об интерфейсах связи.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3650.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 36,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 5628.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 37,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Серт УТ Гранд SPI до 2028»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указан испытательный центр.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 3705.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #1): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат об утверждении типа средств измерений № 56433-14.\n- Срок действия утверждения типа до 19 июля 2028 г.\n- Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\n- Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\n- Документ на поверку: МП 208-054-2017.\n- Интервал между поверками: 5 лет.\n- Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническом",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 7853.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #2): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14.\nСрок действия утверждения типа до 19 июля 2028 г.\nНаименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\nИзготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nДокумент на поверку: МП 208-054-2017.\nИнтервал между поверками: 5 лет.\nСрок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 10057.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #3): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат об утверждении типа средств измерений № 56433-14.\n- Срок действия утверждения типа до 19 июля 2028 г.\n- Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\n- Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\n- Документ на поверку: МП 208-054-2017.\n- Интервал между поверками: 5 лет.\n- Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническом",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 12626.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #4): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат об утверждении типа средств измерений № 56433-14.\n- Срок действия утверждения типа до 19 июля 2028 г.\n- Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\n- Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\n- Документ на поверку: МП 208-054-2017.\n- Интервал между поверками: 5 лет.\n- Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническом",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 10262.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #5): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14.\nСрок действия утверждения типа до 19 июля 2028 г.\nНаименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\nИзготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nДокумент на поверку: МП 208-054-2017.\nИнтервал между поверками: 5 лет.\nСрок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 12425.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #6): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14.\nСрок действия утверждения типа до 19 июля 2028 г.\nНАИМЕНОВАНИЕ И ОБОЗНАЧЕНИЕ ТИПА СРЕДСТВ ИЗМЕРЕНИЙ: счётчики газа Гранд-SPI.\nИЗГОТОВИТЕЛЬ: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nИНТЕРВАЛ МЕЖДУ ПОВЕРКАМИ: 5 лет.\nСрок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 20 сентября 2023 г. ",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6783.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #7): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14. Срок действия утверждения типа до 19 июля 2028 г. Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI. Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва. Документ на поверку: МП 208-054-2017. Интервал между поверками: 5 лет. Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6706.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #8): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14.\nСрок действия утверждения типа до 19 июля 2028 г.\nНаименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\nИзготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nДокумент на поверку: МП 208-054-2017.\nИнтервал между поверками: 5 лет.\nСрок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6966.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #9): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14.\nСрок действия утверждения типа до 19 июля 2028 г.\nНаименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\nИзготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nДокумент на поверку: МП 208-054-2017.\nИнтервал между поверками: 5 лет.\nСрок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 6975.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #10): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14. Срок действия утверждения типа до 19 июля 2028 г. Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI. Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва. Документ на поверку: МП 208-054-2017. Интервал между поверками: 5 лет. Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 9293.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #11): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14. Срок действия утверждения типа до 19 июля 2028 г. Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI. Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва. Документ на поверку: МП 208-054-2017. Интервал между поверками: 5 лет. Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 8193.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #12): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14. Срок действия утверждения типа до 19 июля 2028 г. Наименование и обозначение типа средств измерений: счётчики газа Гранд-SPI. Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва. Документ на поверку: МП 208-054-2017. Интервал между поверками: 5 лет. Срок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 7581.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Серт УТ Гранд SPI до 2028» (фрагмент стр. 1, #13): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "56433-14",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 56433-14.\nСрок действия утверждения типа до 19 июля 2028 г.\nНаименование и обозначение типа средств измерений: счётчики газа Гранд-SPI.\nИзготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»), г. Москва.\nДокумент на поверку: МП 208-054-2017.\nИнтервал между поверками: 5 лет.\nСрок действия утверждённого типа средств измерений продлён приказом Федерального агентства по техническому регулировани",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Серт УТ Гранд SPI до 2028"
+      ],
+      "total_ms": 7342.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 61,
+  "source_file": "Серт УТ Гранд SPI до 2028.pdf",
+  "product": "Серт УТ Гранд SPI до 2028"
+}

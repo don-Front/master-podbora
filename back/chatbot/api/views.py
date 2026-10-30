@@ -31,6 +31,21 @@ from .email_service import EmailValidator, EmailSender, extract_contact_info
 logger = logging.getLogger(__name__)
 
 
+def _mutable_request_post_data(request) -> dict:
+    """
+    Плоская копия POST-полей без deepcopy.
+    request.data.copy() падает на multipart с файлами (BufferedRandom).
+    """
+    raw = request.data
+    if hasattr(raw, "dict") and callable(raw.dict):
+        data = raw.dict()
+    else:
+        data = dict(raw)
+    for key in request.FILES:
+        data.pop(key, None)
+    return data
+
+
 @require_GET
 def equipment_media(request, relpath):
     """
@@ -252,7 +267,7 @@ class ChatViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         ip_address = self.get_client_ip(request)
-        data = request.data.copy()
+        data = _mutable_request_post_data(request)
         data['ip_address'] = ip_address
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
@@ -379,7 +394,7 @@ class MessageViewSet(viewsets.ModelViewSet):
 
     def create(self, request, chat_id=None):
         # Save user message
-        data = request.data.copy()
+        data = _mutable_request_post_data(request)
         data['chat'] = chat_id
         data['is_user'] = True
         

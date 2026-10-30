@@ -1,0 +1,1630 @@
+{
+  "generated_at": "2026-07-07T14:05:29.154734+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "WRONG_TOPIC": 7,
+    "CORRECT": 22,
+    "HALLUCINATION": 4,
+    "PARTIAL": 17
+  },
+  "bug_counts": {
+    "retrieval": 7,
+    "hallucination": 4
+  },
+  "accuracy_pct": 44.0,
+  "partial_pct": 34.0,
+  "bad_pct": 22.0,
+  "per_file": [
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "questions": 50,
+      "correct": 22,
+      "partial": 17,
+      "bad": 11,
+      "accuracy_pct": 44.0,
+      "retrieval_pct": 86.0,
+      "top_bugs": [
+        [
+          "partial",
+          17
+        ],
+        [
+          "retrieval",
+          7
+        ],
+        [
+          "hallucination",
+          4
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Для чего предназначен прибор или документ «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что входит в комплект поставки согласно «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 2 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 10 АСУ и т.п.). Для",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 10 Общий вид расход",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": [
+        "!РЭ на TFG"
+      ]
+    },
+    {
+      "question": "Что указано на странице 5 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 10 Схема пломбировк",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 6 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 10 Разделение прогр",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ]
+    },
+    {
+      "question": "Что указано на странице 9 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 9 Всего листов 10 Комплектность ср",
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/OT_TFG_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 143.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель — Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8315.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/OT_TFG_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 175.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8154.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/MP_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 164.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях): от 1,6 до 758520 кг/ч (м³/ч) для TFG-S; от 0,0645 до 1548 кг/ч (м³/ч) для TFG-H.\n- Пределы допускаемой относительной погрешности при измерении массового расхода газа и объёмного расхода газа: ±1,0% в диапазоне 0,015 Qmax≤Q≤Qmax; ±2,0% в диапазоне Qmin≤Q<0,015 Qmax для TFG-S и TFG-H.\n- Диапазон измерений температуры газа: от -60 до +300 °С.\n- Пределы допускаемой абсолютной погрешности при измерении темп",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18687.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/OT_TFG_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 159.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение расходомеров по аппаратному обеспечению является встроенным. Преобразование измеряемых величин и обработка измерительных данных выполняется с использованием внутренних аппаратных и программных средств. ПО хранится в энергонезависимой памяти. Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО. Программное обеспечение разделено на метрологически значимую часть и метрологически незначимую часть.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12346.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/OT_TFG_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 171.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/OT_TFG_2018-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 186.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655 Лист №?",
+      "expected_keys": [
+        "56188-14",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «12» июля 2024 г. № 1655. Регистрационный номер — 56188-14. Лист № 1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 3222.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 2 Всего листов 10 АСУ и т.п.). Для возможности дистанционного считывания информации расходомер может быть укомпле?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Для возможности дистанционного считывания информации расходомер может быть укомплектован выносным терминалом (ВТ). Терминал связан с ПП по проводному интерфейсу RS-485.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 2785.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 3 Всего листов 10  модификация S, предназначена для установки в измерительные трубопроводы условным диаметром от?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Модификация S предназначена для установки в измерительные трубопроводы условным диаметром от 50 до 1400 мм включительно.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 1916.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 4 Всего листов 10 Общий вид расходомеров представлен на рисунке 1. Turbo Flow TFG-S Turbo Flow TFG-S c выносным т?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 4 документа «ОТ TFG от 12.07.2024».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [
+        "!РЭ на TFG"
+      ],
+      "total_ms": 5356.2,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 5 Всего листов 10 Схема пломбировки от несанкционированного доступа, обозначение мест нан есения знака поверки пр?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "На странице 5 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» представлена схема пломбировки от несанкционированного доступа, обозначение мест нанесения знака поверки, пломбы предприятия-изготовителя и пломбы монтажной организации. Указаны следующие элементы пломбировки:\n* пломба предприятия-изготовителя способом давления на специальную мастику; * места для нанесения знака поверки способом давления на специальную мастику; * свинцовая пломба предприятия-изготовителя; * самоклеющаяся пломба из л",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 4325.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 6 Всего листов 10 Разделение программного обеспечения выполнено внутри кода ПО на уровне языка программирования. ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "Разделение программного обеспечения выполнено внутри кода ПО на уровне языка программирования. К метрологически значимой части ПО относятся: \n* программные модули, принимающие участие в обработке (расчётах) результатов измерений или влияющие на них; * программные модули, осуществляющие представление измерительной информации, её хранение, передачу, идентификацию, защиту ПО и данных; * параметры ПО, участвующие в вычислениях и влияющие на результат измерений; * компоненты защищённого интерфейса дл",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5798.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 7 Всего листов 10 Метрологические и технические характеристики Таблица 2 – Метрологические характеристики Наимено?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для TFG-S: от 1,6 до 758520 кг/ч (от 1,25 до 588000 м³/ч).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для TFG-H: от 0,0645 до 1548 кг/ч (от 0,05 до 1200 м³/ч).\n- Пределы допускаемой относительной погрешности при измерении массового расхода газа и объёмного расхода газа, приведённого к стандартным условиям: ±1,0 в диапазоне 0,015 Qmax≤Q≤Qmax; ±2,0 в диап",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14513.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 8 Всего листов 10 Таблица 3 – Основные технические характеристики Наименование характеристики Значение TFG -S TFG?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "- Диаметр трубопровода: TFG-S — от 50 до 1400 мм, TFG–H — от 25 до 100 мм.\n- Напряжение питания: ПП — от 9 до 18 В, РШ — 12, 18, 24 В (в зависимости от исполнения), ВТ — 7,2 В; автономный источник питания — 12–18 В и 12–14 В.\n- Потребляемая мощность: не более 15 Вт.\n- Условия эксплуатации ПП: температура окружающего воздуха — от -60 до +70 °С.\n- Условия эксплуатации РШ: температура окружающего воздуха — от -20 до +50 °С.\n- Условия эксплуатации ВТ: в пластиковом корпусе — от -10 до +40 °С, в мета",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15675.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 9 Всего листов 10 Комплектность средства измерений Таблица 4 – Комплектность средства измерений Наименование Обоз?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "10"
+      ],
+      "answer_preview": "- Расходомер термоанемометрический Turbo Flow TFG TFG-S, TFG-H – 1 шт.; - Блок грозозащиты по питанию TPS-01 – 1 шт.; - Кожух защитный; - Комплект монтажных частей TFG.00.03.000 КМ, TFG-Н.03.00.000 КМ – 1 комплект; - Расходомер термоанемометрический Turbo Flow TFG (паспорт) ТУАС.407279.002 ПС – 1 экз.; - Руководство по эксплуатации ТУАС.407279.002 РЭ – 1 экз.; - Методика поверки МП 56188-14 с изменением №1 – 1 экз.; - Выносной терминал ВТ – 1 шт. (в зависимости от заказа).",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7467.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» о: Лист № 10 Всего листов 10 Испытательный центр Федеральное государственное унитарное предприятие «Всероссийский научно - ?",
+      "expected_keys": [
+        "Лист",
+        "10",
+        "Всего"
+      ],
+      "answer_preview": "На странице 10 документа «ОТ TFG от 12.07.2024 (изм факт адрес)» указаны следующие данные:\n- Испытательный центр: Федеральное государственное унитарное предприятие «Всероссийский научно-исследовательский институт метрологической службы» (ФГУП «ВНИИМС»).\n- Адрес: 119361, г. Москва, ул. Озёрная, д. 46.\n- Телефон/факс: +7 (495) 437-55-77 / 437-56-66.\n- E-mail: office@vniims.ru.\n- Web-сайт: www.vniims.ru.\n- Уникальный номер записи в реестре аккредитованных лиц № 30004-13.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 5353.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 21,
+      "topic": "раздел",
+      "question": "Что описано в разделе «18 В от сети %10» документа «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "18",
+        "10"
+      ],
+      "answer_preview": "Расходомер Turbo Flow TFG может быть запитан напряжением 18 В от сети %10%15220− В, (50 ± 1) Гц с блоком разделения и ограничения напряжения и тока в искробезопасных цепях без дополнительных функций.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9386.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 22,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 Ex ib Gb [ ia Ga] IIC T4 Gb или 1 Ex dib Gb [ ia Ga] IIC T4 Gb и может устанавливаться во» документа «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "IIC"
+      ],
+      "answer_preview": "Маркировка взрывозащиты ПП расходомеров Turbo Flow TFG — 1 Ex ib Gb [ia Ga] IIC T4 Gb или 1 Ex dib Gb [ia Ga] IIC T4 Gb.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9329.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 23,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 Ex ib Gb [ia Ga] IIC T4 Gb или» документа «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "IIC"
+      ],
+      "answer_preview": "Маркировка взрывозащиты ПП расходомеров термоанемометрических Turbo Flow TFG: 1 Ex ib Gb [ia Ga] IIC T4 Gb или 1 Ex dib Gb [ia Ga] IIC T4 Gb.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9675.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 24,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ TFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 56188-14 и в каком контексте?",
+      "expected_keys": [
+        "56188-14",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 56188-14 указан на листе № 1 документа «ОТ TFG от 12.07.2024 (изм факт адрес)».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 10778.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 25,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ TFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 31369-20 и в каком контексте?",
+      "expected_keys": [
+        "31369-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ TFG от 12.07.2024 (изм факт адрес)» регистрационный номер 31369-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8794.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 26,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ TFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В представленном документе «ОТ TFG от 12.07.2024 (изм факт адрес)» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8203.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 27,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ TFG от 12.07.2024 (изм факт адрес)» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Испытательный центр: Федеральное государственное унитарное предприятие «Всероссийский научно-исследовательский институт метрологической службы» (ФГУП «ВНИИМС»). Уникальный номер записи в реестре аккредитованных лиц № 30004-13.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8413.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Напряжение питания: от 9 до 18 В; 12, 18, 24 (в зависимости от исполнения); 7,2 В — для встроенной АКБ.\n- Потребляемая мощность: не более 15 Вт.\n- Масса ПП: не более 1,5 кг.\n- Масса РШ: не более 4,5 кг (6,0 кг).\n- Габаритные размеры ПП: не более 150х620х140 мм.\n- Габаритные размеры РШ: не более 160х275х130 мм (200х350х135 мм).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях): от 1,6 до 758520 кг/ч (от 1,25 до 588000 м³/ч) — для TFG-S; от 0,0645 до 1",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 21920.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ TFG от 12.07.2024 (изм факт адрес)» указана дата утверждения — 12 июля 2024 года.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18937.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 1655 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "1655",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер приказа Федерального агентства по техническому регулированию и метрологии от 12 июля 2024 года — № 1655.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6239.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 56188 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "56188",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ TFG от 12.07.2024 (изм факт адрес)» значение 56188-14 указано в качестве регистрационного номера расходомера термоанемометрического Turbo Flow TFG.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6257.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 14 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "14",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диаметр трубопровода: от 50 до 1400 мм для модификации TFG-S; от 25 до 100 мм для модификации TFG-H.\n- Напряжение питания: от 9 до 18 В, 12, 18, 24 В (в зависимости от исполнения), 7,2 В; 220 В с АКБ 12–18 В или 220 В с АКБ 12–14 В.\n- Потребляемая мощность: не более 15 Вт.\n- Условия эксплуатации ПП: температура окружающего воздуха — от -60 до +70 °С.\n- Условия эксплуатации РШ: температура окружающего воздуха — от -20 до +50 °С.\n- Условия эксплуатации ВТ в пластиковом корпусе: температура окруж",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 27791.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 10 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "10",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модели TFG-S составляет от 1,6 до 758520 кг/ч (м³/ч), а для модели TFG-H — от 0,0645 до 1548 кг/ч (м³/ч).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 12526.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 31369 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "31369",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ TFG от 12.07.2024 (изм факт адрес)» не указано значение ГОСТ 31369-2008 для какой-либо характеристики расходомеров термоанемометрических Turbo Flow TFG напрямую. Однако в описании типа средства измерений упоминается, что расчёт физических свойств природного газа производится в соответствии со стандартизованными алгоритмами по ГОСТ 31369-2008.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 23712.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 2008, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2008,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе не найдено значение 2008 и соответствующей характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15220.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 273 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "273",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S: от 1,6 до 758520 кг/ч (м³/ч).\nДиапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-H: от 0,0645 до 1548 кг/ч (м³/ч).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11588.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 2018, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "2018,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ TFG от 12.07.2024 (изм факт адрес)» нет информации за 2018 год.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 15463.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 112 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "112",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S TFG-H: от 1,6 до 758520 кг/ч (м³/ч).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S TFG-H: от 0,0645 до 1548 кг/ч (м³/ч).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 7644.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 03, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "03,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для TFG-S: от 1,6 до 758520 кг/ч (м³/ч).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для TFG-H: от 0,0645 до 1548 кг/ч (м³/ч).\n- Пределы допускаемой относительной погрешности при измерении массового расхода газа и объёмного расхода газа, приведённого к стандартным условиям, с использованием измерительного участка предприятия – изготовителя: ±1,0 в диапаз",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13310.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 118 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "118",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ TFG от 12.07.2024 (изм факт адрес)» нет значения 118 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6450.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 05, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "05,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S: от 1,6 до 758520 кг/ч (м³/ч).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-H: от 0,0645 до 1548 кг/ч (м³/ч).\n- Пределы допускаемой относительной погрешности при измерении массового расхода газа и объёмного расхода газа, приведённого к стандартным условиям, с использованием измерительного участка предприятия – изг",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 14606.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 134 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "134",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях): \n- для TFG-S: от 1,6 до 758520 кг/ч (от 1,25 до 588000 м³/ч); - для TFG-H: от 0,0645 до 1548 кг/ч (от 0,05 до 1200 м³/ч).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8320.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 07, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "07,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диаметр трубопровода: от 50 до 1400 мм для модификации TFG-S; от 25 до 100 мм для модификации TFG-H.\n- Напряжение питания: от 9 до 18 В, 12, 18, 24 В (в зависимости от исполнения), 7,2 В (АКБ).\n- Потребляемая мощность: не более 15 Вт.\n- Условия эксплуатации ПП: температура окружающего воздуха — от -60 до +70 °С.\n- Условия эксплуатации РШ: температура окружающего воздуха — от -20 до +50 °С.\n- Условия эксплуатации ВТ в пластиковом корпусе: температура окружающего воздуха — от -10 до +40 °С.\n- Ус",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 19108.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 135 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "135",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S: от 1,6 до 758520 кг/ч (от 1,25 до 588000 м³/ч).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-H: от 0,0645 до 1548 кг/ч (от 0,05 до 1200 м³/ч).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 11708.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 45,
+      "topic": "значение",
+      "question": "Какое значение 07. и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "07,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диаметр трубопровода: от 50 до 1400 мм для модификации TFG-S, от 25 до 100 мм для модификации TFG-H.\n- Напряжение питания: от 9 до 18 В, 12, 18, 24 В (в зависимости от исполнения), 7,2 В; 220 В с АКБ 12–18 В или 12–14 В автономный источник.\n- Потребляемая мощность: не более 15 Вт.\n- Условия эксплуатации ПП: температура окружающего воздуха — от -60 до +70 °С.\n- Условия эксплуатации РШ: температура окружающего воздуха — от -20 до +50 °С.\n- Условия эксплуатации ВТ в пластиковом корпусе: температу",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 23066.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 46,
+      "topic": "значение",
+      "question": "Какое значение 485. и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "485,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Расходомер термоанемометрический Turbo Flow TFG обеспечивает передачу данных по проводному интерфейсу RS-485.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 6787.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 47,
+      "topic": "значение",
+      "question": "Какое значение 232, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "232,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S TFG-H составляет от 1,6 до 758520 кг/ч (м³/ч).\nДиапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях) для модификации TFG-S TFG-H составляет от 0,0645 до 1548 кг/ч (м³/ч).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 13369.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 48,
+      "topic": "значение",
+      "question": "Какое значение 485, и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "485,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Напряжение питания: от 9 до 18 В; 12, 18, 24 (в зависимости от исполнения); 7,2 В (от встроенной АКБ).\n- Диапазон измерений массового расхода газа (объёмного расхода газа при стандартных условиях): TFG-S — от 1,6 до 758520 кг/ч (м³/ч), TFG-H — от 0,0645 до 1548 кг/ч (м³/ч).\n- Диапазон измерений температуры газа: от -60 до +300 °С.\n- Пределы допускаемой относительной погрешности при измерении массового расхода газа и объёмного расхода газа: ±1,0% в диапазоне 0,015 Qmax≤Q≤Qmax; ±2,0% в диапазоне",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 18695.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 49,
+      "topic": "значение",
+      "question": "Какое значение 15220 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "15220",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Напряжение питания расходомера Turbo Flow TFG составляет от 10 до 220 В, в том числе может быть питание от АКБ 12–18 В или автономное питание (12–14 В).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 8214.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+      "id": 50,
+      "topic": "значение",
+      "question": "Какое значение 50 и для какой характеристики указано в документе «ОТ TFG от 12.07.2024 (изм факт адрес)»?",
+      "expected_keys": [
+        "50",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диаметр трубопровода для модели TFG-S составляет от 50 до 1400 мм, для модели TFG-H — от 25 до 100 мм.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ TFG от 12.07.2024 (изм факт адрес)"
+      ],
+      "total_ms": 9947.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 28,
+  "source_file": "ОТ TFG от 12.07.2024 (изм факт адрес).pdf",
+  "product": "Turbo Flow TFG"
+}

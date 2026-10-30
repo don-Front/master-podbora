@@ -1,0 +1,1535 @@
+{
+  "generated_at": "2026-07-07T17:24:10.449217+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 13,
+    "PARTIAL": 37
+  },
+  "bug_counts": {},
+  "accuracy_pct": 26.0,
+  "partial_pct": 74.0,
+  "bad_pct": 0.0,
+  "per_file": [
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "questions": 50,
+      "correct": 13,
+      "partial": 37,
+      "bad": 0,
+      "accuracy_pct": 26.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          37
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [],
+  "results": [
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Сертификат"
+      ],
+      "answer_preview": "Сертификат об УТ СПУ-3М до 24.09.26 предназначен для подтверждения утверждения типа средств измерений установок поверочных СПУ-3М.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4641.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\nПравообладатель: не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4476.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "№ 65287-16",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3844.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок действия утверждения типа до 24 сентября 2026 года.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3844.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Документ на поверку: МП 0397-1-2016",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3893.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4463.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В сертификате не указаны конкретные технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3974.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Сертификат об УТ СПУ-3М до 24.09.26» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4459.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В сертификате не указано, что входит в комплект поставки.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3840.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. № 159.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4268.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Сертификат об УТ_СПУ-3М до 24.09.26» о: ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении типа средств измерений № 6528?",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 6497.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 12,
+      "topic": "рег.номер",
+      "question": "Где в документе «Сертификат об УТ_СПУ-3М до 24.09.26» упоминается регистрационный номер 65287-16 и в каком контексте?",
+      "expected_keys": [
+        "65287-16",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 65287-16 указан в сертификате об утверждении типа средств измерений в пункте «СЕРТИФИКАТ об утверждении типа средств измерений № 65287-16».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 5100.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 65287 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "65287",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "№ 65287-16 — номер сертификата об утверждении типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4045.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 16 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "16",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16; - Срок действия утверждения типа: до 24 сентября 2026 г.; - Код идентификации производства: ОС; - Документ на поверку: МП 0397-1-2016; - Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 7240.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 24 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "24",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "Срок действия утверждения типа до 24 сентября 2026 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3024.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 16,
+      "topic": "значение",
+      "question": "Какое значение 2026 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "2026",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "Срок действия утверждения типа до 24 сентября 2026 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 2888.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 17,
+      "topic": "значение",
+      "question": "Какое значение 0397 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "0397",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "ДОКУМЕНТ НА ПОВЕРКУ: МП 0397-1-2016",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 2823.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 2016 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "2016",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "Документ «Сертификат об УТ СПУ-3М до 24.09.26» содержит следующие данные:\n* Номер документа на поверку: МП 0397-1-2016.\n* Дата утверждения типа средств измерений: 24 февраля 2016 года.\n* Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3331.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2021 и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "2021",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "24 февраля 2021 года — дата приказа о продлении типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 2786.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 159. и для какой характеристики указано в документе «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "159,",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "Приказ Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. № 159 о продлении срока действия утверждения типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 5393.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 21,
+      "topic": "приказ",
+      "question": "Что говорится в документе «Сертификат об УТ_СПУ-3М до 24.09.26» о приказе № 65287?",
+      "expected_keys": [
+        "65287",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «Сертификат об УТ СПУ-3М до 24.09.26» номер 65287 указан как номер сертификата утверждения типа средств измерений.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 5328.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 22,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе не указано, где и как применяется продукция.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3797.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 23,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "- Интервал между поверками: 1 год.\n- Документ на поверку: МП 0397-1-2016.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3917.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 24,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В сертификате не указаны конкретные требования безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3638.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 25,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В сертификате об утверждении типа средств измерений № 65287-16 маркировка и знак утверждения типа не описаны подробно.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3364.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 26,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В сертификате не указаны гарантийные обязательства.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3675.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 27,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В сертификате не указаны условия транспортирования и хранения.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3488.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 28,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В сертификате не указаны показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3538.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 29,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В сертификате не указаны интерфейсы связи.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 742.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 30,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В сертификате не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3675.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 31,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Сертификат об УТ_СПУ-3М до 24.09.26»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В сертификате не указан испытательный центр.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4106.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #1): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 г.; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата выдачи сертификата: 24 марта 2021 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 5707.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #2): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 года; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата выдачи сертификата: 24 марта 2021 года.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4830.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #3): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4480.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #4): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 7022.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #5): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 7156.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #6): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 7066.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #7): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 65287-16.\nСрок действия утверждения типа до 24 сентября 2026 г.\nНАИМЕНОВАНИЕ И ОБОЗНАЧЕНИЕ ТИПА СРЕДСТВ ИЗМЕРЕНИЙ: установки поверочные СПУ-3М.\nИЗГОТОВИТЕЛЬ: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\nДОКУМЕНТ НА ПОВЕРКУ: МП 0397-1-2016.\nИНТЕРВАЛ МЕЖДУ ПОВЕРКАМИ: 1 год.\nТип средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. N 159.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 8787.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #8): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат об утверждении типа средств измерений № 65287-16.\n- Срок действия утверждения типа до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.\n- Тип средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. № 159.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 8419.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #9): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "СЕРТИФИКАТ об утверждении типа средств измерений № 65287-16.\nСрок действия утверждения типа до 24 сентября 2026 г.\nНАИМЕНОВАНИЕ И ОБОЗНАЧЕНИЕ ТИПА СРЕДСТВ ИЗМЕРЕНИЙ: установки поверочные СПУ-3М.\nИЗГОТОВИТЕЛЬ: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\nДОКУМЕНТ НА ПОВЕРКУ: МП 0397-1-2016.\nИНТЕРВАЛ МЕЖДУ ПОВЕРКАМИ: 1 год.\nТип средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. N 159.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 8892.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #10): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 г.; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата утверждения сертификата: 24 марта 2021 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4896.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #11): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 года; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата выдачи сертификата: 24 марта 2021 года.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4786.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #12): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4490.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #13): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 года; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата выдачи сертификата: 24 марта 2021 года.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 7174.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #14): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 г.; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата выдачи сертификата: 24 марта 2021 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4852.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #15): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат об утверждении типа средств измерений № 65287-16.\n- Срок действия утверждения типа до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.\n- Тип средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. № 159.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 5807.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #16): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4087.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #17): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат № 65287-16; - срок действия утверждения типа до 24 сентября 2026 г.; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - дата выдачи сертификата: 24 марта 2021 г.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4422.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #18): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Сертификат об утверждении типа средств измерений № 65287-16; - срок действия утверждения типа до 24 сентября 2026 г.; - наименование и обозначение типа средств измерений: установки поверочные СПУ-3М; - изготовитель: ООО НПО «Турбулентность-Дон», с. Чалтырь; - документ на поверку: МП 0397-1-2016; - интервал между поверками: 1 год; - тип средств измерений продлён приказом Федерального агентства по техническому регулированию и метрологии от 24 февраля 2021 г. № 159.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 4976.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат об УТ_СПУ-3М до 24.09.26» (фрагмент стр. 1, #19): ФЕДЕРАЛЬНОЕ АГЕНТСТВО ПО ТЕХНИЧЕСКОМУ РЕГУЛИРОВАНИЮ И МЕТРОЛОГИИ СЕРТИФИКАТ об утверждении",
+      "expected_keys": [
+        "65287-16",
+        "ФЕДЕРАЛЬНОЕ",
+        "АГЕНТСТВО"
+      ],
+      "answer_preview": "- Номер сертификата: 65287-16.\n- Срок действия утверждения типа: до 24 сентября 2026 г.\n- Наименование и обозначение типа средств измерений: установки поверочные СПУ-3М.\n- Изготовитель: ООО НПО \"Турбулентность-Дон\", с. Чалтырь.\n- Документ на поверку: МП 0397-1-2016.\n- Интервал между поверками: 1 год.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 5287.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 67,
+  "source_file": "Сертификат об УТ_СПУ-3М до 24.09.26.pdf",
+  "product": "Сертификат об УТ СПУ-3М до 24.09.26"
+}

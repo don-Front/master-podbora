@@ -1,0 +1,199 @@
+{
+  "file": "DN400 - 1,6.pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\DN400 - 1,6.pdf",
+  "size_bytes": 945807,
+  "generated_at": "2026-07-14T10:08:23.478265+00:00",
+  "text_source": "pdf_ocr",
+  "ocr_chars": 2544,
+  "ocr_preview": "Опросный лист узла учста газа Ng 2-DN4OO-1,6\nУзел\nизмерений\nрасхода\nгаза\nбазе\nрасходомера-счетчика\nулътразвукового должен иметь следующне расчетные парамстры:\nСчетчик газа должен выдсрживать давление среды на менее 1,6 МПlа;\nСостав комплекса:\n21,\nСчётчик\nгаза\nультразвуковой\nполно\nпроходной\nкорпусного\nисполнения\nколичеством\nлучей\nHe менее\nчетырёх\n2.2\nБлок интерфейса\nПИТанИя\n(БИП);\nцифровой   идентификатор ПО:\nOxCB9зс101;\nалгоритм\nвычислсния  цифрового идентификатора ПО: CRC-32;\nпротокол\nсвязИ\nУЗПР\nБИП: MODBUS; устройство\nДЛЯ\nсчитывания архива;\nОЗУ и диагностических трендов:\n2.3\nИмитационная катушка\n2.4\nКомплект ЗИП:\n2.5\nВнутренний днаметр счётчика: Ду\n400 мм.\n2.6.\nМаксимальный расход\nгаза;  при рабочих условиях:\nQmax\n2025 1\nмэ/ч:\n2.7. Минимальный расход газа; при рабочих условнях: Qmin\n37.9 мЗ/ч.\n2.8\nМеста отбора давления\nи температуры должны  находится\nкорпусе\nУЗПР\n2.9.\nДатчик\nдавления:\nверхний\nпредел\nизмерений\nвстроенного\nпреобразователя абсолютного давления: Рабс\n1.6 МПа\n2.10. Термометр сопротивления\nградуировкой 1ООП.\n2.11. Температура измеряемой среды: от -23\n'С до +40 \"С:\n2.12. Температура окружающей среды: от -35 \"С до +40 \"С.\n2.13. Габаритные размеры счетчика: 485 +5 мм.\n2.14.\nПрисоединитсльные\nразмеры\nфланцев\nсчетчнка\nгаза:\nколнчество\nотверстнй\n16\nШТ :\nдиамстр   отверстий\n30\nмм;\nднаметр   расположения\nотверстий\n525 мм.\nабаритные\nразмеры\nкомплекта\nпрямых\nучастков\nизмерительного\nтруоопровода:\n3.1. Устройство подготовки потока\nвстроенным эндоскопом; входящее\nсостав измер",
+  "bot_specs": {
+    "medium": "gas",
+    "gas_type": "",
+    "duplication_type": null,
+    "flowMin": 37.9,
+    "flowMax": 2025,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.6,
+    "pressureMax": 1.6,
+    "pressure_unit": "МПа",
+    "tempMediumMin": -23,
+    "tempMediumMax": 40,
+    "tempAmbientMin": -35,
+    "tempAmbientMax": 40,
+    "temperature_unit": "°C",
+    "accuracy": "4%",
+    "diameter": 400
+  },
+  "reference_specs": {
+    "medium": "gas",
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": 37.9,
+    "flowMax": 2025,
+    "flow_unit": "м³/ч",
+    "pressureMin": 1.6,
+    "pressureMax": null,
+    "pressure_unit": "МПа",
+    "tempMediumMin": -23,
+    "tempMediumMax": 40,
+    "tempAmbientMin": -35,
+    "tempAmbientMax": 40,
+    "temperature_unit": "°C",
+    "accuracy": "4%",
+    "diameter": 400
+  },
+  "heuristic_specs": {
+    "medium": null,
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": null,
+    "diameter": 400
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "gas",
+        "bot": "gas"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "both_empty",
+        "reference": null,
+        "bot": ""
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "match",
+        "reference": 37.9,
+        "bot": 37.9
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "match",
+        "reference": 2025,
+        "bot": 2025
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "м³/ч",
+        "bot": "м³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "match",
+        "reference": 1.6,
+        "bot": 1.6
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "bot_extra",
+        "reference": null,
+        "bot": 1.6
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "match",
+        "reference": "МПа",
+        "bot": "МПа"
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "match",
+        "reference": -23,
+        "bot": -23
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "match",
+        "reference": 40,
+        "bot": 40
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "match",
+        "reference": -35,
+        "bot": -35
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "match",
+        "reference": 40,
+        "bot": 40
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°C",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "match",
+        "reference": "4%",
+        "bot": "4%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 400,
+        "bot": 400
+      }
+    ],
+    "ref_filled": 13,
+    "matched": 13,
+    "mismatches": 0,
+    "bot_missing": 0,
+    "bot_extra": 1,
+    "accuracy_pct": 100.0
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 11446.0,
+    "llm_ms": 4708.5,
+    "pipeline_ms": 16164.9,
+    "ocr_chars": 2544,
+    "llm_input_chars": 2544,
+    "text_source": "pdf_ocr",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 4378.6,
+  "bot_llm_raw_preview": "```\n{\n    \"medium\": \"газ\",\n    \"gas_type\": \"\",\n    \"duplication_type\": \"\",\n    \"flowMin\": 37.9,\n    \"flowMax\": 2025,\n    \"flow_unit\": \"м³/ч\",\n    \"pressureMin\": 1.6,\n    \"pressureMax\": 1.6,\n    \"pressure_unit\": \"МПа\",\n    \"tempMediumMin\": -23,\n    \"tempMediumMax\": 40,\n    \"tempAmbientMin\": -35,\n    \"tempAmbientMax\": 40,\n    \"temperature_unit\": \"°C\",\n    \"accuracy\": \"не более 4% для диапазона Q < Qce; не более +0,65% для диапазона Cep<Q < Qтиб\",\n    \"diameter\": 400\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n    \"medium\": \"газ\",\n    \"gas_type\": null,\n    \"duplication_type\": null,\n    \"flowMin\": \"37.9 м³/ч\",\n    \"flowMax\": \"2025 м³/ч\",\n    \"flow_unit\": \"м³/ч\",\n    \"pressureMin\": \"1.6 МПа\",\n    \"pressureMax\": null,\n    \"pressure_unit\": \"МПа\",\n    \"tempMediumMin\": \"-23 °C\",\n    \"tempMediumMax\": \"40 °C\",\n    \"tempAmbientMin\": \"-35 °C\",\n    \"tempAmbientMax\": \"40 °C\",\n    \"temperature_unit\": \"°C\",\n    \"accuracy\": [\"не более 4%\", \"не более +0,65%\"],\n    \"diameter\": \"Ду 400 мм\"\n}\n```",
+  "elapsed_ms": 32581.9
+}

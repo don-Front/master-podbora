@@ -1,0 +1,1683 @@
+{
+  "generated_at": "2026-07-07T17:50:06.301252+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "PARTIAL": 12,
+    "CORRECT": 24,
+    "STUB_ONLY": 14
+  },
+  "bug_counts": {
+    "stub": 14
+  },
+  "accuracy_pct": 48.0,
+  "partial_pct": 24.0,
+  "bad_pct": 28.0,
+  "per_file": [
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "questions": 50,
+      "correct": 24,
+      "partial": 12,
+      "bad": 14,
+      "accuracy_pct": 48.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "stub",
+          14
+        ],
+        [
+          "partial",
+          12
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #1): Документ: № ЕАЭС RU С-RU.АЖ58.А.066",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #3): Документ: № ЕАЭС RU С-RU.АЖ58.А.066",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #5): Документ: № ЕАЭС RU С-RU.АЖ58.А.066",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #6): Документ: № ЕАЭС RU С-RU.АЖ58.А.066",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #7): Документ: № ЕАЭС RU С-RU.АЖ58.А.066",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #9): Документ: № ЕАЭС RU С-RU.АЖ58.А.066",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #10): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #12): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #13): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #18): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #19): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #20): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #24): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #25): Документ: № ЕАЭС RU С-RU.АЖ58.А.06",
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "№"
+      ],
+      "answer_preview": "Документ «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» является паспортом продукта.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 4930.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3963.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационным или сертификационным номером в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» является № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 4604.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе информация о сроке действия утверждения типа или сертификата отсутствует.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3313.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе № ЕАЭС RU С-RU.АЖ58.А.06672-24 методика поверки или нормативный документ не упомянуты.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2548.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» конкретные метрологические характеристики не указаны.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 5182.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В контексте не указаны конкретные технические характеристики (давление, температура, расход) продукта № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 5386.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» нет сведений о программном обеспечении.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1985.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте нет информации о комплекте поставки согласно «№ ЕАЭС RU С-RU.АЖ58.А.06672-24».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2180.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» нет информации о ссылках на приказы, ГОСТ или ТУ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2480.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» о: Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продукт: № ЕАЭС RU С-RU.АЖ58.А.06672?",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "На странице 1 документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» содержится информация о паспорте продукта № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 4871.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 12,
+      "topic": "рег.номер",
+      "question": "Где в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» упоминается регистрационный номер 06672-24 и в каком контексте?",
+      "expected_keys": [
+        "06672-24",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 06672-24 указан в номере документа № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3762.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 58. и для какой характеристики указано в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "58,",
+        "характеристик",
+        "№"
+      ],
+      "answer_preview": "В документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» значение 58 не имеет пояснения в представленном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3996.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 06672 и для какой характеристики указано в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "06672",
+        "характеристик",
+        "№"
+      ],
+      "answer_preview": "В документе не указано значение 06672 и для какой-либо конкретной характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3428.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 15,
+      "topic": "значение",
+      "question": "Какое значение 24. и для какой характеристики указано в документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "24,",
+        "характеристик",
+        "№"
+      ],
+      "answer_preview": "В документе «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» информации о значении 24 для какой-либо характеристики не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2844.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 16,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе информация о применении продукции отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1595.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 17,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе не указаны требования к поверке.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3036.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 18,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе не указаны конкретные требования безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1596.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 19,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В документе № ЕАЭС RU С-RU.АЖ58.А.06672-24 информация о нанесении маркировки и знака утверждения типа отсутствует.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2295.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 20,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе информация о гарантийных обязательствах отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3312.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 21,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения продукта № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2321.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 22,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2815.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 23,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе не указаны интерфейсы связи.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 901.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 24,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1253.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 25,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «№ ЕАЭС RU С-RU.АЖ58.А.06672-24»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе информация об испытательном центре отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 2626.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #1): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3932.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #2): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24\nТип информации: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1799.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #3): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3460.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #4): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3321.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #5): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3656.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #6): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3551.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #7): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3582.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #8): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3332.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #9): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3824.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #10): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3364.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #11): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3151.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #12): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3355.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #13): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3425.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #14): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3454.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #15): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3410.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #16): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3254.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #17): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1278.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #18): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3596.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #19): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1833.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #20): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 1677.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #21): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3418.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #22): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3668.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #23): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3647.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #24): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 4145.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «№ ЕАЭС RU С-RU.АЖ58.А.06672-24» (фрагмент стр. 1, #25): Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Файл: № ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf. Продук",
+      "expected_keys": [
+        "06672-24",
+        "Документ",
+        "ЕАЭС"
+      ],
+      "answer_preview": "Документ: № ЕАЭС RU С-RU.АЖ58.А.06672-24. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+      ],
+      "total_ms": 3933.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 74,
+  "source_file": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24.pdf",
+  "product": "№ ЕАЭС RU С-RU.АЖ58.А.06672-24"
+}

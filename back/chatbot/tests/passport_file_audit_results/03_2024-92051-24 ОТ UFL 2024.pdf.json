@@ -1,0 +1,1632 @@
+{
+  "generated_at": "2026-07-07T18:17:58.140986+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 25,
+    "HALLUCINATION": 9,
+    "PARTIAL": 16
+  },
+  "bug_counts": {
+    "hallucination": 9
+  },
+  "accuracy_pct": 50.0,
+  "partial_pct": 32.0,
+  "bad_pct": 18.0,
+  "per_file": [
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "questions": 50,
+      "correct": 25,
+      "partial": 16,
+      "bad": 9,
+      "accuracy_pct": 50.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          16
+        ],
+        [
+          "hallucination",
+          9
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Что указано на странице 2 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 2 Всего листов 8 Таблица 1 – Исполнения расход",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 03 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 24 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 2, и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 6. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 8. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    },
+    {
+      "question": "Какое значение 32 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Расходомеры-счётчики жидкости ультразвуковые Turbo Flow UFL предназначены для измерений объёмного расхода и объёма жидкости, в том числе сжиженного газа, а также для вычислений массового расхода и массы жидкости.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 9799.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем и правообладателем расходомеров Turbo Flow UFL является Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 10267.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер: 92051-24",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 9632.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 9447.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 10606.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений объёмного расхода: от 0,11 до 144764,58 м³/ч.\n- Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма: при скорости потока жидкости v от 0,5 включ. до 20 м/с — ±1,5% / ±2,5%, при скорости потока жидкости v от 0,0625 до 0,5 м/с: исполнение Г – ±(2,5 + 1𝑣) / ±(3,0 + 1𝑣), исполнение В – ±1,0% / ±2,0%, исполнение Б - ±0,5% / ±1,0%, исполнение А - ±0,3% / ±0,5%.\n- Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 45 МПа.\n- Пределы допу",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 29882.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления: от 0,1 до 45 МПа.\n- Пределы допускаемой приведённой к ВПИ погрешности измерений давления: ±0,25; ±0,5 %.\n- Диапазон измерений температуры для исполнения Т0: от 0 до +80 °С.\n- Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С.\n- Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С.\n- Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С.\n- Диапазон измерений температуры для исполнения Т3: от -45 до +180 ",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18727.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение расходомеров Turbo Flow UFL является встроенным. Уровень защиты программного обеспечения от преднамеренных и непреднамеренных изменений – «высокий» в соответствии с Р 50.2.077-2014. Идентификационное наименование ПО — UFL, номер версии (идентификационный номер) ПО — 1.0, цифровой идентификатор ПО — 0x12D3F7D2, алгоритм вычисления цифрового идентификатора программного обеспечения — CRC-32.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 13400.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Расходомер – счётчик жидкости ультразвуковой Turbo Flow UFL — 1 шт.; - Руководство по эксплуатации ТУАС.407252.002 РЭ — 1 экз.; - Паспорт ТУАС.407252.002 ПС — 1 экз.; - Комплект монтажных частей — 1 комплект (по заказу).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 14138.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "- Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости»; - ТУ 26.51.52 -037-70670506-2023 Расходомеры – счётчики жидкости ультразвуковые Turbo Flow UFL. Технические условия.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 9584.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «2024-92051-24 ОТ UFL 2024» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «03» мая 2024 г. № 1135 Лист № ?",
+      "expected_keys": [
+        "92051-24",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «03» мая 2024 г. № 1135.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 2941.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 2 Всего листов 8 Таблица 1 – Исполнения расходомеров в зависимости от состава и выполняемых функций Исполнение УП?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Таблица"
+      ],
+      "answer_preview": "- С0: температура – не входит в состав расходомера; давление – не входит в состав расходомера; - С1Т: температура – входит в состав расходомера; давление – входит в состав расходомера; - С1TP: температура – входит в состав расходомера; давление – входит в состав расходомера; может входить опционально (по заказу) – измерение давления.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 5194.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 3 Всего листов 8 Рисунок 1 – Корпус круглого сечения с защитным кожухом Рисунок 2 – Корпус круглого сечения с защ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "На странице 3 документа «2024-92051-24 ОТ UFL 2024» на Листе № 3 указаны рисунки:\n* Рисунок 1 — Корпус круглого сечения с защитным кожухом.\n* Рисунок 2 — Корпус круглого сечения с защитным кожухом.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 4235.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 4 Всего листов 8 Рисунок 6 – Маркировочная табличка расходомеров – счетчиков Turbo Flow UFL Вид сверху Вид сбоку ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "На рисунке 6 изображены маркировочная табличка расходомеров-счётчиков Turbo Flow UFL, вид сверху и вид сбоку.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 5010.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 5 Всего листов 8 ПО хранится в энергонезависимой памяти. Программная среда постоянна, отсутствую т средства и пол?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Программная"
+      ],
+      "answer_preview": "Программная среда постоянна, отсутствуют средства и пользовательская оболочка для программирования или изменения ПО. \nПрограммное обеспечение разделено на метрологически значимую и метрологически незначимую части. \nУровень защиты программного обеспечения расходомеров от преднамеренных и непреднамеренных изменений — «высокий» в соответствии с Р 50.2.077-2014.\nИдентификационное наименование ПО: UFL, номер версии (идентификационный номер) ПО — 1.0, цифровой идентификатор ПО — 0x12D3F7D2, алгоритм в",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7351.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 6 Всего листов 8 Наименование характеристики Значение Верхний предел измерений абсолют- ного давления (ВПИ), МПа ?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Наименование"
+      ],
+      "answer_preview": "Верхний предел измерений абсолютного давления (ВПИ), МПа: от 0,1 до 45",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 4885.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 7 Всего листов 8 Наименование характеристики Значение Степень защиты по ГОСТ 14254-2015 IP 65 Маркировка взрывоза?",
+      "expected_keys": [
+        "14254-20",
+        "Лист",
+        "Всего"
+      ],
+      "answer_preview": "Степень защиты по ГОСТ 14254-2015: IP 65\nМаркировка взрывозащиты: 1Ex db [ia Ga] IIC T6…T1 Gb X 1Ex db ma [ia Ga] IIC T6…T1 Gb X",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 4401.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «2024-92051-24 ОТ UFL 2024» о: Лист № 8 Всего листов 8 Нормативные и технические документы, устанавливающие требования к средству изме- рений Приказ Ро?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Нормативные"
+      ],
+      "answer_preview": "На странице 8 документа «2024-92051-24 ОТ UFL 2024» указаны следующие нормативные и технические документы, устанавливающие требования к средству измерений:\n* Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости»; * ТУ 26.51.52 -037-70670506-2023 Расходомеры – счётчики жидкости ультразвуковые Turbo F",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 10542.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 19,
+      "topic": "раздел",
+      "question": "Что описано в разделе «10 Условия эксплуатации:» документа «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "10",
+        "Условия"
+      ],
+      "answer_preview": "Условия эксплуатации расходомеров Turbo Flow UFL:\n- температура окружающего воздуха для исполнения М: от -30 до +70 °C; - температура окружающего воздуха для исполнения Х: от -60 до +70 °C; - относительная влажность воздуха: до 95%; - атмосферное давление: от 84,0 до 106,7 кПа.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 12320.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 20,
+      "topic": "рег.номер",
+      "question": "Где в документе «2024-92051-24 ОТ UFL 2024» упоминается регистрационный номер 92051-24 и в каком контексте?",
+      "expected_keys": [
+        "92051-24",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 92051-24 указан на листе № 1 документа «2024-92051-24 ОТ UFL 2024».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 16738.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 21,
+      "topic": "рег.номер",
+      "question": "Где в документе «2024-92051-24 ОТ UFL 2024» упоминается регистрационный номер 14254-20 и в каком контексте?",
+      "expected_keys": [
+        "14254-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» регистрационный номер 14254-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 9698.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 22,
+      "topic": "рег.номер",
+      "question": "Где в документе «2024-92051-24 ОТ UFL 2024» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» регистрационный номер 70670506-2023 упоминается в разделе нормативных и технических документов, устанавливающих требования к средству измерений.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 15391.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 23,
+      "topic": "рег.номер",
+      "question": "Где в документе «2024-92051-24 ОТ UFL 2024» упоминается регистрационный номер 30004-13 и в каком контексте?",
+      "expected_keys": [
+        "30004-13",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» регистрационный номер 30004-13 указан в разделе, где перечислены сведения об испытательном центре — ФГБУ «ВНИИМС».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7726.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 03 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "03",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Диапазон измерений температуры для исполнения Т0: от 0 до +80 °С; - Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С; - Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С; - Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С; - Диапазон измерений температуры для исполнения Т3: от -45 до +180 °С; - Диапазон измерений температуры для исполнения Т2: от -45 до +250 °С; - Диап",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 21577.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Регистрационный номер: 92051-24.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7285.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 1135 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "1135",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Номер приказа Федерального агентства по техническому регулированию и метрологии — 1135. Дата утверждения — «03» мая 2024 г.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7201.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 92051 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "92051",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» значение 92051 — регистрационный номер расходомеров – счётчиков жидкости ультразвуковых Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 8550.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 24 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "24",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С; - Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С; - Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С; - Диапазон измерений температуры для исполнения Т3: от -45 до +180 °С; - Диапазон измерений температуры для исполнения Т2: от -45 до +250 °С; - Диапазон измерений температуры для исполнения Т1: от -45 до +320 °С; - П",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18044.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 0, и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "0,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Диапазон измерений температуры для исполнения Т0: от 0 до +80 °С; - Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С; - Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С; - Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С; - Диапазон измерений температуры для исполнения Т3: от -45 до +180 °С; - Диапазон измерений температуры для исполнения Т2: от -45 до +250 °С; - Диап",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 27204.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Верхний предел измерений абсолютного давления (ВПИ) для расходомеров Turbo Flow UFL составляет от 0,1 до 45 МПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 21943.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 1, и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Верхний предел измерений абсолютного давления (ВПИ) для расходомеров Turbo Flow UFL составляет от 0,1 до 45 МПа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7046.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 2, и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Пределы допускаемой относительной погрешности расходомера при преобразовании значения расхода в частотный выходной сигнал составляют ±0,05 %.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 6884.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 3, и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "3,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» указано значение идентификационного номера версии программного обеспечения расходомеров Turbo Flow UFL — 1.0.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7079.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 4, и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "4,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Диапазон измерений температуры для исполнения Т0: от 0 до +80 °С; - Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С; - Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С; - Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С; - Диапазон измерений температуры для исполнения Т3: от -45 до +180 °С; - Диапазон измерений температуры для исполнения Т2: от -45 до +250 °С; - Диап",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 21642.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 6. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "6,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Пределы допускаемой приведённой к ВПИ погрешности измерений давления: ±0,25; ±0,5 %; - Диапазон измерений температуры для исполнения Т0: от 0 до +80 °С; - Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С; - Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С; - Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С; - Диапазон измерений температуры для исполнения Т3: от -45 до",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 22369.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 8. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "8,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Верхний предел измерений абсолютного давления (ВПИ): от 0,1 до 45 МПа; - Пределы допускаемой приведённой к ВПИ погрешности измерений давления: ±0,25; ±0,5 %; - Диапазон измерений температуры для исполнения Т0: от 0 до +80 °С; - Диапазон измерений температуры для исполнения Т6: от -45 до +80 °С; - Диапазон измерений температуры для исполнения Т5: от -45 до +95 °С; - Диапазон измерений температуры для исполнения Т4: от -45 до +130 °С; - Диапазон измерений температуры для исполнения Т3: от -45 до",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 20303.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 5. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "5,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» указано значение диапазона измерений объёмного расхода для расходомеров Turbo Flow UFL — от 0,11 до 144764,58 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7348.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» не указано значение параметра 50.2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7695.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Уровень защиты программного обеспечения расходомеров от преднамеренных и непреднамеренных изменений – «высокий» в соответствии с Р 50.2.077-2014.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7156.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Диапазон измерений объёмного расхода: от 0,11 до 144764,58 м³/ч; - Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма: ±1,5 % / ±2,5 % при скорости потока жидкости v от 0,5 включ. до 20 м/с; - Верхний предел измерений избыточного давления (ВПИ): от 0,0025 до 45 МПа; - Пределы допускаемой приведённой к ВПИ погрешности измерений давления: ±0,25 %; ±0,5 %; - Диапазон измерений температуры: для исполнения Т0 — от 0 до +80 °С; для исполнения Т6 — от -45 до +80 °С; дл",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 24789.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 1.0 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "1,0",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Номер версии (идентификационный номер) ПО — 1.0.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18127.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 12 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "12",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Диапазон измерений объёмного расхода: от 0,11 до 144764,58 м³/ч; - Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма при скорости потока жидкости v от 0,5 включ. до 20 м/с: ±1,5% / ±2,5%; - Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма при скорости потока жидкости v от 0,0625 до 0,5 м/с для исполнения Г – 1, 2 пары приёмопередатчиков: ±1,5% / ±2,5%; - Пределы допускаемой относительной погрешности измерений объёмного расхода ",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 20819.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 43,
+      "topic": "значение",
+      "question": "Какое значение 32 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "32",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "- Цифровой идентификатор ПО: 0x12D3F7D2; - Номер версии (идентификационный номер) ПО: 1.0; - Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма при скорости потока жидкости от 0,5 включ. до 20 м/с для исполнения Г – ±1,5% / ±2,5%; - Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма при скорости потока жидкости от 0,0625 до 0,5 м/с для исполнения Г – ±(2,5 + 1𝑣) % / ±(3,0 + 1𝑣)%; - Пределы допускаемой относительной погрешности измер",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 31506.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 44,
+      "topic": "значение",
+      "question": "Какое значение 0,11 и для какой характеристики указано в документе «2024-92051-24 ОТ UFL 2024»?",
+      "expected_keys": [
+        "0,11",
+        "характеристик",
+        "2024-92051"
+      ],
+      "answer_preview": "Диапазон измерений объёмного расхода расходомеров Turbo Flow UFL составляет от 0,11 до 144764,58 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 8494.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 45,
+      "topic": "приказ",
+      "question": "Что говорится в документе «2024-92051-24 ОТ UFL 2024» о приказе № 1135?",
+      "expected_keys": [
+        "1135",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказом Федерального агентства по техническому регулированию и метрологии от «03» мая 2024 г. № 1135 утверждено описание типа средства измерений — расходомеров-счётчиков жидкости ультразвуковых Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 7851.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 46,
+      "topic": "приказ",
+      "question": "Что говорится в документе «2024-92051-24 ОТ UFL 2024» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказом Федерального агентства по техническому регулированию и метрологии от «03» мая 2024 г. № 1135 утверждено описание типа средства измерений — расходомеров-счётчиков жидкости ультразвуковых Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 8653.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «2024-92051-24 ОТ UFL 2024» о приказе № 92051?",
+      "expected_keys": [
+        "92051",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Регистрационным номером 92051 в документе «2024-92051-24 ОТ UFL 2024» не обозначен приказ, связанный с расходомерами – счётчиками жидкости ультразвуковыми Turbo Flow UFL.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 22899.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «2024-92051-24 ОТ UFL 2024» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказ Росстандарта от 26 сентября 2022 г. № 2356 утверждает Государственную поверочную схему для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 18145.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «2024-92051-24 ОТ UFL 2024» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Приказ Росстандарта от 26 сентября 2022 г. № 2356 «Об утверждении Государственной поверочной схемы для средств измерений массы и объёма жидкости в потоке, объёма жидкости и вместимости при статических измерениях, массового и объёмного расходов жидкости».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 17863.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+      "id": 50,
+      "topic": "приказ",
+      "question": "Что говорится в документе «2024-92051-24 ОТ UFL 2024» о приказе № 4?",
+      "expected_keys": [
+        "4",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «2024-92051-24 ОТ UFL 2024» не упоминается приказ № 4.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "2024-92051-24 ОТ UFL 2024"
+      ],
+      "total_ms": 1791.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 2,
+  "source_file": "2024-92051-24 ОТ UFL 2024.pdf",
+  "product": "Turbo Flow UFL"
+}

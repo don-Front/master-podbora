@@ -1,0 +1,199 @@
+{
+  "file": "Опросники\\UFL\\Опросный лист (2).pdf",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\Опросники\\UFL\\Опросный лист (2).pdf",
+  "size_bytes": 458056,
+  "generated_at": "2026-07-14T11:26:56.889317+00:00",
+  "text_source": "pdf_text",
+  "ocr_chars": 11522,
+  "ocr_preview": "Опросный лист расходомера UFL №000029213 от 09.12.2025г.\nОтветственный менеджер: Маслова Светлана Анатольевна\nСпецификация №______________________________________\nХарактеристика прибора:\nUFL-F-500-V-XX-X-8Б-600RJ-Т03-С0-XXX-ХХ-XX-XXXX Х\nк Договору №__________________________________________\nКоличество приборов\n2\nСпецзаказ:\nДа\nот ________________________\nСведения о заказчике\nСведения о конечном заказчике\nЗаказчик:\nПромТех Инжиниринг ООО ИНН \n7713617920\nНазвание объекта:\n24/008_НР-ССК Расходомер UFL\nКонтактное лицо:\nСоловьев Дмитрий Владимирович\nОрганизация:\nРН-Ванкор\nДолжность:\nГлавный конструктор\nРегион:\nРОССИЯ\nТелефон:\n+Тел.: +7 (3452) 682509, доб. 423\nАдрес установки прибора\nE-mail:\nsdv@pkti-ptp.ru\nИНН:\nКонтактное лицо:\nДолжность:\nВид заказчика:\nЮридическое лицо\nТелефон:\nИНН:\n7713617920\nКПП:\n772801001\nТехнические требования к прибору\nПитание:\nОт внешнего источника питания\nДиаметр условного прохода Dn: 500\nPmax расчетное, МПа:\n10\nВнутренний диаметр прибора:\n502\nИсполнение корпуса прибора:\nV – участок измерительного трубопровода с врезными пьезоакустическими преобразователями\nМатериал корпуса:\nНизкотемпературная углеродистая сталь (ст.09Г2С) (по умолчанию)\nКласс точности прибора:\n1% (Б) имитационный\nКоличество лучей:\n8\nВычислитель:\nБез вычислителя расхода (С0)\nТ окружающего воздуха, °С:\n-48 - 27\nКалибровка:\nИмитационным методом (на заводе-изготовителе)\nКомплект для переодической \nимитационной поверки на \nобъекте:\nНет\nВариант комплектации для \nимитационной поверки:\nТермочехол ",
+  "bot_specs": {
+    "medium": "liquid",
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": 4,
+    "flowMax": 44.505,
+    "flow_unit": "нм³/ч",
+    "pressureMin": 5,
+    "pressureMax": 10.0,
+    "pressure_unit": "МПа",
+    "tempMediumMin": -50,
+    "tempMediumMax": 70,
+    "tempAmbientMin": -48,
+    "tempAmbientMax": 27,
+    "temperature_unit": "°C",
+    "accuracy": "1%",
+    "diameter": 500
+  },
+  "reference_specs": {
+    "medium": "liquid",
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": 925,
+    "flowMax": 14.0,
+    "flow_unit": "нм³/ч",
+    "pressureMin": 5,
+    "pressureMax": 9.34,
+    "pressure_unit": "МПа",
+    "tempMediumMin": -50,
+    "tempMediumMax": 70,
+    "tempAmbientMin": -48,
+    "tempAmbientMax": 27,
+    "temperature_unit": "°С",
+    "accuracy": "1%",
+    "diameter": 500
+  },
+  "heuristic_specs": {
+    "medium": "liquid",
+    "gas_type": null,
+    "duplication_type": null,
+    "flowMin": 2,
+    "flowMax": 4,
+    "flow_unit": "нм³/ч",
+    "pressureMin": null,
+    "pressureMax": 10.0,
+    "pressure_unit": "МПа",
+    "tempMediumMin": -50,
+    "tempMediumMax": 70,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "1%",
+    "diameter": 500
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "liquid",
+        "bot": "liquid"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "wrong",
+        "reference": 925,
+        "bot": 4
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "wrong",
+        "reference": 14.0,
+        "bot": 44.505
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "нм³/ч",
+        "bot": "нм³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "match",
+        "reference": 5,
+        "bot": 5
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "match",
+        "reference": 9.34,
+        "bot": 10.0
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "match",
+        "reference": "МПа",
+        "bot": "МПа"
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "match",
+        "reference": -50,
+        "bot": -50
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "match",
+        "reference": 70,
+        "bot": 70
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "match",
+        "reference": -48,
+        "bot": -48
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "match",
+        "reference": 27,
+        "bot": 27
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°С",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "match",
+        "reference": "1%",
+        "bot": "1%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 500,
+        "bot": 500
+      }
+    ],
+    "ref_filled": 14,
+    "matched": 12,
+    "mismatches": 2,
+    "bot_missing": 0,
+    "bot_extra": 0,
+    "accuracy_pct": 85.7
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 18.5,
+    "llm_ms": 5914.6,
+    "pipeline_ms": 5961.5,
+    "ocr_chars": 11522,
+    "llm_input_chars": 11522,
+    "text_source": "pdf_text",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 5869.8,
+  "bot_llm_raw_preview": "```\n{\n  \"medium\": \"жидкость\",\n  \"gas_type\": null,\n  \"duplication_type\": \"none\",\n  \"flowMin\": 44.505,\n  \"flowMax\": 14241.6,\n  \"flow_unit\": \"нм³/ч\",\n  \"pressureMin\": 5,\n  \"pressureMax\": 9.34,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": 20,\n  \"tempMediumMax\": 50,\n  \"tempAmbientMin\": -48,\n  \"tempAmbientMax\": 27,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"1%\",\n  \"diameter\": 500\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": \"Жидкость\",\n  \"gas_type\": null,\n  \"duplication_type\": \"XX - без дублирования СИ\",\n  \"flowMin\": 925,\n  \"flowMax\": 2000,\n  \"flow_unit\": \"нм³/ч\",\n  \"pressureMin\": 5,\n  \"pressureMax\": 9.34,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": -50,\n  \"tempMediumMax\": 70,\n  \"tempAmbientMin\": -48,\n  \"tempAmbientMax\": 27,\n  \"temperature_unit\": \"°С\",\n  \"accuracy\": \"1%\",\n  \"diameter\": 500\n}\n```",
+  "elapsed_ms": 12030.7
+}

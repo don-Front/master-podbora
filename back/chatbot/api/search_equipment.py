@@ -16,6 +16,7 @@ SEARCH_QUERY_KEYS = (
     "medium",
     "application",
     "gas_type",
+    "duplication_type",
     "flowMin",
     "flowMax",
     "flow_unit",
@@ -63,6 +64,10 @@ def build_search_equipment_params(specs: Dict[str, Any]) -> Dict[str, str]:
         "application": "industrial",
         "gas_type": map_gas_type_to_api(s.get("gas_type")),
     }
+    if medium == "gas":
+        duplication_type = str(s.get("duplication_type") or "").strip()
+        if duplication_type:
+            params["duplication_type"] = duplication_type
 
     def add(key: str, val: Any) -> None:
         if val is None:

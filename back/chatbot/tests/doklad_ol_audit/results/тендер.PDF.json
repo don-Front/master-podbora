@@ -1,0 +1,199 @@
+{
+  "file": "тендер.PDF",
+  "path": "\\\\192.168.1.198\\Files\\22.Служба развития\\1. Для общего доступа\\МАСТЕР ПОДБОРА\\Для доклада\\тендер.PDF",
+  "size_bytes": 650381,
+  "generated_at": "2026-07-14T11:27:15.900958+00:00",
+  "text_source": "pdf_ocr",
+  "ocr_chars": 4438,
+  "ocr_preview": "ОЛ_2210_082025\nОпросный лист для\nзаказа ультразвукового\nрасходомера\nсчетчика\nгаза модели\nКонгактные данные\nЗаказчик (наимен\nанит\nарпанитации |\n90О Газгром трансгаз TaмL \nКонечный\nqаадчнн|анмънп\nаннг\nорганитации)\nКаучатсксь ЛПУМГ 000\nГаапгам траяЕГя-\nТеEi\nОбщие спеления\nНатначгнит\nмаинтнппаниг\nПроцосса\nIкратнс\nппиенмив|\nУЧеТ панрппиОгО гя7а\nОcau:нности\nИменения\nаскопомера-ечетчиа\nБатоПЭП МПЛАП\nПЛя кммепчалкаГа УЧвта\nОЕЩИЕТЕ НИНЕСКИЕ АРАКТЕРИСТИКИ\nКвн игпарн атыичегкКл\nпъачыт IeJ оатеныя\n1n-апы\nПпигаПчынп\nпаплнын\nИзидаеманаеа;\n{сноеадныйиешмчнантаи\nТипаракерь\nDNБD\nDN 10OD\nПиаП он ичкернтич\nаLul\nnntькпin Папла\n[ршLызм\nТемперат ₽а растЧей Cpens\nLois\n\nОЛ_2210_082025\nРасочее -аппенлын\nЫПа {изО 1\nHаaF_caeка\n1П шпашит\nEx OD IIП ТБ CD\nКласстылевпаазащиь\nялатаптнин\nТГa пагтпЕчнын\nа]-ппогБын яgал] НМ)мд\n12 4 НАНТ еОUИН Падкинче-нн |\nлЕТЧМаПП )\n2та-аппгген\nInka Нqум\nКоF фиГаця\n(тннU\nвханыш выха_ныт с гнапса\n3IAEгmыП МУПУЛЕпатнытпЛ =\n мывбавёпнын\n4 дискатнытнапа\n1i Еёпеннна FыEПА\n1 Ev-вoeв=cFsnаl\nХарактеристика\nщ9стя\nщдантатя\nстадамера-счетчика\nпышаан\nПЛИН;\nпрямолиненнаго\nуЧастка\nмонтя \n1210\nНаличне\nРасстопнне Да места\nНаи\nачание местного сопротинленнд\nучастиг\nБнаи\nманшцн\nЗадорняя вматура непопнопГоходного тила\nНет\nРегупнгср\nHeт\nытшы [\nУкажите нозое местнов сопротилпение\nУаиитенглпаместнсв СаПЕПТИППЕНИВ\nУканите нtяае местнсе ГОПРОТИНПенИе\nПриЧетанне\n'При =апитим препостазьте асономет[ическую схему\nКоличество приборав\nХаракт еристики измеряемой среды\nТип среды\nПриметанне\nПриродны -\n(ГОСТ 5",
+  "bot_specs": {
+    "medium": "gas",
+    "gas_type": "природный газ (ГОСТ 5542-2014)",
+    "duplication_type": "none",
+    "flowMin": 7418.35,
+    "flowMax": 57390.148,
+    "flow_unit": "ст. м³/ч",
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": -40,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "0.5%",
+    "diameter": 100
+  },
+  "reference_specs": {
+    "medium": "gas",
+    "gas_type": "природный газ (ГОСТ 5542-2014)",
+    "duplication_type": null,
+    "flowMin": 7418.35,
+    "flowMax": 57390.148,
+    "flow_unit": "м³/ч",
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": -20,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": "0,5",
+    "diameter": 100
+  },
+  "heuristic_specs": {
+    "medium": "gas",
+    "gas_type": "природный газ (ГОСТ 5542-2014)",
+    "duplication_type": null,
+    "flowMin": null,
+    "flowMax": null,
+    "flow_unit": null,
+    "pressureMin": null,
+    "pressureMax": null,
+    "pressure_unit": null,
+    "tempMediumMin": null,
+    "tempMediumMax": null,
+    "tempAmbientMin": null,
+    "tempAmbientMax": null,
+    "temperature_unit": "°C",
+    "accuracy": null,
+    "diameter": 100
+  },
+  "comparison": {
+    "fields": [
+      {
+        "key": "medium",
+        "label": "Среда",
+        "status": "match",
+        "reference": "gas",
+        "bot": "gas"
+      },
+      {
+        "key": "gas_type",
+        "label": "Тип газа",
+        "status": "match",
+        "reference": "природный газ (ГОСТ 5542-2014)",
+        "bot": "природный газ (ГОСТ 5542-2014)"
+      },
+      {
+        "key": "duplication_type",
+        "label": "Дублирование",
+        "status": "both_empty",
+        "reference": null,
+        "bot": "none"
+      },
+      {
+        "key": "flowMin",
+        "label": "Расход min",
+        "status": "match",
+        "reference": 7418.35,
+        "bot": 7418.35
+      },
+      {
+        "key": "flowMax",
+        "label": "Расход max",
+        "status": "match",
+        "reference": 57390.148,
+        "bot": 57390.148
+      },
+      {
+        "key": "flow_unit",
+        "label": "Ед. расхода",
+        "status": "match",
+        "reference": "м³/ч",
+        "bot": "ст. м³/ч"
+      },
+      {
+        "key": "pressureMin",
+        "label": "Давление min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressureMax",
+        "label": "Давление max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "pressure_unit",
+        "label": "Ед. давления",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempMediumMin",
+        "label": "T среды min",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempMediumMax",
+        "label": "T среды max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "tempAmbientMin",
+        "label": "T окруж. min",
+        "status": "wrong",
+        "reference": -20,
+        "bot": -40
+      },
+      {
+        "key": "tempAmbientMax",
+        "label": "T окруж. max",
+        "status": "both_empty",
+        "reference": null,
+        "bot": null
+      },
+      {
+        "key": "temperature_unit",
+        "label": "Ед. температуры",
+        "status": "match",
+        "reference": "°C",
+        "bot": "°C"
+      },
+      {
+        "key": "accuracy",
+        "label": "Точность",
+        "status": "match",
+        "reference": "0,5",
+        "bot": "0.5%"
+      },
+      {
+        "key": "diameter",
+        "label": "Диаметр (DN)",
+        "status": "match",
+        "reference": 100,
+        "bot": 100
+      }
+    ],
+    "ref_filled": 9,
+    "matched": 8,
+    "mismatches": 1,
+    "bot_missing": 0,
+    "bot_extra": 0,
+    "accuracy_pct": 88.9
+  },
+  "bot_error": "",
+  "bot_timing": {
+    "ocr_ms": 33648.2,
+    "llm_ms": 6405.9,
+    "pipeline_ms": 40069.8,
+    "ocr_chars": 4438,
+    "llm_input_chars": 4438,
+    "text_source": "pdf_ocr",
+    "cache_hit": false
+  },
+  "ref_llm_ms": 5240.9,
+  "bot_llm_raw_preview": "```\n{\n  \"medium\": \"природный газ\",\n  \"gas_type\": \"природный\",\n  \"duplication_type\": \"none\",\n  \"flowMin\": 7418.35,\n  \"flowMax\": 57390.148,\n  \"flow_unit\": \"ст. м³/ч\",\n  \"pressureMin\": null,\n  \"pressureMax\": null,\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": null,\n  \"tempMediumMax\": null,\n  \"tempAmbientMin\": \"-40\",\n  \"tempAmbientMax\": null,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"0.5%\",\n  \"diameter\": \"DN 100\",\n  \"DN\": [\"DN100\", \"DNBO\", \"DN1OD\", \"CN15D\", \"ENzQD\", \"U25D\", \"EN30D\", \"ENAQD\", \"CN5O\", \"DNGDD\", \"CNTQU\", \"ENBQD\", \"CNSQ\", \"DN1OCD\"]\n}\n```",
+  "ref_llm_raw_preview": "```\n{\n  \"medium\": \"газ\",\n  \"gas_type\": \"природный (ГОСТ 5542-2014)\",\n  \"duplication_type\": null,\n  \"flowMin\": \"7418,35 м³/ч\",\n  \"flowMax\": \"57390,148 м³/ч\",\n  \"flow_unit\": \"м³/ч\",\n  \"pressureMin\": null,\n  \"pressureMax\": \"МПа\",\n  \"pressure_unit\": \"МПа\",\n  \"tempMediumMin\": null,\n  \"tempMediumMax\": null,\n  \"tempAmbientMin\": \"-20 °C\",\n  \"tempAmbientMax\": null,\n  \"temperature_unit\": \"°C\",\n  \"accuracy\": \"0,5\",\n  \"diameter\": \"DN 100-300 мм\"\n}\n```",
+  "elapsed_ms": 76682.8
+}

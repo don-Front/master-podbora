@@ -1,0 +1,1598 @@
+{
+  "generated_at": "2026-07-07T13:22:46.911777+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 23,
+    "PARTIAL": 18,
+    "HALLUCINATION": 9
+  },
+  "bug_counts": {
+    "hallucination": 9
+  },
+  "accuracy_pct": 46.0,
+  "partial_pct": 36.0,
+  "bad_pct": 18.0,
+  "per_file": [
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "questions": 50,
+      "correct": 23,
+      "partial": 18,
+      "bad": 9,
+      "accuracy_pct": 46.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          18
+        ],
+        [
+          "hallucination",
+          9
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 5 документа «МП_Гранд-SPI_новая» о: 5 идентификационным данным, указанным в подразделе «Программ",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что указано на странице 6 документа «МП_Гранд-SPI_новая» о: 6 где рV – относительная погрешность счетчика, %; V сч – об",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что указано на странице 13 документа «МП_Гранд-SPI_новая» о: 13 Приложение Б Таблица Б.1 - Тестовые комбинации значений ",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «1.1 При проведении поверки должны выполняться операции, указанные в таблице 1.» документа «МП_Гра",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «2.1 При проведении поверки должны применяться средства поверки, указанные в» документа «МП_Гранд-",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «3 Требования к квалификации поверителей» документа «МП_Гранд-SPI_новая»?",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «5.1 При проведении поверки должны соблюдаться следующие условия:» документа «МП_Гранд-SPI_новая»?",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «7.1 Внешний осмотр» документа «МП_Гранд-SPI_новая»?",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    },
+    {
+      "question": "Что описано в разделе «7.2.1 Подтверждение соответствия программного обеспечения счетчиков.» документа «МП_Гранд-SPI_нов",
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "МП"
+      ],
+      "answer_preview": "Документ «МП Гранд-SPI новая» предназначен для проведения первичной и периодической поверки счётчиков газа модели Гранд-SPI.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 8519.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «МП Гранд-SPI новая» информация об изготовителе или правообладателе напрямую не представлена.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 10409.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Номер версии (идентификационный номер) ПО: 1.4",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 8123.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Интервал между поверками составляет 5 лет.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 6698.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки счётчиков газа Гранд-SPI новая указана в документе «МП Гранд-SPI новая». Она устанавливает методы и средства первичной и периодической поверки счётчиков газа Гранд-SPI. Интервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 9456.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «МП Гранд-SPI новая» приведены следующие метрологические характеристики:\n* относительная погрешность при вычислении объёмного расхода и объёма газа, приведённых к стандартным условиям, не должна превышать ± 0,02 %; * диапазон расходов для различных моделей счётчиков (например, для модели -4, -6, -10 — от 0,04 м³/ч до 4 м³/ч, для модели -16, -25, -40 — от 0,043 м³/ч до 6 м³/ч и т. д.); * время выдержки счётчика до начала поверки при температуре поверки — не менее 1 часа; * цена делени",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 16851.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Температура окружающего воздуха и поверочной среды: от 15 до 25 °С; - Относительная влажность воздуха: от 30 до 80 %; - Атмосферное давление: от 84,0 до 106,7 кПа; - Расход через сопло при 20 °C (из свидетельства о поверке на сопло): для разных модификаций счётчиков указаны различные значения расхода в зависимости от модели (например, для Гранд-SPI -4, -6, -10 и т. д.); - Диапазон расходов: от 0,016 до 25 м³/ч (установка поверочная СПУ-5); от 0,8 до 1600 м³/ч (установка поверочная УПСГ-1600).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 15493.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Идентификационное наименование ПО: Гранд-SPI.\nНомер версии (идентификационный номер) ПО: 1.4.\nЦифровой идентификатор ПО: 0x6D209590.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 19407.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В паспорте на счётчик газа МП Гранд-SPI новая информация о комплекте поставки не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 13442.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В документе «МП_Гранд-SPI_новая» нет ссылок на конкретные приказы, ГОСТ или ТУ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 16839.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 11,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «МП_Гранд-SPI_новая» о: 2 Настоящая методика распространяется на счетчики газа Гранд-SPI (далее счетчики) и устанавливает методы и средства их п?",
+      "expected_keys": [
+        "Настоящая",
+        "Гранд-SPI",
+        "Интервал"
+      ],
+      "answer_preview": "Настоящая методика распространяется на счётчики газа Гранд-SPI и устанавливает методы и средства их первичной и периодической поверки. \nИнтервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 1695.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 12,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «МП_Гранд-SPI_новая» о: 3 2 Средства поверки 2.1 При проведении поверки должны применяться средства поверки, указанные в таблице 2. Таблица 2 Но?",
+      "expected_keys": [
+        "Средства",
+        "2.1",
+        "2."
+      ],
+      "answer_preview": "При проведении поверки должны применяться следующие средства поверки, указанные в таблице 2:\n* Установка поверочная СПУ-5 от 0,016 до 25 м³/ч, погрешность δ = ± 0,35 % (± 0,45 %).\n* Установка поверочная УПСГ-1600 от 0,8 до 1600 м³/ч, погрешность δ = ± 0,31 %.\n* Мановакуумметр U-образный 3600 Па КТ 4.\n* Частотомер электронно-счетный Ч3-63/1 от 0,1 до 108 Гц, от 0,1 до 10 В, погрешность δ = ± 5·10⁻⁷.\n* Термогигрометр ИВТМ-7 относительная влажность от 0 до 99 %, температура от минус 20 до плюс 60 º",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 10299.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 13,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «МП_Гранд-SPI_новая» о: 4 5 Условия поверки 5.1 При проведении поверки должны соблюдаться следующие условия: - поверочная среда воздух - темпера?",
+      "expected_keys": [
+        "Условия",
+        "5.1",
+        "15"
+      ],
+      "answer_preview": "- Поверочная среда: воздух.\n- Температура окружающего воздуха и поверочной среды: от 15 до 25 °C.\n- Относительная влажность воздуха: от 30 до 80 %.\n- Атмосферное давление: от 84,0 до 106,7 кПа.\n- Разность температур окружающего воздуха и поверочной среды: не более 1 °C.\n- Скорость изменения температуры окружающего воздуха и поверочной среды: не более 1 °C/ч.\n- Время выдержки счётчика до начала поверки при температуре поверки: не менее 1 часа.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 6009.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 14,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «МП_Гранд-SPI_новая» о: 5 идентификационным данным, указанным в подразделе «Программное обеспечение» раздела «Описание средства измерений» описа?",
+      "expected_keys": [
+        "Программное",
+        "Описание",
+        "Идентификационные"
+      ],
+      "answer_preview": "Идентификационное наименование ПО: Гранд-SPI.\nНомер версии (идентификационный номер) ПО: 1.4.\nЦифровой идентификатор ПО: 0x6D209590.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 3766.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 15,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «МП_Гранд-SPI_новая» о: 6 где рV – относительная погрешность счетчика, %; V сч – объем воздуха, прошедший через счетчик, м3; V уст – объем возд?",
+      "expected_keys": [
+        "3.",
+        "111000",
+        "PТKV"
+      ],
+      "answer_preview": "рV – относительная погрешность счётчика, %; V сч – объём воздуха, прошедший через счётчик, м³; V уст – объём воздуха, прошедший через сопло поверочной установки, м³.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 4186.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 16,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «МП_Гранд-SPI_новая» о: 7 Рисунок 1 - Схема подключения частотомера Установить критический режим истечения на сопле (соплах) установки, зафиксир?",
+      "expected_keys": [
+        "Рисунок",
+        "Схема",
+        "Установить"
+      ],
+      "answer_preview": "- Установить критический режим истечения на сопле (соплах) установки.\n- Зафиксировать время между импульсами на требуемых расходах в соответствии с таблицей 4.\n- Рассчитать относительную погрешность счётчика по формуле 3 — $100 \\cdot \\frac{\\tau_{уст} - \\tau_{сг}}{\\tau_{уст}}$, где $\\tau_{уст}$ — время накопления необходимого объёма (по формуле 7), с; $\\tau_{сг}$ — время между импульсами, измеренное частотомером, с.\n- Использовать формулы 3–5 для расчётов.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 5535.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 17,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «МП_Гранд-SPI_новая» о: 8 k t,φ – поправочный коэффициент на влажность воздуха для пересчета (коррекции) плотности воздуха (чем выше влажность, ?",
+      "expected_keys": [
+        "5."
+      ],
+      "answer_preview": "k t,φ – поправочный коэффициент на влажность воздуха для пересчёта (коррекции) плотности воздуха, значения которого приведены в таблице 5.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 3697.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 18,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «МП_Гранд-SPI_новая» о: 9 Результаты о пределения абсолютной погрешности счетчиков при измерении температуры считают положительными, если абсолю?",
+      "expected_keys": [
+        "Результаты",
+        "0,5",
+        "0,002"
+      ],
+      "answer_preview": "Результаты определения абсолютной погрешности счётчиков при измерении температуры считают положительными, если абсолютная погрешность при измерении температуры находится в пределах ± (0,5 + 0,002·|t|, °С).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 4153.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 19,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «МП_Гранд-SPI_новая» о: 10 - объемного расхода в рабочих условиях Qр (м3/ч); - абсолютного давления (МПа); - температуры Т ºС; Нажать клавишу «З?",
+      "expected_keys": [
+        "10",
+        "МПа",
+        "Нажать"
+      ],
+      "answer_preview": "- объёмный расход в рабочих условиях Qр (м³/ч); - абсолютное давление (МПа); - температура Т ºС.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 2814.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 20,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «МП_Гранд-SPI_новая» о: 11 Qср – значение объемного расхода газа, теоретически расчетное в соответствии с установленными параметрами расчета с у?",
+      "expected_keys": [
+        "11",
+        "Qср",
+        "ГОСТ"
+      ],
+      "answer_preview": "Qср – значение объёмного расхода газа, теоретически расчётное в соответствии с установленными параметрами расчёта с учётом требований ГОСТ 30319.2-2015.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 4068.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 21,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «МП_Гранд-SPI_новая» о: 12 Приложение А где: 1 - пломба навесная, предотвращающая вскрытие кожуха; 2 - самоклеющаяся пломба в виде наклейки из л?",
+      "expected_keys": [
+        "12",
+        "Приложение",
+        "Рисунок"
+      ],
+      "answer_preview": "На странице 12 документа «МП Гранд-SPI новая» в Приложении А указано, что на счётчике газа Гранд – SPI есть пломба навесная, предотвращающая вскрытие кожуха, и самоклеющаяся пломба в виде наклейки из легко разрушаемого материала.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 1729.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 22,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «МП_Гранд-SPI_новая» о: 13 Приложение Б Таблица Б.1 - Тестовые комбинации значений параметров при вычислении коэффициента сжимаемости природного?",
+      "expected_keys": [
+        "13",
+        "Приложение",
+        "Таблица"
+      ],
+      "answer_preview": "- Коэффициент сжимаемости (z): 0,9964; - Расчётное значение: 34,76558; - Время измерения (Qр, м³/ч): 1500; - Температура (Т, ºС): 23,15; - Давление (Рабс, МПа): 0,1; - Qcи, м³/ч: 30; - Qcp, м³/ч: 30; - Vси, м³: не указано; - Vср, м³/ч: не указано; - Коэффициент сжимаемости (z): 0,9284; - Расчётное значение: 1998,85477; - Время измерения (Qр, м³/ч): 900; - Температура (Т, ºС): 76,85; - Давление (Рабс, МПа): 7,5.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 14767.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 23,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Настоящая методика распространяется на счетчики газа Гранд-SPI (далее счетчики) и» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Настоящая",
+        "Гранд-SPI"
+      ],
+      "answer_preview": "Настоящая методика распространяется на счётчики газа Гранд-SPI и устанавливает методы и средства их первичной и периодической поверки. Интервал между поверками — 5 лет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 18754.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 24,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1 Операции поверки» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Операции"
+      ],
+      "answer_preview": "При проведении поверки счётчиков газа Гранд-SPI должны выполняться следующие операции:\n* внешний осмотр; * опробование; * подтверждение соответствия программного обеспечения; * проверка функционирования; * определение метрологических характеристик (в том числе относительной погрешности при измерении объёма газа в рабочих условиях, потери давления, абсолютной погрешности при измерении температуры газа и относительной погрешности при измерении давления); * определение относительной погрешности при",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 8945.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 25,
+      "topic": "раздел",
+      "question": "Что описано в разделе «1.1 При проведении поверки должны выполняться операции, указанные в таблице 1.» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "1.1",
+        "1."
+      ],
+      "answer_preview": "При проведении поверки должны выполняться следующие операции:\n- внешний осмотр; - опробование; - подтверждение соответствия программного обеспечения; - проверка функционирования; - определение метрологических характеристик (включая определение относительной погрешности при измерении объёма газа в рабочих условиях, проверку потери давления и другие параметры); - определение абсолютной погрешности при измерении температуры газа; - определение относительной погрешности при измерении давления (для и",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 8390.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 26,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2 Средства поверки» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Средства"
+      ],
+      "answer_preview": "При проведении поверки счётчиков газа Гранд-SPI должны применяться следующие средства поверки:\n* установка поверочная СПУ-5 от 0,016 до 25 м³/ч, погрешность δ = ± 0,35 % (± 0,45 %); * установка поверочная УПСГ-1600 от 0,8 до 1600 м³/ч; * мановакуумметр U-образный 3600 Па КТ 4; * частотомер электронно-счетный Ч3-63/1 от 0,1 до 108 Гц и от 0,1 до 10 В, погрешность δ = ± 5·10⁻⁷; * термогигрометр ИВТМ-7 относительная влажность от 0 до 99 %, температура от минус 20 до плюс 60 ºС, погрешность δ = ± 2 ",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 21736.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 27,
+      "topic": "раздел",
+      "question": "Что описано в разделе «2.1 При проведении поверки должны применяться средства поверки, указанные в» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "2.1"
+      ],
+      "answer_preview": "- Установка поверочная СПУ-5 от 0,016 до 25 м³/ч, погрешность δ = ± 0,35 % (± 0,45 %)\n- Установка поверочная УПСГ-1600 от 0,8 до 1600 м³/ч, погрешность δ = ± 0,31 %\n- Мановакуумметр U-образный 3600 Па КТ 4\n- Частотомер электронно-счетный Ч3-63/1 от 0,1 до 108 Гц, от 0,1 до 10 В, погрешность δ = ± 5·10⁻⁷\n- Термогигрометр ИВТМ-7 относительная влажность от 0 до 99 %, температура от минус 20 до плюс 60 °С, погрешность δ = ± 2 %, Δ = ± 0,2 °С\n- Барометр – анероид М - 67 от 80 до 120 кПа, погрешность ",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 21538.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 28,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.3.7 Установка поверочная СПУ-5 от 0,016» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.3",
+        "Установка",
+        "СПУ-"
+      ],
+      "answer_preview": "При проведении поверки счётчика газа Гранд-SPI используются средства поверки, указанные в таблице 2 документа «МП Гранд-SPI новая». Среди них — установка поверочная СПУ-5, диапазон измерений которой составляет от 0,016 до 25 м³/ч с погрешностью δ = ± 0,35 % (± 0,45 %).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 12590.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 29,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.3 Секундомер СОП пр-2а-2-010 от 0 до 30 мин КТ 2» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.3",
+        "Секундомер",
+        "СОП"
+      ],
+      "answer_preview": "Секундомер СОП пр-2а-2-010 имеет диапазон измерений от 0 до 30 минут. Класс точности — 2.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 3586.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 30,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.3.5 Эталонный термометр ЭТС - 100 от минус 196 до» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.3",
+        "Эталонный",
+        "ЭТС"
+      ],
+      "answer_preview": "Эталонный термометр ЭТС-100 имеет диапазон измерений от минус 196 до плюс 660 °С, разряд — 3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 2774.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 31,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.3.6 Калибратор давления» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.3",
+        "Калибратор"
+      ],
+      "answer_preview": "Калибратор давления портативный Метран-517 имеет диапазон измерений от 0 до 60 МПа и погрешность δ = ± (0,02 – 0,1) %.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 5644.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 32,
+      "topic": "раздел",
+      "question": "Что описано в разделе «3 Требования к квалификации поверителей» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Требования"
+      ],
+      "answer_preview": "К поверке счётчика газа Гранд-SPI допускаются поверители, аттестованные в установленном порядке, имеющие опыт работы в данной области и прошедшие инструктаж по технике безопасности в установленном порядке.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 5475.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 33,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4 Требования безопасности» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Требования"
+      ],
+      "answer_preview": "При проведении поверки должны быть соблюдены следующие требования:\n* Монтаж и демонтаж счётчиков в измерительную линию должен производиться согласно его эксплуатационной документации при неработающей поверочной установке.\n* Все металлические части рабочего места, корпус блока управления клапанами и системный блок ПЭВМ должны быть заземлены.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 11341.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 34,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4.1 Монтаж и демонтаж счетчиков в измерительную линию должен производиться» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "4.1",
+        "Монтаж"
+      ],
+      "answer_preview": "Монтаж и демонтаж счётчиков в измерительную линию должен производиться согласно его эксплуатационной документации при неработающей поверочной установке.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 4591.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 35,
+      "topic": "раздел",
+      "question": "Что описано в разделе «4.2 Все металлические части рабочего места, корпус блока управления клапанами и» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "4.2",
+        "Все"
+      ],
+      "answer_preview": "При проведении поверки должны быть соблюдены следующие требования: монтаж и демонтаж счётчиков в измерительную линию должен производиться согласно его эксплуатационной документации при неработающей поверочной установке. Все металлические части рабочего места, корпус блока управления клапанами и системный блок ПЭВМ должны быть заземлены.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 9995.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 36,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5 Условия поверки» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Условия"
+      ],
+      "answer_preview": "При проведении поверки должны соблюдаться следующие условия:\n- поверочная среда — воздух; - температура окружающего воздуха и поверочной среды — от 15 до 25 °С; - относительная влажность воздуха — от 30 до 80 %; - атмосферное давление — от 84,0 до 106,7 кПа; - разность температур окружающего воздуха и поверочной среды — не более 1 °C; - скорость изменения температуры окружающего воздуха и поверочной среды — не более 1 °C/ч; - время выдержки счётчика до начала поверки при температуре поверки — не",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 13715.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 37,
+      "topic": "раздел",
+      "question": "Что описано в разделе «5.1 При проведении поверки должны соблюдаться следующие условия:» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "5.1"
+      ],
+      "answer_preview": "При проведении поверки должны соблюдаться следующие условия:\n- поверочная среда — воздух; - температура окружающего воздуха и поверочной среды — от 15 до 25 °С; - относительная влажность воздуха — от 30 до 80%; - атмосферное давление — от 84,0 до 106,7 кПа; - разность температур окружающего воздуха и поверочной среды — не более 1 °C; - скорость изменения температуры окружающего воздуха и поверочной среды — не более 1 °C/ч; - время выдержки счётчика до начала поверки при температуре поверки — не ",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 1,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 14583.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 38,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6 Подготовка к поверке» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Подготовка"
+      ],
+      "answer_preview": "В разделе «6 Подготовка к поверке» документа «МП Гранд-SPI новая» описано следующее:\n1. Счетчики и средства поверки подготавливают к работе в соответствии с эксплуатационной документацией на них.\n2. Все поверяемые счётчики и средства поверки должны быть выдержаны в помещении, где проводится поверка, не менее 1 часа.\n3. Счётчики должны быть представлены на поверку с паспортом и руководством по эксплуатации.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 10553.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 39,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6.1 Счетчики и средст ва поверки подготавливают к работе в соответствии с» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "6.1",
+        "Счетчики"
+      ],
+      "answer_preview": "Счетчики и средства поверки подготавливают к работе в соответствии с эксплуатационной документацией на них. Все поверяемые счетчики и средства поверки должны быть выдержаны в помещении, где проводится поверка, не менее 1 часа.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 19244.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 40,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6.2 Все поверяемые счетчики и средства поверки должны быть выдержаны в» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "6.2",
+        "Все"
+      ],
+      "answer_preview": "Все поверяемые счётчики и средства поверки должны быть выдержаны в помещении, где проводится поверка, не менее 1 часа.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 6590.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 41,
+      "topic": "раздел",
+      "question": "Что описано в разделе «6.3 Счетчики должны быть представлены на повер ку с паспортом и руководством по» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "6.3",
+        "Счетчики"
+      ],
+      "answer_preview": "Счетчики должны быть представлены на поверку с паспортом и руководством по эксплуатации.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 5613.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 42,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7 Проведение поверки» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "Проведение"
+      ],
+      "answer_preview": "В разделе «7 Проведение поверки» документа «МП Гранд-SPI новая» описаны следующие операции:\n1. Внешний осмотр счётчика.\n2. Опробование, включая подтверждение соответствия программного обеспечения.\n3. Проверка функционирования счётчика.\n4. Определение метрологических характеристик, в том числе относительной погрешности при измерении объёма газа в рабочих условиях.\n5. Проверка потери давления.\n6. Определение абсолютной погрешности при измерении температуры газа.\n7. Определение относительной погреш",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 1,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 12263.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 43,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.1 Внешний осмотр» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.1",
+        "Внешний"
+      ],
+      "answer_preview": "При внешнем осмотре устанавливают соответствие счётчика следующим требованиям:\n* Надписи и обозначения на кожухе счётчика должны быть чёткими и соответствовать требованиям эксплуатационной документации.\n* Видимые повреждения, препятствующие правильному снятию показаний, должны отсутствовать.\n* Символы на жидкокристаллическом индикаторе не должны быть искажены, точка должна обеспечивать цену деления: 0,001 м³ для счётчиков газа Гранд-SPI -4, -6, -10; 0,01 м³ для счётчиков газа Гранд-SPI -16, -25;",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 14528.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 44,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.1.1 Надписи и обозначения на кожухе счетчика должны быть четкими и» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.1",
+        "Надписи"
+      ],
+      "answer_preview": "Надписи и обозначения на кожухе счётчика должны быть чёткими и соответствовать требованиям эксплуатационной документации.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 1547.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 45,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.1.2 Видимые повреждения, препятствующие правильному снятию показаний, должны» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.1",
+        "Видимые"
+      ],
+      "answer_preview": "При внешнем осмотре устанавливают соответствие счётчика следующим требованиям: видимые повреждения, препятствующие правильному снятию показаний, должны отсутствовать.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 6299.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 46,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.1.3 Символы на жидкокристаллическом индикаторе не должны быть искажены, точка» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.1",
+        "Символы"
+      ],
+      "answer_preview": "Символы на жидкокристаллическом индикаторе не должны быть искажены, точка должна обеспечивать цену деления:\n- 0,001 м³ для счётчиков газа Гранд-SPI -4, -6, -10; - 0,01 м³ для счётчиков газа Гранд-SPI -16, -25, -40; - 0,1 м³ для счётчиков газа Гранд-SPI -65, -100.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 9469.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 47,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.1.4 Пломбы изготовителя должны находиться на местах, указанных в Приложении А.» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.1",
+        "Пломбы",
+        "Приложении"
+      ],
+      "answer_preview": "Пломбы изготовителя должны находиться на местах, указанных в Приложении А.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 9438.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 48,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.1.5 Счетчики, не удовлетворяющие перечисленным требованиям, дальней шей поверке» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.1",
+        "Счетчики"
+      ],
+      "answer_preview": "Счетчики, не удовлетворяющие требованиям внешнего осмотра, дальней шей поверке не подлежат.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 2,
+      "key_ratio": 0.5,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 9661.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "часть ключевых фактов найдена",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 49,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.2 Опробование» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.2",
+        "Опробование"
+      ],
+      "answer_preview": "В разделе «7.2 Опробование» документа «МП Гранд-SPI новая» описано подтверждение соответствия программного обеспечения счётчиков. Для этого необходимо активировать счётчик нажатием любой клавиши на лицевой панели. Встроенное ПО выполняет самодиагностические проверки, в том числе проверку целостности конфигурационных данных и неизменности исполняемого кода путём расчёта и публикации контрольной суммы. При шестикратном нажатии кнопки «С» на клавиатуре счётчика на экране должно появиться идентифика",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 2,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 11504.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП_Гранд-SPI_новая.pdf",
+      "id": 50,
+      "topic": "раздел",
+      "question": "Что описано в разделе «7.2.1 Подтверждение соответствия программного обеспечения счетчиков.» документа «МП_Гранд-SPI_новая»?",
+      "expected_keys": [
+        "7.2",
+        "Подтверждение"
+      ],
+      "answer_preview": "При проведении поверки активируют счётчик нажатием любой клавиши на лицевой панели. Встроенное ПО выполняет ряд самодиагностических проверок, в том числе проверку целостности конфигурационных данных и неизменности исполняемого кода путём расчёта и публикации контрольной суммы. При шестикратном нажатии кнопки «С» на клавиатуре счётчика на экране должно появиться идентификационное окно с информацией об идентификационном наименовании ПО, номере версии (идентификационный номер) ПО и цифровом идентиф",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП Гранд-SPI новая"
+      ],
+      "total_ms": 13515.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 21,
+  "source_file": "МП_Гранд-SPI_новая.pdf",
+  "product": "МП Гранд-SPI новая"
+}

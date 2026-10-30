@@ -1,0 +1,1572 @@
+{
+  "generated_at": "2026-07-07T15:17:17.713263+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 37,
+    "HALLUCINATION": 3,
+    "PARTIAL": 10
+  },
+  "bug_counts": {
+    "hallucination": 3
+  },
+  "accuracy_pct": 74.0,
+  "partial_pct": 20.0,
+  "bad_pct": 6.0,
+  "per_file": [
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "questions": 50,
+      "correct": 37,
+      "partial": 10,
+      "bad": 3,
+      "accuracy_pct": 74.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          10
+        ],
+        [
+          "hallucination",
+          3
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 2 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 2 Всего листов 5 - аккумуляторную батарею; -",
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ]
+    },
+    {
+      "question": "Что указано на странице 4 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 4 Всего листов 5 Таблица 2 Характеристика Зн",
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ]
+    },
+    {
+      "question": "Что указано на странице 5 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 5 Всего листов 5 Комплектность средства изме",
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "ОТ"
+      ],
+      "answer_preview": "Установки поверочные СПУ-3М-100 предназначены для воспроизведения заданного объёма и объёмного расхода газа, а также для вычислений объёма и объёмного расхода газа при стандартных условиях. Они могут применяться для поверки и калибровки расходомеров и счётчиков газа в метрологических службах предприятий и организаций в качестве эталонного средства измерений.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 29601.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель: Общество с ограниченной ответственностью НПО «Турбулентность-ДОН» (ООО НПО «Турбулентность-ДОН»).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5745.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Регистрационный номер: 62120-15",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5727.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе не указан срок действия утверждения типа или сертификата.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5782.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки: МП 0311-2-2015.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5942.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых поверочных расходов: \n - СПУ-3М-100-1: от 0,1 до 100 м³/ч; - СПУ-3М-100-4: от 0,04 до 100 м³/ч; - СПУ-3М-100-25: от 0,025 до 100 м³/ч.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям: ± 0,45 %.\n- Пределы допускаемой абсолютной погрешности установки при измерении температуры: ± 0,15 °С.\n",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 13602.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Избыточное давление рабочей среды в трубопроводе, кПа, не более: 300; - диапазон измерений температуры, °С: от -10 до +40; - пределы допускаемой абсолютной погрешности установки при измерении температуры, °С: ±0,15; - пределы допускаемой относительной погрешности установки при измерении давления, %: ±0,15; - рабочий диапазон измерений давления, % ВПИ: от 33 до 100; - диапазон воспроизводимых поверочных расходов для СПУ-3М-100-1: от 0,1 до 100 м³/ч; - диапазон воспроизводимых поверочных расходо",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 21849.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Программное обеспечение установок поверочных СПУ-3М-100 используется для измерения объёмного расхода и объёма газа в рабочих условиях, вычисления объёмного расхода и объёма газа при стандартных условиях, передачи результатов измерений, настройки, самодиагностики установок и архивирования измеренных данных. \nИдентификационные данные ПО:\n* идентификационное наименование ПО — SPUDBModule; * номер версии (идентификационный номер) ПО — не ниже 1.1.4; * цифровой идентификатор ПО — E8508CCA; * уровень ",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 8037.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "- Установка поверочная СПУ-3М-100 (модель зависит от заказа).\n- Комплект инструмента и принадлежностей.\n- Руководство по эксплуатации ТУАС.407369.002 РЭ — 1 экз.\n- Паспорт ТУАС.407369.002 ПС — 1 экз.\n- Инструкция. ГСИ. Установки поверочные СПУ-3М-100. Методика поверки МП 0311-2-2015 — 1 экз.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 8645.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "- ГОСТ Р 8.618-2014 ГСИ. Государственная поверочная схема для средств измерений объёмного и массового расхода газа; - ТУ 4381-023-70670506-2015 «Установка поверочная СПУ-3М-100. Технические условия».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 7382.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «ОТ СПУ-3М-100 от 28.10.2024» о: УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555 Лис?",
+      "expected_keys": [
+        "62120-15",
+        "УТВЕРЖДЕНО",
+        "Федерального"
+      ],
+      "answer_preview": "УТВЕРЖДЕНО приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 2539.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 2 Всего листов 5 - аккумуляторную батарею; - зарядное устройство. В архив записываются и могут быть распечатаны: ?",
+      "expected_keys": [
+        "Лист",
+        "Всего"
+      ],
+      "answer_preview": "- В архив записываются и могут быть распечатаны: \n - тип, заводской номер установки; - протокол поверки (с индивидуальным номером для каждого поверяемого счётчика (расходомера) газа, с указанием даты и времени проведения поверки); - значения объёма, температуры, давления поверочной среды; - значения погрешности, полученной при поверке счётчика (расходомера) газа.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 2,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5282.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 3 Всего листов 5 1 – место для поверительного клейма (способом давления на специальную мастику). 2 – место для пл?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Рисунок"
+      ],
+      "answer_preview": "На листе № 3 документа «ОТ СПУ-3М-100 от 28.10.2024» указано:\n1 – место для поверительного клейма (способом давления на специальную мастику).\n2 – место для пломбы предприятия-изготовителя (способом давления на специальную мастику).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 2533.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 4 Всего листов 5 Таблица 2 Характеристика Значение характеристики СПУ-3М- 100-1 СПУ-3М- 100-4 СПУ-3М- 100-25 Диап?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Таблица"
+      ],
+      "answer_preview": "Диапазон воспроизводимых поверочных расходов для моделей СПУ-3М-100-1, СПУ-3М-100-4, СПУ-3М-100-25 составляет:\n* для СПУ-3М-100-1 — от 0,1 до 100 м³/ч; * для СПУ-3М-100-4 — от 0,04 до 100 м³/ч; * для СПУ-3М-100-25 — от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 6128.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «ОТ СПУ-3М-100 от 28.10.2024» о: Лист № 5 Всего листов 5 Комплектность средства измерений Комплект поставки установок приведен в таблице 3. Таблица 3 Наи?",
+      "expected_keys": [
+        "Лист",
+        "Всего",
+        "Комплектность"
+      ],
+      "answer_preview": "Наименование Обозначение Количество Примечание\nУстановка поверочная СПУ-3М-100 СПУ-3М-100-1 1 шт. В соответствии с заказом\nУстановка поверочная СПУ-3М-100 СПУ-3М-100-4 \nУстановка поверочная СПУ-3М-100 СПУ-3М-100-25 1 шт. В соответствии с заказом\nКомплект инструмента и принадлежностей 1 к-т\nРуководство по эксплуатации ТУАС.407369.002 РЭ 1 экз.\nПаспорт ТУАС.407369.002 ПС 1 экз.\nИнструкция. ГСИ. Установки поверочные СПУ-3М-100. Методика поверки МП 0311-2-2015 1 экз.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 37452.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 16,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ-3М-100 от 28.10.2024» упоминается регистрационный номер 62120-15 и в каком контексте?",
+      "expected_keys": [
+        "62120-15",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 62120-15 указан на листе № 1 документа «ОТ СПУ-3М-100 от 28.10.2024».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5709.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 17,
+      "topic": "рег.номер",
+      "question": "Где в документе «ОТ СПУ-3М-100 от 28.10.2024» упоминается регистрационный номер 70506-20 и в каком контексте?",
+      "expected_keys": [
+        "70506-20",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» регистрационный номер 70506-20 не упоминается.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 14280.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 18,
+      "topic": "значение",
+      "question": "Какое значение 28 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "28",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям: ± 0,45 %.\n- Пределы допускаемой абсолютной погрешности установки при измерении температуры: ± 0,15 °С.\n- Диапазон измерений температуры: от -10 до +40 °С.\n- Пределы допускаемой относительной погрешности установки при измерении давления: ± 0,15 %.\n- Избыточное давле",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 9989.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 19,
+      "topic": "значение",
+      "question": "Какое значение 2024 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "2024",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Дата утверждения документа: 28 октября 2024 года.\n- Диапазон воспроизводимых поверочных расходов для СПУ-3М-100-1: от 0,1 до 100 м³/ч.\n- Диапазон воспроизводимых поверочных расходов для СПУ-3М-100-4: от 0,04 до 100 м³/ч.\n- Диапазон воспроизводимых поверочных расходов для СПУ-3М-100-25: от 0,025 до 100 м³/ч.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %.\n- Пределы допускаемой относительной погрешности установки при измерении объё",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 17355.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 20,
+      "topic": "значение",
+      "question": "Какое значение 2555 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "2555",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Номер приказа Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г., упомянутый в документе — № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 4160.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 21,
+      "topic": "значение",
+      "question": "Какое значение 62120 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "62120",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Регистрационный номер средства измерений: 62120-15.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 758.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 22,
+      "topic": "значение",
+      "question": "Какое значение 15 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "15",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Потребляемая мощность, Вт: не более 15; - Напряжение автономного источника питания, В: 14,8; - Ёмкость АКБ, А/ч: 16,5; - Продолжительность работы от АКБ, час: 10; - Продолжительность подзарядки АКБ, час: 10.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 14608.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 23,
+      "topic": "значение",
+      "question": "Какое значение 100 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "100",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- СПУ-3М-100-1: диапазон воспроизводимых поверочных расходов от 0,1 до 100 м³/ч; - СПУ-3М-100-4: диапазон воспроизводимых поверочных расходов от 0,04 до 100 м³/ч; - СПУ-3М-100-25: диапазон воспроизводимых поверочных расходов от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 8198.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 24,
+      "topic": "значение",
+      "question": "Какое значение 100. и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "100,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- СПУ-3М-100-1: диапазон воспроизводимых поверочных расходов от 0,1 до 100 м³/ч; - СПУ-3М-100-4: диапазон воспроизводимых поверочных расходов от 0,04 до 100 м³/ч; - СПУ-3М-100-25: диапазон воспроизводимых поверочных расходов от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 14506.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 25,
+      "topic": "значение",
+      "question": "Какое значение 100, и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "100,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- СПУ-3М-100-1: диапазон воспроизводимых поверочных расходов от 0,1 до 100 м³/ч; - СПУ-3М-100-4: диапазон воспроизводимых поверочных расходов от 0,04 до 100 м³/ч; - СПУ-3М-100-25: диапазон воспроизводимых поверочных расходов от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 13903.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 26,
+      "topic": "значение",
+      "question": "Какое значение 2. и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "2,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых поверочных расходов СПУ-3М-100-1: от 0,1 до 100 м³/ч; - Диапазон воспроизводимых поверочных расходов СПУ-3М-100-4: от 0,04 до 100 м³/ч; - Диапазон воспроизводимых поверочных расходов СПУ-3М-100-25: от 0,025 до 100 м³/ч.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям: ± 0,45 %.\n- Предел",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 15314.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 27,
+      "topic": "значение",
+      "question": "Какое значение 30319.2 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "30319,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Определение коэффициента сжимаемости газа производится по ГОСТ 30319.2 (GERG91mod и NX19mod).",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 6638.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 28,
+      "topic": "значение",
+      "question": "Какое значение 91 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "91",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не указано значение 91 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 6394.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 29,
+      "topic": "значение",
+      "question": "Какое значение 19 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "19",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Напряжение питания установок поверочных СПУ-3М-100 составляет 19 ± 2 В.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5194.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 30,
+      "topic": "значение",
+      "question": "Какое значение 0,1 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "0,1",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон воспроизводимых поверочных расходов для модификации СПУ-3М-100-1: от 0,1 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 14441.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 31,
+      "topic": "значение",
+      "question": "Какое значение 0,04 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "0,04",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон воспроизводимых поверочных расходов для модификации СПУ-3М-100-4: от 0,04 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 16530.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 32,
+      "topic": "значение",
+      "question": "Какое значение 25 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "25",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон воспроизводимых поверочных расходов для модификации СПУ-3М-100-25: от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 18085.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 33,
+      "topic": "значение",
+      "question": "Какое значение 0, и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "0,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых поверочных расходов СПУ-3М-100-1: от 0,1 до 100 м³/ч.\n- Диапазон воспроизводимых поверочных расходов СПУ-3М-100-4: от 0,04 до 100 м³/ч.\n- Диапазон воспроизводимых поверочных расходов СПУ-3М-100-25: от 0,025 до 100 м³/ч.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям: ± 0,45 %.\n- Предел",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 28324.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 34,
+      "topic": "значение",
+      "question": "Какое значение 025 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "025",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон воспроизводимых поверочных расходов для модификации СПУ-3М-100-25: от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 5070.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 35,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- Диапазон воспроизводимых поверочных расходов СПУ-3М-100-1: от 0,1 до 100 м³/ч; - Диапазон воспроизводимых поверочных расходов СПУ-3М-100-4: от 0,04 до 100 м³/ч; - Диапазон воспроизводимых поверочных расходов СПУ-3М-100-25: от 0,025 до 100 м³/ч.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %.\n- Пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям: ± 0,45 %.\n- Предел",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 24371.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 36,
+      "topic": "значение",
+      "question": "Какое значение 1.1 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "1,1",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не указано значение параметра 1.1.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 13376.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 37,
+      "topic": "значение",
+      "question": "Какое значение 8508 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "8508",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Цифровой идентификатор ПО — E8508CCA.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 2717.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 38,
+      "topic": "значение",
+      "question": "Какое значение 50.2 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "50,2",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не указано значение параметра 50.2 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 14141.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 39,
+      "topic": "значение",
+      "question": "Какое значение 077 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "077",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не указано значение 077 для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 3899.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 40,
+      "topic": "значение",
+      "question": "Какое значение 2014. и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "2014,",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "- ГОСТ Р 8.618-2014 — государственная поверочная схема для средств измерений объёмного и массового расхода газа; - пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях — ± 0,3 %; - пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям — ± 0,45 %.\n- пределы допускаемой абсолютной погрешности установки при измерении температуры — ± 0,15 °С.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 7973.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 41,
+      "topic": "значение",
+      "question": "Какое значение 0,025 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "0,025",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Диапазон воспроизводимых поверочных расходов для модификации СПУ-3М-100-25: от 0,025 до 100 м³/ч.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 11734.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 42,
+      "topic": "значение",
+      "question": "Какое значение 0,3 и для какой характеристики указано в документе «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "0,3",
+        "характеристик",
+        "ОТ"
+      ],
+      "answer_preview": "Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях, %: ± 0,3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 3863.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 43,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 2555?",
+      "expected_keys": [
+        "2555",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 11305.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 44,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 1?",
+      "expected_keys": [
+        "1",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не упоминается приказ № 1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 12162.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 45,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 62120?",
+      "expected_keys": [
+        "62120",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не говорится о приказе № 62120.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 4145.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 46,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 2?",
+      "expected_keys": [
+        "2",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "Утверждено приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 3990.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 47,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 3?",
+      "expected_keys": [
+        "3",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не упоминается приказ № 3.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 12669.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 48,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 4?",
+      "expected_keys": [
+        "4",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не упоминается приказ № 4.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 12158.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 49,
+      "topic": "приказ",
+      "question": "Что говорится в документе «ОТ СПУ-3М-100 от 28.10.2024» о приказе № 5?",
+      "expected_keys": [
+        "5",
+        "приказ",
+        "Росстандарт"
+      ],
+      "answer_preview": "В документе «ОТ СПУ-3М-100 от 28.10.2024» не говорится о приказе № 5, кроме того, что документ утверждён приказом Федерального агентства по техническому регулированию и метрологии от «28» октября 2024 г. № 2555.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 13935.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+      "id": 50,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «ОТ СПУ-3М-100 от 28.10.2024»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "Установки поверочные СПУ-3М-100 применяются для поверки и калибровки расходомеров и счётчиков газа в метрологических службах предприятий и организаций в качестве эталонного средства измерений в условиях стационарных и передвижных поверочных лабораторий и в рабочих условиях эксплуатации СИ.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024"
+      ],
+      "total_ms": 13603.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 37,
+  "source_file": "ОТ СПУ-3М-100 от 28.10.2024.pdf",
+  "product": "ОТ СПУ-3М-100 от 28.10.2024"
+}

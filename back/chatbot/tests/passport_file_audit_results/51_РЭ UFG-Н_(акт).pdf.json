@@ -1,0 +1,1615 @@
+{
+  "generated_at": "2026-07-07T16:12:13.198315+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "WRONG_TOPIC": 6,
+    "CORRECT": 39,
+    "PARTIAL": 2,
+    "HALLUCINATION": 3
+  },
+  "bug_counts": {
+    "retrieval": 6,
+    "hallucination": 3
+  },
+  "accuracy_pct": 78.0,
+  "partial_pct": 4.0,
+  "bad_pct": 18.0,
+  "per_file": [
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "questions": 50,
+      "correct": 39,
+      "partial": 2,
+      "bad": 9,
+      "accuracy_pct": 78.0,
+      "retrieval_pct": 88.0,
+      "top_bugs": [
+        [
+          "retrieval",
+          6
+        ],
+        [
+          "hallucination",
+          3
+        ],
+        [
+          "partial",
+          2
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Для чего предназначен прибор или документ «РЭ UFG-Н_(акт)»?",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какой регистрационный или сертификационный номер указан в «РЭ UFG-Н_(акт)»?",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ UFG-Н_(акт)»?",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «РЭ UFG-Н_(акт)»?",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что входит в комплект поставки согласно «РЭ UFG-Н_(акт)»?",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ UFG-Н_(акт)»?",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 33 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулент",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 37 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулент",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ]
+    },
+    {
+      "question": "Что указано на странице 39 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулент",
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "reason": "развёрнутый ответ без ключевых фактов",
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Turbo"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/rje_ufg-mod.-f-z-akt-1.pdf",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 277.9,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителем указан ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 6457.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/rje_ufg-mod.-f-z-akt-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 205.3,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В представленном документе срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 5598.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/metodika-poverki-mp-208-112-2024.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 146.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "- Диапазон измерений объёмного расхода газа в рабочих условиях: от 0,1 до 150 м³/ч.\n- Скорость потока газа: не более 60 м/с.\n- Максимальный расход в рабочих условиях: 150 м³/ч.\n- Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма газа при рабочих условиях для исполнений Д (1 пара приёмопередатчиков): ±3,0% при Qmin ≤ Q < 0,01Qmax, ±1,5% при 0,01Qmax ≤ Q < Qmax.\n- Пределы допускаемой относительной погрешности измерений объёмного расхода и объёма газа при рабочих ус",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 19536.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/rje_ufg-mod.-f-z-akt-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 216.4,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Основным ПО для работы с расходомером является ПО \"АРМ \"UFG Viewer\", а для работы посредством телеметрии – ПО \"ДОНТЕЛ\".",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "РЭ UFG-Н (акт)"
+      ],
+      "total_ms": 6107.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/rje_ufg-mod.-f-z-akt-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 168.5,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «РЭ UFG-Н_(акт)»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://www.turbo-don.ru/wp-content/uploads/2022/08/rje_ufg-mod.-f-z-akt-1.pdf",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 595.0,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «РЭ UFG-Н_(акт)» о: Расходомеры-счетчики газа ультразвуковые Turbo Flow UFG-Н Руководство по эксплуатации ТУАС.407252.001 РЭ Редакция № 2 от?",
+      "expected_keys": [
+        "Расходомеры-счетчики",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте информации о странице 1 документа «РЭ UFG-Н_(акт)» не содержится.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 14780.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 12,
+      "topic": "стр.2",
+      "question": "Что указано на странице 2 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\"?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации со страницы 2 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 2 ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 4307.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 13,
+      "topic": "стр.3",
+      "question": "Что указано на странице 3 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 3 Содержание 1 ОПИСАНИЕ И РАБОТА ...........?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации со страницы 3 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 7478.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 14,
+      "topic": "стр.4",
+      "question": "Что указано на странице 4 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 4 ООО НПО \"Турбулентность – ДОН\" ПРИЛОЖЕНИЕ Е .............................?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации со страницы 4 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6673.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 15,
+      "topic": "стр.5",
+      "question": "Что указано на странице 5 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 5 Настоящее руководство по эксплуа тации ( Р?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 5 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6966.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 16,
+      "topic": "стр.6",
+      "question": "Что указано на странице 6 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 6 ООО НПО \"Турбулентность – ДОН\" 1 Описание и работа 1.1 Назначение 1.1.1 Р?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 6 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6446.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 17,
+      "topic": "стр.7",
+      "question": "Что указано на странице 7 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 7 1.2 Устройство и работа 1.2.1 Функциональн?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 7 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" в разделе 1.2 Устройство и работа 1.2.1 Функциональн.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 7941.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 18,
+      "topic": "стр.8",
+      "question": "Что указано на странице 8 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 8 ООО НПО \"Турбулентность – ДОН\" Время распространения звука в направлении ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации о времени распространения звука на странице 8 документа «РЭ UFG-Н_(акт)» для Turbo Flow UFG-Н.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 1707.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 19,
+      "topic": "стр.9",
+      "question": "Что указано на странице 9 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 9 После подачи на передающий УЗ датчик импул?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 9 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" после подачи на передающий УЗ датчик импульса.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6837.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 20,
+      "topic": "стр.10",
+      "question": "Что указано на странице 10 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 10 ООО НПО \"Турбулентность – ДОН\" предварительного усилителя (Рисунок 1.5).?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 10 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 10 ООО НПО \"Турбулентность – ДОН\" предварительного усилителя (Рисунок 1.5).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2612.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 21,
+      "topic": "стр.11",
+      "question": "Что указано на странице 11 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 11 1.3 Основные характеристики 1.3.1 Основны?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 11 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 1.3 Основные характеристики 1.3.1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2338.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 22,
+      "topic": "стр.12",
+      "question": "Что указано на странице 12 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 12 ООО НПО \"Турбулентность – ДОН\" Таблица 1.2 - Основные технические характ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 12 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 12 ООО НПО \"Турбулентность – ДОН\" Таблица 1.2 - Основные технические характеристики.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2348.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 23,
+      "topic": "стр.13",
+      "question": "Что указано на странице 13 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 13 1.3.3 В зависимо сти от состава расходоме?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 13 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 1971.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 24,
+      "topic": "стр.14",
+      "question": "Что указано на странице 14 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 14 ООО НПО \"Турбулентность – ДОН\" 1.4 Обеспечение взрывозащищенности 1.4.1 ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 14 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 14 ООО НПО \"Турбулентность – ДОН\" 1.4 Обеспечение взрывозащищенности 1.4.1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2537.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 25,
+      "topic": "стр.15",
+      "question": "Что указано на странице 15 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 15 1.7 Комплектность 1.7.1 Комплектность сре?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 15 документа «РЭ UFG-Н_(акт)» о комплектности прибора Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 1806.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 26,
+      "topic": "стр.16",
+      "question": "Что указано на странице 16 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 16 ООО НПО \"Турбулентность – ДОН\" 1.7.2.2 Ультразвуковой преобразователь ра?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте информации о параметрах ультразвукового преобразователя для Turbo Flow UFG не содержится.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5733.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 27,
+      "topic": "стр.17",
+      "question": "Что указано на странице 17 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 17 Элемент питания 1 Элемент питания 2 Рисун?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 17 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6667.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 28,
+      "topic": "стр.18",
+      "question": "Что указано на странице 18 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 18 ООО НПО \"Турбулентность – ДОН\" Обеспечивает доступ ко всем параметрам си?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 18 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 18 ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6869.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 29,
+      "topic": "стр.19",
+      "question": "Что указано на странице 19 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 19 2 Использование по назначению 2.1 Меры бе?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 19 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6366.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 30,
+      "topic": "стр.20",
+      "question": "Что указано на странице 20 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 20 ООО НПО \"Турбулентность – ДОН\" 2.2 Эксплуатационные ограничения 2.2.1 Мо?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 20 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 20 ООО НПО \"Турбулентность – ДОН\" 2.2 Эксплуатационные ограничения 2.2.1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 7203.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 31,
+      "topic": "стр.21",
+      "question": "Что указано на странице 21 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 21 2.3 Сигнальные выходы 2.3.1 Общая информа?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 21 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" в разделе 2.3 Сигнальные выходы 2.3.1 Общая информация.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2729.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 32,
+      "topic": "стр.22",
+      "question": "Что указано на странице 22 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 22 ООО НПО \"Турбулентность – ДОН\" Частотный выход связан с параметрами: – р?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 22 документа «РЭ UFG-Н_(акт)» о связи частотного выхода с параметрами – р для Turbo Flow UFG.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 1918.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 33,
+      "topic": "стр.23",
+      "question": "Что указано на странице 23 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 23 Рисунок 2.4 - Форма сигнала частотного вы?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 23 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" и рисунке 2.4 — форма сигнала частотного выхода.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2447.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 34,
+      "topic": "стр.24",
+      "question": "Что указано на странице 24 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 24 ООО НПО \"Турбулентность – ДОН\" равной 1000 Гц. Минимальная частота, гене?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации о минимальной частоте на странице 24 документа «РЭ UFG-Н_(акт)» для Turbo Flow UFG-Н.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 1557.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 35,
+      "topic": "стр.25",
+      "question": "Что указано на странице 25 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 25 Рисунок 2.7 - Форма сигнала импульсного в?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о странице 25 документа «РЭ UFG-Н_(акт)» и рисунке 2.7 — Форма сигнала импульсного в руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" нет.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2387.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 36,
+      "topic": "стр.26",
+      "question": "Что указано на странице 26 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 26 ООО НПО \"Турбулентность – ДОН\" Рисунок 2.8 – Выбор статусного выхода Рис?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 26 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 26 ООО НПО \"Турбулентность – ДОН\" Рисунок 2.8 – Выбор статусного выхода Рис.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2526.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 37,
+      "topic": "стр.27",
+      "question": "Что указано на странице 27 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 27 Рисунок 2.10 – Настройки Событий статусно?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о странице 27 документа «РЭ UFG-Н_(акт)» и рисунке 2.10 – Настройки Событий статусно из руководства по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\".",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2430.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 38,
+      "topic": "стр.28",
+      "question": "Что указано на странице 28 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 28 ООО НПО \"Турбулентность – ДОН\" Рисунок 2.12 - Настройка управляемого вых?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 28 документа «РЭ UFG-Н_(акт)» о настройке управляемого выхода для Turbo Flow UFG.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5806.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 39,
+      "topic": "стр.29",
+      "question": "Что указано на странице 29 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 29 Рисунок 2.15 - Форма сигнала управляемый ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 29 документа «РЭ UFG-Н_(акт)» о руководстве по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" и рисунке 2.15 — форма сигнала управляемый.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2712.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 40,
+      "topic": "стр.30",
+      "question": "Что указано на странице 30 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 30 ООО НПО \"Турбулентность – ДОН\" Рисунок 2.16 – Несколько расходомеров на ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 30 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 30 ООО НПО \"Турбулентность – ДОН\" Рисунок 2.16.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 2468.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 41,
+      "topic": "стр.31",
+      "question": "Что указано на странице 31 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 31 Стандартной скоростью работы по умолчанию?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о стандартной скорости работы по умолчанию для Turbo Flow UFG не содержится.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5080.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 42,
+      "topic": "стр.32",
+      "question": "Что указано на странице 32 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 32 ООО НПО \"Турбулентность – ДОН\" 2.4 Монтаж расходомера 2.4.1 После распак?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 32 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5701.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 43,
+      "topic": "стр.33",
+      "question": "Что указано на странице 33 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 33 Рисунок 2.18а - Монтаж расходомера?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации о странице 33 документа «РЭ UFG-Н_(акт)» и рисунке 2.18а — Монтаж расходомера.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5906.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 44,
+      "topic": "стр.34",
+      "question": "Что указано на странице 34 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 34 ООО НПО \"Турбулентность – ДОН\" 2.5 Пуск расходомера 2.5.1 Перед пуском р?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 34 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6005.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 45,
+      "topic": "стр.35",
+      "question": "Что указано на странице 35 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 35 2.6 Работа с расходомером 2.6.1 Просмотр ?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 35 документа «РЭ UFG-Н_(акт)» о работе с расходомером Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" в разделе 2.6.1 Просмотр.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6425.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 46,
+      "topic": "стр.36",
+      "question": "Что указано на странице 36 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 36 ООО НПО \"Турбулентность – ДОН\" – температура газа (Т), ˚С; – температура?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте информации о температуре газа на странице 36 документа «РЭ UFG-Н_(акт)» для Turbo Flow UFG не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5302.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 47,
+      "topic": "стр.37",
+      "question": "Что указано на странице 37 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 37 – коэффициент сжимаемости (Ксж); – плотно?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте информации о коэффициенте сжимаемости (Ксж) и плотности на странице 37 документа «РЭ UFG-Н_(акт)» не обнаружено.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 6048.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 48,
+      "topic": "стр.38",
+      "question": "Что указано на странице 38 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 38 ООО НПО \"Турбулентность – ДОН\" – нештатные ситуации (Код НС); – флаги со?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В предоставленном контексте нет информации на странице 38 документа «РЭ UFG-Н_(акт)» о Turbo Flow UFG-Н Руководство по эксплуатации 38 ООО НПО \"Турбулентность – ДОН\" – нештатные ситуации (Код НС); – флаги со.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 7013.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 49,
+      "topic": "стр.39",
+      "question": "Что указано на странице 39 документа «РЭ UFG-Н_(акт)» о: Руководство по эксплуатации Turbo Flow UFG-Н ООО НПО \"Турбулентность – ДОН\" 39 – суммарный прямой объем для рабочих усло?",
+      "expected_keys": [
+        "Руководство",
+        "Turbo",
+        "Flow"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 39 документа «РЭ UFG-Н_(акт)» о суммарном прямом объёме для рабочих условий.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 1447.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "HALLUCINATION",
+      "bug_type": "hallucination",
+      "judge_reason": "развёрнутый ответ без ключевых фактов",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    },
+    {
+      "source_file": "РЭ UFG-Н_(акт).pdf",
+      "id": 50,
+      "topic": "стр.40",
+      "question": "Что указано на странице 40 документа «РЭ UFG-Н_(акт)» о: Turbo Flow UFG-Н Руководство по эксплуатации 40 ООО НПО \"Турбулентность – ДОН\" – напряжение питание контроллера (Uпит), ?",
+      "expected_keys": [
+        "Turbo",
+        "Flow",
+        "UFG-Н"
+      ],
+      "answer_preview": "В представленном контексте нет информации на странице 40 документа «РЭ UFG-Н_(акт)» о напряжении питания контроллера (Uпит) для Turbo Flow UFG.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "основные неисправности приборов 1"
+      ],
+      "total_ms": 5512.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": false,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 50,
+  "source_file": "РЭ UFG-Н_(акт).pdf",
+  "product": "Turbo Flow UFG-H"
+}

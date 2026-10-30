@@ -1,0 +1,1757 @@
+{
+  "generated_at": "2026-07-07T13:10:53.573852+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "PARTIAL": 11,
+    "CORRECT": 20,
+    "STUB_ONLY": 19
+  },
+  "bug_counts": {
+    "stub": 19
+  },
+  "accuracy_pct": 40.0,
+  "partial_pct": 22.0,
+  "bad_pct": 38.0,
+  "per_file": [
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "questions": 50,
+      "correct": 20,
+      "partial": 11,
+      "bad": 19,
+      "accuracy_pct": 40.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "stub",
+          19
+        ],
+        [
+          "partial",
+          11
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #3): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 6",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #5): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 6",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #6): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 6",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #8): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 6",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #10): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #11): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #12): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #13): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #14): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #15): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #16): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #17): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #18): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #19): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #21): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #22): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #23): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #25): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #26): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М ",
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "МП"
+      ],
+      "answer_preview": "Документ «МП СПУ-3М 65287-16» является методикой поверки для установок поверочных СПУ-3М.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "СПУ-3М-100 Методика поверки 09.2015",
+        "МП СПУ-3М 65287-16",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 3171.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовитель в документе «МП СПУ-3М 65287-16» — ООО НПО \"Турбулентность-Дон\".",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "МП СПУ-3М 65287-16",
+        "Сертификат об УТ СПУ-3М до 24.09.26",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 3258.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "65287-16",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16",
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "Сертификат об УТ СПУ-3М до 24.09.26",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 4060.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок действия утверждения типа до 24 сентября 2026 г.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат об УТ СПУ-3М до 24.09.26",
+        "МП СПУ-3М 65287-16",
+        "Сертификат об УТ СПУ-3 до 24.06.26",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 3668.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Документ: СПУ-3М 65287-16. Методика поверки.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "СПУ-3М-100 Методика поверки 09.2015",
+        "Сертификат об УТ СПУ-3М до 24.09.26",
+        "ОТ СПУ-3М от 28.10.2024"
+      ],
+      "total_ms": 4104.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «МП СПУ-3М 65287-16» не указаны метрологические характеристики.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "МП СПУ-3М 65287-16",
+        "ОТ СПУ-3М от 28.10.2024",
+        "Сертификат об УТ СПУ-3М до 24.09.26"
+      ],
+      "total_ms": 3803.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "- Избыточное давление рабочей среды в трубопроводе: не более 100 кПа; - Диапазон воспроизводимых поверочных расходов: от 0,1 до 100 м³/ч (для СПУ-3М-100); - Пределы допускаемой относительной погрешности установки при измерении объёма газа в рабочих условиях: ± 0,3 %; - Пределы допускаемой относительной погрешности установки при измерении объёма газа, приведённого к стандартным условиям: ± 0,45 %; - Пределы допускаемой абсолютной погрешности при измерении температуры: ± 0,15 °С; - Диапазон измере",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М от 28.10.2024",
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "Переносная поверочная установка СПУ-3М",
+        "Переносная поверочная установка СПУ-3М-100"
+      ],
+      "total_ms": 6494.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «МП СПУ-3М 65287-16» сведения о программном обеспечении отсутствуют.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "ОТ СПУ-3М-100 от 28.10.2024",
+        "МП СПУ-3М 65287-16",
+        "ОТ СПУ-3М от 28.10.2024",
+        "СПУ-3М-100 Методика поверки 09.2015"
+      ],
+      "total_ms": 3480.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 4,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно «МП СПУ-3М 65287-16».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 5843.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте не указаны конкретные приказы, ГОСТ или ТУ, на которые ссылается документ «МП СПУ-3М 65287-16».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 971.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «МП СПУ-3М 65287-16» о: Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Тип документа: passport. Вид: m?",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "На странице 1 документа «МП СПУ-3М 65287-16» указан тип информации — паспорт (passport).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 1033.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 12,
+      "topic": "рег.номер",
+      "question": "Где в документе «МП СПУ-3М 65287-16» упоминается регистрационный номер 65287-16 и в каком контексте?",
+      "expected_keys": [
+        "65287-16",
+        "регистр",
+        "номер"
+      ],
+      "answer_preview": "Регистрационный номер 65287-16 упоминается в документе «МП СПУ-3М 65287-16» на странице 1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 991.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 65287 и для какой характеристики указано в документе «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "65287",
+        "характеристик",
+        "МП"
+      ],
+      "answer_preview": "В документе «МП СПУ-3М 65287-16» значение 65287 является номером модели продукта.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 960.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 14,
+      "topic": "значение",
+      "question": "Какое значение 16. и для какой характеристики указано в документе «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "16,",
+        "характеристик",
+        "МП"
+      ],
+      "answer_preview": "В документе «МП СПУ-3М 65287-16» значение 16 не указано для какой-либо характеристики.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 852.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 15,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе нет информации о том, где и как применяется продукция МП СПУ-3М 65287-16.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 916.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 16,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе не указаны требования к поверке прибора МП СПУ-3М 65287-16.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 838.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 17,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В контексте не указаны конкретные требования безопасности для «МП СПУ-3М 65287-16».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 856.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 18,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В паспорте прибора МП СПУ-3М 65287-16 информация о нанесении маркировки и знака утверждения типа отсутствует.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 896.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 19,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе не указаны гарантийные обязательства.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 560.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 20,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения для МП СПУ-3М 65287-16.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 859.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 21,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны показатели надёжности (наработка, срок службы) для МП СПУ-3М 65287-16.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 948.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 22,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе информация об интерфейсах связи для МП СПУ-3М 65287-16 отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 763.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 23,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP для «МП СПУ-3М 65287-16».",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 934.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 24,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «МП СПУ-3М 65287-16»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указан испытательный центр.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 547.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #1): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16.\nТип информации: passport.\nВид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 1352.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #2): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 792.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #3): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 808.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #4): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип информации: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 834.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #5): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 860.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #6): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 845.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #7): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип информации: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 831.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #8): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 837.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #9): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип информации: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 843.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #10): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 826.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #11): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 872.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #12): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 834.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #13): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport.\nВид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 882.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #14): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 847.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #15): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 887.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #16): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 834.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #17): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 802.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #18): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 823.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #19): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 1491.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #20): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 808.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #21): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Тип документа: passport. Вид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 1523.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #22): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Тип документа: passport. Вид: manual. Конкретных фактов из указанного фрагмента на странице 1, №22 в контексте не представлено.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 1846.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #23): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 846.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #24): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 1109.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #25): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport\nВид: manual",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 2181.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "МП СПУ-3М 65287-16.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «МП СПУ-3М 65287-16» (фрагмент стр. 1, #26): Документ: МП СПУ-3М 65287-16. Файл: МП СПУ-3М 65287-16.pdf. Продукт: МП СПУ-3М 65287-16. Т",
+      "expected_keys": [
+        "65287-16",
+        "Документ",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: МП СПУ-3М 65287-16\nТип документа: passport.\nВид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "МП СПУ-3М 65287-16"
+      ],
+      "total_ms": 2213.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 18,
+  "source_file": "МП СПУ-3М 65287-16.pdf",
+  "product": "МП СПУ-3М 65287-16"
+}

@@ -7,6 +7,7 @@ import {
   getSearchEquipmentUrl,
   TKP_ACCESSORIES_URL,
   TKP_PDF_URL,
+  DEVELOPER_FEEDBACK_URL,
   SEND_PRICE_INQUIRY_URL,
 } from './config';
 import { buildSearchEquipmentUrl } from './utils/searchEquipment';
@@ -113,10 +114,11 @@ export const createMessage = (chatId, data, image = null, pdf = null) => {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
+      timeout: 180000,
     });
   }
 
-  return api.post(`/chats/${chatId}/messages/`, data);
+  return api.post(`/chats/${chatId}/messages/`, data, { timeout: 60000 });
 };
 
 // Hints system
@@ -194,6 +196,40 @@ export function postPriceInquiry(body) {
     headers: { 'Content-Type': 'application/json' },
     timeout: 30000,
   });
+}
+
+/** Обратная связь разработчикам из виджета мастера подбора. */
+export function postDeveloperFeedback({ fio, email, comment, page_url, channel, files = [] }) {
+  const payloadFiles = Array.isArray(files) ? files.filter(Boolean) : [];
+  if (payloadFiles.length > 0) {
+    const formData = new FormData();
+    formData.append('fio', String(fio || '').trim());
+    formData.append('email', String(email || '').trim());
+    formData.append('comment', String(comment || '').trim());
+    if (page_url) formData.append('page_url', String(page_url).trim());
+    if (channel) formData.append('channel', String(channel).trim());
+    payloadFiles.forEach((file) => {
+      formData.append('files', file);
+    });
+    return axios.post(DEVELOPER_FEEDBACK_URL, formData, {
+      timeout: 120000,
+    });
+  }
+
+  return axios.post(
+    DEVELOPER_FEEDBACK_URL,
+    {
+      fio,
+      email,
+      comment,
+      ...(page_url ? { page_url } : {}),
+      ...(channel ? { channel } : {}),
+    },
+    {
+      headers: { 'Content-Type': 'application/json' },
+      timeout: 30000,
+    },
+  );
 }
 
 /** GET прайс СГ Гранд (каталог + плоский список «СГ Гранд»). */

@@ -8,6 +8,12 @@ faiss:
   confidence_threshold: 0.75   # минимальная уверенность
   min_delta: 0.002  # минимальная разница между лучшим и вторым результатом
 
+reranker:
+  enabled: true
+  model_name: cross-encoder/mmarco-mMiniLMv2-L12-H384-v1
+  candidates: 40
+  timeout_ms: 2500
+
 # LM Studio: адрес как на вкладке Local Server («Reachable at») + путь API /v1
 # — Сменили IP/порт? Обязательно перезапустите Daphne: get_chatbot() кэширует клиент при первом запросе.
 # — В LM Studio модель должна быть загружена в сервер (кнопка загрузки у Local Server), не только выбрана в списке.
@@ -16,12 +22,12 @@ faiss:
 llm:
   base_url: http://192.168.5.53:1234/v1/
   model: yandexgpt-5-lite-8b-instruct
-
+  # api_key: sk-lm-xxxxxxxx:yyyyyyyyyyyyyyyyyyyy  # или env LM_STUDIO_API_KEY / LM_API_TOKEN
   temperature: 0.2
   max_tokens: 512
   timeout: 90  # Таймаут запроса к LLM API в секундах
 
 messages:
   fallback: >
-    Не удалось найти информации по вашему запросу.
-    Для подробной информации свяжитесь с нашей организацией.
+    Не удалось подготовить ответ по вашему вопросу.
+    Попробуйте переформулировать его или задать по-другому.

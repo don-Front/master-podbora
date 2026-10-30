@@ -1,0 +1,1563 @@
+{
+  "generated_at": "2026-07-07T17:12:41.673661+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 37,
+    "PARTIAL": 11,
+    "STUB_ONLY": 2
+  },
+  "bug_counts": {
+    "stub": 2
+  },
+  "accuracy_pct": 74.0,
+  "partial_pct": 22.0,
+  "bad_pct": 4.0,
+  "per_file": [
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "questions": 50,
+      "correct": 37,
+      "partial": 11,
+      "bad": 2,
+      "accuracy_pct": 74.0,
+      "retrieval_pct": 100.0,
+      "top_bugs": [
+        [
+          "partial",
+          11
+        ],
+        [
+          "stub",
+          2
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Что указано на странице 1 документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» о: Документ: Сертификат УТ СПУ-5 до 12.08.2",
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ]
+    },
+    {
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #26): Документ: Сертификат УТ СП",
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Сертификат"
+      ],
+      "answer_preview": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ предназначен для удостоверения соответствия продукции.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3211.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "Изготовителя или правообладателя в документе не указано.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3072.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2892.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "Срок действия утверждения типа или сертификата — до 12.08.2030.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2841.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "В документе не упоминается методика поверки или нормативный документ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2983.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе не указаны конкретные метрологические характеристики.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2826.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В контексте не указаны конкретные технические характеристики (давление, температура, расход).",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3057.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "В документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» сведений о программном обеспечении нет.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3510.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В комплекте поставки согласно «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» указан только сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 4424.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "В контексте не указаны конкретные приказы, ГОСТ или ТУ, на которые ссылается документ «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3936.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» о: Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf. Продукт: Сертификат ?",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Тип информации: passport.\nТип документа: passport.\nВид: manual.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3245.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 12,
+      "topic": "значение",
+      "question": "Какое значение 12.08 и для какой характеристики указано в документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "12,08",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "Дата указана до 12.08.2030.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2926.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 13,
+      "topic": "значение",
+      "question": "Какое значение 2030 и для какой характеристики указано в документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "2030",
+        "характеристик",
+        "Сертификат"
+      ],
+      "answer_preview": "В документе «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» значение 2030 указано в дате истечения срока действия сертификата — до 12.08.2030.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 4431.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 14,
+      "topic": "применение",
+      "question": "Где и как применяется продукция по документу «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В контексте нет информации о том, где и как применяется продукция по документу «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ».",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3890.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 15,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В документе не указаны требования к поверке.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2833.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 16,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе не указаны конкретные требования безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2840.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 17,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте нет информации о том, как наносится маркировка и знак утверждения типа в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3783.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 18,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В документе не указаны конкретные гарантийные обязательства.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2991.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 19,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2911.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 20,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В документе не указаны конкретные показатели надёжности (наработка, срок службы).",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3110.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 21,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В сертификате УТ СПУ-5 до 12.08.2030 + ОТ информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3541.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 22,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В документе не указана информация о взрывозащите или степени защиты IP.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2936.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 23,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указано название испытательного центра.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2923.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #1): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3356.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #2): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3313.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #3): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2977.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #4): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3205.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #5): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3304.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #6): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3308.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #7): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3172.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #8): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3200.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #9): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3029.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #10): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2991.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #11): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2974.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #12): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.\nТип информации: passport.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3327.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #13): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3018.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #14): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3234.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #15): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3247.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #16): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3108.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #17): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3157.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #18): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3073.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #19): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3205.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #20): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3232.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #21): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3062.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #22): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3034.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #23): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3231.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #24): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3175.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #25): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3145.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #26): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.\nТип документа: passport.\nВид: manual.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 3641.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Сертификат УТ СПУ-5 до 12.08.2030 + ОТ» (фрагмент стр. 1, #27): Документ: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ. Файл: Сертификат УТ СПУ-5 до 12.08.2030 ",
+      "expected_keys": [
+        "Документ",
+        "Сертификат",
+        "СПУ-"
+      ],
+      "answer_preview": "Продукт: Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+      ],
+      "total_ms": 2889.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 64,
+  "source_file": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ.pdf",
+  "product": "Сертификат УТ СПУ-5 до 12.08.2030 + ОТ"
+}

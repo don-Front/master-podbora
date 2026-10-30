@@ -10,8 +10,15 @@ _RG_T_MARKER = re.compile(r"РГ[\s\-]*Т|RG[\s\-]*T", re.IGNORECASE)
 _RSG_MARKER = re.compile(r"РСГ[\s\-]*СИГНАЛ|RSG[\s\-]*SIGNAL", re.IGNORECASE)
 _IRVIS_MARKER = re.compile(r"ИРВИС[\s\-]*УЛЬТРА|IRVIS[\s\-]*ULTRA", re.IGNORECASE)
 _ULTRAMAG_MARKER = re.compile(r"ULTRAMAG", re.IGNORECASE)
-_KTM_MARKER = re.compile(r"КТМ[\s\-]*600|KTM[\s\-]*600", re.IGNORECASE)
+_KTM_700_MARKER = re.compile(r"КТМ[\s\-]*700|KTM[\s\-]*700", re.IGNORECASE)
+_KTM_600_MARKER = re.compile(r"КТМ[\s\-]*600|KTM[\s\-]*600", re.IGNORECASE)
+_KTM_RUMASS_MARKER = re.compile(r"КТМ[\s\-]*РуМАСС|KTM[\s\-]*RUMASS", re.IGNORECASE)
+_ELMETRO_FLOUS_MARKER = re.compile(r"ЭЛМЕТРО[\s\-]*Флоус|ELMETRO[\s\-]*FLOUS", re.IGNORECASE)
+_ELMETRO_FLOMAK_MARKER = re.compile(r"ЭЛМЕТРО[\s\-]*Фломак|ELMETRO[\s\-]*FLOMAK", re.IGNORECASE)
+_EMIS_MASS_MARKER = re.compile(r"ЭМИС[\s\-]*МАСС[\s\-]*260|EMIS[\s\-]*MASS[\s\-]*260", re.IGNORECASE)
 _VYMPEL_MARKER = re.compile(r"ВЫМПЕЛ[\s\-]*500|VYMPEL[\s\-]*500", re.IGNORECASE)
+_KTM_700_DN = re.compile(r"DN0?\d+", re.IGNORECASE)
+_KTM_RUMASS_DN = re.compile(r"(?:РуМАСС|RUMASS)\s*\d{3}", re.IGNORECASE)
 _G_TOKEN = re.compile(r"(?:^|[\s\-/])G(\d+)(?:$|[\s\-/])", re.IGNORECASE)
 _DN_TOKEN = re.compile(r"(?:^|[\s\-/])DN(\d+)(?:$|[\s\-/])", re.IGNORECASE)
 _KTM_DN = re.compile(r"DN\d+", re.IGNORECASE)
@@ -44,7 +51,22 @@ def detect_catalog_id(text: str) -> str | None:
     if _RSG_MARKER.search(normalized) and _G_TOKEN.search(padded) and _catalog_loaded("rsg_signal"):
         return "rsg_signal"
 
-    if _KTM_MARKER.search(normalized) and _KTM_DN.search(normalized) and _catalog_loaded("ktm_600"):
+    if _EMIS_MASS_MARKER.search(normalized) and _catalog_loaded("emis_mass_260"):
+        return "emis_mass_260"
+
+    if _ELMETRO_FLOUS_MARKER.search(normalized) and _catalog_loaded("elmetro_flous_dru"):
+        return "elmetro_flous_dru"
+
+    if _ELMETRO_FLOMAK_MARKER.search(normalized) and _catalog_loaded("elmetro_flomak"):
+        return "elmetro_flomak"
+
+    if _KTM_RUMASS_MARKER.search(normalized) and _KTM_RUMASS_DN.search(normalized) and _catalog_loaded("ktm_rumass"):
+        return "ktm_rumass"
+
+    if _KTM_700_MARKER.search(normalized) and _KTM_700_DN.search(normalized) and _catalog_loaded("ktm_700"):
+        return "ktm_700"
+
+    if _KTM_600_MARKER.search(normalized) and _KTM_DN.search(normalized) and _catalog_loaded("ktm_600"):
         return "ktm_600"
 
     if _VYMPEL_MARKER.search(normalized) and _catalog_loaded("vympel_500"):

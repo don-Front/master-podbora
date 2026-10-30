@@ -243,15 +243,35 @@ def _retrieval_from_sources(expected_file: str, rag_sources: list[dict]) -> tupl
     return hit, titles[:5]
 
 
+def _api_call_with_retry(fn, *, retries: int = 8, base_delay: float = 2.0):
+    """Повтор API-вызова при 5xx/сетевых сбоях (длинный batch на prod)."""
+    last_exc: Exception | None = None
+    for attempt in range(retries):
+        try:
+            return fn()
+        except Exception as exc:
+            last_exc = exc
+            if attempt + 1 >= retries:
+                break
+            delay = min(base_delay * (2**attempt), 60.0)
+            print(f"[api-retry] attempt {attempt + 1}/{retries} failed: {exc}; sleep {delay:.0f}s")
+            time.sleep(delay)
+    assert last_exc is not None
+    raise last_exc
+
+
 def _api_create_chat(base: str) -> int:
-    req = urllib.request.Request(
-        f"{base.rstrip('/')}/api/chats/",
-        data=json.dumps({"title": "passport-rag-audit"}).encode(),
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())["id"]
+    def _call() -> int:
+        req = urllib.request.Request(
+            f"{base.rstrip('/')}/api/chats/",
+            data=json.dumps({"title": "passport-rag-audit"}).encode(),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())["id"]
+
+    return _api_call_with_retry(_call)
 
 
 def _api_ask(base: str, chat_id: int, question: str) -> tuple[str, list[dict], float]:
@@ -263,20 +283,24 @@ def _api_ask(base: str, chat_id: int, question: str) -> tuple[str, list[dict], f
             "is_hint_selection": False,
         }
     ).encode()
-    req = urllib.request.Request(
-        f"{base.rstrip('/')}/api/chats/{chat_id}/messages/",
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    t0 = time.perf_counter()
-    with urllib.request.urlopen(req, timeout=180) as resp:
-        data = json.loads(resp.read())
-    total_ms = (time.perf_counter() - t0) * 1000
-    bot = next(m for m in data.get("messages") or [] if not m.get("is_user"))
-    answer = bot.get("content") or ""
-    sources = data.get("rag_sources") or []
-    return answer, sources, total_ms
+
+    def _call() -> tuple[str, list[dict], float]:
+        req = urllib.request.Request(
+            f"{base.rstrip('/')}/api/chats/{chat_id}/messages/",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        t0 = time.perf_counter()
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            data = json.loads(resp.read())
+        total_ms = (time.perf_counter() - t0) * 1000
+        bot = next(m for m in data.get("messages") or [] if not m.get("is_user"))
+        answer = bot.get("content") or ""
+        sources = data.get("rag_sources") or []
+        return answer, sources, total_ms
+
+    return _api_call_with_retry(_call, retries=5)
 
 
 def _judge_answer(

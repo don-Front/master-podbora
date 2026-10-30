@@ -1,0 +1,76 @@
+id: ktm_rumass
+competitor: "РМТВ (КТМ РуМАСС)"
+product_name: "Счётчик-расходомер кориолисовый КТМ РуМАСС"
+source_document: "Руководство_по_эксплуатации КТМ РуМасс.pdf"
+source_section: "Таблица 2 — формирование условного обозначения"
+document_code: "РМТВ.08.000.00.0000.000РЭ"
+mask_prefix: "КТМ РуМАСС"
+mask_example: "КТМ РуМАСС050-0-0-386-00-25-1-1"
+image: "ktm_rumass.png"
+
+fields:
+  - id: dn
+    label: "Типоразмер (DN), мм"
+    position: 2
+    allowed:
+      - "015"
+      - "025"
+      - "050"
+      - "080"
+      - "100"
+      - "200"
+      - "250"
+
+  - id: boi
+    label: "Исполнение БОИ"
+    position: 3
+    allowed:
+      - "0"
+      - "1"
+
+  - id: variant
+    label: "Вариант исполнения счётчика"
+    position: 4
+    allowed:
+      - "0"
+      - "1"
+      - "2"
+
+  - id: placement
+    label: "Версия размещения БОИ"
+    position: 6
+    allowed:
+      - "00"
+      - "01"
+
+  - id: accuracy
+    label: "Относительная погрешность массового расхода, %"
+    position: 7
+    allowed:
+      - "10"
+      - "11"
+      - "15"
+      - "20"
+      - "25"
+      - "35"
+      - "50"
+
+  - id: gas_group
+    label: "Газовая группа"
+    position: 8
+    allowed:
+      - "0"
+      - "1"
+
+  - id: remote
+    label: "Выносной модуль"
+    position: 9
+    allowed:
+      - "0"
+      - "1"
+
+analog_mapping:
+  enabled: true
+  min_required_fields:
+    - dn
+    - accuracy

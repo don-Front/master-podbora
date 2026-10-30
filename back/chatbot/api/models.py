@@ -13,6 +13,8 @@ class Chat(models.Model):
     order_specs_pending_field = models.CharField(max_length=64, blank=True, null=True)
     # Временные данные запроса цены по прибору со слайдера (оборудование, телефон, почта)
     price_quote_draft = models.JSONField(null=True, blank=True)
+    # Выбранная модель/серия для цепочки вопросов о поверке (RAG)
+    verification_equipment = models.CharField(max_length=255, blank=True, default="")
 
     def __str__(self):
         return self.title

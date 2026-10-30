@@ -13,11 +13,17 @@ from .llm_client import LLMClient
 from .product_detector import (
     ProductDetector,
     TROUBLESHOOTING_EQUIPMENT_CLARIFY,
+    VERIFICATION_EQUIPMENT_CLARIFY,
     _is_malfunction_query,
+    _specific_model_tokens,
+    _tokenize,
     needs_troubleshooting_equipment_clarification,
+    needs_verification_equipment_clarification,
 )
 from .question_classifier import QuestionClassifier
 from .hybrid_search import HybridRetriever
+from .reranker import OptionalCrossEncoderReranker
+from .rag_messages import MSG_REPHRASE, MSG_SERVER_ERROR, is_llm_system_error
 
 
 logger = logging.getLogger(__name__)
@@ -43,13 +49,23 @@ def _safe_print(*args, **kwargs) -> None:
 def adjust_search_parameters(question_type: dict, top_k: int, threshold: float) -> dict:
     """Настраивает параметры поиска"""
     
+    if question_type.get("is_definition"):
+        return {
+            "top_k": 20,
+            "context_top_k": 6,
+            "threshold": 0.25,
+            "chunk_types_filter": ["basic_info", "section", "applications"],
+            "search_strategy": "definition",
+            "prefer_catalog": True,
+        }
     if question_type["is_attribute"]:
         return {
             "top_k": 25,
             "context_top_k": 8,
             "threshold": 0.0,
             "chunk_types_filter": ["specifications", "basic_info", "applications", "passport", "gost"],
-            "search_strategy": "aggressive"
+            "search_strategy": "aggressive",
+            "prefer_catalog": False,
         }
     elif question_type["is_description"]:
         return {
@@ -57,7 +73,8 @@ def adjust_search_parameters(question_type: dict, top_k: int, threshold: float) 
             "context_top_k": 8,
             "threshold": 0.4,
             "chunk_types_filter": ["basic_info", "applications", "passport", "gost"],
-            "search_strategy": "normal"
+            "search_strategy": "normal",
+            "prefer_catalog": False,
         }
     elif question_type["is_comparison"]:
         return {
@@ -65,7 +82,8 @@ def adjust_search_parameters(question_type: dict, top_k: int, threshold: float) 
             "context_top_k": 10,
             "threshold": 0.3,
             "chunk_types_filter": ["specifications", "basic_info", "passport", "gost"],
-            "search_strategy": "normal"
+            "search_strategy": "normal",
+            "prefer_catalog": False,
         }
     else:
         return {
@@ -73,7 +91,8 @@ def adjust_search_parameters(question_type: dict, top_k: int, threshold: float) 
             "context_top_k": max(top_k, 5),
             "threshold": threshold,
             "chunk_types_filter": None,
-            "search_strategy": "normal"
+            "search_strategy": "normal",
+            "prefer_catalog": False,
         }
 
 
@@ -137,7 +156,8 @@ _DOCUMENT_REFERENCE_RE = re.compile(
     r"(?:описани[ея]\s+типа)|(?:руководств[оае]\s+по\s+эксплуатации)|"
     r"(?:\b8\.\d{3}\b)|(?:\b2939\s*[-–—]?\s*63\b)|"
     r"(?:\b\d{5}[-–—]\d{2}\b)|"
-    r"(?:свидетельств|сертификат|приказ|приложени[ея]|паспорт|поверк)|"
+    r"(?:свидетельств|сертификат|приказ|приложени[ея]|паспорт|поверк|методик|декларац|фгис)|"
+    r"(?:страниц[аеуы]?\s*\d+)|(?:стр\.\s*\d+)|"
     r"(?:\bдокумент\b)|(?:\.pdf\b)"
 )
 
@@ -171,6 +191,54 @@ def _source_file_hint(question: str) -> str:
     return ""
 
 
+def _doc_name_key(value: str) -> str:
+    """Нормализованное имя документа для fuzzy-сопоставления с source_file."""
+    text = (value or "").casefold().replace("ё", "е")
+    text = re.sub(r"\.(pdf|docx)$", "", text, flags=re.I)
+    text = re.sub(r"[^a-zа-я0-9]+", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _source_file_hint_from_chunks(question: str, chunks: List[Dict]) -> str:
+    """Ищет PDF по имени документа в кавычках, даже если в вопросе нет расширения .pdf."""
+    text = question or ""
+    candidates = re.findall(r"[«\"]([^«»\"]{4,120})[»\"]", text)
+    candidates.append(text)
+    candidate_keys = [_doc_name_key(c) for c in candidates if _doc_name_key(c)]
+    if not candidate_keys:
+        return ""
+
+    seen: set[str] = set()
+    for chunk in chunks:
+        meta = chunk.get("metadata") or {}
+        source = meta.get("source_file") or chunk.get("source_file") or ""
+        if not source or source in seen:
+            continue
+        seen.add(source)
+        names = [
+            source,
+            meta.get("document_name") or "",
+            chunk.get("product_title") or "",
+        ]
+        source_keys = [_doc_name_key(name) for name in names if _doc_name_key(name)]
+        for ck in candidate_keys:
+            for sk in source_keys:
+                if ck == sk or (len(ck) >= 8 and ck in sk) or (len(sk) >= 8 and sk in ck):
+                    return source
+    return ""
+
+
+def _page_hint(question: str) -> int | None:
+    """Номер страницы из вопроса: 'страница 7', 'стр. 7'."""
+    match = re.search(r"(?i)(?:страниц[аеуы]?|стр\.)\s*№?\s*(\d{1,4})", question or "")
+    if not match:
+        return None
+    try:
+        return int(match.group(1))
+    except ValueError:
+        return None
+
+
 def _has_document_reference(question: str) -> bool:
     """Явная ссылка на норматив/документ: не даем ProductDetector увести поиск в каталог."""
     text = question or ""
@@ -182,7 +250,15 @@ def _chunk_doc_type(chunk: Dict) -> str:
     return str(meta.get("doc_type") or chunk.get("chunk_type") or "").lower()
 
 
-def _document_boost(chunk: Dict, prefer_documents: bool) -> float:
+def _document_boost(chunk: Dict, prefer_documents: bool, prefer_catalog: bool = False) -> float:
+    if prefer_catalog:
+        doc_type = _chunk_doc_type(chunk)
+        if doc_type == "catalog":
+            return 0.18
+        if doc_type in {"passport", "gost"}:
+            return -0.10
+        return 0.0
+
     if not prefer_documents:
         return 0.0
 
@@ -203,6 +279,50 @@ def _document_boost(chunk: Dict, prefer_documents: bool) -> float:
     return 0.0
 
 
+def _chunk_text_for_rerank(chunk: Dict) -> str:
+    meta = chunk.get("metadata") or {}
+    return " ".join(
+        str(part or "")
+        for part in (
+            chunk.get("product_title"),
+            chunk.get("chunk_type"),
+            meta.get("document_name"),
+            meta.get("section_title"),
+            meta.get("paragraph"),
+            chunk.get("content"),
+        )
+    )
+
+
+def _lexical_rerank_boost(chunk: Dict, question: str, question_type: dict | None = None) -> float:
+    query_tokens = _tokenize(question)
+    if not query_tokens:
+        return 0.0
+
+    text_tokens = _tokenize(_chunk_text_for_rerank(chunk))
+    overlap = len(query_tokens & text_tokens) / max(len(query_tokens), 1)
+    boost = min(0.35, overlap * 0.5)
+
+    if question_type and question_type.get("is_definition"):
+        chunk_type = str(chunk.get("chunk_type") or "").lower()
+        doc_type = _chunk_doc_type(chunk)
+        text = _chunk_text_for_rerank(chunk).casefold().replace("ё", "е")
+        if doc_type == "catalog":
+            boost += 0.10
+        if chunk_type == "basic_info":
+            boost += 0.14
+        if chunk_type in {"section", "applications"}:
+            boost += 0.08
+        if any(marker in text for marker in ("назначен", "предназначен", "о продукте", "описание")):
+            boost += 0.08
+        if chunk_type == "specifications":
+            boost -= 0.08
+        if doc_type in {"passport", "gost"}:
+            boost -= 0.05
+
+    return boost
+
+
 def _is_text_stub(chunk: Dict) -> bool:
     meta = chunk.get("metadata") or {}
     return bool(meta.get("is_text_stub")) or "_stub" in str(chunk.get("chunk_id") or "")
@@ -217,6 +337,233 @@ def _stub_penalty(chunk: Dict, hinted_file: str) -> float:
     if hint and source and hint == source:
         return 0.0
     return -0.65
+
+
+def _is_bad_stub_source(chunk: Dict) -> bool:
+    """True for OCR/text extraction stubs that should not enter normal RAG context."""
+    if _is_text_stub(chunk):
+        return True
+    source = _chunk_source_file(chunk).casefold().replace("ё", "е")
+    document = str((chunk.get("metadata") or {}).get("document_name") or "").casefold().replace("ё", "е")
+    return "fail-otobrazhenija" in source or "fail otobrazhenija" in document
+
+
+def _filter_stub_chunks(chunks: List[Dict], *, source_file_hint: str = "") -> List[Dict]:
+    """Drop stub chunks unless the user explicitly asks about the stub file."""
+    if not chunks:
+        return chunks
+    filtered: List[Dict] = []
+    for chunk in chunks:
+        if not _is_bad_stub_source(chunk):
+            filtered.append(chunk)
+            continue
+        if source_file_hint and _same_source_file(chunk, source_file_hint):
+            filtered.append(chunk)
+    return filtered or chunks
+
+
+def _chunk_source_file(chunk: Dict) -> str:
+    meta = chunk.get("metadata") or {}
+    return meta.get("source_file") or chunk.get("source_file") or ""
+
+
+def _same_source_file(chunk: Dict, source_file: str) -> bool:
+    if not source_file:
+        return False
+    chunk_source = _chunk_source_file(chunk)
+    if not chunk_source:
+        return False
+    src = chunk_source.casefold().replace("ё", "е")
+    hint = source_file.casefold().replace("ё", "е")
+    return src == hint or src in hint or hint in src
+
+
+def _chunk_page(chunk: Dict) -> int | None:
+    meta = chunk.get("metadata") or {}
+    raw = meta.get("page_number", meta.get("page"))
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return None
+
+
+def _filter_chunks_for_llm_context(
+    chunks: List[Dict],
+    *,
+    source_file_hint: str = "",
+    page_hint: int | None = None,
+) -> List[Dict]:
+    """Сужает контекст LLM до целевого PDF/страницы, не ломая fallback."""
+    if not chunks:
+        return chunks
+
+    narrowed = chunks
+    if source_file_hint:
+        source_matches = [c for c in narrowed if _same_source_file(c, source_file_hint)]
+        if source_matches:
+            narrowed = source_matches
+
+    if page_hint is not None:
+        exact_page = [c for c in narrowed if _chunk_page(c) == page_hint]
+        if exact_page:
+            return exact_page
+        near_page = [
+            c
+            for c in narrowed
+            if _chunk_page(c) is not None and abs((_chunk_page(c) or 0) - page_hint) <= 1
+        ]
+        if near_page:
+            return near_page
+
+    return narrowed
+
+
+_MODEL_TOKEN_FAMILIES = {
+    "ufg": {"ufgf", "ufgh", "ufgz"},
+    "tfg": {"tfgs", "tfgh"},
+    "gfg": {"gfgf", "gfgdp"},
+    "cfm": {"cfmulg", "cfmflg", "cfmcng"},
+    "udm": {"udmv", "udmi"},
+    "spu": {"spu3", "spu3m", "spu3m100", "spu5", "spu6", "spu7", "spupg2m"},
+    "purs": {"pursv1", "pursm", "purss"},
+    "ps": {"ps"},
+}
+
+_ALLOW_CONTENT_MODEL_LOCK = {"tfgs", "tfgh"}
+
+
+def _chunk_equipment_text(chunk: Dict, *, include_content: bool = False) -> str:
+    meta = chunk.get("metadata") or {}
+    parts = [
+        chunk.get("product_title") or "",
+        meta.get("product_title") or "",
+        meta.get("document_name") or "",
+        meta.get("source_file") or "",
+    ]
+    if include_content:
+        parts.append(chunk.get("content") or "")
+    return " ".join(str(part) for part in parts if part)
+
+
+def _token_family(token: str) -> str:
+    for family, tokens in _MODEL_TOKEN_FAMILIES.items():
+        if token in tokens:
+            return family
+    return ""
+
+
+def _has_same_family_conflict(required: set[str], candidate: set[str]) -> bool:
+    if not required or not candidate:
+        return False
+    for token in candidate:
+        family = _token_family(token)
+        if not family:
+            continue
+        family_required = required & _MODEL_TOKEN_FAMILIES.get(family, set())
+        if family_required and token not in family_required:
+            return True
+    return False
+
+
+def _apply_equipment_model_lock(
+    store,
+    chunks: List[Dict],
+    question: str,
+    *,
+    limit: int,
+) -> List[Dict]:
+    """
+    Если пользователь явно назвал модификацию, удерживаем контекст на ней.
+    Это защищает запросы вида "что такое СПУ-5" от документов СПУ-6/СПУ-3М.
+    """
+    required_tokens = _specific_model_tokens(question)
+    if not required_tokens or not chunks:
+        return chunks
+
+    by_id: Dict[str, Dict] = {
+        c["chunk_id"]: dict(c)
+        for c in chunks
+        if c.get("chunk_id")
+    }
+
+    # Если основной поиск ушёл в соседнюю модель, добираем прямые совпадения из индекса.
+    allow_content_lock = bool(required_tokens & _ALLOW_CONTENT_MODEL_LOCK)
+    for chunk in store.chunks:
+        cid = chunk.get("chunk_id")
+        if not cid:
+            continue
+        title_tokens = _specific_model_tokens(_chunk_equipment_text(chunk, include_content=False))
+        if _has_same_family_conflict(required_tokens, title_tokens):
+            continue
+        chunk_tokens = title_tokens
+        if not chunk_tokens and allow_content_lock:
+            chunk_tokens = _specific_model_tokens(_chunk_equipment_text(chunk, include_content=True))
+        if not (required_tokens & chunk_tokens):
+            continue
+        item = dict(by_id.get(cid) or chunk)
+        item["score"] = max(float(item.get("score") or 0.0), 1.15)
+        by_id[cid] = item
+
+    locked: List[Dict] = []
+    neutral: List[Dict] = []
+    for chunk in by_id.values():
+        title_tokens = _specific_model_tokens(_chunk_equipment_text(chunk, include_content=False))
+        if _has_same_family_conflict(required_tokens, title_tokens):
+            continue
+        full_tokens = title_tokens
+        if not full_tokens and allow_content_lock:
+            full_tokens = _specific_model_tokens(_chunk_equipment_text(chunk, include_content=True))
+        if required_tokens & full_tokens:
+            locked.append(chunk)
+            continue
+        if full_tokens:
+            continue
+        neutral.append(chunk)
+
+    if not locked:
+        return chunks
+
+    if len(required_tokens) > 1:
+        groups: Dict[str, List[Dict]] = {token: [] for token in sorted(required_tokens)}
+        for chunk in locked:
+            chunk_tokens = _specific_model_tokens(_chunk_equipment_text(chunk, include_content=False))
+            if not chunk_tokens:
+                chunk_tokens = _specific_model_tokens(_chunk_equipment_text(chunk, include_content=True))
+            for token in sorted(required_tokens):
+                if token in chunk_tokens:
+                    groups[token].append(chunk)
+                    break
+        for token, items in groups.items():
+            groups[token] = sorted(
+                items,
+                key=lambda c: float(c.get("score") or 0.0),
+                reverse=True,
+            )
+
+        balanced: List[Dict] = []
+        seen_ids: set[str] = set()
+        while len(balanced) < limit and any(groups.values()):
+            for token in sorted(required_tokens):
+                if not groups[token]:
+                    continue
+                item = groups[token].pop(0)
+                cid = item.get("chunk_id")
+                if cid and cid in seen_ids:
+                    continue
+                if cid:
+                    seen_ids.add(cid)
+                balanced.append(item)
+                if len(balanced) >= limit:
+                    break
+        if balanced:
+            return balanced[:limit]
+
+    ranked = sorted(
+        locked + neutral,
+        key=lambda c: float(c.get("score") or 0.0),
+        reverse=True,
+    )
+    return ranked[:limit]
 
 
 def _source_file_boost(chunk: Dict, hinted_file: str) -> float:
@@ -262,11 +609,50 @@ def _inject_source_file_chunks(
     return list(by_id.values())
 
 
+def _dedupe_chunks(chunks: List[Dict], *, max_per_product_type: int = 2) -> List[Dict]:
+    """Убирает почти одинаковые чанки, чтобы LLM получала разные факты, а не дубли."""
+    seen_keys: set[tuple[str, str, str]] = set()
+    product_type_counts: Dict[tuple[str, str], int] = {}
+    deduped: List[Dict] = []
+
+    for chunk in chunks:
+        meta = chunk.get("metadata") or {}
+        product = str(chunk.get("product_title") or meta.get("product_title") or "").strip().casefold()
+        chunk_type = str(chunk.get("chunk_type") or meta.get("type") or "").strip().casefold()
+        section = str(
+            meta.get("section_title")
+            or meta.get("paragraph")
+            or meta.get("page_number")
+            or ""
+        ).strip().casefold()
+        if not section:
+            content_key = re.sub(r"\s+", " ", str(chunk.get("content") or "")[:180]).casefold()
+            section = content_key
+
+        key = (product, chunk_type, section)
+        if key in seen_keys:
+            continue
+
+        product_type_key = (product, chunk_type)
+        count = product_type_counts.get(product_type_key, 0)
+        if count >= max_per_product_type:
+            continue
+
+        seen_keys.add(key)
+        product_type_counts[product_type_key] = count + 1
+        deduped.append(chunk)
+
+    return deduped
+
+
 def _rank_chunks(
     chunks: List[Dict],
     *,
     prefer_documents: bool,
     source_file_hint: str = "",
+    prefer_catalog: bool = False,
+    question: str = "",
+    question_type: dict | None = None,
 ) -> List[Dict]:
     ranked = []
     for chunk in chunks:
@@ -274,12 +660,13 @@ def _rank_chunks(
         base_score = item.get("score", 0) or 0
         item["score"] = (
             base_score
-            + _document_boost(item, prefer_documents)
+            + _document_boost(item, prefer_documents, prefer_catalog)
+            + _lexical_rerank_boost(item, question, question_type)
             + _source_file_boost(item, source_file_hint)
             + (_stub_penalty(item, source_file_hint) if source_file_hint else 0.0)
         )
         ranked.append(item)
-    return sorted(ranked, key=lambda x: x.get("score", 0), reverse=True)
+    return _dedupe_chunks(sorted(ranked, key=lambda x: x.get("score", 0), reverse=True))
 
 
 def _is_malfunction_chunk(meta: dict) -> bool:
@@ -332,8 +719,13 @@ def smart_search(
     top_k = search_params["top_k"]
     context_top_k = search_params.get("context_top_k", top_k)
     file_hint = _source_file_hint(question)
+    if not file_hint:
+        file_hint = _source_file_hint_from_chunks(question, store.chunks)
     has_document_reference = _has_document_reference(question)
+    if file_hint:
+        has_document_reference = True
     prefer_documents = has_document_reference or question_type.get("is_attribute", False)
+    prefer_catalog = bool(search_params.get("prefer_catalog")) and not has_document_reference
 
     if has_document_reference:
         mode = "гибридный BM25+FAISS" if use_hybrid and hybrid_retriever else "векторный FAISS"
@@ -353,6 +745,9 @@ def smart_search(
             merged,
             prefer_documents=True,
             source_file_hint=file_hint,
+            prefer_catalog=False,
+            question=question,
+            question_type=question_type,
         )[:context_top_k]
 
     detected_products = product_detector.detect_products_from_question(
@@ -404,6 +799,9 @@ def smart_search(
             list(by_id.values()),
             prefer_documents=prefer_documents,
             source_file_hint=file_hint,
+            prefer_catalog=prefer_catalog,
+            question=question,
+            question_type=question_type,
         )
         return unique_chunks[:context_top_k]
 
@@ -436,6 +834,7 @@ def smart_search(
                 question,
                 top_k,
                 use_hybrid=use_hybrid,
+                product_filter=product if product_score >= 0.9 else None,
             )
 
             by_id: Dict[str, Dict] = {}
@@ -464,6 +863,9 @@ def smart_search(
                 _inject_malfunction_chunks(store, list(by_id.values()), product, question),
                 prefer_documents=prefer_documents,
                 source_file_hint=file_hint,
+                prefer_catalog=prefer_catalog,
+                question=question,
+                question_type=question_type,
             )
             return unique_chunks[:context_top_k]
     
@@ -482,6 +884,9 @@ def smart_search(
         merged,
         prefer_documents=prefer_documents,
         source_file_hint=file_hint,
+        prefer_catalog=prefer_catalog,
+        question=question,
+        question_type=question_type,
     )[:context_top_k]
 
 
@@ -602,6 +1007,21 @@ class AdvancedChatbot:
             self.hybrid = HybridRetriever(self.store)
             self.use_hybrid_search = True
             _safe_print("[INFO] HybridRetriever (BM25 + FAISS) initialized")
+
+            reranker_config = self.config.get("reranker") or {}
+            self.reranker = OptionalCrossEncoderReranker(
+                enabled=bool(reranker_config.get("enabled", False)),
+                model_name=reranker_config.get(
+                    "model_name",
+                    "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+                ),
+                candidates=int(reranker_config.get("candidates", 40)),
+                timeout_ms=int(reranker_config.get("timeout_ms", 2500)),
+            )
+            _safe_print(
+                "[INFO] RAG reranker: "
+                f"enabled={self.reranker.enabled}, model={self.reranker.model_name}"
+            )
             
             # Проверяем наличие всех необходимых параметров
             required_params = ['base_url', 'model', 'temperature', 'max_tokens']
@@ -671,7 +1091,8 @@ class AdvancedChatbot:
     def generate_response(self, question: str) -> str:
         """Генерирует ответ на вопрос"""
         if self.config is None:
-            return "Извините, чатбот временно недоступен."
+            self.last_rag_sources = []
+            return MSG_SERVER_ERROR
         
         try:
             # Логируем входящий вопрос для отладки
@@ -706,6 +1127,11 @@ class AdvancedChatbot:
                 _safe_print("[DEBUG] Неисправность без модели прибора — запрос уточнения")
                 self.last_rag_sources = []
                 return TROUBLESHOOTING_EQUIPMENT_CLARIFY
+
+            if needs_verification_equipment_clarification(question):
+                _safe_print("[DEBUG] Поверка без модели прибора — запрос уточнения")
+                self.last_rag_sources = []
+                return VERIFICATION_EQUIPMENT_CLARIFY
 
             _safe_print(f"[DEBUG] Тип вопроса: {question_type['main_type']}, уверенность: {question_type['confidence']:.2f}")
             
@@ -749,6 +1175,69 @@ class AdvancedChatbot:
                         f"(тип вопроса: {question_type.get('main_type')})."
                     )
                     results = unfiltered_results
+
+            locked_results = _apply_equipment_model_lock(
+                self.store,
+                results,
+                search_question,
+                limit=search_params.get("context_top_k", self.top_k),
+            )
+            if len(locked_results) != len(results) or locked_results != results:
+                _safe_print(
+                    f"[DEBUG] Equipment model lock: {len(results)} -> {len(locked_results)} "
+                    f"(tokens={sorted(_specific_model_tokens(search_question))})"
+                )
+                results = locked_results
+
+            file_hint = _source_file_hint(search_question) or _source_file_hint_from_chunks(
+                search_question,
+                self.store.chunks,
+            )
+            page_hint = _page_hint(search_question)
+            context_results = _filter_chunks_for_llm_context(
+                results,
+                source_file_hint=file_hint,
+                page_hint=page_hint,
+            )
+            if len(context_results) != len(results):
+                _safe_print(
+                    f"[DEBUG] Контекст LLM сужен: {len(results)} -> {len(context_results)} "
+                    f"(source_file={file_hint or '-'}, page={page_hint or '-'})"
+                )
+                results = context_results
+
+            unstubbed_results = _filter_stub_chunks(results, source_file_hint=file_hint)
+            if len(unstubbed_results) != len(results):
+                _safe_print(
+                    f"[DEBUG] Stub filter: {len(results)} -> {len(unstubbed_results)} "
+                    f"(source_file={file_hint or '-'})"
+                )
+                results = unstubbed_results
+
+            prefer_documents = bool(file_hint) or question_type.get("is_attribute", False)
+            prefer_catalog = bool(search_params.get("prefer_catalog")) and not file_hint
+            ranked_context = _rank_chunks(
+                results,
+                prefer_documents=prefer_documents,
+                source_file_hint=file_hint,
+                prefer_catalog=prefer_catalog,
+                question=search_question,
+                question_type=question_type,
+            )
+            context_limit = search_params.get("context_top_k", self.top_k)
+            if ranked_context:
+                reranked_context = self.reranker.rerank(
+                    search_question,
+                    ranked_context,
+                    top_k=context_limit,
+                )
+                if reranked_context != ranked_context[:context_limit]:
+                    _safe_print(
+                        f"[DEBUG] CrossEncoder rerank applied: "
+                        f"candidates={min(len(ranked_context), self.reranker.candidates)}, "
+                        f"top_k={context_limit}"
+                    )
+                results = reranked_context
             
             _safe_print(f"[DEBUG] Найдено чанков: {len(results)}")
             
@@ -758,7 +1247,7 @@ class AdvancedChatbot:
                     "(проверьте FAISS/chunks и формулировку вопроса)."
                 )
                 self.last_rag_sources = []
-                return self.fallback
+                return MSG_REPHRASE
             
             self.last_chunks = results
             from .rag_sources import build_rag_sources, filter_source_chunks, strip_inline_citations
@@ -774,11 +1263,17 @@ class AdvancedChatbot:
                         f"(см. faiss.confidence_threshold в config.yaml; для атрибутных вопросов порог не применяется)."
                     )
                     self.last_rag_sources = []
-                    return self.fallback
+                    return MSG_REPHRASE
             
             _safe_print("[LLM] отправка в LM Studio: RAG-ответ (generate)...")
             # Генерация ответа
             answer = self.llm.generate(results, search_question, question_type)
+            llm_error_kind = getattr(self.llm, "last_error_kind", None)
+            if llm_error_kind in ("server", "rephrase"):
+                self.last_rag_sources = []
+                self.last_llm_elapsed_ms = getattr(self.llm, "last_elapsed_ms", 0.0) or 0.0
+                return MSG_SERVER_ERROR if llm_error_kind == "server" else MSG_REPHRASE
+
             answer = strip_inline_citations(answer)
             source_chunks = filter_source_chunks(
                 results,
@@ -794,11 +1289,15 @@ class AdvancedChatbot:
                     f"(модель: {self.llm.model})"
                 )
             if not (answer or "").strip():
-                return self.fallback
+                self.last_rag_sources = []
+                return MSG_REPHRASE
             return answer
             
         except Exception as e:
             _safe_print(f"[ERROR] Ошибка при генерации ответа: {e}")
             logger.exception("generate_response failed")
-            return "Извините, произошла ошибка при обработке запроса."
+            self.last_rag_sources = []
+            if is_llm_system_error(e):
+                return MSG_SERVER_ERROR
+            return MSG_REPHRASE
 

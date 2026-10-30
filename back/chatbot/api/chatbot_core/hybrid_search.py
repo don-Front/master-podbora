@@ -18,12 +18,13 @@ def _tokenize(text: str) -> List[str]:
 
 
 class HybridRetriever:
-    """BM25 по content чанков + vector score из VectorStore."""
+    """Гибридный поиск BM25 + FAISS с RRF-фьюжном рангов."""
 
-    def __init__(self, vector_store, vector_weight: float = 0.5):
+    def __init__(self, vector_store, vector_weight: float = 0.5, rrf_k: int = 60):
         self.store = vector_store
         self.chunks = vector_store.chunks
         self.vector_weight = vector_weight
+        self.rrf_k = rrf_k
         self.corpus_tokens = [
             _tokenize(
                 " ".join(
@@ -65,6 +66,19 @@ class HybridRetriever:
             "score": score,
         }
 
+    def _rrf_score(self, vector_rank: int | None, bm25_rank: int | None) -> float:
+        """Reciprocal Rank Fusion: устойчиво объединяет ранги BM25 и FAISS."""
+        score = 0.0
+        vector_weight = self.vector_weight
+        bm25_weight = 1.0 - vector_weight
+        if vector_rank is not None:
+            score += vector_weight / (self.rrf_k + vector_rank)
+        if bm25_rank is not None:
+            score += bm25_weight / (self.rrf_k + bm25_rank)
+        # Масштабируем к привычному диапазону ~0..2, чтобы downstream boosts
+        # оставались сопоставимыми с прежними score.
+        return score * 100.0
+
     def search(
         self,
         query: str,
@@ -72,11 +86,16 @@ class HybridRetriever:
         top_k: int,
         product_filter: Optional[str] = None,
     ) -> List[Dict]:
-        fetch_k = min(len(self.chunks), max(top_k * 3, top_k))
+        fetch_k = min(len(self.chunks), max(top_k * 5, 50))
         vector_results = self.store.search(query_embedding, fetch_k, product_filter)
         vector_by_id = {
             r["chunk_id"]: float(r.get("score", 0.0))
             for r in vector_results
+            if r.get("chunk_id")
+        }
+        vector_rank_by_id = {
+            r["chunk_id"]: rank
+            for rank, r in enumerate(vector_results, 1)
             if r.get("chunk_id")
         }
 
@@ -92,11 +111,15 @@ class HybridRetriever:
                 candidate_indices.add(self._chunk_id_to_idx[cid])
 
         bm25_top = np.argsort(bm25_all)[::-1][:fetch_k]
+        bm25_rank_by_id: Dict[str, int] = {}
         for idx in bm25_top:
-            candidate_indices.add(int(idx))
+            idx = int(idx)
+            candidate_indices.add(idx)
+            cid = self.chunks[idx].get("chunk_id")
+            if cid and cid not in bm25_rank_by_id:
+                bm25_rank_by_id[cid] = len(bm25_rank_by_id) + 1
 
         raw_bm25: Dict[str, float] = {}
-        raw_vector: Dict[str, float] = {}
         for idx in candidate_indices:
             chunk = self.chunks[idx]
             if not is_chunk_searchable(chunk, self.store.active_doc_keys):
@@ -109,21 +132,14 @@ class HybridRetriever:
                 if product_filter.lower() not in title:
                     continue
             raw_bm25[cid] = float(bm25_all[idx])
-            raw_vector[cid] = vector_by_id.get(cid, 0.0)
-
-        norm_bm25 = self._minmax_norm(raw_bm25)
-        positive_vector = {k: v for k, v in raw_vector.items() if v > 0}
-        norm_vector = self._minmax_norm(positive_vector)
-
-        vw = self.vector_weight
-        bw = 1.0 - vw
 
         merged: List[Dict] = []
         for cid, b_raw in raw_bm25.items():
             idx = self._chunk_id_to_idx[cid]
-            b_norm = norm_bm25.get(cid, 0.0)
-            v_norm = norm_vector.get(cid, 0.0)
-            combined = bw * b_norm + vw * v_norm
+            combined = self._rrf_score(
+                vector_rank_by_id.get(cid),
+                bm25_rank_by_id.get(cid),
+            )
             merged.append(self._chunk_result(idx, combined))
 
         merged.sort(key=lambda x: x["score"], reverse=True)

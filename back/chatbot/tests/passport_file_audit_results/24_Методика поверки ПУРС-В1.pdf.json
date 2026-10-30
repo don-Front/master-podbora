@@ -1,0 +1,1571 @@
+{
+  "generated_at": "2026-07-07T13:25:40.304343+00:00",
+  "total_questions": 50,
+  "verdict_counts": {
+    "CORRECT": 38,
+    "PARTIAL": 9,
+    "WRONG_TOPIC": 2,
+    "STUB_ONLY": 1
+  },
+  "bug_counts": {
+    "retrieval": 2,
+    "stub": 1
+  },
+  "accuracy_pct": 76.0,
+  "partial_pct": 18.0,
+  "bad_pct": 6.0,
+  "per_file": [
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "questions": 50,
+      "correct": 38,
+      "partial": 9,
+      "bad": 3,
+      "accuracy_pct": 76.0,
+      "retrieval_pct": 96.0,
+      "top_bugs": [
+        [
+          "partial",
+          9
+        ],
+        [
+          "retrieval",
+          2
+        ],
+        [
+          "stub",
+          1
+        ]
+      ]
+    }
+  ],
+  "failure_samples": [
+    {
+      "question": "Какие сведения о программном обеспечении есть в документе «Методика поверки ПУРС-В1»?",
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Методика поверки ПУРС-В1»?",
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "reason": "не тот документ или ответ мимо вопроса",
+      "top_sources": []
+    },
+    {
+      "question": "Что указано на странице 1 документа «Методика поверки ПУРС-В1» о: Документ: Методика поверки ПУРС-В1. Файл: Методика пов",
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "reason": "ответ только по метаданным stub-чанка",
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 1,
+      "topic": "назначение",
+      "question": "Для чего предназначен прибор или документ «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "назнач",
+        "предназнач",
+        "Методика"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» предназначен для поверки прибора ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1975.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 2,
+      "topic": "изготовитель",
+      "question": "Кто указан изготовителем или правообладателем в документе «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "Турбулентность",
+        "изготов",
+        "ДОН"
+      ],
+      "answer_preview": "В документе «Методика поверки ПУРС-В1» информация об изготовителе или правообладателе отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1842.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 3,
+      "topic": "регистрация",
+      "question": "Какой регистрационный или сертификационный номер указан в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "номер",
+        "регистр",
+        "№"
+      ],
+      "answer_preview": "В документе не указан регистрационный или сертификационный номер.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1559.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 4,
+      "topic": "срок действия",
+      "question": "Какой срок действия утверждения типа или сертификата в документе «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "срок",
+        "действ",
+        "до"
+      ],
+      "answer_preview": "В документе «Методика поверки ПУРС-В1» срок действия утверждения типа или сертификата не указан.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1950.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 5,
+      "topic": "методика",
+      "question": "Какая методика поверки или нормативный документ упомянуты в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "методик",
+        "поверк",
+        "МП"
+      ],
+      "answer_preview": "Методика поверки ПУРС-В1",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1720.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 6,
+      "topic": "метрология",
+      "question": "Какие метрологические характеристики приведены в документе «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "погрешност",
+        "диапазон",
+        "измерен"
+      ],
+      "answer_preview": "В документе «Методика поверки ПУРС-В1» конкретные метрологические характеристики не приведены.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1922.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 7,
+      "topic": "техника",
+      "question": "Какие технические характеристики (давление, температура, расход) указаны в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "давлен",
+        "температур",
+        "расход"
+      ],
+      "answer_preview": "В документе не указаны конкретные технические характеристики, такие как давление, температура и расход.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1872.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 8,
+      "topic": "ПО",
+      "question": "Какие сведения о программном обеспечении есть в документе «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "программ",
+        "ПО",
+        "версия"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://fgis.gost.ru/fundmetrology/cm/results",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 187.6,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 9,
+      "topic": "комплектность",
+      "question": "Что входит в комплект поставки согласно «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "комплект",
+        "паспорт",
+        "РЭ"
+      ],
+      "answer_preview": "В контексте не указано, что входит в комплект поставки согласно «Методике поверки ПУРС-В1».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1830.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 10,
+      "topic": "нормативы",
+      "question": "На какие приказы, ГОСТ или ТУ ссылается документ «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "приказ",
+        "ГОСТ",
+        "ТУ"
+      ],
+      "answer_preview": "Откройте ссылку:\nhttps://fgis.gost.ru/fundmetrology/cm/results",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": false,
+      "retrieval_rank": null,
+      "top_sources": [],
+      "total_ms": 184.8,
+      "heuristic_quality": "weak",
+      "judge_verdict": "WRONG_TOPIC",
+      "bug_type": "retrieval",
+      "judge_reason": "не тот документ или ответ мимо вопроса",
+      "rag_sources_count": 0,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 11,
+      "topic": "стр.1",
+      "question": "Что указано на странице 1 документа «Методика поверки ПУРС-В1» о: Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика поверки ПУРС-В1. Тип документа?",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Тип документа: passport.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 826.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "STUB_ONLY",
+      "bug_type": "stub",
+      "judge_reason": "ответ только по метаданным stub-чанка",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 12,
+      "topic": "значение",
+      "question": "Какое значение 1. и для какой характеристики указано в документе «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "1,",
+        "характеристик",
+        "Методика"
+      ],
+      "answer_preview": "В документе «Методика поверки ПУРС-В1» конкретные числовые значения характеристик не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1993.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 13,
+      ""при�"применение",
+      "question": "Где и как применяется продукция по документу «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "применен",
+        "эксплуат",
+        "использован"
+      ],
+      "answer_preview": "В документе «Методика поверки ПУРС-В1» нет информации о том, где и как применяется продукция.",
+      "is_fallback": false,
+      "key_hits": 0,
+      "key_total": 3,
+      "key_ratio": 0.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2001.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 14,
+      "topic": "поверка",
+      "question": "Какие требования к поверке указаны в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "поверк",
+        "метролог",
+        "эталон"
+      ],
+      "answer_preview": "В «Методике поверки ПУРС-В1» конкретные требования к поверке не перечислены в представленном фрагменте.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1851.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 15,
+      "topic": "безопасность",
+      "question": "Какие требования безопасности есть в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "безопасност",
+        "электр",
+        "охран"
+      ],
+      "answer_preview": "В документе не указаны конкретные требования безопасности.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1484.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 16,
+      "topic": "маркировка",
+      "question": "Как наносится маркировка и знак утверждения типа в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "маркиров",
+        "знак",
+        "типа"
+      ],
+      "answer_preview": "В контексте не содержится информации о том, как наносится маркировка и знак утверждения типа в «Методике поверки ПУРС-В1».",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1197.2,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 17,
+      "topic": "гарантия",
+      "question": "Какие гарантийные обязательства указаны в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "гарант",
+        "срок",
+        "месяц"
+      ],
+      "answer_preview": "В «Методике поверки ПУРС-В1» гарантийные обязательства не указаны.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1887.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 18,
+      "topic": "транспорт",
+      "question": "Условия транспортирования и хранения в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "транспорт",
+        "хранен",
+        "температур"
+      ],
+      "answer_preview": "В документе не указаны условия транспортирования и хранения прибора ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 808.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 19,
+      "topic": "надёжность",
+      "question": "Показатели надёжности (наработка, срок службы) в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "наработк",
+        "служб",
+        "отказ"
+      ],
+      "answer_preview": "В «Методике поверки ПУРС-В1» показатели надёжности (наработка, срок службы) не указаны.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1972.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 20,
+      "topic": "интерфейс",
+      "question": "Какие интерфейсы связи указаны в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "RS-485",
+        "интерфейс",
+        "Modbus"
+      ],
+      "answer_preview": "В документе информация об интерфейсах связи отсутствует.",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1752.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 21,
+      "topic": "взрывозащита",
+      "question": "Какая взрывозащита или степень защиты IP указана в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "взрывозащ",
+        "IP",
+        "Ex"
+      ],
+      "answer_preview": "В «Методике поверки ПУРС-В1» информация о взрывозащите или степени защиты IP не указана.",
+      "is_fallback": false,
+      "key_hits": 2,
+      "key_total": 3,
+      "key_ratio": 0.667,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 996.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 22,
+      "topic": "испытатель",
+      "question": "Какой испытательный центр указан в «Методика поверки ПУРС-В1»?",
+      "expected_keys": [
+        "ВНИИМС",
+        "испытатель",
+        "аккредит"
+      ],
+      "answer_preview": "В документе не указано, какой испытательный центр указан в «Методике поверки ПУРС-В1».",
+      "is_fallback": false,
+      "key_hits": 1,
+      "key_total": 3,
+      "key_ratio": 0.333,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2011.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "PARTIAL",
+      "bug_type": "partial",
+      "judge_reason": "неполный ответ",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 23,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #1): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 963.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 24,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #2): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 948.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 25,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #3): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2110.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 26,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #4): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2211.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 27,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #5): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2286.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 28,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #6): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1939.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 29,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #7): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 984.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 30,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #8): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2255.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 31,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #9): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2045.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 32,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #10): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 624.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 33,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #11): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» представлен в формате pdf.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 879.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 34,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #12): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 716.6,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 35,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #13): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 990.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 36,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #14): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1924.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 37,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #15): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2131.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 38,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #16): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2298.0,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 39,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #17): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2141.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 40,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #18): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 791.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 41,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #19): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом методики поверки для продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 991.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 42,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #20): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ «Методика поверки ПУРС-В1» является паспортом продукта ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 782.3,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 43,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #21): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 576.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 44,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #22): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 775.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 45,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #23): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1886.5,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 46,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #24): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2028.4,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 47,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #25): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 2023.8,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 48,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #26): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1955.9,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 49,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #27): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 1923.1,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    },
+    {
+      "source_file": "Методика поверки ПУРС-В1.pdf",
+      "id": 50,
+      "topic": "доп.1",
+      "question": "Приведите факты из документа «Методика поверки ПУРС-В1» (фрагмент стр. 1, #28): Документ: Методика поверки ПУРС-В1. Файл: Методика поверки ПУРС-В1.pdf. Продукт: Методика ",
+      "expected_keys": [
+        "Документ",
+        "Методика",
+        "ПУРС-В"
+      ],
+      "answer_preview": "Документ: Методика поверки ПУРС-В1.",
+      "is_fallback": false,
+      "key_hits": 3,
+      "key_total": 3,
+      "key_ratio": 1.0,
+      "retrieval_hit": true,
+      "retrieval_rank": 1,
+      "top_sources": [
+        "Методика поверки ПУРС-В1"
+      ],
+      "total_ms": 770.7,
+      "heuristic_quality": "good",
+      "judge_verdict": "CORRECT",
+      "bug_type": "none",
+      "judge_reason": "retrieval + ключевые факты совпали",
+      "rag_sources_count": 1,
+      "auto_generated": true,
+      "is_stub_doc": true,
+      "document_kind": ""
+    }
+  ],
+  "file_index": 23,
+  "source_file": "Методика поверки ПУРС-В1.pdf",
+  "product": "Методика поверки ПУРС-В1"
+}
